@@ -66,8 +66,8 @@
         "lerna:build:prod": "lerna run build:prod --scope=@paperless/core && lerna run build:prod --ignore=@paperless/core --stream"
     },
     "devDependencies": {
-        "@angular-eslint/eslint-plugin": "^17.2.1",
-        "@angular-eslint/eslint-plugin-template": "^17.2.1",
+        "@angular-eslint/eslint-plugin": "^18.0.0",
+        "@angular-eslint/eslint-plugin-template": "^18.0.0",
         "@babel/core": "7.21.8",
         "@babel/preset-react": "7.18.6",
         "@geometricpanda/storybook-addon-badges": "1.1.1",
