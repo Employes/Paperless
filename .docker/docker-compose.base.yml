@@ -2,7 +2,7 @@ version: '2'
 
 services:
     base:
-        image: node:20.1
+        image: node:20.16
         tty: true
         working_dir: /opt/app
         env_file:
