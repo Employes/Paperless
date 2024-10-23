@@ -38,7 +38,7 @@ jobs:
             !contains(github.event.head_commit.message, 'Lerna publish')
         steps:
             - name: 'Checkout' # Download code from the repository
-              uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
+              uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
               with:
                   fetch-depth: 0 # Checkout all branches and tags
 
@@ -111,7 +111,7 @@ jobs:
             !contains(github.event.head_commit.message , 'docs(') &&
             !contains(github.event.head_commit.message, 'chore')
         steps:
-            - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
+            - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
               with:
                   fetch-depth: 0
 
@@ -144,7 +144,7 @@ jobs:
         runs-on: ubuntu-latest
         # Job steps
         steps:
-            - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
+            - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
               with:
                   fetch-depth: 0
 
