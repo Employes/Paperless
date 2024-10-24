@@ -43,7 +43,7 @@ jobs:
                   fetch-depth: 0 # Checkout all branches and tags
 
             - name: Setup node
-              uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3
+              uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
               with:
                   always-auth: true
                   node-version: 20.9
@@ -116,7 +116,7 @@ jobs:
                   fetch-depth: 0
 
             - name: Setup node
-              uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3
+              uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
               with:
                   always-auth: true
                   node-version: 20.9
@@ -154,7 +154,7 @@ jobs:
                   name: build-artifact
 
             - name: Setup node
-              uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3
+              uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
               with:
                   always-auth: true
                   node-version: 20.9
