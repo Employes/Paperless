@@ -1,11 +1,11 @@
 version: '2'
 
 services:
-    base:
-        image: node:20.9
-        tty: true
-        working_dir: /opt/app
-        env_file:
-            - ../.env
-        volumes:
-            - ../:/opt/app
+  base:
+    image: node:22
+    tty: true
+    working_dir: /opt/app
+    env_file:
+      - ../.env
+    volumes:
+      - ../:/opt/app
