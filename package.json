@@ -57,6 +57,7 @@
 		"storybook:start": "start-storybook -p 5200 -h 0.0.0.0",
 		"storybook:build": "yarn build-storybook -o dist",
 		"storybook:deploy": "sls deploy --stage production",
+		"storybook:deploy:beta": "sls deploy --stage beta",
 		"lerna:version": "lerna version prerelease --preid beta --conventional-commits --yes --force-publish",
 		"lerna:version:prerelease": "yarn lerna:version prerelease --preid beta",
 		"lerna:version:nopush": "yarn lerna:version --no-push",
