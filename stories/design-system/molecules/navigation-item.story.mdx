@@ -11,65 +11,53 @@ import NavigationItemDocs from '../../../packages/core/src/components/molecules/
 ### Default
 
 <Canvas>
-    <div class="flex justify-center">
-        <p-navigation-item href="https://google.com" target="_GOOGLE">
-            Item name
-        </p-navigation-item>
-    </div>
+ <div class='flex justify-center'>
+  <p-navigation-item
+   icon='person'
+   href='https://google.com'
+   target='_GOOGLE'
+  >
+   Item name
+  </p-navigation-item>
+ </div>
 </Canvas>
 
 ### Active
 
 <Canvas>
-    <div class="flex justify-center">
-        <p-navigation-item active>Item name</p-navigation-item>
-    </div>
+ <div class='flex justify-center'>
+  <p-navigation-item
+   icon='person'
+   active
+  >
+   Item name
+  </p-navigation-item>
+ </div>
 </Canvas>
 
-### With icon
+### With counter
 
 <Canvas>
-    <div class="flex justify-center">
-        <p-navigation-item icon="person" counter={0}>Item name</p-navigation-item>
-    </div>
+ <div class='flex justify-center'>
+  <p-navigation-item
+   icon='person'
+   counter={10}
+  >
+   Item name
+  </p-navigation-item>
+ </div>
 </Canvas>
 
-### With icon & counter
+### With counter active
 
 <Canvas>
-    <div class="flex justify-center">
-        <p-navigation-item icon="person" counter={10}>
-            Item name
-        </p-navigation-item>
-    </div>
-</Canvas>
-
-### With icon & counter active
-
-<Canvas>
-    <div class="flex justify-center">
-        <p-navigation-item icon="person" counter={10} active>
-            Item name
-        </p-navigation-item>
-    </div>
-</Canvas>
-
-### With icon on the end 
-
-<Canvas>
-    <div class="flex justify-center">
-        <p-navigation-item icon="person" icon-position="end">
-            Item name
-        </p-navigation-item>
-    </div>
-</Canvas>
-
-### Loading
-
-<Canvas>
-    <div class="flex justify-center">
-        <p-navigation-item icon="person" icon-position="end" loading={true}>
-            Item name
-        </p-navigation-item>
-    </div>
+ <div class='flex justify-center'>
+  <p-navigation-item
+   icon='person'
+   counter={10}
+   active
+  >
+   Item name
+  </p-navigation-item>
+ </div>
 </Canvas>
