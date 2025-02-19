@@ -46,8 +46,6 @@ export class Icon {
 			'text-2xl': this.size === '2xl',
 			'text-3xl': this.size === '3xl',
 			'text-4xl': this.size === '4xl',
-			'text-5xl': this.size === '5xl',
-			'text-6xl': this.size === '6xl',
 			transform: !!this.rotate || !!this.flip,
 			'scale-x-flip': this.flip === 'horizontal',
 			'scale-y-flip': this.flip === 'vertical',
@@ -71,6 +69,11 @@ export class Icon {
 			'-rotate-315': this.rotate === -315,
 		};
 
-		return <Host class={styles} innerHTML={icon}></Host>;
+		return (
+			<Host
+				class={styles}
+				innerHTML={icon}
+			></Host>
+		);
 	}
 }

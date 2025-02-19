@@ -4,7 +4,7 @@
 	.popover-container {
 		@apply relative h-0 w-0;
 		.popover {
-			@apply left-0 top-0 z-tooltip inline-block rounded bg-white px-3 py-2 text-xs font-medium opacity-0 drop-shadow-4 transition-opacity;
+			@apply left-0 top-0 z-tooltip inline-block rounded bg-white px-3 py-2 text-xs font-medium opacity-0 drop-shadow-3 transition-opacity;
 			@apply pointer-events-none;
 			width: max-content;
 			max-width: 14.5rem;
