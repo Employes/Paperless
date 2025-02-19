@@ -6,16 +6,16 @@
 	<p-cropper formControlName="user" />
 	<div class="flex w-full place-content-evenly items-center">
 		<p-avatar
-			size="small"
+			size="sm"
 			[src]="form.get('user')?.value"
 		></p-avatar>
 		<p-avatar [src]="form.get('user')?.value"></p-avatar>
 		<p-avatar
-			size="large"
+			size="lg"
 			[src]="form.get('user')?.value"
 		></p-avatar>
 		<p-avatar
-			size="xlarge"
+			size="xl"
 			[src]="form.get('user')?.value"
 		></p-avatar>
 	</div>
@@ -26,29 +26,20 @@
 	[formGroup]="form"
 >
 	<h1 class="text-2xl font-semibold text-storm-dark">Company</h1>
-	<p-cropper
-		formControlName="company"
-		variant="company"
-	/>
+	<p-cropper formControlName="company" />
 
 	<div class="flex w-full place-content-evenly items-center">
 		<p-avatar
-			size="small"
-			variant="company"
+			size="sm"
+			[src]="form.get('company')?.value"
+		></p-avatar>
+		<p-avatar [src]="form.get('company')?.value"></p-avatar>
+		<p-avatar
+			size="lg"
 			[src]="form.get('company')?.value"
 		></p-avatar>
 		<p-avatar
-			variant="company"
-			[src]="form.get('company')?.value"
-		></p-avatar>
-		<p-avatar
-			size="large"
-			variant="company"
-			[src]="form.get('company')?.value"
-		></p-avatar>
-		<p-avatar
-			size="xlarge"
-			variant="company"
+			size="xl"
 			[src]="form.get('company')?.value"
 		></p-avatar>
 	</div>
