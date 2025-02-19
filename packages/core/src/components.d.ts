@@ -507,6 +507,10 @@ export namespace Components {
          */
         "allowOverflow": boolean;
         /**
+          * The class of the container passed by parent
+         */
+        "class": string;
+        /**
           * Wether the container should all available space
          */
         "fullWidth": boolean;
@@ -2789,6 +2793,10 @@ declare namespace LocalJSX {
           * Wether to allow overflow
          */
         "allowOverflow"?: boolean;
+        /**
+          * The class of the container passed by parent
+         */
+        "class"?: string;
         /**
           * Wether the container should all available space
          */
