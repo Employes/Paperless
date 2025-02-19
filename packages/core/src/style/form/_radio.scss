@@ -1,12 +1,12 @@
 .p-input[type='radio'] {
     @apply appearance-none relative;
-    @apply w-4 h-4 bg-white rounded-round;
+    @apply w-4 h-4 bg-white rounded-full;
     @apply border border-solid border-mystic-dark;
     @apply outline-none #{!important};
 
     &:after {
         @apply absolute top-1/2 left-1/2 bg-transparent;
-        @apply transform -translate-x-1/2 -translate-y-1/2 rounded-round;
+        @apply transform -translate-x-1/2 -translate-y-1/2 rounded-full;
 
         content: ' ';
         width: 0.375em;

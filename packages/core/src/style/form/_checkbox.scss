@@ -87,12 +87,12 @@ input[type='checkbox'].p-toggle {
 	@apply appearance-none;
 	@apply h-6 w-[2.375rem] bg-white p-1;
 	@apply flex items-center justify-start;
-	@apply rounded-xxxlarge;
+	@apply rounded-3xl;
 	@apply border border-solid border-mystic-dark;
 
 	&:after {
 		content: '';
-		@apply block h-4 w-4 rounded-round;
+		@apply block h-4 w-4 rounded-full;
 		@apply translate-x-0 bg-mystic-dark transition-transform duration-100;
 	}
 

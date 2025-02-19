@@ -8,11 +8,11 @@
 }
 
 :host(.is-rounded-bottom) {
-	@apply rounded-b-none desktop-xs:rounded-b-xxlarge;
+	@apply rounded-b-none desktop-xs:rounded-b-2xl;
 }
 
 :host(.is-rounded-top) {
-	@apply rounded-t-large desktop-xs:rounded-t-xxlarge;
+	@apply rounded-t-lg desktop-xs:rounded-t-2xl;
 }
 
 :host(.no-padding) {

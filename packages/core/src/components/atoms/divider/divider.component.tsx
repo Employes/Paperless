@@ -19,12 +19,12 @@ export class Divider {
 	render() {
 		const hasSlotted = !!this._el.innerHTML?.length;
 		return (
-			<Host class="p-divider">
-				<div class="content">
+			<Host class='p-divider'>
+				<div class='content'>
 					<div
 						class={`flex items-center ${
 							hasSlotted && 'px-2'
-						} text-xxs font-semibold uppercase text-storm-light`}
+						} text-xs font-semibold uppercase text-storm-light`}
 					>
 						<slot />
 					</div>

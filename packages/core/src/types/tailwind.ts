@@ -8,9 +8,7 @@ export type TextSizeOptions =
 	| 'xl'
 	| '2xl'
 	| '3xl'
-	| '4xl'
-	| '5xl'
-	| '6xl';
+	| '4xl';
 
 export type RotateOptions =
 	| -315

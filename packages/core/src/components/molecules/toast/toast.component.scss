@@ -2,7 +2,7 @@
 	@apply flex justify-between items-center gap-2;
 	@apply w-full p-4 pl-5;
 	@apply bg-white rounded box-border;
-	@apply shadow-4 #{!important};
+	@apply shadow-3 #{!important};
 	@apply border-l-4 border-solid #{!important};
 
 	p {
