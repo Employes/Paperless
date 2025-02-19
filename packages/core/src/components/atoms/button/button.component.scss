@@ -6,7 +6,7 @@ p-button {
 		outline: 0;
 		border: 0;
 		@apply h-full w-full;
-		@apply rounded-large #{!important};
+		@apply rounded-lg #{!important};
 		@apply font-semibold leading-4;
 		@apply flex items-center justify-center;
 		@apply cursor-pointer text-base;
@@ -34,13 +34,16 @@ p-button {
 		&.variant-primary,
 		&.variant-secondary {
 			@apply px-4 filter;
-		}
 
-		&.variant-primary,
-		&.variant-secondary {
 			&:active,
 			&.active {
 				@apply drop-shadow-transparent;
+			}
+
+			@media (pointer: fine) {
+				&:hover:not([disabled]) {
+					@apply drop-shadow-2;
+				}
 			}
 		}
 
@@ -53,12 +56,6 @@ p-button {
 					@apply bg-indigo-dark;
 				}
 			}
-
-			@media (pointer: fine) {
-				&:hover:not([disabled]) {
-					@apply drop-shadow-button-primary-hover;
-				}
-			}
 		}
 
 		&.variant-secondary {
@@ -69,12 +66,6 @@ p-button {
 			&.active {
 				&:not([disabled]) {
 					@apply bg-mystic;
-				}
-			}
-
-			@media (pointer: fine) {
-				&:hover:not([disabled]) {
-					@apply drop-shadow-button-secondary-hover;
 				}
 			}
 		}

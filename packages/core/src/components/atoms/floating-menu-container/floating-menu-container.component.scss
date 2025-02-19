@@ -1,5 +1,5 @@
 :host {
-	@apply z-floating-menu flex h-12 items-center gap-4 rounded-xxlarge bg-storm-dark px-4 py-3 text-storm-vague shadow-2;
+	@apply z-floating-menu flex h-12 items-center gap-4 rounded-2xl bg-storm-dark px-4 py-3 text-storm-vague shadow-2;
 }
 
 :host(.preload) {

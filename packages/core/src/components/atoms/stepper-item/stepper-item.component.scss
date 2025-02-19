@@ -9,7 +9,7 @@
 	.circle {
 		@apply transition duration-500 ease-in-out;
 		@apply flex items-center justify-center flex-shrink-0;
-		@apply h-4 w-4 rounded-round;
+		@apply h-4 w-4 rounded-full;
 		@apply bg-mystic-dark text-white;
 
 		p-icon {
