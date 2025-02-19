@@ -525,6 +525,10 @@ export namespace Components {
          */
         "active": boolean;
         /**
+          * Wether the item is disabled
+         */
+        "disabled": boolean;
+        /**
           * Wether to enable the hover state
          */
         "enableHover": boolean;
@@ -2815,6 +2819,10 @@ declare namespace LocalJSX {
           * Wether the dropdown menu item is active
          */
         "active"?: boolean;
+        /**
+          * Wether the item is disabled
+         */
+        "disabled"?: boolean;
         /**
           * Wether to enable the hover state
          */
