@@ -1,8 +1,8 @@
 :host {
-	@apply bg-mystic rounded-t-xxlarge;
-	@apply flex justify-between items-center;
+	@apply rounded-t-2xl bg-mystic;
+	@apply flex items-center justify-between;
 	@apply p-4 desktop-xs:p-6;
 
-	@apply text-storm-dark text-xl font-semibold;
+	@apply text-xl font-semibold text-storm-dark;
 	@apply desktop-xs:text-3xl desktop-xs:font-bold;
 }

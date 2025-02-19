@@ -1,29 +1,29 @@
 @layer base {
-    h1 {
-        @apply text-h1 font-bold leading-h1;
-    }
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		@apply font-ambit font-bold;
+	}
 
-    h2 {
-        @apply text-h2 font-bold leading-h2;
-    }
+	h1 {
+		@apply text-3xl;
+	}
 
-    h3 {
-        @apply text-h3 font-semibold leading-h3;
-    }
+	h2 {
+		@apply text-2xl;
+	}
 
-    h4 {
-        @apply text-h4 font-semibold leading-h4;
-    }
+	h3 {
+		@apply text-xl;
+	}
 
-    h5 {
-        @apply text-h5 font-medium leading-h5;
-    }
+	h4 {
+		@apply text-lg;
+	}
 
-    body {
-        @apply text-body leading-body text-storm #{!important};
-    }
-
-    .body-2 {
-        @apply text-body-2 leading-body-2 text-storm #{!important};
-    }
+	body {
+		@apply text-base font-medium text-black-teal #{!important};
+	}
 }

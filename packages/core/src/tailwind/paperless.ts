@@ -1,51 +1,54 @@
 import plugin from 'tailwindcss/plugin';
 
-import colors from './theme/colors';
-import shadows from './theme/shadows';
-import borderRadius from './theme/border-radius';
-import scale from './theme/scale';
-import rotate from './theme/rotate';
-import typeograhpy from './theme/typography';
-import backdropBlur from './theme/backdrop-blur';
-import zIndex from './theme/z-index';
 import animation from './theme/animation';
-import screens from './theme/screens';
-import width from './theme/width';
+import colors from './theme/colors';
 import height from './theme/height';
+import rotate from './theme/rotate';
+import scale from './theme/scale';
+import screens from './theme/screens';
+import shadows from './theme/shadows';
 import spacing from './theme/spacing';
+import typeograhpy from './theme/typography';
+import width from './theme/width';
+import zIndex from './theme/z-index';
 
-import safeArea from './plugins/safe-area';
 import hover from './plugins/hover';
+import safeArea from './plugins/safe-area';
 
 export const paperless = plugin(
-	(pluginAPI) => {
+	pluginAPI => {
 		safeArea(pluginAPI);
 		hover(pluginAPI);
 	},
 	{
 		theme: {
 			colors,
-			// @ts-ignore
 			boxShadow: shadows,
 			dropShadow: shadows,
-			borderRadius,
-			// @ts-ignore
 			extend: {
-				...animation,
+				keyframs: animation.keyframes,
+				animation: animation.animation,
+				fontFamily: {
+					geist: ['Geist', 'serif'],
+					ambit: ['Ambit', 'sans-serif'],
+				},
 				scale,
 				rotate,
 				fontSize: typeograhpy.fontSize,
 				lineHeight: typeograhpy.lineHeight,
-				backdropBlur,
 				zIndex,
 				screens,
 				width: width.width,
 				height: height.height,
 				spacing,
+				aspectRatio: {
+					branding: '23/24',
+				},
 			},
 		},
 		plugins: [
 			require('@tailwindcss/aspect-ratio'),
+			require('tailwindcss-animate'),
 			require('tailwind-scrollbar-hide'),
 			safeArea,
 			hover,

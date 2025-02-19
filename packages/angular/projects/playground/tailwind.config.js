@@ -9,6 +9,7 @@ module.exports = {
 	],
 	plugins: [
 		require('@tailwindcss/aspect-ratio'),
+		require('tailwindcss-animate'),
 		require('tailwind-scrollbar-hide'),
 		paperless,
 	],

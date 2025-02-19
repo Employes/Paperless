@@ -3,7 +3,7 @@
 	@apply fixed left-0 top-0 z-backdrop;
 	@apply h-full w-full;
 	@apply overflow-hidden;
-	@apply animate-fade-in bg-storm-dark/50;
+	@apply animate-in fade-in bg-storm-dark/50;
 	@apply max-h-screen max-w-screen;
 
 	.content-container {
@@ -15,11 +15,11 @@
 }
 
 :host(.blurred) {
-	@apply backdrop-blur-xs;
+	@apply backdrop-blur-sm;
 }
 
 :host(.closing) {
-	@apply animate-fade-out;
+	@apply fade-out;
 
 	.content-container {
 		@apply overflow-hidden;

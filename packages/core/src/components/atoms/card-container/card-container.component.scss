@@ -1,6 +1,6 @@
 :host {
 	@apply flex w-full flex-col;
-	@apply rounded-large bg-white;
+	@apply rounded-lg bg-white;
 }
 
 :host([hoverable]) {
@@ -8,10 +8,10 @@
 }
 
 :host([hoverable]:hover) {
-	@apply drop-shadow-5 #{!important};
+	@apply drop-shadow-3 #{!important};
 }
 
 :host([shadow='true']),
 :host(:not([shadow='false'])) {
-	@apply drop-shadow-4 filter #{!important};
+	@apply drop-shadow-3 filter #{!important};
 }
