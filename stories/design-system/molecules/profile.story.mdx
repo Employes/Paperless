@@ -10,55 +10,48 @@ import ProfileDocs from '../../../packages/core/src/components/molecules/profile
 
 ## Variants
 
-### User profile
+### With subtitle
 
 <Canvas>
-    <p-profile>
-        <p-avatar slot="avatar" />
-        <span slot="title">John Doe</span>
-        <span slot="subtitle">Software Engineer</span>
-    </p-profile>
+	<p-profile>
+		<p-avatar
+			slot='avatar'
+			letters='JD'
+		/>
+		<span slot='title'>John Doe</span>
+		<span slot='subtitle'>Software Engineer</span>
+	</p-profile>
 </Canvas>
 
-### Company profile
+### Without subtitle
 
 <Canvas>
-    <p-profile variant="company">
-        <p-avatar slot="avatar" />
-        <span slot="title">Company Inc.</span>
-    </p-profile>
+	<p-profile>
+		<p-avatar
+			slot='avatar'
+			letters='C'
+		/>
+		<span slot='title'>Company Inc.</span>
+	</p-profile>
 </Canvas>
 
-## With content
+## Actions
 
-### User profile
-
-<Canvas>
-    <div class="flex h-48 justify-center">
-        <p-profile>
-            <p-avatar slot="avatar" />
-            <span slot="title">Company Inc.</span>
-            <div slot="dropdown">
-                <p-dropdown-menu-item>Item 1</p-dropdown-menu-item>
-                <p-dropdown-menu-item>Item 2</p-dropdown-menu-item>
-                <p-dropdown-menu-item>Item 3</p-dropdown-menu-item>
-            </div>
-        </p-profile>
-    </div>
-</Canvas>
-
-### Company profile
+### Dropdown
 
 <Canvas>
-    <div class="flex h-48 items-end justify-center">
-        <p-profile variant="company">
-            <p-avatar slot="avatar" />
-            <span slot="title">Company Inc.</span>
-            <div slot="dropdown">
-                <p-dropdown-menu-item>Item 1</p-dropdown-menu-item>
-                <p-dropdown-menu-item>Item 2</p-dropdown-menu-item>
-                <p-dropdown-menu-item>Item 3</p-dropdown-menu-item>
-            </div>
-        </p-profile>
-    </div>
+	<div className='flex h-48 justify-center'>
+		<p-profile>
+			<p-avatar
+				slot='avatar'
+				letters='C'
+			/>
+			<span slot='title'>Company Inc.</span>
+			<div slot='dropdown'>
+				<p-dropdown-menu-item>Item 1</p-dropdown-menu-item>
+				<p-dropdown-menu-item>Item 2</p-dropdown-menu-item>
+				<p-dropdown-menu-item>Item 3</p-dropdown-menu-item>
+			</div>
+		</p-profile>
+	</div>
 </Canvas>
