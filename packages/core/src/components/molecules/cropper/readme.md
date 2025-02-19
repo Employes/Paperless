@@ -1,9 +1,9 @@
 # Cropper
 
-## Usage:
+## Usage
 
 ```html
-<p-cropper variant="company" onChange={ev => console.log(ev)} />
+<p-cropper onChange={ev => console.log(ev)} />
 ```
 
 <!-- Auto Generated Below -->

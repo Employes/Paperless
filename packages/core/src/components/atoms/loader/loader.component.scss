@@ -1,6 +1,6 @@
 :host {
 	.loader {
-		@apply inline-block h-[1em] w-[1em] rounded-round;
+		@apply inline-block h-[1em] w-[1em] rounded-full;
 		@apply border-2 border-solid border-indigo-light border-t-indigo;
 		animation: 500ms spin linear infinite;
 

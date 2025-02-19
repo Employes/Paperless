@@ -34,7 +34,7 @@
 			@apply relative flex justify-center items-center cursor-pointer;
 			@apply no-underline;
 			@apply text-indigo;
-			@apply w-6 h-6 rounded-round;
+			@apply w-6 h-6 rounded-full;
 			transition-duration: 0.2s;
 
 			&:hover:not(.disabled) {
@@ -65,7 +65,7 @@
 				@apply cursor-pointer;
 				@apply w-6 h-6 box-border;
 				@apply justify-self-center self-center;
-				@apply rounded-round;
+				@apply rounded-full;
 
 				@apply text-storm text-sm;
 				@apply border border-solid border-transparent;
@@ -144,7 +144,7 @@
 }
 
 :host(.variant-default) {
-	@apply rounded shadow-4;
+	@apply rounded shadow-3;
 }
 
 :host(.variant-embedded) {

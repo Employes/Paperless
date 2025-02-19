@@ -1,6 +1,7 @@
 export default {
 	width: {
 		unset: 'unset',
+		inherit: 'inherit',
 
 		// default variant
 		'content-mobile': '100%',
