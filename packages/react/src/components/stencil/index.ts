@@ -13,6 +13,7 @@ export const PAttachment = /*@__PURE__*/createReactComponent<JSX.PAttachment, HT
 export const PAvatar = /*@__PURE__*/createReactComponent<JSX.PAvatar, HTMLPAvatarElement>('p-avatar');
 export const PAvatarGroup = /*@__PURE__*/createReactComponent<JSX.PAvatarGroup, HTMLPAvatarGroupElement>('p-avatar-group');
 export const PBackdrop = /*@__PURE__*/createReactComponent<JSX.PBackdrop, HTMLPBackdropElement>('p-backdrop');
+export const PBadge = /*@__PURE__*/createReactComponent<JSX.PBadge, HTMLPBadgeElement>('p-badge');
 export const PButton = /*@__PURE__*/createReactComponent<JSX.PButton, HTMLPButtonElement>('p-button');
 export const PButtonGroup = /*@__PURE__*/createReactComponent<JSX.PButtonGroup, HTMLPButtonGroupElement>('p-button-group');
 export const PCalendar = /*@__PURE__*/createReactComponent<JSX.PCalendar, HTMLPCalendarElement>('p-calendar');
