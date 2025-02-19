@@ -3,12 +3,12 @@ p-drawer-container {
 	// tablet:w-[22.5rem]
 	@apply w-full tablet:w-[22.5rem];
 	@apply bg-white;
-	@apply animate-slide-in-right;
 	@apply min-h-screen;
+	@apply animate-in slide-in-from-right;
 
-	@apply shadow-4 #{!important};
+	@apply shadow-3 #{!important};
 
 	&.closing {
-		@apply animate-slide-out-right;
+		@apply slide-out-to-right;
 	}
 }

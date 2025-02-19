@@ -56,7 +56,7 @@ export class Attachment {
 		return (
 			<Host class="p-attachment flex items-start gap-4">
 				<div
-					class={`flex h-8 min-w-0 flex-1 items-center justify-start gap-2 rounded-large bg-mystic px-2 ${
+					class={`flex h-8 min-w-0 flex-1 items-center justify-start gap-2 rounded-lg bg-mystic px-2 ${
 						this.error?.length
 							? 'text-negative'
 							: 'text-storm-medium'

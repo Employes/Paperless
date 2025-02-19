@@ -1,5 +1,5 @@
 :host {
-	@apply flex h-6 items-center gap-2 rounded-large px-2;
+	@apply flex h-6 items-center gap-2 rounded-lg px-2;
 	@apply whitespace-nowrap text-sm font-semibold text-storm;
 	@apply cursor-pointer;
 }
@@ -8,7 +8,7 @@
 	@apply h-auto max-w-[9rem] flex-col whitespace-normal p-4 text-center;
 
 	.description {
-		@apply -mt-2 text-xxs font-normal text-storm-medium;
+		@apply -mt-2 text-xs font-normal text-storm-medium;
 	}
 }
 

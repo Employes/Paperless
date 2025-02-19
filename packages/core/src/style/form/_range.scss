@@ -1,20 +1,20 @@
 .p-input[type='range'] {
-    @apply relative appearance-none bg-transparent;
+	@apply relative appearance-none bg-transparent;
 
-    &::-webkit-slider-runnable-track {
-        @apply h-[2px] bg-mystic-dark;
-    }
+	&::-webkit-slider-runnable-track {
+		@apply h-[2px] bg-mystic-dark;
+	}
 
-    &::-moz-range-track {
-        @apply h-[2px] bg-mystic-dark;
-    }
+	&::-moz-range-track {
+		@apply h-[2px] bg-mystic-dark;
+	}
 
-    &::-webkit-slider-thumb,
-    &::-moz-range-thumb {
-        @apply h-4 w-4 rounded-round border-0 bg-indigo;
-    }
+	&::-webkit-slider-thumb,
+	&::-moz-range-thumb {
+		@apply h-4 w-4 rounded-full border-0 bg-indigo;
+	}
 
-    &::-webkit-slider-thumb {
-        @apply -mt-[6px];
-    }
+	&::-webkit-slider-thumb {
+		@apply -mt-[6px];
+	}
 }

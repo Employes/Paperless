@@ -1,15 +1,15 @@
 p-modal-container {
 	@apply z-modal flex w-full flex-col tablet:w-auto;
-	@apply rounded-b-none rounded-t-xxlarge desktop-xs:rounded-b-xxlarge;
+	@apply rounded-b-none rounded-t-2xl desktop-xs:rounded-b-2xl;
 
 	@apply desktop-xs:m-auto;
 	@apply max-h-[calc(100dvh-4rem)] desktop-xs:max-h-none;
 
-	@apply animate-slide-in-bottom desktop-xs:animate-slide-in-bottom-small #{!important};
+	@apply animate-in slide-in-from-bottom desktop-xs:slide-in-from-bottom-16 #{!important};
 
-	@apply shadow-4 #{!important};
+	@apply shadow-3 #{!important};
 
 	&.closing {
-		@apply animate-slide-out-bottom desktop-xs:animate-slide-out-bottom-small #{!important};
+		@apply slide-out-to-bottom desktop-xs:slide-out-to-bottom-16 #{!important};
 	}
 }

@@ -1,13 +1,13 @@
 :host {
-	@apply h-4 px-2 bg-indigo rounded-xlarge;
-	@apply text-xs leading-3 text-white font-bold uppercase;
-	@apply flex justify-center items-center;
+	@apply h-4 rounded-xl bg-indigo px-2;
+	@apply text-xs font-bold uppercase leading-3 text-white;
+	@apply flex items-center justify-center;
 }
 
 :host(.variant-positive),
 :host(.variant-unbiased),
 :host(.variant-negative) {
-	@apply rounded px-1 min-w-[1rem];
+	@apply min-w-[1rem] rounded px-1;
 }
 
 :host(.variant-positive) {
@@ -23,7 +23,7 @@
 }
 
 :host(.size-mini) {
-	@apply w-2 h-2 rounded-round p-0 min-w-0;
+	@apply h-2 w-2 min-w-0 rounded-full p-0;
 
 	slot {
 		display: none;
