@@ -1,7 +1,9 @@
 p-dropdown {
-	@apply relative block;
+	p-dropdown-menu-container {
+		@apply hidden;
 
-	.trigger {
-		@apply relative block h-auto w-auto;
+		&[data-show] {
+			@apply flex;
+		}
 	}
 }
