@@ -60,11 +60,11 @@ p-avatar {
 		&[size='medium'],
 		&[size='large'],
 		&[size='xlarge'] {
-			@apply rounded-large;
+			@apply rounded-lg;
 		}
 	}
 
 	&[variant='user'] {
-		@apply rounded-round;
+		@apply rounded-full;
 	}
 }

@@ -1,26 +1,41 @@
 import { Component, Element, h, Host, Prop, State } from '@stencil/core';
+import { cva } from 'class-variance-authority';
+
+const profileContent = cva(['flex h-10 gap-2 items-center w-full'], {
+	variants: {
+		dropdown: {
+			false: 'py-1',
+			true: 'bg-white p-2 shadow-1 border rounded-lg hover:shadow-2 cursor-pointer',
+		},
+		dropdownOpen: {
+			false: 'border-black-teal-100',
+			true: 'shadow-2 border-supportive-lilac-800 ring ring-2 ring-supportive-lilac-100',
+		},
+	},
+});
 
 @Component({
 	tag: 'p-profile',
 	styleUrl: 'profile.component.scss',
-	shadow: true,
 })
 export class Profile {
 	/**
-	 * The variant of the profile
+	 * The position of the dropdown
 	 */
-	@Prop() variant: 'company' | 'user' = 'user';
+	@Prop() dropdownLocation: 'top-end' | 'bottom-end' = 'bottom-end';
 
 	/**
 	 * The size of the profile avatar
 	 */
 	@Prop({ reflect: true }) size:
-		| 'xsmall'
-		| 'small'
-		| 'table'
-		| 'medium'
-		| 'large'
-		| 'xlarge' = 'small';
+		| 'xs'
+		| 'sm'
+		| 'base'
+		| 'lg'
+		| 'xl'
+		| '2xl'
+		| '3xl'
+		| '4xl' = 'base';
 
 	/**
 	 * The host element
@@ -28,34 +43,36 @@ export class Profile {
 	@Element() private _el: HTMLElement;
 
 	@State() private _dropdownOpen = false;
+	@State() private _hasDropdownSlot = false;
+
+	componentWillLoad() {
+		this._hasDropdownSlot = !!this._el.querySelector(
+			':scope > [slot="dropdown"]'
+		);
+	}
 
 	componentWillRender() {
 		this._updateAvatar();
 	}
 
 	render() {
-		const hasDropdownSlot = !!this._el.querySelector(
-			':scope > [slot="dropdown"]'
-		);
-		const content = this._getContent(hasDropdownSlot);
-		const dropdownItems = <slot name='dropdown' />;
+		const content = this._getContent();
+
 		return (
-			<Host
-				class={`p-profile ${hasDropdownSlot && 'has-dropdown'} ${
-					this._dropdownOpen && 'active'
-				}`}
-			>
-				{hasDropdownSlot ? (
+			<Host class='p-profile inline-block'>
+				{this._hasDropdownSlot ? (
 					<p-dropdown
-						class='w-full min-w-0'
+						class='block'
 						strategy='absolute'
-						placement={this.variant === 'user' ? 'top-end' : 'bottom-end'}
+						placement={this.dropdownLocation}
 						applyFullWidth={true}
 						applyMaxWidth={false}
 						onIsOpen={ev => (this._dropdownOpen = ev.detail)}
 					>
 						{content}
-						<div slot='items'>{dropdownItems}</div>
+						<div slot='items'>
+							<slot name='dropdown' />
+						</div>
 					</p-dropdown>
 				) : (
 					content
@@ -64,19 +81,27 @@ export class Profile {
 		);
 	}
 
-	private _getContent(hasDropdownSlot) {
+	private _getContent() {
 		return (
 			<div
-				class='content'
+				class={profileContent({
+					dropdown: this._hasDropdownSlot,
+					dropdownOpen: this._dropdownOpen,
+				})}
 				slot='trigger'
 			>
 				<slot name='avatar' />
-				<div class='name'>
-					<slot name='title' />
-					<slot name='subtitle' />
+				<div class='flex flex-1 flex-col'>
+					<p class='font-sm font-medium'>
+						<slot name='title' />
+					</p>
+					<p class='text-xs text-black-teal-300'>
+						<slot name='subtitle' />
+					</p>
 				</div>
 
-				{hasDropdownSlot && this._getIcon()}
+				<slot name='post-title' />
+				{this._hasDropdownSlot && this._getIcon()}
 			</div>
 		);
 	}
@@ -90,15 +115,14 @@ export class Profile {
 			return;
 		}
 
-		avatar.variant = this.variant ?? avatar.variant;
-		avatar.size = this.size ?? avatar?.size;
+		avatar.size = this._hasDropdownSlot ? 'sm' : avatar.size;
 	}
 
 	private _getIcon() {
 		return (
 			<p-icon
-				class='ml-auto'
-				variant={this.variant === 'company' ? 'chevron' : 'more'}
+				variant='chevron'
+				flip={this._dropdownOpen ? 'vertical' : 'horizontal'}
 			/>
 		);
 	}
