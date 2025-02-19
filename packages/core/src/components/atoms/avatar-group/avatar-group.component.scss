@@ -1,10 +1,4 @@
 p-avatar-group {
-	@apply flex -space-x-1 overflow-hidden items-center;
-
-	p-avatar > img {
-		@apply ring-2 ring-white;
-	}
-
 	p-avatar:nth-child(1) {
 		z-index: 3;
 	}
@@ -15,9 +9,5 @@ p-avatar-group {
 
 	p-avatar:nth-child(3) {
 		z-index: 1;
-	}
-
-	.extra {
-		@apply text-sm text-storm-vague pl-4;
 	}
 }
