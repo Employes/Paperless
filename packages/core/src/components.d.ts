@@ -123,6 +123,8 @@ export namespace Components {
          */
         "variant": 'modal' | 'drawer';
     }
+    interface PBadge {
+    }
     interface PButton {
         /**
           * The type of the button
@@ -1808,6 +1810,12 @@ declare global {
         prototype: HTMLPBackdropElement;
         new (): HTMLPBackdropElement;
     };
+    interface HTMLPBadgeElement extends Components.PBadge, HTMLStencilElement {
+    }
+    var HTMLPBadgeElement: {
+        prototype: HTMLPBadgeElement;
+        new (): HTMLPBadgeElement;
+    };
     interface HTMLPButtonElement extends Components.PButton, HTMLStencilElement {
     }
     var HTMLPButtonElement: {
@@ -2192,6 +2200,7 @@ declare global {
         "p-avatar": HTMLPAvatarElement;
         "p-avatar-group": HTMLPAvatarGroupElement;
         "p-backdrop": HTMLPBackdropElement;
+        "p-badge": HTMLPBadgeElement;
         "p-button": HTMLPButtonElement;
         "p-button-group": HTMLPButtonGroupElement;
         "p-calendar": HTMLPCalendarElement;
@@ -2360,6 +2369,8 @@ declare namespace LocalJSX {
           * The variant of the backdrop
          */
         "variant"?: 'modal' | 'drawer';
+    }
+    interface PBadge {
     }
     interface PButton {
         /**
@@ -4104,6 +4115,7 @@ declare namespace LocalJSX {
         "p-avatar": PAvatar;
         "p-avatar-group": PAvatarGroup;
         "p-backdrop": PBackdrop;
+        "p-badge": PBadge;
         "p-button": PButton;
         "p-button-group": PButtonGroup;
         "p-calendar": PCalendar;
@@ -4178,6 +4190,7 @@ declare module "@stencil/core" {
             "p-avatar": LocalJSX.PAvatar & JSXBase.HTMLAttributes<HTMLPAvatarElement>;
             "p-avatar-group": LocalJSX.PAvatarGroup & JSXBase.HTMLAttributes<HTMLPAvatarGroupElement>;
             "p-backdrop": LocalJSX.PBackdrop & JSXBase.HTMLAttributes<HTMLPBackdropElement>;
+            "p-badge": LocalJSX.PBadge & JSXBase.HTMLAttributes<HTMLPBadgeElement>;
             "p-button": LocalJSX.PButton & JSXBase.HTMLAttributes<HTMLPButtonElement>;
             "p-button-group": LocalJSX.PButtonGroup & JSXBase.HTMLAttributes<HTMLPButtonGroupElement>;
             "p-calendar": LocalJSX.PCalendar & JSXBase.HTMLAttributes<HTMLPCalendarElement>;
