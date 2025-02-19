@@ -18,7 +18,17 @@ import {
 	Prop,
 	Watch,
 } from '@stencil/core';
+import { cva } from 'class-variance-authority';
 import { childOf } from '../../../utils/child-of';
+
+const dropdownContainerClass = cva(['z-dropdown hidden'], {
+	variants: {
+		strategy: {
+			absolute: 'absolute',
+			fixed: 'fixed',
+		},
+	},
+});
 
 @Component({
 	tag: 'p-dropdown',
@@ -122,6 +132,10 @@ export class Dropdown {
 		this._update();
 	}
 
+	componentDidLoad() {
+		this._checkButton();
+	}
+
 	disconnectedCallback() {
 		if (this._cleanup) {
 			this._cleanup();
@@ -137,9 +151,9 @@ export class Dropdown {
 
 	render() {
 		const dropdownContainerProps = {
-			class: `z-dropdown hidden ${
-				this.strategy === 'fixed' ? 'fixed' : 'absolute'
-			}`,
+			class: dropdownContainerClass({
+				strategy: this.strategy,
+			}),
 			ref: el => this._load(el),
 			onClick: () => this._containerClickHandler(),
 			role: 'popover',
@@ -195,11 +209,13 @@ export class Dropdown {
 			return;
 		}
 
-		const children = this._el.querySelectorAll('p-button[slot="trigger"]');
+		const buttons = this._el.querySelectorAll<HTMLPButtonElement>(
+			'p-button[slot="trigger"]'
+		);
 
-		for (let child of [...children]) {
-			(child as any).chevronPosition = this.chevronPosition;
-			(child as any).chevron = this.chevronDirection
+		for (let button of [...buttons]) {
+			(button as any).chevronPosition = this.chevronPosition;
+			(button as any).chevron = this.chevronDirection
 				? this.chevronDirection
 				: this.placement.indexOf('top') >= 0
 				? 'up'
