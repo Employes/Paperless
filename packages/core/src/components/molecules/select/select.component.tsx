@@ -805,7 +805,7 @@ export class Select {
 			content = (
 				<span class='flex items-center gap-2'>
 					<p-avatar
-						size='xsmall'
+						size='xs'
 						src={item[this.avatarKey]}
 						letters={item[this.avatarLettersKey]}
 					></p-avatar>

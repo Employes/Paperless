@@ -3,7 +3,6 @@ import { Component, h, Host, Prop } from '@stencil/core';
 @Component({
 	tag: 'p-avatar-group',
 	styleUrl: 'avatar-group.component.scss',
-	// shadow: true,
 })
 export class AvatarGroup {
 	/**
@@ -13,10 +12,12 @@ export class AvatarGroup {
 
 	render() {
 		return (
-			<Host class="p-avatar-group">
+			<Host class='p-avatar-group flex items-center -space-x-1 overflow-hidden'>
 				<slot />
 
-				{this.extra && <span class="extra">+{this.extra}</span>}
+				{this.extra && (
+					<span class='pl-3 text-sm text-black-teal-300'>+{this.extra}</span>
+				)}
 			</Host>
 		);
 	}

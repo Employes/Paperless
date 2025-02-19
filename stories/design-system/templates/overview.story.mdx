@@ -6,90 +6,85 @@ import { StoryCategories } from '../../categories';
 # Overview page
 
 <Canvas>
-    <div class="min-h-screen-safe">
-        <p-layout class="bg-mystic">
-            <p-navbar slot="sidebar">
-                <p-profile variant="company" slot="company">
-                    <p-avatar slot="avatar" />
-                    <span slot="title">Employes B.V.</span>
-                </p-profile>
-                <p-profile slot="user">
-                    <p-avatar slot="avatar" />
-                    <span slot="title">John Doe</span>
-                    <div slot="dropdown">
-                        <p-profile class="px-2">
-                            <span slot="title">John Doe</span>
-                            <span slot="subtitle">john@doe.com</span>
-                        </p-profile>
-                        <p-divider class="-px-2" />
-                        <p-dropdown-menu-item icon="person">
-                            Account
-                        </p-dropdown-menu-item>
-                        <p-dropdown-menu-item icon="signout">
-                            Sign out
-                        </p-dropdown-menu-item>
-                    </div>
-                </p-profile>
-                <div class="flex flex-col" slot="content">
-                    <p class="mb-2 text-xs font-semibold uppercase text-storm-vague">
-                        Overzicht
-                    </p>
-                    <p-navigation-item icon="person">
-                        Item name
-                    </p-navigation-item>
-                    <p-navigation-item icon="person">
-                        Item name
-                    </p-navigation-item>
-                    <p-navigation-item icon="person">
-                        Item name
-                    </p-navigation-item>
-                </div>
-                <p-dropdown placement="bottom-end" slot="topbar">
-                    <p-avatar size="small" slot="trigger" />
-                    <slot slot="items">
-                        <p-dropdown-menu-item icon="person">
-                            Account
-                        </p-dropdown-menu-item>
-                        <p-dropdown-menu-item icon="signout">
-                            Sign out
-                        </p-dropdown-menu-item>
-                    </slot>
-                </p-dropdown>
-            </p-navbar>
-            <slot slot="content">
-                <div class="flex h-full w-full flex-col gap-6 desktop-xs:gap-8">
-                    <div class="flex w-full items-center justify-between">
-                        <h1 class="text-storm-dark ">Page Title</h1>
-                        {/* <h3 class="text-storm-dark ">Page Title</h3> */}
-                        <p-button icon="plus">New</p-button>
-                    </div>
-                    <p-table
-                        enable-row-selection={false}
-                        selection-key="date"
-                        can-select-key="canSelect"
-                        items='[{"date":"01\/01\/2022","hours":8,"status":"Ingediend", "canSelect": true},{"date":"02\/01\/2022","hours":6.5,"status":"Ingediend", "canSelect": true},{"date":"03\/01\/2022","hours":8,"status":"Goedgekeurd", "canSelect": true},{"date":"08\/01\/2022","hours":8,"status":"Goedgekeurd", "canSelect": true},{"date":"09\/01\/2022","hours":8,"status":"Afgekeurd", "canSelect": true},{"date":"10\/01\/2022","hours":8,"status":"Afgekeurd", "canSelect": true}]'
-                        total={32}
-                    >
-                        <p-table-column
-                            type="th"
-                            name="Datum"
-                            path="date"
-                            sizes={8}
-                        ></p-table-column>
-                        <p-table-column
-                            name="Uren"
-                            path="hours"
-                            align="end"
-                            sizes={2}
-                        ></p-table-column>
-                        <p-table-column
-                            path="status"
-                            align="end"
-                            sizes={2}
-                        ></p-table-column>
-                    </p-table>
-                </div>
-            </slot>
-        </p-layout>
+ <div class='min-h-screen-safe'>
+  <p-layout class='bg-mystic'>
+   <p-navbar slot='sidebar'>
+    <p-profile slot='company'>
+     <p-avatar slot='avatar' />
+     <span slot='title'>Employes B.V.</span>
+    </p-profile>
+    <p-profile slot='user'>
+     <p-avatar slot='avatar' />
+     <span slot='title'>John Doe</span>
+     <div slot='dropdown'>
+      <p-profile class='px-2'>
+       <span slot='title'>John Doe</span>
+       <span slot='subtitle'>john@doe.com</span>
+      </p-profile>
+      <p-divider class='-px-2' />
+      <p-dropdown-menu-item icon='person'>Account</p-dropdown-menu-item>
+      <p-dropdown-menu-item icon='signout'>Sign out</p-dropdown-menu-item>
+     </div>
+    </p-profile>
+    <div
+     class='flex flex-col'
+     slot='content'
+    >
+     <p class='mb-2 text-xs font-semibold uppercase text-storm-vague'>
+      Overzicht
+     </p>
+     <p-navigation-item icon='person'>Item name</p-navigation-item>
+     <p-navigation-item icon='person'>Item name</p-navigation-item>
+     <p-navigation-item icon='person'>Item name</p-navigation-item>
     </div>
+    <p-dropdown
+     placement='bottom-end'
+     slot='topbar'
+    >
+     <p-avatar
+      size='small'
+      slot='trigger'
+     />
+     <slot slot='items'>
+      <p-dropdown-menu-item icon='person'>Account</p-dropdown-menu-item>
+      <p-dropdown-menu-item icon='signout'>Sign out</p-dropdown-menu-item>
+     </slot>
+    </p-dropdown>
+   </p-navbar>
+   <slot slot='content'>
+    <div class='flex h-full w-full flex-col gap-6 desktop-xs:gap-8'>
+     <div class='flex w-full items-center justify-between'>
+      <h1 class='text-storm-dark '>Page Title</h1>
+      {/* <h3 class="text-storm-dark ">Page Title</h3> */}
+      <p-button icon='plus'>New</p-button>
+     </div>
+     <p-table
+      enable-row-selection={false}
+      selection-key='date'
+      can-select-key='canSelect'
+      items='[{"date":"01\/01\/2022","hours":8,"status":"Ingediend", "canSelect": true},{"date":"02\/01\/2022","hours":6.5,"status":"Ingediend", "canSelect": true},{"date":"03\/01\/2022","hours":8,"status":"Goedgekeurd", "canSelect": true},{"date":"08\/01\/2022","hours":8,"status":"Goedgekeurd", "canSelect": true},{"date":"09\/01\/2022","hours":8,"status":"Afgekeurd", "canSelect": true},{"date":"10\/01\/2022","hours":8,"status":"Afgekeurd", "canSelect": true}]'
+      total={32}
+     >
+      <p-table-column
+       type='th'
+       name='Datum'
+       path='date'
+       sizes={8}
+      ></p-table-column>
+      <p-table-column
+       name='Uren'
+       path='hours'
+       align='end'
+       sizes={2}
+      ></p-table-column>
+      <p-table-column
+       path='status'
+       align='end'
+       sizes={2}
+      ></p-table-column>
+     </p-table>
+    </div>
+   </slot>
+  </p-layout>
+ </div>
 </Canvas>

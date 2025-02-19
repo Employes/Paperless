@@ -15,10 +15,10 @@
 
 ## Properties
 
-| Property  | Attribute | Description                    | Type                                                                | Default   |
-| --------- | --------- | ------------------------------ | ------------------------------------------------------------------- | --------- |
-| `size`    | `size`    | The size of the profile avatar | `"large" \| "medium" \| "small" \| "table" \| "xlarge" \| "xsmall"` | `'small'` |
-| `variant` | `variant` | The variant of the profile     | `"company" \| "user"`                                               | `'user'`  |
+| Property           | Attribute           | Description                    | Type                                                                | Default        |
+| ------------------ | ------------------- | ------------------------------ | ------------------------------------------------------------------- | -------------- |
+| `dropdownLocation` | `dropdown-location` | The position of the dropdown   | `"bottom-end" \| "top-end"`                                         | `'bottom-end'` |
+| `size`             | `size`              | The size of the profile avatar | `"2xl" \| "3xl" \| "4xl" \| "base" \| "lg" \| "sm" \| "xl" \| "xs"` | `'base'`       |
 
 
 ## Dependencies
