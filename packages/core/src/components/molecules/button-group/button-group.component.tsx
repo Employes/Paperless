@@ -9,7 +9,7 @@ export class ButtonGroup {
 	/**
 	 * The size of the child buttons
 	 */
-	@Prop() size: 'sm' | 'base' = 'base';
+	@Prop() size: 'sm' | 'base' | 'lg' = 'base';
 
 	/**
 	 * The host element

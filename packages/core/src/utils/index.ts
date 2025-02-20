@@ -1,4 +1,5 @@
 export * from './child-of';
+export * from './icons-deprecated';
 export * from './icons';
 export * from './illustrations';
 export * from './localization';
