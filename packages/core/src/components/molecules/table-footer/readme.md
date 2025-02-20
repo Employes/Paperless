@@ -40,7 +40,7 @@
 - [p-page-size-select](../page-size-select)
 - [p-loader](../../atoms/loader)
 - [p-pagination](../pagination)
-- [p-button](../../atoms/button)
+- [p-button](../button)
 
 ### Graph
 ```mermaid

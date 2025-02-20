@@ -9,7 +9,7 @@
 
 | Property          | Attribute          | Description                                        | Type                        | Default                       |
 | ----------------- | ------------------ | -------------------------------------------------- | --------------------------- | ----------------------------- |
-| `buttonSize`      | `button-size`      | The size of the button                             | `"medium" \| "small"`       | `'small'`                     |
+| `buttonSize`      | `button-size`      | The size of the button                             | `"base" \| "sm"`            | `'sm'`                        |
 | `buttonTemplate`  | --                 | The template for the data view                     | `(value: number) => string` | `this._defaultButtonTemplate` |
 | `chevronPosition` | `chevron-position` | Chevron position                                   | `"end" \| "start"`          | `'start'`                     |
 | `hidden`          | `hidden`           | Wether to hide when there is only 1 page available | `boolean`                   | `false`                       |
@@ -34,7 +34,7 @@
 ### Depends on
 
 - [p-dropdown](../dropdown)
-- [p-button](../../atoms/button)
+- [p-button](../button)
 - [p-dropdown-menu-item](../../atoms/dropdown-menu-item)
 
 ### Graph

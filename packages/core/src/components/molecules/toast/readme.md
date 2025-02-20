@@ -29,7 +29,7 @@
 
 ### Depends on
 
-- [p-button](../../atoms/button)
+- [p-button](../button)
 
 ### Graph
 ```mermaid

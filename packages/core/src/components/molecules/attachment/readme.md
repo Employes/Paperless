@@ -30,7 +30,7 @@
 - [p-icon](../../atoms/icon)
 - [p-loader](../../atoms/loader)
 - [p-input-error](../input-error)
-- [p-button](../../atoms/button)
+- [p-button](../button)
 
 ### Graph
 ```mermaid

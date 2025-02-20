@@ -57,32 +57,24 @@ export class Toast {
 				class={`p-toast variant-${this.variant}`}
 				onClick={() => this._onClick()}
 			>
-				<div class="flex flex-col w-full min-w-0">
-					<p class="font-semibold text-storm">
-						{this.header?.length ? (
-							this.header
-						) : (
-							<slot name="header" />
-						)}
+				<div class='flex w-full min-w-0 flex-col'>
+					<p class='font-semibold text-storm'>
+						{this.header?.length ? this.header : <slot name='header' />}
 					</p>
-					<p class="text-sm text-storm-medium w-full">
-						{this.content?.length ? (
-							this.content
-						) : (
-							<slot name="content" />
-						)}
+					<p class='w-full text-sm text-storm-medium'>
+						{this.content?.length ? this.content : <slot name='content' />}
 					</p>
 				</div>
 
 				{this.enableAction && (
 					<p-button
-						variant="secondary"
+						variant='secondary'
 						iconOnly
-						size="small"
+						size='sm'
 						icon={this.actionIcon}
 						iconFlip={this.actionIconFlip}
 						iconRotate={this.actionIconRotate}
-						class="flex-shrink-0"
+						class='flex-shrink-0'
 					/>
 				)}
 			</Host>
