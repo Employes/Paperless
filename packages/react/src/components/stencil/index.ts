@@ -37,6 +37,7 @@ export const PFloatingMenuItem = /*@__PURE__*/createReactComponent<JSX.PFloating
 export const PHelper = /*@__PURE__*/createReactComponent<JSX.PHelper, HTMLPHelperElement>('p-helper');
 export const PIbanIcon = /*@__PURE__*/createReactComponent<JSX.PIbanIcon, HTMLPIbanIconElement>('p-iban-icon');
 export const PIcon = /*@__PURE__*/createReactComponent<JSX.PIcon, HTMLPIconElement>('p-icon');
+export const PIconDeprecated = /*@__PURE__*/createReactComponent<JSX.PIconDeprecated, HTMLPIconDeprecatedElement>('p-icon-deprecated');
 export const PIllustration = /*@__PURE__*/createReactComponent<JSX.PIllustration, HTMLPIllustrationElement>('p-illustration');
 export const PInfoPanel = /*@__PURE__*/createReactComponent<JSX.PInfoPanel, HTMLPInfoPanelElement>('p-info-panel');
 export const PInputError = /*@__PURE__*/createReactComponent<JSX.PInputError, HTMLPInputErrorElement>('p-input-error');

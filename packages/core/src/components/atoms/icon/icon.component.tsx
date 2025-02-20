@@ -1,9 +1,36 @@
 import { Component, h, Host, Prop } from '@stencil/core';
-import { RotateOptions, TextSizeOptions } from '../../../types/tailwind';
-import icons from '../../../utils/icons';
+import { cva } from 'class-variance-authority';
+import { TextSizeOptions } from '../../../types/tailwind';
+import { icons } from '../../../utils/icons';
 
 export type IconVariant = keyof typeof icons;
-export type IconFlipOptions = 'horizontal' | 'vertical';
+export type IconFlipOptions = 'none' | 'horizontal' | 'vertical';
+
+const icon = cva(['p-icon flex'], {
+	variants: {
+		flip: {
+			none: null,
+			horizontal: 'scale-x-flip',
+			vertical: 'scale-y-flip',
+		},
+		size: {
+			auto: 'text-auto',
+			xxs: 'text-xxs',
+			xs: 'text-xs',
+			sm: 'text-sm',
+			base: 'text-base',
+			lg: 'text-lg',
+			xl: 'text-xl',
+			'2xl': 'text-2xl',
+			'3xl': 'text-3xl',
+			'4xl': 'text-4xl',
+		},
+		transform: {
+			true: 'transform-gpu scale-[0.99]',
+			false: null,
+		},
+	},
+});
 
 @Component({
 	tag: 'p-icon',
@@ -24,55 +51,27 @@ export class Icon {
 	/**
 	 * Wether to rotate the icon x degrees
 	 */
-	@Prop() rotate: RotateOptions = 0;
+	@Prop() rotate: number = 0;
 
 	/**
 	 * Wether to flip the icon horizontally or vertically
 	 */
-	@Prop() flip: IconFlipOptions = null;
+	@Prop() flip: IconFlipOptions = 'none';
 
 	render() {
-		const icon = icons[this.variant];
-
-		const styles = {
-			'p-icon flex': true,
-			'text-auto': this.size === 'auto',
-			'text-xxs': this.size === 'xxs',
-			'text-xs': this.size === 'xs',
-			'text-sm': this.size === 'sm',
-			'text-base': this.size === 'base',
-			'text-lg': this.size === 'lg',
-			'text-xl': this.size === 'xl',
-			'text-2xl': this.size === '2xl',
-			'text-3xl': this.size === '3xl',
-			'text-4xl': this.size === '4xl',
-			transform: !!this.rotate || !!this.flip,
-			'scale-x-flip': this.flip === 'horizontal',
-			'scale-y-flip': this.flip === 'vertical',
-			'rotate-0': this.rotate === 0,
-			'rotate-25': this.rotate === 25,
-			'rotate-45': this.rotate === 45,
-			'rotate-90': this.rotate === 90,
-			'rotate-135': this.rotate === 135,
-			'rotate-180': this.rotate === 180,
-			'rotate-225': this.rotate === 225,
-			'rotate-270': this.rotate === 270,
-			'rotate-315': this.rotate === 315,
-			'-rotate-0': this.rotate === -0,
-			'-rotate-25': this.rotate === -25,
-			'-rotate-45': this.rotate === -45,
-			'-rotate-90': this.rotate === -90,
-			'-rotate-135': this.rotate === -135,
-			'-rotate-180': this.rotate === -180,
-			'-rotate-225': this.rotate === -225,
-			'-rotate-270': this.rotate === -270,
-			'-rotate-315': this.rotate === -315,
-		};
+		const svg = icons[this.variant];
 
 		return (
 			<Host
-				class={styles}
-				innerHTML={icon}
+				class={icon({
+					flip: this.flip,
+					size: this.size,
+					transform: this.flip !== 'none' || this.rotate > 0 || this.rotate < 0,
+				})}
+				style={{
+					'--tw-rotate': `${this.rotate}deg`,
+				}}
+				innerHTML={svg}
 			></Host>
 		);
 	}
