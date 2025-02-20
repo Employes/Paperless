@@ -425,7 +425,7 @@ export class Select {
 
 						{this.showChevron && (
 							<p-icon
-								variant='chevron'
+								variant='caret'
 								slot='suffix'
 							/>
 						)}
