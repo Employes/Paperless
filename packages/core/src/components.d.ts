@@ -137,7 +137,7 @@ export namespace Components {
         /**
           * Position of the button in the button group, mostly un-used if not in a group
          */
-        "buttonGroupPosition": 'start' | 'middle' | 'end' | 'none';
+        "buttonGroupPosition": 'start' | 'center' | 'end' | 'none';
         /**
           * Wether to show a chevron or not
          */
@@ -185,7 +185,7 @@ export namespace Components {
         /**
           * The size of the button
          */
-        "size": 'small' | 'medium';
+        "size": 'sm' | 'base' | 'lg';
         /**
           * Target in case of "text" version
          */
@@ -201,13 +201,13 @@ export namespace Components {
         /**
           * The variant of the button
          */
-        "variant": 'primary' | 'secondary' | 'text';
+        "variant": 'primary' | 'secondary' | 'transparent' | 'text';
     }
     interface PButtonGroup {
         /**
           * The size of the child buttons
          */
-        "size": 'medium' | 'small';
+        "size": 'sm' | 'base' | 'lg';
     }
     interface PCalendar {
         /**
@@ -2397,7 +2397,7 @@ declare namespace LocalJSX {
         /**
           * Position of the button in the button group, mostly un-used if not in a group
          */
-        "buttonGroupPosition"?: 'start' | 'middle' | 'end' | 'none';
+        "buttonGroupPosition"?: 'start' | 'center' | 'end' | 'none';
         /**
           * Wether to show a chevron or not
          */
@@ -2449,7 +2449,7 @@ declare namespace LocalJSX {
         /**
           * The size of the button
          */
-        "size"?: 'small' | 'medium';
+        "size"?: 'sm' | 'base' | 'lg';
         /**
           * Target in case of "text" version
          */
@@ -2465,13 +2465,13 @@ declare namespace LocalJSX {
         /**
           * The variant of the button
          */
-        "variant"?: 'primary' | 'secondary' | 'text';
+        "variant"?: 'primary' | 'secondary' | 'transparent' | 'text';
     }
     interface PButtonGroup {
         /**
           * The size of the child buttons
          */
-        "size"?: 'medium' | 'small';
+        "size"?: 'sm' | 'base' | 'lg';
     }
     interface PCalendar {
         /**
@@ -3210,7 +3210,7 @@ declare namespace LocalJSX {
         /**
           * The size of the button
          */
-        "buttonSize"?: 'small' | 'medium';
+        "buttonSize"?: 'sm' | 'base';
         /**
           * The template for the data view
          */

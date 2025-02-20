@@ -1,5 +1,5 @@
 import { Component, Element, h, Host, Listen, Prop } from '@stencil/core';
-import { Button } from '../../atoms/button/button.component';
+import { Button } from '../button/button.component';
 
 @Component({
 	tag: 'p-button-group',
@@ -9,7 +9,7 @@ export class ButtonGroup {
 	/**
 	 * The size of the child buttons
 	 */
-	@Prop() size: 'medium' | 'small' = 'medium';
+	@Prop() size: 'sm' | 'base' = 'base';
 
 	/**
 	 * The host element
@@ -56,7 +56,7 @@ export class ButtonGroup {
 			}
 
 			// rest
-			button.buttonGroupPosition = 'middle';
+			button.buttonGroupPosition = 'center';
 		}
 	}
 }

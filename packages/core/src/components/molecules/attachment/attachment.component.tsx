@@ -43,28 +43,31 @@ export class Attachment {
 	delete: EventEmitter<any>;
 
 	render() {
-		let prefix = <p-icon variant="attachment" />;
+		let prefix = <p-icon variant='attachment' />;
 
 		if (this.loading) {
 			prefix = <p-loader />;
 		}
 
 		if (this.error) {
-			prefix = <p-icon variant="warning" class="text-negative" />;
+			prefix = (
+				<p-icon
+					variant='warning'
+					class='text-negative'
+				/>
+			);
 		}
 
 		return (
-			<Host class="p-attachment flex items-start gap-4">
+			<Host class='p-attachment flex items-start gap-4'>
 				<div
 					class={`flex h-8 min-w-0 flex-1 items-center justify-start gap-2 rounded-lg bg-mystic px-2 ${
-						this.error?.length
-							? 'text-negative'
-							: 'text-storm-medium'
+						this.error?.length ? 'text-negative' : 'text-storm-medium'
 					}`}
 				>
 					{prefix}
 
-					<span class="min-w-0 flex-1 overflow-hidden text-ellipsis whitespace-nowrap">
+					<span class='min-w-0 flex-1 overflow-hidden text-ellipsis whitespace-nowrap'>
 						<slot />
 					</span>
 
@@ -72,17 +75,14 @@ export class Attachment {
 				</div>
 
 				<p-button
-					variant="secondary"
+					variant='secondary'
 					iconOnly={true}
 					icon={this.mode === 'read' ? 'download' : 'trash'}
 					disabled={this.loading}
 					loading={this.mode === 'read' && this.downloading}
-					size="small"
+					size='sm'
 					onOnClick={() =>
-						(this.mode === 'read'
-							? this.download
-							: this.delete
-						).emit()
+						(this.mode === 'read' ? this.download : this.delete).emit()
 					}
 				/>
 			</Host>
