@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.3](https://github.com/employes/paperless/compare/v2.0.1-beta.2...v2.0.1-beta.3) (2025-02-20)
+
+
+### Bug Fixes
+
+* **serverless:** Set correct certificate ARN ([7ff6723](https://github.com/employes/paperless/commit/7ff672335fc764e945d3017072b9a80ac2ce835b))
+
+
+
+
+
 ## [2.0.1-beta.2](https://github.com/employes/paperless/compare/v1.65.0...v2.0.1-beta.2) (2025-02-20)
 
 
