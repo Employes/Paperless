@@ -862,10 +862,6 @@ export namespace Components {
     }
     interface PNavbar {
         /**
-          * The text to display for the close button
-         */
-        "closeText": string;
-        /**
           * The text to display for the menu button & sidebar title
          */
         "menuText": string;
@@ -3181,9 +3177,6 @@ declare namespace LocalJSX {
         "showClose"?: boolean;
     }
     interface PNavbar {
-        /**
-          * The text to display for the close button
-         */
         /**
           * The text to display for the menu button & sidebar title
          */
