@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+
+## [2.0.1-beta.2](https://github.com/ionic-team/stencil-component-starter/compare/v1.65.0...v2.0.1-beta.2) (2025-02-20)
+
+
+### Features
+
+* **atmos:** Add navigation-title component ([247baf9](https://github.com/ionic-team/stencil-component-starter/commit/247baf9099d37f648ec2523b362bea0c2197f256))
+* **atoms/avatar:** New branding implementation ([85974d1](https://github.com/ionic-team/stencil-component-starter/commit/85974d16c79d44ec5c57c601f85009b5c7d66e02))
+* **atoms/backdrop:** New branding implementation ([aff34d7](https://github.com/ionic-team/stencil-component-starter/commit/aff34d72843a8b54574b122a5ac2d5dec2fbfcb5))
+* **atoms/dropdown-menu/container:** New branding implementation ([0d9d794](https://github.com/ionic-team/stencil-component-starter/commit/0d9d7941584a571e1fe098e265e21c14fda78976))
+* **atoms/dropdown-menu/item:** New branding implementation ([fdf824c](https://github.com/ionic-team/stencil-component-starter/commit/fdf824c539cafa4fa4ee78c3deb00ee48a8b36d4))
+* **atoms/icon:** New icons and marked old as deprecated ([4061e96](https://github.com/ionic-team/stencil-component-starter/commit/4061e9653b969b24a41991af077fb0fc719a335c))
+* **atoms:** Add badge component ([d62289a](https://github.com/ionic-team/stencil-component-starter/commit/d62289af12a4d77be8044e250e9277e7b2523faf))
+* **molecules/button:** New rebranding implementation ([d2926b2](https://github.com/ionic-team/stencil-component-starter/commit/d2926b2327a799d41d58ed8e1827547f4235f0ce))
+* **molecules/dropdown:** New branding implementation ([6672383](https://github.com/ionic-team/stencil-component-starter/commit/667238369d55c517a545efc41e966376fa68cb74))
+* **molecules/navigation-item:** New branding implementation ([301672e](https://github.com/ionic-team/stencil-component-starter/commit/301672e4590228a22bceed7b93d11016c6341f27))
+* New tailwindconfiguration ([42d98ef](https://github.com/ionic-team/stencil-component-starter/commit/42d98ef0a5d25d73498f91aa2a30aee24d041716))
+* **organisms/navbar:** New branding implementation ([affa2a5](https://github.com/ionic-team/stencil-component-starter/commit/affa2a5246c4813baea0beaf0b920ff9fab810bc))
+
+
+
+
+
 # [1.66.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.65.0...v1.66.0) (2025-03-04)
 
 
