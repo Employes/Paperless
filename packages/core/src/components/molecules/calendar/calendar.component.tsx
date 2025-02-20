@@ -194,14 +194,14 @@ export class Calendar {
 
 		// normalize all to date
 		this._disabledDates = disabledDates
-			.map((date) => {
+			.map(date => {
 				if (typeof date === 'string') {
 					return new Date(date);
 				}
 
 				return date;
 			})
-			.filter((date) => isValid(date));
+			.filter(date => isValid(date));
 	}
 
 	render() {
@@ -230,15 +230,16 @@ export class Calendar {
 	private _getDayView() {
 		const daysInMonth = this._generateDaysInMonth();
 		return (
-			<div class="view-day">
-				<div class="header">
+			<div class='view-day'>
+				<div class='header'>
 					<div
-						class={`nav ${
-							!this._canSetAmount('month', -1) && 'disabled'
-						}`}
+						class={`nav ${!this._canSetAmount('month', -1) && 'disabled'}`}
 						onClick={() => this._changeMonth(-1)}
 					>
-						<p-icon variant="chevron" rotate={90} />
+						<p-icon
+							variant='caret'
+							rotate={90}
+						/>
 					</div>
 					<div>
 						<span
@@ -249,39 +250,32 @@ export class Calendar {
 						</span>
 						<span
 							onClick={() => this._changeView('year')}
-							class={`year ${
-								!this._canChangeView('year') && 'disabled'
-							}`}
+							class={`year ${!this._canChangeView('year') && 'disabled'}`}
 						>
 							{getYear(this._viewDate)}
 						</span>
 					</div>
 					<div
-						class={`nav ${
-							!this._canSetAmount('month', 1) && 'disabled'
-						}`}
+						class={`nav ${!this._canSetAmount('month', 1) && 'disabled'}`}
 						onClick={() => this._changeMonth(1)}
 					>
-						<p-icon variant="chevron" rotate={-90} />
+						<p-icon
+							variant='caret'
+							rotate={-90}
+						/>
 					</div>
 				</div>
-				<div class="dates">
-					{this._weekDays.map((weekday) => (
-						<span>
-							{format(
-								addDays(new Date(2022, 7, 1), weekday),
-								'eee'
-							)}
-						</span>
+				<div class='dates'>
+					{this._weekDays.map(weekday => (
+						<span>{format(addDays(new Date(2022, 7, 1), weekday), 'eee')}</span>
 					))}
-					{daysInMonth.map((day) => {
+					{daysInMonth.map(day => {
 						return (
 							<time
 								class={`day ${day.active && 'active'} ${
 									day.disabled && 'disabled'
 								} ${day.current && 'current'} ${
-									day.offset !== false &&
-									`col-start-${day.offset}`
+									day.offset !== false && `col-start-${day.offset}`
 								}`}
 								onClick={() => this._setValue(day.date)}
 							>
@@ -297,37 +291,37 @@ export class Calendar {
 	private _getMonthView() {
 		const months = this._generateMonths();
 		return (
-			<div class="view-month">
-				<div class="header">
+			<div class='view-month'>
+				<div class='header'>
 					<div
-						class={`nav ${
-							!this._canSetAmount('year', -1) && 'disabled'
-						}`}
+						class={`nav ${!this._canSetAmount('year', -1) && 'disabled'}`}
 						onClick={() => this._changeYear(-1)}
 					>
-						<p-icon variant="chevron" rotate={90} />
+						<p-icon
+							variant='caret'
+							rotate={90}
+						/>
 					</div>
 					<div>
 						<span
 							onClick={() => this._changeView('year')}
-							class={`year ${
-								!this._canChangeView('year') && 'disabled'
-							}`}
+							class={`year ${!this._canChangeView('year') && 'disabled'}`}
 						>
 							{getYear(this._viewDate)}
 						</span>
 					</div>
 					<div
-						class={`nav ${
-							!this._canSetAmount('year', 1) && 'disabled'
-						}`}
+						class={`nav ${!this._canSetAmount('year', 1) && 'disabled'}`}
 						onClick={() => this._changeYear(1)}
 					>
-						<p-icon variant="chevron" rotate={-90} />
+						<p-icon
+							variant='caret'
+							rotate={-90}
+						/>
 					</div>
 				</div>
-				<div class="items">
-					{months.map((month) => (
+				<div class='items'>
+					{months.map(month => (
 						<div
 							onClick={() => this._setMonth(month.month)}
 							class={`month ${month.active && 'active'} ${
@@ -345,16 +339,16 @@ export class Calendar {
 	private _getYearView() {
 		const years = this._generateYears();
 		return (
-			<div class="view-year">
-				<div class="header">
+			<div class='view-year'>
+				<div class='header'>
 					<div>
-						<span class="year disabled">
+						<span class='year disabled'>
 							{years?.[0].year} - {years?.[years.length - 1].year}
 						</span>
 					</div>
 				</div>
-				<div class="items">
-					{years.map((year) => (
+				<div class='items'>
+					{years.map(year => (
 						<div
 							onClick={() => this._setYear(year.year)}
 							class={`year ${year.active && 'active'} ${
@@ -438,7 +432,7 @@ export class Calendar {
 	private _generateDaysInMonth() {
 		const days = Array.from(Array(getDaysInMonth(this._viewDate)).keys());
 
-		return days.map((day) => {
+		return days.map(day => {
 			day = day + 1;
 			const date = setDate(this._viewDate, day);
 
@@ -458,9 +452,8 @@ export class Calendar {
 		return (
 			(isBefore(day, this._minDate) && !isSameDay(day, this._maxDate)) ||
 			(isAfter(day, this._maxDate) && !isSameDay(day, this._maxDate)) ||
-			((getDay(day) === 0 || getDay(day) === 6) &&
-				this.disableWeekends) ||
-			this._disabledDates.findIndex((date) => isSameDay(date, day)) >= 0
+			((getDay(day) === 0 || getDay(day) === 6) && this.disableWeekends) ||
+			this._disabledDates.findIndex(date => isSameDay(date, day)) >= 0
 		);
 	}
 
@@ -468,7 +461,7 @@ export class Calendar {
 		const year = getYear(this._viewDate);
 		const months = Array.from(Array(12).keys());
 
-		return months.map((month) => {
+		return months.map(month => {
 			const date = new Date(year, month, 1);
 			return {
 				month,
@@ -485,7 +478,7 @@ export class Calendar {
 		const maxYear = getYear(this._maxDate) + 1;
 		const minYear = getYear(this._minDate);
 
-		return Array.from(Array(maxYear - minYear).keys()).map((index) => {
+		return Array.from(Array(maxYear - minYear).keys()).map(index => {
 			const year = minYear + index;
 			return {
 				year,
@@ -556,10 +549,7 @@ export class Calendar {
 		if (type === 'year') {
 			let newDate = addYears(this._viewDate, amount);
 			const year = getYear(newDate);
-			if (
-				year < getYear(this._minDate) ||
-				year > getYear(this._maxDate)
-			) {
+			if (year < getYear(this._minDate) || year > getYear(this._maxDate)) {
 				return false;
 			}
 		}

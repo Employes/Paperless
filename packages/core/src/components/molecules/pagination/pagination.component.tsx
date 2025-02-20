@@ -60,7 +60,7 @@ export class Pagination {
 					this.hideOnSinglePage && this._set?.length === 3 && 'hidden'
 				}`}
 			>
-				{this._set?.map((p) => {
+				{this._set?.map(p => {
 					if (p.type === 'previous' || p.type === 'next') {
 						return (
 							<p-pagination-item
@@ -174,17 +174,27 @@ export class Pagination {
 
 		const previous = {
 			type: 'previous',
-			value: <p-icon variant="chevron" rotate={90} />,
+			value: (
+				<p-icon
+					variant='caret'
+					rotate={90}
+				/>
+			),
 		};
 
 		const next = {
 			type: 'next',
-			value: <p-icon variant="chevron" rotate={-90} />,
+			value: (
+				<p-icon
+					variant='caret'
+					rotate={-90}
+				/>
+			),
 		};
 
 		// Disable page range, display all the pages
 		if (range === null) {
-			const p = this._pages.map((p) => ({
+			const p = this._pages.map(p => ({
 				type: 'page',
 				value: p,
 			}));

@@ -1,0 +1,92 @@
+import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
+import { StoryCategories } from '../../categories';
+import IconDocs from '../../../packages/core/src/components/atoms/icon-deprecated/readme.md';
+import { iconsDeprecated } from '../../../packages/core/src/utils/icons-deprecated';
+
+<Meta title={`${StoryCategories.Atoms}/Icon Deprecated`} />
+
+<IconDocs />
+
+# Examples
+
+### Variants
+
+<Canvas>
+	<table class='w-full table-fixed'>
+		<tr>
+			<th class='py-2 text-start'>Icon</th>
+			<th class='py-2 text-start'>Variant</th>
+			<th class='py-2 text-start'>Fontawesome</th>
+		</tr>
+		{Object.keys(iconsDeprecated).map(icon => (
+			<tr class='group border-b border-b-mystic-dark'>
+				<td class='py-2'>
+					<p-icon-deprecated
+						key={icon}
+						variant={icon}
+						class='text-3xl text-storm-vague group-hover:text-indigo'
+					></p-icon-deprecated>
+				</td>
+				<td class='py-2 group-hover:font-semibold'>{icon}</td>
+				<td class='py-2'>
+					{icon.indexOf('fa') === 0 ? (
+						<p-icon-deprecated
+							variant='checkmark'
+							class='text-positive'
+						/>
+					) : (
+						''
+					)}
+				</td>
+			</tr>
+		))}
+	</table>
+</Canvas>
+
+### Flipping
+
+#### Horizontal
+
+<Canvas>
+	<div class='flex'>
+		<p-icon-deprecated
+			variant='arrow'
+			flip='horizontal'
+		/>
+	</div>
+</Canvas>
+
+#### Vertical
+
+<Canvas>
+	<div class='flex'>
+		<p-icon-deprecated
+			variant='person'
+			flip='vertical'
+		/>
+	</div>
+</Canvas>
+
+### Rotation
+
+#### 45 degrees
+
+<Canvas>
+	<div class='flex'>
+		<p-icon-deprecated
+			variant='arrow'
+			rotate={45}
+		/>
+	</div>
+</Canvas>
+
+#### -25 degrees
+
+<Canvas>
+	<div class='flex'>
+		<p-icon-deprecated
+			variant='arrow'
+			rotate={-25}
+		/>
+	</div>
+</Canvas>
