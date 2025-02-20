@@ -892,6 +892,8 @@ export namespace Components {
          */
         "target": string;
     }
+    interface PNavigationTitle {
+    }
     interface PPageSizeSelect {
         /**
           * The size of the button
@@ -2054,6 +2056,12 @@ declare global {
         prototype: HTMLPNavigationItemElement;
         new (): HTMLPNavigationItemElement;
     };
+    interface HTMLPNavigationTitleElement extends Components.PNavigationTitle, HTMLStencilElement {
+    }
+    var HTMLPNavigationTitleElement: {
+        prototype: HTMLPNavigationTitleElement;
+        new (): HTMLPNavigationTitleElement;
+    };
     interface HTMLPPageSizeSelectElement extends Components.PPageSizeSelect, HTMLStencilElement {
     }
     var HTMLPPageSizeSelectElement: {
@@ -2254,6 +2262,7 @@ declare global {
         "p-modal-header": HTMLPModalHeaderElement;
         "p-navbar": HTMLPNavbarElement;
         "p-navigation-item": HTMLPNavigationItemElement;
+        "p-navigation-title": HTMLPNavigationTitleElement;
         "p-page-size-select": HTMLPPageSizeSelectElement;
         "p-pagination": HTMLPPaginationElement;
         "p-pagination-item": HTMLPPaginationItemElement;
@@ -3175,7 +3184,6 @@ declare namespace LocalJSX {
         /**
           * The text to display for the close button
          */
-        "closeText"?: string;
         /**
           * The text to display for the menu button & sidebar title
          */
@@ -3206,6 +3214,8 @@ declare namespace LocalJSX {
           * The target of the navigation item
          */
         "target"?: string;
+    }
+    interface PNavigationTitle {
     }
     interface PPageSizeSelect {
         /**
@@ -4185,6 +4195,7 @@ declare namespace LocalJSX {
         "p-modal-header": PModalHeader;
         "p-navbar": PNavbar;
         "p-navigation-item": PNavigationItem;
+        "p-navigation-title": PNavigationTitle;
         "p-page-size-select": PPageSizeSelect;
         "p-pagination": PPagination;
         "p-pagination-item": PPaginationItem;
@@ -4260,6 +4271,7 @@ declare module "@stencil/core" {
             "p-modal-header": LocalJSX.PModalHeader & JSXBase.HTMLAttributes<HTMLPModalHeaderElement>;
             "p-navbar": LocalJSX.PNavbar & JSXBase.HTMLAttributes<HTMLPNavbarElement>;
             "p-navigation-item": LocalJSX.PNavigationItem & JSXBase.HTMLAttributes<HTMLPNavigationItemElement>;
+            "p-navigation-title": LocalJSX.PNavigationTitle & JSXBase.HTMLAttributes<HTMLPNavigationTitleElement>;
             "p-page-size-select": LocalJSX.PPageSizeSelect & JSXBase.HTMLAttributes<HTMLPPageSizeSelectElement>;
             "p-pagination": LocalJSX.PPagination & JSXBase.HTMLAttributes<HTMLPPaginationElement>;
             "p-pagination-item": LocalJSX.PPaginationItem & JSXBase.HTMLAttributes<HTMLPPaginationItemElement>;
