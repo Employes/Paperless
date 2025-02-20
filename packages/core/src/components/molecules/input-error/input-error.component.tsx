@@ -19,21 +19,19 @@ export class InputError {
 
 	render() {
 		return (
-			<Host class="p-input-error">
+			<Host class='p-input-error'>
 				<p-tooltip
-					variant="error"
+					variant='error'
 					content={this.error}
 					show={this.forceShowTooltip}
-					onIsOpen={(ev) => (this._showTooltip = ev.detail)}
+					onIsOpen={ev => (this._showTooltip = ev.detail)}
 				>
 					<p-icon
 						class={`${
-							this._showTooltip
-								? 'text-negative'
-								: 'text-negative-light'
+							this._showTooltip ? 'text-negative' : 'text-negative-light'
 						} hover:text-negative`}
-						slot="trigger"
-						variant="explanation"
+						slot='trigger'
+						variant='question-circle'
 					/>
 				</p-tooltip>
 			</Host>

@@ -16,9 +16,9 @@
 
 ## Properties
 
-| Property | Attribute | Description                   | Type             | Default  |
-| -------- | --------- | ----------------------------- | ---------------- | -------- |
-| `size`   | `size`    | The size of the child buttons | `"base" \| "sm"` | `'base'` |
+| Property | Attribute | Description                   | Type                     | Default  |
+| -------- | --------- | ----------------------------- | ------------------------ | -------- |
+| `size`   | `size`    | The size of the child buttons | `"base" \| "lg" \| "sm"` | `'base'` |
 
 
 ----------------------------------------------
