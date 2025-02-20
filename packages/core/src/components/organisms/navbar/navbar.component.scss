@@ -1,83 +1,14 @@
-@import '../../../style/mixins';
-
 :host {
-	@apply w-full max-h-screen-safe;
-	@apply layout-1280:w-60 layout-1680:w-72;
-
-	.sidebar,
-	.sidebar .company,
-	.sidebar .content,
-	.sidebar .user,
-	.userbar {
-		@apply flex w-full flex-col;
-	}
-
-	.sidebar,
-	.top-bar {
-		@apply bg-white;
-		@apply border-0  border-solid border-mystic-dark #{!important};
-	}
-
-	.sidebar {
-		@apply fixed left-0 top-0 z-navbar h-screen w-60 bg-white;
-		@apply layout-1280:relative layout-1280:z-0 layout-1280:h-full layout-1280:w-full;
-		@apply gap-6;
-
-		@apply will-change-transform;
-		@apply -translate-x-full transform-gpu layout-1280:translate-x-0;
-
-		@apply py-4;
-
-		padding-top: calc(env(safe-area-inset-top, 0) + 1rem);
-
-		@apply border-r #{!important};
-
-		@apply transition-all;
-
-		.company,
-		.content,
-		.user,
-		.header {
-			@apply px-4;
-		}
-
-		.header {
-			@apply flex w-full items-center justify-between;
-			@apply layout-1280:hidden;
-		}
-
-		.content {
-			@apply overflow-y-auto;
-
-			@include scrollbarY();
-		}
-
-		.user {
-			@apply mt-auto hidden;
-			@apply layout-1280:flex;
-		}
+	.safe-sidebar {
+		padding-top: calc(env(safe-area-inset-top, 0) + 1rem) !important;
 
 		&.show {
-			--tw-translate-x: env(safe-area-inset-left, 0);
+			--tw-translate-x: env(safe-area-inset-left, 0) !important;
 		}
 	}
 
-	.top-bar {
-		@apply relative z-navbar-topbar flex w-full justify-between px-4 py-2;
-
-		padding-top: calc(env(safe-area-inset-top, 0) + 0.5rem);
-		height: calc(env(safe-area-inset-top, 0) + 3rem);
-
-		@apply border-b #{!important};
-
-		@apply layout-1280:hidden;
-	}
-
-	p-backdrop {
-		@apply hidden;
-
-		&.show {
-			@apply block;
-		}
+	.safe-topbar {
+		padding-top: calc(env(safe-area-inset-top, 0) + 1rem) !important;
+		height: calc(env(safe-area-inset-top, 0) + 4rem);
 	}
 }

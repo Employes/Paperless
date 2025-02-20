@@ -5,10 +5,9 @@
 
 ## Properties
 
-| Property    | Attribute    | Description                                             | Type     | Default   |
-| ----------- | ------------ | ------------------------------------------------------- | -------- | --------- |
-| `closeText` | `close-text` | The text to display for the close button                | `string` | `'Close'` |
-| `menuText`  | `menu-text`  | The text to display for the menu button & sidebar title | `string` | `'Menu'`  |
+| Property   | Attribute   | Description                                             | Type     | Default  |
+| ---------- | ----------- | ------------------------------------------------------- | -------- | -------- |
+| `menuText` | `menu-text` | The text to display for the menu button & sidebar title | `string` | `'Menu'` |
 
 
 ## Dependencies
