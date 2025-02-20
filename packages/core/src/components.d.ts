@@ -111,6 +111,10 @@ export namespace Components {
          */
         "applyBlur": boolean;
         /**
+          * The class passed to the component
+         */
+        "class": string;
+        /**
           * Wether the backdrop is closing
          */
         "closing": boolean;
@@ -2370,6 +2374,10 @@ declare namespace LocalJSX {
           * Wether to apply blur on the background of the backdrop
          */
         "applyBlur"?: boolean;
+        /**
+          * The class passed to the component
+         */
+        "class"?: string;
         /**
           * Wether the backdrop is closing
          */
