@@ -89,7 +89,7 @@
 - [p-table-row](../../molecules/table-row)
 - [p-table-cell](../../molecules/table-cell)
 - [p-tooltip](../../atoms/tooltip)
-- [p-button](../../atoms/button)
+- [p-button](../../molecules/button)
 - [p-illustration](../../atoms/illustration)
 
 ### Graph

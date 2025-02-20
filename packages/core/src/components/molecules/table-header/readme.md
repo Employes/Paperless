@@ -49,7 +49,7 @@
 - [p-segment-container](../../atoms/segment-container)
 - [p-segment-item](../../atoms/segment-item)
 - [p-input-group](../input-group)
-- [p-button](../../atoms/button)
+- [p-button](../button)
 - [p-label](../../atoms/label)
 
 ### Graph
