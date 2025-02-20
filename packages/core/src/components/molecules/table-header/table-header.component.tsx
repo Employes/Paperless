@@ -248,7 +248,7 @@ export class TableHeader {
 						<p-button
 							icon='filter'
 							variant='secondary'
-							size='small'
+							size='sm'
 							class={`w-full ${
 								this.enableFilterDesktop
 									? 'desktop-xs:w-auto'
@@ -289,7 +289,7 @@ export class TableHeader {
 			<p-button
 				class={mobile ? 'w-full' : 'hidden desktop-xs:flex'}
 				icon={this.actionIcon}
-				size='small'
+				size='sm'
 				disabled={!this.canUseAction}
 				onClick={() => this.action.emit()}
 				loading={this.actionLoading}
