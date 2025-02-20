@@ -8,7 +8,7 @@ plugins:
 custom:
   environment: ${opt:stage, self:provider.stage}
   hostedZoneName: employes.nl
-  certificateArn: arn:aws:acm:us-east-1:551346170247:certificate/87085536-3083-43ef-ad4a-5cfc11befb10
+  certificateArn: arn:aws:acm:eu-west-1:551346170247:certificate/a7d0d792-82a7-4794-b0c4-efdbbc0d08dc
   production:
     bucketName: paperless.employes.nl
   beta:
