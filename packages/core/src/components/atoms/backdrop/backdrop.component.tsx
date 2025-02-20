@@ -8,11 +8,58 @@ import {
 	Listen,
 	Prop,
 } from '@stencil/core';
+import { cva } from 'class-variance-authority';
+
+const backdrop = cva(
+	[
+		'flex',
+		'fixed left-0 top-0 z-backdrop',
+		'h-full w-full',
+		'overflow-hidden',
+		'bg-black-teal-800/40',
+		'max-h-screen max-w-screen',
+	],
+	{
+		variants: {
+			blur: {
+				false: null,
+				true: 'backdrop-blur-sm',
+			},
+			closing: {
+				false: 'animate-fade-in',
+				true: 'animate-fade-out pointer-events-none',
+			},
+		},
+	}
+);
+
+const contentContainer = cva(
+	[
+		'h-full w-full overflow-y-auto overflow-x-hidden',
+		'pt-16 tablet:px-16 desktop-xs:p-16',
+		'flex items-end justify-center desktop-xs:items-stretch',
+		'max-h-screen max-w-screen',
+	],
+	{
+		variants: {
+			variant: {
+				modal: null,
+				drawer: [
+					'items-start justify-end desktop-xs:items-start',
+					'p-0 tablet:p-0 desktop-xs:p-0',
+				],
+			},
+			closing: {
+				false: null,
+				true: 'overflow-hidden',
+			},
+		},
+	}
+);
 
 @Component({
 	tag: 'p-backdrop',
 	styleUrl: 'backdrop.component.scss',
-	shadow: true,
 })
 export class Backdrop {
 	/**
@@ -34,6 +81,11 @@ export class Backdrop {
 	 * Wether we should scroll lock the body
 	 */
 	@Prop() scrollLock: boolean = true;
+
+	/**
+	 * The class passed to the component
+	 */
+	@Prop() class: string;
 
 	/**
 	 * When the backdrop is clicked
@@ -60,14 +112,25 @@ export class Backdrop {
 		}
 	}
 
+	componentWillUpdate() {
+		if (!this.scrollLock) {
+			document.querySelector(':root').classList.remove('scroll-lock');
+		}
+
+		if (this.scrollLock) {
+			document.querySelector(':root').classList.add('scroll-lock');
+		}
+	}
+
 	render() {
 		return (
-			<Host
-				class={`p-backdrop variant-${this.variant} ${
-					this.applyBlur && 'blurred'
-				} ${this.closing && 'closing'}`}
-			>
-				<div class="content-container">
+			<Host class={backdrop({ blur: this.applyBlur, closing: this.closing })}>
+				<div
+					class={contentContainer({
+						variant: this.variant,
+						closing: this.closing,
+					})}
+				>
 					<slot />
 				</div>
 			</Host>
@@ -76,7 +139,7 @@ export class Backdrop {
 
 	@Listen('click', { capture: true })
 	handleClick(ev: MouseEvent) {
-		if (ev.target !== this._el) {
+		if (ev.target !== this._el && !this._el.contains(ev.target as Node)) {
 			return;
 		}
 
