@@ -342,7 +342,7 @@ export class Button {
 				>
 					{this.chevron && this.chevronPosition === 'start' && (
 						<p-icon
-							variant='chevron'
+							variant='caret'
 							rotate={this.chevron === 'up' ? 180 : 0}
 						/>
 					)}
@@ -362,7 +362,7 @@ export class Button {
 
 					{this.chevron && !this.loading && this.chevronPosition === 'end' && (
 						<p-icon
-							variant='chevron'
+							variant='caret'
 							rotate={this.chevron === 'up' ? 180 : 0}
 						/>
 					)}

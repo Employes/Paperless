@@ -36,23 +36,21 @@ export class Accordion {
 
 	render() {
 		return (
-			<Host class="p-accordion">
+			<Host class='p-accordion'>
 				<div
-					class="flex items-center gap-3 text-storm-vague cursor-pointer"
+					class='flex cursor-pointer items-center gap-3 text-storm-vague'
 					onClick={() => this._onClick()}
 				>
 					<p-icon
-						class="flex"
-						variant="chevron"
+						class='flex'
+						variant='caret'
 						rotate={this.open ? 0 : -90}
 					/>
-					<p class="m-0 font-medium text-lg whitespace-nowrap">
-						{this.header}
-					</p>
+					<p class='m-0 whitespace-nowrap text-lg font-medium'>{this.header}</p>
 					<p-divider />
 				</div>
 				{this.open && (
-					<div class="mt-6">
+					<div class='mt-6'>
 						<slot />
 					</div>
 				)}
