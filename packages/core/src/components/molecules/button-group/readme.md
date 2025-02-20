@@ -16,9 +16,9 @@
 
 ## Properties
 
-| Property | Attribute | Description                   | Type                  | Default    |
-| -------- | --------- | ----------------------------- | --------------------- | ---------- |
-| `size`   | `size`    | The size of the child buttons | `"medium" \| "small"` | `'medium'` |
+| Property | Attribute | Description                   | Type             | Default  |
+| -------- | --------- | ----------------------------- | ---------------- | -------- |
+| `size`   | `size`    | The size of the child buttons | `"base" \| "sm"` | `'base'` |
 
 
 ----------------------------------------------

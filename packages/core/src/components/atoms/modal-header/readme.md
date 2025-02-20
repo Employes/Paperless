@@ -33,7 +33,7 @@
 
 ### Depends on
 
-- [p-button](../button)
+- [p-button](../../molecules/button)
 
 ### Graph
 ```mermaid

@@ -115,26 +115,20 @@ export class TableFooter {
 					!this.enableExport && 'export-disabled'
 				}`}
 			>
-				{!this.loading &&
-					this.enablePagination &&
-					this.enablePageSize && (
-						<p-page-size-select
-							class={
-								!hidePageSizeSelect && 'hidden desktop-xs:flex'
-							}
-							hidden={hidePageSizeSelect}
-							size={this.pageSize}
-							sizeOptions={this.pageSizeOptions}
-							onSizeChange={({ detail }) =>
-								this._changePageSize(detail)
-							}
-						/>
-					)}
+				{!this.loading && this.enablePagination && this.enablePageSize && (
+					<p-page-size-select
+						class={!hidePageSizeSelect && 'hidden desktop-xs:flex'}
+						hidden={hidePageSizeSelect}
+						size={this.pageSize}
+						sizeOptions={this.pageSizeOptions}
+						onSizeChange={({ detail }) => this._changePageSize(detail)}
+					/>
+				)}
 
 				{this.loading && (
 					<p-loader
-						variant="ghost"
-						class="rounded w-full h-8"
+						variant='ghost'
+						class='h-8 w-full rounded'
 					></p-loader>
 				)}
 
@@ -144,17 +138,15 @@ export class TableFooter {
 						total={this.total}
 						page={this.page}
 						hideOnSinglePage={this.hideOnSinglePage}
-						onPageChange={({ detail }) =>
-							this.pageChange.emit(detail)
-						}
+						onPageChange={({ detail }) => this.pageChange.emit(detail)}
 					/>
 				)}
 				{!this.loading && this.enableExport && (
 					<p-button
-						class="hidden desktop-xs:flex"
-						variant="secondary"
-						size="small"
-						icon="download"
+						class='hidden desktop-xs:flex'
+						variant='secondary'
+						size='sm'
+						icon='download'
 						onClick={() => this.export.emit()}
 					>
 						{formatTranslation(this._locales.export)}

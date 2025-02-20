@@ -15,7 +15,7 @@
 ### Depends on
 
 - [p-backdrop](../../atoms/backdrop)
-- [p-button](../../atoms/button)
+- [p-button](../../molecules/button)
 
 ### Graph
 ```mermaid

@@ -783,7 +783,7 @@ export class Table {
 									iconRotate={a.iconRotate}
 									iconFlip={a.iconFlip}
 									iconOnly={true}
-									size='small'
+									size='sm'
 									onClick={() =>
 										typeof a.action === 'function' && a.action?.(item, false)
 									}
@@ -910,7 +910,7 @@ export class Table {
 					<p-button
 						variant='secondary'
 						icon='plus'
-						size='small'
+						size='sm'
 					>
 						{this.emptyStateAction()}
 					</p-button>

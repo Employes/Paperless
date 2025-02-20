@@ -16,7 +16,7 @@ import { OverlayRef } from 'projects/paperless/src/public-api';
 							icon="pencil"
 							chevron
 							variant="secondary"
-							size="small"
+							size="sm"
 							slot="suffix"
 							class="ml-auto"
 						></p-button>

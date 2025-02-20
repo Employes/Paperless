@@ -86,7 +86,7 @@ export class Navbar {
 							icon='negative'
 							iconPosition='end'
 							iconOnly={true}
-							size='small'
+							size='sm'
 							onClick={() => (this._show = false)}
 						></p-button>
 					</div>
@@ -106,7 +106,7 @@ export class Navbar {
 						variant='secondary'
 						iconOnly={true}
 						icon='menu'
-						size='small'
+						size='sm'
 						onClick={() => (this._show = true)}
 					></p-button>
 
