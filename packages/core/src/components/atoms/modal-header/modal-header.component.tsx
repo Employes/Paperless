@@ -21,18 +21,18 @@ export class ModalHeader {
 
 	render() {
 		return (
-			<Host class="p-modal-header">
+			<Host class='p-modal-header'>
 				<span>
 					<slot />
 				</span>
 
 				{this.showClose && (
 					<p-button
-						variant="secondary"
-						icon="negative"
+						variant='secondary'
+						icon='negative'
 						iconOnly={true}
-						onClick={(ev) => this.close.emit(ev)}
-						size="small"
+						onClick={ev => this.close.emit(ev)}
+						size='sm'
 					></p-button>
 				)}
 			</Host>

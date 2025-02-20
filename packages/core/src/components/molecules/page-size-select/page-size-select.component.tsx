@@ -22,9 +22,9 @@ export type templateFunc = (value: number) => string;
 	shadow: true,
 })
 export class PageSizeSelect {
-	private _defaultButtonTemplate: templateFunc = (size) =>
+	private _defaultButtonTemplate: templateFunc = size =>
 		formatTranslation(this._locales.item, { size });
-	private _defaultItemTemplate: templateFunc = (size) =>
+	private _defaultItemTemplate: templateFunc = size =>
 		formatTranslation(this._locales.item, { size });
 	/**
 	 * The current page
@@ -52,7 +52,7 @@ export class PageSizeSelect {
 	/**
 	 * The size of the button
 	 */
-	@Prop() buttonSize: 'small' | 'medium' = 'small';
+	@Prop() buttonSize: 'sm' | 'base' = 'sm';
 
 	/**
 	 * The template for the data view
@@ -87,21 +87,21 @@ export class PageSizeSelect {
 		return (
 			<Host class={`p-page-size-select ${this.hidden && 'hidden'}`}>
 				<p-dropdown
-					placement="top-start"
+					placement='top-start'
 					chevronPosition={this.chevronPosition}
-					chevronDirection="down"
+					chevronDirection='down'
 				>
 					<p-button
-						variant="secondary"
-						slot="trigger"
+						variant='secondary'
+						slot='trigger'
 						size={this.buttonSize}
 					>
 						{this.buttonTemplate
 							? this.buttonTemplate(this.size)
 							: this._defaultButtonTemplate(this.size)}
 					</p-button>
-					<slot slot="items">
-						{this.sizeOptions.map((option) => (
+					<slot slot='items'>
+						{this.sizeOptions.map(option => (
 							<p-dropdown-menu-item
 								active={option === this.size}
 								onClick={() => this._changeSize(option)}

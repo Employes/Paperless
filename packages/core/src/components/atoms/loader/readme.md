@@ -25,7 +25,7 @@
 ### Used by
 
  - [p-attachment](../../molecules/attachment)
- - [p-button](../button)
+ - [p-button](../../molecules/button)
  - [p-select](../../molecules/select)
  - [p-table](../../organisms/table)
  - [p-table-cell](../../molecules/table-cell)
