@@ -51,6 +51,7 @@ export const PModalFooter = /*@__PURE__*/createReactComponent<JSX.PModalFooter, 
 export const PModalHeader = /*@__PURE__*/createReactComponent<JSX.PModalHeader, HTMLPModalHeaderElement>('p-modal-header');
 export const PNavbar = /*@__PURE__*/createReactComponent<JSX.PNavbar, HTMLPNavbarElement>('p-navbar');
 export const PNavigationItem = /*@__PURE__*/createReactComponent<JSX.PNavigationItem, HTMLPNavigationItemElement>('p-navigation-item');
+export const PNavigationTitle = /*@__PURE__*/createReactComponent<JSX.PNavigationTitle, HTMLPNavigationTitleElement>('p-navigation-title');
 export const PPageSizeSelect = /*@__PURE__*/createReactComponent<JSX.PPageSizeSelect, HTMLPPageSizeSelectElement>('p-page-size-select');
 export const PPagination = /*@__PURE__*/createReactComponent<JSX.PPagination, HTMLPPaginationElement>('p-pagination');
 export const PPaginationItem = /*@__PURE__*/createReactComponent<JSX.PPaginationItem, HTMLPPaginationItemElement>('p-pagination-item');
