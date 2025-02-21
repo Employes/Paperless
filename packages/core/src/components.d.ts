@@ -920,6 +920,12 @@ export namespace Components {
          */
         "target": string;
     }
+    interface PNavigationSection {
+        /**
+          * The title of the section
+         */
+        "title": string;
+    }
     interface PNavigationTitle {
     }
     interface PPageSizeSelect {
@@ -2078,6 +2084,12 @@ declare global {
         prototype: HTMLPNavigationItemElement;
         new (): HTMLPNavigationItemElement;
     };
+    interface HTMLPNavigationSectionElement extends Components.PNavigationSection, HTMLStencilElement {
+    }
+    var HTMLPNavigationSectionElement: {
+        prototype: HTMLPNavigationSectionElement;
+        new (): HTMLPNavigationSectionElement;
+    };
     interface HTMLPNavigationTitleElement extends Components.PNavigationTitle, HTMLStencilElement {
     }
     var HTMLPNavigationTitleElement: {
@@ -2285,6 +2297,7 @@ declare global {
         "p-modal-header": HTMLPModalHeaderElement;
         "p-navbar": HTMLPNavbarElement;
         "p-navigation-item": HTMLPNavigationItemElement;
+        "p-navigation-section": HTMLPNavigationSectionElement;
         "p-navigation-title": HTMLPNavigationTitleElement;
         "p-page-size-select": HTMLPPageSizeSelectElement;
         "p-pagination": HTMLPPaginationElement;
@@ -3265,6 +3278,12 @@ declare namespace LocalJSX {
          */
         "target"?: string;
     }
+    interface PNavigationSection {
+        /**
+          * The title of the section
+         */
+        "title"?: string;
+    }
     interface PNavigationTitle {
     }
     interface PPageSizeSelect {
@@ -4234,6 +4253,7 @@ declare namespace LocalJSX {
         "p-modal-header": PModalHeader;
         "p-navbar": PNavbar;
         "p-navigation-item": PNavigationItem;
+        "p-navigation-section": PNavigationSection;
         "p-navigation-title": PNavigationTitle;
         "p-page-size-select": PPageSizeSelect;
         "p-pagination": PPagination;
@@ -4311,6 +4331,7 @@ declare module "@stencil/core" {
             "p-modal-header": LocalJSX.PModalHeader & JSXBase.HTMLAttributes<HTMLPModalHeaderElement>;
             "p-navbar": LocalJSX.PNavbar & JSXBase.HTMLAttributes<HTMLPNavbarElement>;
             "p-navigation-item": LocalJSX.PNavigationItem & JSXBase.HTMLAttributes<HTMLPNavigationItemElement>;
+            "p-navigation-section": LocalJSX.PNavigationSection & JSXBase.HTMLAttributes<HTMLPNavigationSectionElement>;
             "p-navigation-title": LocalJSX.PNavigationTitle & JSXBase.HTMLAttributes<HTMLPNavigationTitleElement>;
             "p-page-size-select": LocalJSX.PPageSizeSelect & JSXBase.HTMLAttributes<HTMLPPageSizeSelectElement>;
             "p-pagination": LocalJSX.PPagination & JSXBase.HTMLAttributes<HTMLPPaginationElement>;
