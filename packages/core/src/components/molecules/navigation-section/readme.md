@@ -15,9 +15,9 @@
 
 ## Properties
 
-| Property | Attribute | Description              | Type     | Default     |
-| -------- | --------- | ------------------------ | -------- | ----------- |
-| `title`  | `title`   | The title of the section | `string` | `undefined` |
+| Property | Attribute | Description               | Type     | Default     |
+| -------- | --------- | ------------------------- | -------- | ----------- |
+| `header` | `header`  | The header of the section | `string` | `undefined` |
 
 
 ## Dependencies
