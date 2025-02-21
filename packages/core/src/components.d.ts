@@ -893,10 +893,6 @@ export namespace Components {
         "showClose": boolean;
     }
     interface PNavbar {
-        /**
-          * The text to display for the menu button & sidebar title
-         */
-        "menuText": string;
     }
     interface PNavigationItem {
         /**
@@ -930,9 +926,9 @@ export namespace Components {
     }
     interface PNavigationSection {
         /**
-          * The title of the section
+          * The header of the section
          */
-        "title": string;
+        "header": string;
     }
     interface PNavigationTitle {
     }
@@ -1828,13 +1824,36 @@ export interface PTooltipCustomEvent<T> extends CustomEvent<T> {
     target: HTMLPTooltipElement;
 }
 declare global {
+    interface HTMLPAccordionElementEventMap {
+        "isOpen": boolean;
+    }
     interface HTMLPAccordionElement extends Components.PAccordion, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPAccordionElementEventMap>(type: K, listener: (this: HTMLPAccordionElement, ev: PAccordionCustomEvent<HTMLPAccordionElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPAccordionElementEventMap>(type: K, listener: (this: HTMLPAccordionElement, ev: PAccordionCustomEvent<HTMLPAccordionElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPAccordionElement: {
         prototype: HTMLPAccordionElement;
         new (): HTMLPAccordionElement;
     };
+    interface HTMLPAttachmentElementEventMap {
+        "download": any;
+        "delete": any;
+    }
     interface HTMLPAttachmentElement extends Components.PAttachment, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPAttachmentElementEventMap>(type: K, listener: (this: HTMLPAttachmentElement, ev: PAttachmentCustomEvent<HTMLPAttachmentElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPAttachmentElementEventMap>(type: K, listener: (this: HTMLPAttachmentElement, ev: PAttachmentCustomEvent<HTMLPAttachmentElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPAttachmentElement: {
         prototype: HTMLPAttachmentElement;
@@ -1852,7 +1871,18 @@ declare global {
         prototype: HTMLPAvatarGroupElement;
         new (): HTMLPAvatarGroupElement;
     };
+    interface HTMLPBackdropElementEventMap {
+        "clicked": MouseEvent;
+    }
     interface HTMLPBackdropElement extends Components.PBackdrop, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPBackdropElementEventMap>(type: K, listener: (this: HTMLPBackdropElement, ev: PBackdropCustomEvent<HTMLPBackdropElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPBackdropElementEventMap>(type: K, listener: (this: HTMLPBackdropElement, ev: PBackdropCustomEvent<HTMLPBackdropElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPBackdropElement: {
         prototype: HTMLPBackdropElement;
@@ -1864,7 +1894,18 @@ declare global {
         prototype: HTMLPBadgeElement;
         new (): HTMLPBadgeElement;
     };
+    interface HTMLPButtonElementEventMap {
+        "onClick": MouseEvent;
+    }
     interface HTMLPButtonElement extends Components.PButton, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPButtonElementEventMap>(type: K, listener: (this: HTMLPButtonElement, ev: PButtonCustomEvent<HTMLPButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPButtonElementEventMap>(type: K, listener: (this: HTMLPButtonElement, ev: PButtonCustomEvent<HTMLPButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPButtonElement: {
         prototype: HTMLPButtonElement;
@@ -1876,7 +1917,18 @@ declare global {
         prototype: HTMLPButtonGroupElement;
         new (): HTMLPButtonGroupElement;
     };
+    interface HTMLPCalendarElementEventMap {
+        "valueChange": any;
+    }
     interface HTMLPCalendarElement extends Components.PCalendar, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPCalendarElementEventMap>(type: K, listener: (this: HTMLPCalendarElement, ev: PCalendarCustomEvent<HTMLPCalendarElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPCalendarElementEventMap>(type: K, listener: (this: HTMLPCalendarElement, ev: PCalendarCustomEvent<HTMLPCalendarElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPCalendarElement: {
         prototype: HTMLPCalendarElement;
@@ -1912,13 +1964,35 @@ declare global {
         prototype: HTMLPCounterElement;
         new (): HTMLPCounterElement;
     };
+    interface HTMLPCropperElementEventMap {
+        "valueChange": any;
+    }
     interface HTMLPCropperElement extends Components.PCropper, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPCropperElementEventMap>(type: K, listener: (this: HTMLPCropperElement, ev: PCropperCustomEvent<HTMLPCropperElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPCropperElementEventMap>(type: K, listener: (this: HTMLPCropperElement, ev: PCropperCustomEvent<HTMLPCropperElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPCropperElement: {
         prototype: HTMLPCropperElement;
         new (): HTMLPCropperElement;
     };
+    interface HTMLPDatepickerElementEventMap {
+        "valueChange": any;
+    }
     interface HTMLPDatepickerElement extends Components.PDatepicker, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPDatepickerElementEventMap>(type: K, listener: (this: HTMLPDatepickerElement, ev: PDatepickerCustomEvent<HTMLPDatepickerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPDatepickerElementEventMap>(type: K, listener: (this: HTMLPDatepickerElement, ev: PDatepickerCustomEvent<HTMLPDatepickerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPDatepickerElement: {
         prototype: HTMLPDatepickerElement;
@@ -1930,7 +2004,23 @@ declare global {
         prototype: HTMLPDividerElement;
         new (): HTMLPDividerElement;
     };
+    interface HTMLPDrawerElementEventMap {
+        "closeClicked": {
+		event: MouseEvent;
+		canClose: boolean;
+    source: 'unknown' | 'backdrop' | 'close' | 'event'
+	};
+        "closed": null;
+    }
     interface HTMLPDrawerElement extends Components.PDrawer, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPDrawerElementEventMap>(type: K, listener: (this: HTMLPDrawerElement, ev: PDrawerCustomEvent<HTMLPDrawerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPDrawerElementEventMap>(type: K, listener: (this: HTMLPDrawerElement, ev: PDrawerCustomEvent<HTMLPDrawerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPDrawerElement: {
         prototype: HTMLPDrawerElement;
@@ -1948,13 +2038,35 @@ declare global {
         prototype: HTMLPDrawerContainerElement;
         new (): HTMLPDrawerContainerElement;
     };
+    interface HTMLPDrawerHeaderElementEventMap {
+        "close": MouseEvent;
+    }
     interface HTMLPDrawerHeaderElement extends Components.PDrawerHeader, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPDrawerHeaderElementEventMap>(type: K, listener: (this: HTMLPDrawerHeaderElement, ev: PDrawerHeaderCustomEvent<HTMLPDrawerHeaderElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPDrawerHeaderElementEventMap>(type: K, listener: (this: HTMLPDrawerHeaderElement, ev: PDrawerHeaderCustomEvent<HTMLPDrawerHeaderElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPDrawerHeaderElement: {
         prototype: HTMLPDrawerHeaderElement;
         new (): HTMLPDrawerHeaderElement;
     };
+    interface HTMLPDropdownElementEventMap {
+        "isOpen": boolean;
+    }
     interface HTMLPDropdownElement extends Components.PDropdown, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPDropdownElementEventMap>(type: K, listener: (this: HTMLPDropdownElement, ev: PDropdownCustomEvent<HTMLPDropdownElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPDropdownElementEventMap>(type: K, listener: (this: HTMLPDropdownElement, ev: PDropdownCustomEvent<HTMLPDropdownElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPDropdownElement: {
         prototype: HTMLPDropdownElement;
@@ -2014,7 +2126,18 @@ declare global {
         prototype: HTMLPIllustrationElement;
         new (): HTMLPIllustrationElement;
     };
+    interface HTMLPInfoPanelElementEventMap {
+        "closed": void;
+    }
     interface HTMLPInfoPanelElement extends Components.PInfoPanel, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPInfoPanelElementEventMap>(type: K, listener: (this: HTMLPInfoPanelElement, ev: PInfoPanelCustomEvent<HTMLPInfoPanelElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPInfoPanelElementEventMap>(type: K, listener: (this: HTMLPInfoPanelElement, ev: PInfoPanelCustomEvent<HTMLPInfoPanelElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPInfoPanelElement: {
         prototype: HTMLPInfoPanelElement;
@@ -2050,7 +2173,19 @@ declare global {
         prototype: HTMLPLoaderElement;
         new (): HTMLPLoaderElement;
     };
+    interface HTMLPModalElementEventMap {
+        "closeClicked": MouseEvent;
+        "closed": string;
+    }
     interface HTMLPModalElement extends Components.PModal, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPModalElementEventMap>(type: K, listener: (this: HTMLPModalElement, ev: PModalCustomEvent<HTMLPModalElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPModalElementEventMap>(type: K, listener: (this: HTMLPModalElement, ev: PModalCustomEvent<HTMLPModalElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPModalElement: {
         prototype: HTMLPModalElement;
@@ -2074,7 +2209,18 @@ declare global {
         prototype: HTMLPModalFooterElement;
         new (): HTMLPModalFooterElement;
     };
+    interface HTMLPModalHeaderElementEventMap {
+        "close": MouseEvent;
+    }
     interface HTMLPModalHeaderElement extends Components.PModalHeader, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPModalHeaderElementEventMap>(type: K, listener: (this: HTMLPModalHeaderElement, ev: PModalHeaderCustomEvent<HTMLPModalHeaderElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPModalHeaderElementEventMap>(type: K, listener: (this: HTMLPModalHeaderElement, ev: PModalHeaderCustomEvent<HTMLPModalHeaderElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPModalHeaderElement: {
         prototype: HTMLPModalHeaderElement;
@@ -2104,13 +2250,35 @@ declare global {
         prototype: HTMLPNavigationTitleElement;
         new (): HTMLPNavigationTitleElement;
     };
+    interface HTMLPPageSizeSelectElementEventMap {
+        "sizeChange": number;
+    }
     interface HTMLPPageSizeSelectElement extends Components.PPageSizeSelect, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPPageSizeSelectElementEventMap>(type: K, listener: (this: HTMLPPageSizeSelectElement, ev: PPageSizeSelectCustomEvent<HTMLPPageSizeSelectElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPPageSizeSelectElementEventMap>(type: K, listener: (this: HTMLPPageSizeSelectElement, ev: PPageSizeSelectCustomEvent<HTMLPPageSizeSelectElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPPageSizeSelectElement: {
         prototype: HTMLPPageSizeSelectElement;
         new (): HTMLPPageSizeSelectElement;
     };
+    interface HTMLPPaginationElementEventMap {
+        "pageChange": number;
+    }
     interface HTMLPPaginationElement extends Components.PPagination, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPPaginationElementEventMap>(type: K, listener: (this: HTMLPPaginationElement, ev: PPaginationCustomEvent<HTMLPPaginationElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPPaginationElementEventMap>(type: K, listener: (this: HTMLPPaginationElement, ev: PPaginationCustomEvent<HTMLPPaginationElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPPaginationElement: {
         prototype: HTMLPPaginationElement;
@@ -2146,7 +2314,22 @@ declare global {
         prototype: HTMLPSegmentItemElement;
         new (): HTMLPSegmentItemElement;
     };
+    interface HTMLPSelectElementEventMap {
+        "queryChange": string;
+        "valueChange": any;
+        "selectAllChange": any;
+        "dropdownShown": any;
+        "add": any;
+    }
     interface HTMLPSelectElement extends Components.PSelect, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPSelectElementEventMap>(type: K, listener: (this: HTMLPSelectElement, ev: PSelectCustomEvent<HTMLPSelectElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPSelectElementEventMap>(type: K, listener: (this: HTMLPSelectElement, ev: PSelectCustomEvent<HTMLPSelectElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPSelectElement: {
         prototype: HTMLPSelectElement;
@@ -2194,7 +2377,30 @@ declare global {
         prototype: HTMLPTabItemElement;
         new (): HTMLPTabItemElement;
     };
+    interface HTMLPTableElementEventMap {
+        "selectedRowsChange": any;
+        "rowClick": RowClickEvent;
+        "rowSelected": any;
+        "rowDeselected": any;
+        "hasRendered": number;
+        "quickFilter": QuickFilter;
+        "queryChange": string;
+        "filter": null;
+        "action": null;
+        "pageChange": number;
+        "pageSizeChange": number;
+        "export": number;
+        "emptyStateActionClick": null;
+    }
     interface HTMLPTableElement extends Components.PTable, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPTableElementEventMap>(type: K, listener: (this: HTMLPTableElement, ev: PTableCustomEvent<HTMLPTableElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPTableElementEventMap>(type: K, listener: (this: HTMLPTableElement, ev: PTableCustomEvent<HTMLPTableElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPTableElement: {
         prototype: HTMLPTableElement;
@@ -2206,7 +2412,18 @@ declare global {
         prototype: HTMLPTableCellElement;
         new (): HTMLPTableCellElement;
     };
+    interface HTMLPTableColumnElementEventMap {
+        "tableDefinitionChanged": boolean;
+    }
     interface HTMLPTableColumnElement extends Components.PTableColumn, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPTableColumnElementEventMap>(type: K, listener: (this: HTMLPTableColumnElement, ev: PTableColumnCustomEvent<HTMLPTableColumnElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPTableColumnElementEventMap>(type: K, listener: (this: HTMLPTableColumnElement, ev: PTableColumnCustomEvent<HTMLPTableColumnElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPTableColumnElement: {
         prototype: HTMLPTableColumnElement;
@@ -2218,13 +2435,40 @@ declare global {
         prototype: HTMLPTableContainerElement;
         new (): HTMLPTableContainerElement;
     };
+    interface HTMLPTableFooterElementEventMap {
+        "pageChange": number;
+        "pageSizeChange": number;
+        "export": number;
+    }
     interface HTMLPTableFooterElement extends Components.PTableFooter, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPTableFooterElementEventMap>(type: K, listener: (this: HTMLPTableFooterElement, ev: PTableFooterCustomEvent<HTMLPTableFooterElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPTableFooterElementEventMap>(type: K, listener: (this: HTMLPTableFooterElement, ev: PTableFooterCustomEvent<HTMLPTableFooterElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPTableFooterElement: {
         prototype: HTMLPTableFooterElement;
         new (): HTMLPTableFooterElement;
     };
+    interface HTMLPTableHeaderElementEventMap {
+        "quickFilter": QuickFilter;
+        "queryChange": string;
+        "filter": null;
+        "action": null;
+    }
     interface HTMLPTableHeaderElement extends Components.PTableHeader, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPTableHeaderElementEventMap>(type: K, listener: (this: HTMLPTableHeaderElement, ev: PTableHeaderCustomEvent<HTMLPTableHeaderElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPTableHeaderElementEventMap>(type: K, listener: (this: HTMLPTableHeaderElement, ev: PTableHeaderCustomEvent<HTMLPTableHeaderElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPTableHeaderElement: {
         prototype: HTMLPTableHeaderElement;
@@ -2242,7 +2486,18 @@ declare global {
         prototype: HTMLPTableRowActionElement;
         new (): HTMLPTableRowActionElement;
     };
+    interface HTMLPToastElementEventMap {
+        "action": MouseEvent;
+    }
     interface HTMLPToastElement extends Components.PToast, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPToastElementEventMap>(type: K, listener: (this: HTMLPToastElement, ev: PToastCustomEvent<HTMLPToastElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPToastElementEventMap>(type: K, listener: (this: HTMLPToastElement, ev: PToastCustomEvent<HTMLPToastElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPToastElement: {
         prototype: HTMLPToastElement;
@@ -2254,7 +2509,18 @@ declare global {
         prototype: HTMLPToastContainerElement;
         new (): HTMLPToastContainerElement;
     };
+    interface HTMLPTooltipElementEventMap {
+        "isOpen": boolean;
+    }
     interface HTMLPTooltipElement extends Components.PTooltip, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPTooltipElementEventMap>(type: K, listener: (this: HTMLPTooltipElement, ev: PTooltipCustomEvent<HTMLPTooltipElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPTooltipElementEventMap>(type: K, listener: (this: HTMLPTooltipElement, ev: PTooltipCustomEvent<HTMLPTooltipElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPTooltipElement: {
         prototype: HTMLPTooltipElement;
@@ -3259,10 +3525,6 @@ declare namespace LocalJSX {
         "showClose"?: boolean;
     }
     interface PNavbar {
-        /**
-          * The text to display for the menu button & sidebar title
-         */
-        "menuText"?: string;
     }
     interface PNavigationItem {
         /**
@@ -3296,9 +3558,9 @@ declare namespace LocalJSX {
     }
     interface PNavigationSection {
         /**
-          * The title of the section
+          * The header of the section
          */
-        "title"?: string;
+        "header"?: string;
     }
     interface PNavigationTitle {
     }
