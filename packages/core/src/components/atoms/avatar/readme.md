@@ -14,7 +14,7 @@
 | Property           | Attribute       | Description                                    | Type                                                                | Default     |
 | ------------------ | --------------- | ---------------------------------------------- | ------------------------------------------------------------------- | ----------- |
 | `defaultImage`     | `default-image` | The default image to show on errors            | `string`                                                            | `undefined` |
-| `letters`          | `letters`       | The letters to show on the empty state variant | `string`                                                            | `' '`       |
+| `letters`          | `letters`       | The letters to show on the empty state variant | `string`                                                            | `undefined` |
 | `size`             | `size`          | The size of the avatar                         | `"2xl" \| "3xl" \| "4xl" \| "base" \| "lg" \| "sm" \| "xl" \| "xs"` | `'base'`    |
 | `src` _(required)_ | `src`           | The image used for the avatar                  | `string`                                                            | `undefined` |
 
