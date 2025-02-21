@@ -3,13 +3,6 @@
 <!-- Auto Generated Below -->
 
 
-## Properties
-
-| Property   | Attribute   | Description                                             | Type     | Default  |
-| ---------- | ----------- | ------------------------------------------------------- | -------- | -------- |
-| `menuText` | `menu-text` | The text to display for the menu button & sidebar title | `string` | `'Menu'` |
-
-
 ## Dependencies
 
 ### Depends on
