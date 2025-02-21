@@ -6,6 +6,7 @@ import {
 	Host,
 	Listen,
 	Prop,
+	Element,
 } from '@stencil/core';
 import { RotateOptions } from '../../../types/tailwind';
 import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
@@ -69,7 +70,14 @@ const button = cva(
 				variant: ['primary', 'secondary'],
 				disabled: false,
 				loading: false,
-				class: 'active:border-supportive-lilac-800 active:ring active:ring-2 ',
+				class: 'active:border-supportive-lilac-800 active:ring active:ring-2',
+			},
+			{
+				variant: ['primary', 'secondary'],
+				disabled: false,
+				loading: false,
+				active: true,
+				class: 'border-supportive-lilac-800 ring ring-2',
 			},
 			{
 				variant: ['primary', 'secondary', 'transparent'],
@@ -104,6 +112,13 @@ const button = cva(
 					'drop-shadow-supportive-lilac hover:drop-shadow-2 hover:bg-supportive-lilac-700 active:text-black-teal/60 active:ring-black-teal/10',
 			},
 			{
+				variant: 'primary',
+				disabled: false,
+				loading: false,
+				active: true,
+				class: 'ring-black-teal/10',
+			},
+			{
 				variant: 'secondary',
 				disabled: true,
 				class: 'border bg-white-600 text-black-teal-100',
@@ -114,6 +129,13 @@ const button = cva(
 				loading: false,
 				class:
 					'drop-shadow-1 hover:drop-shadow-1 hover:bg-white-600 active:text-black-teal/60 active:ring-supportive-lilac-100',
+			},
+			{
+				variant: 'secondary',
+				disabled: false,
+				loading: false,
+				active: true,
+				class: 'ring-supportive-lilac-100',
 			},
 
 			{
@@ -220,6 +242,11 @@ export class Button {
 	@Prop() variant: 'primary' | 'secondary' | 'transparent' | 'text' = 'primary';
 
 	/**
+	 * Wether to force an active state
+	 */
+	@Prop() active: boolean = false;
+
+	/**
 	 * Wether the text variant has underline
 	 */
 	@Prop() underline: boolean = true;
@@ -307,6 +334,11 @@ export class Button {
 	})
 	onClick: EventEmitter<MouseEvent>;
 
+	/**
+	 * The host element
+	 */
+	@Element() private _el: HTMLElement;
+
 	render() {
 		let loaderColor: 'white' | 'storm' | 'indigo' = 'white';
 		switch (this.variant) {
@@ -323,6 +355,8 @@ export class Button {
 				? 'a'
 				: 'button';
 
+		const active = this.active || this._el.classList.contains('active');
+
 		return (
 			<Host class='p-button inline-block'>
 				<VariableTag
@@ -338,6 +372,7 @@ export class Button {
 						disabled: this.disabled,
 						buttonGroupPosition: this.buttonGroupPosition,
 						iconOnly: this.iconOnly,
+						active,
 					})}
 				>
 					{this.chevron && this.chevronPosition === 'start' && (
