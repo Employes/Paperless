@@ -106,10 +106,10 @@ export class Profile {
 			>
 				<slot name='avatar' />
 				<div class='flex min-w-0 flex-1 flex-col items-start'>
-					<p class='w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm font-medium'>
+					<p class='w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm font-medium'>
 						<slot name='title' />
 					</p>
-					<p class='w-full overflow-hidden text-ellipsis whitespace-nowrap text-xs text-black-teal-300'>
+					<p class='w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-xs text-black-teal-300'>
 						<slot name='subtitle' />
 					</p>
 				</div>
