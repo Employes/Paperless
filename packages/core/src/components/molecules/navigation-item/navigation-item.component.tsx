@@ -1,6 +1,7 @@
-import { Component, h, Host, Prop, Element } from '@stencil/core';
+import { Component, h, Host, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { IconVariant } from '../../atoms/icon/icon.component';
+import { cn } from '../../../utils/cn';
 
 const navigationItem = cva(
 	[
@@ -75,17 +76,17 @@ export class NavigationItem {
 	@Prop() target: string;
 
 	/**
-	 * The host element
+	 * The class of the container passed by parent
 	 */
-	@Element() private _el: HTMLElement;
+	@Prop() class: string;
 
 	render() {
 		const TagType = this.as;
 
-		const active = this.active || this._el.classList.contains('active');
+		const active = this.active || this.class?.includes('active');
 
 		return (
-			<Host class='p-navigation-item inline-block'>
+			<Host class={cn('p-navigation-item inline-block', this.class)}>
 				<TagType
 					class={navigationItem({
 						icon: !!this.icon,
