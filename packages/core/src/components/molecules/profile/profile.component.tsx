@@ -77,7 +77,7 @@ export class Profile {
 			>
 				<slot name='avatar' />
 				<div class='flex flex-1 flex-col'>
-					<p class='font-sm font-medium'>
+					<p class='text-sm font-medium'>
 						<slot name='title' />
 					</p>
 					<p class='text-xs text-black-teal-300'>
