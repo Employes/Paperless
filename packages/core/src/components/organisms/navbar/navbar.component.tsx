@@ -1,4 +1,4 @@
-import { Component, h, Host, Listen, Prop, State } from '@stencil/core';
+import { Component, h, Host, Listen, State } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
 const sidebarAndTopbar = cva([
@@ -60,11 +60,6 @@ const backdrop = cva(
 	shadow: true,
 })
 export class Navbar {
-	/**
-	 * The text to display for the menu button & sidebar title
-	 */
-	@Prop() menuText = 'Menu';
-
 	@State() private _show = false;
 
 	render() {
@@ -77,14 +72,10 @@ export class Navbar {
 				></p-backdrop>
 				<div class={sidebar({ class: sidebarAndTopbar(), show: this._show })}>
 					<div class='flex w-full items-center justify-between layout-1280:hidden'>
-						<p class='m-0 text-xl font-semibold text-storm-dark'>
-							{this.menuText}
-						</p>
-
 						<p-button
 							variant='secondary'
-							icon='negative'
-							iconPosition='end'
+							icon='menu-arrow'
+							iconFlip='horizontal'
 							iconOnly={true}
 							size='sm'
 							onClick={() => (this._show = false)}
@@ -105,7 +96,7 @@ export class Navbar {
 					<p-button
 						variant='secondary'
 						iconOnly={true}
-						icon='menu'
+						icon='menu-arrow'
 						size='sm'
 						onClick={() => (this._show = true)}
 					></p-button>
