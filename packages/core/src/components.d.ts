@@ -1864,9 +1864,6 @@ declare global {
         prototype: HTMLPBadgeElement;
         new (): HTMLPBadgeElement;
     };
-    interface HTMLPButtonElementEventMap {
-        "onClick": MouseEvent;
-    }
     interface HTMLPButtonElement extends Components.PButton, HTMLStencilElement {
     }
     var HTMLPButtonElement: {
@@ -2107,9 +2104,6 @@ declare global {
         prototype: HTMLPNavigationTitleElement;
         new (): HTMLPNavigationTitleElement;
     };
-    interface HTMLPPageSizeSelectElementEventMap {
-        "sizeChange": number;
-    }
     interface HTMLPPageSizeSelectElement extends Components.PPageSizeSelect, HTMLStencilElement {
     }
     var HTMLPPageSizeSelectElement: {
