@@ -36,7 +36,6 @@
  - [p-label](../label)
  - [p-navigation-item](../../molecules/navigation-item)
  - [p-pagination](../../molecules/pagination)
- - [p-profile](../../molecules/profile)
  - [p-segment-item](../segment-item)
  - [p-select](../../molecules/select)
  - [p-status](../status)
@@ -59,7 +58,6 @@ graph TD;
   p-label --> p-icon
   p-navigation-item --> p-icon
   p-pagination --> p-icon
-  p-profile --> p-icon
   p-segment-item --> p-icon
   p-select --> p-icon
   p-status --> p-icon
