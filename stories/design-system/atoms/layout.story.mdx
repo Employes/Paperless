@@ -2,7 +2,7 @@ import { Meta, Canvas, Primary, ArgsTable, Story } from '@storybook/addon-docs';
 import { StoryCategories } from '../../categories';
 import LayoutDocs from '../../../packages/core/src/components/atoms/layout/readme.md';
 
-<Meta title={`${StoryCategories.Atoms}/Layout`} />
+<Meta title={`${StoryCategories.Atoms}/Rebranding/Layout`} />
 
 <LayoutDocs />
 
@@ -13,79 +13,91 @@ import LayoutDocs from '../../../packages/core/src/components/atoms/layout/readm
 ### Default
 
 <Canvas>
-    <div class="p-4 h-screen">
-        <p-layout class="bg-mystic">
-            <div slot="topbar" class="h-10 bg-indigo/20">
-                top bar
-            </div>
-            <div
-                slot="sidebar"
-                class="w-full flex flex-col justify-between bg-positive/20"
-            >
-                <span>Top of sidebar</span>
-                <span>Bottom of sidebar</span>
-            </div>
-            <div slot="content" class="bg-unbiased/20 flex gap-6 flex-col h-full">
-								<h1 class="text-3xl text-storm">Title</h1>
-								<div class="flex gap-4">
-										<div class="bg-white rounded w-full h-24"></div>
-										<div class="bg-white rounded w-full h-24"></div>
-								</div>
-								<div class="bg-white rounded w-full flex-1">
-										Test <br />
-										Test <br />
-										Test <br />
-										Test <br />
-										Test <br />
-										Test <br />
-										Test <br />
-										Test <br />
-										Test <br />
-										Test <br />
-										Test <br />
-										Test <br />
-										Test <br />
-										Test <br />
-								</div>
-            </div>
-        </p-layout>
-    </div>
+	<div class='h-screen p-4'>
+		<p-layout class='bg-mystic'>
+			<div
+				slot='topbar'
+				class='h-10 bg-indigo/20'
+			>
+				top bar
+			</div>
+			<div
+				slot='sidebar'
+				class='flex w-full flex-col justify-between bg-positive/20'
+			>
+				<span>Top of sidebar</span>
+				<span>Bottom of sidebar</span>
+			</div>
+			<div
+				slot='content'
+				class='flex h-full flex-col gap-6 bg-unbiased/20'
+			>
+				<h1 class='text-3xl text-storm'>Title</h1>
+				<div class='flex gap-4'>
+					<div class='h-24 w-full rounded bg-white'></div>
+					<div class='h-24 w-full rounded bg-white'></div>
+				</div>
+				<div class='w-full flex-1 rounded bg-white'>
+					Test <br />
+					Test <br />
+					Test <br />
+					Test <br />
+					Test <br />
+					Test <br />
+					Test <br />
+					Test <br />
+					Test <br />
+					Test <br />
+					Test <br />
+					Test <br />
+					Test <br />
+					Test <br />
+				</div>
+			</div>
+		</p-layout>
+	</div>
 </Canvas>
 
 ### Login
 
 <Canvas>
-    <div class="p-4 h-screen">
-        <p-layout variant="login" class="bg-mystic">
-            <div
-                slot="sidebar"
-                class="rounded-lg p-18 w-full relative overflow-hidden bg-positive/20"
-            >
-                sidebar
-            </div>
-            <div slot="content" class="bg-unbiased/20">
-                Content <br />
-                Content <br />
-                Content <br />
-                Content <br />
-                Content <br />
-                Content <br />
-                Content <br />
-                Content <br />
-                Content <br />
-                Content <br />
-                Content <br />
-                Content <br />
-                Content <br />
-                Content <br />
-                Content <br />
-                Content <br />
-                Content <br />
-                Content <br />
-                Content <br />
-                Content <br />
-                Content <br />
-            </div>
-        </p-layout>
-    </div>
+	<div class='h-screen p-4'>
+		<p-layout
+			variant='login'
+			class='bg-mystic'
+		>
+			<div
+				slot='sidebar'
+				class='relative w-full overflow-hidden rounded-lg bg-positive/20 p-18'
+			>
+				sidebar
+			</div>
+			<div
+				slot='content'
+				class='bg-unbiased/20'
+			>
+				Content <br />
+				Content <br />
+				Content <br />
+				Content <br />
+				Content <br />
+				Content <br />
+				Content <br />
+				Content <br />
+				Content <br />
+				Content <br />
+				Content <br />
+				Content <br />
+				Content <br />
+				Content <br />
+				Content <br />
+				Content <br />
+				Content <br />
+				Content <br />
+				Content <br />
+				Content <br />
+				Content <br />
+			</div>
+		</p-layout>
+	</div>
 </Canvas>
