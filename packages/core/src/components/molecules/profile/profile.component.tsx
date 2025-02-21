@@ -34,6 +34,10 @@ export class Profile {
 		);
 	}
 
+	componentWillRender() {
+		this._updateAvatar();
+	}
+
 	render() {
 		const content = this._getContent();
 
@@ -49,12 +53,12 @@ export class Profile {
 						onIsOpen={ev => (this._dropdownOpen = ev.detail)}
 					>
 						<p-button
-							variant='secondary'
+							variant='dropdown'
 							chevron={this._dropdownOpen ? 'up' : 'down'}
 							active={this._dropdownOpen}
 							slot='trigger'
 							size='lg'
-							class='w-full'
+							class='w-full px-2'
 						>
 							{content}
 						</p-button>
@@ -89,5 +93,17 @@ export class Profile {
 				<slot name='post-title' />
 			</div>
 		);
+	}
+
+	private _updateAvatar() {
+		const avatar = this._el.querySelector(
+			'p-avatar[slot="avatar"]'
+		) as HTMLPAvatarElement;
+
+		if (!avatar) {
+			return;
+		}
+
+		avatar.size = this._hasDropdownSlot ? 'sm' : avatar.size;
 	}
 }

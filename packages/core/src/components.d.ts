@@ -207,7 +207,11 @@ export namespace Components {
         /**
           * The variant of the button
          */
-        "variant": 'primary' | 'secondary' | 'transparent' | 'text';
+        "variant": | 'primary'
+		| 'secondary'
+		| 'transparent'
+		| 'text'
+		| 'dropdown';
     }
     interface PButtonGroup {
         /**
@@ -2504,7 +2508,11 @@ declare namespace LocalJSX {
         /**
           * The variant of the button
          */
-        "variant"?: 'primary' | 'secondary' | 'transparent' | 'text';
+        "variant"?: | 'primary'
+		| 'secondary'
+		| 'transparent'
+		| 'text'
+		| 'dropdown';
     }
     interface PButtonGroup {
         /**
