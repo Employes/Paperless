@@ -153,6 +153,10 @@ export namespace Components {
          */
         "chevronPosition": 'start' | 'end';
         /**
+          * The class of the container passed by parent
+         */
+        "class": string;
+        /**
           * Wether the button is disabled
          */
         "disabled": boolean;
@@ -903,6 +907,10 @@ export namespace Components {
           * The element to use for the navigation item
          */
         "as": string;
+        /**
+          * The class of the container passed by parent
+         */
+        "class": string;
         /**
           * Icon of the navigation item
          */
@@ -2471,6 +2479,10 @@ declare namespace LocalJSX {
          */
         "chevronPosition"?: 'start' | 'end';
         /**
+          * The class of the container passed by parent
+         */
+        "class"?: string;
+        /**
           * Wether the button is disabled
          */
         "disabled"?: boolean;
@@ -3273,6 +3285,10 @@ declare namespace LocalJSX {
           * The element to use for the navigation item
          */
         "as"?: string;
+        /**
+          * The class of the container passed by parent
+         */
+        "class"?: string;
         /**
           * Icon of the navigation item
          */
