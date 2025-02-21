@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.7](https://github.com/ionic-team/ionic/compare/v2.0.1-beta.6...v2.0.1-beta.7) (2025-02-21)
+
+
+### Features
+
+* **molecules:** Add navigation section component ([9d2c5d7](https://github.com/ionic-team/ionic/commit/9d2c5d72004cfd463b49d16f101439bf1a3bac4a))
+
+
+
+
+
 ## [2.0.1-beta.6](https://github.com/ionic-team/ionic/compare/v2.0.1-beta.5...v2.0.1-beta.6) (2025-02-21)
 
 **Note:** Version bump only for package @paperless/react
