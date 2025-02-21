@@ -16,7 +16,6 @@ custom:
   s3Sync:
     - bucketName: ${self:custom.${self:custom.environment}.bucketName}
       localDir: dist
-      acl: public-read
       followSymlinks: true
       defaultContentType: text/html
       deleteRemoved: false
@@ -51,7 +50,9 @@ resources:
       Type: AWS::S3::Bucket
       Properties:
         BucketName: ${self:custom.${self:custom.environment}.bucketName}
-        AccessControl: PublicRead
+        AccessControl: Private
+        PublicAccessBlockConfiguration:
+          BlockPublicPolicy: false
         WebsiteConfiguration:
           IndexDocument: index.html
           ErrorDocument: index.html

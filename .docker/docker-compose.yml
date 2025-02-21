@@ -1,23 +1,23 @@
 version: '2'
 
 services:
-    storybook:
-        extends:
-            file: docker-compose.base.yml
-            service: base
-        command: yarn docker:storybook
-        environment:
-            - 'NODE_AUTH_TOKEN=$NPM_AUTH_TOKEN'
-            - NODE_OPTIONS=--openssl-legacy-provider
-        ports:
-            - '$EXPOSED_STORYBOOK_PORT:5200'
-    ng-playground:
-        extends:
-            file: docker-compose.base.yml
-            service: base
-        command: yarn docker:angular:playground
-        environment:
-            - 'NODE_AUTH_TOKEN=$NPM_AUTH_TOKEN'
-            - NODE_OPTIONS=--openssl-legacy-provider
-        ports:
-            - '$EXPOSED_NG_PLAYGROUND_PORT:4200'
+  storybook:
+    extends:
+      file: docker-compose.base.yml
+      service: base
+    command: yarn docker:storybook
+    environment:
+      - 'NODE_AUTH_TOKEN=$NPM_AUTH_TOKEN'
+      - NODE_OPTIONS=--openssl-legacy-provider
+    ports:
+      - '$EXPOSED_STORYBOOK_PORT:5200'
+  ng-playground:
+    extends:
+      file: docker-compose.base.yml
+      service: base
+    command: yarn docker:angular:playground
+    environment:
+      - 'NODE_AUTH_TOKEN=$NPM_AUTH_TOKEN'
+      - NODE_OPTIONS=--openssl-legacy-provider
+    ports:
+      - '$EXPOSED_NG_PLAYGROUND_PORT:4200'
