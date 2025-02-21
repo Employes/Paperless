@@ -23,9 +23,10 @@ const button = cva(
 		variants: {
 			variant: {
 				primary: ['bg-supportive-lilac border-black-teal/20'],
-				secondary: ['bg-white border-black-teal/10'],
+				secondary: null,
 				text: ['text-teal'],
 				transparent: ['bg-transparent'],
+				dropdown: null,
 			},
 			active: {
 				true: null,
@@ -62,40 +63,44 @@ const button = cva(
 		compoundVariants: [
 			// variants
 			{
-				variant: ['primary', 'secondary'],
+				variant: ['secondary', 'dropdown'],
+				class: ['bg-white border-black-teal/10'],
+			},
+			{
+				variant: ['primary', 'secondary', 'dropdown'],
 				disabled: false,
 				class: 'border',
 			},
 			{
-				variant: ['primary', 'secondary'],
+				variant: ['primary', 'secondary', 'dropdown'],
 				disabled: false,
 				loading: false,
 				class: 'active:border-supportive-lilac-800 active:ring active:ring-2',
 			},
 			{
-				variant: ['primary', 'secondary'],
+				variant: ['primary', 'secondary', 'dropdown'],
 				disabled: false,
 				loading: false,
 				active: true,
 				class: 'border-supportive-lilac-800 ring ring-2',
 			},
 			{
-				variant: ['primary', 'secondary', 'transparent'],
+				variant: ['primary', 'secondary', 'transparent', 'dropdown'],
 				buttonGroupPosition: 'none',
 				class: 'rounded-lg',
 			},
 			{
-				variant: ['primary', 'secondary', 'transparent'],
+				variant: ['primary', 'secondary', 'transparent', 'dropdown'],
 				buttonGroupPosition: 'start',
 				class: 'rounded-s-lg',
 			},
 			{
-				variant: ['primary', 'secondary', 'transparent'],
+				variant: ['primary', 'secondary', 'transparent', 'dropdown'],
 				buttonGroupPosition: 'end',
 				class: 'rounded-e-lg',
 			},
 			{
-				variant: ['primary', 'secondary'],
+				variant: ['primary', 'secondary', 'dropdown'],
 				disabled: false,
 				class: 'text-black-teal',
 			},
@@ -119,19 +124,19 @@ const button = cva(
 				class: 'ring-black-teal/10',
 			},
 			{
-				variant: 'secondary',
+				variant: ['secondary', 'dropdown'],
 				disabled: true,
 				class: 'border bg-white-600 text-black-teal-100',
 			},
 			{
-				variant: 'secondary',
+				variant: ['secondary', 'dropdown'],
 				disabled: false,
 				loading: false,
 				class:
 					'drop-shadow-1 hover:drop-shadow-1 hover:bg-white-600 active:text-black-teal/60 active:ring-supportive-lilac-100',
 			},
 			{
-				variant: 'secondary',
+				variant: ['secondary', 'dropdown'],
 				disabled: false,
 				loading: false,
 				active: true,
@@ -191,8 +196,14 @@ const button = cva(
 				iconOnly: false,
 				class: 'px-3',
 			},
+			{
+				variant: 'dropdown',
+				iconOnly: false,
+				class: 'p-2',
+			},
 
 			{
+				variant: ['primary', 'secondary', 'transparent', 'text'],
 				iconOnly: false,
 				class: 'py-1',
 			},
@@ -239,7 +250,12 @@ export class Button {
 	/**
 	 * The variant of the button
 	 */
-	@Prop() variant: 'primary' | 'secondary' | 'transparent' | 'text' = 'primary';
+	@Prop() variant:
+		| 'primary'
+		| 'secondary'
+		| 'transparent'
+		| 'text'
+		| 'dropdown' = 'primary';
 
 	/**
 	 * Wether to force an active state
