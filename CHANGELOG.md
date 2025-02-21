@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.8](https://github.com/employes/paperless/compare/v2.0.1-beta.7...v2.0.1-beta.8) (2025-02-21)
+
+
+### Bug Fixes
+
+* **molecules/button & navigation-item:** Use class prop to determine active state ([792c340](https://github.com/employes/paperless/commit/792c34035822f8a3a92cb0b0a517249f30a988f3))
+* **molecules/profile:** Don't apply padding to button ([a25aa15](https://github.com/employes/paperless/commit/a25aa15adaf0314d496c76a2d96c2d4514e7a08c))
+
+
+
+
+
 ## [2.0.1-beta.7](https://github.com/employes/paperless/compare/v2.0.1-beta.6...v2.0.1-beta.7) (2025-02-21)
 
 
