@@ -3,7 +3,7 @@
 ## Usage:
 
 ```html
-<p-navigation-section title="Title of the section">
+<p-navigation-section header="Title of the section">
 	<p-navigation-item>Item 1</p-navigation-item>
 	<p-navigation-item>Item 2</p-navigation-item>
 	<p-navigation-item>Item 3</p-navigation-item>
