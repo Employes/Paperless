@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.13](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.12...v2.0.1-beta.13) (2025-02-21)
+
+
+### Bug Fixes
+
+* **molecules/profile:** Align text to the left ([7793752](https://github.com/ionic-team/stencil-component-starter/commit/779375264446b22d7afe18c51510f63635511c53))
+
+
+
+
+
 ## [2.0.1-beta.12](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.11...v2.0.1-beta.12) (2025-02-21)
 
 
