@@ -133,6 +133,10 @@ export namespace Components {
     }
     interface PButton {
         /**
+          * Wether to force an active state
+         */
+        "active": boolean;
+        /**
           * The type of the button
          */
         "as": 'a' | 'button';
@@ -2429,6 +2433,10 @@ declare namespace LocalJSX {
     interface PBadge {
     }
     interface PButton {
+        /**
+          * Wether to force an active state
+         */
+        "active"?: boolean;
         /**
           * The type of the button
          */

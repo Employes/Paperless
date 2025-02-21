@@ -1,15 +1,11 @@
 import { Component, Element, h, Host, Prop, State } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
-const profileContent = cva(['flex h-10 gap-2 items-center w-full'], {
+const profileContent = cva(['flex gap-2 items-center w-full'], {
 	variants: {
 		dropdown: {
-			false: 'py-1',
-			true: 'bg-white p-2 shadow-1 border rounded-lg hover:shadow-2 cursor-pointer',
-		},
-		dropdownOpen: {
-			false: 'border-black-teal-100',
-			true: 'shadow-2 border-supportive-lilac-800 ring ring-2 ring-supportive-lilac-100',
+			false: 'h-10 py-1',
+			true: null,
 		},
 	},
 });
@@ -25,19 +21,6 @@ export class Profile {
 	@Prop() dropdownLocation: 'top-end' | 'bottom-end' = 'bottom-end';
 
 	/**
-	 * The size of the profile avatar
-	 */
-	@Prop({ reflect: true }) size:
-		| 'xs'
-		| 'sm'
-		| 'base'
-		| 'lg'
-		| 'xl'
-		| '2xl'
-		| '3xl'
-		| '4xl' = 'base';
-
-	/**
 	 * The host element
 	 */
 	@Element() private _el: HTMLElement;
@@ -49,10 +32,6 @@ export class Profile {
 		this._hasDropdownSlot = !!this._el.querySelector(
 			':scope > [slot="dropdown"]'
 		);
-	}
-
-	componentWillRender() {
-		this._updateAvatar();
 	}
 
 	render() {
@@ -69,7 +48,15 @@ export class Profile {
 						applyMaxWidth={false}
 						onIsOpen={ev => (this._dropdownOpen = ev.detail)}
 					>
-						{content}
+						<p-button
+							variant='secondary'
+							chevron={this._dropdownOpen ? 'up' : 'down'}
+							active={this._dropdownOpen}
+							slot='trigger'
+							size='lg'
+						>
+							{content}
+						</p-button>
 						<div slot='items'>
 							<slot name='dropdown' />
 						</div>
@@ -86,9 +73,7 @@ export class Profile {
 			<div
 				class={profileContent({
 					dropdown: this._hasDropdownSlot,
-					dropdownOpen: this._dropdownOpen,
 				})}
-				slot='trigger'
 			>
 				<slot name='avatar' />
 				<div class='flex flex-1 flex-col'>
@@ -101,29 +86,7 @@ export class Profile {
 				</div>
 
 				<slot name='post-title' />
-				{this._hasDropdownSlot && this._getIcon()}
 			</div>
-		);
-	}
-
-	private _updateAvatar() {
-		const avatar = this._el.querySelector(
-			'p-avatar[slot="avatar"]'
-		) as HTMLPAvatarElement;
-
-		if (!avatar) {
-			return;
-		}
-
-		avatar.size = this._hasDropdownSlot ? 'sm' : avatar.size;
-	}
-
-	private _getIcon() {
-		return (
-			<p-icon
-				variant='caret'
-				flip={this._dropdownOpen ? 'vertical' : 'horizontal'}
-			/>
 		);
 	}
 }
