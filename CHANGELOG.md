@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.5](https://github.com/employes/paperless/compare/v2.0.1-beta.4...v2.0.1-beta.5) (2025-02-21)
+
+
+### Bug Fixes
+
+* **ci:** return deploy & versioning ([972339a](https://github.com/employes/paperless/commit/972339ad429b1e08aaba3afc149926cc5bca2447))
+* **serverless:** try changing the s3 acl ([9ca42c1](https://github.com/employes/paperless/commit/9ca42c14ed153613580e515f8e5148df61c65236))
+
+
+### Features
+
+* **molecules/button:** Set active based on property or class ([3d79ec8](https://github.com/employes/paperless/commit/3d79ec8eacefe1d30bd25032129860193fcc62a5))
+* **molecules/dropdown:** Pass active to button if dropdown is shown ([b427fb9](https://github.com/employes/paperless/commit/b427fb92cca927ed21856c5bd2d6a736fd0d4197))
+* **molecules/navigation-item:** Set active by class ([f3d05e0](https://github.com/employes/paperless/commit/f3d05e02081dd5c28c90a3e7a7714fae0d040050))
+* **molecules/profile:** Use button for profile when dropdown available ([53efdc2](https://github.com/employes/paperless/commit/53efdc2d40e9046b1a2f18cddda837a49afddd16))
+
+
+
+
+
 ## [2.0.1-beta.4](https://github.com/employes/paperless/compare/v2.0.1-beta.3...v2.0.1-beta.4) (2025-02-21)
 
 
