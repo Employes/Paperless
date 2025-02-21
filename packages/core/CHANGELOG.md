@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.7](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.6...v2.0.1-beta.7) (2025-02-21)
+
+
+### Bug Fixes
+
+* **molecules/profile:** Align content to start ([2110975](https://github.com/ionic-team/stencil-component-starter/commit/2110975e0894bc05925267abc54b463d3368e615))
+
+
+### Features
+
+* **molecules:** Add navigation section component ([9d2c5d7](https://github.com/ionic-team/stencil-component-starter/commit/9d2c5d72004cfd463b49d16f101439bf1a3bac4a))
+
+
+
+
+
 ## [2.0.1-beta.6](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.5...v2.0.1-beta.6) (2025-02-21)
 
 
