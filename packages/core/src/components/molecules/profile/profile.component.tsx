@@ -1,4 +1,12 @@
-import { Component, Element, h, Host, Prop, State } from '@stencil/core';
+import {
+	Component,
+	Element,
+	h,
+	Host,
+	Listen,
+	Prop,
+	State,
+} from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
 const profileContent = cva(['flex gap-2 items-center flex-1 min-w-0'], {
@@ -29,9 +37,7 @@ export class Profile {
 	@State() private _hasDropdownSlot = false;
 
 	componentWillLoad() {
-		this._hasDropdownSlot = !!this._el.querySelector(
-			':scope > [slot="dropdown"]'
-		);
+		this._checkDropdownSlot();
 	}
 
 	componentWillRender() {
@@ -63,7 +69,10 @@ export class Profile {
 							{content}
 						</p-button>
 						<div slot='items'>
-							<slot name='dropdown' />
+							<slot
+								name='dropdown'
+								onSlotchange={() => this._checkDropdownSlot()}
+							/>
 						</div>
 					</p-dropdown>
 				) : (
@@ -71,6 +80,21 @@ export class Profile {
 				)}
 			</Host>
 		);
+	}
+
+	@Listen('slotchange')
+	slotchange() {
+		this._checkDropdownSlot();
+	}
+
+	private _checkDropdownSlot() {
+		this._hasDropdownSlot = !!this._el.querySelector(
+			':scope > [slot="dropdown"]'
+		);
+
+		if (!this._hasDropdownSlot && this._dropdownOpen) {
+			this._dropdownOpen = false;
+		}
 	}
 
 	private _getContent() {
