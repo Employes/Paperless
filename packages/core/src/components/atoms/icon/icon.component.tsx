@@ -46,7 +46,7 @@ export class Icon {
 	/**
 	 * The size of the icon, using tailwind sizes
 	 */
-	@Prop() size: TextSizeOptions = 'auto';
+	@Prop() size: TextSizeOptions = 'base';
 
 	/**
 	 * Wether to rotate the icon x degrees
