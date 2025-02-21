@@ -53,7 +53,7 @@ export class Avatar {
 	/**
 	 * The letters to show on the empty state variant
 	 */
-	@Prop() letters: string = ' ';
+	@Prop() letters: string;
 
 	@State() private _src: string;
 	@State() private _failed: boolean = false;
@@ -79,7 +79,7 @@ export class Avatar {
 				})}
 			>
 				{this._failed ? (
-					this.letters
+					this.letters?.[0] ?? ' '
 				) : (
 					<img
 						src={this._src}
