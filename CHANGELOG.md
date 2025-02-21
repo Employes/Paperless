@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.4](https://github.com/employes/paperless/compare/v2.0.1-beta.3...v2.0.1-beta.4) (2025-02-21)
+
+
+### Bug Fixes
+
+* **atoms/avatar:** Always force a single letter ([8d4c0de](https://github.com/employes/paperless/commit/8d4c0de59b20934708c240b9acac1856624f7d65))
+* **atoms/avatar:** Apply ambit font ([874f33b](https://github.com/employes/paperless/commit/874f33bc7605e31f989ea99a7fa3de7d20755d61))
+* **serverless:** Use a new certificate ([81d3922](https://github.com/employes/paperless/commit/81d3922a86ef15642898e2b07a10c653e5ff16d3))
+
+
+
+
+
 ## [2.0.1-beta.3](https://github.com/employes/paperless/compare/v2.0.1-beta.2...v2.0.1-beta.3) (2025-02-20)
 
 
