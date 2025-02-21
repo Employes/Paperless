@@ -191,7 +191,7 @@ export class Dropdown {
 		}
 
 		return (
-			<Host class='p-dropdown'>
+			<Host class='p-dropdown relative'>
 				<div
 					class='trigger'
 					ref={ref => (this._trigger = ref)}
