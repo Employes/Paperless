@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.10](https://github.com/employes/paperless/compare/v2.0.1-beta.9...v2.0.1-beta.10) (2025-02-21)
+
+
+### Bug Fixes
+
+* **molecules/navigation-section:** Rename title to header ([ffe7cdb](https://github.com/employes/paperless/commit/ffe7cdbe162a26e9833646e026d231f826fd073c))
+* **molecules/profile:** Fix stupid dropdown issue ([73b7b08](https://github.com/employes/paperless/commit/73b7b08587605ec1a2710204d097c6e2c3c7d122))
+* **organisms/navbar:** Use correct icon for open/close & remove menu text ([7579419](https://github.com/employes/paperless/commit/75794199277f92e0791b1cf99107f19d9ce31ed9))
+
+
+
+
+
 ## [2.0.1-beta.9](https://github.com/employes/paperless/compare/v2.0.1-beta.8...v2.0.1-beta.9) (2025-02-21)
 
 
