@@ -1,7 +1,7 @@
 import { Component, Element, h, Host, Prop, State } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
-const profileContent = cva(['flex gap-2 items-center w-full'], {
+const profileContent = cva(['flex gap-2 items-center flex-1 min-w-0'], {
 	variants: {
 		dropdown: {
 			false: 'h-10 py-1',
@@ -38,7 +38,7 @@ export class Profile {
 		const content = this._getContent();
 
 		return (
-			<Host class='p-profile inline-block'>
+			<Host class='p-profile inline-block w-inherit'>
 				{this._hasDropdownSlot ? (
 					<p-dropdown
 						class='block'
@@ -54,6 +54,7 @@ export class Profile {
 							active={this._dropdownOpen}
 							slot='trigger'
 							size='lg'
+							class='w-full'
 						>
 							{content}
 						</p-button>
@@ -76,11 +77,11 @@ export class Profile {
 				})}
 			>
 				<slot name='avatar' />
-				<div class='flex flex-1 flex-col'>
-					<p class='text-sm font-medium'>
+				<div class='flex min-w-0 flex-1 flex-col'>
+					<p class='overflow-hidden text-ellipsis whitespace-nowrap text-sm font-medium'>
 						<slot name='title' />
 					</p>
-					<p class='text-xs text-black-teal-300'>
+					<p class='overflow-hidden text-ellipsis whitespace-nowrap text-xs text-black-teal-300'>
 						<slot name='subtitle' />
 					</p>
 				</div>
