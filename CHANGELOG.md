@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.11](https://github.com/employes/paperless/compare/v2.0.1-beta.10...v2.0.1-beta.11) (2025-02-21)
+
+
+### Bug Fixes
+
+* add components.d.ts ([88cd36f](https://github.com/employes/paperless/commit/88cd36fddf7d83f8a9d26df17f5d0c01528a06b8))
+
+
+
+
+
 ## [2.0.1-beta.10](https://github.com/employes/paperless/compare/v2.0.1-beta.9...v2.0.1-beta.10) (2025-02-21)
 
 
