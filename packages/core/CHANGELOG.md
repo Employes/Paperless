@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.12](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.11...v2.0.1-beta.12) (2025-02-21)
+
+
+### Bug Fixes
+
+* **molecules/navigation/section:** Add correct gap between header & content ([8ad0f44](https://github.com/ionic-team/stencil-component-starter/commit/8ad0f442f47d9a1e8123d2e2dfd234866880508c))
+
+
+
+
+
 ## [2.0.1-beta.11](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.10...v2.0.1-beta.11) (2025-02-21)
 
 
