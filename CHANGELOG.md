@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.6](https://github.com/employes/paperless/compare/v2.0.1-beta.5...v2.0.1-beta.6) (2025-02-21)
+
+
+### Bug Fixes
+
+* **atoms/avatar:** Set leading to the same as font size ([7bbd254](https://github.com/employes/paperless/commit/7bbd254f8d7c0114ee266b38a6d090dfb1bee2f0))
+* **molecules/navigation-items:** Use existing icon in story ([5c2a576](https://github.com/employes/paperless/commit/5c2a57659d96586c54a075228028512b437b574f))
+* **molecules/profile:** Correct width for profile children ([fe3625d](https://github.com/employes/paperless/commit/fe3625d5b097d38e4dd2cb63e287d621ed1a2f34))
+* **molecules/profile:** Set title size to sm ([24d5001](https://github.com/employes/paperless/commit/24d500118c450c02b68af413156a2b50145ecc57))
+
+
+### Features
+
+* **molecules/button:** Add dropdown variant ([501fe98](https://github.com/employes/paperless/commit/501fe98a76e7235c99285cd3fc89350ed4048658))
+
+
+
+
+
 ## [2.0.1-beta.5](https://github.com/employes/paperless/compare/v2.0.1-beta.4...v2.0.1-beta.5) (2025-02-21)
 
 
