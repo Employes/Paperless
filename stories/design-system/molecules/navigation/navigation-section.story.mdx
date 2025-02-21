@@ -1,0 +1,19 @@
+import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
+import { StoryCategories } from '../../../categories';
+import NavigationSectionDocs from '../../../../packages/core/src/components/molecules/navigation-section/readme.md';
+
+<Meta title={`${StoryCategories.Molecules}/Rebranding/Navigation/Section`} />
+
+<NavigationSectionDocs />
+
+# Examples
+
+<Canvas>
+	<div class='flex w-full justify-center'>
+		<p-navigation-section title='Title'>
+			<p-navigation-item>Item 1</p-navigation-item>
+			<p-navigation-item>Item 2</p-navigation-item>
+			<p-navigation-item>Item 3</p-navigation-item>
+		</p-navigation-section>
+	</div>
+</Canvas>
