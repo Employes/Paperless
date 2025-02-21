@@ -81,7 +81,7 @@ export class Profile {
 				})}
 			>
 				<slot name='avatar' />
-				<div class='flex min-w-0 flex-1 flex-col'>
+				<div class='flex min-w-0 flex-1 flex-col items-start'>
 					<p class='overflow-hidden text-ellipsis whitespace-nowrap text-sm font-medium'>
 						<slot name='title' />
 					</p>
