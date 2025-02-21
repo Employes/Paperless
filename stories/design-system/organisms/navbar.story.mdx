@@ -32,39 +32,38 @@ import NavbarDocs from '../../../packages/core/src/components/organisms/navbar/r
 						letters='J'
 					/>
 					<span slot='title'>John Doe</span>
+					<span slot='subtitle'>Employee</span>
 					<div slot='dropdown'>
 						<p-profile class='px-2'>
 							<span slot='title'>John Doe</span>
 							<span slot='subtitle'>john@doe.com</span>
 						</p-profile>
 						<p-divider class='-px-2' />
-						<p-dropdown-menu-item icon='person'>Account</p-dropdown-menu-item>
-						<p-dropdown-menu-item icon='signout'>Sign out</p-dropdown-menu-item>
+						<p-dropdown-menu-item icon='user'>Account</p-dropdown-menu-item>
+						<p-dropdown-menu-item icon='power'>Sign out</p-dropdown-menu-item>
 					</div>
 				</p-profile>
-				<div
-					class='flex flex-col'
+				<p-navigation-section
 					slot='content'
+					title='Overzicht'
 				>
-					<p-navigation-title class='mb-2'>Overzicht</p-navigation-title>
 					<p-navigation-item
-						icon='person'
+						icon='user'
 						active={true}
 					>
 						Item name
 					</p-navigation-item>
-					<p-navigation-item icon='person'>Item name</p-navigation-item>
-					<p-navigation-item icon='person'>Item name</p-navigation-item>
-				</div>
-				<div
-					class='flex flex-col'
+					<p-navigation-item icon='user'>Item name</p-navigation-item>
+					<p-navigation-item icon='user'>Item name</p-navigation-item>
+				</p-navigation-section>
+				<p-navigation-section
 					slot='content'
+					title='Overzicht'
 				>
-					<p-navigation-title class='mb-2'>Overzicht</p-navigation-title>
-					<p-navigation-item icon='person'>Item name</p-navigation-item>
-					<p-navigation-item icon='person'>Item name</p-navigation-item>
-					<p-navigation-item icon='person'>Item name</p-navigation-item>
-				</div>
+					<p-navigation-item icon='user'>Item name</p-navigation-item>
+					<p-navigation-item icon='user'>Item name</p-navigation-item>
+					<p-navigation-item icon='user'>Item name</p-navigation-item>
+				</p-navigation-section>
 				<p-dropdown
 					placement='bottom-end'
 					slot='topbar'
@@ -74,8 +73,8 @@ import NavbarDocs from '../../../packages/core/src/components/organisms/navbar/r
 						letters='J'
 					/>
 					<slot slot='items'>
-						<p-dropdown-menu-item icon='person'>Account</p-dropdown-menu-item>
-						<p-dropdown-menu-item icon='signout'>Sign out</p-dropdown-menu-item>
+						<p-dropdown-menu-item icon='user'>Account</p-dropdown-menu-item>
+						<p-dropdown-menu-item icon='power'>Sign out</p-dropdown-menu-item>
 					</slot>
 				</p-dropdown>
 			</p-navbar>
@@ -106,14 +105,15 @@ import NavbarDocs from '../../../packages/core/src/components/organisms/navbar/r
 						letters='J'
 					/>
 					<span slot='title'>John Doe</span>
+					<span slot='subtitle'>Employee</span>
 					<div slot='dropdown'>
 						<p-profile class='px-2'>
 							<span slot='title'>John Doe</span>
 							<span slot='subtitle'>john@doe.com</span>
 						</p-profile>
 						<p-divider class='-px-2' />
-						<p-dropdown-menu-item icon='person'>Account</p-dropdown-menu-item>
-						<p-dropdown-menu-item icon='signout'>Sign out</p-dropdown-menu-item>
+						<p-dropdown-menu-item icon='user'>Account</p-dropdown-menu-item>
+						<p-dropdown-menu-item icon='power'>Sign out</p-dropdown-menu-item>
 					</div>
 				</p-profile>
 				<div
@@ -122,22 +122,22 @@ import NavbarDocs from '../../../packages/core/src/components/organisms/navbar/r
 				>
 					<p-navigation-title class='mb-2'>Overzicht</p-navigation-title>
 					<p-navigation-item
-						icon='person'
+						icon='user'
 						active={true}
 					>
 						Item name
 					</p-navigation-item>
-					<p-navigation-item icon='person'>Item name</p-navigation-item>
-					<p-navigation-item icon='person'>Item name</p-navigation-item>
+					<p-navigation-item icon='user'>Item name</p-navigation-item>
+					<p-navigation-item icon='user'>Item name</p-navigation-item>
 				</div>
 				<div
 					class='flex flex-col'
 					slot='content'
 				>
 					<p-navigation-title class='mb-2'>Overzicht</p-navigation-title>
-					<p-navigation-item icon='person'>Item name</p-navigation-item>
-					<p-navigation-item icon='person'>Item name</p-navigation-item>
-					<p-navigation-item icon='person'>Item name</p-navigation-item>
+					<p-navigation-item icon='user'>Item name</p-navigation-item>
+					<p-navigation-item icon='user'>Item name</p-navigation-item>
+					<p-navigation-item icon='user'>Item name</p-navigation-item>
 				</div>
 				<p-dropdown
 					placement='bottom-end'
@@ -148,8 +148,8 @@ import NavbarDocs from '../../../packages/core/src/components/organisms/navbar/r
 						letters='J'
 					/>
 					<slot slot='items'>
-						<p-dropdown-menu-item icon='person'>Account</p-dropdown-menu-item>
-						<p-dropdown-menu-item icon='signout'>Sign out</p-dropdown-menu-item>
+						<p-dropdown-menu-item icon='user'>Account</p-dropdown-menu-item>
+						<p-dropdown-menu-item icon='power'>Sign out</p-dropdown-menu-item>
 					</slot>
 				</p-dropdown>
 			</p-navbar>
