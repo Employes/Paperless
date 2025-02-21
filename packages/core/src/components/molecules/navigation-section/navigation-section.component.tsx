@@ -6,15 +6,15 @@ import { Component, h, Host, Prop } from '@stencil/core';
 })
 export class NavigationSection {
 	/**
-	 * The title of the section
+	 * The header of the section
 	 */
-	@Prop() title: string;
+	@Prop() header: string;
 
 	render() {
 		return (
 			<Host class='p-navigation-section flex flex-col'>
-				{this.title?.length > 0 && (
-					<p-navigation-title>{this.title}</p-navigation-title>
+				{this.header?.length > 0 && (
+					<p-navigation-title>{this.header}</p-navigation-title>
 				)}
 
 				<slot />
