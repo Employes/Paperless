@@ -20,11 +20,6 @@ import NavbarDocs from '../../../packages/core/src/components/organisms/navbar/r
 						letters='E'
 					/>
 					<span slot='title'>Employes B.V.</span>
-					<div slot='dropdown'>
-						<p-dropdown-menu-item>Item 1</p-dropdown-menu-item>
-						<p-dropdown-menu-item>Item 2</p-dropdown-menu-item>
-						<p-dropdown-menu-item>Item 3</p-dropdown-menu-item>
-					</div>
 				</p-profile>
 				<p-profile slot='user'>
 					<p-avatar
@@ -45,7 +40,7 @@ import NavbarDocs from '../../../packages/core/src/components/organisms/navbar/r
 				</p-profile>
 				<p-navigation-section
 					slot='content'
-					title='Overzicht'
+					header='Overzicht'
 				>
 					<p-navigation-item
 						icon='user'
@@ -58,7 +53,7 @@ import NavbarDocs from '../../../packages/core/src/components/organisms/navbar/r
 				</p-navigation-section>
 				<p-navigation-section
 					slot='content'
-					title='Overzicht'
+					header='Overzicht'
 				>
 					<p-navigation-item icon='user'>Item name</p-navigation-item>
 					<p-navigation-item icon='user'>Item name</p-navigation-item>
@@ -116,11 +111,10 @@ import NavbarDocs from '../../../packages/core/src/components/organisms/navbar/r
 						<p-dropdown-menu-item icon='power'>Sign out</p-dropdown-menu-item>
 					</div>
 				</p-profile>
-				<div
-					class='flex flex-col'
+				<p-navigation-section
 					slot='content'
+					header='Overzicht'
 				>
-					<p-navigation-title class='mb-2'>Overzicht</p-navigation-title>
 					<p-navigation-item
 						icon='user'
 						active={true}
@@ -129,16 +123,15 @@ import NavbarDocs from '../../../packages/core/src/components/organisms/navbar/r
 					</p-navigation-item>
 					<p-navigation-item icon='user'>Item name</p-navigation-item>
 					<p-navigation-item icon='user'>Item name</p-navigation-item>
-				</div>
-				<div
-					class='flex flex-col'
+				</p-navigation-section>
+				<p-navigation-section
 					slot='content'
+					header='Overzicht'
 				>
-					<p-navigation-title class='mb-2'>Overzicht</p-navigation-title>
 					<p-navigation-item icon='user'>Item name</p-navigation-item>
 					<p-navigation-item icon='user'>Item name</p-navigation-item>
 					<p-navigation-item icon='user'>Item name</p-navigation-item>
-				</div>
+				</p-navigation-section>
 				<p-dropdown
 					placement='bottom-end'
 					slot='topbar'
