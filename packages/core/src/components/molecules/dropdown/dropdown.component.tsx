@@ -204,7 +204,7 @@ export class Dropdown {
 		);
 	}
 
-	private _checkButtons() {
+	private _checkButtons(active: boolean = false) {
 		if (!this.applyChevron) {
 			return;
 		}
@@ -214,12 +214,14 @@ export class Dropdown {
 		);
 
 		for (let button of [...buttons]) {
-			(button as any).chevronPosition = this.chevronPosition;
-			(button as any).chevron = this.chevronDirection
+			button.chevronPosition = this.chevronPosition;
+			button.chevron = this.chevronDirection
 				? this.chevronDirection
 				: this.placement.indexOf('top') >= 0
 				? 'up'
 				: 'down';
+			button.disabled = this.disableTriggerClick;
+			button.active = active;
 		}
 	}
 
@@ -298,8 +300,7 @@ export class Dropdown {
 		this._menu.classList.add('block');
 
 		this.isOpen.emit(true);
-
-		this._update();
+		this._checkButton(true);
 	}
 
 	private _hide() {
@@ -318,6 +319,7 @@ export class Dropdown {
 		this._menu.classList.add('hidden');
 
 		this.isOpen.emit(false);
+		this._checkButton(false);
 	}
 
 	private _update() {
