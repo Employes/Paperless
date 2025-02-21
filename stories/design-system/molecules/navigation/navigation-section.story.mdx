@@ -10,10 +10,15 @@ import NavigationSectionDocs from '../../../../packages/core/src/components/mole
 
 <Canvas>
 	<div class='flex w-full justify-center'>
-		<p-navigation-section title='Title'>
-			<p-navigation-item>Item 1</p-navigation-item>
-			<p-navigation-item>Item 2</p-navigation-item>
-			<p-navigation-item>Item 3</p-navigation-item>
+		<p-navigation-section header='Title'>
+			<p-navigation-item
+				icon='home'
+				active
+			>
+				Item 1
+			</p-navigation-item>
+			<p-navigation-item icon='home'>Item 2</p-navigation-item>
+			<p-navigation-item icon='home'>Item 3</p-navigation-item>
 		</p-navigation-section>
 	</div>
 </Canvas>
