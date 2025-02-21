@@ -893,10 +893,6 @@ export namespace Components {
         "showClose": boolean;
     }
     interface PNavbar {
-        /**
-          * The text to display for the menu button & sidebar title
-         */
-        "menuText": string;
     }
     interface PNavigationItem {
         /**
@@ -930,9 +926,9 @@ export namespace Components {
     }
     interface PNavigationSection {
         /**
-          * The title of the section
+          * The header of the section
          */
-        "title": string;
+        "header": string;
     }
     interface PNavigationTitle {
     }
@@ -1868,6 +1864,9 @@ declare global {
         prototype: HTMLPBadgeElement;
         new (): HTMLPBadgeElement;
     };
+    interface HTMLPButtonElementEventMap {
+        "onClick": MouseEvent;
+    }
     interface HTMLPButtonElement extends Components.PButton, HTMLStencilElement {
     }
     var HTMLPButtonElement: {
@@ -2108,6 +2107,9 @@ declare global {
         prototype: HTMLPNavigationTitleElement;
         new (): HTMLPNavigationTitleElement;
     };
+    interface HTMLPPageSizeSelectElementEventMap {
+        "sizeChange": number;
+    }
     interface HTMLPPageSizeSelectElement extends Components.PPageSizeSelect, HTMLStencilElement {
     }
     var HTMLPPageSizeSelectElement: {
@@ -3263,10 +3265,6 @@ declare namespace LocalJSX {
         "showClose"?: boolean;
     }
     interface PNavbar {
-        /**
-          * The text to display for the menu button & sidebar title
-         */
-        "menuText"?: string;
     }
     interface PNavigationItem {
         /**
@@ -3300,9 +3298,9 @@ declare namespace LocalJSX {
     }
     interface PNavigationSection {
         /**
-          * The title of the section
+          * The header of the section
          */
-        "title"?: string;
+        "header"?: string;
     }
     interface PNavigationTitle {
     }
