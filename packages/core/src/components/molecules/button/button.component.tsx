@@ -6,11 +6,10 @@ import {
 	Host,
 	Listen,
 	Prop,
-	Element,
 } from '@stencil/core';
+import { cva } from 'class-variance-authority';
 import { RotateOptions } from '../../../types/tailwind';
 import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
-import { cva } from 'class-variance-authority';
 
 const button = cva(
 	[
@@ -343,17 +342,17 @@ export class Button {
 	@Prop() buttonGroupPosition: 'start' | 'center' | 'end' | 'none' = 'none';
 
 	/**
+	 * The class of the container passed by parent
+	 */
+	@Prop() class: string;
+
+	/**
 	 * Button click event
 	 */
 	@Event({
 		bubbles: false,
 	})
 	onClick: EventEmitter<MouseEvent>;
-
-	/**
-	 * The host element
-	 */
-	@Element() private _el: HTMLElement;
 
 	render() {
 		let loaderColor: 'white' | 'storm' | 'indigo' = 'white';
@@ -371,7 +370,7 @@ export class Button {
 				? 'a'
 				: 'button';
 
-		const active = this.active || this._el.classList.contains('active');
+		const active = this.active || this.class?.includes('active');
 
 		return (
 			<Host class='p-button block'>
