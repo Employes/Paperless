@@ -133,7 +133,7 @@ export class Dropdown {
 	}
 
 	componentDidLoad() {
-		this._checkButton();
+		this._checkButtons();
 	}
 
 	disconnectedCallback() {
@@ -300,7 +300,7 @@ export class Dropdown {
 		this._menu.classList.add('block');
 
 		this.isOpen.emit(true);
-		this._checkButton(true);
+		this._checkButtons(true);
 	}
 
 	private _hide() {
@@ -319,7 +319,7 @@ export class Dropdown {
 		this._menu.classList.add('hidden');
 
 		this.isOpen.emit(false);
-		this._checkButton(false);
+		this._checkButtons(false);
 	}
 
 	private _update() {
