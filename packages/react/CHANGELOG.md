@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.14](https://github.com/ionic-team/ionic/compare/v1.66.0...v2.0.1-beta.14) (2025-03-04)
+
+
+### Features
+
+* **atmos:** Add navigation-title component ([c5f1165](https://github.com/ionic-team/ionic/commit/c5f116543d8e3da903b7585a785339559a6e84b5))
+* **atoms/icon:** New icons and marked old as deprecated ([383bb02](https://github.com/ionic-team/ionic/commit/383bb02f1c958b90cb775e42866bda0f80e6b136))
+* **atoms:** Add badge component ([f3335bf](https://github.com/ionic-team/ionic/commit/f3335bfd7b8bdf15e3fcf122188583d7718de001))
+* **molecules:** Add navigation section component ([a0c5c62](https://github.com/ionic-team/ionic/commit/a0c5c629720655e9b1bc7529322b4be11953914a))
+
+
+
+
+
 ## [2.0.1-beta.13](https://github.com/ionic-team/ionic/compare/v2.0.1-beta.12...v2.0.1-beta.13) (2025-02-21)
 
 **Note:** Version bump only for package @paperless/react

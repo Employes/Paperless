@@ -3,6 +3,61 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.14](https://github.com/employes/paperless/compare/v1.66.0...v2.0.1-beta.14) (2025-03-04)
+
+
+### Bug Fixes
+
+* add components.d.ts ([921144f](https://github.com/employes/paperless/commit/921144fdef54cec69832cd6d5b42648b0f60ffb9))
+* **atoms/avatar:** Always force a single letter ([bea1385](https://github.com/employes/paperless/commit/bea138576de792dbcacbe59fc1a7dd883c59008e))
+* **atoms/avatar:** Apply ambit font ([2026e61](https://github.com/employes/paperless/commit/2026e61c2db20d43333af56d40583b98db86a3e3))
+* **atoms/avatar:** Set leading to the same as font size ([8a38a4f](https://github.com/employes/paperless/commit/8a38a4fda1f1d526b9c08f56e447eb762a38ac13))
+* **ci:** return deploy & versioning ([2773f21](https://github.com/employes/paperless/commit/2773f21c98dd73830072c70308ef02d72fed7e07))
+* **molecules/button & navigation-item:** Use class prop to determine active state ([affcb45](https://github.com/employes/paperless/commit/affcb453a005cc2ea21a5568a6e7bb130ab1b152))
+* **molecules/dropdown:** Small fix after rebase ([1e0261c](https://github.com/employes/paperless/commit/1e0261ccd5fcfcf19a0dae22612db9f6deb5ddb3))
+* **molecules/navigation-items:** Use existing icon in story ([f9951d8](https://github.com/employes/paperless/commit/f9951d84ff29e11af6916b704e8b0eddf9e712e7))
+* **molecules/navigation-section:** Rename title to header ([16f5e6a](https://github.com/employes/paperless/commit/16f5e6a504f1435fc4182b93a97c2173fbb4149a))
+* **molecules/navigation/section:** Add correct gap between header & content ([5f845d6](https://github.com/employes/paperless/commit/5f845d6f1394d4546d0ae2e3c28de1157c20852b))
+* **molecules/profile:** Align content to start ([d5e9a13](https://github.com/employes/paperless/commit/d5e9a13d41aee24019a0e48d7186a8d45fffd632))
+* **molecules/profile:** Align text to the left ([7929c62](https://github.com/employes/paperless/commit/7929c62c70e14499542eec0ed65968997c0fa718))
+* **molecules/profile:** Correct width for profile children ([e16f231](https://github.com/employes/paperless/commit/e16f231377c6c3457a7b01542b85bc45f3ca2a66))
+* **molecules/profile:** Don't apply padding to button ([db0772c](https://github.com/employes/paperless/commit/db0772c78e8a46af5ed3acaf42fcbe31c72370e6))
+* **molecules/profile:** Fix stupid dropdown issue ([44cc2c9](https://github.com/employes/paperless/commit/44cc2c90456677da33680e45a275a14103df7380))
+* **molecules/profile:** Set title size to sm ([93b87bf](https://github.com/employes/paperless/commit/93b87bfbb2c4d1bc8b4744d143f34dbc1f695e95))
+* **organisms/navbar:** Use correct icon for open/close & remove menu text ([c2ceb81](https://github.com/employes/paperless/commit/c2ceb815ce293b8186d23dbd8dc9b3f94db69ce3))
+* **serverless:** Set correct certificate ARN ([c1125a2](https://github.com/employes/paperless/commit/c1125a2f8c575d0651a40f42f735a2287c6ae593))
+* **serverless:** try changing the s3 acl ([0260805](https://github.com/employes/paperless/commit/02608059f0a21bd419bed4dc519d5f5cbd642438))
+* **serverless:** Use a new certificate ([6aef094](https://github.com/employes/paperless/commit/6aef094ec236609b66e461d15ca780a7645d37d3))
+
+
+### Features
+
+* **atmos:** Add navigation-title component ([c5f1165](https://github.com/employes/paperless/commit/c5f116543d8e3da903b7585a785339559a6e84b5))
+* **atoms/avatar:** New branding implementation ([5724578](https://github.com/employes/paperless/commit/5724578020657c26cff6b42b0b950cbd39c771ff))
+* **atoms/backdrop:** New branding implementation ([cf5dcb3](https://github.com/employes/paperless/commit/cf5dcb33011ac8dc6090d4f9650ad8de5f3fcea4))
+* **atoms/dropdown-menu/container:** New branding implementation ([cd00932](https://github.com/employes/paperless/commit/cd00932c809be3c2b74d32929e12a4b167a786ce))
+* **atoms/dropdown-menu/item:** New branding implementation ([d35e141](https://github.com/employes/paperless/commit/d35e14181430e2ba34c55fafaa3bd8915dc4fccb))
+* **atoms/icon:** New icons and marked old as deprecated ([383bb02](https://github.com/employes/paperless/commit/383bb02f1c958b90cb775e42866bda0f80e6b136))
+* **atoms:** Add badge component ([f3335bf](https://github.com/employes/paperless/commit/f3335bfd7b8bdf15e3fcf122188583d7718de001))
+* **molecules/button:** Add dropdown variant ([e23a53b](https://github.com/employes/paperless/commit/e23a53bf321da3a2e46e3ec87d3ebbb9634fbb86))
+* **molecules/button:** New rebranding implementation ([1a71815](https://github.com/employes/paperless/commit/1a71815f0fc2f2bb2254f9405f9b4848d46ae5e4))
+* **molecules/button:** Set active based on property or class ([a0ca79d](https://github.com/employes/paperless/commit/a0ca79d0dc172064b2cc62d4f26e4f30f541dce8))
+* **molecules/dropdown:** New branding implementation ([58ca0c7](https://github.com/employes/paperless/commit/58ca0c7a43ad3d0b547cae7a6bb063ee20cce430))
+* **molecules/dropdown:** Pass active to button if dropdown is shown ([173a249](https://github.com/employes/paperless/commit/173a2492d9c7546d600e4ba6d1deef3267cadc7c))
+* **molecules/navigation-item:** New branding implementation ([747a7d9](https://github.com/employes/paperless/commit/747a7d98c224ac111a39ff3d04f53985cc3670b2))
+* **molecules/navigation-item:** Set active by class ([635914c](https://github.com/employes/paperless/commit/635914c2d74d25bc550fe397ed3ba6d3d528f782))
+* **molecules/profile:** Try to rerender on slot  changes ([dd41816](https://github.com/employes/paperless/commit/dd41816207351d60681cba28ca927576c5a31516))
+* **molecules/profile:** Use button for profile when dropdown available ([fc58aa3](https://github.com/employes/paperless/commit/fc58aa3432c932cb4ee0a4827a87f52107ac42cb))
+* **molecules:** Add navigation section component ([a0c5c62](https://github.com/employes/paperless/commit/a0c5c629720655e9b1bc7529322b4be11953914a))
+* New tailwindconfiguration ([1572400](https://github.com/employes/paperless/commit/1572400c49af6a1d05b7944c861e15a74e83b14c))
+* **organisms/navbar:** New branding implementation ([335fb02](https://github.com/employes/paperless/commit/335fb02373e675928e75b926b1974fd0864cda63))
+* prerelease pipeline ([8d5269b](https://github.com/employes/paperless/commit/8d5269bf8cb99ce3bdb18de22d8022e58e7f3d48))
+* **storybook:** Add paperless beta environment ([f920907](https://github.com/employes/paperless/commit/f920907e77267b9919dedacc3226fd4528468d80))
+
+
+
+
+
 ## [2.0.1-beta.13](https://github.com/employes/paperless/compare/v2.0.1-beta.12...v2.0.1-beta.13) (2025-02-21)
 
 
