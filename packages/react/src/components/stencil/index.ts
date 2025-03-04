@@ -53,6 +53,7 @@ export const PNavigationItem = /*@__PURE__*/createReactComponent<JSX.PNavigation
 export const PPageSizeSelect = /*@__PURE__*/createReactComponent<JSX.PPageSizeSelect, HTMLPPageSizeSelectElement>('p-page-size-select');
 export const PPagination = /*@__PURE__*/createReactComponent<JSX.PPagination, HTMLPPaginationElement>('p-pagination');
 export const PPaginationItem = /*@__PURE__*/createReactComponent<JSX.PPaginationItem, HTMLPPaginationItemElement>('p-pagination-item');
+export const PPortal = /*@__PURE__*/createReactComponent<JSX.PPortal, HTMLPPortalElement>('p-portal');
 export const PProfile = /*@__PURE__*/createReactComponent<JSX.PProfile, HTMLPProfileElement>('p-profile');
 export const PSegmentContainer = /*@__PURE__*/createReactComponent<JSX.PSegmentContainer, HTMLPSegmentContainerElement>('p-segment-container');
 export const PSegmentItem = /*@__PURE__*/createReactComponent<JSX.PSegmentItem, HTMLPSegmentItemElement>('p-segment-item');

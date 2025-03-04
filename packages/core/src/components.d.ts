@@ -494,6 +494,10 @@ export namespace Components {
           * The strategy of the dropdown placement
          */
         "strategy": Strategy;
+        /**
+          * Wether to use a portal for the dropdown container
+         */
+        "usePortal": boolean;
     }
     interface PDropdownMenuContainer {
         /**
@@ -556,6 +560,10 @@ export namespace Components {
           * The placement of the helper popover
          */
         "placement": Placement;
+        /**
+          * The strategy of the popover placement
+         */
+        "strategy": Strategy;
     }
     interface PIbanIcon {
         /**
@@ -932,13 +940,16 @@ export namespace Components {
          */
         "active": boolean;
     }
+    interface PPortal {
+        "containerClass": string;
+    }
     interface PProfile {
         /**
           * The size of the profile avatar
          */
         "size": | 'xsmall'
 		| 'small'
-    | 'table'
+		| 'table'
 		| 'medium'
 		| 'large'
 		| 'xlarge';
@@ -2037,6 +2048,12 @@ declare global {
         prototype: HTMLPPaginationItemElement;
         new (): HTMLPPaginationItemElement;
     };
+    interface HTMLPPortalElement extends Components.PPortal, HTMLStencilElement {
+    }
+    var HTMLPPortalElement: {
+        prototype: HTMLPPortalElement;
+        new (): HTMLPPortalElement;
+    };
     interface HTMLPProfileElement extends Components.PProfile, HTMLStencilElement {
     }
     var HTMLPProfileElement: {
@@ -2215,6 +2232,7 @@ declare global {
         "p-page-size-select": HTMLPPageSizeSelectElement;
         "p-pagination": HTMLPPaginationElement;
         "p-pagination-item": HTMLPPaginationItemElement;
+        "p-portal": HTMLPPortalElement;
         "p-profile": HTMLPProfileElement;
         "p-segment-container": HTMLPSegmentContainerElement;
         "p-segment-item": HTMLPSegmentItemElement;
@@ -2750,6 +2768,10 @@ declare namespace LocalJSX {
           * The strategy of the dropdown placement
          */
         "strategy"?: Strategy;
+        /**
+          * Wether to use a portal for the dropdown container
+         */
+        "usePortal"?: boolean;
     }
     interface PDropdownMenuContainer {
         /**
@@ -2812,6 +2834,10 @@ declare namespace LocalJSX {
           * The placement of the helper popover
          */
         "placement"?: Placement;
+        /**
+          * The strategy of the popover placement
+         */
+        "strategy"?: Strategy;
     }
     interface PIbanIcon {
         /**
@@ -3212,13 +3238,16 @@ declare namespace LocalJSX {
          */
         "active"?: boolean;
     }
+    interface PPortal {
+        "containerClass"?: string;
+    }
     interface PProfile {
         /**
           * The size of the profile avatar
          */
         "size"?: | 'xsmall'
 		| 'small'
-    | 'table'
+		| 'table'
 		| 'medium'
 		| 'large'
 		| 'xlarge';
@@ -4115,6 +4144,7 @@ declare namespace LocalJSX {
         "p-page-size-select": PPageSizeSelect;
         "p-pagination": PPagination;
         "p-pagination-item": PPaginationItem;
+        "p-portal": PPortal;
         "p-profile": PProfile;
         "p-segment-container": PSegmentContainer;
         "p-segment-item": PSegmentItem;
@@ -4188,6 +4218,7 @@ declare module "@stencil/core" {
             "p-page-size-select": LocalJSX.PPageSizeSelect & JSXBase.HTMLAttributes<HTMLPPageSizeSelectElement>;
             "p-pagination": LocalJSX.PPagination & JSXBase.HTMLAttributes<HTMLPPaginationElement>;
             "p-pagination-item": LocalJSX.PPaginationItem & JSXBase.HTMLAttributes<HTMLPPaginationItemElement>;
+            "p-portal": LocalJSX.PPortal & JSXBase.HTMLAttributes<HTMLPPortalElement>;
             "p-profile": LocalJSX.PProfile & JSXBase.HTMLAttributes<HTMLPProfileElement>;
             "p-segment-container": LocalJSX.PSegmentContainer & JSXBase.HTMLAttributes<HTMLPSegmentContainerElement>;
             "p-segment-item": LocalJSX.PSegmentItem & JSXBase.HTMLAttributes<HTMLPSegmentItemElement>;
