@@ -17,7 +17,7 @@ export class Profile {
 	@Prop({ reflect: true }) size:
 		| 'xsmall'
 		| 'small'
-    | 'table'
+		| 'table'
 		| 'medium'
 		| 'large'
 		| 'xlarge' = 'small';
@@ -38,6 +38,7 @@ export class Profile {
 			':scope > [slot="dropdown"]'
 		);
 		const content = this._getContent(hasDropdownSlot);
+		const dropdownItems = <slot name='dropdown' />;
 		return (
 			<Host
 				class={`p-profile ${hasDropdownSlot && 'has-dropdown'} ${
@@ -46,19 +47,15 @@ export class Profile {
 			>
 				{hasDropdownSlot ? (
 					<p-dropdown
-						class="w-full min-w-0"
-						strategy="absolute"
-						placement={
-							this.variant === 'user' ? 'top-end' : 'bottom-end'
-						}
+						class='w-full min-w-0'
+						strategy='absolute'
+						placement={this.variant === 'user' ? 'top-end' : 'bottom-end'}
 						applyFullWidth={true}
 						applyMaxWidth={false}
-						onIsOpen={(ev) => (this._dropdownOpen = ev.detail)}
+						onIsOpen={ev => (this._dropdownOpen = ev.detail)}
 					>
 						{content}
-						<div slot="items">
-							<slot name="dropdown" />
-						</div>
+						<div slot='items'>{dropdownItems}</div>
 					</p-dropdown>
 				) : (
 					content
@@ -69,11 +66,14 @@ export class Profile {
 
 	private _getContent(hasDropdownSlot) {
 		return (
-			<div class="content" slot="trigger">
-				<slot name="avatar" />
-				<div class="name">
-					<slot name="title" />
-					<slot name="subtitle" />
+			<div
+				class='content'
+				slot='trigger'
+			>
+				<slot name='avatar' />
+				<div class='name'>
+					<slot name='title' />
+					<slot name='subtitle' />
 				</div>
 
 				{hasDropdownSlot && this._getIcon()}
@@ -97,7 +97,7 @@ export class Profile {
 	private _getIcon() {
 		return (
 			<p-icon
-				class="ml-auto"
+				class='ml-auto'
 				variant={this.variant === 'company' ? 'chevron' : 'more'}
 			/>
 		);

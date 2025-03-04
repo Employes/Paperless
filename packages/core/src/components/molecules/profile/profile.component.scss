@@ -2,7 +2,7 @@
 	@apply flex;
 
 	.content {
-		@apply flex gap-3 items-center w-full;
+		@apply flex w-full items-center gap-3;
 
 		.name {
 			@apply flex flex-col justify-center overflow-hidden;
@@ -17,7 +17,7 @@
 			}
 
 			::slotted(*) {
-				@apply text-ellipsis overflow-hidden whitespace-nowrap;
+				@apply overflow-hidden text-ellipsis whitespace-nowrap;
 			}
 		}
 	}
@@ -51,7 +51,7 @@
 	@apply cursor-pointer;
 
 	.content {
-		@apply p-2 rounded;
+		@apply rounded p-2;
 		@apply border border-solid border-mystic-dark #{!important};
 	}
 }

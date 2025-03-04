@@ -33,6 +33,7 @@
 graph TD;
   p-profile --> p-dropdown
   p-profile --> p-icon
+  p-dropdown --> p-portal
   p-dropdown --> p-dropdown-menu-container
   style p-profile fill:#f9f,stroke:#333,stroke-width:4px
 ```

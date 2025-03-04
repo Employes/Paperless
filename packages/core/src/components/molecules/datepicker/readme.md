@@ -57,6 +57,7 @@ graph TD;
   p-datepicker --> p-dropdown
   p-datepicker --> p-input-group
   p-datepicker --> p-calendar
+  p-dropdown --> p-portal
   p-dropdown --> p-dropdown-menu-container
   p-input-group --> p-helper
   p-input-group --> p-tooltip

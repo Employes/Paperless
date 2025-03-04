@@ -80,6 +80,7 @@ graph TD;
   p-select --> p-dropdown-menu-item
   p-select --> p-loader
   p-select --> p-avatar
+  p-dropdown --> p-portal
   p-dropdown --> p-dropdown-menu-container
   p-input-group --> p-helper
   p-input-group --> p-tooltip

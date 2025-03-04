@@ -1,11 +1,11 @@
 import {
-  Component,
-  Element,
-  h,
-  Host,
-  Listen,
-  Prop,
-  State
+	Component,
+	Element,
+	h,
+	Host,
+	Listen,
+	Prop,
+	State,
 } from '@stencil/core';
 import { RotateOptions } from '../../../types/tailwind';
 import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
@@ -126,28 +126,24 @@ export class InputGroup {
 					this.disabled && 'disabled'
 				} ${this.focused && 'focused'} size-${this.size}`}
 			>
-				<div class="flex items-end justify-between">
+				<div class='flex items-end justify-between'>
 					{label && (
 						<div
-							class="input-label"
+							class='input-label'
 							onClick={() => this._focusInput()}
 						>
 							{label}
-							{this.required && (
-								<span class="ml-1 text-negative">*</span>
-							)}
+							{this.required && <span class='ml-1 text-negative'>*</span>}
 						</div>
 					)}
 
 					{(helper || hasHeaderSlot) && (
-						<div class="input-header">
-							{hasHeaderSlot && <slot name="header" />}
+						<div class='input-header'>
+							{hasHeaderSlot && <slot name='header' />}
 							{helper && (
 								<p-helper
-									class={`flex ${
-										hasHeaderSlot ? 'ml-2' : ''
-									}`}
-									placement="top-end"
+									class={`flex ${hasHeaderSlot ? 'ml-2' : ''}`}
+									placement='top-end'
 								>
 									{helper}
 								</p-helper>
@@ -156,8 +152,8 @@ export class InputGroup {
 					)}
 				</div>
 				<p-tooltip
-					class="w-full"
-					variant="error-element"
+					class='w-full'
+					variant='error-element'
 					content={this.error}
 					show={
 						errorAndErrorIsNotBoolean &&
@@ -166,16 +162,18 @@ export class InputGroup {
 					}
 					enableUserInput={false}
 				>
-					<div class="content" slot="trigger">
-						{(prefix ||
-							(this.icon && this.iconPosition === 'start')) && (
+					<div
+						class='content'
+						slot='trigger'
+					>
+						{(prefix || (this.icon && this.iconPosition === 'start')) && (
 							<div
 								class={`prefix size-${this.size}`}
 								onClick={() => this._focusInput()}
 							>
 								{this.icon && this.iconPosition === 'start' ? (
 									<p-icon
-										class="flex"
+										class='flex'
 										variant={this.icon}
 										rotate={this.iconRotate}
 										flip={this.iconFlip}
@@ -186,15 +184,13 @@ export class InputGroup {
 							</div>
 						)}
 						{(suffix ||
-							(errorAndErrorIsNotBoolean &&
-								errorVariant === 'icon') ||
+							(errorAndErrorIsNotBoolean && errorVariant === 'icon') ||
 							(this.icon && this.iconPosition === 'end')) && (
 							<div
 								class={`suffix size-${this.size}`}
 								onClick={() => this._focusInput()}
 							>
-								{errorAndErrorIsNotBoolean &&
-								errorVariant === 'icon' ? (
+								{errorAndErrorIsNotBoolean && errorVariant === 'icon' ? (
 									<p-input-error
 										error={this.error}
 										forceShowTooltip={
@@ -203,7 +199,7 @@ export class InputGroup {
 									/>
 								) : this.icon && this.iconPosition === 'end' ? (
 									<p-icon
-										class="flex"
+										class='flex'
 										variant={this.icon}
 										rotate={this.iconRotate}
 										flip={this.iconFlip}
@@ -214,7 +210,7 @@ export class InputGroup {
 							</div>
 						)}
 
-						<slot name="input" />
+						<slot name='input' />
 					</div>
 				</p-tooltip>
 			</Host>
@@ -300,31 +296,19 @@ export class InputGroup {
 	}
 
 	private _getSlotInfo() {
-		const hasHelperSlot = !!this._el.querySelector(
-			':scope > [slot="helper"]'
-		);
-		const hasLabelSlot = !!this._el.querySelector(
-			':scope > [slot="label"]'
-		);
-		const hasPrefixSlot = !!this._el.querySelector(
-			':scope > [slot="prefix"]'
-		);
-		const hasSuffixSlot = !!this._el.querySelector(
-			':scope > [slot="suffix"]'
-		);
-		const hasHeaderSlot = !!this._el.querySelector(
-			':scope > [slot="header"]'
-		);
+		const hasHelperSlot = !!this._el.querySelector(':scope > [slot="helper"]');
+		const hasLabelSlot = !!this._el.querySelector(':scope > [slot="label"]');
+		const hasPrefixSlot = !!this._el.querySelector(':scope > [slot="prefix"]');
+		const hasSuffixSlot = !!this._el.querySelector(':scope > [slot="suffix"]');
+		const hasHeaderSlot = !!this._el.querySelector(':scope > [slot="header"]');
 
-		const helper = hasHelperSlot ? <slot name="helper" /> : this.helper;
-		const label = hasLabelSlot ? <slot name="label" /> : this.label;
-		const prefix = hasPrefixSlot ? <slot name="prefix" /> : this.prefix;
-		const suffix = hasSuffixSlot ? <slot name="suffix" /> : this.suffix;
+		const helper = hasHelperSlot ? <slot name='helper' /> : this.helper;
+		const label = hasLabelSlot ? <slot name='label' /> : this.label;
+		const prefix = hasPrefixSlot ? <slot name='prefix' /> : this.prefix;
+		const suffix = hasSuffixSlot ? <slot name='suffix' /> : this.suffix;
 
 		const errorAndErrorIsNotBoolean =
-			this.error &&
-			typeof this.error === 'string' &&
-			this.error !== 'true';
+			this.error && typeof this.error === 'string' && this.error !== 'true';
 
 		return {
 			hasHelperSlot,
@@ -337,7 +321,12 @@ export class InputGroup {
 			prefix,
 			suffix,
 			errorAndErrorIsNotBoolean,
-			errorVariant: this.errorVariant === 'auto' ? (this._el.offsetWidth <= 72 ? 'element' : 'icon') : this.errorVariant,
+			errorVariant:
+				this.errorVariant === 'auto'
+					? this._el.offsetWidth <= 72
+						? 'element'
+						: 'icon'
+					: this.errorVariant,
 		};
 	}
 

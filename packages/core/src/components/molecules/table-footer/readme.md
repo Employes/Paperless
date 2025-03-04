@@ -52,6 +52,7 @@ graph TD;
   p-page-size-select --> p-dropdown
   p-page-size-select --> p-button
   p-page-size-select --> p-dropdown-menu-item
+  p-dropdown --> p-portal
   p-dropdown --> p-dropdown-menu-container
   p-button --> p-icon
   p-button --> p-loader

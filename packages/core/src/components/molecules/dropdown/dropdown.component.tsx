@@ -23,7 +23,6 @@ import { childOf } from '../../../utils/child-of';
 @Component({
 	tag: 'p-dropdown',
 	styleUrl: 'dropdown.component.scss',
-	shadow: true,
 })
 export class Dropdown {
 	/**
@@ -45,6 +44,11 @@ export class Dropdown {
 	 * Wether to show the dropdown menu
 	 */
 	@Prop() show: boolean = false;
+
+	/**
+	 * Wether to use a portal for the dropdown container
+	 */
+	@Prop() usePortal: boolean = false;
 
 	/**
 	 * Wether to automatically calculate the width of the menu based on the trigger
@@ -123,55 +127,83 @@ export class Dropdown {
 			this._cleanup();
 			this._cleanup = null;
 		}
+
+		this._menu.remove();
+	}
+
+	componentDidRender() {
+		this._checkButtons();
 	}
 
 	render() {
-		return (
-			<Host class="p-dropdown">
-				<div
-					class="trigger"
-					ref={(ref) => (this._trigger = ref)}
-					onClick={() => this._triggerClickHandler()}
-				>
-					<slot
-						onSlotchange={(ev) => this._checkButton(ev)}
-						name="trigger"
-					/>
-				</div>
+		const dropdownContainerProps = {
+			class: `z-dropdown hidden ${
+				this.strategy === 'fixed' ? 'fixed' : 'absolute'
+			}`,
+			ref: el => this._load(el),
+			onClick: () => this._containerClickHandler(),
+			role: 'popover',
+			'data-placement': this.placement,
+			'data-strategy': this.strategy,
+		};
+
+		let dropdownContainer: HTMLElement;
+
+		if (this.usePortal) {
+			dropdownContainer = (
+				<p-portal {...dropdownContainerProps}>
+					<p-dropdown-menu-container
+						maxWidth={!this.calculateWidth && this.applyMaxWidth}
+						fullWidth={this.applyFullWidth && !this.applyMaxWidth}
+						allowOverflow={this.allowOverflow}
+						scrollable={this.scrollable}
+					>
+						<slot name='items' />
+					</p-dropdown-menu-container>
+				</p-portal>
+			);
+		} else {
+			dropdownContainer = (
 				<p-dropdown-menu-container
-					role="popover"
 					maxWidth={!this.calculateWidth && this.applyMaxWidth}
 					fullWidth={this.applyFullWidth && !this.applyMaxWidth}
 					allowOverflow={this.allowOverflow}
-					ref={(el) => this._load(el)}
-					data-placement={this.placement}
-					data-strategy={this.strategy}
-					onClick={() => this._containerClickHandler()}
 					scrollable={this.scrollable}
+					{...dropdownContainerProps}
 				>
-					<slot name="items" />
+					<slot name='items' />
 				</p-dropdown-menu-container>
+			);
+		}
+
+		return (
+			<Host class='p-dropdown'>
+				<div
+					class='trigger'
+					ref={ref => (this._trigger = ref)}
+					onClick={() => this._triggerClickHandler()}
+				>
+					<slot name='trigger' />
+				</div>
+				{dropdownContainer}
 			</Host>
 		);
 	}
 
-	private _checkButton({ target }: Event) {
+	private _checkButtons() {
 		if (!this.applyChevron) {
 			return;
 		}
 
-		const slot = target as HTMLSlotElement;
-		const children = slot.assignedElements();
+		const children = this._el.querySelectorAll('p-button[slot="trigger"]');
 
-		for (let child of children) {
-			if (child.nodeName === 'P-BUTTON') {
-				(child as any).chevronPosition = this.chevronPosition;
-				(child as any).chevron = this.chevronDirection
-					? this.chevronDirection
-					: this.placement.indexOf('top') >= 0
-						? 'up'
-						: 'down';
-			}
+		for (let child of [...children]) {
+			(child as any).chevronPosition = this.chevronPosition;
+			(child as any).chevron = this.chevronDirection
+				? this.chevronDirection
+				: this.placement.indexOf('top') >= 0
+				? 'up'
+				: 'down';
 		}
 	}
 
@@ -191,10 +223,7 @@ export class Dropdown {
 
 	@Listen('click', { target: 'document', capture: true })
 	protected documentClickHandler({ target }) {
-		if (
-			!this._menu.hasAttribute('data-show') ||
-			childOf(target, this._el)
-		) {
+		if (!this._menu.hasAttribute('data-show') || childOf(target, this._menu)) {
 			return;
 		}
 
@@ -249,7 +278,12 @@ export class Dropdown {
 		this._cleanup = autoUpdate(this._el, this._menu, () => this._update());
 
 		this._menu.setAttribute('data-show', '');
+		this._menu.classList.remove('hidden');
+		this._menu.classList.add('flex');
+
 		this.isOpen.emit(true);
+
+		this._update();
 	}
 
 	private _hide() {
@@ -264,6 +298,9 @@ export class Dropdown {
 
 		// Hide the popover
 		this._menu.removeAttribute('data-show');
+		this._menu.classList.remove('flex');
+		this._menu.classList.add('hidden');
+
 		this.isOpen.emit(false);
 	}
 

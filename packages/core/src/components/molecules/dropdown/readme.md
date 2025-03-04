@@ -23,6 +23,7 @@
 | `scrollable`          | `scrollable`            | Wether the dropdown container should be scrollable when the threshold is met. | `"default" \| "large" \| boolean`                                                                                                                                    | `false`          |
 | `show`                | `show`                  | Wether to show the dropdown menu                                              | `boolean`                                                                                                                                                            | `false`          |
 | `strategy`            | `strategy`              | The strategy of the dropdown placement                                        | `"absolute" \| "fixed"`                                                                                                                                              | `'absolute'`     |
+| `usePortal`           | `use-portal`            | Wether to use a portal for the dropdown container                             | `boolean`                                                                                                                                                            | `false`          |
 
 
 ## Events
@@ -43,11 +44,13 @@
 
 ### Depends on
 
+- [p-portal](../../atoms/portal)
 - [p-dropdown-menu-container](../../atoms/dropdown-menu-container)
 
 ### Graph
 ```mermaid
 graph TD;
+  p-dropdown --> p-portal
   p-dropdown --> p-dropdown-menu-container
   p-datepicker --> p-dropdown
   p-page-size-select --> p-dropdown

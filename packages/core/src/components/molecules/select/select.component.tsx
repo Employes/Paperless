@@ -16,7 +16,6 @@ import { IconVariant } from '../../atoms/icon/icon.component';
 @Component({
 	tag: 'p-select',
 	styleUrl: 'select.component.scss',
-	shadow: false,
 })
 export class Select {
 	/**

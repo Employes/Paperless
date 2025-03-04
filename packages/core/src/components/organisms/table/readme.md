@@ -132,6 +132,7 @@ graph TD;
   p-page-size-select --> p-dropdown
   p-page-size-select --> p-button
   p-page-size-select --> p-dropdown-menu-item
+  p-dropdown --> p-portal
   p-dropdown --> p-dropdown-menu-container
   p-dropdown-menu-item --> p-icon
   p-pagination --> p-icon
