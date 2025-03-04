@@ -31,7 +31,7 @@
 ```mermaid
 graph TD;
   p-profile --> p-dropdown
-  p-profile --> p-icon
+  p-profile --> p-button
   p-dropdown --> p-portal
   p-dropdown --> p-dropdown-menu-container
   p-button --> p-icon
