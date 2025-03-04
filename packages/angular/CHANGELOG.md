@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.14](https://github.com/Employes/Paperless/compare/v1.66.0...v2.0.1-beta.14) (2025-03-04)
+
+
+### Features
+
+* **atoms/avatar:** New branding implementation ([5724578](https://github.com/Employes/Paperless/commit/5724578020657c26cff6b42b0b950cbd39c771ff))
+* **molecules/button:** New rebranding implementation ([1a71815](https://github.com/Employes/Paperless/commit/1a71815f0fc2f2bb2254f9405f9b4848d46ae5e4))
+* New tailwindconfiguration ([1572400](https://github.com/Employes/Paperless/commit/1572400c49af6a1d05b7944c861e15a74e83b14c))
+
+
+
+
+
 ## [2.0.1-beta.13](https://github.com/Employes/Paperless/compare/v2.0.1-beta.12...v2.0.1-beta.13) (2025-02-21)
 
 **Note:** Version bump only for package @paperless/angular
