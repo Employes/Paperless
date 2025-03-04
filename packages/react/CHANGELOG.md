@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.66.0](https://github.com/ionic-team/ionic/compare/v1.65.0...v1.66.0) (2025-03-04)
+
+
+### Features
+
+* **atoms:** Add portal component ([3eb6ac5](https://github.com/ionic-team/ionic/commit/3eb6ac51f91fb9b5afc5192ac8865673471c3cae))
+
+
+
+
+
 # [1.65.0](https://github.com/ionic-team/ionic/compare/v1.64.2...v1.65.0) (2025-02-11)
 
 **Note:** Version bump only for package @paperless/react

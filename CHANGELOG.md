@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.66.0](https://github.com/employes/paperless/compare/v1.65.0...v1.66.0) (2025-03-04)
+
+
+### Bug Fixes
+
+* **dropdown/menu-container:** Apply block ([a833286](https://github.com/employes/paperless/commit/a833286d4f2b83d63a3902a627afb1b63d0e016f))
+
+
+### Features
+
+* **atoms:** Add portal component ([3eb6ac5](https://github.com/employes/paperless/commit/3eb6ac51f91fb9b5afc5192ac8865673471c3cae))
+* **molecules/dropdown:** Add option to use a portal ([8da6072](https://github.com/employes/paperless/commit/8da60724bb4c1cd617ad05149c0121c4512a627b))
+
+
+
+
+
 # [1.65.0](https://github.com/employes/paperless/compare/v1.64.2...v1.65.0) (2025-02-11)
 
 
