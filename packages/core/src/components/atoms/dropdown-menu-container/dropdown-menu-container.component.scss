@@ -1,7 +1,7 @@
 @import '../../../style/mixins';
 
 p-dropdown-menu-container {
-	@apply w-auto;
+	@apply block w-auto;
 	@apply rounded-xxlarge bg-white;
 	@apply z-10 drop-shadow-4 filter;
 
