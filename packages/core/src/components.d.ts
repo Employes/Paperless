@@ -545,6 +545,10 @@ export namespace Components {
          */
         "active": boolean;
         /**
+          * Wether the dropdown menu item has a checkbox
+         */
+        "checkbox": boolean;
+        /**
           * Wether the item is disabled
          */
         "disabled": boolean;
@@ -563,7 +567,7 @@ export namespace Components {
         /**
           * The variant of the item
          */
-        "variant": 'default' | 'checkbox';
+        "variant": 'default' | 'negative';
     }
     interface PFloatingMenuContainer {
         /**
@@ -2892,6 +2896,10 @@ declare namespace LocalJSX {
          */
         "active"?: boolean;
         /**
+          * Wether the dropdown menu item has a checkbox
+         */
+        "checkbox"?: boolean;
+        /**
           * Wether the item is disabled
          */
         "disabled"?: boolean;
@@ -2910,7 +2918,7 @@ declare namespace LocalJSX {
         /**
           * The variant of the item
          */
-        "variant"?: 'default' | 'checkbox';
+        "variant"?: 'default' | 'negative';
     }
     interface PFloatingMenuContainer {
         /**
