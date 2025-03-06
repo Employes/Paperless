@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.15](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.14...v2.0.1-beta.15) (2025-03-06)
+
+
+### Bug Fixes
+
+* **atoms/avatar:** Font weight & color ([200b018](https://github.com/ionic-team/stencil-component-starter/commit/200b0185d0977b5e4d7bfd31951d50fe8e6666fa))
+* **molecules/button:** Icon hover variants ([e9dd554](https://github.com/ionic-team/stencil-component-starter/commit/e9dd554220e517a884b4460a36ebf568adac9619))
+
+
+
+
+
 ## [2.0.1-beta.14](https://github.com/ionic-team/stencil-component-starter/compare/v1.66.0...v2.0.1-beta.14) (2025-03-04)
 
 
