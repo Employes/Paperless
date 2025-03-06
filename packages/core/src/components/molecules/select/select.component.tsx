@@ -654,7 +654,7 @@ export class Select {
 						: item[this._identifierKey] ===
 						  this._selectedItem?.[this._identifierKey]
 				}
-				variant={this.multi ? 'checkbox' : 'default'}
+				checkbox={this.multi ? true : false}
 				class='justify-start'
 			>
 				{this._getDisplay(item)}
@@ -673,7 +673,7 @@ export class Select {
 			items.unshift(
 				<p-dropdown-menu-item
 					useContainer={false}
-					variant='checkbox'
+					checkbox
 					onClick={() => this._selectAllChange()}
 					active={this._allSelected}
 				>

@@ -8,13 +8,17 @@ const dropdownMenuItem = cva(
 	],
 	{
 		variants: {
+			variant: {
+				default: null,
+				negative: null,
+			},
 			active: {
 				false: null,
-				true: 'bg-supportive-lilac-100',
+				true: null,
 			},
 			disabled: {
 				false: null,
-				true: 'bg-supportive-lilac-100 text-black-teal-200 cursor-not-allowed',
+				true: 'cursor-not-allowed',
 			},
 			enableHover: {
 				false: null,
@@ -23,11 +27,55 @@ const dropdownMenuItem = cva(
 		},
 		compoundVariants: [
 			{
+				variant: 'default',
 				active: false,
 				enableHover: true,
 				disabled: false,
-				class: 'hover:bg-supportive-lilac-50',
+				class: 'text-black-teal hover:bg-supportive-lilac-50',
 			},
+			{
+				variant: 'default',
+				active: true,
+				disabled: false,
+				class: 'bg-supportive-lilac-100',
+			},
+			{
+				variant: 'default',
+				disabled: true,
+				class: 'text-black-teal-200',
+			},
+			{
+				variant: 'default',
+				disabled: true,
+				active: true,
+				class: 'bg-supportive-lilac-100',
+			},
+
+			{
+				variant: 'negative',
+				active: false,
+				enableHover: true,
+				disabled: false,
+				class: 'text-negative-red hover:bg-negative-red-50',
+			},
+			{
+				variant: 'negative',
+				active: true,
+				disabled: false,
+				class: 'bg-negative-red-100 text-negative-red',
+			},
+			{
+				variant: 'negative',
+				disabled: true,
+				class: 'text-negative-red-100',
+			},
+			{
+				variant: 'negative',
+				disabled: true,
+				active: true,
+				class: 'bg-negative-red-50',
+			},
+
 			{
 				enableHover: true,
 				disabled: false,
@@ -39,15 +87,40 @@ const dropdownMenuItem = cva(
 
 const dropdownMenuItemIcon = cva(['text-base'], {
 	variants: {
+		variant: {
+			default: null,
+			negative: null,
+		},
 		active: {
-			false: 'text-black-teal-300',
-			true: false,
+			false: null,
+			true: null,
 		},
 		disabled: {
-			false: false,
+			false: null,
 			true: 'text-black-teal-100',
 		},
 	},
+	compoundVariants: [
+		{
+			variant: 'default',
+			active: false,
+			disabled: false,
+			class: 'text-black-teal-300 group-hover:text-black-teal',
+		},
+
+		{
+			variant: 'negative',
+			active: false,
+			disabled: false,
+			class: 'text-negative-red group-hover:text-negative-red-800',
+		},
+		{
+			variant: 'negative',
+			active: true,
+			disabled: false,
+			class: 'text-negative-red-800',
+		},
+	],
 });
 
 @Component({
@@ -61,9 +134,14 @@ export class DropdownMenuItem {
 	@Prop() active: boolean = false;
 
 	/**
+	 * Wether the dropdown menu item has a checkbox
+	 */
+	@Prop() checkbox: boolean = false;
+
+	/**
 	 * The variant of the item
 	 */
-	@Prop() variant: 'default' | 'checkbox' = 'default';
+	@Prop() variant: 'default' | 'negative' = 'default';
 
 	/**
 	 * Wether to enable the hover state
@@ -89,6 +167,7 @@ export class DropdownMenuItem {
 		return (
 			<Host
 				class={dropdownMenuItem({
+					variant: this.variant,
 					active: this.active,
 					enableHover: this.enableHover,
 					disabled: this.disabled,
@@ -100,6 +179,7 @@ export class DropdownMenuItem {
 				{this.icon && (
 					<p-icon
 						class={dropdownMenuItemIcon({
+							variant: this.variant,
 							active: this.active,
 							disabled: this.disabled,
 						})}
@@ -107,7 +187,7 @@ export class DropdownMenuItem {
 					/>
 				)}
 
-				{this.variant === 'checkbox' && (
+				{this.checkbox && (
 					<input
 						type='checkbox'
 						class='p-input size-small flex-shrink-0'
