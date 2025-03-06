@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.16](https://github.com/employes/paperless/compare/v2.0.1-beta.15...v2.0.1-beta.16) (2025-03-06)
+
+
+### Features
+
+* **atoms/dropdown-menu/item:** Add negative variant ([9d77f42](https://github.com/employes/paperless/commit/9d77f423572fc9166e1ef566030909b67520e380))
+
+
+
+
+
 ## [2.0.1-beta.15](https://github.com/employes/paperless/compare/v2.0.1-beta.14...v2.0.1-beta.15) (2025-03-06)
 
 
