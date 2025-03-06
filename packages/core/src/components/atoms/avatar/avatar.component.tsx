@@ -3,7 +3,7 @@ import { cva } from 'class-variance-authority';
 
 const avatar = cva(
 	[
-		'p-avatar bg-off-white rounded-full aspect-branding ring-inset ring-1 ring-black-teal/20 p-[1px] flex items-center justify-center font-ambit leading-none',
+		'p-avatar bg-off-white rounded-full aspect-branding ring-inset ring-1 ring-black-teal/20 p-[1px] flex items-center justify-center font-ambit leading-none font-bold text-black-teal-300',
 	],
 	{
 		variants: {
