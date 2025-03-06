@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.15](https://github.com/employes/paperless/compare/v2.0.1-beta.14...v2.0.1-beta.15) (2025-03-06)
+
+
+### Bug Fixes
+
+* **atoms/avatar:** Font weight & color ([200b018](https://github.com/employes/paperless/commit/200b0185d0977b5e4d7bfd31951d50fe8e6666fa))
+* **molecules/button:** Icon hover variants ([e9dd554](https://github.com/employes/paperless/commit/e9dd554220e517a884b4460a36ebf568adac9619))
+* **story/atoms/dropdown-menu/item:** Correct icon name ([3b66d72](https://github.com/employes/paperless/commit/3b66d72366c3cac426b2b9d70549725a88360e25))
+
+
+
+
+
 ## [2.0.1-beta.14](https://github.com/employes/paperless/compare/v1.66.0...v2.0.1-beta.14) (2025-03-04)
 
 
