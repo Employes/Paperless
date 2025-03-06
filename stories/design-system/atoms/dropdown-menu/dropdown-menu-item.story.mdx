@@ -8,7 +8,9 @@ import DropdownMenuItemDocs from '../../../../packages/core/src/components/atoms
 
 # Examples
 
-## Default
+## Variants
+
+### Default
 
 <Canvas>
 	<div class='flex justify-center'>
@@ -16,23 +18,127 @@ import DropdownMenuItemDocs from '../../../../packages/core/src/components/atoms
 	</div>
 </Canvas>
 
-## With icon
+### Negative
 
 <Canvas>
 	<div class='flex justify-center'>
-		<p-dropdown-menu-item icon='user'>I am an item</p-dropdown-menu-item>
+		<p-dropdown-menu-item variant='negative'>I am an item</p-dropdown-menu-item>
 	</div>
 </Canvas>
 
-## Active
+## States
+
+### Inactive
 
 <Canvas>
 	<div class='flex justify-center'>
+		<p-dropdown-menu-item>I am an item</p-dropdown-menu-item>
+	</div>
+</Canvas>
+
+### Active
+
+<Canvas>
+	<div class='flex flex-col items-center gap-[1px]'>
 		<p-dropdown-menu-item active>I am an active item</p-dropdown-menu-item>
+		<p-dropdown-menu-item
+			variant='negative'
+			active
+		>
+			I am an active item
+		</p-dropdown-menu-item>
 	</div>
 </Canvas>
 
-## Very long text
+### Disabled
+
+<Canvas>
+	<div class='flex flex-col items-center gap-[1px]'>
+		<p-dropdown-menu-item disabled>I am an active item</p-dropdown-menu-item>
+		<p-dropdown-menu-item
+			variant='negative'
+			disabled
+		>
+			I am an active item
+		</p-dropdown-menu-item>
+	</div>
+</Canvas>
+
+## Icons
+
+### Inactive
+
+<Canvas>
+	<div class='flex flex-col items-center gap-[1px]'>
+		<p-dropdown-menu-item icon='user'>I am an item</p-dropdown-menu-item>
+		<p-dropdown-menu-item
+			variant='negative'
+			icon='wave'
+		>
+			I am an item
+		</p-dropdown-menu-item>
+	</div>
+</Canvas>
+
+### Active
+
+<Canvas>
+	<div class='flex flex-col items-center gap-[1px]'>
+		<p-dropdown-menu-item
+			icon='user'
+			active
+		>
+			I am an active item
+		</p-dropdown-menu-item>
+		<p-dropdown-menu-item
+			variant='negative'
+			icon='wave'
+			active
+		>
+			I am an active item
+		</p-dropdown-menu-item>
+	</div>
+</Canvas>
+
+## Checkbox
+
+### Inactive
+
+<Canvas>
+	<div class='flex flex-col items-center gap-[1px]'>
+		<p-dropdown-menu-item checkbox>I am an item</p-dropdown-menu-item>
+		<p-dropdown-menu-item
+			variant='negative'
+			checkbox
+		>
+			I am an item
+		</p-dropdown-menu-item>
+	</div>
+</Canvas>
+
+### Active
+
+<Canvas>
+	<div class='flex flex-col items-center gap-[1px]'>
+		<p-dropdown-menu-item
+			checkbox
+			active
+		>
+			I am an active item
+		</p-dropdown-menu-item>
+		<p-dropdown-menu-item
+			variant='negative'
+			checkbox
+			active
+		>
+			I am an active item
+		</p-dropdown-menu-item>
+	</div>
+</Canvas>
+
+## Other
+
+### Very long text
 
 <Canvas>
 	<div class='flex justify-center'>
