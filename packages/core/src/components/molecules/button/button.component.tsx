@@ -233,7 +233,42 @@ const icon = cva([], {
 			base: 'text-base',
 			lg: 'text-base',
 		},
+		variant: {
+			primary: null,
+			secondary: null,
+			text: null,
+			transparent: null,
+			dropdown: null,
+		},
+		disabled: {
+			true: null,
+			false: null,
+		},
+		active: {
+			true: null,
+			false: null,
+		},
 	},
+	compoundVariants: [
+		{
+			variant: ['secondary', 'dropdown'],
+			disabled: false,
+			active: false,
+			class: 'text-black-teal-300 group-hover:text-black-teal',
+		},
+		{
+			variant: 'text',
+			disabled: false,
+			active: false,
+			class: 'text-teal-300 group-hover:text-teal',
+		},
+		{
+			variant: 'transparent',
+			disabled: false,
+			active: false,
+			class: 'text-dark-teal-200 group-hover:text-dark-teal-100',
+		},
+	],
 });
 
 @Component({
@@ -442,6 +477,9 @@ export class Button {
 			<p-icon
 				class={icon({
 					size: this.size,
+					variant: this.variant,
+					disabled: this.disabled,
+					active: this.active,
 				})}
 				variant={this.icon}
 				flip={this.iconFlip}
