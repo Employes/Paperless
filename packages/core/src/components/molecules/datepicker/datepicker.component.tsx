@@ -257,7 +257,9 @@ export class Datepicker {
 				>
 					<p-input-group
 						slot='trigger'
-						icon={this.hideIconWhenFilled && !!this._value ? null : 'calendar'}
+						icon={
+							this.hideIconWhenFilled && !!this._value ? null : 'calendar-multi'
+						}
 						iconPosition='start'
 						size={this.size}
 						prefix={this.prefix}

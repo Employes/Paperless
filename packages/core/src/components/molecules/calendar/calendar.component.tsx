@@ -9,6 +9,7 @@ import {
 	State,
 	Watch,
 } from '@stencil/core';
+import { cva } from 'class-variance-authority';
 import {
 	addDays,
 	addMonths,
@@ -30,11 +31,36 @@ import {
 	startOfDay,
 	startOfMonth,
 } from 'date-fns';
+import { cn } from '../../../utils/cn';
+
+const calendar = cva(['p-calendar bg-white w-[17.5rem] flex flex-col gap-4'], {
+	variants: {
+		variant: {
+			default: ['p-2 rounded-lg drop-shadow-2', 'border border-black-teal-100'],
+			embedded: 'p-1',
+		},
+	},
+});
+
+const header = cva([
+	'flex items-center justify-between gap-1',
+	'w-full p-2',
+	'bg-off-white-300 rounded-lg',
+]);
+
+const view = cva(['flex flex-col gap-2', 'w-full'], {
+	variants: {
+		view: {
+			day: 'h-auto min-h-[12rem]',
+			month: null,
+			year: 'max-h-[14rem]',
+		},
+	},
+});
 
 @Component({
 	tag: 'p-calendar',
 	styleUrl: 'calendar.component.scss',
-	shadow: true,
 })
 export class Calendar {
 	/**
@@ -206,9 +232,7 @@ export class Calendar {
 
 	render() {
 		return (
-			<Host class={`p-calendar variant-${this.variant}`}>
-				{this._getView()}
-			</Host>
+			<Host class={calendar({ variant: this.variant })}>{this._getView()}</Host>
 		);
 	}
 
@@ -230,53 +254,41 @@ export class Calendar {
 	private _getDayView() {
 		const daysInMonth = this._generateDaysInMonth();
 		return (
-			<div class='view-day'>
-				<div class='header'>
-					<div
-						class={`nav ${!this._canSetAmount('month', -1) && 'disabled'}`}
-						onClick={() => this._changeMonth(-1)}
-					>
-						<p-icon
-							variant='caret'
-							rotate={90}
-						/>
-					</div>
-					<div>
-						<span
-							onClick={() => this._changeView('month')}
-							class={!this._canChangeView('month') && 'disabled'}
-						>
-							{format(this._viewDate, 'MMMM')}
-						</span>
-						<span
-							onClick={() => this._changeView('year')}
-							class={`year ${!this._canChangeView('year') && 'disabled'}`}
-						>
-							{getYear(this._viewDate)}
-						</span>
-					</div>
-					<div
-						class={`nav ${!this._canSetAmount('month', 1) && 'disabled'}`}
-						onClick={() => this._changeMonth(1)}
-					>
-						<p-icon
-							variant='caret'
-							rotate={-90}
-						/>
-					</div>
-				</div>
-				<div class='dates'>
+			<div class={view({ view: 'day' })}>
+				{this._getHeader('day')}
+
+				<div class='grid grid-cols-7 justify-between gap-1'>
 					{this._weekDays.map(weekday => (
-						<span>{format(addDays(new Date(2022, 7, 1), weekday), 'eee')}</span>
+						<span class='w-8 text-center text-xs text-black-teal-200'>
+							{format(addDays(new Date(2022, 7, 1), weekday), 'eee')}
+						</span>
 					))}
 					{daysInMonth.map(day => {
-						return (
+						return day.active ? (
+							<p-button
+								variant='primary'
+								class={cn('w-full', `col-start-${day.offset}`)}
+								onClick={() => this._setValue(day.date)}
+							>
+								{/* class={`day ${day.active && 'active'} ${ */}
+								{/* 	day.disabled && 'disabled' */}
+								{/* } ${day.current && 'current'} ${ */}
+								{/* 	day.offset !== false && */}
+								{/* }`} */}
+								{day.day}
+							</p-button>
+						) : (
 							<time
-								class={`day ${day.active && 'active'} ${
-									day.disabled && 'disabled'
-								} ${day.current && 'current'} ${
-									day.offset !== false && `col-start-${day.offset}`
-								}`}
+								class={cn(
+									'normal flex items-center justify-center rounded-lg',
+									'h-8 w-8 text-sm text-black-teal-300',
+									{
+										'cursor-pointer hover:bg-white-600 hover:text-black-teal':
+											!day.disabled,
+									},
+									`col-start-${day.offset}`,
+									{ 'cursor-not-allowed opacity-60': day.disabled }
+								)}
 								onClick={() => this._setValue(day.date)}
 							>
 								{day.day}
@@ -291,45 +303,18 @@ export class Calendar {
 	private _getMonthView() {
 		const months = this._generateMonths();
 		return (
-			<div class='view-month'>
-				<div class='header'>
-					<div
-						class={`nav ${!this._canSetAmount('year', -1) && 'disabled'}`}
-						onClick={() => this._changeYear(-1)}
-					>
-						<p-icon
-							variant='caret'
-							rotate={90}
-						/>
-					</div>
-					<div>
-						<span
-							onClick={() => this._changeView('year')}
-							class={`year ${!this._canChangeView('year') && 'disabled'}`}
-						>
-							{getYear(this._viewDate)}
-						</span>
-					</div>
-					<div
-						class={`nav ${!this._canSetAmount('year', 1) && 'disabled'}`}
-						onClick={() => this._changeYear(1)}
-					>
-						<p-icon
-							variant='caret'
-							rotate={-90}
-						/>
-					</div>
-				</div>
-				<div class='items'>
+			<div class={view({ view: 'month' })}>
+				{this._getHeader('month')}
+
+				<div class='flex flex-wrap items-start gap-2'>
 					{months.map(month => (
-						<div
+						<p-button
+							variant={month.active ? 'primary' : 'secondary'}
+							disabled={month.disabled}
 							onClick={() => this._setMonth(month.month)}
-							class={`month ${month.active && 'active'} ${
-								month.disabled && 'disabled'
-							} ${month.current && 'current'}`}
 						>
 							{format(setMonth(new Date(), month.month), 'MMMM')}
-						</div>
+						</p-button>
 					))}
 				</div>
 			</div>
@@ -339,26 +324,83 @@ export class Calendar {
 	private _getYearView() {
 		const years = this._generateYears();
 		return (
-			<div class='view-year'>
-				<div class='header'>
-					<div>
-						<span class='year disabled'>
-							{years?.[0].year} - {years?.[years.length - 1].year}
-						</span>
-					</div>
-				</div>
-				<div class='items'>
+			<div
+				id='view-year'
+				class={view({ view: 'year' })}
+			>
+				{this._getHeader('year')}
+				<div
+					id='items'
+					class='grid h-full grid-cols-4 gap-2 overflow-scroll'
+				>
 					{years.map(year => (
-						<div
+						<p-button
+							class='w-full'
+							variant={year.active ? 'primary' : 'secondary'}
 							onClick={() => this._setYear(year.year)}
-							class={`year ${year.active && 'active'} ${
-								year.current && 'current'
-							}`}
+							data-active={year.active}
+							data-current={year.current}
 						>
 							{year.year}
-						</div>
+						</p-button>
 					))}
 				</div>
+			</div>
+		);
+	}
+
+	private _getHeader(variant: 'day' | 'month' | 'year' = 'day') {
+		let nextFn = num => this._changeMonth(num);
+		let nextType: 'month' | 'year' = 'month';
+
+		if (variant === 'month' || variant === 'year') {
+			nextFn = num => this._changeYear(num);
+			nextType = 'year';
+		}
+
+		return (
+			<div class={header()}>
+				<p-button
+					variant='secondary'
+					iconOnly
+					icon='caret'
+					iconRotate={90}
+					size='sm'
+					onClick={() => nextFn(-1)}
+					disabled={!this._canSetAmount(nextType, -1)}
+				/>
+
+				<div class='flex gap-2'>
+					<p-button
+						variant='secondary'
+						size='sm'
+						onClick={() => this._changeView('month')}
+						disabled={!this._canChangeView('month')}
+						active={this._view === 'month'}
+					>
+						{format(this._viewDate, 'MMMM')}
+					</p-button>
+
+					<p-button
+						variant='secondary'
+						size='sm'
+						onClick={() => this._changeView('year')}
+						disabled={!this._canChangeView('year')}
+						active={this._view === 'year'}
+					>
+						{getYear(this._viewDate)}
+					</p-button>
+				</div>
+
+				<p-button
+					variant='secondary'
+					iconOnly
+					icon='caret'
+					iconRotate={-90}
+					size='sm'
+					onClick={() => nextFn(1)}
+					disabled={!this._canSetAmount(nextType, 1)}
+				/>
 			</div>
 		);
 	}
@@ -489,22 +531,24 @@ export class Calendar {
 	}
 
 	private _scrollYearIntoView() {
-		const items = this._el.shadowRoot.querySelector('.view-year .items');
+		const items = this._el.querySelector('#view-year > #items');
 		if (!items) {
 			return;
 		}
 
-		const active = items.querySelector('.year.active') as HTMLElement;
+		const active = items.querySelector('p-button[data-active]') as HTMLElement;
 		if (active) {
 			return items.scrollTo({
-				top: active.offsetTop,
+				top: active.offsetTop - 100,
 			});
 		}
 
-		const current = items.querySelector('.year.current') as HTMLElement;
+		const current = items.querySelector(
+			'p-button[data-current]'
+		) as HTMLElement;
 		if (current) {
 			return items.scrollTo({
-				top: current.offsetTop,
+				top: current.offsetTop - 100,
 			});
 		}
 	}
