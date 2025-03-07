@@ -66,7 +66,9 @@ graph TD;
   p-helper --> p-tooltip
   p-input-error --> p-tooltip
   p-input-error --> p-icon
-  p-calendar --> p-icon
+  p-calendar --> p-button
+  p-button --> p-icon
+  p-button --> p-loader
   style p-datepicker fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
