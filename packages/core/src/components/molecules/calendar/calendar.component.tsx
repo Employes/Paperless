@@ -42,11 +42,22 @@ const calendar = cva(['p-calendar bg-white w-[17.5rem] flex flex-col gap-4'], {
 	},
 });
 
-const header = cva([
-	'flex items-center justify-between gap-1',
-	'w-full p-2',
-	'bg-off-white-300 rounded-lg',
-]);
+const header = cva(
+	[
+		'flex items-center justify-between gap-1',
+		'w-full p-2',
+		'bg-off-white-300 rounded-lg',
+	],
+	{
+		variants: {
+			type: {
+				day: null,
+				month: null,
+				year: 'justify-center',
+			},
+		},
+	}
+);
 
 const view = cva(['flex flex-col gap-2', 'w-full'], {
 	variants: {
@@ -349,58 +360,64 @@ export class Calendar {
 		);
 	}
 
-	private _getHeader(variant: 'day' | 'month' | 'year' = 'day') {
+	private _getHeader(type: 'day' | 'month' | 'year' = 'day') {
 		let nextFn = num => this._changeMonth(num);
 		let nextType: 'month' | 'year' = 'month';
 
-		if (variant === 'month' || variant === 'year') {
+		if (type === 'month' || type === 'year') {
 			nextFn = num => this._changeYear(num);
 			nextType = 'year';
 		}
 
 		return (
-			<div class={header()}>
-				<p-button
-					variant='secondary'
-					iconOnly
-					icon='caret'
-					iconRotate={90}
-					size='sm'
-					onClick={() => nextFn(-1)}
-					disabled={!this._canSetAmount(nextType, -1)}
-				/>
-
-				<div class='flex gap-2'>
+			<div class={header({ type })}>
+				{type !== 'year' && (
 					<p-button
 						variant='secondary'
+						iconOnly
+						icon='caret'
+						iconRotate={90}
 						size='sm'
-						onClick={() => this._changeView('month')}
-						disabled={!this._canChangeView('month')}
-						active={this._view === 'month'}
-					>
-						{format(this._viewDate, 'MMMM')}
-					</p-button>
+						onClick={() => nextFn(-1)}
+						disabled={!this._canSetAmount(nextType, -1)}
+					/>
+				)}
+
+				<div class='flex gap-2'>
+					{this.mode !== 'year' && (
+						<p-button
+							variant='secondary'
+							size='sm'
+							onClick={() => this._changeView('month')}
+							disabled={!this._canChangeView('month')}
+							active={this._view === 'month' && this.mode !== 'month'}
+						>
+							{format(this._viewDate, 'MMMM')}
+						</p-button>
+					)}
 
 					<p-button
 						variant='secondary'
 						size='sm'
 						onClick={() => this._changeView('year')}
 						disabled={!this._canChangeView('year')}
-						active={this._view === 'year'}
+						active={this._view === 'year' && this.mode !== 'year'}
 					>
 						{getYear(this._viewDate)}
 					</p-button>
 				</div>
 
-				<p-button
-					variant='secondary'
-					iconOnly
-					icon='caret'
-					iconRotate={-90}
-					size='sm'
-					onClick={() => nextFn(1)}
-					disabled={!this._canSetAmount(nextType, 1)}
-				/>
+				{type !== 'year' && (
+					<p-button
+						variant='secondary'
+						iconOnly
+						icon='caret'
+						iconRotate={-90}
+						size='sm'
+						onClick={() => nextFn(1)}
+						disabled={!this._canSetAmount(nextType, 1)}
+					/>
+				)}
 			</div>
 		);
 	}
@@ -408,17 +425,21 @@ export class Calendar {
 	private _setYear(year: number) {
 		const date = setYear(this._viewDate, year);
 		if (this.mode === 'year') {
-			return this._setValue(setMonth(setDate(date, 1), 0));
+			this._viewDate = date;
+			this._setValue(setMonth(setDate(date, 1), 0));
+			return;
 		}
 
-		this._viewDate = setYear(this._viewDate, year);
+		this._viewDate = date;
 		this._view = 'month';
 	}
 
 	private _setMonth(month: number) {
 		const date = setMonth(this._viewDate, month);
 		if (this.mode === 'month') {
-			return this._setValue(setDate(date, 1));
+			this._viewDate = date;
+			this._setValue(setDate(date, 1));
+			return;
 		}
 
 		this._viewDate = date;
