@@ -2,7 +2,7 @@ import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
 import { StoryCategories } from '../../categories';
 import Docs from '../../../packages/core/src/components/molecules/calendar/readme.md';
 
-<Meta title={`${StoryCategories.Molecules}/Calendar`} />
+<Meta title={`${StoryCategories.Molecules}/Rebranding/Calendar`} />
 
 <Docs />
 
@@ -13,25 +13,25 @@ import Docs from '../../../packages/core/src/components/molecules/calendar/readm
 ### Day
 
 <Canvas>
-    <div class="flex h-96 p-12 justify-center items-center bg-mystic-dark">
-        <p-calendar />
-    </div>
+	<div class='flex h-96 items-center justify-center bg-off-white-600 p-12'>
+		<p-calendar />
+	</div>
 </Canvas>
 
 ### Month
 
 <Canvas>
-    <div class="flex h-96 p-12 justify-center items-center bg-mystic-dark">
-        <p-calendar mode="month" />
-    </div>
+	<div class='flex h-96 items-center justify-center bg-off-white-600 p-12'>
+		<p-calendar mode='month' />
+	</div>
 </Canvas>
 
 ### Year
 
 <Canvas>
-    <div class="flex h-96 p-12 justify-center items-center bg-mystic-dark">
-        <p-calendar mode="year" />
-    </div>
+	<div class='flex h-96 items-center justify-center bg-off-white-600 p-12'>
+		<p-calendar mode='year' />
+	</div>
 </Canvas>
 
 ## Other options
@@ -39,63 +39,69 @@ import Docs from '../../../packages/core/src/components/molecules/calendar/readm
 ### Prefilled on 2022-12-01
 
 <Canvas>
-    <div class="flex h-96 p-12 justify-center items-center bg-mystic-dark">
-        <p-calendar value="2022-12-01" />
-    </div>
+	<div class='flex h-96 items-center justify-center bg-off-white-600 p-12'>
+		<p-calendar value='2022-12-01' />
+	</div>
 </Canvas>
 
 ### Preselect today
 
 <Canvas>
-    <div class="flex h-96 p-12 justify-center items-center bg-mystic-dark">
-        <p-calendar preselect-today />
-    </div>
+	<div class='flex h-96 items-center justify-center bg-off-white-600 p-12'>
+		<p-calendar preselect-today />
+	</div>
 </Canvas>
 
 ### Disabled 2022-12-15, 2022-12-20, 2022-12-31
 
 <Canvas>
-    <div class="flex h-96 p-12 justify-center items-center bg-mystic-dark">
-        <p-calendar disabled-dates='["2022-12-15","2022-12-20","2022-12-31"]' />
-    </div>
+	<div class='flex h-96 items-center justify-center bg-off-white-600 p-12'>
+		<p-calendar disabled-dates='["2022-12-15","2022-12-20","2022-12-31"]' />
+	</div>
 </Canvas>
 
 ### Disable weekends
 
 <Canvas>
-    <div class="flex h-96 p-12 justify-center items-center bg-mystic-dark">
-        <p-calendar disable-weekends={true} />
-    </div>
+	<div class='flex h-96 items-center justify-center bg-off-white-600 p-12'>
+		<p-calendar disable-weekends={true} />
+	</div>
 </Canvas>
 
 ### Min date on 2022-12-15
 
 <Canvas>
-    <div class="flex h-96 p-12 justify-center items-center bg-mystic-dark">
-        <p-calendar min-date="2022-12-15" />
-    </div>
+	<div class='flex h-96 items-center justify-center bg-off-white-600 p-12'>
+		<p-calendar min-date='2022-12-15' />
+	</div>
 </Canvas>
 
 ### Max date on 2022-12-15
 
 <Canvas>
-    <div class="flex h-96 p-12 justify-center items-center bg-mystic-dark">
-        <p-calendar max-date="2022-12-15" />
-    </div>
+	<div class='flex h-96 items-center justify-center bg-off-white-600 p-12'>
+		<p-calendar max-date='2022-12-15' />
+	</div>
 </Canvas>
 
 ### Between 2022-01-01 and 2022-12-31
 
 <Canvas>
-    <div class="flex h-96 p-12 justify-center items-center bg-mystic-dark">
-        <p-calendar min-date="2022-01-01" max-date="2022-12-31" />
-    </div>
+	<div class='flex h-96 items-center justify-center bg-off-white-600 p-12'>
+		<p-calendar
+			min-date='2022-01-01'
+			max-date='2022-12-31'
+		/>
+	</div>
 </Canvas>
 
 ### Between 2022-12-01 and 2022-12-31
 
 <Canvas>
-    <div class="flex h-96 p-12 justify-center items-center bg-mystic-dark">
-        <p-calendar min-date="2022-12-01" max-date="2022-12-31" />
-    </div>
+	<div class='flex h-96 items-center justify-center bg-off-white-600 p-12'>
+		<p-calendar
+			min-date='2022-12-01'
+			max-date='2022-12-31'
+		/>
+	</div>
 </Canvas>

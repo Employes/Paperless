@@ -26,7 +26,6 @@
  - [p-accordion](../../molecules/accordion)
  - [p-attachment](../../molecules/attachment)
  - [p-button](../../molecules/button)
- - [p-calendar](../../molecules/calendar)
  - [p-card-header](../card-header)
  - [p-cropper](../../molecules/cropper)
  - [p-dropdown-menu-item](../dropdown-menu-item)
@@ -48,7 +47,6 @@ graph TD;
   p-accordion --> p-icon
   p-attachment --> p-icon
   p-button --> p-icon
-  p-calendar --> p-icon
   p-card-header --> p-icon
   p-cropper --> p-icon
   p-dropdown-menu-item --> p-icon
