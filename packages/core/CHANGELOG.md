@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.18](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.17...v2.0.1-beta.18) (2025-03-07)
+
+
+### Bug Fixes
+
+* **molecules/calendar:** Better handeling in the header ([078affd](https://github.com/ionic-team/stencil-component-starter/commit/078affd8f34f45bb9f56b34bfdbe4e99e0875be6))
+
+
+
+
+
 ## [2.0.1-beta.17](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.16...v2.0.1-beta.17) (2025-03-07)
 
 
