@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.17](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.16...v2.0.1-beta.17) (2025-03-07)
+
+
+### Features
+
+* **molecules/calendar:** Rebranding implementation ([437710e](https://github.com/ionic-team/stencil-component-starter/commit/437710e1907a922ec413f2c7782366404b8233fd))
+
+
+
+
+
 ## [2.0.1-beta.16](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.15...v2.0.1-beta.16) (2025-03-06)
 
 
