@@ -38,12 +38,14 @@
 
 ### Depends on
 
-- [p-icon](../../atoms/icon)
+- [p-button](../button)
 
 ### Graph
 ```mermaid
 graph TD;
-  p-calendar --> p-icon
+  p-calendar --> p-button
+  p-button --> p-icon
+  p-button --> p-loader
   p-datepicker --> p-calendar
   style p-calendar fill:#f9f,stroke:#333,stroke-width:4px
 ```
