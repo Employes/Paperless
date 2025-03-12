@@ -15,12 +15,8 @@ export class Loader {
 	/**
 	 * Variant of loader
 	 */
-	@Prop() variant:
-		| 'inline'
-		| 'full-width'
-		| 'full-screen'
-		| 'modal'
-		| 'ghost' = 'inline';
+	@Prop() variant: 'inline' | 'full-width' | 'full-screen' | 'modal' | 'ghost' =
+		'inline';
 
 	/**
 	 * Color of the loader
@@ -37,10 +33,12 @@ export class Loader {
 	 */
 	@Prop() modalDescription: string;
 
-	private _show = this.show;
+	private _show: boolean | Observable<boolean> = false;
 	private _showSubscriber: Subscription;
 
-	private _loader = (<div class={`loader color-${this.color}`}></div>);
+	componendDidLoad() {
+		this._show = this.show;
+	}
 
 	componentWillRender() {
 		this._checkShow();
@@ -56,17 +54,19 @@ export class Loader {
 		}
 
 		if (this.variant === 'ghost') {
-			return <Host class="p-loader variant-ghost"></Host>;
+			return <Host class='p-loader variant-ghost'></Host>;
 		}
+
+		const loader = <div class={`loader color-${this.color}`}></div>;
 
 		if (this.variant === 'full-screen') {
 			return (
-				<Host class="p-loader variant-full-screen">
-					<div class="loading-screen">
-						<div class="content">
+				<Host class='p-loader variant-full-screen'>
+					<div class='loading-screen'>
+						<div class='content'>
 							<slot />
 
-							<div class="loader-wrapper">{this._loader}</div>
+							<div class='loader-wrapper'>{loader}</div>
 						</div>
 					</div>
 				</Host>
@@ -76,11 +76,10 @@ export class Loader {
 		return (
 			<Host
 				class={`p-loader variant-default flex ${
-					this.variant === 'full-width' &&
-					'w-full flex justify-center text-4xl'
+					this.variant === 'full-width' && 'flex w-full justify-center text-4xl'
 				}`}
 			>
-				{this._loader}
+				{loader}
 			</Host>
 		);
 	}
@@ -92,9 +91,7 @@ export class Loader {
 		}
 
 		if (typeof this.show !== 'boolean') {
-			this._showSubscriber = this.show?.subscribe(
-				(show) => (this._show = show)
-			);
+			this._showSubscriber = this.show?.subscribe(show => (this._show = show));
 			return;
 		}
 
