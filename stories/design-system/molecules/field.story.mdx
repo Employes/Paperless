@@ -1,0 +1,200 @@
+import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
+import { StoryCategories } from '../../categories';
+import FieldDocs from '../../../packages/core/src/components/molecules/field/readme.md';
+
+<Meta title={`${StoryCategories.Molecules}/Rebranding/Fields/Field`} />
+
+<FieldDocs />
+
+# Examples
+
+## Variants
+
+### Default
+
+<Canvas>
+	<div class='flex h-32 items-center px-10'>
+		<p-field
+			label='Label'
+			placeholder='Placeholder text'
+			required={false}
+		/>
+	</div>
+</Canvas>
+
+### Disabled
+
+<Canvas>
+	<div class='flex h-32 items-center px-10'>
+		<p-field
+			disabled
+			placeholder='What is your name?'
+			label='Name'
+		/>
+	</div>
+</Canvas>
+
+### Focus
+
+<Canvas>
+	<div class='flex h-32 items-center px-10'>
+		<p-field
+			focused
+			placeholder='What is your name?'
+			label='Name'
+		/>
+	</div>
+</Canvas>
+
+### Error
+
+<Canvas>
+	<div class='flex h-32 w-72 flex-col justify-center gap-4 px-10'>
+		<p-field
+			error='Invalid'
+			label='Name'
+			placeholder='What is your name?'
+		/>
+		<p-field
+			error='Invalid'
+			type='textarea'
+			label='Message'
+			placeholder='What is your message?'
+		/>
+	</div>
+</Canvas>
+
+## Prefix & Suffix
+
+### Prefix
+
+#### Icon
+
+<Canvas>
+	<div class='flex h-32 items-center px-10'>
+		<p-field
+			label='Name'
+			icon='user'
+			placeholder='What is your name?'
+		/>
+	</div>
+</Canvas>
+
+#### Text
+
+<Canvas>
+	<div class='flex h-32 items-center px-10'>
+		<p-field
+			label='Name'
+			prefix='#'
+			placeholder='Choose a number?'
+			type='number'
+		/>
+	</div>
+</Canvas>
+
+### Suffix
+
+#### Text
+
+<Canvas>
+	<div class='flex h-32 items-center px-10'>
+		<p-field
+			label='Name'
+			suffix='#'
+			placeholder='Choose a number?'
+			type='number'
+		/>
+	</div>
+</Canvas>
+
+#### Text with error
+
+<Canvas>
+	<div class='flex h-32 items-center px-10'>
+		<p-field
+			label='Name'
+			suffix='#'
+			error='Not a number'
+			placeholder='Choose a number?'
+			type='number'
+		/>
+	</div>
+</Canvas>
+
+## Helper
+
+### Default
+
+<Canvas>
+	<div class='flex h-32 items-center px-10'>
+		<p-field
+			helper='The on your birth certificate.'
+			label='Name'
+			placeholder='Tell me your story?'
+		/>
+	</div>
+</Canvas>
+
+### Slotted
+
+<Canvas>
+	<div class='flex h-32 items-center px-10'>
+		<p-field
+			label='Name'
+			placeholder='Tell me your story?'
+			type='textarea'
+		>
+			<span slot='helper'>The name on your birth certificate. (slotted)</span>
+		</p-field>
+	</div>
+</Canvas>
+
+## Header
+
+### Custom header item
+
+<Canvas>
+	<div class='flex h-32 items-center px-10'>
+		<p-field label='Password'>
+			<input
+				class='p-input'
+				slot='input'
+				type='password'
+				placeholder='What is your password?'
+			/>
+			<p-button
+				slot='header'
+				variant='text'
+				size='sm'
+				class='-mb-1 -mt-1'
+				underline={false}
+			>
+				Password forgotten?
+			</p-button>
+		</p-field>
+	</div>
+</Canvas>
+
+### With helper
+
+<Canvas>
+	<div class='flex h-32 items-center px-10'>
+		<p-field
+			label='Password'
+			helper='I am helping!'
+			type='password'
+			placeholder='What is your password?'
+		>
+			<p-button
+				slot='header'
+				variant='text'
+				size='sm'
+				class='-mb-1 -mt-1'
+				underline={false}
+			>
+				Password forgotten?
+			</p-button>
+		</p-field>
+	</div>
+</Canvas>
