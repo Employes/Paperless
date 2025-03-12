@@ -414,7 +414,7 @@ export class Table implements OnInit, OnChanges {
 
 	public isMobile$ = new BehaviorSubject(isMobile());
 
-	private _resizeTimeout: NodeJS.Timeout | undefined;
+	private _resizeTimeout: unknown;
 	private _inputEnableRowSelection: boolean = this.enableRowSelection;
 	private _inputRowSelectionLimit: number | undefined = this.rowSelectionLimit;
 
@@ -889,7 +889,7 @@ export class Table implements OnInit, OnChanges {
 
 	private _setRowSelectionData() {
 		if (this._resizeTimeout) {
-			clearTimeout(this._resizeTimeout);
+			clearTimeout(this._resizeTimeout as number);
 		}
 
 		// We add a timeout here because it's a lot easier on the machine to do these when someone is done
