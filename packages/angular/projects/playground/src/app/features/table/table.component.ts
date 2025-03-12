@@ -18,7 +18,7 @@ export class TableComponent {
 	public floatingMenuAmountSelectedText = '0 items selected';
 
 	public downloading$ = new BehaviorSubject(false);
-	private _downloadTimeout: unknown | undefined;
+	private _downloadTimeout: NodeJS.Timeout | undefined;
 
 	public showNavigateButton = (item: any) => {
 		console.log('Show navigate button');
@@ -34,7 +34,7 @@ export class TableComponent {
 	actionClick(name: string, event: TableRowActionClickEvent) {
 		if (name === 'download') {
 			if (this._downloadTimeout) {
-				clearTimeout(this._downloadTimeout as number);
+				clearTimeout(this._downloadTimeout);
 				this._downloadTimeout = undefined;
 			}
 

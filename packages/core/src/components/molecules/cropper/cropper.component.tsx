@@ -47,8 +47,8 @@ export class Cropper {
 	private _maxScale = 0;
 	private _minScale = 0;
 
-	private _resizeDebounceTimeout: NodeJS.Timer;
-	private _toCanvasDebounceTimeout: NodeJS.Timer;
+	private _resizeDebounceTimeout: NodeJS.Timeout | undefined;
+	private _toCanvasDebounceTimeout: NodeJS.Timeout | undefined;
 
 	@State()
 	private _loaded = false;
@@ -76,55 +76,52 @@ export class Cropper {
 
 	render() {
 		return (
-			<Host class="p-cropper">
+			<Host class='p-cropper'>
 				{this._loaded && (
 					<cropper-canvas
-						class="h-[17.5rem] w-full border-0 border-b border-solid border-mystic-medium bg-white"
+						class='h-[17.5rem] w-full border-0 border-b border-solid border-mystic-medium bg-white'
 						onAction={() => this._onAction()}
 					>
 						<cropper-image
 							src={this.value}
-							alt="Picture"
-							ref={(ref) =>
-								this._setImageRef(ref as CropperImage)
-							}
+							alt='Picture'
+							ref={ref => this._setImageRef(ref as CropperImage)}
 							scalable
-							crossorigin="anonymous"
+							crossorigin='anonymous'
 						/>
 						<cropper-shade
 							class={clsx({
 								'rounded-round': this.variant === 'user',
 								rounded: this.variant === 'company',
 							})}
-							theme-color="rgba(255, 255, 255, 0.5)"
+							theme-color='rgba(255, 255, 255, 0.5)'
 							hidden
 						/>
 						<cropper-selection
-							initial-coverage="0.7"
-							aspect-ratio="1"
-							ref={(ref) =>
-								(this._selectionRef = ref as CropperSelection)
-							}
+							initial-coverage='0.7'
+							aspect-ratio='1'
+							ref={ref => (this._selectionRef = ref as CropperSelection)}
 						/>
 
-						<cropper-handle action="move" plain></cropper-handle>
+						<cropper-handle
+							action='move'
+							plain
+						></cropper-handle>
 					</cropper-canvas>
 				)}
 
-				<div class="flex w-full items-center gap-2 px-14 text-storm-vague tablet:max-w-xs tablet:px-1">
-					<p-icon variant="minus" />
+				<div class='flex w-full items-center gap-2 px-14 text-storm-vague tablet:max-w-xs tablet:px-1'>
+					<p-icon variant='minus' />
 					<input
-						class="p-input w-full"
-						type="range"
-						min="0"
-						max="100"
+						class='p-input w-full'
+						type='range'
+						min='0'
+						max='100'
 						value={this._currentScale}
-						onInput={(ev) =>
-							this._onInput((ev.target as HTMLInputElement).value)
-						}
-						step="0.5"
+						onInput={ev => this._onInput((ev.target as HTMLInputElement).value)}
+						step='0.5'
 					/>
-					<p-icon variant="plus" />
+					<p-icon variant='plus' />
 				</div>
 			</Host>
 		);
@@ -136,7 +133,7 @@ export class Cropper {
 		}
 
 		this._imageRef = ref;
-		this._imageRef.$ready((image) =>
+		this._imageRef.$ready(image =>
 			setTimeout(() => this._setInitialState(image), 200)
 		);
 	}
