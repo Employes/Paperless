@@ -204,7 +204,7 @@ export class Select {
 	/**
 	 * The size of the input group used by the select
 	 */
-	@Prop() size: 'small' | 'medium' = 'medium';
+	@Prop() size: 'sm' | 'base' = 'base';
 
 	/**
 	 * The prefix of the input group used by the select
@@ -224,7 +224,7 @@ export class Select {
 	/**
 	 * Wether the field is required
 	 */
-	@Prop({ reflect: true }) required: boolean;
+	@Prop({ reflect: true }) required: boolean = true;
 
 	/**
 	 * The helper of the input group used by the select
@@ -272,42 +272,55 @@ export class Select {
 	@State() private _amountHidden = 0;
 
 	private _inputRef: HTMLDivElement;
-	private autocompleteInputRef: HTMLInputElement;
+	private autocompleteInputRef: HTMLInputElement | HTMLTextAreaElement;
 	private _multiContainerRef: HTMLElement;
 
 	private _resizeObserver: ResizeObserver;
-	private _resizeDebounceTimer: NodeJS.Timer;
+	private _resizeDebounceTimer: NodeJS.Timeout | undefined;
+	private _checkSelectedItemsTimeout: NodeJS.Timeout | undefined;
 
 	get _items() {
 		return this._getParsedItems();
 	}
 
 	get _displayValue() {
+		const placeholder = (
+			<div class={textContainer({ variant: 'placeholder' })}>
+				{this.placeholder}
+			</div>
+		);
+
+		console.log(this._selectedItem);
 		if (!this._selectedItem) {
-			return this.placeholder;
+			return placeholder;
 		}
 
 		if (this.multi) {
 			if (this._selectedItem?.length === 0) {
-				return this.placeholder;
+				return placeholder;
 			}
 
 			return (
 				<div
-					class={`multi-container size-${this.size}`}
+					class={multiContainer()}
 					ref={ref => (this._multiContainerRef = ref)}
 				>
 					{this._selectedItem.map(item => (
 						<div
-							class='item'
+							class={multiItem()}
 							onClick={() => this._selectValue(item)}
 						>
 							{item[this.selectionDisplayKey ?? this.displayKey]}
-							<p-icon variant='negative' />
+							<p-icon
+								class='text-xs text-supportive-lilac group-hover/item:text-supportive-lilac-800'
+								variant='negative'
+							/>
 						</div>
 					))}
 
-					<div class='extra hidden'>+{this._amountHidden}</div>
+					<div class='extra pointer-events-none hidden text-sm text-black-teal-100'>
+						+{this._amountHidden}
+					</div>
 				</div>
 			);
 		}
@@ -335,7 +348,7 @@ export class Select {
 
 				this._resizeDebounceTimer = setTimeout(() => {
 					this._setMultiContainerMaxWidth();
-					this._checkSelectedItems();
+					this._setCheckSelectedItemsTimeout();
 				}, 200);
 			});
 			this._resizeObserver.observe(this._el);
@@ -352,7 +365,6 @@ export class Select {
 	componentDidRender() {
 		if (this.multi) {
 			this._setMultiContainerMaxWidth();
-			this._checkSelectedItems();
 		}
 	}
 
@@ -375,48 +387,37 @@ export class Select {
 					usePortal={this.usePortal}
 					strategy={this.strategy}
 				>
-					<p-input-group
+					<p-field-container
 						slot='trigger'
-						icon={this.icon}
-						size={this.size}
 						prefix={this.prefix}
 						label={this.label}
 						helper={this.helper}
 						required={this.required}
 						error={this.error}
-						disabled={this.disabled}
-						focused={this._showDropdown}
+						errorPlacement='top-start'
 						forceShowTooltip={this.error?.length && this._showDropdown}
 					>
-						<div
-							slot='input'
-							class={`p-input read-only cursor-pointer ${
-								this.showChevron ? 'max-w-[calc(100%-3rem)]' : 'w-full'
-							} size-${this.size} ${
-								this._displayValue === this.placeholder
-									? 'font-medium text-storm-medium'
-									: ''
-							}`}
-							contenteditable
-							onFocus={ev => this._onFocus(ev)}
-							onMouseDown={ev => this._onMouseDown(ev)}
-							onClick={() => this._onClick()}
-							ref={ref => (this._inputRef = ref)}
+						<p-button
+							class='w-full'
+							slot='content'
+							variant='secondary'
+							size={this.size}
+							chevron={this.showChevron}
+							disabled={this.disabled}
+							active={this._showDropdown}
+							icon={this.icon}
+							onClick={ev => this._onClick(ev)}
 						>
-							{this._displayValue}
-						</div>
-
-						{this.showChevron && (
-							<p-icon
-								variant='caret'
-								slot='suffix'
-							/>
-						)}
-					</p-input-group>
-					<div slot='items'>
-						{this.loading ? this._getLoadingItems() : this._getItems()}
-						{this.showAddItem && this._getAddItem()}
-					</div>
+							<div
+								class='relative flex-1'
+								ref={ref => (this._inputRef = ref)}
+							>
+								{this._displayValue}
+							</div>
+						</p-button>
+					</p-field-container>
+					{this.loading ? this._getLoadingItems() : this._getItems()}
+					{this.showAddItem && this._getAddItem()}
 				</p-dropdown>
 			</Host>
 		);
@@ -433,7 +434,10 @@ export class Select {
 
 	@Watch('value')
 	private _valueChange() {
-		setTimeout(() => this._preselectItem());
+		setTimeout(() => {
+			this._preselectItem();
+			this._setCheckSelectedItemsTimeout();
+		});
 	}
 
 	@Watch('items')
@@ -568,27 +572,20 @@ export class Select {
 		this._onBlur(forceBlur);
 	}
 
-	private _onFocus(ev) {
-		ev.preventDefault();
-		this._inputRef.blur();
-
-		if (!this._showDropdown) {
-			this._showDropdown = true;
+	private _findOnClickTarget(target: HTMLElement) {
+		if (target.nodeName.toLowerCase() === 'p-button') {
+			return true;
 		}
 
-		return;
-	}
-
-	private _onMouseDown(ev) {
-		if (this.enableAutocomplete) {
-			return;
+		if (target.classList.contains('item')) {
+			return false;
 		}
 
-		ev.preventDefault();
+		return this._findOnClickTarget(target.parentElement);
 	}
 
-	private _onClick() {
-		if (this.enableAutocomplete) {
+	private _onClick(ev) {
+		if (!this._findOnClickTarget(ev.target as HTMLElement)) {
 			return;
 		}
 
@@ -610,8 +607,8 @@ export class Select {
 
 		this._showDropdown = true;
 
-		this.query = ev.target.value;
-		this.queryChange.emit(ev.target.value);
+		this.query = ev.detail;
+		this.queryChange.emit(ev.detail);
 	}
 
 	private _checkvalue(key, item) {
@@ -639,7 +636,7 @@ export class Select {
 						  this._selectedItem?.[this._identifierKey]
 				}
 				checkbox={this.multi ? true : false}
-				class='justify-start'
+				slot='items'
 			>
 				{this._getDisplay(item)}
 			</p-dropdown-menu-item>
@@ -647,7 +644,10 @@ export class Select {
 
 		if (!this._items.length) {
 			items = [
-				<p class='w-full p-2 text-center text-sm text-storm-medium'>
+				<p
+					class='w-full p-2 text-center text-sm text-black-teal-400'
+					slot='items'
+				>
 					{this.emptyStateText}
 				</p>,
 			];
@@ -656,6 +656,7 @@ export class Select {
 		if (this.enableSelectAll && this._items.length) {
 			items.unshift(
 				<p-dropdown-menu-item
+					slot='items'
 					useContainer={false}
 					checkbox
 					onClick={() => this._selectAllChange()}
@@ -687,8 +688,9 @@ export class Select {
 			<p-dropdown-menu-item
 				onClick={() => this.add.emit()}
 				useContainer={false}
+				slot='items'
 			>
-				<span class='flex items-center gap-1 font-semibold text-indigo'>
+				<span class='flex items-center gap-1 font-semibold text-teal-800'>
 					{this.addItemText}
 					<p-icon variant='plus' />
 				</span>
@@ -698,7 +700,10 @@ export class Select {
 
 	private _getLoadingItems() {
 		const items = [0, 0, 0].map(() => (
-			<p-dropdown-menu-item enableHover={false}>
+			<p-dropdown-menu-item
+				enableHover={false}
+				slot='items'
+			>
 				<p-loader
 					variant='ghost'
 					class='h-6 w-full rounded'
@@ -715,13 +720,15 @@ export class Select {
 
 	private _getAutoCompleteItem() {
 		return (
-			<div class='sticky top-0 -mt-2 bg-white pt-2'>
-				<input
-					class='p-input size-small sticky top-2 mb-2'
+			<div
+				class='sticky top-0 mb-3 h-8'
+				slot='items'
+			>
+				<p-field
+					class='block'
 					placeholder={this.autocompletePlaceholder}
-					type='text'
-					onInput={ev => this._onAutoComplete(ev)}
-					ref={ref => (this.autocompleteInputRef = ref)}
+					onChange={ev => this._onAutoComplete(ev)}
+					onInputRefChange={ev => (this.autocompleteInputRef = ev.detail)}
 					value={this.query}
 				/>
 			</div>
@@ -738,25 +745,38 @@ export class Select {
 		}px`;
 	}
 
+	private _setCheckSelectedItemsTimeout() {
+		if (this._checkSelectedItemsTimeout) {
+			clearTimeout(this._checkSelectedItemsTimeout);
+		}
+
+		this._checkSelectedItemsTimeout = setTimeout(
+			() => this._checkSelectedItems(),
+			50
+		);
+	}
+
 	private _checkSelectedItems() {
 		if (!this._multiContainerRef) {
 			return;
 		}
 
 		const containerRect = this._multiContainerRef.getBoundingClientRect();
-		const items = Array.from(
-			this._multiContainerRef.querySelectorAll('.item')
-		) as HTMLElement[];
+		const items = this._multiContainerRef.querySelectorAll('.item');
 
 		let amountHidden = 0;
 
 		for (const child of items) {
 			child.classList.remove('hidden');
+			child.classList.add('flex');
 
 			const childRect = child.getBoundingClientRect();
 			if (childRect.right > containerRect.right) {
+				child.classList.remove('flex');
 				child.classList.add('hidden');
 				amountHidden++;
+
+				continue;
 			}
 		}
 
@@ -790,7 +810,7 @@ export class Select {
 
 	private _getDisplay(item, isSelection = false) {
 		let content = (
-			<div class='text-container'>
+			<div class={textContainer({ variant: 'default' })}>
 				{
 					item[
 						isSelection
@@ -805,11 +825,11 @@ export class Select {
 			content = (
 				<span class='flex items-center gap-2'>
 					<p-avatar
-						size='xs'
+						size='sm'
 						src={item[this.avatarKey]}
 						letters={item[this.avatarLettersKey]}
 					></p-avatar>
-					<div class='text-container'>
+					<div class={textContainer({ variant: 'default' })}>
 						{item[this.dropdownDisplayKey ?? this.displayKey]}
 					</div>
 				</span>
@@ -820,24 +840,21 @@ export class Select {
 			content = (
 				<span class='flex items-center gap-2'>
 					<p-icon variant={item[this.iconKey] as IconVariant} />
-					<div class='text-container'>
+					<div class={textContainer({ variant: 'default' })}>
 						{item[this.dropdownDisplayKey ?? this.displayKey]}
 					</div>
 				</span>
 			);
 		}
 
-		return (
-			<div
-				class={
-					!isSelection || this.applyClassOnSelectedItem
-						? `max-w-full ${item?.class}`
-						: 'max-w-full'
-				}
-			>
-				{content}
-			</div>
-		);
+		if (
+			(!isSelection || this.applyClassOnSelectedItem) &&
+			!!item?.class?.length
+		) {
+			return <div class={item.class}>{content}</div>;
+		}
+
+		return content;
 	}
 
 	private _getParsedItems(applyPagination = true) {
