@@ -11,6 +11,16 @@ services:
       - NODE_OPTIONS=--openssl-legacy-provider
     ports:
       - '$EXPOSED_STORYBOOK_PORT:5200'
+  stencil:
+    extends:
+      file: docker-compose.base.yml
+      service: base
+    command: yarn docker:start
+    environment:
+      - 'NODE_AUTH_TOKEN=$NPM_AUTH_TOKEN'
+      - NODE_OPTIONS=--openssl-legacy-provider
+    ports:
+      - '$EXPOSED_CORE_PORT:8080'
   ng-playground:
     extends:
       file: docker-compose.base.yml

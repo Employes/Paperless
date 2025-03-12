@@ -387,7 +387,7 @@ export class Table {
 	private _hasCustomFilterSlot = false;
 	private _hasCustomActionsSlot = false;
 	private _floatingMenuShown = false;
-	private _resizeTimeout: NodeJS.Timer;
+	private _resizeTimeout: NodeJS.Timeout | undefined;
 
 	componentWillLoad() {
 		this._hasCustomFilterSlot = !!this._el.querySelector(
