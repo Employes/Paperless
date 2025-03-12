@@ -21,7 +21,7 @@
 
 ### Used by
 
- - [p-input-group](../../molecules/input-group)
+ - [p-field-container](../../molecules/field-container)
 
 ### Depends on
 
@@ -31,7 +31,8 @@
 ```mermaid
 graph TD;
   p-helper --> p-tooltip
-  p-input-group --> p-helper
+  p-tooltip --> p-portal
+  p-field-container --> p-helper
   style p-helper fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

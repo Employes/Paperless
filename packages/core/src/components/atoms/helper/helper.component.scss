@@ -1,6 +1,8 @@
 :host {
+	@apply leading-3;
+
 	.helper {
-		@apply inline-block cursor-pointer bg-no-repeat bg-center w-3 h-3;
+		@apply inline-block h-[0.75rem] w-[0.75rem] cursor-pointer bg-center bg-no-repeat;
 		background-image: url(/assets/images/helper/helper.svg);
 
 		&:hover {
