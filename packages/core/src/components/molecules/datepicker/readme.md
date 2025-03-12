@@ -31,7 +31,7 @@
 | `prefix`             | `prefix`                | The prefix of the input group used by the datepicker      | `string`                                                                                                                                                             | `undefined`      |
 | `preselectToday`     | `preselect-today`       | Wethter to automatically preselect today                  | `boolean`                                                                                                                                                            | `false`          |
 | `required`           | `required`              | Wether the field is required                              | `boolean`                                                                                                                                                            | `undefined`      |
-| `size`               | `size`                  | The size of the input group used by the datepicker        | `"medium" \| "small"`                                                                                                                                                | `'medium'`       |
+| `size`               | `size`                  | The size of the input group used by the datepicker        | `"base" \| "sm"`                                                                                                                                                     | `'base'`         |
 | `strategy`           | `strategy`              | The strategy of the dropdown placement                    | `"absolute" \| "fixed"`                                                                                                                                              | `'absolute'`     |
 | `value`              | `value`                 | The current value                                         | `Date \| string`                                                                                                                                                     | `undefined`      |
 
@@ -48,24 +48,23 @@
 ### Depends on
 
 - [p-dropdown](../dropdown)
-- [p-input-group](../input-group)
+- [p-field](../field)
 - [p-calendar](../calendar)
 
 ### Graph
 ```mermaid
 graph TD;
   p-datepicker --> p-dropdown
-  p-datepicker --> p-input-group
+  p-datepicker --> p-field
   p-datepicker --> p-calendar
   p-dropdown --> p-portal
   p-dropdown --> p-dropdown-menu-container
-  p-input-group --> p-helper
-  p-input-group --> p-tooltip
-  p-input-group --> p-icon
-  p-input-group --> p-input-error
+  p-field --> p-field-container
+  p-field --> p-icon
+  p-field-container --> p-helper
+  p-field-container --> p-tooltip
   p-helper --> p-tooltip
-  p-input-error --> p-tooltip
-  p-input-error --> p-icon
+  p-tooltip --> p-portal
   p-calendar --> p-button
   p-button --> p-icon
   p-button --> p-loader

@@ -57,8 +57,8 @@ graph TD;
   p-button --> p-icon
   p-button --> p-loader
   p-dropdown-menu-item --> p-icon
-  p-pagination --> p-icon
   p-pagination --> p-pagination-item
+  p-pagination --> p-icon
   p-table --> p-table-footer
   style p-table-footer fill:#f9f,stroke:#333,stroke-width:4px
 ```
