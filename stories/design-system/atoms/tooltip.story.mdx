@@ -2,7 +2,7 @@ import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
 import { StoryCategories } from '../../categories';
 import TooltipDocs from '../../../packages/core/src/components/atoms/tooltip/readme.md';
 
-<Meta title={`${StoryCategories.Atoms}/Tooltip`} />
+<Meta title={`${StoryCategories.Atoms}/Rebranding/Tooltip`} />
 
 <TooltipDocs />
 
@@ -13,39 +13,44 @@ import TooltipDocs from '../../../packages/core/src/components/atoms/tooltip/rea
 ### Hover
 
 <Canvas>
-    <div class="flex h-20 items-center justify-center">
-        <p-tooltip content="test">
-            <span slot="trigger">Hover me</span>
-        </p-tooltip>
-    </div>
+	<div class='flex h-20 items-center justify-center'>
+		<p-tooltip content='test'>
+			<span slot='trigger'>Hover me</span>
+		</p-tooltip>
+	</div>
 </Canvas>
 
 ### Click
 
 <Canvas>
-    <div class="flex h-20 items-center justify-center">
-        <p-tooltip variant="click" content="test">
-            <span slot="trigger">Click me</span>
-        </p-tooltip>
-    </div>
+	<div class='flex h-20 items-center justify-center'>
+		<p-tooltip
+			variant='click'
+			content='test'
+		>
+			<span slot='trigger'>Click me</span>
+		</p-tooltip>
+	</div>
 </Canvas>
 
 ### Error
 
 <Canvas>
-    <div class="flex h-20 items-center justify-center">
-        <p-tooltip
-            variant="error"
-            show={true}
-            can-manually-close={false}
-            content="I am not dismissable"
-        >
-            <span slot="trigger">
-                I have an error I have an error I have an error I have an error
-                I have an error I have an error I have an error
-            </span>
-        </p-tooltip>
-    </div>
+	<div class='flex h-20 items-center justify-center'>
+		<p-tooltip
+			variant='error'
+			show={true}
+			can-manually-close={false}
+			content='I am not dismissable'
+			placement='bottom-start'
+			max-width='full'
+		>
+			<span slot='trigger'>
+				I have an error I have an error I have an error I have an error I have
+				an error I have an error I have an error
+			</span>
+		</p-tooltip>
+	</div>
 </Canvas>
 
 ## Positions
@@ -53,21 +58,28 @@ import TooltipDocs from '../../../packages/core/src/components/atoms/tooltip/rea
 ### Hover
 
 <Canvas>
-    <div class="flex h-20 items-center justify-center">
-        <p-tooltip content="test" placement="right">
-            <span slot="trigger">Hover me (right)</span>
-        </p-tooltip>
-    </div>
+	<div class='flex h-20 items-center justify-center'>
+		<p-tooltip
+			content='test'
+			placement='right'
+		>
+			<span slot='trigger'>Hover me (right)</span>
+		</p-tooltip>
+	</div>
 </Canvas>
 
 ### Click
 
 <Canvas>
-    <div class="flex h-20 items-center justify-center">
-        <p-tooltip variant="click" content="test" placement="left">
-            <span slot="trigger">Click me (left)</span>
-        </p-tooltip>
-    </div>
+	<div class='flex h-20 items-center justify-center'>
+		<p-tooltip
+			variant='click'
+			content='test'
+			placement='left'
+		>
+			<span slot='trigger'>Click me (left)</span>
+		</p-tooltip>
+	</div>
 </Canvas>
 
 ## Big content
@@ -75,31 +87,29 @@ import TooltipDocs from '../../../packages/core/src/components/atoms/tooltip/rea
 ### Hover
 
 <Canvas>
-    <div class="flex h-20 items-center justify-center pt-24">
-        <p-tooltip>
-            <div slot="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                bibendum ut sem eget dignissim. Donec bibendum diam non viverra
-                lobortis.
-            </div>
-            <span slot="trigger">Hover me</span>
-        </p-tooltip>
-    </div>
+	<div class='flex h-20 items-center justify-center pt-24'>
+		<p-tooltip>
+			<div slot='content'>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. In bibendum ut
+				sem eget dignissim. Donec bibendum diam non viverra lobortis.
+			</div>
+			<span slot='trigger'>Hover me</span>
+		</p-tooltip>
+	</div>
 </Canvas>
 
 ### Click
 
 <Canvas>
-    <div class="flex h-20 items-center justify-center pt-24">
-        <p-tooltip variant="click">
-            <div slot="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                bibendum ut sem eget dignissim. Donec bibendum diam non viverra
-                lobortis.
-            </div>
-            <span slot="trigger">Click me</span>
-        </p-tooltip>
-    </div>
+	<div class='flex h-20 items-center justify-center pt-24'>
+		<p-tooltip variant='click'>
+			<div slot='content'>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. In bibendum ut
+				sem eget dignissim. Donec bibendum diam non viverra lobortis.
+			</div>
+			<span slot='trigger'>Click me</span>
+		</p-tooltip>
+	</div>
 </Canvas>
 
 ## Force show / disable manual close
@@ -107,24 +117,27 @@ import TooltipDocs from '../../../packages/core/src/components/atoms/tooltip/rea
 ### Hover
 
 <Canvas>
-    <div class="flex h-20 items-center justify-center">
-        <p-tooltip content="You can't hide me" show>
-            <span slot="trigger">Hover me</span>
-        </p-tooltip>
-    </div>
+	<div class='flex h-20 items-center justify-center'>
+		<p-tooltip
+			content="You can't hide me"
+			show
+		>
+			<span slot='trigger'>Hover me</span>
+		</p-tooltip>
+	</div>
 </Canvas>
 
 ### Click
 
 <Canvas>
-    <div class="flex h-20 items-center justify-center">
-        <p-tooltip
-            variant="click"
-            content="You can't hide me"
-            can-manually-close={false}
-            show
-        >
-            <span slot="trigger">Click me</span>
-        </p-tooltip>
-    </div>
+	<div class='flex h-20 items-center justify-center'>
+		<p-tooltip
+			variant='click'
+			content="You can't hide me"
+			can-manually-close={false}
+			show
+		>
+			<span slot='trigger'>Click me</span>
+		</p-tooltip>
+	</div>
 </Canvas>
