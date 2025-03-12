@@ -727,7 +727,7 @@ export class Select {
 				<p-field
 					class='block'
 					placeholder={this.autocompletePlaceholder}
-					onChange={ev => this._onAutoComplete(ev)}
+					onValueChange={ev => this._onAutoComplete(ev)}
 					onInputRefChange={ev => (this.autocompleteInputRef = ev.detail)}
 					value={this.query}
 				/>
