@@ -2,27 +2,30 @@ import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
 import { StoryCategories } from '../../categories';
 import LoaderDocs from '../../../packages/core/src/components/atoms/loader/readme.md';
 
-<Meta title={`${StoryCategories.Atoms}/Loader`} />
+<Meta title={`${StoryCategories.Atoms}/Rebranding/Loader`} />
 
 <LoaderDocs />
 
 # Examples
 
 <Canvas>
-    <p-loader></p-loader>
-    <p-loader class="text-lg"></p-loader>
-    <p-loader class="text-xl"></p-loader>
-    <p-loader class="text-2xl"></p-loader>
-    <p-loader class="text-3xl"></p-loader>
-    <p-loader class="text-4xl"></p-loader>
-    <p-loader class="text-5xl"></p-loader>
-    <p-loader class="text-6xl"></p-loader>
+	<p-loader></p-loader>
+	<p-loader class='text-lg'></p-loader>
+	<p-loader class='text-xl'></p-loader>
+	<p-loader class='text-2xl'></p-loader>
+	<p-loader class='text-3xl'></p-loader>
+	<p-loader class='text-4xl'></p-loader>
+	<p-loader class='text-5xl'></p-loader>
+	<p-loader class='text-6xl'></p-loader>
 </Canvas>
 
 <Canvas>
-    <p-loader variant="full-width"></p-loader>
+	<p-loader variant='full-width'></p-loader>
 </Canvas>
 
 <Canvas>
-    <p-loader variant="ghost" class="m-6 rounded"></p-loader>
+	<p-loader
+		variant='ghost'
+		class='m-6 rounded'
+	></p-loader>
 </Canvas>
