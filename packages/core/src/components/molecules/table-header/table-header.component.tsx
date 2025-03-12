@@ -225,9 +225,9 @@ export class TableHeader {
 
 				<div class='right-side flex flex-col justify-end gap-4 desktop-xs:flex-row'>
 					{this.enableSearch && (
-						<p-input-group
+						<p-field
 							icon='search'
-							size='small'
+							size='sm'
 							class='desktop-xs:w-48'
 						>
 							<input
@@ -241,7 +241,7 @@ export class TableHeader {
 									)
 								}
 							/>
-						</p-input-group>
+						</p-field>
 					)}
 
 					{this.enableFilter && (
