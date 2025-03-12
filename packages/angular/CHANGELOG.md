@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.19](https://github.com/Employes/Paperless/compare/v2.0.1-beta.18...v2.0.1-beta.19) (2025-03-12)
+
+
+### Bug Fixes
+
+* **angular:** use Typescript 4.8.2 ([938049e](https://github.com/Employes/Paperless/commit/938049e2d99557974ec4b17233d231c1a77b845d))
+
+
+
+
+
 ## [2.0.1-beta.18](https://github.com/Employes/Paperless/compare/v2.0.1-beta.17...v2.0.1-beta.18) (2025-03-07)
 
 **Note:** Version bump only for package @paperless/angular
