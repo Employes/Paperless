@@ -1,5 +1,4 @@
 import {
-	arrow,
 	autoUpdate,
 	computePosition,
 	flip,
@@ -19,6 +18,52 @@ import {
 	Prop,
 	Watch,
 } from '@stencil/core';
+import { cva } from 'class-variance-authority';
+
+const popover = cva(
+	[
+		'inline-block px-2',
+		'text-xs',
+		'opacity-0 drop-shadow-3 transition-opacity',
+		'rounded-lg',
+
+		'z-tooltip',
+		'pointer-events-none',
+	],
+	{
+		variants: {
+			variant: {
+				hover: 'bg-black-teal text-white py-1',
+				click: null,
+				error: 'max-w-full w-full',
+			},
+			strategy: {
+				none: null,
+				fixed: 'fixed',
+				absolute: 'absolute',
+			},
+		},
+		compoundVariants: [
+			{
+				variant: ['hover', 'click'],
+				class: 'max-w-[14.5rem] w-max',
+			},
+			{
+				variant: ['click', 'error'],
+				class: 'bg-white text-black-teal-300 py-2',
+			},
+		],
+	}
+);
+
+const portal = cva('', {
+	variants: {
+		strategy: {
+			fixed: 'fixed',
+			absolute: 'absolute',
+		},
+	},
+});
 
 @Component({
 	tag: 'p-tooltip',
@@ -29,7 +74,7 @@ export class Tooltip {
 	/**
 	 * The variant of the popover
 	 */
-	@Prop() variant: 'hover' | 'click' | 'error' | 'error-element' = 'hover';
+	@Prop() variant: 'hover' | 'click' | 'error' = 'hover';
 
 	/**
 	 * The content of the popover
@@ -39,7 +84,7 @@ export class Tooltip {
 	/**
 	 * The placement of the popover
 	 */
-	@Prop() placement: Placement = 'top';
+	@Prop() placement: Placement;
 
 	/**
 	 * The offset of the popover
@@ -60,6 +105,11 @@ export class Tooltip {
 	 * Wether to show the popover
 	 */
 	@Prop() show: boolean = false;
+
+	/**
+	 * Wether to use a portal for the tooltip
+	 */
+	@Prop() usePortal: boolean = false;
 
 	/**
 	 * Wether to someone can manually close the popover
@@ -103,20 +153,51 @@ export class Tooltip {
 	}
 
 	render() {
+		const tooltipProps = {
+			role: 'popover',
+			'data-placement': this.placement,
+			ref: el => this._load(el),
+		};
+
+		let tooltip: HTMLElement;
+
+		const tooltipElement = (
+			<div
+				class={popover({
+					variant: this.variant,
+					strategy: this.usePortal ? 'none' : this.strategy,
+				})}
+				{...(this.usePortal ? {} : tooltipProps)}
+			>
+				<div class='flex gap-2'>
+					{this.variant === 'error' && (
+						<div class='w-[2px] bg-negative-red'></div>
+					)}
+					{this.content ? this.content : <slot name='content' />}
+				</div>
+			</div>
+		);
+
+		if (this.usePortal) {
+			tooltip = (
+				<p-portal
+					class={portal({
+						strategy: this.strategy,
+					})}
+					{...tooltipProps}
+				>
+					{tooltipElement}
+				</p-portal>
+			);
+		} else {
+			tooltip = tooltipElement;
+		}
+
 		return (
-			<Host class='p-popover'>
-				<slot name='trigger' />
-				<div class='popover-container'>
-					<div
-						class={`popover variant-${this.variant}`}
-						role='popover'
-						data-placement={this.placement}
-						data-strategy={this.strategy}
-						ref={el => this._load(el)}
-					>
-						{this.content ? this.content : <slot name='content' />}
-						<div class='arrow'></div>
-					</div>
+			<Host class='p-popover flex cursor-pointer'>
+				<div class='relative h-inherit w-inherit'>
+					<slot name='trigger' />
+					{tooltip}
 				</div>
 			</Host>
 		);
@@ -194,6 +275,9 @@ export class Tooltip {
 		// Make the popover visible
 		this._popover.setAttribute('data-show', '');
 
+		this._popover.classList.remove('opacity-0', 'pointer-events-none');
+		this._popover.classList.add('opacity-100', 'pointer-events-auto');
+
 		// Update its position
 		this.isOpen.emit(true);
 	}
@@ -210,11 +294,16 @@ export class Tooltip {
 
 		// Hide the popover
 		this._popover.removeAttribute('data-show');
+
+		this._popover.classList.remove('opacity-100', 'pointer-events-auto');
+		this._popover.classList.add('opacity-0', 'pointer-events-none');
+
 		this.isOpen.emit(false);
 	}
 
 	private _load(popover: HTMLElement) {
 		this._popover = popover;
+
 		if (popover) {
 			this._update();
 			this._loaded = true;
@@ -230,46 +319,20 @@ export class Tooltip {
 			return;
 		}
 
-		const arrowEl = this._popover.querySelector('.arrow') as HTMLElement;
-		if (!arrowEl) {
-			return;
-		}
-
 		computePosition(this._el, this._popover, {
 			placement:
-				this.variant === 'error' || this.variant === 'error-element'
-					? 'top-end'
-					: this.placement,
+				this.variant === 'error' && !this.placement
+					? 'bottom-start'
+					: this.placement ?? 'top',
 			strategy: this.strategy,
 
-			middleware: [
-				offset(this.variant === 'error' ? 14 : this.offset),
-				flip(),
-				shift(),
-				arrow({ element: arrowEl, padding: 8 }),
-			],
-		}).then(({ x, y, placement, middlewareData }) => {
+			middleware: [offset(this.offset), flip(), shift()],
+		}).then(({ x, y, placement }) => {
 			this._popover.dataset.placement = placement;
 			Object.assign(this._popover.style, {
 				top: `${y}px`,
 				left: `${x}px`,
 			});
-
-			if (middlewareData.arrow) {
-				const { x, y } = middlewareData.arrow;
-
-				Object.assign(arrowEl.style, {
-					left:
-						this.variant === 'error' || this.variant === 'error-element'
-							? placement.indexOf('start') >= 0
-								? '1rem'
-								: 'calc(100% - 1rem)'
-							: x != null
-							? `${x}px`
-							: '',
-					top: y != null ? `${y}px` : '',
-				});
-			}
 		});
 	}
 }
