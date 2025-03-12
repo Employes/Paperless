@@ -29,9 +29,9 @@
  - [p-card-header](../card-header)
  - [p-cropper](../../molecules/cropper)
  - [p-dropdown-menu-item](../dropdown-menu-item)
+ - [p-field](../../molecules/field)
  - [p-info-panel](../info-panel)
  - [p-input-error](../../molecules/input-error)
- - [p-input-group](../../molecules/input-group)
  - [p-label](../label)
  - [p-navigation-item](../../molecules/navigation-item)
  - [p-pagination](../../molecules/pagination)
@@ -50,9 +50,9 @@ graph TD;
   p-card-header --> p-icon
   p-cropper --> p-icon
   p-dropdown-menu-item --> p-icon
+  p-field --> p-icon
   p-info-panel --> p-icon
   p-input-error --> p-icon
-  p-input-group --> p-icon
   p-label --> p-icon
   p-navigation-item --> p-icon
   p-pagination --> p-icon
