@@ -48,7 +48,7 @@
 - [p-loader](../../atoms/loader)
 - [p-segment-container](../../atoms/segment-container)
 - [p-segment-item](../../atoms/segment-item)
-- [p-input-group](../input-group)
+- [p-field](../field)
 - [p-button](../button)
 - [p-label](../../atoms/label)
 
@@ -58,17 +58,16 @@ graph TD;
   p-table-header --> p-loader
   p-table-header --> p-segment-container
   p-table-header --> p-segment-item
-  p-table-header --> p-input-group
+  p-table-header --> p-field
   p-table-header --> p-button
   p-table-header --> p-label
   p-segment-item --> p-icon
-  p-input-group --> p-helper
-  p-input-group --> p-tooltip
-  p-input-group --> p-icon
-  p-input-group --> p-input-error
+  p-field --> p-field-container
+  p-field --> p-icon
+  p-field-container --> p-helper
+  p-field-container --> p-tooltip
   p-helper --> p-tooltip
-  p-input-error --> p-tooltip
-  p-input-error --> p-icon
+  p-tooltip --> p-portal
   p-button --> p-icon
   p-button --> p-loader
   p-label --> p-icon

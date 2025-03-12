@@ -68,20 +68,22 @@
 
 @mixin inputDefaultState($applyHeight: true) {
 	@apply flex items-center justify-start;
-	@apply text-base text-storm-dark;
-	@apply bg-white px-4;
+	@apply text-sm text-black-teal;
+	@apply bg-white px-2;
 	@apply rounded-lg;
 	@apply border-b border-l border-r border-t;
-	@apply border-solid border-mystic-dark #{!important};
+	@apply border-solid border-black-teal-100 #{!important};
 	@apply outline-none #{!important};
 	@apply w-full #{!important};
+	@apply shadow-transparent transition-all;
+	transition-property: box-shadow, border-color;
 
 	@if $applyHeight {
-		@apply h-10;
+		@apply h-8;
 	}
 
 	&::placeholder {
-		@apply text-base text-storm-medium;
+		@apply text-sm text-black-teal-200;
 	}
 
 	&:focus,
@@ -93,22 +95,31 @@
 		@include inputFocusState();
 	}
 
-	&.size-small {
-		@include inputSizeSmall($applyHeight);
+	&.size-sm {
+		@include inputSizeSm($applyHeight);
 	}
 }
 
 @mixin inputFocusState {
-	@apply border-indigo #{!important};
+	@apply border-supportive-lilac #{!important};
 	@apply outline-none #{!important};
+	@apply shadow-supportive-lilac;
 }
 
 @mixin inputErrorState {
-	@apply text-negative-dark;
-	@apply border-negative #{!important};
+	@apply text-negative-red-800;
+	@apply border-negative-red #{!important};
 
 	&::placeholder {
-		@apply text-negative-light;
+		@apply text-black-teal-200;
+	}
+
+	&:focus,
+	&:focus-within,
+	&:focus-visible,
+	&.focus,
+	&[active],
+	&.active {
 	}
 }
 
@@ -116,14 +127,14 @@
 	@apply opacity-40;
 }
 
-@mixin inputSizeSmall($applyHeight: true) {
-	@apply text-sm;
+@mixin inputSizeSm($applyHeight: true) {
+	@apply text-xs;
 
 	@if $applyHeight {
-		@apply h-8  #{!important};
+		@apply h-6 #{!important};
 	}
 
 	&::placeholder {
-		@apply text-sm;
+		@apply text-xs;
 	}
 }

@@ -34,14 +34,14 @@
 
 ### Depends on
 
-- [p-icon](../../atoms/icon)
 - [p-pagination-item](../../atoms/pagination-item)
+- [p-icon](../../atoms/icon)
 
 ### Graph
 ```mermaid
 graph TD;
-  p-pagination --> p-icon
   p-pagination --> p-pagination-item
+  p-pagination --> p-icon
   p-table-footer --> p-pagination
   style p-pagination fill:#f9f,stroke:#333,stroke-width:4px
 ```
