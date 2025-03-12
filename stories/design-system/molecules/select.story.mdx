@@ -2,7 +2,7 @@ import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
 import { StoryCategories } from '../../categories';
 import Docs from '../../../packages/core/src/components/molecules/select/readme.md';
 
-<Meta title={`${StoryCategories.Molecules}/Select`} />
+<Meta title={`${StoryCategories.Molecules}/Rebranding/Select`} />
 
 <Docs />
 
@@ -60,7 +60,7 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 			identifier-key='value'
 			autocomplete-placeholder='Search...'
 			items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
-			size='small'
+			size='sm'
 		/>
 	</div>
 </Canvas>
@@ -111,9 +111,9 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 ## Error state
 
 <Canvas>
-	<div class='h-52'>
+	<div class='h-52 pt-8'>
 		<p-select
-			placeholder='Click me to show loading'
+			placeholder='Click me to show error'
 			identifier-key='value'
 			auto-select-first={false}
 			error='This is an error'
@@ -315,7 +315,7 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 			placeholder='I have an icon on my select all'
 			enable-autocomplete={false}
 			enable-select-all={true}
-			select-all-icon='colleagues'
+			select-all-icon='users'
 			avatar-key='avatar'
 			avatar-letters-key='letters'
 			items='[{"value":1,"text":"Value 1", "minText": "Val 1","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"},{"value":2,"text":"Value 2","letters":"JH", "minText": "Val 2"},{"value":3,"text":"Value 3", "minText": "Val 3","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"}]'
@@ -334,7 +334,6 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 			placeholder='I am empty'
 			enable-autocomplete={false}
 			items='[]'
-			value='[]'
 		/>
 	</div>
 </Canvas>

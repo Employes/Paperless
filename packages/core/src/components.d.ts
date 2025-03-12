@@ -8,34 +8,40 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { IconFlipOptions, IconVariant } from "./components/atoms/icon/icon.component";
 import { RotateOptions, TextSizeOptions } from "./types/tailwind";
 import { Placement, Strategy } from "@floating-ui/dom";
+import { HTMLInputTypeAttribute } from "react";
+import { templateFunc } from "./components/molecules/field-container/field-container.component";
+import { templateFunc as templateFunc1 } from "./components/molecules/field-container/field-container.component";
 import { IbanIconVariant, RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
 import { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1 } from "./components/atoms/icon/icon.component";
 import { IconDeprecatedVariant } from "./components/atoms/icon-deprecated/icon.component";
 import { IllustrationVariant } from "./components/atoms/illustration/illustration.component";
 import { Observable } from "rxjs";
-import { templateFunc } from "./components/molecules/page-size-select/page-size-select.component";
-import { amountSelectedTemplateFunc, templateFunc as templateFunc1 } from "./components/organisms/table/table.component";
+import { templateFunc as templateFunc2 } from "./components/molecules/page-size-select/page-size-select.component";
+import { amountSelectedTemplateFunc, templateFunc as templateFunc3 } from "./components/organisms/table/table.component";
 import { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
 import { IconFlipOptions as IconFlipOptions2, IconVariant as IconVariant2, RotateOptions as RotateOptions2 } from "./components";
 import { buttonTemplateFunc } from "./components/molecules/table-header/table-header.component";
 import { TableColumn } from "./components/helpers/table-column/table-column.component";
-import { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc2 } from "./components/molecules/table-header/table-header.component";
+import { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc4 } from "./components/molecules/table-header/table-header.component";
 import { TableRowActionFunc, TableRowActionShowFunc } from "./components/helpers/table-row-action/table-row-action.component";
 export { IconFlipOptions, IconVariant } from "./components/atoms/icon/icon.component";
 export { RotateOptions, TextSizeOptions } from "./types/tailwind";
 export { Placement, Strategy } from "@floating-ui/dom";
+export { HTMLInputTypeAttribute } from "react";
+export { templateFunc } from "./components/molecules/field-container/field-container.component";
+export { templateFunc as templateFunc1 } from "./components/molecules/field-container/field-container.component";
 export { IbanIconVariant, RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
 export { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1 } from "./components/atoms/icon/icon.component";
 export { IconDeprecatedVariant } from "./components/atoms/icon-deprecated/icon.component";
 export { IllustrationVariant } from "./components/atoms/illustration/illustration.component";
 export { Observable } from "rxjs";
-export { templateFunc } from "./components/molecules/page-size-select/page-size-select.component";
-export { amountSelectedTemplateFunc, templateFunc as templateFunc1 } from "./components/organisms/table/table.component";
+export { templateFunc as templateFunc2 } from "./components/molecules/page-size-select/page-size-select.component";
+export { amountSelectedTemplateFunc, templateFunc as templateFunc3 } from "./components/organisms/table/table.component";
 export { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
 export { IconFlipOptions as IconFlipOptions2, IconVariant as IconVariant2, RotateOptions as RotateOptions2 } from "./components";
 export { buttonTemplateFunc } from "./components/molecules/table-header/table-header.component";
 export { TableColumn } from "./components/helpers/table-column/table-column.component";
-export { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc2 } from "./components/molecules/table-header/table-header.component";
+export { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc4 } from "./components/molecules/table-header/table-header.component";
 export { TableRowActionFunc, TableRowActionShowFunc } from "./components/helpers/table-row-action/table-row-action.component";
 export namespace Components {
     interface PAccordion {
@@ -391,7 +397,7 @@ export namespace Components {
         /**
           * The size of the input group used by the datepicker
          */
-        "size": 'small' | 'medium';
+        "size": 'sm' | 'base';
         /**
           * The strategy of the dropdown placement
          */
@@ -569,6 +575,126 @@ export namespace Components {
          */
         "variant": 'default' | 'negative';
     }
+    interface PField {
+        /**
+          * Wether the input group is disabled
+         */
+        "disabled": boolean;
+        /**
+          * The error to display
+         */
+        "error": string;
+        /**
+          * The placement of the error popover
+         */
+        "errorPlacement": Placement;
+        /**
+          * The method to use when focusing the input
+         */
+        "focusMethod": 'focus' | 'click';
+        /**
+          * Wether the input group is focused
+         */
+        "focused": boolean;
+        /**
+          * Force show the error tooltip
+         */
+        "forceShowTooltip": boolean;
+        /**
+          * The helper of the input group
+         */
+        "helper": string;
+        /**
+          * Icon of the input group
+         */
+        "icon": IconVariant;
+        /**
+          * Icon flip
+         */
+        "iconFlip": IconFlipOptions;
+        /**
+          * Icon position
+         */
+        "iconPosition": 'start' | 'end';
+        /**
+          * Icon rotate
+         */
+        "iconRotate": RotateOptions;
+        /**
+          * The label of the input group
+         */
+        "label": string;
+        /**
+          * The template for the optional text
+         */
+        "optionalTemplate": templateFunc;
+        /**
+          * The placeholder of the input
+         */
+        "placeholder": string;
+        /**
+          * The prefix of the input group
+         */
+        "prefix": string;
+        /**
+          * The size of the input group
+         */
+        "properties": any | string;
+        /**
+          * Wether the field is required
+         */
+        "required": boolean;
+        /**
+          * Wether to select all text on focus
+         */
+        "selectAllOnFocus": boolean;
+        /**
+          * The size of the input group
+         */
+        "size": 'sm' | 'base';
+        /**
+          * The suffix of the input group
+         */
+        "suffix": string;
+        /**
+          * The type of the input group
+         */
+        "type": HTMLInputTypeAttribute | 'textarea' | 'slot';
+        /**
+          * The value of the input
+         */
+        "value": string;
+    }
+    interface PFieldContainer {
+        /**
+          * The helper of the input group
+         */
+        "error": string | HTMLSlotElement;
+        /**
+          * The placement of the error popover
+         */
+        "errorPlacement": Placement;
+        /**
+          * Force show the error tooltip
+         */
+        "forceShowTooltip": boolean;
+        /**
+          * The helper of the input group
+         */
+        "helper": string | HTMLSlotElement;
+        /**
+          * The label of the input group
+         */
+        "label": string | HTMLSlotElement;
+        /**
+          * The template for the optional text
+         */
+        "optionalTemplate": templateFunc1;
+        /**
+          * Wether the field is required
+         */
+        "required": boolean;
+    }
     interface PFloatingMenuContainer {
         /**
           * Weather the container is used in the table
@@ -675,72 +801,6 @@ export namespace Components {
          */
         "forceShowTooltip": boolean;
     }
-    interface PInputGroup {
-        /**
-          * Wether the input group is disabled
-         */
-        "disabled": boolean;
-        /**
-          * The helper of the input group
-         */
-        "error": string;
-        /**
-          * The error variant to use
-         */
-        "errorVariant": 'auto' | 'suffix' | 'element';
-        /**
-          * The method to use when focusing the input
-         */
-        "focusMethod": 'focus' | 'click';
-        /**
-          * Wether the input group is focused
-         */
-        "focused": boolean;
-        /**
-          * Force show the error tooltip
-         */
-        "forceShowTooltip": boolean;
-        /**
-          * The helper of the input group
-         */
-        "helper": string;
-        /**
-          * Icon of the input group
-         */
-        "icon": IconVariant;
-        /**
-          * Icon flip
-         */
-        "iconFlip": IconFlipOptions;
-        /**
-          * Icon position
-         */
-        "iconPosition": 'start' | 'end';
-        /**
-          * Icon rotate
-         */
-        "iconRotate": RotateOptions;
-        /**
-          * The label of the input group
-         */
-        "label": string;
-        /**
-          * The prefix of the input group
-         */
-        "prefix": string;
-        /**
-          * Wether the field is required
-         */
-        "required": boolean;
-        /**
-          * The size of the input group
-         */
-        "size": 'small' | 'medium';
-        /**
-          * The suffix of the input group
-         */
-        "suffix": string;
-    }
     interface PLabel {
         /**
           * Define the behavior of the label
@@ -810,11 +870,7 @@ export namespace Components {
         /**
           * Variant of loader
          */
-        "variant": | 'inline'
-		| 'full-width'
-		| 'full-screen'
-		| 'modal'
-		| 'ghost';
+        "variant": 'inline' | 'full-width' | 'full-screen' | 'modal' | 'ghost';
     }
     interface PModal {
         /**
@@ -942,7 +998,7 @@ export namespace Components {
         /**
           * The template for the data view
          */
-        "buttonTemplate": templateFunc;
+        "buttonTemplate": templateFunc2;
         /**
           * Chevron position
          */
@@ -954,7 +1010,7 @@ export namespace Components {
         /**
           * The template for the data view
          */
-        "itemTemplate": templateFunc;
+        "itemTemplate": templateFunc2;
         /**
           * The current page
          */
@@ -1169,7 +1225,7 @@ export namespace Components {
         /**
           * The size of the input group used by the select
          */
-        "size": 'small' | 'medium';
+        "size": 'sm' | 'base';
         /**
           * The strategy to use for the dropdown placement
          */
@@ -1302,11 +1358,11 @@ export namespace Components {
           * A key to determine if a row can be selected
          */
         "canSelectKey": string;
-        "emptyStateAction": templateFunc1;
-        "emptyStateContent": templateFunc1;
-        "emptyStateFilteredContent": templateFunc1;
-        "emptyStateFilteredHeader": templateFunc1;
-        "emptyStateHeader": templateFunc1;
+        "emptyStateAction": templateFunc3;
+        "emptyStateContent": templateFunc3;
+        "emptyStateFilteredContent": templateFunc3;
+        "emptyStateFilteredHeader": templateFunc3;
+        "emptyStateHeader": templateFunc3;
         /**
           * Wether to show the action button
          */
@@ -1362,7 +1418,7 @@ export namespace Components {
         /**
           * The template for the filter button text
          */
-        "filterButtonTemplate": templateFunc1;
+        "filterButtonTemplate": templateFunc3;
         /**
           * The template for amount selected item in the floating menu
          */
@@ -1595,7 +1651,7 @@ export namespace Components {
         /**
           * The template for the filter button text
          */
-        "filterButtonTemplate": templateFunc2;
+        "filterButtonTemplate": templateFunc4;
         /**
           * The amount of items that are selected
          */
@@ -1735,9 +1791,13 @@ export namespace Components {
          */
         "strategy": Strategy;
         /**
+          * Wether to use a portal for the tooltip
+         */
+        "usePortal": boolean;
+        /**
           * The variant of the popover
          */
-        "variant": 'hover' | 'click' | 'error' | 'error-element';
+        "variant": 'hover' | 'click' | 'error';
     }
 }
 export interface PAccordionCustomEvent<T> extends CustomEvent<T> {
@@ -1779,6 +1839,14 @@ export interface PDrawerHeaderCustomEvent<T> extends CustomEvent<T> {
 export interface PDropdownCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPDropdownElement;
+}
+export interface PFieldCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPFieldElement;
+}
+export interface PFieldContainerCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPFieldContainerElement;
 }
 export interface PInfoPanelCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -1829,13 +1897,36 @@ export interface PTooltipCustomEvent<T> extends CustomEvent<T> {
     target: HTMLPTooltipElement;
 }
 declare global {
+    interface HTMLPAccordionElementEventMap {
+        "isOpen": boolean;
+    }
     interface HTMLPAccordionElement extends Components.PAccordion, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPAccordionElementEventMap>(type: K, listener: (this: HTMLPAccordionElement, ev: PAccordionCustomEvent<HTMLPAccordionElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPAccordionElementEventMap>(type: K, listener: (this: HTMLPAccordionElement, ev: PAccordionCustomEvent<HTMLPAccordionElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPAccordionElement: {
         prototype: HTMLPAccordionElement;
         new (): HTMLPAccordionElement;
     };
+    interface HTMLPAttachmentElementEventMap {
+        "download": any;
+        "delete": any;
+    }
     interface HTMLPAttachmentElement extends Components.PAttachment, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPAttachmentElementEventMap>(type: K, listener: (this: HTMLPAttachmentElement, ev: PAttachmentCustomEvent<HTMLPAttachmentElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPAttachmentElementEventMap>(type: K, listener: (this: HTMLPAttachmentElement, ev: PAttachmentCustomEvent<HTMLPAttachmentElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPAttachmentElement: {
         prototype: HTMLPAttachmentElement;
@@ -1853,7 +1944,18 @@ declare global {
         prototype: HTMLPAvatarGroupElement;
         new (): HTMLPAvatarGroupElement;
     };
+    interface HTMLPBackdropElementEventMap {
+        "clicked": MouseEvent;
+    }
     interface HTMLPBackdropElement extends Components.PBackdrop, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPBackdropElementEventMap>(type: K, listener: (this: HTMLPBackdropElement, ev: PBackdropCustomEvent<HTMLPBackdropElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPBackdropElementEventMap>(type: K, listener: (this: HTMLPBackdropElement, ev: PBackdropCustomEvent<HTMLPBackdropElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPBackdropElement: {
         prototype: HTMLPBackdropElement;
@@ -1865,7 +1967,18 @@ declare global {
         prototype: HTMLPBadgeElement;
         new (): HTMLPBadgeElement;
     };
+    interface HTMLPButtonElementEventMap {
+        "onClick": MouseEvent;
+    }
     interface HTMLPButtonElement extends Components.PButton, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPButtonElementEventMap>(type: K, listener: (this: HTMLPButtonElement, ev: PButtonCustomEvent<HTMLPButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPButtonElementEventMap>(type: K, listener: (this: HTMLPButtonElement, ev: PButtonCustomEvent<HTMLPButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPButtonElement: {
         prototype: HTMLPButtonElement;
@@ -1877,7 +1990,18 @@ declare global {
         prototype: HTMLPButtonGroupElement;
         new (): HTMLPButtonGroupElement;
     };
+    interface HTMLPCalendarElementEventMap {
+        "valueChange": any;
+    }
     interface HTMLPCalendarElement extends Components.PCalendar, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPCalendarElementEventMap>(type: K, listener: (this: HTMLPCalendarElement, ev: PCalendarCustomEvent<HTMLPCalendarElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPCalendarElementEventMap>(type: K, listener: (this: HTMLPCalendarElement, ev: PCalendarCustomEvent<HTMLPCalendarElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPCalendarElement: {
         prototype: HTMLPCalendarElement;
@@ -1913,13 +2037,35 @@ declare global {
         prototype: HTMLPCounterElement;
         new (): HTMLPCounterElement;
     };
+    interface HTMLPCropperElementEventMap {
+        "valueChange": any;
+    }
     interface HTMLPCropperElement extends Components.PCropper, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPCropperElementEventMap>(type: K, listener: (this: HTMLPCropperElement, ev: PCropperCustomEvent<HTMLPCropperElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPCropperElementEventMap>(type: K, listener: (this: HTMLPCropperElement, ev: PCropperCustomEvent<HTMLPCropperElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPCropperElement: {
         prototype: HTMLPCropperElement;
         new (): HTMLPCropperElement;
     };
+    interface HTMLPDatepickerElementEventMap {
+        "valueChange": any;
+    }
     interface HTMLPDatepickerElement extends Components.PDatepicker, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPDatepickerElementEventMap>(type: K, listener: (this: HTMLPDatepickerElement, ev: PDatepickerCustomEvent<HTMLPDatepickerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPDatepickerElementEventMap>(type: K, listener: (this: HTMLPDatepickerElement, ev: PDatepickerCustomEvent<HTMLPDatepickerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPDatepickerElement: {
         prototype: HTMLPDatepickerElement;
@@ -1931,7 +2077,23 @@ declare global {
         prototype: HTMLPDividerElement;
         new (): HTMLPDividerElement;
     };
+    interface HTMLPDrawerElementEventMap {
+        "closeClicked": {
+		event: MouseEvent;
+		canClose: boolean;
+    source: 'unknown' | 'backdrop' | 'close' | 'event'
+	};
+        "closed": null;
+    }
     interface HTMLPDrawerElement extends Components.PDrawer, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPDrawerElementEventMap>(type: K, listener: (this: HTMLPDrawerElement, ev: PDrawerCustomEvent<HTMLPDrawerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPDrawerElementEventMap>(type: K, listener: (this: HTMLPDrawerElement, ev: PDrawerCustomEvent<HTMLPDrawerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPDrawerElement: {
         prototype: HTMLPDrawerElement;
@@ -1949,13 +2111,35 @@ declare global {
         prototype: HTMLPDrawerContainerElement;
         new (): HTMLPDrawerContainerElement;
     };
+    interface HTMLPDrawerHeaderElementEventMap {
+        "close": MouseEvent;
+    }
     interface HTMLPDrawerHeaderElement extends Components.PDrawerHeader, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPDrawerHeaderElementEventMap>(type: K, listener: (this: HTMLPDrawerHeaderElement, ev: PDrawerHeaderCustomEvent<HTMLPDrawerHeaderElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPDrawerHeaderElementEventMap>(type: K, listener: (this: HTMLPDrawerHeaderElement, ev: PDrawerHeaderCustomEvent<HTMLPDrawerHeaderElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPDrawerHeaderElement: {
         prototype: HTMLPDrawerHeaderElement;
         new (): HTMLPDrawerHeaderElement;
     };
+    interface HTMLPDropdownElementEventMap {
+        "isOpen": boolean;
+    }
     interface HTMLPDropdownElement extends Components.PDropdown, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPDropdownElementEventMap>(type: K, listener: (this: HTMLPDropdownElement, ev: PDropdownCustomEvent<HTMLPDropdownElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPDropdownElementEventMap>(type: K, listener: (this: HTMLPDropdownElement, ev: PDropdownCustomEvent<HTMLPDropdownElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPDropdownElement: {
         prototype: HTMLPDropdownElement;
@@ -1972,6 +2156,41 @@ declare global {
     var HTMLPDropdownMenuItemElement: {
         prototype: HTMLPDropdownMenuItemElement;
         new (): HTMLPDropdownMenuItemElement;
+    };
+    interface HTMLPFieldElementEventMap {
+        "valueChange": string;
+        "inputRefChange": HTMLInputElement | HTMLTextAreaElement;
+    }
+    interface HTMLPFieldElement extends Components.PField, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPFieldElementEventMap>(type: K, listener: (this: HTMLPFieldElement, ev: PFieldCustomEvent<HTMLPFieldElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPFieldElementEventMap>(type: K, listener: (this: HTMLPFieldElement, ev: PFieldCustomEvent<HTMLPFieldElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPFieldElement: {
+        prototype: HTMLPFieldElement;
+        new (): HTMLPFieldElement;
+    };
+    interface HTMLPFieldContainerElementEventMap {
+        "focus": void;
+    }
+    interface HTMLPFieldContainerElement extends Components.PFieldContainer, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPFieldContainerElementEventMap>(type: K, listener: (this: HTMLPFieldContainerElement, ev: PFieldContainerCustomEvent<HTMLPFieldContainerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPFieldContainerElementEventMap>(type: K, listener: (this: HTMLPFieldContainerElement, ev: PFieldContainerCustomEvent<HTMLPFieldContainerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPFieldContainerElement: {
+        prototype: HTMLPFieldContainerElement;
+        new (): HTMLPFieldContainerElement;
     };
     interface HTMLPFloatingMenuContainerElement extends Components.PFloatingMenuContainer, HTMLStencilElement {
     }
@@ -2015,7 +2234,18 @@ declare global {
         prototype: HTMLPIllustrationElement;
         new (): HTMLPIllustrationElement;
     };
+    interface HTMLPInfoPanelElementEventMap {
+        "closed": void;
+    }
     interface HTMLPInfoPanelElement extends Components.PInfoPanel, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPInfoPanelElementEventMap>(type: K, listener: (this: HTMLPInfoPanelElement, ev: PInfoPanelCustomEvent<HTMLPInfoPanelElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPInfoPanelElementEventMap>(type: K, listener: (this: HTMLPInfoPanelElement, ev: PInfoPanelCustomEvent<HTMLPInfoPanelElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPInfoPanelElement: {
         prototype: HTMLPInfoPanelElement;
@@ -2026,12 +2256,6 @@ declare global {
     var HTMLPInputErrorElement: {
         prototype: HTMLPInputErrorElement;
         new (): HTMLPInputErrorElement;
-    };
-    interface HTMLPInputGroupElement extends Components.PInputGroup, HTMLStencilElement {
-    }
-    var HTMLPInputGroupElement: {
-        prototype: HTMLPInputGroupElement;
-        new (): HTMLPInputGroupElement;
     };
     interface HTMLPLabelElement extends Components.PLabel, HTMLStencilElement {
     }
@@ -2051,7 +2275,19 @@ declare global {
         prototype: HTMLPLoaderElement;
         new (): HTMLPLoaderElement;
     };
+    interface HTMLPModalElementEventMap {
+        "closeClicked": MouseEvent;
+        "closed": string;
+    }
     interface HTMLPModalElement extends Components.PModal, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPModalElementEventMap>(type: K, listener: (this: HTMLPModalElement, ev: PModalCustomEvent<HTMLPModalElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPModalElementEventMap>(type: K, listener: (this: HTMLPModalElement, ev: PModalCustomEvent<HTMLPModalElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPModalElement: {
         prototype: HTMLPModalElement;
@@ -2075,7 +2311,18 @@ declare global {
         prototype: HTMLPModalFooterElement;
         new (): HTMLPModalFooterElement;
     };
+    interface HTMLPModalHeaderElementEventMap {
+        "close": MouseEvent;
+    }
     interface HTMLPModalHeaderElement extends Components.PModalHeader, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPModalHeaderElementEventMap>(type: K, listener: (this: HTMLPModalHeaderElement, ev: PModalHeaderCustomEvent<HTMLPModalHeaderElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPModalHeaderElementEventMap>(type: K, listener: (this: HTMLPModalHeaderElement, ev: PModalHeaderCustomEvent<HTMLPModalHeaderElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPModalHeaderElement: {
         prototype: HTMLPModalHeaderElement;
@@ -2105,13 +2352,35 @@ declare global {
         prototype: HTMLPNavigationTitleElement;
         new (): HTMLPNavigationTitleElement;
     };
+    interface HTMLPPageSizeSelectElementEventMap {
+        "sizeChange": number;
+    }
     interface HTMLPPageSizeSelectElement extends Components.PPageSizeSelect, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPPageSizeSelectElementEventMap>(type: K, listener: (this: HTMLPPageSizeSelectElement, ev: PPageSizeSelectCustomEvent<HTMLPPageSizeSelectElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPPageSizeSelectElementEventMap>(type: K, listener: (this: HTMLPPageSizeSelectElement, ev: PPageSizeSelectCustomEvent<HTMLPPageSizeSelectElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPPageSizeSelectElement: {
         prototype: HTMLPPageSizeSelectElement;
         new (): HTMLPPageSizeSelectElement;
     };
+    interface HTMLPPaginationElementEventMap {
+        "pageChange": number;
+    }
     interface HTMLPPaginationElement extends Components.PPagination, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPPaginationElementEventMap>(type: K, listener: (this: HTMLPPaginationElement, ev: PPaginationCustomEvent<HTMLPPaginationElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPPaginationElementEventMap>(type: K, listener: (this: HTMLPPaginationElement, ev: PPaginationCustomEvent<HTMLPPaginationElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPPaginationElement: {
         prototype: HTMLPPaginationElement;
@@ -2147,7 +2416,22 @@ declare global {
         prototype: HTMLPSegmentItemElement;
         new (): HTMLPSegmentItemElement;
     };
+    interface HTMLPSelectElementEventMap {
+        "queryChange": string;
+        "valueChange": any;
+        "selectAllChange": any;
+        "dropdownShown": any;
+        "add": any;
+    }
     interface HTMLPSelectElement extends Components.PSelect, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPSelectElementEventMap>(type: K, listener: (this: HTMLPSelectElement, ev: PSelectCustomEvent<HTMLPSelectElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPSelectElementEventMap>(type: K, listener: (this: HTMLPSelectElement, ev: PSelectCustomEvent<HTMLPSelectElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPSelectElement: {
         prototype: HTMLPSelectElement;
@@ -2195,7 +2479,30 @@ declare global {
         prototype: HTMLPTabItemElement;
         new (): HTMLPTabItemElement;
     };
+    interface HTMLPTableElementEventMap {
+        "selectedRowsChange": any;
+        "rowClick": RowClickEvent;
+        "rowSelected": any;
+        "rowDeselected": any;
+        "hasRendered": number;
+        "quickFilter": QuickFilter;
+        "queryChange": string;
+        "filter": null;
+        "action": null;
+        "pageChange": number;
+        "pageSizeChange": number;
+        "export": number;
+        "emptyStateActionClick": null;
+    }
     interface HTMLPTableElement extends Components.PTable, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPTableElementEventMap>(type: K, listener: (this: HTMLPTableElement, ev: PTableCustomEvent<HTMLPTableElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPTableElementEventMap>(type: K, listener: (this: HTMLPTableElement, ev: PTableCustomEvent<HTMLPTableElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPTableElement: {
         prototype: HTMLPTableElement;
@@ -2207,7 +2514,18 @@ declare global {
         prototype: HTMLPTableCellElement;
         new (): HTMLPTableCellElement;
     };
+    interface HTMLPTableColumnElementEventMap {
+        "tableDefinitionChanged": boolean;
+    }
     interface HTMLPTableColumnElement extends Components.PTableColumn, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPTableColumnElementEventMap>(type: K, listener: (this: HTMLPTableColumnElement, ev: PTableColumnCustomEvent<HTMLPTableColumnElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPTableColumnElementEventMap>(type: K, listener: (this: HTMLPTableColumnElement, ev: PTableColumnCustomEvent<HTMLPTableColumnElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPTableColumnElement: {
         prototype: HTMLPTableColumnElement;
@@ -2219,13 +2537,40 @@ declare global {
         prototype: HTMLPTableContainerElement;
         new (): HTMLPTableContainerElement;
     };
+    interface HTMLPTableFooterElementEventMap {
+        "pageChange": number;
+        "pageSizeChange": number;
+        "export": number;
+    }
     interface HTMLPTableFooterElement extends Components.PTableFooter, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPTableFooterElementEventMap>(type: K, listener: (this: HTMLPTableFooterElement, ev: PTableFooterCustomEvent<HTMLPTableFooterElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPTableFooterElementEventMap>(type: K, listener: (this: HTMLPTableFooterElement, ev: PTableFooterCustomEvent<HTMLPTableFooterElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPTableFooterElement: {
         prototype: HTMLPTableFooterElement;
         new (): HTMLPTableFooterElement;
     };
+    interface HTMLPTableHeaderElementEventMap {
+        "quickFilter": QuickFilter;
+        "queryChange": string;
+        "filter": null;
+        "action": null;
+    }
     interface HTMLPTableHeaderElement extends Components.PTableHeader, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPTableHeaderElementEventMap>(type: K, listener: (this: HTMLPTableHeaderElement, ev: PTableHeaderCustomEvent<HTMLPTableHeaderElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPTableHeaderElementEventMap>(type: K, listener: (this: HTMLPTableHeaderElement, ev: PTableHeaderCustomEvent<HTMLPTableHeaderElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPTableHeaderElement: {
         prototype: HTMLPTableHeaderElement;
@@ -2243,7 +2588,18 @@ declare global {
         prototype: HTMLPTableRowActionElement;
         new (): HTMLPTableRowActionElement;
     };
+    interface HTMLPToastElementEventMap {
+        "action": MouseEvent;
+    }
     interface HTMLPToastElement extends Components.PToast, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPToastElementEventMap>(type: K, listener: (this: HTMLPToastElement, ev: PToastCustomEvent<HTMLPToastElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPToastElementEventMap>(type: K, listener: (this: HTMLPToastElement, ev: PToastCustomEvent<HTMLPToastElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPToastElement: {
         prototype: HTMLPToastElement;
@@ -2255,7 +2611,18 @@ declare global {
         prototype: HTMLPToastContainerElement;
         new (): HTMLPToastContainerElement;
     };
+    interface HTMLPTooltipElementEventMap {
+        "isOpen": boolean;
+    }
     interface HTMLPTooltipElement extends Components.PTooltip, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPTooltipElementEventMap>(type: K, listener: (this: HTMLPTooltipElement, ev: PTooltipCustomEvent<HTMLPTooltipElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPTooltipElementEventMap>(type: K, listener: (this: HTMLPTooltipElement, ev: PTooltipCustomEvent<HTMLPTooltipElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPTooltipElement: {
         prototype: HTMLPTooltipElement;
@@ -2286,6 +2653,8 @@ declare global {
         "p-dropdown": HTMLPDropdownElement;
         "p-dropdown-menu-container": HTMLPDropdownMenuContainerElement;
         "p-dropdown-menu-item": HTMLPDropdownMenuItemElement;
+        "p-field": HTMLPFieldElement;
+        "p-field-container": HTMLPFieldContainerElement;
         "p-floating-menu-container": HTMLPFloatingMenuContainerElement;
         "p-floating-menu-item": HTMLPFloatingMenuItemElement;
         "p-helper": HTMLPHelperElement;
@@ -2295,7 +2664,6 @@ declare global {
         "p-illustration": HTMLPIllustrationElement;
         "p-info-panel": HTMLPInfoPanelElement;
         "p-input-error": HTMLPInputErrorElement;
-        "p-input-group": HTMLPInputGroupElement;
         "p-label": HTMLPLabelElement;
         "p-layout": HTMLPLayoutElement;
         "p-loader": HTMLPLoaderElement;
@@ -2722,7 +3090,7 @@ declare namespace LocalJSX {
         /**
           * The size of the input group used by the datepicker
          */
-        "size"?: 'small' | 'medium';
+        "size"?: 'sm' | 'base';
         /**
           * The strategy of the dropdown placement
          */
@@ -2920,6 +3288,135 @@ declare namespace LocalJSX {
          */
         "variant"?: 'default' | 'negative';
     }
+    interface PField {
+        /**
+          * Wether the input group is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * The error to display
+         */
+        "error"?: string;
+        /**
+          * The placement of the error popover
+         */
+        "errorPlacement"?: Placement;
+        /**
+          * The method to use when focusing the input
+         */
+        "focusMethod"?: 'focus' | 'click';
+        /**
+          * Wether the input group is focused
+         */
+        "focused"?: boolean;
+        /**
+          * Force show the error tooltip
+         */
+        "forceShowTooltip"?: boolean;
+        /**
+          * The helper of the input group
+         */
+        "helper"?: string;
+        /**
+          * Icon of the input group
+         */
+        "icon"?: IconVariant;
+        /**
+          * Icon flip
+         */
+        "iconFlip"?: IconFlipOptions;
+        /**
+          * Icon position
+         */
+        "iconPosition"?: 'start' | 'end';
+        /**
+          * Icon rotate
+         */
+        "iconRotate"?: RotateOptions;
+        /**
+          * The label of the input group
+         */
+        "label"?: string;
+        /**
+          * Event whenever the input ref changes
+         */
+        "onInputRefChange"?: (event: PFieldCustomEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+        /**
+          * Event whenever the value changes
+         */
+        "onValueChange"?: (event: PFieldCustomEvent<string>) => void;
+        /**
+          * The template for the optional text
+         */
+        "optionalTemplate"?: templateFunc;
+        /**
+          * The placeholder of the input
+         */
+        "placeholder"?: string;
+        /**
+          * The prefix of the input group
+         */
+        "prefix"?: string;
+        /**
+          * The size of the input group
+         */
+        "properties"?: any | string;
+        /**
+          * Wether the field is required
+         */
+        "required"?: boolean;
+        /**
+          * Wether to select all text on focus
+         */
+        "selectAllOnFocus"?: boolean;
+        /**
+          * The size of the input group
+         */
+        "size"?: 'sm' | 'base';
+        /**
+          * The suffix of the input group
+         */
+        "suffix"?: string;
+        /**
+          * The type of the input group
+         */
+        "type"?: HTMLInputTypeAttribute | 'textarea' | 'slot';
+        /**
+          * The value of the input
+         */
+        "value"?: string;
+    }
+    interface PFieldContainer {
+        /**
+          * The helper of the input group
+         */
+        "error"?: string | HTMLSlotElement;
+        /**
+          * The placement of the error popover
+         */
+        "errorPlacement"?: Placement;
+        /**
+          * Force show the error tooltip
+         */
+        "forceShowTooltip"?: boolean;
+        /**
+          * The helper of the input group
+         */
+        "helper"?: string | HTMLSlotElement;
+        /**
+          * The label of the input group
+         */
+        "label"?: string | HTMLSlotElement;
+        "onFocus"?: (event: PFieldContainerCustomEvent<void>) => void;
+        /**
+          * The template for the optional text
+         */
+        "optionalTemplate"?: templateFunc1;
+        /**
+          * Wether the field is required
+         */
+        "required"?: boolean;
+    }
     interface PFloatingMenuContainer {
         /**
           * Weather the container is used in the table
@@ -3030,72 +3527,6 @@ declare namespace LocalJSX {
          */
         "forceShowTooltip"?: boolean;
     }
-    interface PInputGroup {
-        /**
-          * Wether the input group is disabled
-         */
-        "disabled"?: boolean;
-        /**
-          * The helper of the input group
-         */
-        "error"?: string;
-        /**
-          * The error variant to use
-         */
-        "errorVariant"?: 'auto' | 'suffix' | 'element';
-        /**
-          * The method to use when focusing the input
-         */
-        "focusMethod"?: 'focus' | 'click';
-        /**
-          * Wether the input group is focused
-         */
-        "focused"?: boolean;
-        /**
-          * Force show the error tooltip
-         */
-        "forceShowTooltip"?: boolean;
-        /**
-          * The helper of the input group
-         */
-        "helper"?: string;
-        /**
-          * Icon of the input group
-         */
-        "icon"?: IconVariant;
-        /**
-          * Icon flip
-         */
-        "iconFlip"?: IconFlipOptions;
-        /**
-          * Icon position
-         */
-        "iconPosition"?: 'start' | 'end';
-        /**
-          * Icon rotate
-         */
-        "iconRotate"?: RotateOptions;
-        /**
-          * The label of the input group
-         */
-        "label"?: string;
-        /**
-          * The prefix of the input group
-         */
-        "prefix"?: string;
-        /**
-          * Wether the field is required
-         */
-        "required"?: boolean;
-        /**
-          * The size of the input group
-         */
-        "size"?: 'small' | 'medium';
-        /**
-          * The suffix of the input group
-         */
-        "suffix"?: string;
-    }
     interface PLabel {
         /**
           * Define the behavior of the label
@@ -3165,11 +3596,7 @@ declare namespace LocalJSX {
         /**
           * Variant of loader
          */
-        "variant"?: | 'inline'
-		| 'full-width'
-		| 'full-screen'
-		| 'modal'
-		| 'ghost';
+        "variant"?: 'inline' | 'full-width' | 'full-screen' | 'modal' | 'ghost';
     }
     interface PModal {
         /**
@@ -3309,7 +3736,7 @@ declare namespace LocalJSX {
         /**
           * The template for the data view
          */
-        "buttonTemplate"?: templateFunc;
+        "buttonTemplate"?: templateFunc2;
         /**
           * Chevron position
          */
@@ -3321,7 +3748,7 @@ declare namespace LocalJSX {
         /**
           * The template for the data view
          */
-        "itemTemplate"?: templateFunc;
+        "itemTemplate"?: templateFunc2;
         /**
           * Event whenever the size changes
          */
@@ -3564,7 +3991,7 @@ declare namespace LocalJSX {
         /**
           * The size of the input group used by the select
          */
-        "size"?: 'small' | 'medium';
+        "size"?: 'sm' | 'base';
         /**
           * The strategy to use for the dropdown placement
          */
@@ -3697,11 +4124,11 @@ declare namespace LocalJSX {
           * A key to determine if a row can be selected
          */
         "canSelectKey"?: string;
-        "emptyStateAction"?: templateFunc1;
-        "emptyStateContent"?: templateFunc1;
-        "emptyStateFilteredContent"?: templateFunc1;
-        "emptyStateFilteredHeader"?: templateFunc1;
-        "emptyStateHeader"?: templateFunc1;
+        "emptyStateAction"?: templateFunc3;
+        "emptyStateContent"?: templateFunc3;
+        "emptyStateFilteredContent"?: templateFunc3;
+        "emptyStateFilteredHeader"?: templateFunc3;
+        "emptyStateHeader"?: templateFunc3;
         /**
           * Wether to show the action button
          */
@@ -3757,7 +4184,7 @@ declare namespace LocalJSX {
         /**
           * The template for the filter button text
          */
-        "filterButtonTemplate"?: templateFunc1;
+        "filterButtonTemplate"?: templateFunc3;
         /**
           * The template for amount selected item in the floating menu
          */
@@ -4058,7 +4485,7 @@ declare namespace LocalJSX {
         /**
           * The template for the filter button text
          */
-        "filterButtonTemplate"?: templateFunc2;
+        "filterButtonTemplate"?: templateFunc4;
         /**
           * The amount of items that are selected
          */
@@ -4222,9 +4649,13 @@ declare namespace LocalJSX {
          */
         "strategy"?: Strategy;
         /**
+          * Wether to use a portal for the tooltip
+         */
+        "usePortal"?: boolean;
+        /**
           * The variant of the popover
          */
-        "variant"?: 'hover' | 'click' | 'error' | 'error-element';
+        "variant"?: 'hover' | 'click' | 'error';
     }
     interface IntrinsicElements {
         "p-accordion": PAccordion;
@@ -4251,6 +4682,8 @@ declare namespace LocalJSX {
         "p-dropdown": PDropdown;
         "p-dropdown-menu-container": PDropdownMenuContainer;
         "p-dropdown-menu-item": PDropdownMenuItem;
+        "p-field": PField;
+        "p-field-container": PFieldContainer;
         "p-floating-menu-container": PFloatingMenuContainer;
         "p-floating-menu-item": PFloatingMenuItem;
         "p-helper": PHelper;
@@ -4260,7 +4693,6 @@ declare namespace LocalJSX {
         "p-illustration": PIllustration;
         "p-info-panel": PInfoPanel;
         "p-input-error": PInputError;
-        "p-input-group": PInputGroup;
         "p-label": PLabel;
         "p-layout": PLayout;
         "p-loader": PLoader;
@@ -4329,6 +4761,8 @@ declare module "@stencil/core" {
             "p-dropdown": LocalJSX.PDropdown & JSXBase.HTMLAttributes<HTMLPDropdownElement>;
             "p-dropdown-menu-container": LocalJSX.PDropdownMenuContainer & JSXBase.HTMLAttributes<HTMLPDropdownMenuContainerElement>;
             "p-dropdown-menu-item": LocalJSX.PDropdownMenuItem & JSXBase.HTMLAttributes<HTMLPDropdownMenuItemElement>;
+            "p-field": LocalJSX.PField & JSXBase.HTMLAttributes<HTMLPFieldElement>;
+            "p-field-container": LocalJSX.PFieldContainer & JSXBase.HTMLAttributes<HTMLPFieldContainerElement>;
             "p-floating-menu-container": LocalJSX.PFloatingMenuContainer & JSXBase.HTMLAttributes<HTMLPFloatingMenuContainerElement>;
             "p-floating-menu-item": LocalJSX.PFloatingMenuItem & JSXBase.HTMLAttributes<HTMLPFloatingMenuItemElement>;
             "p-helper": LocalJSX.PHelper & JSXBase.HTMLAttributes<HTMLPHelperElement>;
@@ -4338,7 +4772,6 @@ declare module "@stencil/core" {
             "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;
             "p-info-panel": LocalJSX.PInfoPanel & JSXBase.HTMLAttributes<HTMLPInfoPanelElement>;
             "p-input-error": LocalJSX.PInputError & JSXBase.HTMLAttributes<HTMLPInputErrorElement>;
-            "p-input-group": LocalJSX.PInputGroup & JSXBase.HTMLAttributes<HTMLPInputGroupElement>;
             "p-label": LocalJSX.PLabel & JSXBase.HTMLAttributes<HTMLPLabelElement>;
             "p-layout": LocalJSX.PLayout & JSXBase.HTMLAttributes<HTMLPLayoutElement>;
             "p-loader": LocalJSX.PLoader & JSXBase.HTMLAttributes<HTMLPLoaderElement>;
