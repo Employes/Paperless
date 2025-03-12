@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.19](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.18...v2.0.1-beta.19) (2025-03-12)
+
+
+### Bug Fixes
+
+* **atoms/dropdown-menu/container:** Only apply w-auto when there is a max width ([b15c4f4](https://github.com/ionic-team/stencil-component-starter/commit/b15c4f48f3a0a7a2acd83823b8608f72977153d8))
+* **atoms/helper:** Small change to accomendate for height changes ([9d64131](https://github.com/ionic-team/stencil-component-starter/commit/9d641319793f1a870e003be272c82372b1e60a57))
+* **atoms/loader:** Don't access props before hydration ([a9f1412](https://github.com/ionic-team/stencil-component-starter/commit/a9f1412917ce267b153e07c0bc2bd40146f2b8f7))
+* **molecules/select:** Use correct event to apply autoComplete ([81dc848](https://github.com/ionic-team/stencil-component-starter/commit/81dc848337b01ae19f2234b217666e7a05a7c8c0))
+
+
+### Features
+
+* **atoms/field:** Add field container component ([c618e86](https://github.com/ionic-team/stencil-component-starter/commit/c618e8642233b181c18e8321eb82cba1047e4174))
+* **atoms:** Add field component ([18a2428](https://github.com/ionic-team/stencil-component-starter/commit/18a242838cd15e89fa8d48820132a796f581378b))
+
+
+
+
+
 ## [2.0.1-beta.18](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.17...v2.0.1-beta.18) (2025-03-07)
 
 
