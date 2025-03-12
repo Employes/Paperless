@@ -4,7 +4,7 @@ import { cva } from 'class-variance-authority';
 const dropdownMenuContainer = cva(
 	[
 		'p-dropdown-menu-container',
-		'w-auto p-1',
+		'p-1',
 		'bg-white rounded-lg z-10 drop-shadow-2',
 		'border border-black-teal-100',
 	],
@@ -26,7 +26,7 @@ const dropdownMenuContainer = cva(
 			},
 			maxWidth: {
 				false: null,
-				true: 'max-w-[13.875rem]',
+				true: 'w-auto max-w-[13.875rem]',
 			},
 		},
 	}
