@@ -89,7 +89,7 @@ export class Datepicker {
 	/**
 	 * The size of the input group used by the datepicker
 	 */
-	@Prop() size: 'small' | 'medium' = 'medium';
+	@Prop() size: 'sm' | 'base' = 'base';
 
 	/**
 	 * The prefix of the input group used by the datepicker
@@ -255,7 +255,7 @@ export class Datepicker {
 					insideClick={true}
 					show={this._showDropdown}
 				>
-					<p-input-group
+					<p-field
 						slot='trigger'
 						icon={
 							this.hideIconWhenFilled && !!this._value ? null : 'calendar-multi'
@@ -280,7 +280,7 @@ export class Datepicker {
 							onBlur={ev => this._onBlur(ev)}
 							onInput={ev => this._onInput(ev)}
 						/>
-					</p-input-group>
+					</p-field>
 					<div slot='items'>
 						<p-calendar
 							variant='embedded'
