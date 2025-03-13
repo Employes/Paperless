@@ -1,5 +1,11 @@
 # Field
 
+## Usage:
+
+```html
+<p-field [label]="Label" placeholder="Provide a value" />
+```
+
 <!-- Auto Generated Below -->
 
 
