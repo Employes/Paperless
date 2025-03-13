@@ -1045,13 +1045,42 @@ export namespace Components {
         "active": boolean;
     }
     interface PPortal {
-        "containerClass": string;
     }
     interface PProfile {
         /**
           * The position of the dropdown
          */
         "dropdownLocation": 'top-end' | 'bottom-end';
+    }
+    interface PRadio {
+        /**
+          * Wether the radio is checked
+         */
+        "checked": boolean;
+        /**
+          * Wether the radio is disabled
+         */
+        "disabled": boolean;
+        /**
+          * The id of the radio button
+         */
+        "id": string;
+        /**
+          * The name of the radio button
+         */
+        "name": string;
+        /**
+          * Wether the radio is required
+         */
+        "required": boolean;
+        /**
+          * The size of the radio
+         */
+        "size": 'sm' | 'base';
+        /**
+          * The value of the radio button
+         */
+        "value": string;
     }
     interface PSegmentContainer {
     }
@@ -1856,6 +1885,10 @@ export interface PPaginationCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPPaginationElement;
 }
+export interface PRadioCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPRadioElement;
+}
 export interface PSelectCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPSelectElement;
@@ -2392,6 +2425,23 @@ declare global {
         prototype: HTMLPProfileElement;
         new (): HTMLPProfileElement;
     };
+    interface HTMLPRadioElementEventMap {
+        "checkedChange": boolean;
+    }
+    interface HTMLPRadioElement extends Components.PRadio, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPRadioElementEventMap>(type: K, listener: (this: HTMLPRadioElement, ev: PRadioCustomEvent<HTMLPRadioElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPRadioElementEventMap>(type: K, listener: (this: HTMLPRadioElement, ev: PRadioCustomEvent<HTMLPRadioElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPRadioElement: {
+        prototype: HTMLPRadioElement;
+        new (): HTMLPRadioElement;
+    };
     interface HTMLPSegmentContainerElement extends Components.PSegmentContainer, HTMLStencilElement {
     }
     var HTMLPSegmentContainerElement: {
@@ -2669,6 +2719,7 @@ declare global {
         "p-pagination-item": HTMLPPaginationItemElement;
         "p-portal": HTMLPPortalElement;
         "p-profile": HTMLPProfileElement;
+        "p-radio": HTMLPRadioElement;
         "p-segment-container": HTMLPSegmentContainerElement;
         "p-segment-item": HTMLPSegmentItemElement;
         "p-select": HTMLPSelectElement;
@@ -3779,13 +3830,46 @@ declare namespace LocalJSX {
         "active"?: boolean;
     }
     interface PPortal {
-        "containerClass"?: string;
     }
     interface PProfile {
         /**
           * The position of the dropdown
          */
         "dropdownLocation"?: 'top-end' | 'bottom-end';
+    }
+    interface PRadio {
+        /**
+          * Wether the radio is checked
+         */
+        "checked"?: boolean;
+        /**
+          * Wether the radio is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * The id of the radio button
+         */
+        "id"?: string;
+        /**
+          * The name of the radio button
+         */
+        "name"?: string;
+        /**
+          * Event whenever the checked changes
+         */
+        "onCheckedChange"?: (event: PRadioCustomEvent<boolean>) => void;
+        /**
+          * Wether the radio is required
+         */
+        "required"?: boolean;
+        /**
+          * The size of the radio
+         */
+        "size"?: 'sm' | 'base';
+        /**
+          * The value of the radio button
+         */
+        "value"?: string;
     }
     interface PSegmentContainer {
     }
@@ -4686,6 +4770,7 @@ declare namespace LocalJSX {
         "p-pagination-item": PPaginationItem;
         "p-portal": PPortal;
         "p-profile": PProfile;
+        "p-radio": PRadio;
         "p-segment-container": PSegmentContainer;
         "p-segment-item": PSegmentItem;
         "p-select": PSelect;
@@ -4765,6 +4850,7 @@ declare module "@stencil/core" {
             "p-pagination-item": LocalJSX.PPaginationItem & JSXBase.HTMLAttributes<HTMLPPaginationItemElement>;
             "p-portal": LocalJSX.PPortal & JSXBase.HTMLAttributes<HTMLPPortalElement>;
             "p-profile": LocalJSX.PProfile & JSXBase.HTMLAttributes<HTMLPProfileElement>;
+            "p-radio": LocalJSX.PRadio & JSXBase.HTMLAttributes<HTMLPRadioElement>;
             "p-segment-container": LocalJSX.PSegmentContainer & JSXBase.HTMLAttributes<HTMLPSegmentContainerElement>;
             "p-segment-item": LocalJSX.PSegmentItem & JSXBase.HTMLAttributes<HTMLPSegmentItemElement>;
             "p-select": LocalJSX.PSelect & JSXBase.HTMLAttributes<HTMLPSelectElement>;
