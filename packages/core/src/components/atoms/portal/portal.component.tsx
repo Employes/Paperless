@@ -1,17 +1,18 @@
-import { Component, Element, h, Host, Prop } from '@stencil/core';
+import { Component, Element, h, Host } from '@stencil/core';
 
 @Component({
 	tag: 'p-portal',
 })
 export class Portal {
-	@Prop() containerClass: string;
-
-	@Element() _element: HTMLElement;
+	/**
+	 * The host element
+	 */
+	@Element() _el: HTMLElement;
 
 	private _moved: boolean = false;
 
 	private createPortal() {
-		document.body.append(this._element);
+		document.body.append(this._el);
 	}
 
 	componentDidLoad() {
@@ -19,7 +20,7 @@ export class Portal {
 	}
 
 	disconnectedCallback() {
-		this._moved ? this._element.remove() : (this._moved = true);
+		this._moved ? this._el.remove() : (this._moved = true);
 	}
 
 	render() {
