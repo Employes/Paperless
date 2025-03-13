@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.20](https://github.com/ionic-team/ionic/compare/v2.0.1-beta.19...v2.0.1-beta.20) (2025-03-13)
+
+
+### Features
+
+* **atoms:** Add radio component ([ab8a8ad](https://github.com/ionic-team/ionic/commit/ab8a8ad3f11c59cd2f1d0935ea6352543406549d))
+
+
+
+
+
 ## [2.0.1-beta.19](https://github.com/ionic-team/ionic/compare/v2.0.1-beta.18...v2.0.1-beta.19) (2025-03-12)
 
 **Note:** Version bump only for package @paperless/react
