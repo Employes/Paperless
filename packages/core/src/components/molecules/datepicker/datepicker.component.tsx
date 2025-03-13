@@ -1,3 +1,4 @@
+import { Placement, Strategy } from '@floating-ui/dom';
 import {
 	Component,
 	Element,
@@ -20,7 +21,6 @@ import {
 	startOfDay,
 } from 'date-fns';
 import { childOf } from '../../../utils';
-import { Placement, Strategy } from '@floating-ui/dom';
 
 @Component({
 	tag: 'p-datepicker',
@@ -143,6 +143,7 @@ export class Datepicker {
 	@State() private _disabledDates: Date[] = [];
 
 	private _onInputTimeout: NodeJS.Timeout;
+	private _inputRef: HTMLInputElement | HTMLTextAreaElement;
 
 	private _defaultFormats = {
 		year: 'yyyy',
@@ -269,18 +270,13 @@ export class Datepicker {
 						error={this.error}
 						disabled={this.disabled}
 						focused={this._showDropdown}
-					>
-						<input
-							slot='input'
-							type='text'
-							placeholder={this.placeholder}
-							value={this._getFormattedDate()}
-							class='p-input cursor-pointer'
-							onFocus={() => this._onFocus()}
-							onBlur={ev => this._onBlur(ev)}
-							onInput={ev => this._onInput(ev)}
-						/>
-					</p-field>
+						value={this._getFormattedDate()}
+						placeholder={this.placeholder}
+						onFocus={() => this._onFocus()}
+						onBlur={() => this._onBlur()}
+						onValueChange={ev => this._onValueChange(ev.detail)}
+						onInputRefChange={ev => (this._inputRef = ev.detail)}
+					></p-field>
 					<div slot='items'>
 						<p-calendar
 							variant='embedded'
@@ -312,33 +308,41 @@ export class Datepicker {
 		this._showDropdown = true;
 	}
 
-	private _onBlur(ev) {
-		if (ev.target.value === null) {
+	private _onBlur() {
+		const target = this._inputRef;
+
+		if (target.value === null) {
 			return;
 		}
 
-		const value = parse(ev.target.value, this.format, new Date());
+		const value = parse(target.value, this.format, new Date());
+
+		if (value === this._value) {
+			return;
+		}
 
 		if (!isValid(value) || this._isDisabledDay(value)) {
-			ev.target.value = this._getFormattedDate();
+			target.value = this._getFormattedDate();
 			return;
 		}
+
+		this._setValue(value, false);
 	}
 
-	private _onInput(ev) {
+	private _onValueChange(value: string) {
 		if (this._onInputTimeout) {
 			clearTimeout(this._onInputTimeout);
 			this._onInputTimeout = null;
 		}
 
 		this._onInputTimeout = setTimeout(() => {
-			const value = parse(ev.target.value, this.format, new Date());
-			if (!isValid(value)) {
+			const parsedValue = parse(value, this.format, new Date());
+			if (!isValid(parsedValue)) {
 				return;
 			}
 
-			this._setValue(value, false);
-		}, 250);
+			this._setValue(parsedValue, false);
+		}, 300);
 	}
 
 	private _setValue(value: Date | null, hideDropdown = true) {
