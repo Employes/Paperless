@@ -1,0 +1,142 @@
+import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
+import { StoryCategories } from '../../categories';
+import RadioDocs from '../../../packages/core/src/components/atoms/radio/readme.md';
+
+<Meta title={`${StoryCategories.Atoms}/Rebranding/Radio`} />
+
+<RadioDocs />
+
+# Examples
+
+## Variants
+
+### Default
+
+<Canvas>
+	<form class='flex gap-2'>
+		<p-radio
+			value='a'
+			name='test'
+		/>
+		<p-radio
+			value='b'
+			name='test'
+		/>
+	</form>
+</Canvas>
+
+### Checked
+
+<Canvas>
+	<p-radio checked />
+</Canvas>
+
+## Disabled
+
+### Default
+
+<Canvas>
+	<p-radio disabled />
+</Canvas>
+
+### Checked
+
+<Canvas>
+	<p-radio
+		disabled
+		checked
+	/>
+</Canvas>
+
+## Sizes
+
+### Base
+
+<Canvas>
+	<form class='flex gap-2'>
+		<p-radio
+			value='a'
+			name='test'
+		/>
+		<p-radio
+			value='b'
+			name='test'
+		/>
+		<p-radio
+			value='c'
+			name='test'
+			disabled
+		/>
+		<p-radio
+			value='d'
+			name='test'
+			disabled
+			checked
+		/>
+	</form>
+</Canvas>
+
+### Small
+
+<Canvas>
+	<form class='flex gap-2'>
+		<p-radio
+			size='sm'
+			value='a'
+			name='test'
+		/>
+		<p-radio
+			size='sm'
+			value='b'
+			name='test'
+		/>
+		<p-radio
+			size='sm'
+			value='c'
+			name='test'
+			disabled
+		/>
+		<p-radio
+			size='sm'
+			value='d'
+			name='test'
+			disabled
+			checked
+		/>
+	</form>
+</Canvas>
+
+## With label
+
+### Default
+
+<Canvas>
+	<p-radio>This is a label</p-radio>
+</Canvas>
+
+### With icon
+
+<Canvas>
+	<form class='flex gap-2'>
+		<p-radio
+			name='test'
+			value='user'
+		>
+			<p-icon variant='user' />
+			<span>This is a label</span>
+		</p-radio>
+		<p-radio
+			name='test'
+			value='users'
+		>
+			<p-icon variant='users' />
+			<span>This is a label</span>
+		</p-radio>
+	</form>
+</Canvas>
+
+### Small
+
+<Canvas>
+	<p-radio size='sm'>This is a label</p-radio>
+</Canvas>
