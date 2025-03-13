@@ -9,13 +9,6 @@
 <!-- Auto Generated Below -->
 
 
-## Properties
-
-| Property         | Attribute         | Description | Type     | Default     |
-| ---------------- | ----------------- | ----------- | -------- | ----------- |
-| `containerClass` | `container-class` |             | `string` | `undefined` |
-
-
 ## Dependencies
 
 ### Used by
