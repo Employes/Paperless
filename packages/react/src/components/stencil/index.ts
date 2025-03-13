@@ -60,6 +60,7 @@ export const PPagination = /*@__PURE__*/createReactComponent<JSX.PPagination, HT
 export const PPaginationItem = /*@__PURE__*/createReactComponent<JSX.PPaginationItem, HTMLPPaginationItemElement>('p-pagination-item');
 export const PPortal = /*@__PURE__*/createReactComponent<JSX.PPortal, HTMLPPortalElement>('p-portal');
 export const PProfile = /*@__PURE__*/createReactComponent<JSX.PProfile, HTMLPProfileElement>('p-profile');
+export const PRadio = /*@__PURE__*/createReactComponent<JSX.PRadio, HTMLPRadioElement>('p-radio');
 export const PSegmentContainer = /*@__PURE__*/createReactComponent<JSX.PSegmentContainer, HTMLPSegmentContainerElement>('p-segment-container');
 export const PSegmentItem = /*@__PURE__*/createReactComponent<JSX.PSegmentItem, HTMLPSegmentItemElement>('p-segment-item');
 export const PSelect = /*@__PURE__*/createReactComponent<JSX.PSelect, HTMLPSelectElement>('p-select');
