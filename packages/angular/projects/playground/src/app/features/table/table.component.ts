@@ -18,7 +18,7 @@ export class TableComponent {
 	public floatingMenuAmountSelectedText = '0 items selected';
 
 	public downloading$ = new BehaviorSubject(false);
-	private _downloadTimeout: NodeJS.Timeout | undefined;
+	private _downloadTimeout: any;
 
 	public showNavigateButton = (item: any) => {
 		console.log('Show navigate button');
