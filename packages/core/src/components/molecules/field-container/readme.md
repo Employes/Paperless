@@ -3,7 +3,7 @@
 ## Usage:
 
 ```html
-<p-field-container [label]="Label"> Content </p-divider>
+<p-field-container [label]="Label"> Content </p-field-container>
 ```
 
 <!-- Auto Generated Below -->
