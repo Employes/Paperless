@@ -182,6 +182,10 @@ export class Calendar {
 			value = new Date(value);
 		}
 
+		if (isValid(value) && !isSameDay(value, this._viewDate)) {
+			this._viewDate = value;
+		}
+
 		this._setValue(value);
 	}
 
