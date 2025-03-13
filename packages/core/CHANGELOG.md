@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.20](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.19...v2.0.1-beta.20) (2025-03-13)
+
+
+### Features
+
+* **atoms:** Add radio component ([ab8a8ad](https://github.com/ionic-team/stencil-component-starter/commit/ab8a8ad3f11c59cd2f1d0935ea6352543406549d))
+* **molecules/calendar:** Auto set correct view on value changes ([c3c480e](https://github.com/ionic-team/stencil-component-starter/commit/c3c480e901727ed160abc0c87cbf9b1ff4ce0995))
+* **molecules/field:** Set value of this.value on prop ([b4dc539](https://github.com/ionic-team/stencil-component-starter/commit/b4dc539a00205e5dd12a234aa8bf545e4d662b4d))
+
+
+
+
+
 ## [2.0.1-beta.19](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.18...v2.0.1-beta.19) (2025-03-12)
 
 
