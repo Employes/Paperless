@@ -1,3 +1,4 @@
+import { Placement } from '@floating-ui/dom';
 import {
 	Component,
 	Element,
@@ -14,7 +15,6 @@ import { HTMLInputTypeAttribute } from 'react';
 import { RotateOptions } from '../../../types/tailwind';
 import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
 import { templateFunc } from '../field-container/field-container.component';
-import { Placement } from '@floating-ui/dom';
 
 const field = cva(
 	['flex gap-2', 'w-inherit px-2', 'border border-solid rounded-lg'],
@@ -426,11 +426,7 @@ export class Field {
 			value: this.value,
 			placeholder: this.placeholder,
 			disabled: this.disabled,
-			onInput: (ev: Event) => {
-				this.valueChange.emit(
-					(ev.target as HTMLTextAreaElement | HTMLInputElement).value
-				);
-			},
+			onInput: (ev: Event) => this._valueChange(ev),
 		};
 
 		let properties = this.properties ?? {};
@@ -477,5 +473,11 @@ export class Field {
 		}
 
 		this._inputRef.select();
+	}
+
+	private _valueChange(ev) {
+		const value = (ev.target as HTMLTextAreaElement | HTMLInputElement).value;
+		this.value = value;
+		this.valueChange.emit(value);
 	}
 }
