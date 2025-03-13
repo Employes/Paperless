@@ -18,6 +18,7 @@ import { SelectComponent } from './features/select/select.component';
 import { StepperComponent } from './features/stepper/stepper.component';
 import { TableComponent } from './features/table/table.component';
 import { ToastComponent } from './features/toast/toast.component';
+import { InputsComponent } from './features/inputs/inputs.component';
 
 @NgModule({
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -35,6 +36,7 @@ import { ToastComponent } from './features/toast/toast.component';
 		CropperComponent,
 		SelectComponent,
 		StepperComponent,
+		InputsComponent,
 	],
 	imports: [
 		BrowserModule,
