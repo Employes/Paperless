@@ -423,11 +423,12 @@ export class Field {
 			class: input({
 				disabled: this.disabled,
 			}),
+			value: this.value,
 			placeholder: this.placeholder,
 			disabled: this.disabled,
-			onInput: (e: Event) => {
+			onInput: (ev: Event) => {
 				this.valueChange.emit(
-					(e.target as HTMLTextAreaElement | HTMLInputElement).value
+					(ev.target as HTMLTextAreaElement | HTMLInputElement).value
 				);
 			},
 		};
