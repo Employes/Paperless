@@ -1,0 +1,41 @@
+<form
+	class="flex w-full flex-col items-start gap-4"
+	[formGroup]="form"
+>
+	<div class="flex gap-2">
+		<p-radio
+			name="test"
+			value="a"
+			formControlName="radio"
+		>
+			A
+		</p-radio>
+		<p-radio
+			name="test"
+			value="b"
+			formControlName="radio"
+		>
+			B
+		</p-radio>
+	</div>
+
+	<p-button (click)="form.get('radio')?.setValue('b')"> Set to B </p-button>
+
+	<p-field
+		label="Text"
+		type="text"
+		icon="user"
+		formControlName="text"
+	></p-field>
+
+	<p-field
+		label="Textarea"
+		type="textarea"
+		formControlName="text"
+	></p-field>
+
+	<p-button (click)="form.get('text')?.setValue('abc')"> Set to abc </p-button>
+
+	<p>Values:</p>
+	<pre>{{ form.value | json }}</pre>
+</form>
