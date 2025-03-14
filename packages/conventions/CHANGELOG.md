@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.67.4](https://github.com/Employes/Paperless/compare/v1.67.3...v1.67.4) (2025-03-14)
+
+
+### Bug Fixes
+
+* **conventions:** Move commitlintrc to a esm module ([fa178a5](https://github.com/Employes/Paperless/commit/fa178a55d568b9a1f6fa57aab27277ffd555fd8b))
+
+
+
+
+
 ## [1.67.3](https://github.com/Employes/Paperless/compare/v1.67.2...v1.67.3) (2025-03-14)
 
 
