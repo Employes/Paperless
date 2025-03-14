@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.67.2](https://github.com/employes/paperless/compare/v1.67.1...v1.67.2) (2025-03-14)
+
+
+### Bug Fixes
+
+* **conventions:** Set eslint-plugin-ava to 14.0.0 ([6c78e0d](https://github.com/employes/paperless/commit/6c78e0d2510282bbeb21ca78214f2cef2ede7a19))
+
+
+
+
+
 ## [1.67.1](https://github.com/employes/paperless/compare/v1.67.0...v1.67.1) (2025-03-14)
 
 
