@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.67.0](https://github.com/Employes/Paperless/compare/v1.66.0...v1.67.0) (2025-03-14)
+
+
+### Features
+
+* **conventions:** Add commitlint rc to conventions ([d915665](https://github.com/Employes/Paperless/commit/d91566520efb30225faa742a7e30f364286499ab))
+
+
+
+
+
 # [1.66.0](https://github.com/Employes/Paperless/compare/v1.65.0...v1.66.0) (2025-03-04)
 
 **Note:** Version bump only for package @paperless/conventions
