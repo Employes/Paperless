@@ -5,7 +5,9 @@ export * from './p-pagination.directive';
 export * from './p-select.directive';
 export * from './p-field.directive';
 export * from './p-radio.directive';
+export * from './p-checkbox.directive';
 
+import { CheckboxDirective } from './p-checkbox.directive';
 import { CropperDirective } from './p-cropper.directive';
 import { DatepickerDirective } from './p-datepicker.directive';
 import { FieldDirective } from './p-field.directive';
@@ -22,4 +24,5 @@ export const DIRECTIVES = [
 	CropperDirective,
 	FieldDirective,
 	RadioDirective,
+	CheckboxDirective,
 ];

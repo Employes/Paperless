@@ -1,10 +1,6 @@
-# Icon
+# p-icon
 
-## Usage:
 
-```html
-<p-icon variant="pencil" />
-```
 
 <!-- Auto Generated Below -->
 
@@ -27,6 +23,7 @@
  - [p-attachment](../../molecules/attachment)
  - [p-button](../../molecules/button)
  - [p-card-header](../card-header)
+ - [p-checkbox](../checkbox)
  - [p-cropper](../../molecules/cropper)
  - [p-dropdown-menu-item](../dropdown-menu-item)
  - [p-field](../../molecules/field)
@@ -48,6 +45,7 @@ graph TD;
   p-attachment --> p-icon
   p-button --> p-icon
   p-card-header --> p-icon
+  p-checkbox --> p-icon
   p-cropper --> p-icon
   p-dropdown-menu-item --> p-icon
   p-field --> p-icon

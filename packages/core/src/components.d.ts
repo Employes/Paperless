@@ -287,6 +287,36 @@ export namespace Components {
          */
         "header": string;
     }
+    interface PCheckbox {
+        /**
+          * Wether the checkbox is checked
+         */
+        "checked": boolean;
+        /**
+          * Wether the checkbox is disabled
+         */
+        "disabled": boolean;
+        /**
+          * The id of the checkbox button
+         */
+        "id": string;
+        /**
+          * Wether the checkbox is in indeterminate state
+         */
+        "indeterminate": boolean;
+        /**
+          * The name of the checkbox button
+         */
+        "name": string;
+        /**
+          * Wether the checkbox is required
+         */
+        "required": boolean;
+        /**
+          * The size of the checkbox
+         */
+        "size": 'sm' | 'base';
+    }
     interface PContentSlider {
         /**
           * Wether to disable auto centering the content
@@ -1841,6 +1871,10 @@ export interface PCalendarCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPCalendarElement;
 }
+export interface PCheckboxCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPCheckboxElement;
+}
 export interface PCropperCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPCropperElement;
@@ -2049,6 +2083,24 @@ declare global {
     var HTMLPCardHeaderElement: {
         prototype: HTMLPCardHeaderElement;
         new (): HTMLPCardHeaderElement;
+    };
+    interface HTMLPCheckboxElementEventMap {
+        "checkedChange": boolean;
+        "indeterminateChange": boolean;
+    }
+    interface HTMLPCheckboxElement extends Components.PCheckbox, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPCheckboxElementEventMap>(type: K, listener: (this: HTMLPCheckboxElement, ev: PCheckboxCustomEvent<HTMLPCheckboxElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPCheckboxElementEventMap>(type: K, listener: (this: HTMLPCheckboxElement, ev: PCheckboxCustomEvent<HTMLPCheckboxElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPCheckboxElement: {
+        prototype: HTMLPCheckboxElement;
+        new (): HTMLPCheckboxElement;
     };
     interface HTMLPContentSliderElement extends Components.PContentSlider, HTMLStencilElement {
     }
@@ -2683,6 +2735,7 @@ declare global {
         "p-card-body": HTMLPCardBodyElement;
         "p-card-container": HTMLPCardContainerElement;
         "p-card-header": HTMLPCardHeaderElement;
+        "p-checkbox": HTMLPCheckboxElement;
         "p-content-slider": HTMLPContentSliderElement;
         "p-counter": HTMLPCounterElement;
         "p-cropper": HTMLPCropperElement;
@@ -3014,6 +3067,44 @@ declare namespace LocalJSX {
           * Content of the card header
          */
         "header"?: string;
+    }
+    interface PCheckbox {
+        /**
+          * Wether the checkbox is checked
+         */
+        "checked"?: boolean;
+        /**
+          * Wether the checkbox is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * The id of the checkbox button
+         */
+        "id"?: string;
+        /**
+          * Wether the checkbox is in indeterminate state
+         */
+        "indeterminate"?: boolean;
+        /**
+          * The name of the checkbox button
+         */
+        "name"?: string;
+        /**
+          * Event whenever the checked changes
+         */
+        "onCheckedChange"?: (event: PCheckboxCustomEvent<boolean>) => void;
+        /**
+          * Event whenever the indeterminate changes
+         */
+        "onIndeterminateChange"?: (event: PCheckboxCustomEvent<boolean>) => void;
+        /**
+          * Wether the checkbox is required
+         */
+        "required"?: boolean;
+        /**
+          * The size of the checkbox
+         */
+        "size"?: 'sm' | 'base';
     }
     interface PContentSlider {
         /**
@@ -4738,6 +4829,7 @@ declare namespace LocalJSX {
         "p-card-body": PCardBody;
         "p-card-container": PCardContainer;
         "p-card-header": PCardHeader;
+        "p-checkbox": PCheckbox;
         "p-content-slider": PContentSlider;
         "p-counter": PCounter;
         "p-cropper": PCropper;
@@ -4818,6 +4910,7 @@ declare module "@stencil/core" {
             "p-card-body": LocalJSX.PCardBody & JSXBase.HTMLAttributes<HTMLPCardBodyElement>;
             "p-card-container": LocalJSX.PCardContainer & JSXBase.HTMLAttributes<HTMLPCardContainerElement>;
             "p-card-header": LocalJSX.PCardHeader & JSXBase.HTMLAttributes<HTMLPCardHeaderElement>;
+            "p-checkbox": LocalJSX.PCheckbox & JSXBase.HTMLAttributes<HTMLPCheckboxElement>;
             "p-content-slider": LocalJSX.PContentSlider & JSXBase.HTMLAttributes<HTMLPContentSliderElement>;
             "p-counter": LocalJSX.PCounter & JSXBase.HTMLAttributes<HTMLPCounterElement>;
             "p-cropper": LocalJSX.PCropper & JSXBase.HTMLAttributes<HTMLPCropperElement>;
