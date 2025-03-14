@@ -1,0 +1,133 @@
+import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
+import { StoryCategories } from '../../categories';
+import CheckboxDocs from '../../../packages/core/src/components/atoms/checkbox/readme.md';
+
+<Meta title={`${StoryCategories.Atoms}/Rebranding/Checkbox`} />
+
+<CheckboxDocs />
+
+# Examples
+
+## Variants
+
+### Default
+
+<Canvas>
+	<form class='flex gap-2'>
+		<p-checkbox name='test' />
+		<p-checkbox name='test' />
+	</form>
+</Canvas>
+
+### Checked
+
+<Canvas>
+	<p-checkbox checked />
+</Canvas>
+
+### Indeterminate
+
+<Canvas>
+	<p-checkbox indeterminate />
+</Canvas>
+
+## Disabled
+
+### Default
+
+<Canvas>
+	<p-checkbox disabled />
+</Canvas>
+
+### Checked
+
+<Canvas>
+	<p-checkbox
+		disabled
+		checked
+	/>
+</Canvas>
+
+### Indeterminate
+
+<Canvas>
+	<p-checkbox
+		indeterminate
+		disabled
+	/>
+</Canvas>
+
+## Sizes
+
+### Base
+
+<Canvas>
+	<form class='flex gap-2'>
+		<p-checkbox name='test' />
+		<p-checkbox name='test' />
+		<p-checkbox
+			name='test'
+			disabled
+		/>
+		<p-checkbox
+			name='test'
+			disabled
+			checked
+		/>
+	</form>
+</Canvas>
+
+### Small
+
+<Canvas>
+	<form class='flex gap-2'>
+		<p-checkbox
+			size='sm'
+			name='test'
+		/>
+		<p-checkbox
+			size='sm'
+			name='test'
+		/>
+		<p-checkbox
+			size='sm'
+			name='test'
+			disabled
+		/>
+		<p-checkbox
+			size='sm'
+			name='test'
+			disabled
+			checked
+		/>
+	</form>
+</Canvas>
+
+## With label
+
+### Default
+
+<Canvas>
+	<p-checkbox>This is a label</p-checkbox>
+</Canvas>
+
+### With icon
+
+<Canvas>
+	<form class='flex gap-2'>
+		<p-checkbox name='test'>
+			<p-icon variant='user' />
+			<span>This is a label</span>
+		</p-checkbox>
+		<p-checkbox name='test'>
+			<p-icon variant='users' />
+			<span>This is a label</span>
+		</p-checkbox>
+	</form>
+</Canvas>
+
+### Small
+
+<Canvas>
+	<p-checkbox size='sm'>This is a label</p-checkbox>
+</Canvas>
