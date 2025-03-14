@@ -20,6 +20,7 @@ export const PCalendar = /*@__PURE__*/createReactComponent<JSX.PCalendar, HTMLPC
 export const PCardBody = /*@__PURE__*/createReactComponent<JSX.PCardBody, HTMLPCardBodyElement>('p-card-body');
 export const PCardContainer = /*@__PURE__*/createReactComponent<JSX.PCardContainer, HTMLPCardContainerElement>('p-card-container');
 export const PCardHeader = /*@__PURE__*/createReactComponent<JSX.PCardHeader, HTMLPCardHeaderElement>('p-card-header');
+export const PCheckbox = /*@__PURE__*/createReactComponent<JSX.PCheckbox, HTMLPCheckboxElement>('p-checkbox');
 export const PContentSlider = /*@__PURE__*/createReactComponent<JSX.PContentSlider, HTMLPContentSliderElement>('p-content-slider');
 export const PCounter = /*@__PURE__*/createReactComponent<JSX.PCounter, HTMLPCounterElement>('p-counter');
 export const PCropper = /*@__PURE__*/createReactComponent<JSX.PCropper, HTMLPCropperElement>('p-cropper');
