@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.67.1](https://github.com/Employes/Paperless/compare/v1.67.0...v1.67.1) (2025-03-14)
+
+
+### Bug Fixes
+
+* **conventions:** Set dependencies to hard versions ([43c6577](https://github.com/Employes/Paperless/commit/43c6577a22cd908230c237a0b76037d8320e11b2))
+
+
+
+
+
 # [1.67.0](https://github.com/Employes/Paperless/compare/v1.66.0...v1.67.0) (2025-03-14)
 
 
