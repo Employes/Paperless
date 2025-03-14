@@ -3,6 +3,15 @@
 	[formGroup]="form"
 >
 	<div class="flex gap-2">
+		<p-checkbox formControlName="checkboxOne"> checkbox-one </p-checkbox>
+		<p-checkbox formControlName="checkboxTwo"> checkbox-two </p-checkbox>
+	</div>
+
+	<p-button (click)="form.get('checkboxOne')?.setValue('indeterminate')">
+		Set checbox-one to indeterminate
+	</p-button>
+
+	<div class="flex gap-2">
 		<p-radio
 			name="test"
 			value="a"
