@@ -18,6 +18,7 @@
 ### Used by
 
  - [p-attachment](../attachment)
+ - [p-input-group](../input-group)
 
 ### Depends on
 
@@ -31,6 +32,7 @@ graph TD;
   p-input-error --> p-icon
   p-tooltip --> p-portal
   p-attachment --> p-input-error
+  p-input-group --> p-input-error
   style p-input-error fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

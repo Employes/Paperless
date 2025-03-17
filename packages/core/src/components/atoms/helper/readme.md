@@ -22,6 +22,7 @@
 ### Used by
 
  - [p-field-container](../../molecules/field-container)
+ - [p-input-group](../../molecules/input-group)
 
 ### Depends on
 
@@ -33,6 +34,7 @@ graph TD;
   p-helper --> p-tooltip
   p-tooltip --> p-portal
   p-field-container --> p-helper
+  p-input-group --> p-helper
   style p-helper fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
