@@ -13,47 +13,68 @@ import StepperDocs from '../../../packages/core/src/components/molecules/stepper
 ## Horizontal
 
 <Canvas>
-    <p-stepper active-step={2}>
-        <p-stepper-item>
-            <span className="font-semibold" slot="content">
-                Step 1
-            </span>
-        </p-stepper-item>
-        <p-stepper-item>
-            <span className="font-semibold" slot="content">
-                Step 2
-            </span>
-        </p-stepper-item>
-        <p-stepper-item>
-            <span className="font-semibold" slot="content">
-                Step 3
-            </span>
-        </p-stepper-item>
-    </p-stepper>
+	<p-stepper active-step={2}>
+		<p-stepper-item>
+			<span
+				className='font-semibold'
+				slot='content'
+			>
+				Step 1
+			</span>
+		</p-stepper-item>
+		<p-stepper-item>
+			<span
+				className='font-semibold'
+				slot='content'
+			>
+				Step 2
+			</span>
+		</p-stepper-item>
+		<p-stepper-item>
+			<span
+				className='font-semibold'
+				slot='content'
+			>
+				Step 3
+			</span>
+		</p-stepper-item>
+	</p-stepper>
 </Canvas>
 
 ## Vertical
 
 <Canvas>
-    <div class="h-48">
-        <p-stepper active-step={2} direction="vertical">
-            <p-stepper-item>
-                <span className="font-semibold" slot="content">
-                    Step 1
-                </span>
-            </p-stepper-item>
-            <p-stepper-item>
-                <span className="font-semibold" slot="content">
-                    Step 2
-                </span>
-            </p-stepper-item>
-            <p-stepper-item>
-                <span className="font-semibold" slot="content">
-                    Step 3
-                </span>
-            </p-stepper-item>
-        </p-stepper>
-    </div>
+	<div class='h-48'>
+		<p-stepper
+			active-step={2}
+			direction='vertical'
+		>
+			<p-stepper-item>
+				<span
+					className='font-semibold'
+					slot='content'
+				>
+					Step 1
+				</span>
+			</p-stepper-item>
+			<p-stepper-item>
+				<span
+					className='font-semibold'
+					slot='content'
+				>
+					Step 2
+				</span>
+			</p-stepper-item>
+			<p-stepper-item>
+				<span
+					className='font-semibold'
+					slot='content'
+				>
+					Step 3
+				</span>
+			</p-stepper-item>
+		</p-stepper>
+	</div>
 </Canvas>
 
 ## Content Position
@@ -61,53 +82,74 @@ import StepperDocs from '../../../packages/core/src/components/molecules/stepper
 ## End (Default)
 
 <Canvas>
-    <div class="h-48">
-        <p-stepper active-step={2} direction="vertical">
-            <p-stepper-item>
-                <span className="font-semibold" slot="content">
-                    Step 1
-                </span>
-            </p-stepper-item>
-            <p-stepper-item>
-                <span className="font-semibold" slot="content">
-                    Step 2
-                </span>
-            </p-stepper-item>
-            <p-stepper-item>
-                <span className="font-semibold" slot="content">
-                    Step 3
-                </span>
-            </p-stepper-item>
-        </p-stepper>
-    </div>
+	<div class='h-48'>
+		<p-stepper
+			active-step={2}
+			direction='vertical'
+		>
+			<p-stepper-item>
+				<span
+					className='font-semibold'
+					slot='content'
+				>
+					Step 1
+				</span>
+			</p-stepper-item>
+			<p-stepper-item>
+				<span
+					className='font-semibold'
+					slot='content'
+				>
+					Step 2
+				</span>
+			</p-stepper-item>
+			<p-stepper-item>
+				<span
+					className='font-semibold'
+					slot='content'
+				>
+					Step 3
+				</span>
+			</p-stepper-item>
+		</p-stepper>
+	</div>
 </Canvas>
 
 ## Start
 
 <Canvas>
-    <div class="h-48">
-        <p-stepper
-            active-step={2}
-            direction="vertical"
-            content-position="start"
-        >
-            <p-stepper-item>
-                <span className="font-semibold" slot="content">
-                    Step 1
-                </span>
-            </p-stepper-item>
-            <p-stepper-item>
-                <span className="font-semibold" slot="content">
-                    Step 2
-                </span>
-            </p-stepper-item>
-            <p-stepper-item>
-                <span className="font-semibold" slot="content">
-                    Step 3
-                </span>
-            </p-stepper-item>
-        </p-stepper>
-    </div>
+	<div class='h-48'>
+		<p-stepper
+			active-step={2}
+			direction='vertical'
+			content-position='start'
+		>
+			<p-stepper-item>
+				<span
+					className='font-semibold'
+					slot='content'
+				>
+					Step 1
+				</span>
+			</p-stepper-item>
+			<p-stepper-item>
+				<span
+					className='font-semibold'
+					slot='content'
+				>
+					Step 2
+				</span>
+			</p-stepper-item>
+			<p-stepper-item>
+				<span
+					className='font-semibold'
+					slot='content'
+				>
+					Step 3
+				</span>
+			</p-stepper-item>
+		</p-stepper>
+	</div>
 </Canvas>
 
 ## Other content
@@ -115,21 +157,21 @@ import StepperDocs from '../../../packages/core/src/components/molecules/stepper
 ## Inputs vertical
 
 <Canvas>
-    <div class="h-48">
-        <p-stepper
-            active-step={0}
-            direction="vertical"
-            content-position="start"
-        >
-            <p-stepper-item finished={true}>
-                <input class="p-input" type="text" slot="content" />
-            </p-stepper-item>
-            <p-stepper-item active={true}>
-                <input class="p-input" type="text" slot="content" />
-            </p-stepper-item>
-            <p-stepper-item>
-                <input class="p-input" type="text" slot="content" />
-            </p-stepper-item>
-        </p-stepper>
-    </div>
+	<div class='h-48'>
+		<p-stepper
+			active-step={0}
+			direction='vertical'
+			content-position='start'
+		>
+			<p-stepper-item finished={true}>
+				<p-field slot='content' />
+			</p-stepper-item>
+			<p-stepper-item active={true}>
+				<p-field slot='content' />
+			</p-stepper-item>
+			<p-stepper-item>
+				<p-field slot='content' />
+			</p-stepper-item>
+		</p-stepper>
+	</div>
 </Canvas>

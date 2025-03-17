@@ -1,33 +1,36 @@
 import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
 import { StoryCategories } from '../../categories';
 
-<Meta title={`${StoryCategories.Atoms}/Input`} />
+<Meta title={`${StoryCategories.Atoms}/Deprecated/Input`} />
 
 # Input
 
 ## Usage:
 
 ```html
-<input class="p-input" ...props />
+<input
+	class="p-input"
+	...props
+/>
 ```
 
 ## Support
 
 Current we only support a small list of types:
 
--   text
--   number
--   date
--   month
--   datetime-local
--   time
--   tel
--   password
--   email
--   textarea
--   checkbox
--   toggle
--   radio
+- text
+- number
+- date
+- month
+- datetime-local
+- time
+- tel
+- password
+- email
+- textarea
+- checkbox
+- toggle
+- radio
 
 # Examples
 
@@ -36,50 +39,67 @@ Current we only support a small list of types:
 ### Disabled
 
 <Canvas>
-    <input class="p-input" disabled type="text" placeholder="placeholder" />
-    <input
-        class="p-input"
-        disabled
-        type="text"
-        placeholder="placeholder"
-        value="with content"
-    />
+	<input
+		class='p-input'
+		disabled
+		type='text'
+		placeholder='placeholder'
+	/>
+	<input
+		class='p-input'
+		disabled
+		type='text'
+		placeholder='placeholder'
+		value='with content'
+	/>
 </Canvas>
 
 ### Default
 
 <Canvas>
-    <input class="p-input" type="text" placeholder="placeholder" />
-    <input
-        class="p-input"
-        type="text"
-        placeholder="placeholder"
-        value="with content"
-    />
+	<input
+		class='p-input'
+		type='text'
+		placeholder='placeholder'
+	/>
+	<input
+		class='p-input'
+		type='text'
+		placeholder='placeholder'
+		value='with content'
+	/>
 </Canvas>
 
 ### Focused
 
 <Canvas>
-    <input class="p-input focus" type="text" placeholder="placeholder" />
-    <input
-        class="p-input focus"
-        type="text"
-        placeholder="placeholder"
-        value="with content"
-    />
+	<input
+		class='p-input focus'
+		type='text'
+		placeholder='placeholder'
+	/>
+	<input
+		class='p-input focus'
+		type='text'
+		placeholder='placeholder'
+		value='with content'
+	/>
 </Canvas>
 
 ### Error
 
 <Canvas>
-    <input class="p-input error" type="text" placeholder="placeholder" />
-    <input
-        class="p-input error"
-        type="text"
-        placeholder="placeholder"
-        value="with content"
-    />
+	<input
+		class='p-input error'
+		type='text'
+		placeholder='placeholder'
+	/>
+	<input
+		class='p-input error'
+		type='text'
+		placeholder='placeholder'
+		value='with content'
+	/>
 </Canvas>
 
 ## Clean
@@ -89,34 +109,65 @@ A class `clean` has been added to hide input addons that are added by the browse
 ### Date
 
 <Canvas>
-    <input class="p-input" type="date" placeholder="Non clean" />
-    <input class="p-input" class="clean" type="date" placeholder="Clean" />
+	<input
+		class='p-input'
+		type='date'
+		placeholder='Non clean'
+	/>
+	<input
+		class='p-input'
+		class='clean'
+		type='date'
+		placeholder='Clean'
+	/>
 </Canvas>
 
 ### Month
 
 <Canvas>
-    <input class="p-input" type="month" placeholder="Non clean" />
-    <input class="p-input" class="clean" type="month" placeholder="Clean" />
+	<input
+		class='p-input'
+		type='month'
+		placeholder='Non clean'
+	/>
+	<input
+		class='p-input'
+		class='clean'
+		type='month'
+		placeholder='Clean'
+	/>
 </Canvas>
 
 ### Datetime local
 
 <Canvas>
-    <input class="p-input" type="datetime-local" placeholder="Non clean" />
-    <input
-        class="p-input"
-        class="clean"
-        type="datetime-local"
-        placeholder="Clean"
-    />
+	<input
+		class='p-input'
+		type='datetime-local'
+		placeholder='Non clean'
+	/>
+	<input
+		class='p-input'
+		class='clean'
+		type='datetime-local'
+		placeholder='Clean'
+	/>
 </Canvas>
 
 ### Time
 
 <Canvas>
-    <input class="p-input" type="time" placeholder="Non clean" />
-    <input class="p-input" class="clean" type="time" placeholder="Clean" />
+	<input
+		class='p-input'
+		type='time'
+		placeholder='Non clean'
+	/>
+	<input
+		class='p-input'
+		class='clean'
+		type='time'
+		placeholder='Clean'
+	/>
 </Canvas>
 
 ## Types
@@ -124,98 +175,204 @@ A class `clean` has been added to hide input addons that are added by the browse
 ### Text input
 
 <Canvas>
-    <input class="p-input" type="text" placeholder="text" />
+	<input
+		class='p-input'
+		type='text'
+		placeholder='text'
+	/>
 </Canvas>
 
 ### Number input
 
 <Canvas>
-    <input class="p-input" type="number" placeholder="0" />
+	<input
+		class='p-input'
+		type='number'
+		placeholder='0'
+	/>
 </Canvas>
 
 ### Textarea
 
 <Canvas>
-    <textarea class="p-input" placeholder="Write your cool story here" />
+	<textarea
+		class='p-input'
+		placeholder='Write your cool story here'
+	/>
 </Canvas>
 
 ### Date
 
 <Canvas>
-    <input class="p-input" type="date" placeholder="Choose a date" />
+	<input
+		class='p-input'
+		type='date'
+		placeholder='Choose a date'
+	/>
 </Canvas>
 
 ### Month
 
 <Canvas>
-    <input class="p-input" type="month" placeholder="Choose a month" />
+	<input
+		class='p-input'
+		type='month'
+		placeholder='Choose a month'
+	/>
 </Canvas>
 
 ### Datetime local
 
 <Canvas>
-    <input class="p-input" type="datetime-local" placeholder="Choose a date" />
+	<input
+		class='p-input'
+		type='datetime-local'
+		placeholder='Choose a date'
+	/>
 </Canvas>
 
 ### Time
 
 <Canvas>
-    <input class="p-input" type="time" placeholder="Choose a time" />
+	<input
+		class='p-input'
+		type='time'
+		placeholder='Choose a time'
+	/>
 </Canvas>
 
 ### Telephone
 
 <Canvas>
-    <input class="p-input" type="tel" placeholder="Choose a telephone number" />
+	<input
+		class='p-input'
+		type='tel'
+		placeholder='Choose a telephone number'
+	/>
 </Canvas>
 
 ### Password
 
 <Canvas>
-    <input class="p-input" type="password" placeholder="Choose a password" />
+	<input
+		class='p-input'
+		type='password'
+		placeholder='Choose a password'
+	/>
 </Canvas>
 
 ### Email
 
 <Canvas>
-    <input class="p-input" type="email" placeholder="Choose a email" />
+	<input
+		class='p-input'
+		type='email'
+		placeholder='Choose a email'
+	/>
 </Canvas>
 
 ### Checkbox
 
 <Canvas>
-    <input class="p-input" type="checkbox" />
-    <input class="p-input" type="checkbox" checked />
-    <input class="p-input indeterminate" type="checkbox" />
-    <input class="p-input" type="checkbox" disabled />
-    <input class="p-input error" type="checkbox" />
-    <input class="p-input size-small" type="checkbox" />
-    <input class="p-input size-small" type="checkbox" checked />
-    <input class="p-input size-small indeterminate" type="checkbox" />
-    <input class="p-input size-small" type="checkbox" disabled />
-    <input class="p-input size-small error" type="checkbox" />
+	<input
+		class='p-input'
+		type='checkbox'
+	/>
+	<input
+		class='p-input'
+		type='checkbox'
+		checked
+	/>
+	<input
+		class='p-input indeterminate'
+		type='checkbox'
+	/>
+	<input
+		class='p-input'
+		type='checkbox'
+		disabled
+	/>
+	<input
+		class='p-input error'
+		type='checkbox'
+	/>
+	<input
+		class='p-input size-small'
+		type='checkbox'
+	/>
+	<input
+		class='p-input size-small'
+		type='checkbox'
+		checked
+	/>
+	<input
+		class='p-input size-small indeterminate'
+		type='checkbox'
+	/>
+	<input
+		class='p-input size-small'
+		type='checkbox'
+		disabled
+	/>
+	<input
+		class='p-input size-small error'
+		type='checkbox'
+	/>
 </Canvas>
 
 ### Toggle
 
 <Canvas>
-    <input class="p-toggle" type="checkbox" />
-    <input class="p-toggle" type="checkbox" checked />
-    <input class="p-toggle" type="checkbox" disabled />
-    <input class="p-toggle error" type="checkbox" />
+	<input
+		class='p-toggle'
+		type='checkbox'
+	/>
+	<input
+		class='p-toggle'
+		type='checkbox'
+		checked
+	/>
+	<input
+		class='p-toggle'
+		type='checkbox'
+		disabled
+	/>
+	<input
+		class='p-toggle error'
+		type='checkbox'
+	/>
 </Canvas>
 
 ### Radio
 
 <Canvas>
-    <input class="p-input" type="radio" />
-    <input class="p-input" type="radio" checked />
-    <input class="p-input" type="radio" disabled />
-    <input class="p-input error" type="radio" />
+	<input
+		class='p-input'
+		type='radio'
+	/>
+	<input
+		class='p-input'
+		type='radio'
+		checked
+	/>
+	<input
+		class='p-input'
+		type='radio'
+		disabled
+	/>
+	<input
+		class='p-input error'
+		type='radio'
+	/>
 </Canvas>
 
 ### Range
 
 <Canvas>
-    <input class="p-input" type="range" min="0" max="100" />
+	<input
+		class='p-input'
+		type='range'
+		min='0'
+		max='100'
+	/>
 </Canvas>
