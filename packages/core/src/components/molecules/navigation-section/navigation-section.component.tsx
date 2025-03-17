@@ -2,7 +2,7 @@ import { Component, h, Host, Prop } from '@stencil/core';
 
 @Component({
 	tag: 'p-navigation-section',
-	styleUrl: 'navigation-section.component.scss',
+	styleUrl: 'navigation-section.component.css',
 })
 export class NavigationSection {
 	/**

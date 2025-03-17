@@ -32,7 +32,7 @@ const dropdownContainerClass = cva(['z-dropdown hidden'], {
 
 @Component({
 	tag: 'p-dropdown',
-	styleUrl: 'dropdown.component.scss',
+	styleUrl: 'dropdown.component.css',
 })
 export class Dropdown {
 	/**

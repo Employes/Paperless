@@ -44,7 +44,7 @@ const textContainer = cva(
 
 @Component({
 	tag: 'p-select',
-	styleUrl: 'select.component.scss',
+	styleUrl: 'select.component.css',
 })
 export class Select {
 	/**
