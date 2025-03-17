@@ -1,0 +1,74 @@
+:host {
+	@apply flex w-full flex-col;
+	@apply outline-none #{!important};
+
+	.input-label {
+		@apply mb-[2px] text-xs font-semibold uppercase tracking-wider text-storm-vague;
+	}
+
+	.input-header {
+		@apply mb-[2px] flex items-end gap-2;
+	}
+
+	.content {
+		@apply flex w-full;
+
+		.prefix,
+		.suffix {
+			@apply box-border flex-1 text-storm;
+			@apply h-full;
+		}
+
+		.prefix {
+			@apply rounded-br-none rounded-tr-none;
+			@apply border-r-0 #{!important};
+			@apply order-1;
+			@apply pr-2;
+		}
+
+		.suffix {
+			@apply rounded-bl-none rounded-tl-none;
+			@apply order-3;
+			@apply pl-2;
+			@apply border-l-0 #{!important};
+		}
+	}
+}
+
+:host(.focused),
+:host([focused]),
+:host(:focus-within),
+:host(:focus) {
+	@apply outline-none #{!important};
+
+	.prefix,
+	.suffix {
+		@apply text-indigo;
+	}
+}
+
+:host(.error),
+:host([error]) {
+	.prefix,
+	.suffix {
+		@apply text-negative;
+	}
+
+	.suffix {
+		@apply items-start py-[calc(0.75rem-1px)];
+	}
+}
+
+:host(.disabled),
+:host([disabled]) {
+	.prefix,
+	.suffix {
+	}
+}
+
+:host(.size-small.error),
+:host(.size-small[error]) {
+	.suffix {
+		@apply py-2;
+	}
+}
