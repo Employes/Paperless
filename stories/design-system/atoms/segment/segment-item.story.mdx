@@ -2,7 +2,7 @@ import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
 import { StoryCategories } from '../../../categories';
 import SegmentItemDocs from '../../../../packages/core/src/components/atoms/segment-item/readme.md';
 
-<Meta title={`${StoryCategories.Atoms}/Segment/Item`} />
+<Meta title={`${StoryCategories.Atoms}/Rebranding/Segment/Item`} />
 
 <SegmentItemDocs />
 
@@ -11,37 +11,24 @@ import SegmentItemDocs from '../../../../packages/core/src/components/atoms/segm
 ### Default
 
 <Canvas>
-    <div class="flex justify-center items-center gap-4">
-        <p-segment-item>I am an item</p-segment-item>
-        <p-segment-item icon="grid" icon-only />
-        <p-segment-item size="big">Big</p-segment-item>
-        <p-segment-item size="big" icon="grid">Big & Icon</p-segment-item>
-    </div>
+	<div class='flex items-center justify-center gap-4'>
+		<p-segment-item>I am an item</p-segment-item>
+		<p-segment-item
+			icon='hash'
+			icon-only
+		/>
+	</div>
 </Canvas>
 
 ### Active
 
 <Canvas>
-    <div class="flex justify-center items-center gap-4">
-        <p-segment-item active>I am an active item</p-segment-item>
-        <p-segment-item icon="grid" icon-only active />
-        <p-segment-item size="big" active>Big</p-segment-item>
-        <p-segment-item size="big" icon="grid" active>Big & Icon</p-segment-item>
-    </div>
-</Canvas>
-
-
-### Design Example Big
-
-<Canvas>
-    <div class="flex justify-center items-center gap-4">
-        <p-segment-item size="big" icon="grid">
-            <span>Item</span>
-            <span slot="description">Item subtext, item subtext, item subtext, item subtext</span>
-        </p-segment-item>
-        <p-segment-item size="big" icon="grid" active>
-            <span>Item</span>
-            <span slot="description">Item subtext, item subtext, item subtext, item subtext</span>
-        </p-segment-item>
-    </div>
+	<div class='flex items-center justify-center gap-4'>
+		<p-segment-item active>I am an active item</p-segment-item>
+		<p-segment-item
+			icon='hash'
+			icon-only
+			active
+		/>
+	</div>
 </Canvas>
