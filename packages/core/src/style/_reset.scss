@@ -1,7 +1,10 @@
 @layer base {
+	* {
+		@apply font-geist;
+	}
+
 	html,
 	body {
-		@apply font-geist;
 		@apply w-full;
 		@apply bg-white;
 		@apply max-w-screen-safe;
