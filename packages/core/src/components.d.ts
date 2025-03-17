@@ -1820,6 +1820,36 @@ export namespace Components {
          */
         "placement": 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end';
     }
+    interface PToggle {
+        /**
+          * Wether the checkbox is checked
+         */
+        "checked": boolean;
+        /**
+          * Wether the checkbox is disabled
+         */
+        "disabled": boolean;
+        /**
+          * The id of the checkbox button
+         */
+        "id": string;
+        /**
+          * Wether the checkbox is in indeterminate state
+         */
+        "indeterminate": boolean;
+        /**
+          * The name of the checkbox button
+         */
+        "name": string;
+        /**
+          * Wether the checkbox is required
+         */
+        "required": boolean;
+        /**
+          * The size of the checkbox
+         */
+        "size": 'sm' | 'base';
+    }
     interface PTooltip {
         /**
           * Wether to someone can manually close the popover
@@ -1958,6 +1988,10 @@ export interface PTableHeaderCustomEvent<T> extends CustomEvent<T> {
 export interface PToastCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPToastElement;
+}
+export interface PToggleCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPToggleElement;
 }
 export interface PTooltipCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -2713,6 +2747,24 @@ declare global {
         prototype: HTMLPToastContainerElement;
         new (): HTMLPToastContainerElement;
     };
+    interface HTMLPToggleElementEventMap {
+        "checkedChange": boolean;
+        "indeterminateChange": boolean;
+    }
+    interface HTMLPToggleElement extends Components.PToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPToggleElementEventMap>(type: K, listener: (this: HTMLPToggleElement, ev: PToggleCustomEvent<HTMLPToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPToggleElementEventMap>(type: K, listener: (this: HTMLPToggleElement, ev: PToggleCustomEvent<HTMLPToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPToggleElement: {
+        prototype: HTMLPToggleElement;
+        new (): HTMLPToggleElement;
+    };
     interface HTMLPTooltipElementEventMap {
         "isOpen": boolean;
     }
@@ -2805,6 +2857,7 @@ declare global {
         "p-table-row-action": HTMLPTableRowActionElement;
         "p-toast": HTMLPToastElement;
         "p-toast-container": HTMLPToastContainerElement;
+        "p-toggle": HTMLPToggleElement;
         "p-tooltip": HTMLPTooltipElement;
     }
 }
@@ -4790,6 +4843,44 @@ declare namespace LocalJSX {
          */
         "placement"?: 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end';
     }
+    interface PToggle {
+        /**
+          * Wether the checkbox is checked
+         */
+        "checked"?: boolean;
+        /**
+          * Wether the checkbox is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * The id of the checkbox button
+         */
+        "id"?: string;
+        /**
+          * Wether the checkbox is in indeterminate state
+         */
+        "indeterminate"?: boolean;
+        /**
+          * The name of the checkbox button
+         */
+        "name"?: string;
+        /**
+          * Event whenever the checked changes
+         */
+        "onCheckedChange"?: (event: PToggleCustomEvent<boolean>) => void;
+        /**
+          * Event whenever the indeterminate changes
+         */
+        "onIndeterminateChange"?: (event: PToggleCustomEvent<boolean>) => void;
+        /**
+          * Wether the checkbox is required
+         */
+        "required"?: boolean;
+        /**
+          * The size of the checkbox
+         */
+        "size"?: 'sm' | 'base';
+    }
     interface PTooltip {
         /**
           * Wether to someone can manually close the popover
@@ -4907,6 +4998,7 @@ declare namespace LocalJSX {
         "p-table-row-action": PTableRowAction;
         "p-toast": PToast;
         "p-toast-container": PToastContainer;
+        "p-toggle": PToggle;
         "p-tooltip": PTooltip;
     }
 }
@@ -4988,6 +5080,7 @@ declare module "@stencil/core" {
             "p-table-row-action": LocalJSX.PTableRowAction & JSXBase.HTMLAttributes<HTMLPTableRowActionElement>;
             "p-toast": LocalJSX.PToast & JSXBase.HTMLAttributes<HTMLPToastElement>;
             "p-toast-container": LocalJSX.PToastContainer & JSXBase.HTMLAttributes<HTMLPToastContainerElement>;
+            "p-toggle": LocalJSX.PToggle & JSXBase.HTMLAttributes<HTMLPToggleElement>;
             "p-tooltip": LocalJSX.PTooltip & JSXBase.HTMLAttributes<HTMLPTooltipElement>;
         }
     }
