@@ -18,8 +18,8 @@ const radio = cva(
 	{
 		variants: {
 			size: {
-				sm: 'w-4 h-4 after:w-2 after:h-2',
-				base: 'w-6 h-6 after:w-3 after:h-3',
+				sm: 'w-4 h-4',
+				base: 'w-6 h-6',
 			},
 			disabled: {
 				false: [
