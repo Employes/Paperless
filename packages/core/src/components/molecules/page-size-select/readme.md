@@ -48,6 +48,8 @@ graph TD;
   p-button --> p-icon
   p-button --> p-loader
   p-dropdown-menu-item --> p-icon
+  p-dropdown-menu-item --> p-checkbox
+  p-checkbox --> p-icon
   p-table-footer --> p-page-size-select
   style p-page-size-select fill:#f9f,stroke:#333,stroke-width:4px
 ```
