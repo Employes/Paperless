@@ -59,7 +59,7 @@ const contentContainer = cva(
 
 @Component({
 	tag: 'p-backdrop',
-	styleUrl: 'backdrop.component.scss',
+	styleUrl: 'backdrop.component.css',
 })
 export class Backdrop {
 	/**

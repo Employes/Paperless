@@ -2,7 +2,7 @@ import { Component, h, Host } from '@stencil/core';
 
 @Component({
 	tag: 'p-badge',
-	styleUrl: 'badge.component.scss',
+	styleUrl: 'badge.component.css',
 	shadow: false,
 })
 export class Badge {

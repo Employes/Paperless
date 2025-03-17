@@ -2,7 +2,7 @@ import { Component, h, Host, Prop } from '@stencil/core';
 
 @Component({
 	tag: 'p-avatar-group',
-	styleUrl: 'avatar-group.component.scss',
+	styleUrl: 'avatar-group.component.css',
 })
 export class AvatarGroup {
 	/**

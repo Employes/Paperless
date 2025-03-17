@@ -20,7 +20,7 @@ const profileContent = cva(['flex gap-2 items-center flex-1 min-w-0'], {
 
 @Component({
 	tag: 'p-profile',
-	styleUrl: 'profile.component.scss',
+	styleUrl: 'profile.component.css',
 })
 export class Profile {
 	/**
