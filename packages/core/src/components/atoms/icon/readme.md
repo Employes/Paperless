@@ -29,6 +29,7 @@
  - [p-field](../../molecules/field)
  - [p-info-panel](../info-panel)
  - [p-input-error](../../molecules/input-error)
+ - [p-input-group](../../molecules/input-group)
  - [p-label](../../molecules/label)
  - [p-navigation-item](../../molecules/navigation-item)
  - [p-pagination](../../molecules/pagination)
@@ -51,6 +52,7 @@ graph TD;
   p-field --> p-icon
   p-info-panel --> p-icon
   p-input-error --> p-icon
+  p-input-group --> p-icon
   p-label --> p-icon
   p-navigation-item --> p-icon
   p-pagination --> p-icon
