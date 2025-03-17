@@ -1,6 +1,4 @@
-# p-dropdown-menu-item
-
-
+# Dropdown-menu item
 
 <!-- Auto Generated Below -->
 
@@ -28,11 +26,14 @@
 ### Depends on
 
 - [p-icon](../icon)
+- [p-checkbox](../checkbox)
 
 ### Graph
 ```mermaid
 graph TD;
   p-dropdown-menu-item --> p-icon
+  p-dropdown-menu-item --> p-checkbox
+  p-checkbox --> p-icon
   p-page-size-select --> p-dropdown-menu-item
   p-select --> p-dropdown-menu-item
   style p-dropdown-menu-item fill:#f9f,stroke:#333,stroke-width:4px
