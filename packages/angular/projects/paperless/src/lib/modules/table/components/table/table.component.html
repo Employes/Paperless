@@ -55,7 +55,7 @@
 					[indeterminate]="_selectionIndeterminate()"
 					[class.opacity-0]="rowSelectionLimit !== undefined"
 					[disabled]="rowSelectionLimit !== undefined"
-				/>
+				></p-checkbox>
 			</ng-template>
 		</ng-container>
 	</p-table-row>
@@ -125,7 +125,7 @@
 									(checkedChange)="_checkboxChange($event.target, rowIndex)"
 									[disabled]="_checkboxDisabled(item, rowIndex)"
 									[checked]="_selectionContains(item, rowIndex)"
-								/>
+								></p-checkbox>
 							</ng-template>
 						</ng-container>
 
