@@ -56,6 +56,11 @@ export class NavigationItem {
 	@Prop() active: boolean = false;
 
 	/**
+	 * Wether the navigation item is loading
+	 */
+	@Prop() loading: boolean = false;
+
+	/**
 	 * The element to use for the navigation item
 	 */
 	@Prop() as: string = 'a';
@@ -106,6 +111,8 @@ export class NavigationItem {
 					{!!this.counter && this.counter !== '0' && (
 						<p-badge>{this.counter}</p-badge>
 					)}
+
+					{!!this.loading && <p-loader class='ml-auto' />}
 				</TagType>
 			</Host>
 		);
