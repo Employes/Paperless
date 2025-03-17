@@ -3,6 +3,17 @@
 	[formGroup]="form"
 >
 	<div class="flex gap-2">
+		<p-toggle formControlName="toggleOne"> toggle-one </p-toggle>
+		<p-toggle formControlName="toggleTwo"> toggle-two </p-toggle>
+	</div>
+
+	<p-button
+		(click)="form.get('toggleOne')?.setValue(!form.get('toggleOne')?.value)"
+	>
+		Toggle toggle-one
+	</p-button>
+
+	<div class="flex gap-2">
 		<p-checkbox formControlName="checkboxOne"> checkbox-one </p-checkbox>
 		<p-checkbox formControlName="checkboxTwo"> checkbox-two </p-checkbox>
 	</div>
