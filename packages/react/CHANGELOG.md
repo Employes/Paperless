@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.21](https://github.com/ionic-team/ionic/compare/v2.0.1-beta.20...v2.0.1-beta.21) (2025-03-17)
+
+
+### Features
+
+* **atoms:** Add checkbox component ([4aefda7](https://github.com/ionic-team/ionic/commit/4aefda71ba0c8129023b3f9c01e7cfe325eefecf))
+* **atoms:** Add toggle component ([a667a66](https://github.com/ionic-team/ionic/commit/a667a6613c232d5663e7117674770e66e0c150bd))
+
+
+
+
+
 ## [2.0.1-beta.20](https://github.com/ionic-team/ionic/compare/v2.0.1-beta.19...v2.0.1-beta.20) (2025-03-13)
 
 
