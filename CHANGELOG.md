@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.25](https://github.com/employes/paperless/compare/v2.0.1-beta.24...v2.0.1-beta.25) (2025-03-17)
+
+
+### Bug Fixes
+
+* **angular/organisms/table:** Don't use self closing tags (yet) ([de50937](https://github.com/employes/paperless/commit/de5093708c2751621101770e7273619a18d7ffcb))
+
+
+
+
+
 ## [2.0.1-beta.24](https://github.com/employes/paperless/compare/v2.0.1-beta.23...v2.0.1-beta.24) (2025-03-17)
 
 
