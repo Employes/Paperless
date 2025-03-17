@@ -22,7 +22,7 @@ export default {
 		800: '#2F6407',
 		DEFAULT: '#5CC30E',
 		500: '#5CC30E',
-		100: '#5CC30E',
+		100: '#D5FBC7',
 		50: '#EAFDE3',
 	},
 	amber: {
