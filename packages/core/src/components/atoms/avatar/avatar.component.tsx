@@ -79,7 +79,7 @@ export class Avatar {
 				})}
 			>
 				{this._failed ? (
-					this.letters?.[0] ?? ' '
+					<span>{this.letters?.[0] ?? ' '}</span>
 				) : (
 					<img
 						src={this._src}
