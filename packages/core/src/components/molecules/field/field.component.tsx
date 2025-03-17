@@ -203,6 +203,11 @@ export class Field {
 	@Prop({ reflect: true }) required: boolean = true;
 
 	/**
+	 * Wether to autofocus the field
+	 */
+	@Prop({ reflect: true }) autofocus: boolean = false;
+
+	/**
 	 * The error to display
 	 */
 	@Prop({ reflect: true }) error: string;
@@ -260,6 +265,10 @@ export class Field {
 	@State() private _focused = false;
 
 	private _inputRef: HTMLInputElement | HTMLTextAreaElement;
+
+	componentDidLoad() {
+		this._checkAutoFocus();
+	}
 
 	render() {
 		const {
@@ -479,5 +488,18 @@ export class Field {
 		const value = (ev.target as HTMLTextAreaElement | HTMLInputElement).value;
 		this.value = value;
 		this.valueChange.emit(value);
+	}
+
+	private _checkAutoFocus() {
+		if (!this.autofocus) {
+			return;
+		}
+
+		if (!this._inputRef) {
+			setTimeout(() => this._checkAutoFocus(), 100);
+			return;
+		}
+
+		this._focusInput();
 	}
 }
