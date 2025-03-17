@@ -833,14 +833,6 @@ export namespace Components {
     }
     interface PLabel {
         /**
-          * Define the behavior of the label
-         */
-        "behavior": | 'icon'
-		| 'circle'
-		| 'combination'
-		| 'text'
-		| 'icon-only';
-        /**
           * Icon to show on the label
          */
         "icon": IconVariant;
@@ -849,9 +841,9 @@ export namespace Components {
          */
         "iconFlip": IconFlipOptions;
         /**
-          * Icon position
+          * Wether to only show the icon
          */
-        "iconPosition": 'start' | 'end';
+        "iconOnly": boolean;
         /**
           * Icon rotate
          */
@@ -861,18 +853,13 @@ export namespace Components {
          */
         "keepMobileContent": boolean;
         /**
-          * The size of the label
-         */
-        "size": 'small' | 'default';
-        /**
           * Variant of the label
          */
-        "variant": | 'neutral'
-		| 'positive'
-		| 'unbiased'
+        "variant": | 'positive'
+		| 'biased'
 		| 'negative'
-		| 'special'
-		| 'info';
+		| 'neutral'
+		| 'unavailable';
     }
     interface PLayout {
         /**
@@ -3728,14 +3715,6 @@ declare namespace LocalJSX {
     }
     interface PLabel {
         /**
-          * Define the behavior of the label
-         */
-        "behavior"?: | 'icon'
-		| 'circle'
-		| 'combination'
-		| 'text'
-		| 'icon-only';
-        /**
           * Icon to show on the label
          */
         "icon"?: IconVariant;
@@ -3744,9 +3723,9 @@ declare namespace LocalJSX {
          */
         "iconFlip"?: IconFlipOptions;
         /**
-          * Icon position
+          * Wether to only show the icon
          */
-        "iconPosition"?: 'start' | 'end';
+        "iconOnly"?: boolean;
         /**
           * Icon rotate
          */
@@ -3756,18 +3735,13 @@ declare namespace LocalJSX {
          */
         "keepMobileContent"?: boolean;
         /**
-          * The size of the label
-         */
-        "size"?: 'small' | 'default';
-        /**
           * Variant of the label
          */
-        "variant"?: | 'neutral'
-		| 'positive'
-		| 'unbiased'
+        "variant"?: | 'positive'
+		| 'biased'
 		| 'negative'
-		| 'special'
-		| 'info';
+		| 'neutral'
+		| 'unavailable';
     }
     interface PLayout {
         /**

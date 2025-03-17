@@ -305,10 +305,7 @@ export class TableHeader {
 
 	private _getLabel(amount, variant: 'mobile' | 'default' = 'default') {
 		return (
-			<p-label
-				size='small'
-				variant='negative'
-				behavior='text'
+			<p-badge
 				class={`ml-1 ${
 					variant === 'default'
 						? 'hidden desktop-xs:flex'
@@ -316,7 +313,7 @@ export class TableHeader {
 				}`}
 			>
 				{amount}
-			</p-label>
+			</p-badge>
 		);
 	}
 }
