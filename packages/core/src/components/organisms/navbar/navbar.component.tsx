@@ -56,7 +56,7 @@ const backdrop = cva(
 
 @Component({
 	tag: 'p-navbar',
-	styleUrl: 'navbar.component.scss',
+	styleUrl: 'navbar.component.css',
 	shadow: true,
 })
 export class Navbar {

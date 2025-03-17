@@ -3,6 +3,7 @@ import { Button } from '../button/button.component';
 
 @Component({
 	tag: 'p-button-group',
+	styleUrl: 'button-group.component.css',
 	shadow: true,
 })
 export class ButtonGroup {

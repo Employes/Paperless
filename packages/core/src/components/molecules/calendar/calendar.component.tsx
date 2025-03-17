@@ -71,7 +71,7 @@ const view = cva(['flex flex-col gap-2', 'w-full'], {
 
 @Component({
 	tag: 'p-calendar',
-	styleUrl: 'calendar.component.scss',
+	styleUrl: 'calendar.component.css',
 })
 export class Calendar {
 	/**

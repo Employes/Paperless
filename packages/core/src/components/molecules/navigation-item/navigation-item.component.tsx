@@ -41,7 +41,7 @@ const navigationItemIconContainer = cva(
 
 @Component({
 	tag: 'p-navigation-item',
-	styleUrl: './navigation-item.component.scss',
+	styleUrl: './navigation-item.component.css',
 	shadow: false,
 })
 export class NavigationItem {
