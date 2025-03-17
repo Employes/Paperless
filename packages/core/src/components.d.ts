@@ -1008,6 +1008,10 @@ export namespace Components {
          */
         "icon": IconVariant;
         /**
+          * Wether the navigation item is loading
+         */
+        "loading": boolean;
+        /**
           * The target of the navigation item
          */
         "target": string;
@@ -3898,6 +3902,10 @@ declare namespace LocalJSX {
           * Icon of the navigation item
          */
         "icon": IconVariant;
+        /**
+          * Wether the navigation item is loading
+         */
+        "loading"?: boolean;
         /**
           * The target of the navigation item
          */
