@@ -31,6 +31,10 @@ export class Icon {
 	 */
 	@Prop() flip: IconFlipOptions = 'none';
 
+	componentDidLoad() {
+		console.warn('[p-icon-deprecated] Deprecated, please use p-icon');
+	}
+
 	render() {
 		const icon = iconsDeprecated[this.variant];
 
