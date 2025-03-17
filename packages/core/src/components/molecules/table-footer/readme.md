@@ -57,6 +57,8 @@ graph TD;
   p-button --> p-icon
   p-button --> p-loader
   p-dropdown-menu-item --> p-icon
+  p-dropdown-menu-item --> p-checkbox
+  p-checkbox --> p-icon
   p-pagination --> p-pagination-item
   p-pagination --> p-icon
   p-table --> p-table-footer

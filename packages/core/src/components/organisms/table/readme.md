@@ -134,6 +134,8 @@ graph TD;
   p-dropdown --> p-portal
   p-dropdown --> p-dropdown-menu-container
   p-dropdown-menu-item --> p-icon
+  p-dropdown-menu-item --> p-checkbox
+  p-checkbox --> p-icon
   p-pagination --> p-pagination-item
   p-pagination --> p-icon
   p-table-row --> p-divider

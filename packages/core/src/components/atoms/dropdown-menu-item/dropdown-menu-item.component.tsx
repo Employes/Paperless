@@ -17,7 +17,7 @@ const dropdownMenuItem = cva(
 				true: null,
 			},
 			disabled: {
-				false: null,
+				false: 'cursor-pointer',
 				true: 'cursor-not-allowed',
 			},
 			enableHover: {
@@ -188,10 +188,10 @@ export class DropdownMenuItem {
 				)}
 
 				{this.checkbox && (
-					<input
-						type='checkbox'
-						class='p-input size-small flex-shrink-0'
+					<p-checkbox
+						size='sm'
 						checked={this.active}
+						disabled={this.disabled}
 					/>
 				)}
 
