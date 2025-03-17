@@ -50,7 +50,7 @@
 - [p-segment-item](../../atoms/segment-item)
 - [p-field](../field)
 - [p-button](../button)
-- [p-label](../../atoms/label)
+- [p-badge](../../atoms/badge)
 
 ### Graph
 ```mermaid
@@ -60,7 +60,7 @@ graph TD;
   p-table-header --> p-segment-item
   p-table-header --> p-field
   p-table-header --> p-button
-  p-table-header --> p-label
+  p-table-header --> p-badge
   p-segment-item --> p-icon
   p-field --> p-field-container
   p-field --> p-icon
@@ -70,7 +70,6 @@ graph TD;
   p-tooltip --> p-portal
   p-button --> p-icon
   p-button --> p-loader
-  p-label --> p-icon
   p-table --> p-table-header
   style p-table-header fill:#f9f,stroke:#333,stroke-width:4px
 ```
