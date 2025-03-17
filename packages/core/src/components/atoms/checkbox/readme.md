@@ -39,6 +39,7 @@
 ### Used by
 
  - [p-dropdown-menu-item](../dropdown-menu-item)
+ - [p-table](../../organisms/table)
 
 ### Depends on
 
@@ -49,6 +50,7 @@
 graph TD;
   p-checkbox --> p-icon
   p-dropdown-menu-item --> p-checkbox
+  p-table --> p-checkbox
   style p-checkbox fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
