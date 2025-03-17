@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.22](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.21...v2.0.1-beta.22) (2025-03-17)
+
+
+### Features
+
+* **molecules/label:** Move & apply rebranding to label component ([5758fda](https://github.com/ionic-team/stencil-component-starter/commit/5758fdaf1344a0c5d5fdcc59bf08e4935be8ea6e))
+
+
+
+
+
 ## [2.0.1-beta.21](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.20...v2.0.1-beta.21) (2025-03-17)
 
 
