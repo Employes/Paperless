@@ -607,6 +607,10 @@ export namespace Components {
     }
     interface PField {
         /**
+          * Wether to autofocus the field
+         */
+        "autofocus": boolean;
+        /**
           * Wether the input group is disabled
          */
         "disabled": boolean;
@@ -830,6 +834,72 @@ export namespace Components {
           * Wether to force show the tooltip
          */
         "forceShowTooltip": boolean;
+    }
+    interface PInputGroup {
+        /**
+          * Wether the input group is disabled
+         */
+        "disabled": boolean;
+        /**
+          * The helper of the input group
+         */
+        "error": string;
+        /**
+          * The error variant to use
+         */
+        "errorVariant": 'auto' | 'suffix' | 'element';
+        /**
+          * The method to use when focusing the input
+         */
+        "focusMethod": 'focus' | 'click';
+        /**
+          * Wether the input group is focused
+         */
+        "focused": boolean;
+        /**
+          * Force show the error tooltip
+         */
+        "forceShowTooltip": boolean;
+        /**
+          * The helper of the input group
+         */
+        "helper": string;
+        /**
+          * Icon of the input group
+         */
+        "icon": IconVariant;
+        /**
+          * Icon flip
+         */
+        "iconFlip": IconFlipOptions;
+        /**
+          * Icon position
+         */
+        "iconPosition": 'start' | 'end';
+        /**
+          * Icon rotate
+         */
+        "iconRotate": RotateOptions;
+        /**
+          * The label of the input group
+         */
+        "label": string;
+        /**
+          * The prefix of the input group
+         */
+        "prefix": string;
+        /**
+          * Wether the field is required
+         */
+        "required": boolean;
+        /**
+          * The size of the input group
+         */
+        "size": 'small' | 'medium';
+        /**
+          * The suffix of the input group
+         */
+        "suffix": string;
     }
     interface PLabel {
         /**
@@ -2355,6 +2425,12 @@ declare global {
         prototype: HTMLPInputErrorElement;
         new (): HTMLPInputErrorElement;
     };
+    interface HTMLPInputGroupElement extends Components.PInputGroup, HTMLStencilElement {
+    }
+    var HTMLPInputGroupElement: {
+        prototype: HTMLPInputGroupElement;
+        new (): HTMLPInputGroupElement;
+    };
     interface HTMLPLabelElement extends Components.PLabel, HTMLStencilElement {
     }
     var HTMLPLabelElement: {
@@ -2798,6 +2874,7 @@ declare global {
         "p-illustration": HTMLPIllustrationElement;
         "p-info-panel": HTMLPInfoPanelElement;
         "p-input-error": HTMLPInputErrorElement;
+        "p-input-group": HTMLPInputGroupElement;
         "p-label": HTMLPLabelElement;
         "p-layout": HTMLPLayoutElement;
         "p-loader": HTMLPLoaderElement;
@@ -3464,6 +3541,10 @@ declare namespace LocalJSX {
     }
     interface PField {
         /**
+          * Wether to autofocus the field
+         */
+        "autofocus"?: boolean;
+        /**
           * Wether the input group is disabled
          */
         "disabled"?: boolean;
@@ -3700,6 +3781,72 @@ declare namespace LocalJSX {
           * Wether to force show the tooltip
          */
         "forceShowTooltip"?: boolean;
+    }
+    interface PInputGroup {
+        /**
+          * Wether the input group is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * The helper of the input group
+         */
+        "error"?: string;
+        /**
+          * The error variant to use
+         */
+        "errorVariant"?: 'auto' | 'suffix' | 'element';
+        /**
+          * The method to use when focusing the input
+         */
+        "focusMethod"?: 'focus' | 'click';
+        /**
+          * Wether the input group is focused
+         */
+        "focused"?: boolean;
+        /**
+          * Force show the error tooltip
+         */
+        "forceShowTooltip"?: boolean;
+        /**
+          * The helper of the input group
+         */
+        "helper"?: string;
+        /**
+          * Icon of the input group
+         */
+        "icon"?: IconVariant;
+        /**
+          * Icon flip
+         */
+        "iconFlip"?: IconFlipOptions;
+        /**
+          * Icon position
+         */
+        "iconPosition"?: 'start' | 'end';
+        /**
+          * Icon rotate
+         */
+        "iconRotate"?: RotateOptions;
+        /**
+          * The label of the input group
+         */
+        "label"?: string;
+        /**
+          * The prefix of the input group
+         */
+        "prefix"?: string;
+        /**
+          * Wether the field is required
+         */
+        "required"?: boolean;
+        /**
+          * The size of the input group
+         */
+        "size"?: 'small' | 'medium';
+        /**
+          * The suffix of the input group
+         */
+        "suffix"?: string;
     }
     interface PLabel {
         /**
@@ -4918,6 +5065,7 @@ declare namespace LocalJSX {
         "p-illustration": PIllustration;
         "p-info-panel": PInfoPanel;
         "p-input-error": PInputError;
+        "p-input-group": PInputGroup;
         "p-label": PLabel;
         "p-layout": PLayout;
         "p-loader": PLoader;
@@ -5000,6 +5148,7 @@ declare module "@stencil/core" {
             "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;
             "p-info-panel": LocalJSX.PInfoPanel & JSXBase.HTMLAttributes<HTMLPInfoPanelElement>;
             "p-input-error": LocalJSX.PInputError & JSXBase.HTMLAttributes<HTMLPInputErrorElement>;
+            "p-input-group": LocalJSX.PInputGroup & JSXBase.HTMLAttributes<HTMLPInputGroupElement>;
             "p-label": LocalJSX.PLabel & JSXBase.HTMLAttributes<HTMLPLabelElement>;
             "p-layout": LocalJSX.PLayout & JSXBase.HTMLAttributes<HTMLPLayoutElement>;
             "p-loader": LocalJSX.PLoader & JSXBase.HTMLAttributes<HTMLPLoaderElement>;

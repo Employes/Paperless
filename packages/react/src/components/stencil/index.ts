@@ -44,6 +44,7 @@ export const PIconDeprecated = /*@__PURE__*/createReactComponent<JSX.PIconDeprec
 export const PIllustration = /*@__PURE__*/createReactComponent<JSX.PIllustration, HTMLPIllustrationElement>('p-illustration');
 export const PInfoPanel = /*@__PURE__*/createReactComponent<JSX.PInfoPanel, HTMLPInfoPanelElement>('p-info-panel');
 export const PInputError = /*@__PURE__*/createReactComponent<JSX.PInputError, HTMLPInputErrorElement>('p-input-error');
+export const PInputGroup = /*@__PURE__*/createReactComponent<JSX.PInputGroup, HTMLPInputGroupElement>('p-input-group');
 export const PLabel = /*@__PURE__*/createReactComponent<JSX.PLabel, HTMLPLabelElement>('p-label');
 export const PLayout = /*@__PURE__*/createReactComponent<JSX.PLayout, HTMLPLayoutElement>('p-layout');
 export const PLoader = /*@__PURE__*/createReactComponent<JSX.PLoader, HTMLPLoaderElement>('p-loader');
