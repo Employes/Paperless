@@ -67,7 +67,7 @@ const portal = cva('', {
 
 @Component({
 	tag: 'p-tooltip',
-	styleUrl: 'tooltip.component.scss',
+	styleUrl: 'tooltip.component.css',
 	shadow: true,
 })
 export class Tooltip {

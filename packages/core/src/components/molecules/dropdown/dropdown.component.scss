@@ -1,9 +1,0 @@
-p-dropdown {
-	p-dropdown-menu-container {
-		@apply hidden;
-
-		&[data-show] {
-			@apply flex;
-		}
-	}
-}

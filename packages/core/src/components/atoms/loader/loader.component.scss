@@ -16,7 +16,7 @@
 	}
 
 	.loading-screen {
-		@apply w-screen-safe h-screen-safe fixed top-0 left-0;
+		@apply fixed left-0 top-0 h-screen-safe w-screen-safe;
 		@apply flex items-center justify-center;
 		@apply bg-mystic;
 

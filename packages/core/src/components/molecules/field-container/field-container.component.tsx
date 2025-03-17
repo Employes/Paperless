@@ -17,7 +17,7 @@ export type templateFunc = () => string;
 
 @Component({
 	tag: 'p-field-container',
-	styleUrl: 'field-container.component.scss',
+	styleUrl: 'field-container.component.css',
 	shadow: true,
 })
 export class FieldContainer {
