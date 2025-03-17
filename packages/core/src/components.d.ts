@@ -1126,10 +1126,6 @@ export namespace Components {
           * Icon rotate
          */
         "iconRotate": RotateOptions;
-        /**
-          * Size of the segment item
-         */
-        "size": 'small' | 'big';
     }
     interface PSelect {
         /**
@@ -4024,10 +4020,6 @@ declare namespace LocalJSX {
           * Icon rotate
          */
         "iconRotate"?: RotateOptions;
-        /**
-          * Size of the segment item
-         */
-        "size"?: 'small' | 'big';
     }
     interface PSelect {
         /**
