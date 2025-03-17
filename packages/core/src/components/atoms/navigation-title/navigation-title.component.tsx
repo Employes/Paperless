@@ -2,8 +2,8 @@ import { Component, h, Host } from '@stencil/core';
 
 @Component({
 	tag: 'p-navigation-title',
-	styleUrl: 'navigation-title.component.scss',
-	shadow: false,
+	styleUrl: 'navigation-title.component.css',
+	shadow: true,
 })
 export class NavigationTitle {
 	render() {

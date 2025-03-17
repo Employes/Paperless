@@ -23,7 +23,7 @@ const avatar = cva(
 
 @Component({
 	tag: 'p-avatar',
-	styleUrl: 'avatar.component.scss',
+	styleUrl: 'avatar.component.css',
 	// shadow: true,
 })
 export class Avatar {
