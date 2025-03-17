@@ -10,7 +10,7 @@ import {
 	State,
 	Watch,
 } from '@stencil/core';
-import { IconVariant } from '../../../components';
+import { IconVariant, PCheckboxCustomEvent } from '../../../components';
 import { tableColumSizesOptions } from '../../../types/constants';
 import {
 	QuickFilter,
@@ -29,6 +29,7 @@ import {
 	defaultSizeOptions,
 } from '../../molecules/page-size-select/constants';
 import { buttonTemplateFunc } from '../../molecules/table-header/table-header.component';
+import { cn } from '../../../utils/cn';
 
 export type templateFunc = () => string;
 export type amountSelectedTemplateFunc = (amount: number) => string;
@@ -838,15 +839,14 @@ export class Table {
 
 		if (variant === 'header') {
 			return (
-				<input
-					class={`p-input ${
-						this._rowSelectionLimit !== undefined && 'opacity-0'
-					}`}
-					type='checkbox'
-					onChange={ev => this._selectAllChange(ev)}
+				<p-checkbox
+					class={cn({
+						'opacity-0': this._rowSelectionLimit !== undefined,
+					})}
 					checked={this._selectionContainsAll()}
 					indeterminate={this._selectionIndeterminate()}
 					disabled={this._rowSelectionLimit !== undefined}
+					onCheckedChange={ev => this._selectAllChange(ev)}
 				/>
 			);
 		}
@@ -856,10 +856,7 @@ export class Table {
 		const selectionContains = this._selectionContains(rowIndex);
 
 		return (
-			<input
-				class='p-input'
-				type='checkbox'
-				onChange={ev => this._checkboxChange(ev?.target, rowIndex)}
+			<p-checkbox
 				disabled={
 					(this.canSelectKey && !item[this.canSelectKey]) ||
 					(this._rowSelectionLimit !== undefined &&
@@ -867,6 +864,7 @@ export class Table {
 						this.selectedRows.length === this._rowSelectionLimit)
 				}
 				checked={selectionContains}
+				onCheckedChange={ev => this._checkboxChange(ev, rowIndex)}
 			/>
 		);
 	}
@@ -919,15 +917,15 @@ export class Table {
 		);
 	}
 
-	private _selectAllChange($event: any, forceValue?: boolean) {
+	private _selectAllChange(
+		{ detail: checked }: PCheckboxCustomEvent<boolean>,
+		forceValue?: boolean
+	) {
 		if (!this._enableRowSelection) {
 			return;
 		}
 
-		const value =
-			forceValue === undefined
-				? this._getCheckedValue($event.target)
-				: forceValue;
+		const value = forceValue === undefined ? checked : forceValue;
 		if (value) {
 			const toAdd = [];
 			for (let i = 0; i < this._items.length; i++) {
@@ -977,14 +975,16 @@ export class Table {
 		this.selectedRowsChange.emit(this.selectedRows);
 	}
 
-	private _checkboxChange(target: any, index: number) {
+	private _checkboxChange(
+		{ detail: checked, target }: PCheckboxCustomEvent<boolean>,
+		index: number
+	) {
 		if (!this._enableRowSelection) {
 			return;
 		}
 
-		const value = this._getCheckedValue(target);
 		if (
-			value &&
+			checked &&
 			this._rowSelectionLimit !== undefined &&
 			this.selectedRows.length >= this._rowSelectionLimit
 		) {
@@ -999,7 +999,7 @@ export class Table {
 			return;
 		}
 
-		if (value) {
+		if (checked) {
 			this.selectedRows = [
 				...this.selectedRows,
 				{
@@ -1025,10 +1025,6 @@ export class Table {
 		this.selectedRows = selection;
 		this.selectedRowsChange.emit(this.selectedRows);
 		this.rowDeselected.emit(row);
-	}
-
-	private _getCheckedValue(target: any) {
-		return target?.checked;
 	}
 
 	private _getSelectionValue(row: any, index: number) {
