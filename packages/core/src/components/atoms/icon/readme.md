@@ -29,7 +29,7 @@
  - [p-field](../../molecules/field)
  - [p-info-panel](../info-panel)
  - [p-input-error](../../molecules/input-error)
- - [p-label](../label)
+ - [p-label](../../molecules/label)
  - [p-navigation-item](../../molecules/navigation-item)
  - [p-pagination](../../molecules/pagination)
  - [p-segment-item](../segment-item)
