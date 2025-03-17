@@ -34,8 +34,7 @@ const icon = cva(['p-icon flex'], {
 
 @Component({
 	tag: 'p-icon',
-	styleUrl: 'icon.component.scss',
-	// shadow: true,
+	styleUrl: 'icon.component.css',
 })
 export class Icon {
 	/**

@@ -34,7 +34,7 @@ const dropdownMenuContainer = cva(
 
 @Component({
 	tag: 'p-dropdown-menu-container',
-	styleUrl: 'dropdown-menu-container.component.scss',
+	styleUrl: 'dropdown-menu-container.component.css',
 })
 export class DropdownMenuContainer {
 	/**

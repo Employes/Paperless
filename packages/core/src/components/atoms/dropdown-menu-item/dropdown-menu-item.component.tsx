@@ -125,7 +125,7 @@ const dropdownMenuItemIcon = cva(['text-base'], {
 
 @Component({
 	tag: 'p-dropdown-menu-item',
-	styleUrl: 'dropdown-menu-item.component.scss',
+	styleUrl: 'dropdown-menu-item.component.css',
 })
 export class DropdownMenuItem {
 	/**

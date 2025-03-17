@@ -24,7 +24,7 @@ import { childOf } from '../../../utils';
 
 @Component({
 	tag: 'p-datepicker',
-	styleUrl: 'datepicker.component.scss',
+	styleUrl: 'datepicker.component.css',
 	shadow: false,
 })
 export class Datepicker {
