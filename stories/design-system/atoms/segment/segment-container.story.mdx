@@ -2,7 +2,7 @@ import { Canvas, Meta } from '@storybook/addon-docs';
 import SegmentContainerDocs from '../../../../packages/core/src/components/atoms/segment-container/readme.md';
 import { StoryCategories } from '../../../categories';
 
-<Meta title={`${StoryCategories.Atoms}/Segment/Container`} />
+<Meta title={`${StoryCategories.Atoms}/Rebranding/Segment/Container`} />
 
 <SegmentContainerDocs />
 
@@ -13,43 +13,29 @@ import { StoryCategories } from '../../../categories';
 ## With text items
 
 <Canvas>
-    <div class="flex justify-center">
-        <p-segment-container>
-            <p-segment-item active>Item 1 (Active)</p-segment-item>
-            <p-segment-item>Item 2</p-segment-item>
-            <p-segment-item>Item 3</p-segment-item>
-        </p-segment-container>
-    </div>
+	<div class='flex justify-center'>
+		<p-segment-container>
+			<p-segment-item active>Item 1 (Active)</p-segment-item>
+			<p-segment-item>Item 2</p-segment-item>
+			<p-segment-item>Item 3</p-segment-item>
+		</p-segment-container>
+	</div>
 </Canvas>
 
 ## With icon items
 
 <Canvas>
-    <div class="flex justify-center">
-        <p-segment-container>
-            <p-segment-item icon="grid" active icon-only />
-            <p-segment-item icon="list" icon-only />
-        </p-segment-container>
-    </div>
-</Canvas>
-
-## Big items
-
-<Canvas>
-    <div class="flex justify-center">
-        <p-segment-container>
-            <p-segment-item size="big" icon="grid">
-                <span>Item</span>
-                <span slot="description">
-                    Item subtext, item subtext, item subtext, item subtext
-                </span>
-            </p-segment-item>
-            <p-segment-item size="big" icon="grid" active>
-                <span>Item</span>
-                <span slot="description">
-                    Item subtext, item subtext, item subtext, item subtext
-                </span>
-            </p-segment-item>
-        </p-segment-container>
-    </div>
+	<div class='flex justify-center'>
+		<p-segment-container>
+			<p-segment-item
+				icon='user'
+				active
+				icon-only
+			/>
+			<p-segment-item
+				icon='users'
+				icon-only
+			/>
+		</p-segment-container>
+	</div>
 </Canvas>
