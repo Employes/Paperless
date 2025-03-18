@@ -7,3 +7,4 @@ export * from './table-helpers';
 export * from './object-get-by-path';
 export * from './transformers';
 export * from './screens';
+export * from './is-mobile-browser';
