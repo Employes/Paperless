@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.27](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.26...v2.0.1-beta.27) (2025-03-19)
+
+
+### Features
+
+* **molecules/datepicker:** Use native datepicker if available ([591b727](https://github.com/ionic-team/stencil-component-starter/commit/591b727235149d3e2c6a4e2b301254ba8361b3f0))
+* **utils:** Add is-mobile-browser utility for the future ([1d436f9](https://github.com/ionic-team/stencil-component-starter/commit/1d436f9c0e1febdb945475488a940671b447cf98))
+
+
+
+
+
 ## [2.0.1-beta.26](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.25...v2.0.1-beta.26) (2025-03-17)
 
 
