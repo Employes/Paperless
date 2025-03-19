@@ -373,6 +373,10 @@ export namespace Components {
          */
         "disabledDates"?: Array<Date | string> | string;
         /**
+          * Enable native picker for mobile devices
+         */
+        "enableNativePicker": boolean;
+        /**
           * The helper of the input group used by the datepicker
          */
         "error": string;
@@ -3290,6 +3294,10 @@ declare namespace LocalJSX {
           * Disabled dates
          */
         "disabledDates"?: Array<Date | string> | string;
+        /**
+          * Enable native picker for mobile devices
+         */
+        "enableNativePicker"?: boolean;
         /**
           * The helper of the input group used by the datepicker
          */
