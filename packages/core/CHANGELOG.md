@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.67.5](https://github.com/ionic-team/stencil-component-starter/compare/v1.67.4...v1.67.5) (2025-03-19)
+
+
+### Bug Fixes
+
+* **molecules/stepper:** Fix rendering on height changes for the stepper lines ([a5ce31f](https://github.com/ionic-team/stencil-component-starter/commit/a5ce31f5c65e0e430899fd59e3fd120448ac8c55))
+
+
+
+
+
 ## [1.67.4](https://github.com/ionic-team/stencil-component-starter/compare/v1.67.3...v1.67.4) (2025-03-14)
 
 **Note:** Version bump only for package @paperless/core
