@@ -17,10 +17,11 @@ import {
 	isBefore,
 	isSameDay,
 	isValid,
+	isWeekend,
 	parse,
 	startOfDay,
 } from 'date-fns';
-import { childOf } from '../../../utils';
+import { childOf, isMobileBrowser } from '../../../utils';
 
 @Component({
 	tag: 'p-datepicker',
@@ -42,6 +43,11 @@ export class Datepicker {
 	 * Wethter to automatically preselect today
 	 */
 	@Prop() preselectToday: boolean = false;
+
+	/**
+	 * Enable native picker for mobile devices
+	 */
+	@Prop() enableNativePicker: boolean = true;
 
 	/**
 	 * Disabled dates
@@ -141,9 +147,11 @@ export class Datepicker {
 	@State() private _minDate: Date;
 	@State() private _maxDate: Date;
 	@State() private _disabledDates: Date[] = [];
+	@State() private _isMobileBrowser: boolean = false;
 
 	private _onInputTimeout: NodeJS.Timeout;
 	private _inputRef: HTMLInputElement | HTMLTextAreaElement;
+	private _dateInputRef: HTMLInputElement;
 
 	private _defaultFormats = {
 		year: 'yyyy',
@@ -241,6 +249,8 @@ export class Datepicker {
 			this.format = this._defaultFormats[this.mode];
 		}
 
+		this._isMobileBrowser = isMobileBrowser();
+
 		this.parseValue(this.value);
 	}
 
@@ -277,6 +287,19 @@ export class Datepicker {
 						onValueChange={ev => this._onValueChange(ev.detail)}
 						onInputRefChange={ev => (this._inputRef = ev.detail)}
 					></p-field>
+
+					{this.enableNativePicker && this._isMobileBrowser && (
+						<input
+							slot='trigger'
+							type='date'
+							class='h-0 overflow-hidden' // we use h-0 here so location dependent pickers can correctly place itself
+							onInput={ev => this._onNativeInput(ev)}
+							ref={ref => (this._dateInputRef = ref)}
+							value={this._value && format(this._value, 'yyyy-MM-dd')}
+							min={this.minDate && format(new Date(this.minDate), 'yyyy-MM-dd')}
+							max={this.maxDate && format(new Date(this.maxDate), 'yyyy-MM-dd')}
+						/>
+					)}
 					<div slot='items'>
 						<p-calendar
 							variant='embedded'
@@ -305,10 +328,20 @@ export class Datepicker {
 	}
 
 	private _onFocus() {
+		if (this._isMobileBrowser && this._dateInputRef) {
+			this._dateInputRef.showPicker();
+			this._inputRef.blur();
+			return;
+		}
+
 		this._showDropdown = true;
 	}
 
 	private _onBlur() {
+		if (this._isMobileBrowser && this._dateInputRef) {
+			return;
+		}
+
 		const target = this._inputRef;
 
 		if (target.value === null) {
@@ -345,6 +378,26 @@ export class Datepicker {
 		}, 300);
 	}
 
+	private _onNativeInput(ev) {
+		if (!ev.target.value) {
+			return;
+		}
+
+		if (this._onInputTimeout) {
+			clearTimeout(this._onInputTimeout);
+			this._onInputTimeout = null;
+		}
+
+		this._onInputTimeout = setTimeout(() => {
+			const parsedValue = new Date(ev.target.value);
+			if (!isValid(parsedValue)) {
+				return;
+			}
+
+			this._setValue(parsedValue, false);
+		});
+	}
+
 	private _setValue(value: Date | null, hideDropdown = true) {
 		if (value === null) {
 			this._value = null;
@@ -357,6 +410,12 @@ export class Datepicker {
 		}
 
 		if (this._isDisabledDay(value)) {
+			if (!!this._dateInputRef?.value) {
+				this._dateInputRef.value = this._value
+					? format(this._value, 'yyyy-MM-dd')
+					: null;
+			}
+
 			return;
 		}
 
@@ -377,6 +436,7 @@ export class Datepicker {
 
 	private _isDisabledDay(day: Date) {
 		return (
+			(this.disableWeekends && isWeekend(day)) ||
 			(isBefore(day, this._minDate) && !isSameDay(day, this._minDate)) ||
 			(isAfter(day, this._maxDate) && !isSameDay(day, this._maxDate)) ||
 			this._disabledDates.findIndex(date => isSameDay(date, day)) >= 0
