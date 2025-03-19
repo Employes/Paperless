@@ -20,6 +20,8 @@ import {
 	isWeekend,
 	parse,
 	startOfDay,
+	startOfMonth,
+	startOfYear,
 } from 'date-fns';
 import { childOf, isMobileBrowser } from '../../../utils';
 
@@ -249,7 +251,7 @@ export class Datepicker {
 			this.format = this._defaultFormats[this.mode];
 		}
 
-		this._isMobileBrowser = isMobileBrowser();
+		this._isMobileBrowser = isMobileBrowser() || true;
 
 		this.parseValue(this.value);
 	}
@@ -291,7 +293,7 @@ export class Datepicker {
 					{this.enableNativePicker && this._isMobileBrowser && (
 						<input
 							slot='trigger'
-							type='date'
+							type={this.mode === 'day' ? 'date' : 'month'}
 							class='h-0 overflow-hidden' // we use h-0 here so location dependent pickers can correctly place itself
 							onInput={ev => this._onNativeInput(ev)}
 							ref={ref => (this._dateInputRef = ref)}
@@ -379,7 +381,7 @@ export class Datepicker {
 	}
 
 	private _onNativeInput(ev) {
-		if (!ev.target.value) {
+		if (!ev.target) {
 			return;
 		}
 
@@ -389,12 +391,10 @@ export class Datepicker {
 		}
 
 		this._onInputTimeout = setTimeout(() => {
-			const parsedValue = new Date(ev.target.value);
-			if (!isValid(parsedValue)) {
-				return;
-			}
-
-			this._setValue(parsedValue, false);
+			this._setValue(
+				ev.target.value === '' ? null : new Date(ev.target.value),
+				false
+			);
 		});
 	}
 
@@ -419,7 +419,12 @@ export class Datepicker {
 			return;
 		}
 
-		value = startOfDay(value);
+		value =
+			this.mode === 'day'
+				? startOfDay(value)
+				: this.mode === 'month'
+				? startOfMonth(value)
+				: startOfYear(value);
 		const isSameValue = isSameDay(value, this._value);
 
 		if (isSameValue) {
