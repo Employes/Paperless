@@ -28,17 +28,26 @@ export class Stepper {
 
 	@State() private _rendering = false;
 
-	private _loaded = false;
+	private _generateTimeout: NodeJS.Timer;
+	private _resizeObserver: ResizeObserver;
 
-	// private _steps: Array<HTMLPStepperItemElement>;
+	private _onSlotChange = async (_e: Event) => this._generateStepsOnce();
 
-	private _delay = (amount: number) =>
-		new Promise(resolve => setTimeout(resolve, amount));
+	private _generateStepsOnce = () => {
+		if (this._rendering) {
+			return;
+		}
 
-	private _onSlotChange = async (_e: Event) => this._generateSteps();
+		if (this._generateTimeout) {
+			clearTimeout(this._generateTimeout);
+			this._generateTimeout = null;
+		}
 
-	private _generateSteps = async (firstLoad = false) => {
-		if (!firstLoad && (!this._el || this._rendering || !this._loaded)) {
+		this._generateTimeout = setTimeout(() => this._generateSteps());
+	};
+
+	private _generateSteps = async () => {
+		if (!this._el || this._rendering) {
 			return;
 		}
 
@@ -61,14 +70,14 @@ export class Stepper {
 			}
 		}
 
+		let directionChanged = false;
 		for (let i = 0; i < items?.length; i++) {
-			let directionChanged = false;
 			const item = items.item(i) as any;
 
 			item.active = i === activeStep;
 			item.finished = i < activeStep;
 
-			if (item.direction !== this.direction) {
+			if (item.direction !== this.direction && !directionChanged) {
 				directionChanged = true;
 			}
 
@@ -76,36 +85,23 @@ export class Stepper {
 			item.align =
 				i === 0 ? 'start' : i === items?.length - 1 ? 'end' : 'center';
 			item.contentPosition = this.contentPosition;
+		}
+
+		if (directionChanged) {
+			// super hacky way to ensure all elements that have a direction changed are re-rendered
+			await new Promise(resolve => setTimeout(resolve, 200));
+		}
+
+		for (let i = 0; i < items?.length; i++) {
+			const item = items.item(i) as any;
 
 			if (i < items.length - 1) {
-				const nextItem = item.nextElementSibling;
+				let nextItem = item.nextElementSibling;
 
 				if (nextItem && nextItem.tagName.toLowerCase() === 'p-stepper-item') {
-					// super hacky, but we want to wait for the css of the `item.direction` change to be applied before querying for the item.clientHeight
-					// otherwise we always get the initial "16"
-					if (directionChanged) {
-						await this._delay(10);
-					}
-
-					const heightDiff =
-						(item.clientHeight > 16
-							? item.clientHeight - 16
-							: item.clientHeight) / 2;
-
 					const stepperLine = document.createElement('p-stepper-line');
-
-					stepperLine.direction = this.direction;
-					stepperLine.active = i < activeStep;
-
-					if (heightDiff > 0 && this.direction === 'vertical') {
-						stepperLine.style.marginTop = `-${heightDiff / 16}rem`;
-						stepperLine.style.marginBottom = `-${heightDiff / 16}rem`;
-						stepperLine.style.minHeight = `calc(1rem + ${
-							(heightDiff * 2) / 16
-						}rem)`;
-					}
-
 					this._el.insertBefore(stepperLine, nextItem);
+					this._setStepperLineData(stepperLine, item, nextItem, i, activeStep);
 
 					const previous = stepperLine.previousElementSibling;
 					if (previous && previous.tagName.toLowerCase() === 'p-stepper-line') {
@@ -113,6 +109,21 @@ export class Stepper {
 					}
 
 					continue;
+				}
+
+				if (nextItem && nextItem.tagName.toLowerCase() === 'p-stepper-line') {
+					const stepperLine = nextItem;
+					nextItem = nextItem.nextElementSibling;
+
+					if (nextItem && nextItem.tagName.toLowerCase() === 'p-stepper-item') {
+						this._setStepperLineData(
+							stepperLine,
+							item,
+							nextItem,
+							i,
+							activeStep
+						);
+					}
 				}
 			}
 
@@ -136,9 +147,37 @@ export class Stepper {
 		setTimeout(() => (this._rendering = false), 100);
 	};
 
+	private _setStepperLineData = (
+		stepperLine: HTMLPStepperLineElement,
+		item: HTMLPStepperItemElement,
+		nextItem: HTMLPStepperItemElement,
+		i: number,
+		activeStep: number
+	) => {
+		const heightDiff = item.clientHeight / 2;
+		const heightDiffNext = nextItem.clientHeight / 2;
+
+		stepperLine.direction = this.direction;
+		stepperLine.active = i < activeStep;
+
+		if (heightDiff > 0 && this.direction === 'vertical') {
+			stepperLine.style.marginTop = `-${heightDiff / 16}rem`;
+			stepperLine.style.marginBottom = `-${heightDiffNext / 16}rem`;
+			stepperLine.style.minHeight = `calc(1rem + ${
+				(heightDiff + heightDiffNext) / 16
+			}rem)`;
+		}
+	};
+
 	componentDidLoad() {
-		this._loaded = true;
-		this._generateSteps(true);
+		this._resizeObserver = new ResizeObserver(() => this._generateStepsOnce());
+		this._resizeObserver.observe(this._el);
+	}
+
+	disconnectCallback() {
+		if (this._resizeObserver) {
+			this._resizeObserver.disconnect();
+		}
 	}
 
 	render() {
@@ -151,6 +190,6 @@ export class Stepper {
 
 	@Watch('activeStep')
 	protected _onActiveStepChange() {
-		this._generateSteps();
+		this._generateStepsOnce();
 	}
 }
