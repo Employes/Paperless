@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.28](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.27...v2.0.1-beta.28) (2025-03-19)
+
+
+### Bug Fixes
+
+* **molecules/datepicker:** Allow for clearing and set month/year correctly ([6d6ee79](https://github.com/ionic-team/stencil-component-starter/commit/6d6ee79e5e5c2cc7b5a8b5929f60f9d73a22187d))
+
+
+
+
+
 ## [2.0.1-beta.27](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.26...v2.0.1-beta.27) (2025-03-19)
 
 
