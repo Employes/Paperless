@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.67.6](https://github.com/employes/paperless/compare/v1.67.5...v1.67.6) (2025-03-20)
+
+
+### Bug Fixes
+
+* **molecules/stepper:** Make it overrideable to set item status & fix previous item not existing ([5a661c2](https://github.com/employes/paperless/commit/5a661c29d6db098106d46c60dc1f8b8a1fcdfae0))
+
+
+
+
+
 ## [1.67.5](https://github.com/employes/paperless/compare/v1.67.4...v1.67.5) (2025-03-19)
 
 
