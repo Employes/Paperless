@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.67.7](https://github.com/employes/paperless/compare/v1.67.6...v1.67.7) (2025-03-20)
+
+
+### Bug Fixes
+
+* **molecules/stepper:** Remove the _rendering prop & fix rendering after slot changes ([c081ab4](https://github.com/employes/paperless/commit/c081ab44bfc943b13ca6de84c44f8c4536178370))
+
+
+
+
+
 ## [1.67.6](https://github.com/employes/paperless/compare/v1.67.5...v1.67.6) (2025-03-20)
 
 

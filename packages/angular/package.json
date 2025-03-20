@@ -1,6 +1,6 @@
 {
 	"name": "@paperless/angular",
-	"version": "1.67.6",
+	"version": "1.67.7",
 	"scripts": {
 		"ng": "ng",
 		"set-version": "cd projects/paperless && yarn version --new-version=$(node -p \"require('../../package.json').version\") --no-git-tag-version",
