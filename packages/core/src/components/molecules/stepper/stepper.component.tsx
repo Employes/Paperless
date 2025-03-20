@@ -1,4 +1,4 @@
-import { Component, Element, h, Host, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, h, Host, Prop, Watch } from '@stencil/core';
 
 @Component({
 	tag: 'p-stepper',
@@ -31,49 +31,25 @@ export class Stepper {
 	 */
 	@Element() private _el: HTMLElement;
 
-	@State() private _rendering = false;
-
 	private _generateTimeout: NodeJS.Timer;
 	private _resizeObserver: ResizeObserver;
 
-	private _onSlotChange = async (_e: Event) => this._generateStepsOnce();
-
 	private _generateStepsOnce = () => {
-		if (this._rendering) {
-			return;
-		}
-
 		if (this._generateTimeout) {
 			clearTimeout(this._generateTimeout);
 			this._generateTimeout = null;
 		}
 
-		this._generateTimeout = setTimeout(() => this._generateSteps());
+		this._generateTimeout = setTimeout(() => this._generateSteps(), 50);
 	};
 
 	private _generateSteps = async () => {
-		if (!this._el || this._rendering) {
+		if (!this._el) {
 			return;
 		}
 
-		this._rendering = true;
-
 		let activeStep = this.activeStep - 1 || 0;
 		const items = this._el.querySelectorAll('p-stepper-item');
-
-		if (!this.activeStep || activeStep < 0) {
-			for (let i = 0; i < items?.length; i++) {
-				const item = items.item(i) as any;
-
-				if (item.active) {
-					activeStep = i;
-				}
-
-				if (activeStep < 0 && item.finished) {
-					activeStep = i + 1;
-				}
-			}
-		}
 
 		let directionChanged = false;
 		for (let i = 0; i < items?.length; i++) {
@@ -82,6 +58,16 @@ export class Stepper {
 			if (this.enableAutoStatus) {
 				item.active = i === activeStep;
 				item.finished = i < activeStep;
+			}
+
+			if (!this.activeStep || activeStep < 0) {
+				if (item.active) {
+					activeStep = i;
+				}
+
+				if (activeStep < 0 && item.finished) {
+					activeStep = i + 1;
+				}
 			}
 
 			if (item.direction !== this.direction && !directionChanged) {
@@ -153,8 +139,6 @@ export class Stepper {
 			const line = lines.item(j);
 			line.remove();
 		}
-
-		setTimeout(() => (this._rendering = false), 100);
 	};
 
 	private _setStepperLineData = (
@@ -193,7 +177,7 @@ export class Stepper {
 	render() {
 		return (
 			<Host class='p-stepper'>
-				<slot onSlotchange={this._onSlotChange} />
+				<slot onSlotchange={() => this._generateStepsOnce()} />
 			</Host>
 		);
 	}
