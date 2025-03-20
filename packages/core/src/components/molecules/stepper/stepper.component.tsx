@@ -76,7 +76,13 @@ export class Stepper {
 
 			item.direction = this.direction;
 			item.align =
-				i === 0 ? 'start' : i === items?.length - 1 ? 'end' : 'center';
+				this.direction === 'vertical'
+					? 'start'
+					: i === 0
+					? 'start'
+					: i === items?.length - 1
+					? 'end'
+					: 'center';
 			item.contentPosition = this.contentPosition;
 		}
 
