@@ -12,6 +12,11 @@ export class Stepper {
 	@Prop() activeStep: number = 1;
 
 	/**
+	 * Wether to automatically apply active & finished to items
+	 */
+	@Prop() enableAutoStatus: boolean = true;
+
+	/**
 	 * The direction of the stepper
 	 */
 	@Prop({ reflect: true }) direction: 'horizontal' | 'vertical' = 'horizontal';
@@ -74,8 +79,10 @@ export class Stepper {
 		for (let i = 0; i < items?.length; i++) {
 			const item = items.item(i) as any;
 
-			item.active = i === activeStep;
-			item.finished = i < activeStep;
+			if (this.enableAutoStatus) {
+				item.active = i === activeStep;
+				item.finished = i < activeStep;
+			}
 
 			if (item.direction !== this.direction && !directionChanged) {
 				directionChanged = true;
@@ -129,7 +136,10 @@ export class Stepper {
 
 			if (i > 0) {
 				const previousItem = item.previousElementSibling;
-				if (previousItem.tagName.toLowerCase() === 'p-stepper-line') {
+				if (
+					previousItem &&
+					previousItem.tagName.toLowerCase() === 'p-stepper-line'
+				) {
 					previousItem.direction = this.direction;
 					previousItem.active = item.active || item.finished;
 				}

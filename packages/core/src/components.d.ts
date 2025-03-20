@@ -1177,6 +1177,10 @@ export namespace Components {
           * The direction of the stepper
          */
         "direction": 'horizontal' | 'vertical';
+        /**
+          * Wether to automatically apply active & finished to items
+         */
+        "enableAutoStatus": boolean;
     }
     interface PStepperItem {
         /**
@@ -3495,6 +3499,10 @@ declare namespace LocalJSX {
           * The direction of the stepper
          */
         "direction"?: 'horizontal' | 'vertical';
+        /**
+          * Wether to automatically apply active & finished to items
+         */
+        "enableAutoStatus"?: boolean;
     }
     interface PStepperItem {
         /**
