@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.32](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.31...v2.0.1-beta.32) (2025-03-21)
+
+
+### Features
+
+* **molecules/field:** Add read variant ([83bf0c9](https://github.com/ionic-team/stencil-component-starter/commit/83bf0c9791c3dce60c0b726148339ba15213885d))
+
+
+
+
+
 ## [2.0.1-beta.31](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.30...v2.0.1-beta.31) (2025-03-21)
 
 
