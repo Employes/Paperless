@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.29](https://github.com/ionic-team/ionic/compare/v1.67.8...v2.0.1-beta.29) (2025-03-21)
+
+
+### Bug Fixes
+
+* **molecules:** Revert removal of input-group temporarily ([8d8d661](https://github.com/ionic-team/ionic/commit/8d8d661317fb24fbb72258dcdccfdcc8217d2974))
+
+
+### Features
+
+* **atmos:** Add navigation-title component ([1d2fda1](https://github.com/ionic-team/ionic/commit/1d2fda1be801a981a9e7d130566707f864e7e01c))
+* **atoms/icon:** New icons and marked old as deprecated ([cab5c09](https://github.com/ionic-team/ionic/commit/cab5c096051545c7ac3d4b916d50f5e61988db57))
+* **atoms:** Add badge component ([acd6c3f](https://github.com/ionic-team/ionic/commit/acd6c3fc7e0f384ef6efbeab4b5611293a9725c9))
+* **atoms:** Add checkbox component ([1e2a35b](https://github.com/ionic-team/ionic/commit/1e2a35b8bcabb44cc91e11a43291741890909799))
+* **atoms:** Add radio component ([e6a3d24](https://github.com/ionic-team/ionic/commit/e6a3d24192c1b8bb3ae0b14e56dbb68b5cca65dd))
+* **atoms:** Add toggle component ([cde027c](https://github.com/ionic-team/ionic/commit/cde027c7066768f224b05c120680722381908562))
+* **molecules:** Add navigation section component ([a6c0e05](https://github.com/ionic-team/ionic/commit/a6c0e05168e22837ca397cbaf0e37f958d77bb3a))
+
+
+
+
+
 ## [2.0.1-beta.28](https://github.com/ionic-team/ionic/compare/v2.0.1-beta.27...v2.0.1-beta.28) (2025-03-19)
 
 **Note:** Version bump only for package @paperless/react
