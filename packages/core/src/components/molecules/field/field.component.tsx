@@ -16,55 +16,78 @@ import { RotateOptions } from '../../../types/tailwind';
 import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
 import { templateFunc } from '../field-container/field-container.component';
 
-const field = cva(
-	['flex gap-2', 'w-inherit px-2', 'border border-solid rounded-lg'],
-	{
-		variants: {
-			size: {
-				sm: 'h-6',
-				base: 'h-8',
-			},
-			disabled: {
-				false: 'bg-white',
-				true: 'bg-white-600 cursor-not-allowed',
-			},
-			focused: {
-				false: null,
-				true: null,
-			},
-			error: {
-				false: null,
-				true: null,
-			},
+const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
+	variants: {
+		variant: {
+			read: 'border-0 items-center',
+			write: 'border px-2',
 		},
-		compoundVariants: [
-			{
-				focused: false,
-				error: false,
-				class: 'border-black-teal-100',
-			},
-			{
-				disabled: false,
-				focused: true,
-				error: false,
-				class:
-					'border-supportive-lilac-800 ring ring-supportive-lilac-100 selection:bg-supportive-lilac',
-			},
+		size: {
+			sm: null,
+			base: null,
+		},
+		disabled: {
+			false: 'bg-white',
+			true: 'bg-white-600 cursor-not-allowed',
+		},
+		focused: {
+			false: null,
+			true: null,
+		},
+		error: {
+			false: null,
+			true: null,
+		},
+	},
+	compoundVariants: [
+		{
+			size: 'sm',
+			variant: 'write',
+			class: 'h-6',
+		},
+		{
+			size: 'base',
+			variant: 'write',
+			class: 'h-8',
+		},
 
-			{
-				disabled: false,
-				error: true,
-				class: 'border-negative-red',
-			},
-			{
-				disabled: false,
-				focused: true,
-				error: true,
-				class: 'ring ring-negative-red-50 selection:bg-negative-red-50',
-			},
-		],
-	}
-);
+		{
+			size: 'sm',
+			variant: 'read',
+			class: 'h-4',
+		},
+		{
+			size: 'base',
+			variant: 'read',
+			class: 'h-6',
+		},
+
+		{
+			focused: false,
+			error: false,
+			class: 'border-black-teal-100',
+		},
+		{
+			disabled: false,
+			focused: true,
+			error: false,
+			class:
+				'border-supportive-lilac-800 ring ring-supportive-lilac-100 selection:bg-supportive-lilac',
+		},
+
+		{
+			disabled: false,
+			error: true,
+			class: 'border-negative-red',
+		},
+		{
+			disabled: false,
+			focused: true,
+			error: true,
+			class: 'ring ring-negative-red-50 selection:bg-negative-red-50',
+		},
+	],
+});
 
 const input = cva(
 	'text-sm placeholder:text-sm placeholder:text-black-teal-200 text-black-teal border-none outline-none focus:outline-none bg-transparent flex-1 min-w-0 h-full',
@@ -93,6 +116,10 @@ const prefixAndSuffix = cva(
 			error: {
 				false: null,
 				true: null,
+			},
+			isText: {
+				false: null,
+				true: 'text-sm',
 			},
 		},
 		compoundVariants: [
@@ -134,32 +161,37 @@ const prefixAndSuffix = cva(
 })
 export class Field {
 	/**
-	 * The size of the input group
+	 * The variant of the field
+	 */
+	@Prop() variant: 'read' | 'write' = 'write';
+
+	/**
+	 * The size of the field
 	 */
 	@Prop() size: 'sm' | 'base' = 'base';
 
 	/**
-	 * The type of the input group
+	 * The type of the field
 	 */
 	@Prop() type: HTMLInputTypeAttribute | 'textarea' | 'slot' = 'text';
 
 	/**
-	 * The size of the input group
+	 * The size of the field
 	 */
 	@Prop() properties: any | string = {};
 
 	/**
-	 * The prefix of the input group
+	 * The prefix of the field
 	 */
 	@Prop() prefix: string;
 
 	/**
-	 * The suffix of the input group
+	 * The suffix of the field
 	 */
 	@Prop() suffix: string;
 
 	/**
-	 * Icon of the input group
+	 * Icon of the field
 	 */
 	@Prop() icon: IconVariant;
 
@@ -183,7 +215,7 @@ export class Field {
 	@Prop() value: string;
 
 	/**
-	 * The label of the input group
+	 * The label of the field
 	 */
 	@Prop() label: string;
 
@@ -193,7 +225,7 @@ export class Field {
 	@Prop() placeholder: string;
 
 	/**
-	 * The helper of the input group
+	 * The helper of the field
 	 */
 	@Prop() helper: string;
 
@@ -218,12 +250,12 @@ export class Field {
 	@Prop() errorPlacement: Placement;
 
 	/**
-	 * Wether the input group is disabled
+	 * Wether the field is disabled
 	 */
 	@Prop({ reflect: true }) disabled: boolean = false;
 
 	/**
-	 * Wether the input group is focused
+	 * Wether the field is focused
 	 */
 	@Prop({ reflect: true }) focused: boolean = false;
 
@@ -278,6 +310,7 @@ export class Field {
 			hasLabelSlot,
 			hasHelperSlot,
 			hasErrorSlot,
+			hasValueSlot,
 		} = this._getSlotInfo();
 
 		return (
@@ -288,6 +321,7 @@ export class Field {
 					helper={this.helper}
 					error={this.error}
 					required={this.required}
+					variant={this.variant}
 				>
 					{hasLabelSlot && (
 						<slot
@@ -323,6 +357,7 @@ export class Field {
 							disabled: this.disabled,
 							focused: this.focused || this._focused,
 							size: this.size,
+							variant: this.variant,
 						})}
 						slot='content'
 					>
@@ -332,6 +367,7 @@ export class Field {
 									error: !!this.error?.length,
 									disabled: this.disabled,
 									focused: this.focused || this._focused,
+									isText: typeof suffix === 'string',
 								})}
 								onClick={() => this._focusInput()}
 							>
@@ -348,7 +384,7 @@ export class Field {
 							</div>
 						)}
 
-						{this._getInput()}
+						{this._getContent(hasValueSlot)}
 
 						{(suffix || (this.icon && this.iconPosition === 'end')) && (
 							<div
@@ -356,6 +392,7 @@ export class Field {
 									error: !!this.error?.length,
 									disabled: this.disabled,
 									focused: this.focused || this._focused,
+									isText: typeof suffix === 'string',
 								})}
 								onClick={() => this._focusInput()}
 							>
@@ -403,6 +440,7 @@ export class Field {
 		const hasSuffixSlot = !!this._el.querySelector(':scope > [slot="suffix"]');
 		const hasHeaderSlot = !!this._el.querySelector(':scope > [slot="header"]');
 		const hasErrorSlot = !!this._el.querySelector(':scope > [slot="error"]');
+		const hasValueSlot = !!this._el.querySelector(':scope > [slot="value"]');
 
 		const prefix = hasPrefixSlot ? <slot name='prefix' /> : this.prefix;
 		const suffix = hasSuffixSlot ? <slot name='suffix' /> : this.suffix;
@@ -417,13 +455,28 @@ export class Field {
 			hasSuffixSlot,
 			hasHeaderSlot,
 			hasErrorSlot,
+			hasValueSlot,
 			prefix,
 			suffix,
 			errorAndErrorIsNotBoolean,
 		};
 	}
 
-	private _getInput() {
+	private _getContent(hasValueSlot = false) {
+		if (this.variant === 'read') {
+			return (
+				<div class='text-sm'>
+					{hasValueSlot ? (
+						<slot name='value' />
+					) : !!this.value && this.value.length > 0 ? (
+						this.value
+					) : (
+						'—'
+					)}
+				</div>
+			);
+		}
+
 		if (this.type === 'slot') {
 			return <slot name='input' />;
 		}
