@@ -274,7 +274,6 @@ const icon = cva([], {
 @Component({
 	tag: 'p-button',
 	styleUrl: 'button.component.css',
-	shadow: true,
 })
 export class Button {
 	/**
