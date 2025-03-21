@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.31](https://github.com/employes/paperless/compare/v2.0.1-beta.30...v2.0.1-beta.31) (2025-03-21)
+
+
+### Bug Fixes
+
+* **molecules/field:** Use correct type for slot ([fbca250](https://github.com/employes/paperless/commit/fbca2506b89e1f09f0cc7508c99ec0416d6f3219))
+
+
+
+
+
 ## [2.0.1-beta.30](https://github.com/employes/paperless/compare/v2.0.1-beta.29...v2.0.1-beta.30) (2025-03-21)
 
 **Note:** Version bump only for package paperless
