@@ -251,7 +251,7 @@ export class Datepicker {
 			this.format = this._defaultFormats[this.mode];
 		}
 
-		this._isMobileBrowser = isMobileBrowser() || true;
+		this._isMobileBrowser = isMobileBrowser();
 
 		this.parseValue(this.value);
 	}
