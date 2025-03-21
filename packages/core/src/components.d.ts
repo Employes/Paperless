@@ -615,7 +615,7 @@ export namespace Components {
          */
         "autofocus": boolean;
         /**
-          * Wether the input group is disabled
+          * Wether the field is disabled
          */
         "disabled": boolean;
         /**
@@ -631,7 +631,7 @@ export namespace Components {
          */
         "focusMethod": 'focus' | 'click';
         /**
-          * Wether the input group is focused
+          * Wether the field is focused
          */
         "focused": boolean;
         /**
@@ -639,11 +639,11 @@ export namespace Components {
          */
         "forceShowTooltip": boolean;
         /**
-          * The helper of the input group
+          * The helper of the field
          */
         "helper": string;
         /**
-          * Icon of the input group
+          * Icon of the field
          */
         "icon": IconVariant;
         /**
@@ -659,7 +659,7 @@ export namespace Components {
          */
         "iconRotate": RotateOptions;
         /**
-          * The label of the input group
+          * The label of the field
          */
         "label": string;
         /**
@@ -671,11 +671,11 @@ export namespace Components {
          */
         "placeholder": string;
         /**
-          * The prefix of the input group
+          * The prefix of the field
          */
         "prefix": string;
         /**
-          * The size of the input group
+          * The size of the field
          */
         "properties": any | string;
         /**
@@ -687,21 +687,25 @@ export namespace Components {
          */
         "selectAllOnFocus": boolean;
         /**
-          * The size of the input group
+          * The size of the field
          */
         "size": 'sm' | 'base';
         /**
-          * The suffix of the input group
+          * The suffix of the field
          */
         "suffix": string;
         /**
-          * The type of the input group
+          * The type of the field
          */
         "type": HTMLInputTypeAttribute | 'textarea' | 'slot';
         /**
           * The value of the input
          */
         "value": string;
+        /**
+          * The variant of the field
+         */
+        "variant": 'read' | 'write';
     }
     interface PFieldContainer {
         /**
@@ -732,6 +736,10 @@ export namespace Components {
           * Wether the field is required
          */
         "required": boolean;
+        /**
+          * The variant of the field container
+         */
+        "variant": 'read' | 'write';
     }
     interface PFloatingMenuContainer {
         /**
@@ -3561,7 +3569,7 @@ declare namespace LocalJSX {
          */
         "autofocus"?: boolean;
         /**
-          * Wether the input group is disabled
+          * Wether the field is disabled
          */
         "disabled"?: boolean;
         /**
@@ -3577,7 +3585,7 @@ declare namespace LocalJSX {
          */
         "focusMethod"?: 'focus' | 'click';
         /**
-          * Wether the input group is focused
+          * Wether the field is focused
          */
         "focused"?: boolean;
         /**
@@ -3585,11 +3593,11 @@ declare namespace LocalJSX {
          */
         "forceShowTooltip"?: boolean;
         /**
-          * The helper of the input group
+          * The helper of the field
          */
         "helper"?: string;
         /**
-          * Icon of the input group
+          * Icon of the field
          */
         "icon"?: IconVariant;
         /**
@@ -3605,7 +3613,7 @@ declare namespace LocalJSX {
          */
         "iconRotate"?: RotateOptions;
         /**
-          * The label of the input group
+          * The label of the field
          */
         "label"?: string;
         /**
@@ -3625,11 +3633,11 @@ declare namespace LocalJSX {
          */
         "placeholder"?: string;
         /**
-          * The prefix of the input group
+          * The prefix of the field
          */
         "prefix"?: string;
         /**
-          * The size of the input group
+          * The size of the field
          */
         "properties"?: any | string;
         /**
@@ -3641,21 +3649,25 @@ declare namespace LocalJSX {
          */
         "selectAllOnFocus"?: boolean;
         /**
-          * The size of the input group
+          * The size of the field
          */
         "size"?: 'sm' | 'base';
         /**
-          * The suffix of the input group
+          * The suffix of the field
          */
         "suffix"?: string;
         /**
-          * The type of the input group
+          * The type of the field
          */
         "type"?: HTMLInputTypeAttribute | 'textarea' | 'slot';
         /**
           * The value of the input
          */
         "value"?: string;
+        /**
+          * The variant of the field
+         */
+        "variant"?: 'read' | 'write';
     }
     interface PFieldContainer {
         /**
@@ -3687,6 +3699,10 @@ declare namespace LocalJSX {
           * Wether the field is required
          */
         "required"?: boolean;
+        /**
+          * The variant of the field container
+         */
+        "variant"?: 'read' | 'write';
     }
     interface PFloatingMenuContainer {
         /**

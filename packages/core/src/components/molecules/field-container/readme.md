@@ -20,6 +20,7 @@
 | `label`            | `label`              | The label of the input group       | `HTMLSlotElement \| string`                                                                                                                                          | `undefined`                     |
 | `optionalTemplate` | --                   | The template for the optional text | `() => string`                                                                                                                                                       | `this._defaultOptionalTemplate` |
 | `required`         | `required`           | Wether the field is required       | `boolean`                                                                                                                                                            | `undefined`                     |
+| `variant`          | `variant`            | The variant of the field container | `"read" \| "write"`                                                                                                                                                  | `undefined`                     |
 
 
 ## Events
