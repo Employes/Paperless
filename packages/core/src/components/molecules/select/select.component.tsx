@@ -338,7 +338,6 @@ export class Select {
 			</div>
 		);
 
-		console.log(this._selectedItem);
 		if (!this._selectedItem) {
 			return placeholder;
 		}
