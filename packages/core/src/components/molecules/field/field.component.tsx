@@ -78,7 +78,7 @@ const input = cva(
 	}
 );
 
-const prefixAndSuffic = cva(
+const prefixAndSuffix = cva(
 	['flex flex-shrink-0 justify-center items-center text-center'],
 	{
 		variants: {
@@ -328,7 +328,7 @@ export class Field {
 					>
 						{(prefix || (this.icon && this.iconPosition === 'start')) && (
 							<div
-								class={prefixAndSuffic({
+								class={prefixAndSuffix({
 									error: !!this.error?.length,
 									disabled: this.disabled,
 									focused: this.focused || this._focused,
@@ -352,7 +352,7 @@ export class Field {
 
 						{(suffix || (this.icon && this.iconPosition === 'end')) && (
 							<div
-								class={prefixAndSuffic({
+								class={prefixAndSuffix({
 									error: !!this.error?.length,
 									disabled: this.disabled,
 									focused: this.focused || this._focused,
@@ -424,7 +424,7 @@ export class Field {
 	}
 
 	private _getInput() {
-		if (this.type === 'custom') {
+		if (this.type === 'slot') {
 			return <slot name='input' />;
 		}
 

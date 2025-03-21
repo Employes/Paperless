@@ -229,19 +229,10 @@ export class TableHeader {
 							icon='search'
 							size='sm'
 							class='desktop-xs:w-48'
-						>
-							<input
-								type='text'
-								slot='input'
-								placeholder='Zoeken...'
-								value={this.query}
-								onInput={ev =>
-									this._queryObserver.next(
-										(ev.target as HTMLInputElement).value
-									)
-								}
-							/>
-						</p-field>
+							placeholder='Zoeken...'
+							value={this.query}
+							onValueChange={ev => this._queryObserver.next(ev.detail)}
+						/>
 					)}
 
 					{this.enableFilter && (
