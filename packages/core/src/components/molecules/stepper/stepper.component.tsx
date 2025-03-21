@@ -31,7 +31,7 @@ export class Stepper {
 	 */
 	@Element() private _el: HTMLElement;
 
-	private _generateTimeout: NodeJS.Timer;
+	private _generateTimeout: NodeJS.Timeout | undefined;
 	private _resizeObserver: ResizeObserver;
 
 	private _generateStepsOnce = () => {
