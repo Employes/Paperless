@@ -43,16 +43,12 @@ const calendar = cva(['p-calendar bg-white w-[17.5rem] flex flex-col gap-4'], {
 });
 
 const header = cva(
-	[
-		'flex items-center justify-between gap-1',
-		'w-full p-2',
-		'bg-off-white-300 rounded-lg',
-	],
+	['flex items-center gap-1', 'w-full p-2', 'bg-off-white-300 rounded-lg'],
 	{
 		variants: {
 			type: {
-				day: null,
-				month: null,
+				day: 'justify-between',
+				month: 'justify-between',
 				year: 'justify-center',
 			},
 		},
