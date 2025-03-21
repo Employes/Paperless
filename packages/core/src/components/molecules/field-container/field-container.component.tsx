@@ -30,6 +30,11 @@ export class FieldContainer {
 	@Prop() label: string | HTMLSlotElement;
 
 	/**
+	 * The variant of the field container
+	 */
+	@Prop() variant: 'read' | 'write';
+
+	/**
 	 * The helper of the input group
 	 */
 	@Prop() helper: string | HTMLSlotElement;
@@ -84,6 +89,13 @@ export class FieldContainer {
 			errorAndErrorIsNotBoolean,
 		} = this._getSlotInfo();
 
+		const contentSlot = (
+			<slot
+				name='content'
+				slot='trigger'
+			/>
+		);
+
 		return (
 			<Host class='p-field-container'>
 				<div class='flex w-inherit flex-col gap-1'>
@@ -99,7 +111,7 @@ export class FieldContainer {
 
 						{(!this.required || helper || hasHeaderSlot) && (
 							<div class='flex items-center gap-1'>
-								{!this.required && (
+								{!this.required && this.variant === 'write' && (
 									<span class='text-xs font-medium text-black-teal-200'>
 										{this.optionalTemplate()}
 									</span>
@@ -136,10 +148,7 @@ export class FieldContainer {
 							/>
 						)}
 
-						<slot
-							name='content'
-							slot='trigger'
-						/>
+						{contentSlot}
 					</p-tooltip>
 				</div>
 			</Host>

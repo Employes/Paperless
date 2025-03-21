@@ -8,7 +8,7 @@ import FieldDocs from '../../../packages/core/src/components/molecules/field/rea
 
 # Examples
 
-## Variants
+## States
 
 ### Default
 
@@ -64,6 +64,48 @@ import FieldDocs from '../../../packages/core/src/components/molecules/field/rea
 	</div>
 </Canvas>
 
+## Variant
+
+## Write
+
+<Canvas>
+	<div class='flex h-32 items-center px-10'>
+		<p-field
+			required={false}
+			icon='envelope'
+			label='Label'
+			value='test'
+		/>
+	</div>
+</Canvas>
+
+## Read
+
+<Canvas>
+	<div class='flex h-32 items-center px-10'>
+		<p-field
+			required={false}
+			icon='envelope'
+			label='Label'
+			variant='read'
+			value='test'
+		/>
+	</div>
+</Canvas>
+
+## Read with no value
+
+<Canvas>
+	<div class='flex h-32 items-center px-10'>
+		<p-field
+			required={false}
+			icon='envelope'
+			label='Label'
+			variant='read'
+		/>
+	</div>
+</Canvas>
+
 ## Prefix & Suffix
 
 ### Prefix
@@ -93,6 +135,19 @@ import FieldDocs from '../../../packages/core/src/components/molecules/field/rea
 	</div>
 </Canvas>
 
+#### Variant read & text
+
+<Canvas>
+	<div class='flex h-32 items-center px-10'>
+		<p-field
+			variant='read'
+			label='Name'
+			prefix='#'
+			value='123'
+		/>
+	</div>
+</Canvas>
+
 ### Suffix
 
 #### Text
@@ -118,6 +173,19 @@ import FieldDocs from '../../../packages/core/src/components/molecules/field/rea
 			error='Not a number'
 			placeholder='Choose a number?'
 			type='number'
+		/>
+	</div>
+</Canvas>
+
+#### Variant read & text
+
+<Canvas>
+	<div class='flex h-32 items-center px-10'>
+		<p-field
+			variant='read'
+			label='Amount'
+			suffix='km'
+			value='123'
 		/>
 	</div>
 </Canvas>
