@@ -24,25 +24,15 @@ const checkbox = cva(
 			disabled: {
 				false: [
 					'cursor-pointer shadow-1',
-					'bg-white border-black-teal-100',
-					'hover:bg-supportivce-lilac-100 hover:border-black-teal-100',
+					'bg-black-teal-50 border-black-teal-100',
+					'hover:bg-supportive-lilac-100 hover:border-black-teal-100',
 					'checked:bg-supportive-lilac checked:border-black-teal/20',
 					'checked:ring-2 checked:ring-supportive-lilac-100',
-					'checked:hover:bg-supportive-lilac checked:hover:border-black-teal/20',
+					'checked:hover:bg-supportive-lilac-700 checked:hover:border-black-teal/20',
 				],
 				true: 'bg-white-600 border-black-teal-50 cursor-not-allowed ',
 			},
 		},
-		compoundVariants: [
-			{
-				disabled: false,
-				class: [
-					'cursor-pointer shadow-1',
-					'bg-white border-black-teal-100',
-					'hover:bg-supportive-lilac-100 hover:border-black-teal-100',
-				],
-			},
-		],
 	}
 );
 
@@ -62,7 +52,7 @@ const circle = cva(
 				false: [
 					'bg-white ring-1 ring-black-teal/10',
 					'left-[1px] peer-checked:-translate-x-[calc(100%+1px)]',
-					"after:content-[''] after:bg-supportive-lilac-800 after:rounded-full after:transition-all",
+					"after:content-[] peer-checked:after:content-['']  after:bg-supportive-lilac-800 after:rounded-full after:transition-all",
 				],
 				true: [
 					'bg-black-teal-100 peer-checked:bg-black-teal-200',
