@@ -25,27 +25,17 @@ const checkbox = cva(
 				false: [
 					'cursor-pointer shadow-1',
 					'bg-white border-black-teal-100',
-					'hover:bg-supportivce-lilac-100 hover:border-black-teal-100',
+					'hover:bg-supportive-lilac-100 hover:border-black-teal-100',
 					'checked:bg-supportive-lilac checked:border-black-teal/20',
 					'checked:ring-2 checked:ring-supportive-lilac-100',
-					'checked:hover:bg-supportive-lilac checked:hover:border-black-teal/20',
-					'indeterminate:bg-supportive-lilac indeterminate:border-black-teal/20',
+					'checked:hover:bg-supportive-lilac-700 checked:hover:border-black-teal/20',
+					'indeterminate:bg-supportive-lilac-700 indeterminate:border-black-teal/20',
 					'indeterminate:ring-2 indeterminate:ring-supportive-lilac-100',
 					'indeterminate:hover:bg-supportive-lilac indeterminate:hover:border-black-teal/20',
 				],
 				true: 'bg-white-600 border-black-teal-50 cursor-not-allowed ',
 			},
 		},
-		compoundVariants: [
-			{
-				disabled: false,
-				class: [
-					'cursor-pointer shadow-1',
-					'bg-white border-black-teal-100',
-					'hover:bg-supportive-lilac-100 hover:border-black-teal-100',
-				],
-			},
-		],
 	}
 );
 
