@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.33](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.32...v2.0.1-beta.33) (2025-03-27)
+
+
+### Bug Fixes
+
+* **atoms/checkbox:** Add hover state for checked state ([c6362d6](https://github.com/ionic-team/stencil-component-starter/commit/c6362d6b44adc770a3acc446b821d9d1d44b7cee))
+* **atoms/toggle:** Fix circle showing on unchecked & unchecked background. Added checked hover background fix ([6474c4e](https://github.com/ionic-team/stencil-component-starter/commit/6474c4e03956a48dd9035a0fc95d2d3d1607e0a4))
+
+
+
+
+
 ## [2.0.1-beta.32](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.31...v2.0.1-beta.32) (2025-03-21)
 
 
