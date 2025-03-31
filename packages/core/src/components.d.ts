@@ -11,13 +11,14 @@ import { Placement, Strategy } from "@floating-ui/dom";
 import { HTMLInputTypeAttribute } from "react";
 import { templateFunc } from "./components/molecules/field-container/field-container.component";
 import { templateFunc as templateFunc1 } from "./components/molecules/field-container/field-container.component";
+import { amountSelectedTemplateFunc } from "./components/atoms/floating-menu-container/floating-menu-container.component";
 import { IbanIconVariant, RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
 import { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1 } from "./components/atoms/icon/icon.component";
 import { IconDeprecatedVariant } from "./components/atoms/icon-deprecated/icon.component";
 import { IllustrationVariant } from "./components/atoms/illustration/illustration.component";
 import { Observable } from "rxjs";
 import { templateFunc as templateFunc2 } from "./components/molecules/page-size-select/page-size-select.component";
-import { amountSelectedTemplateFunc, templateFunc as templateFunc3 } from "./components/organisms/table/table.component";
+import { amountSelectedTemplateFunc as amountSelectedTemplateFunc1, templateFunc as templateFunc3 } from "./components/organisms/table/table.component";
 import { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
 import { IconFlipOptions as IconFlipOptions2, IconVariant as IconVariant2, RotateOptions as RotateOptions2 } from "./components";
 import { buttonTemplateFunc } from "./components/molecules/table-header/table-header.component";
@@ -30,13 +31,14 @@ export { Placement, Strategy } from "@floating-ui/dom";
 export { HTMLInputTypeAttribute } from "react";
 export { templateFunc } from "./components/molecules/field-container/field-container.component";
 export { templateFunc as templateFunc1 } from "./components/molecules/field-container/field-container.component";
+export { amountSelectedTemplateFunc } from "./components/atoms/floating-menu-container/floating-menu-container.component";
 export { IbanIconVariant, RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
 export { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1 } from "./components/atoms/icon/icon.component";
 export { IconDeprecatedVariant } from "./components/atoms/icon-deprecated/icon.component";
 export { IllustrationVariant } from "./components/atoms/illustration/illustration.component";
 export { Observable } from "rxjs";
 export { templateFunc as templateFunc2 } from "./components/molecules/page-size-select/page-size-select.component";
-export { amountSelectedTemplateFunc, templateFunc as templateFunc3 } from "./components/organisms/table/table.component";
+export { amountSelectedTemplateFunc as amountSelectedTemplateFunc1, templateFunc as templateFunc3 } from "./components/organisms/table/table.component";
 export { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
 export { IconFlipOptions as IconFlipOptions2, IconVariant as IconVariant2, RotateOptions as RotateOptions2 } from "./components";
 export { buttonTemplateFunc } from "./components/molecules/table-header/table-header.component";
@@ -743,7 +745,23 @@ export namespace Components {
     }
     interface PFloatingMenuContainer {
         /**
-          * Weather the container is used in the table
+          * The amount selected
+         */
+        "amount": number;
+        /**
+          * The template for amount selected
+         */
+        "amountSelectedTemplate": amountSelectedTemplateFunc;
+        /**
+          * Wether to show the amount selected
+         */
+        "enableAmountSelected": boolean;
+        /**
+          * Wether to enablethe close button
+         */
+        "enableClose": boolean;
+        /**
+          * Wether the container is used in the table
          */
         "usedInTable": boolean;
     }
@@ -756,6 +774,26 @@ export namespace Components {
           * Wether it should have a hover effect
          */
         "hover": boolean;
+        /**
+          * Icon to show on the item
+         */
+        "icon": IconVariant;
+        /**
+          * Icon flip
+         */
+        "iconFlip": IconFlipOptions;
+        /**
+          * Icon position
+         */
+        "iconPosition": 'start' | 'end';
+        /**
+          * Icon rotate
+         */
+        "iconRotate": RotateOptions1;
+        /**
+          * Wether loading is applied
+         */
+        "loading": boolean;
     }
     interface PHelper {
         /**
@@ -1542,7 +1580,7 @@ export namespace Components {
         /**
           * The template for amount selected item in the floating menu
          */
-        "floatingMenuAmountSelectedTemplate": amountSelectedTemplateFunc;
+        "floatingMenuAmountSelectedTemplate": amountSelectedTemplateFunc1;
         /**
           * Wether the footer should show loading state
          */
@@ -2002,6 +2040,10 @@ export interface PFieldContainerCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPFieldContainerElement;
 }
+export interface PFloatingMenuContainerCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPFloatingMenuContainerElement;
+}
 export interface PInfoPanelCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPInfoPanelElement;
@@ -2372,7 +2414,18 @@ declare global {
         prototype: HTMLPFieldContainerElement;
         new (): HTMLPFieldContainerElement;
     };
+    interface HTMLPFloatingMenuContainerElementEventMap {
+        "close": MouseEvent;
+    }
     interface HTMLPFloatingMenuContainerElement extends Components.PFloatingMenuContainer, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPFloatingMenuContainerElementEventMap>(type: K, listener: (this: HTMLPFloatingMenuContainerElement, ev: PFloatingMenuContainerCustomEvent<HTMLPFloatingMenuContainerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPFloatingMenuContainerElementEventMap>(type: K, listener: (this: HTMLPFloatingMenuContainerElement, ev: PFloatingMenuContainerCustomEvent<HTMLPFloatingMenuContainerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPFloatingMenuContainerElement: {
         prototype: HTMLPFloatingMenuContainerElement;
@@ -3698,7 +3751,27 @@ declare namespace LocalJSX {
     }
     interface PFloatingMenuContainer {
         /**
-          * Weather the container is used in the table
+          * The amount selected
+         */
+        "amount"?: number;
+        /**
+          * The template for amount selected
+         */
+        "amountSelectedTemplate"?: amountSelectedTemplateFunc;
+        /**
+          * Wether to show the amount selected
+         */
+        "enableAmountSelected"?: boolean;
+        /**
+          * Wether to enablethe close button
+         */
+        "enableClose"?: boolean;
+        /**
+          * Event whenever the close button is clicked
+         */
+        "onClose"?: (event: PFloatingMenuContainerCustomEvent<MouseEvent>) => void;
+        /**
+          * Wether the container is used in the table
          */
         "usedInTable"?: boolean;
     }
@@ -3711,6 +3784,26 @@ declare namespace LocalJSX {
           * Wether it should have a hover effect
          */
         "hover"?: boolean;
+        /**
+          * Icon to show on the item
+         */
+        "icon"?: IconVariant;
+        /**
+          * Icon flip
+         */
+        "iconFlip"?: IconFlipOptions;
+        /**
+          * Icon position
+         */
+        "iconPosition"?: 'start' | 'end';
+        /**
+          * Icon rotate
+         */
+        "iconRotate"?: RotateOptions1;
+        /**
+          * Wether loading is applied
+         */
+        "loading"?: boolean;
     }
     interface PHelper {
         /**
@@ -4545,7 +4638,7 @@ declare namespace LocalJSX {
         /**
           * The template for amount selected item in the floating menu
          */
-        "floatingMenuAmountSelectedTemplate"?: amountSelectedTemplateFunc;
+        "floatingMenuAmountSelectedTemplate"?: amountSelectedTemplateFunc1;
         /**
           * Wether the footer should show loading state
          */

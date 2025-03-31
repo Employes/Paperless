@@ -11,28 +11,28 @@ import Docs from '../../../../packages/core/src/components/atoms/floating-menu-c
 ## Default
 
 <Canvas>
-    <p-floating-menu-container class="w-full" />
+	<p-floating-menu-container />
 </Canvas>
 
 ## With Items & Dividers
 
 <Canvas>
-    <div class="flex justify-center">
-        <p-floating-menu-container>
-            <p-floating-menu-item hover={false}>
-                x amount selected
-            </p-floating-menu-item>
-            <p-divider class="mx-0 text-storm" variant="vertical" />
-            <p-floating-menu-item>
-                Upload <p-icon variant="upload" />
-            </p-floating-menu-item>
-            <p-floating-menu-item>
-                Download <p-icon variant="download" />
-            </p-floating-menu-item>
-            <p-divider class="mx-0 text-storm" variant="vertical" />
-            <p-floating-menu-item>
-                <p-icon variant="negative" />
-            </p-floating-menu-item>
-        </p-floating-menu-container>
-    </div>
+	<div class='flex justify-center'>
+		<p-floating-menu-container>
+			<p-floating-menu-item icon='upload'>Upload</p-floating-menu-item>
+			<p-floating-menu-item icon='download'>Download</p-floating-menu-item>
+			<p-floating-menu-item
+				icon='negative'
+				disabled
+			>
+				Disabled
+			</p-floating-menu-item>
+			<p-floating-menu-item
+				loading
+				icon='user'
+			>
+				Loading
+			</p-floating-menu-item>
+		</p-floating-menu-container>
+	</div>
 </Canvas>

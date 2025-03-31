@@ -575,10 +575,7 @@ export class Table implements OnInit, OnChanges {
 			return;
 		}
 
-		const value =
-			forceValue === undefined
-				? this._getCheckedValue($event.target)
-				: forceValue;
+		const value = forceValue === undefined ? $event.detail : forceValue;
 
 		if (value) {
 			const toAdd = [];
