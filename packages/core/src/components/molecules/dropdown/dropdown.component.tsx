@@ -279,7 +279,7 @@ export class Dropdown {
 
 		this._menu.setAttribute('data-show', '');
 		this._menu.classList.remove('hidden');
-		this._menu.classList.add('flex');
+		this._menu.classList.add('block');
 
 		this.isOpen.emit(true);
 
@@ -298,7 +298,7 @@ export class Dropdown {
 
 		// Hide the popover
 		this._menu.removeAttribute('data-show');
-		this._menu.classList.remove('flex');
+		this._menu.classList.remove('block');
 		this._menu.classList.add('hidden');
 
 		this.isOpen.emit(false);
