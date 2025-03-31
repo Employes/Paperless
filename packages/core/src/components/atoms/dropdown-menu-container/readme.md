@@ -22,6 +22,7 @@
 | `fullWidth`     | `full-width`     | Wether the container should all available space                      | `boolean`                                     | `true`      |
 | `maxWidth`      | `max-width`      | Wether the container applies it's max width                          | `boolean`                                     | `true`      |
 | `scrollable`    | `scrollable`     | Wether the container should be scrollable when the threshold is met. | `"default" \| "large" \| "xlarge" \| boolean` | `false`     |
+| `variant`       | `variant`        | The variant of the container                                         | `"dark-teal" \| "default"`                    | `'default'` |
 
 
 ## Dependencies
