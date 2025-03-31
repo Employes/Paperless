@@ -2,14 +2,13 @@ import { Component, h, Host, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
 const dropdownMenuContainer = cva(
-	[
-		'p-dropdown-menu-container',
-		'p-1',
-		'bg-white rounded-lg z-10 drop-shadow-2',
-		'border border-black-teal-100',
-	],
+	['p-dropdown-menu-container', 'p-1', 'rounded-lg z-10', 'border'],
 	{
 		variants: {
+			variant: {
+				default: 'bg-white border-black-teal-100 drop-shadow-2',
+				'dark-teal': 'bg-dark-teal-600 drop-shadow-3 border-dark-teal-600',
+			},
 			fullWidth: {
 				false: null,
 				true: 'w-full',
@@ -37,6 +36,11 @@ const dropdownMenuContainer = cva(
 	styleUrl: 'dropdown-menu-container.component.css',
 })
 export class DropdownMenuContainer {
+	/**
+	 * The variant of the container
+	 */
+	@Prop() variant: 'default' | 'dark-teal' = 'default';
+
 	/**
 	 * Wether the container applies it's max width
 	 */
@@ -74,6 +78,7 @@ export class DropdownMenuContainer {
 			<Host
 				class={dropdownMenuContainer({
 					class: this.class,
+					variant: this.variant,
 					fullWidth: this.fullWidth,
 					allowOverflow: this.allowOverflow,
 					scrollable,
