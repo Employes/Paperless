@@ -10,6 +10,7 @@ const dropdownMenuItem = cva(
 		variants: {
 			variant: {
 				default: null,
+				'dark-teal': null,
 				negative: null,
 			},
 			active: {
@@ -52,6 +53,30 @@ const dropdownMenuItem = cva(
 			},
 
 			{
+				variant: 'dark-teal',
+				active: false,
+				enableHover: true,
+				class: 'text-white',
+			},
+			{
+				variant: 'dark-teal',
+				active: false,
+				enableHover: true,
+				disabled: false,
+				class: 'hover:bg-dark-teal-400',
+			},
+			{
+				variant: 'dark-teal',
+				active: true,
+				class: 'text-white bg-dark-teal-400',
+			},
+			{
+				variant: 'dark-teal',
+				disabled: true,
+				class: 'opacity-40',
+			},
+
+			{
 				variant: 'negative',
 				active: false,
 				enableHover: true,
@@ -89,6 +114,7 @@ const dropdownMenuItemIcon = cva(['text-base'], {
 	variants: {
 		variant: {
 			default: null,
+			'dark-teal': null,
 			negative: null,
 		},
 		active: {
@@ -106,6 +132,13 @@ const dropdownMenuItemIcon = cva(['text-base'], {
 			active: false,
 			disabled: false,
 			class: 'text-black-teal-300 group-hover:text-black-teal',
+		},
+
+		{
+			variant: 'dark-teal',
+			active: false,
+			disabled: false,
+			class: 'text-dark-teal-100 group-hover:text-white',
 		},
 
 		{
@@ -141,7 +174,7 @@ export class DropdownMenuItem {
 	/**
 	 * The variant of the item
 	 */
-	@Prop() variant: 'default' | 'negative' = 'default';
+	@Prop() variant: 'default' | 'dark-teal' | 'negative' = 'default';
 
 	/**
 	 * Wether to enable the hover state

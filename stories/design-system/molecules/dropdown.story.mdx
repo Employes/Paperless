@@ -8,6 +8,48 @@ import DropdownDocs from '../../../packages/core/src/components/molecules/dropdo
 
 # Examples
 
+## Variant
+
+## Default
+
+<Canvas>
+	<div class='flex h-48 items-start justify-center'>
+		<p-dropdown>
+			<p-button
+				variant='secondary'
+				slot='trigger'
+			>
+				Click me
+			</p-button>
+			<slot slot='items'>
+				<p-dropdown-menu-item>Item 1</p-dropdown-menu-item>
+				<p-dropdown-menu-item>Item 2</p-dropdown-menu-item>
+				<p-dropdown-menu-item>Item 3</p-dropdown-menu-item>
+			</slot>
+		</p-dropdown>
+	</div>
+</Canvas>
+
+## Dark teal
+
+<Canvas>
+	<div class='flex h-48 items-start justify-center'>
+		<p-dropdown variant='dark-teal'>
+			<p-button
+				variant='secondary'
+				slot='trigger'
+			>
+				Click me
+			</p-button>
+			<slot slot='items'>
+				<p-dropdown-menu-item>Item 1</p-dropdown-menu-item>
+				<p-dropdown-menu-item>Item 2</p-dropdown-menu-item>
+				<p-dropdown-menu-item>Item 3</p-dropdown-menu-item>
+			</slot>
+		</p-dropdown>
+	</div>
+</Canvas>
+
 ## Behavior
 
 ### Default
