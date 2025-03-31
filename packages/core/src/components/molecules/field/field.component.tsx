@@ -38,16 +38,22 @@ const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 			false: null,
 			true: null,
 		},
+		isTextarea: {
+			false: null,
+			true: null,
+		},
 	},
 	compoundVariants: [
 		{
 			size: 'sm',
 			variant: 'write',
+			isTextarea: false,
 			class: 'h-6',
 		},
 		{
 			size: 'base',
 			variant: 'write',
+			isTextarea: false,
 			class: 'h-8',
 		},
 
@@ -90,9 +96,13 @@ const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 });
 
 const input = cva(
-	'text-sm placeholder:text-sm placeholder:text-black-teal-200 text-black-teal border-none outline-none focus:outline-none bg-transparent flex-1 min-w-0 h-full',
+	'text-sm placeholder:text-sm placeholder:text-black-teal-200 text-black-teal border-none outline-none focus:outline-none bg-transparent flex-1 min-w-0',
 	{
 		variants: {
+			isTextarea: {
+				false: 'h-full',
+				true: null,
+			},
 			disabled: {
 				false: null,
 				true: 'cursor-not-allowed',
@@ -358,6 +368,7 @@ export class Field {
 							focused: this.focused || this._focused,
 							size: this.size,
 							variant: this.variant,
+							isTextarea: this.type === 'textarea',
 						})}
 						slot='content'
 					>
@@ -484,6 +495,7 @@ export class Field {
 		const props = {
 			class: input({
 				disabled: this.disabled,
+				isTextarea: this.type === 'textarea',
 			}),
 			value: this.value,
 			placeholder: this.placeholder,
@@ -497,11 +509,13 @@ export class Field {
 		}
 
 		if (this.type === 'textarea') {
-			<textarea
-				ref={ref => this._setInputRef(ref)}
-				{...props}
-				{...properties}
-			/>;
+			return (
+				<textarea
+					ref={ref => this._setInputRef(ref)}
+					{...props}
+					{...properties}
+				/>
+			);
 		}
 
 		return (
