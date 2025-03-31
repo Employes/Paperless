@@ -27,6 +27,8 @@
  - [p-cropper](../../molecules/cropper)
  - [p-dropdown-menu-item](../dropdown-menu-item)
  - [p-field](../../molecules/field)
+ - [p-floating-menu-container](../floating-menu-container)
+ - [p-floating-menu-item](../floating-menu-item)
  - [p-helper](../helper)
  - [p-info-panel](../info-panel)
  - [p-input-error](../../molecules/input-error)
@@ -38,7 +40,6 @@
  - [p-select](../../molecules/select)
  - [p-status](../status)
  - [p-stepper-item](../stepper-item)
- - [p-table](../../organisms/table)
 
 ### Graph
 ```mermaid
@@ -51,6 +52,8 @@ graph TD;
   p-cropper --> p-icon
   p-dropdown-menu-item --> p-icon
   p-field --> p-icon
+  p-floating-menu-container --> p-icon
+  p-floating-menu-item --> p-icon
   p-helper --> p-icon
   p-info-panel --> p-icon
   p-input-error --> p-icon
@@ -62,7 +65,6 @@ graph TD;
   p-select --> p-icon
   p-status --> p-icon
   p-stepper-item --> p-icon
-  p-table --> p-icon
   style p-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

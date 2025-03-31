@@ -491,30 +491,20 @@ export class Table {
 							class={`${this.selectedRows?.length ? '' : 'inactive'} ${
 								this._floatingMenuShown ? 'shown' : ''
 							}`}
+							amountSelectedTemplate={this.floatingMenuAmountSelectedTemplate}
+							amount={this.selectedRows?.length}
+							enableAmountSelected={!!this._rowActionsFloating?.length}
+							onClose={() => this._selectAllChange(null, false)}
 						>
-							<p-floating-menu-item
-								hover={false}
-								slot='floating-menu-item'
-								class={
-									this._rowActionsFloating?.length ? 'hidden tablet:flex' : ''
-								}
-							>
-								{this.floatingMenuAmountSelectedTemplate(
-									this.selectedRows?.length
-								)}
-							</p-floating-menu-item>
-							<p-divider
-								class={`mx-0 text-storm ${
-									this._rowActionsFloating?.length ? 'hidden tablet:flex' : ''
-								}`}
-								variant='vertical'
-								slot='floating-menu-item'
-							/>
 							{this._rowActionsFloating?.length &&
 								this._rowActionsFloating.map(a => (
 									<p-floating-menu-item
 										slot='floating-menu-item'
 										disabled={a.disabled}
+										loading={a.loading}
+										icon={a.icon}
+										iconRotate={a.iconRotate}
+										iconFlip={a.iconFlip}
 										onClick={() =>
 											!a.disabled &&
 											!a.loading &&
@@ -524,31 +514,9 @@ export class Table {
 												: a.action(this.selectedRows, true)
 										}
 									>
-										{a.label}{' '}
-										{a.loading ? (
-											<p-loader></p-loader>
-										) : (
-											<p-icon
-												variant={a.icon}
-												rotate={a.iconRotate}
-												flip={a.iconFlip}
-											/>
-										)}
+										{a.label}
 									</p-floating-menu-item>
 								))}
-							{this._rowActionsFloating?.length && (
-								<p-divider
-									class='mx-0 text-storm'
-									variant='vertical'
-									slot='floating-menu-item'
-								/>
-							)}
-							<p-floating-menu-item
-								slot='floating-menu-item'
-								onClick={() => this._selectAllChange(null, false)}
-							>
-								<p-icon variant='negative' />
-							</p-floating-menu-item>
 						</p-floating-menu-container>
 					) : (
 						''
@@ -918,12 +886,14 @@ export class Table {
 	}
 
 	private _selectAllChange(
-		{ detail: checked }: PCheckboxCustomEvent<boolean>,
+		ev: PCheckboxCustomEvent<boolean>,
 		forceValue?: boolean
 	) {
 		if (!this._enableRowSelection) {
 			return;
 		}
+
+		const checked = ev?.detail ?? forceValue ?? false;
 
 		const value = forceValue === undefined ? checked : forceValue;
 		if (value) {
