@@ -3,6 +3,91 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.34](https://github.com/ionic-team/stencil-component-starter/compare/v1.67.9...v2.0.1-beta.34) (2025-03-31)
+
+
+### Bug Fixes
+
+* add components.d.ts ([7219b3b](https://github.com/ionic-team/stencil-component-starter/commit/7219b3b3f470af2ce08e6364ec721825cb19c4df))
+* **atoms/avatar:** Always force a single letter ([84e6db0](https://github.com/ionic-team/stencil-component-starter/commit/84e6db0eae2e9947bea907b0df99db02b2751596))
+* **atoms/avatar:** Apply ambit font ([1d05d7f](https://github.com/ionic-team/stencil-component-starter/commit/1d05d7fad70bd2812df7df63dc708a3e6a9b1851))
+* **atoms/avatar:** Fix centering letters ([0813925](https://github.com/ionic-team/stencil-component-starter/commit/0813925b9b7b7f0b3ef027e40f1e05d676ddd3eb))
+* **atoms/avatar:** Font weight & color ([4b908d0](https://github.com/ionic-team/stencil-component-starter/commit/4b908d03fccb370283aa4fdbefedf5990c3fb055))
+* **atoms/avatar:** Set leading to the same as font size ([3eaa8ee](https://github.com/ionic-team/stencil-component-starter/commit/3eaa8eece42989c70b8c6b6ac22d153f20abc194))
+* **atoms/checkbox:** Add hover state for checked state ([b17d299](https://github.com/ionic-team/stencil-component-starter/commit/b17d299e650d2f9aca370bdd005c43b103d6917d))
+* **atoms/dropdown-menu/container:** Only apply w-auto when there is a max width ([70d87fc](https://github.com/ionic-team/stencil-component-starter/commit/70d87fcea9c75e2c3cb54556fc20199c0c56dafc))
+* **atoms/helper:** Small change to accomendate for height changes ([87ba1a9](https://github.com/ionic-team/stencil-component-starter/commit/87ba1a910452f17bf0975f518b9abb6a9c7161c0))
+* **atoms/loader:** Don't access props before hydration ([628c162](https://github.com/ionic-team/stencil-component-starter/commit/628c1627a8537c35ab904e2beeff987f005d192c))
+* **atoms/radio:** Remove :after classes ([d9eddf8](https://github.com/ionic-team/stencil-component-starter/commit/d9eddf807c4da29f413950a2f6182e7f702fa292))
+* **atoms/toggle:** Fix circle showing on unchecked & unchecked background. Added checked hover background fix ([38f66ca](https://github.com/ionic-team/stencil-component-starter/commit/38f66cac913b8c9644f687220b7eb7fbd80a5a4e))
+* **molecules/button & navigation-item:** Use class prop to determine active state ([34c6f1c](https://github.com/ionic-team/stencil-component-starter/commit/34c6f1c1ee5fc6e7e6f1dc561f2030461baafd00))
+* **molecules/button:** Icon hover variants ([5c188df](https://github.com/ionic-team/stencil-component-starter/commit/5c188df1f387249509ceb95f8123beeaa720d960))
+* **molecules/calendar:** Better handeling in the header ([5a556ea](https://github.com/ionic-team/stencil-component-starter/commit/5a556ea3f8958f70ce94a752c2b5111535a1e27b))
+* **molecules/calendar:** Fix header centering on year select ([12893c1](https://github.com/ionic-team/stencil-component-starter/commit/12893c1a2c9c670e0d40825423cc4640fcc90bf5))
+* **molecules/datepicker:** Allow for clearing and set month/year correctly ([4ebd279](https://github.com/ionic-team/stencil-component-starter/commit/4ebd279b17f5816bc6ff06d1c06e7deb2041e005))
+* **molecules/datepicker:** Don't always set mobile as true ([11a7d11](https://github.com/ionic-team/stencil-component-starter/commit/11a7d11f1a9e7b2d486cff35b5df303a0bdf3801))
+* **molecules/dropdown:** Small fix after rebase ([47b6417](https://github.com/ionic-team/stencil-component-starter/commit/47b641763c059789b7678065d5f6a0b1142c2292))
+* **molecules/field:** Make sure textarea is visible and height adjustable ([5a1a7a0](https://github.com/ionic-team/stencil-component-starter/commit/5a1a7a0fda77121f1a49869a1477a3ece1c678e9))
+* **molecules/field:** Set value prop on changes ([d88d6b2](https://github.com/ionic-team/stencil-component-starter/commit/d88d6b29f314190585a744faf0c784ea5fd2a7db))
+* **molecules/field:** Use correct type for slot ([086283a](https://github.com/ionic-team/stencil-component-starter/commit/086283acabaf5e5bc0af570dca3b88441b435d40))
+* **molecules/navigation-section:** Rename title to header ([e1462e2](https://github.com/ionic-team/stencil-component-starter/commit/e1462e2ec17bb6a7c885c3c7392ff8482232be73))
+* **molecules/navigation/section:** Add correct gap between header & content ([b96d415](https://github.com/ionic-team/stencil-component-starter/commit/b96d415489d66f1b015f2a282054263062bd83cd))
+* **molecules/profile:** Align content to start ([f618490](https://github.com/ionic-team/stencil-component-starter/commit/f618490ee98acc9193e129fa29411884388e7f7e))
+* **molecules/profile:** Align text to the left ([5cbfdbe](https://github.com/ionic-team/stencil-component-starter/commit/5cbfdbe077429912911d534f486a641b4deb4f4d))
+* **molecules/profile:** Correct width for profile children ([682eb96](https://github.com/ionic-team/stencil-component-starter/commit/682eb96c45dca18835c985f42b2425d43bf0059e))
+* **molecules/profile:** Don't apply padding to button ([d1ae685](https://github.com/ionic-team/stencil-component-starter/commit/d1ae6854e2adff0a31b180338885653fb6e6e072))
+* **molecules/profile:** Fix stupid dropdown issue ([6c7a863](https://github.com/ionic-team/stencil-component-starter/commit/6c7a86342f8a573e7b6a99c9f9fb3ffe688af3c5))
+* **molecules/profile:** Set title size to sm ([a4b9972](https://github.com/ionic-team/stencil-component-starter/commit/a4b9972c57593f76cbdaff8df779459dd9448e75))
+* **molecules/select:** Use correct event to apply autoComplete ([3a7f6bf](https://github.com/ionic-team/stencil-component-starter/commit/3a7f6bf3a6e7274c926046905dee4131c98c5002))
+* **molecules/stepper:** Use correct typings for timeout ([bfb531b](https://github.com/ionic-team/stencil-component-starter/commit/bfb531b59bab027f824f31168f8aeb7bb560d272))
+* **molecules:** Revert removal of input-group temporarily ([b56e376](https://github.com/ionic-team/stencil-component-starter/commit/b56e37628fd5b018530acc39115dc4aeb2add4f2))
+* **organisms/navbar:** Use correct icon for open/close & remove menu text ([5146860](https://github.com/ionic-team/stencil-component-starter/commit/51468606eefd28e628c9acfc5062a8e860cf5273))
+
+
+### Features
+
+* **atmos:** Add navigation-title component ([7ded9ac](https://github.com/ionic-team/stencil-component-starter/commit/7ded9ac4cebc18c68f4abec1f7a7ba4df6c9aeb3))
+* **atoms/avatar:** New branding implementation ([9d4d837](https://github.com/ionic-team/stencil-component-starter/commit/9d4d8375296e2d50aadc1378a2a517e999807a72))
+* **atoms/backdrop:** New branding implementation ([749705f](https://github.com/ionic-team/stencil-component-starter/commit/749705fd0eae2c74dc5c44d44a96eb5375eeab10))
+* **atoms/dropdown-menu/container:** New branding implementation ([cdc57e6](https://github.com/ionic-team/stencil-component-starter/commit/cdc57e6d028f924369983945306fe295ed4a9569))
+* **atoms/dropdown-menu/item:** Add negative variant ([59a1469](https://github.com/ionic-team/stencil-component-starter/commit/59a14692f22071b28e07664b769e5726146d5451))
+* **atoms/dropdown-menu/item:** New branding implementation ([0272fb8](https://github.com/ionic-team/stencil-component-starter/commit/0272fb8feefcd571245d2b347e028e55152167a3))
+* **atoms/dropdown-menu/item:** Use p-checkbox instead of p-input ([02d1766](https://github.com/ionic-team/stencil-component-starter/commit/02d176697ae3ea6eb0ec4c93e00ca0abd8616dc8))
+* **atoms/dropdown/container & item:** Add dark teal variant ([b51407f](https://github.com/ionic-team/stencil-component-starter/commit/b51407ff89f02ee63d4e5ed1e1fd8472c74ce20b))
+* **atoms/field:** Add field container component ([8255533](https://github.com/ionic-team/stencil-component-starter/commit/825553351b4434c0a26c0798a9f02eb0252ec7ae))
+* **atoms/icon:** New icons and marked old as deprecated ([e688cc2](https://github.com/ionic-team/stencil-component-starter/commit/e688cc294ea12a8d316d18114376681c231dcc15))
+* **atoms/icons:** Add checkmark-thick icon ([3338f54](https://github.com/ionic-team/stencil-component-starter/commit/3338f54a6c55e356d9d83b74ba2040be5e429312))
+* **atoms:** Add badge component ([2b5e588](https://github.com/ionic-team/stencil-component-starter/commit/2b5e588c7b63807d20a68af5d16e4907ca7ec1f9))
+* **atoms:** Add checkbox component ([a798efc](https://github.com/ionic-team/stencil-component-starter/commit/a798efc5eec3d7132d13254c701976ad31c479b1))
+* **atoms:** Add field component ([7af9a4d](https://github.com/ionic-team/stencil-component-starter/commit/7af9a4dc6b71d653c01a02dd79be5141c647e035))
+* **atoms:** Add radio component ([f39fdad](https://github.com/ionic-team/stencil-component-starter/commit/f39fdad42a2b9b035f7a06809405147addb63dad))
+* **atoms:** Add toggle component ([09ea143](https://github.com/ionic-team/stencil-component-starter/commit/09ea143f903b7682f21f259ef143badda194ccab))
+* **molecules/button:** Add dropdown variant ([0b5e415](https://github.com/ionic-team/stencil-component-starter/commit/0b5e415deb3726df0ff7b3a65196fd0180c4c57c))
+* **molecules/button:** New rebranding implementation ([e0c1037](https://github.com/ionic-team/stencil-component-starter/commit/e0c1037ed14910857f494f983e655597fc215d38))
+* **molecules/button:** Set active based on property or class ([170215c](https://github.com/ionic-team/stencil-component-starter/commit/170215c7cd65373ab5b6c13323095f52ea7e8c32))
+* **molecules/calendar:** Auto set correct view on value changes ([06b7ebd](https://github.com/ionic-team/stencil-component-starter/commit/06b7ebd0cb975f1adaee2e1d9a9f5ba5af315073))
+* **molecules/calendar:** Rebranding implementation ([5ee0df6](https://github.com/ionic-team/stencil-component-starter/commit/5ee0df6eb72693bbfa5437fcbd222356521604b4))
+* **molecules/datepicker:** Use native datepicker if available ([bb86453](https://github.com/ionic-team/stencil-component-starter/commit/bb8645362e74d06c0981d88400ee32a621d9d1f5))
+* **molecules/dropdown:** New branding implementation ([62c38b2](https://github.com/ionic-team/stencil-component-starter/commit/62c38b2a698995c6f189d9c6bab3eebe8a144a63))
+* **molecules/dropdown:** Pass active to button if dropdown is shown ([7c13c67](https://github.com/ionic-team/stencil-component-starter/commit/7c13c670f32423d3b3fee0b580af528e2f16198c))
+* **molecules/field:** Add read variant ([fcd99d3](https://github.com/ionic-team/stencil-component-starter/commit/fcd99d32f3b0792b32080df6405400555c761c41))
+* **molecules/field:** Allow for auto focus ([ed21cb0](https://github.com/ionic-team/stencil-component-starter/commit/ed21cb07b900488f4111da756b1b33bb1808e1c1))
+* **molecules/field:** Set value of this.value on prop ([b54ac0a](https://github.com/ionic-team/stencil-component-starter/commit/b54ac0aeda17aa46899354286fc41c666ddfd4ba))
+* **molecules/label:** Move & apply rebranding to label component ([a36e456](https://github.com/ionic-team/stencil-component-starter/commit/a36e4569713be0971215bd305dd11fa1c955abad))
+* **molecules/navigation-item:** New branding implementation ([5a3a44f](https://github.com/ionic-team/stencil-component-starter/commit/5a3a44fdf97ef8bdb8547a5a9419804fdfe939c7))
+* **molecules/navigation-item:** Set active by class ([de0c25f](https://github.com/ionic-team/stencil-component-starter/commit/de0c25f8437a9f4c6d4d545741cea208b5a8848e))
+* **molecules/navigation/item:** Add loading property ([427f731](https://github.com/ionic-team/stencil-component-starter/commit/427f731b5368aa3072cf9c082b07562df03a77b4))
+* **molecules/profile:** Try to rerender on slot  changes ([aaab22e](https://github.com/ionic-team/stencil-component-starter/commit/aaab22e7ae36cacdbb5e011173536b1501bfe21e))
+* **molecules/profile:** Use button for profile when dropdown available ([3015bbc](https://github.com/ionic-team/stencil-component-starter/commit/3015bbc8965b28f4ebdd03f41bda67caba44cab1))
+* **molecules:** Add navigation section component ([7a906ef](https://github.com/ionic-team/stencil-component-starter/commit/7a906ef16dc177521c9a717a0c3bc355ae7d5a89))
+* New tailwindconfiguration ([ad91118](https://github.com/ionic-team/stencil-component-starter/commit/ad911180383ce70993502946c07f7b9616a78632))
+* **organisms/navbar:** New branding implementation ([65602a5](https://github.com/ionic-team/stencil-component-starter/commit/65602a5d1072627c8fc99b382922510696a70f16))
+* **utils:** Add is-mobile-browser utility for the future ([016fe81](https://github.com/ionic-team/stencil-component-starter/commit/016fe8138c81abc5d1d5fa50916d0039a71935fc))
+
+
+
+
+
 ## [2.0.1-beta.33](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.32...v2.0.1-beta.33) (2025-03-27)
 
 
