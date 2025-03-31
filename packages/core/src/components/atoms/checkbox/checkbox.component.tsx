@@ -135,7 +135,7 @@ export class Checkbox {
 							<p-icon
 								size={this.size}
 								class='drop-shadow-black-teal-10%'
-								variant={!!this.indeterminate ? 'minus' : 'checkmark'}
+								variant={!!this.indeterminate ? 'minus' : 'checkmarkThick'}
 							/>
 						</div>
 					</div>
