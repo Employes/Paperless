@@ -26,6 +26,7 @@
 
  - [p-attachment](../../molecules/attachment)
  - [p-button](../../molecules/button)
+ - [p-floating-menu-item](../floating-menu-item)
  - [p-navigation-item](../../molecules/navigation-item)
  - [p-select](../../molecules/select)
  - [p-table](../../organisms/table)
@@ -38,6 +39,7 @@
 graph TD;
   p-attachment --> p-loader
   p-button --> p-loader
+  p-floating-menu-item --> p-loader
   p-navigation-item --> p-loader
   p-select --> p-loader
   p-table --> p-loader

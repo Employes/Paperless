@@ -217,27 +217,10 @@
 			[usedInTable]="true"
 			[class.inactive]="!selectedRows.length"
 			[class.shown]="floatingMenuShown$ | async"
+			[amount]="floatingMenuAmountSelectedText"
+			[enableAmountSelected]="!!(rowActionsFloating$ | async)?.length"
+			(close)="_selectAllChange(null, false)"
 		>
-			<p-floating-menu-item
-				[hover]="false"
-				slot="floating-menu-item"
-				[class]="{
-					hidden: !!(rowActionsFloating$ | async)?.length,
-					'tablet:flex': !!(rowActionsFloating$ | async)?.length
-				}"
-			>
-				{{ floatingMenuAmountSelectedText }}
-			</p-floating-menu-item>
-			<p-divider
-				class="mx-0 text-storm"
-				variant="vertical"
-				slot="floating-menu-item"
-				[class]="{
-					hidden: !!(rowActionsFloating$ | async)?.length,
-					'tablet:flex': !!(rowActionsFloating$ | async)?.length
-				}"
-			></p-divider>
-
 			<p-floating-menu-item
 				*ngFor="let action of rowActionsFloating$ | async"
 				slot="floating-menu-item"
@@ -245,34 +228,13 @@
 					(action.type === 'single' && selectedRows.length > 1) ||
 					action.disabled
 				"
+				[loading]="action.loading"
+				[icon]="action.icon"
+				[iconRotate]="action.iconRotate"
+				[iconFlip]="action.iconFlip"
 				(click)="_rowActionClick(action)"
 			>
 				{{ action.label }}
-
-				<p-loader
-					*ngIf="action.loading; else floatingMenuItemIconTemplate"
-				></p-loader>
-
-				<ng-template #floatingMenuItemIconTemplate>
-					<p-icon
-						[variant]="action.icon"
-						[rotate]="action.iconRotate"
-						[flip]="action.iconFlip"
-					></p-icon>
-				</ng-template>
-			</p-floating-menu-item>
-
-			<p-divider
-				class="mx-0 text-storm"
-				variant="vertical"
-				slot="floating-menu-item"
-			></p-divider>
-
-			<p-floating-menu-item
-				(click)="_selectAllChange(null, false)"
-				slot="floating-menu-item"
-			>
-				<p-icon variant="negative"></p-icon>
 			</p-floating-menu-item>
 		</p-floating-menu-container>
 	</ng-container>

@@ -1,0 +1,16 @@
+/* :host { */
+/* 	@apply flex h-6 items-center gap-2 whitespace-nowrap text-sm text-storm-vague; */
+/* } */
+/**/
+/* :host([hover]) { */
+/* 	@apply cursor-pointer font-semibold; */
+/* } */
+/**/
+/* :host([disabled]), */
+/* :host([disabled='true']) { */
+/* 	@apply opacity-40 pointer-events-none; */
+/* } */
+/**/
+/* :host([hover]:hover:not([disabled])) { */
+/* 	@apply text-white; */
+/* } */
