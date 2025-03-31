@@ -109,6 +109,8 @@ import male from '../assets/icons/users/male.svg';
 import user from '../assets/icons/users/user.svg';
 import users from '../assets/icons/users/users.svg';
 
+import checkmarkThick from '../assets/icons/extra/checkmark-thick.svg';
+
 export const categorized = {
 	arrows: {
 		caret,
@@ -227,6 +229,9 @@ export const categorized = {
 		male,
 		user,
 		users,
+	},
+	extra: {
+		checkmarkThick,
 	},
 };
 
@@ -349,4 +354,7 @@ export const icons = {
 	male,
 	user,
 	users,
+
+	// extra
+	checkmarkThick,
 };
