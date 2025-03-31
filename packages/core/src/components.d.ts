@@ -17,7 +17,7 @@ import { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1 } from
 import { IconDeprecatedVariant } from "./components/atoms/icon-deprecated/icon.component";
 import { IllustrationVariant } from "./components/atoms/illustration/illustration.component";
 import { Observable } from "rxjs";
-import { templateFunc as templateFunc2 } from "./components/molecules/page-size-select/page-size-select.component";
+import { templateFunc as templateFunc2 } from "./components/molecules/pagination-size/pagination-size.component";
 import { amountSelectedTemplateFunc as amountSelectedTemplateFunc1, templateFunc as templateFunc3 } from "./components/organisms/table/table.component";
 import { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
 import { IconFlipOptions as IconFlipOptions2, IconVariant as IconVariant2, RotateOptions as RotateOptions2 } from "./components";
@@ -37,7 +37,7 @@ export { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1 } from
 export { IconDeprecatedVariant } from "./components/atoms/icon-deprecated/icon.component";
 export { IllustrationVariant } from "./components/atoms/illustration/illustration.component";
 export { Observable } from "rxjs";
-export { templateFunc as templateFunc2 } from "./components/molecules/page-size-select/page-size-select.component";
+export { templateFunc as templateFunc2 } from "./components/molecules/pagination-size/pagination-size.component";
 export { amountSelectedTemplateFunc as amountSelectedTemplateFunc1, templateFunc as templateFunc3 } from "./components/organisms/table/table.component";
 export { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
 export { IconFlipOptions as IconFlipOptions2, IconVariant as IconVariant2, RotateOptions as RotateOptions2 } from "./components";
@@ -558,6 +558,10 @@ export namespace Components {
           * Wether to use a portal for the dropdown container
          */
         "usePortal": boolean;
+        /**
+          * The variant of the dropdown
+         */
+        "variant": 'default' | 'dark-teal';
     }
     interface PDropdownMenuContainer {
         /**
@@ -580,6 +584,10 @@ export namespace Components {
           * Wether the container should be scrollable when the threshold is met.
          */
         "scrollable": boolean | 'default' | 'large' | 'xlarge';
+        /**
+          * The variant of the container
+         */
+        "variant": 'default' | 'dark-teal';
     }
     interface PDropdownMenuItem {
         /**
@@ -609,7 +617,7 @@ export namespace Components {
         /**
           * The variant of the item
          */
-        "variant": 'default' | 'negative';
+        "variant": 'default' | 'dark-teal' | 'negative';
     }
     interface PField {
         /**
@@ -1131,37 +1139,37 @@ export namespace Components {
     }
     interface PNavigationTitle {
     }
-    interface PPageSizeSelect {
+    interface PPagination {
         /**
-          * The size of the button
+          * Wether to enable pagination pages
          */
-        "buttonSize": 'sm' | 'base';
+        "enablePaginationPages": boolean;
         /**
-          * The template for the data view
+          * Wether to enable pagination size select
          */
-        "buttonTemplate": templateFunc2;
-        /**
-          * Chevron position
-         */
-        "chevronPosition": 'start' | 'end';
+        "enablePaginationSize": boolean;
         /**
           * Wether to hide when there is only 1 page available
          */
-        "hidden": boolean;
-        /**
-          * The template for the data view
-         */
-        "itemTemplate": templateFunc2;
+        "hideOnSinglePage": boolean;
         /**
           * The current page
          */
-        "size": number;
+        "page": number;
         /**
-          * The available sizes
+          * The amount of items per page
          */
-        "sizeOptions": number[];
+        "pageSize": number;
+        /**
+          * The options for the page size
+         */
+        "pageSizeOptions": number[];
+        /**
+          * The total amount of items
+         */
+        "total": number;
     }
-    interface PPagination {
+    interface PPaginationPages {
         /**
           * Wether to hide when there is only 1 page available
          */
@@ -1179,11 +1187,41 @@ export namespace Components {
          */
         "total": number;
     }
-    interface PPaginationItem {
+    interface PPaginationPagesItem {
         /**
           * Wether the pagination item is active
          */
         "active": boolean;
+        /**
+          * Wether the pagination item is disabled
+         */
+        "disabled": boolean;
+        /**
+          * Wether the pagination item has hover
+         */
+        "hover": boolean;
+        /**
+          * The variant of the item
+         */
+        "variant": 'default' | 'carousel';
+    }
+    interface PPaginationSize {
+        /**
+          * Wether to hide when there is only 1 page available
+         */
+        "hidden": boolean;
+        /**
+          * The template for the data view
+         */
+        "itemTemplate": templateFunc2;
+        /**
+          * The current page
+         */
+        "size": number;
+        /**
+          * The available sizes
+         */
+        "sizeOptions": number[];
     }
     interface PPortal {
     }
@@ -2056,13 +2094,17 @@ export interface PModalHeaderCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPModalHeaderElement;
 }
-export interface PPageSizeSelectCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLPPageSizeSelectElement;
-}
 export interface PPaginationCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPPaginationElement;
+}
+export interface PPaginationPagesCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPPaginationPagesElement;
+}
+export interface PPaginationSizeCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPPaginationSizeElement;
 }
 export interface PRadioCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -2591,25 +2633,9 @@ declare global {
         prototype: HTMLPNavigationTitleElement;
         new (): HTMLPNavigationTitleElement;
     };
-    interface HTMLPPageSizeSelectElementEventMap {
-        "sizeChange": number;
-    }
-    interface HTMLPPageSizeSelectElement extends Components.PPageSizeSelect, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLPPageSizeSelectElementEventMap>(type: K, listener: (this: HTMLPPageSizeSelectElement, ev: PPageSizeSelectCustomEvent<HTMLPPageSizeSelectElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLPPageSizeSelectElementEventMap>(type: K, listener: (this: HTMLPPageSizeSelectElement, ev: PPageSizeSelectCustomEvent<HTMLPPageSizeSelectElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
-    }
-    var HTMLPPageSizeSelectElement: {
-        prototype: HTMLPPageSizeSelectElement;
-        new (): HTMLPPageSizeSelectElement;
-    };
     interface HTMLPPaginationElementEventMap {
         "pageChange": number;
+        "pageSizeChange": number;
     }
     interface HTMLPPaginationElement extends Components.PPagination, HTMLStencilElement {
         addEventListener<K extends keyof HTMLPPaginationElementEventMap>(type: K, listener: (this: HTMLPPaginationElement, ev: PPaginationCustomEvent<HTMLPPaginationElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -2625,11 +2651,46 @@ declare global {
         prototype: HTMLPPaginationElement;
         new (): HTMLPPaginationElement;
     };
-    interface HTMLPPaginationItemElement extends Components.PPaginationItem, HTMLStencilElement {
+    interface HTMLPPaginationPagesElementEventMap {
+        "pageChange": number;
+        "pagesChange": number;
     }
-    var HTMLPPaginationItemElement: {
-        prototype: HTMLPPaginationItemElement;
-        new (): HTMLPPaginationItemElement;
+    interface HTMLPPaginationPagesElement extends Components.PPaginationPages, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPPaginationPagesElementEventMap>(type: K, listener: (this: HTMLPPaginationPagesElement, ev: PPaginationPagesCustomEvent<HTMLPPaginationPagesElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPPaginationPagesElementEventMap>(type: K, listener: (this: HTMLPPaginationPagesElement, ev: PPaginationPagesCustomEvent<HTMLPPaginationPagesElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPPaginationPagesElement: {
+        prototype: HTMLPPaginationPagesElement;
+        new (): HTMLPPaginationPagesElement;
+    };
+    interface HTMLPPaginationPagesItemElement extends Components.PPaginationPagesItem, HTMLStencilElement {
+    }
+    var HTMLPPaginationPagesItemElement: {
+        prototype: HTMLPPaginationPagesItemElement;
+        new (): HTMLPPaginationPagesItemElement;
+    };
+    interface HTMLPPaginationSizeElementEventMap {
+        "sizeChange": number;
+    }
+    interface HTMLPPaginationSizeElement extends Components.PPaginationSize, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPPaginationSizeElementEventMap>(type: K, listener: (this: HTMLPPaginationSizeElement, ev: PPaginationSizeCustomEvent<HTMLPPaginationSizeElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPPaginationSizeElementEventMap>(type: K, listener: (this: HTMLPPaginationSizeElement, ev: PPaginationSizeCustomEvent<HTMLPPaginationSizeElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPPaginationSizeElement: {
+        prototype: HTMLPPaginationSizeElement;
+        new (): HTMLPPaginationSizeElement;
     };
     interface HTMLPPortalElement extends Components.PPortal, HTMLStencilElement {
     }
@@ -2952,9 +3013,10 @@ declare global {
         "p-navigation-item": HTMLPNavigationItemElement;
         "p-navigation-section": HTMLPNavigationSectionElement;
         "p-navigation-title": HTMLPNavigationTitleElement;
-        "p-page-size-select": HTMLPPageSizeSelectElement;
         "p-pagination": HTMLPPaginationElement;
-        "p-pagination-item": HTMLPPaginationItemElement;
+        "p-pagination-pages": HTMLPPaginationPagesElement;
+        "p-pagination-pages-item": HTMLPPaginationPagesItemElement;
+        "p-pagination-size": HTMLPPaginationSizeElement;
         "p-portal": HTMLPPortalElement;
         "p-profile": HTMLPProfileElement;
         "p-radio": HTMLPRadioElement;
@@ -3555,6 +3617,10 @@ declare namespace LocalJSX {
           * Wether to use a portal for the dropdown container
          */
         "usePortal"?: boolean;
+        /**
+          * The variant of the dropdown
+         */
+        "variant"?: 'default' | 'dark-teal';
     }
     interface PDropdownMenuContainer {
         /**
@@ -3577,6 +3643,10 @@ declare namespace LocalJSX {
           * Wether the container should be scrollable when the threshold is met.
          */
         "scrollable"?: boolean | 'default' | 'large' | 'xlarge';
+        /**
+          * The variant of the container
+         */
+        "variant"?: 'default' | 'dark-teal';
     }
     interface PDropdownMenuItem {
         /**
@@ -3606,7 +3676,7 @@ declare namespace LocalJSX {
         /**
           * The variant of the item
          */
-        "variant"?: 'default' | 'negative';
+        "variant"?: 'default' | 'dark-teal' | 'negative';
     }
     interface PField {
         /**
@@ -4157,41 +4227,15 @@ declare namespace LocalJSX {
     }
     interface PNavigationTitle {
     }
-    interface PPageSizeSelect {
-        /**
-          * The size of the button
-         */
-        "buttonSize"?: 'sm' | 'base';
-        /**
-          * The template for the data view
-         */
-        "buttonTemplate"?: templateFunc2;
-        /**
-          * Chevron position
-         */
-        "chevronPosition"?: 'start' | 'end';
-        /**
-          * Wether to hide when there is only 1 page available
-         */
-        "hidden"?: boolean;
-        /**
-          * The template for the data view
-         */
-        "itemTemplate"?: templateFunc2;
-        /**
-          * Event whenever the size changes
-         */
-        "onSizeChange"?: (event: PPageSizeSelectCustomEvent<number>) => void;
-        /**
-          * The current page
-         */
-        "size"?: number;
-        /**
-          * The available sizes
-         */
-        "sizeOptions"?: number[];
-    }
     interface PPagination {
+        /**
+          * Wether to enable pagination pages
+         */
+        "enablePaginationPages"?: boolean;
+        /**
+          * Wether to enable pagination size select
+         */
+        "enablePaginationSize"?: boolean;
         /**
           * Wether to hide when there is only 1 page available
          */
@@ -4200,6 +4244,40 @@ declare namespace LocalJSX {
           * Event whenever the page changes
          */
         "onPageChange"?: (event: PPaginationCustomEvent<number>) => void;
+        /**
+          * Event whenever the page changes
+         */
+        "onPageSizeChange"?: (event: PPaginationCustomEvent<number>) => void;
+        /**
+          * The current page
+         */
+        "page"?: number;
+        /**
+          * The amount of items per page
+         */
+        "pageSize"?: number;
+        /**
+          * The options for the page size
+         */
+        "pageSizeOptions"?: number[];
+        /**
+          * The total amount of items
+         */
+        "total": number;
+    }
+    interface PPaginationPages {
+        /**
+          * Wether to hide when there is only 1 page available
+         */
+        "hideOnSinglePage"?: boolean;
+        /**
+          * Event whenever the page changes
+         */
+        "onPageChange"?: (event: PPaginationPagesCustomEvent<number>) => void;
+        /**
+          * The pages that were generated
+         */
+        "onPagesChange"?: (event: PPaginationPagesCustomEvent<number>) => void;
         /**
           * The current page
          */
@@ -4213,11 +4291,45 @@ declare namespace LocalJSX {
          */
         "total": number;
     }
-    interface PPaginationItem {
+    interface PPaginationPagesItem {
         /**
           * Wether the pagination item is active
          */
         "active"?: boolean;
+        /**
+          * Wether the pagination item is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Wether the pagination item has hover
+         */
+        "hover"?: boolean;
+        /**
+          * The variant of the item
+         */
+        "variant"?: 'default' | 'carousel';
+    }
+    interface PPaginationSize {
+        /**
+          * Wether to hide when there is only 1 page available
+         */
+        "hidden"?: boolean;
+        /**
+          * The template for the data view
+         */
+        "itemTemplate"?: templateFunc2;
+        /**
+          * Event whenever the size changes
+         */
+        "onSizeChange"?: (event: PPaginationSizeCustomEvent<number>) => void;
+        /**
+          * The current page
+         */
+        "size"?: number;
+        /**
+          * The available sizes
+         */
+        "sizeOptions"?: number[];
     }
     interface PPortal {
     }
@@ -5195,9 +5307,10 @@ declare namespace LocalJSX {
         "p-navigation-item": PNavigationItem;
         "p-navigation-section": PNavigationSection;
         "p-navigation-title": PNavigationTitle;
-        "p-page-size-select": PPageSizeSelect;
         "p-pagination": PPagination;
-        "p-pagination-item": PPaginationItem;
+        "p-pagination-pages": PPaginationPages;
+        "p-pagination-pages-item": PPaginationPagesItem;
+        "p-pagination-size": PPaginationSize;
         "p-portal": PPortal;
         "p-profile": PProfile;
         "p-radio": PRadio;
@@ -5278,9 +5391,10 @@ declare module "@stencil/core" {
             "p-navigation-item": LocalJSX.PNavigationItem & JSXBase.HTMLAttributes<HTMLPNavigationItemElement>;
             "p-navigation-section": LocalJSX.PNavigationSection & JSXBase.HTMLAttributes<HTMLPNavigationSectionElement>;
             "p-navigation-title": LocalJSX.PNavigationTitle & JSXBase.HTMLAttributes<HTMLPNavigationTitleElement>;
-            "p-page-size-select": LocalJSX.PPageSizeSelect & JSXBase.HTMLAttributes<HTMLPPageSizeSelectElement>;
             "p-pagination": LocalJSX.PPagination & JSXBase.HTMLAttributes<HTMLPPaginationElement>;
-            "p-pagination-item": LocalJSX.PPaginationItem & JSXBase.HTMLAttributes<HTMLPPaginationItemElement>;
+            "p-pagination-pages": LocalJSX.PPaginationPages & JSXBase.HTMLAttributes<HTMLPPaginationPagesElement>;
+            "p-pagination-pages-item": LocalJSX.PPaginationPagesItem & JSXBase.HTMLAttributes<HTMLPPaginationPagesItemElement>;
+            "p-pagination-size": LocalJSX.PPaginationSize & JSXBase.HTMLAttributes<HTMLPPaginationSizeElement>;
             "p-portal": LocalJSX.PPortal & JSXBase.HTMLAttributes<HTMLPPortalElement>;
             "p-profile": LocalJSX.PProfile & JSXBase.HTMLAttributes<HTMLPProfileElement>;
             "p-radio": LocalJSX.PRadio & JSXBase.HTMLAttributes<HTMLPRadioElement>;
