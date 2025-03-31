@@ -1,20 +1,20 @@
 import { newE2EPage } from '@stencil/core/testing';
 
-describe('p-pagination', () => {
+describe('p-pagination-size', () => {
 	it('renders', async () => {
 		const page = await newE2EPage();
 
-		await page.setContent('<p-pagination></p-pagination>');
-		const element = await page.find('p-pagination');
+		await page.setContent('<p-pagination-size></p-pagination-size>');
+		const element = await page.find('p-pagination-size');
 		expect(element).toHaveClass('hydrated');
 	});
 
 	it('renders changes to the content', async () => {
 		const page = await newE2EPage();
 
-		await page.setContent('<p-pagination></p-pagination>');
+		await page.setContent('<p-pagination-size></p-pagination-size>');
 		// const component = await page.find('p-button');
-		const element = await page.find('p-pagination');
+		const element = await page.find('p-pagination-size');
 		expect(element.textContent).toEqual(``);
 
 		// component.setProperty('name', 'World');
