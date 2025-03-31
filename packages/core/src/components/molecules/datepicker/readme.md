@@ -65,6 +65,7 @@ graph TD;
   p-field-container --> p-helper
   p-field-container --> p-tooltip
   p-helper --> p-tooltip
+  p-helper --> p-icon
   p-tooltip --> p-portal
   p-calendar --> p-button
   p-button --> p-icon
