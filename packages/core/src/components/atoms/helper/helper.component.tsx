@@ -3,7 +3,7 @@ import { Component, h, Host, Prop } from '@stencil/core';
 
 @Component({
 	tag: 'p-helper',
-	styleUrl: 'helper.component.scss',
+	styleUrl: 'helper.component.css',
 	shadow: true,
 })
 export class Helper {
@@ -28,10 +28,12 @@ export class Helper {
 						<slot />
 					</div>
 
-					<div
+					<p-icon
+						size='sm'
+						class='cursor-pointer'
+						variant='question-circle'
 						slot='trigger'
-						class='helper'
-					></div>
+					/>
 				</p-tooltip>
 			</Host>
 		);
