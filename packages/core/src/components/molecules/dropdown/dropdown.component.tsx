@@ -36,6 +36,11 @@ const dropdownContainerClass = cva(['z-dropdown hidden'], {
 })
 export class Dropdown {
 	/**
+	 * The variant of the dropdown
+	 */
+	@Prop() variant: 'default' | 'dark-teal' = 'default';
+
+	/**
 	 * The content of the dropdown menu
 	 */
 	@Prop({ reflect: true }) placement: Placement = 'bottom-start';
@@ -147,6 +152,7 @@ export class Dropdown {
 
 	componentDidRender() {
 		this._checkButtons();
+		this._checkItems();
 	}
 
 	render() {
@@ -167,6 +173,7 @@ export class Dropdown {
 			dropdownContainer = (
 				<p-portal {...dropdownContainerProps}>
 					<p-dropdown-menu-container
+						variant={this.variant}
 						maxWidth={!this.calculateWidth && this.applyMaxWidth}
 						fullWidth={this.applyFullWidth && !this.applyMaxWidth}
 						allowOverflow={this.allowOverflow}
@@ -179,6 +186,7 @@ export class Dropdown {
 		} else {
 			dropdownContainer = (
 				<p-dropdown-menu-container
+					variant={this.variant}
 					maxWidth={!this.calculateWidth && this.applyMaxWidth}
 					fullWidth={this.applyFullWidth && !this.applyMaxWidth}
 					allowOverflow={this.allowOverflow}
@@ -222,6 +230,16 @@ export class Dropdown {
 				: 'down';
 			button.disabled = this.disableTriggerClick;
 			button.active = active;
+		}
+	}
+
+	private _checkItems() {
+		const items = this._el.querySelectorAll<HTMLPDropdownMenuItemElement>(
+			'p-dropdown-menu-item'
+		);
+
+		for (let item of [...items]) {
+			item.variant = this.variant;
 		}
 	}
 

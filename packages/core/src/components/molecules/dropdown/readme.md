@@ -24,6 +24,7 @@
 | `show`                | `show`                  | Wether to show the dropdown menu                                              | `boolean`                                                                                                                                                            | `false`          |
 | `strategy`            | `strategy`              | The strategy of the dropdown placement                                        | `"absolute" \| "fixed"`                                                                                                                                              | `'absolute'`     |
 | `usePortal`           | `use-portal`            | Wether to use a portal for the dropdown container                             | `boolean`                                                                                                                                                            | `false`          |
+| `variant`             | `variant`               | The variant of the dropdown                                                   | `"dark-teal" \| "default"`                                                                                                                                           | `'default'`      |
 
 
 ## Events
@@ -38,7 +39,7 @@
 ### Used by
 
  - [p-datepicker](../datepicker)
- - [p-page-size-select](../page-size-select)
+ - [p-pagination-size](../pagination-size)
  - [p-profile](../profile)
  - [p-select](../select)
 
@@ -53,7 +54,7 @@ graph TD;
   p-dropdown --> p-portal
   p-dropdown --> p-dropdown-menu-container
   p-datepicker --> p-dropdown
-  p-page-size-select --> p-dropdown
+  p-pagination-size --> p-dropdown
   p-profile --> p-dropdown
   p-select --> p-dropdown
   style p-dropdown fill:#f9f,stroke:#333,stroke-width:4px
