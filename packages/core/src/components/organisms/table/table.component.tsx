@@ -27,7 +27,7 @@ import { TableRowAction } from '../../helpers/table-row-action/table-row-action.
 import {
 	defaultSize,
 	defaultSizeOptions,
-} from '../../molecules/page-size-select/constants';
+} from '../../molecules/pagination-size/constants';
 import { buttonTemplateFunc } from '../../molecules/table-header/table-header.component';
 import { cn } from '../../../utils/cn';
 

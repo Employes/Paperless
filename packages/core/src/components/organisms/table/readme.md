@@ -122,20 +122,20 @@ graph TD;
   p-tooltip --> p-portal
   p-button --> p-icon
   p-button --> p-loader
-  p-table-footer --> p-page-size-select
+  p-table-footer --> p-pagination-size
   p-table-footer --> p-loader
-  p-table-footer --> p-pagination
+  p-table-footer --> p-pagination-pages
   p-table-footer --> p-button
-  p-page-size-select --> p-dropdown
-  p-page-size-select --> p-button
-  p-page-size-select --> p-dropdown-menu-item
+  p-pagination-size --> p-dropdown
+  p-pagination-size --> p-icon
+  p-pagination-size --> p-dropdown-menu-item
   p-dropdown --> p-portal
   p-dropdown --> p-dropdown-menu-container
   p-dropdown-menu-item --> p-icon
   p-dropdown-menu-item --> p-checkbox
   p-checkbox --> p-icon
-  p-pagination --> p-pagination-item
-  p-pagination --> p-icon
+  p-pagination-pages --> p-pagination-pages-item
+  p-pagination-pages --> p-icon
   p-floating-menu-container --> p-divider
   p-floating-menu-container --> p-icon
   p-floating-menu-item --> p-loader

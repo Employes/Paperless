@@ -4,7 +4,7 @@
 	@apply p-6;
 
 	> p-pagination {
-		@apply flex justify-self-center col-start-1;
+		@apply col-start-1 flex justify-self-center;
 	}
 
 	> p-loader {
@@ -15,11 +15,11 @@
 		@apply grid-cols-3;
 		grid-template-areas: 'page-size pagination export';
 
-		> p-page-size-select {
+		> p-pagination-size {
 			@apply col-start-1;
 		}
 
-		> p-pagination {
+		> p-pagination-pages {
 			@apply col-start-2;
 		}
 
@@ -28,7 +28,7 @@
 		}
 
 		> p-button {
-			@apply justify-self-end col-start-3;
+			@apply col-start-3 justify-self-end;
 		}
 	}
 }

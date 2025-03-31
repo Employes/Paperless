@@ -14,16 +14,42 @@ import {
 	getLocaleComponentStrings,
 } from '../../../utils/localization';
 import { defaultSize, defaultSizeOptions } from './constants';
+import { cva } from 'class-variance-authority';
 
 export type templateFunc = (value: number) => string;
 
+const paginationSize = cva('p-pagination-size', {
+	variants: {
+		hidden: {
+			false: null,
+			true: 'hidden',
+		},
+	},
+});
+
+const trigger = cva(
+	[
+		'flex items-center gap-2',
+		'px-2 h-6',
+		'text-sm text-white font-medium ',
+		'cursor-pointer rounded-full',
+	],
+	{
+		variants: {
+			active: {
+				false: 'bg-dark-teal-600 hover:bg-dark-teal-700',
+				true: 'bg-dark-teal-800',
+			},
+		},
+	}
+);
+
 @Component({
-	tag: 'p-page-size-select',
+	tag: 'p-pagination-size',
+	styleUrl: 'pagination-size.component.css',
 	shadow: true,
 })
-export class PageSizeSelect {
-	private _defaultButtonTemplate: templateFunc = size =>
-		formatTranslation(this._locales.item, { size });
+export class PaginationSize {
 	private _defaultItemTemplate: templateFunc = size =>
 		formatTranslation(this._locales.item, { size });
 	/**
@@ -45,21 +71,6 @@ export class PageSizeSelect {
 	sizeChange: EventEmitter<number>;
 
 	/**
-	 * Chevron position
-	 */
-	@Prop() chevronPosition: 'start' | 'end' = 'start';
-
-	/**
-	 * The size of the button
-	 */
-	@Prop() buttonSize: 'sm' | 'base' = 'sm';
-
-	/**
-	 * The template for the data view
-	 */
-	@Prop() buttonTemplate: templateFunc = this._defaultButtonTemplate;
-
-	/**
 	 * The template for the data view
 	 */
 	@Prop() itemTemplate: templateFunc = this._defaultItemTemplate;
@@ -75,6 +86,11 @@ export class PageSizeSelect {
 	@Prop() hidden: boolean = false;
 
 	/**
+	 * Wether the dropdown is open
+	 */
+	@State() dropdownIsOpen = false;
+
+	/**
 	 * Locales used for this component
 	 */
 	@State() private _locales: any = {};
@@ -85,21 +101,31 @@ export class PageSizeSelect {
 
 	render() {
 		return (
-			<Host class={`p-page-size-select ${this.hidden && 'hidden'}`}>
+			<Host class={paginationSize({ hidden: this.hidden })}>
 				<p-dropdown
+					variant='dark-teal'
 					placement='top-start'
-					chevronPosition={this.chevronPosition}
 					chevronDirection='down'
+					calculateWidth={true}
+					onIsOpen={({ detail }) => (this.dropdownIsOpen = detail)}
 				>
-					<p-button
-						variant='secondary'
+					<div
+						class={trigger({
+							active: this.dropdownIsOpen,
+						})}
 						slot='trigger'
-						size={this.buttonSize}
 					>
-						{this.buttonTemplate
-							? this.buttonTemplate(this.size)
-							: this._defaultButtonTemplate(this.size)}
-					</p-button>
+						<p class='min-w-0 flex-1 overflow-hidden text-ellipsis text-nowrap'>
+							{this.itemTemplate
+								? this.itemTemplate(this.size)
+								: this._defaultItemTemplate(this.size)}
+						</p>
+						<p-icon
+							class='flex-shrink-0'
+							variant='double-caret'
+							size='sm'
+						/>
+					</div>
 					<slot slot='items'>
 						{this.sizeOptions.map(option => (
 							<p-dropdown-menu-item
