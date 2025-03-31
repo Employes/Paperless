@@ -1,7 +1,7 @@
 :host {
 	@apply flex;
 
-	.content {
+	.profile-content {
 		@apply flex w-full items-center gap-3;
 
 		.name {
@@ -50,7 +50,7 @@
 :host(.has-dropdown) {
 	@apply cursor-pointer;
 
-	.content {
+	.profile-content {
 		@apply rounded p-2;
 		@apply border border-solid border-mystic-dark #{!important};
 	}
@@ -70,13 +70,13 @@
 
 :host(.has-dropdown:hover),
 :host(.active) {
-	.content {
+	.profile-content {
 		@apply shadow-4;
 	}
 }
 
 :host(.active) {
-	.content {
+	.profile-content {
 		p-icon {
 			@apply text-indigo;
 		}

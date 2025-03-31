@@ -64,10 +64,10 @@ export class Profile {
 		);
 	}
 
-	private _getContent(hasDropdownSlot) {
+	private _getContent(hasDropdownSlot: boolean) {
 		return (
 			<div
-				class='content'
+				class='profile-content'
 				slot='trigger'
 			>
 				<slot name='avatar' />
