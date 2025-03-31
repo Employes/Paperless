@@ -8,11 +8,10 @@ describe('p-pagination', () => {
 			html: '<p-pagination></p-pagination>',
 		});
 		expect(root).toEqualHtml(`
-      <p-counter class="p-counter">
+      <p-pagination class="p-pagination">
         <mock:shadow-root>
-          #
         </mock:shadow-root>
-      </p-counter>
+      </p-pagination>
     `);
 	});
 });

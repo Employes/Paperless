@@ -47,7 +47,6 @@
  - [p-drawer-header](../../atoms/drawer-header)
  - [p-modal-header](../../atoms/modal-header)
  - [p-navbar](../../organisms/navbar)
- - [p-page-size-select](../page-size-select)
  - [p-profile](../profile)
  - [p-select](../select)
  - [p-table](../../organisms/table)
@@ -70,7 +69,6 @@ graph TD;
   p-drawer-header --> p-button
   p-modal-header --> p-button
   p-navbar --> p-button
-  p-page-size-select --> p-button
   p-profile --> p-button
   p-select --> p-button
   p-table --> p-button

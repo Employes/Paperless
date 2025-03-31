@@ -13,7 +13,7 @@ import {
 	formatTranslation,
 	getLocaleComponentStrings,
 } from '../../../utils/localization';
-import { defaultSize, defaultSizeOptions } from '../page-size-select/constants';
+import { defaultSize, defaultSizeOptions } from '../pagination-size/constants';
 
 @Component({
 	tag: 'p-table-footer',
@@ -116,7 +116,7 @@ export class TableFooter {
 				}`}
 			>
 				{!this.loading && this.enablePagination && this.enablePageSize && (
-					<p-page-size-select
+					<p-pagination-size
 						class={!hidePageSizeSelect && 'hidden desktop-xs:flex'}
 						hidden={hidePageSizeSelect}
 						size={this.pageSize}
@@ -133,7 +133,7 @@ export class TableFooter {
 				)}
 
 				{!this.loading && this.enablePagination && (
-					<p-pagination
+					<p-pagination-pages
 						pageSize={this.pageSize}
 						total={this.total}
 						page={this.page}
@@ -141,6 +141,7 @@ export class TableFooter {
 						onPageChange={({ detail }) => this.pageChange.emit(detail)}
 					/>
 				)}
+
 				{!this.loading && this.enableExport && (
 					<p-button
 						class='hidden desktop-xs:flex'

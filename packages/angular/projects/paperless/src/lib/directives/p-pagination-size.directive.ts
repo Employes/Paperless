@@ -5,28 +5,28 @@ import { BaseValueAccessor } from '../base';
 
 @Directive({
 	/* tslint:disable-next-line:directive-selector */
-	selector: 'p-pagination',
+	selector: 'p-pagination-size',
 	host: {
-		'(pageChange)': 'handleChangeEvent($event.detail)',
+		'(sizeChange)': 'handleChangeEvent($event.detail)',
 	},
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,
-			useExisting: PaginationDirective,
+			useExisting: PaginationSizeDirective,
 			multi: true,
 		},
 	],
 })
-export class PaginationDirective extends BaseValueAccessor {
+export class PaginationSizeDirective extends BaseValueAccessor {
 	constructor(el: ElementRef) {
 		super(el);
 	}
 
-	public override writeValue(value: any) {
-		this.el.nativeElement.page = this.lastValue = value == null ? 1 : value;
+	override writeValue(value: any) {
+		this.el.nativeElement.page = this.lastValue = value == null ? 12 : value;
 	}
 
-	public override registerOnChange(fn: (_: number | null) => void) {
+	override registerOnChange(fn: (_: number | null) => void) {
 		super.registerOnChange(value => fn(parseInt(value, 10)));
 	}
 }

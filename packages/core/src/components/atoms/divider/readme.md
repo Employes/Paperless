@@ -27,6 +27,7 @@
  - [p-accordion](../../molecules/accordion)
  - [p-floating-menu-container](../floating-menu-container)
  - [p-modal-footer](../modal-footer)
+ - [p-pagination](../../molecules/pagination)
  - [p-tab-group](../tab-group)
  - [p-table-row](../../molecules/table-row)
 
@@ -36,6 +37,7 @@ graph TD;
   p-accordion --> p-divider
   p-floating-menu-container --> p-divider
   p-modal-footer --> p-divider
+  p-pagination --> p-divider
   p-tab-group --> p-divider
   p-table-row --> p-divider
   style p-divider fill:#f9f,stroke:#333,stroke-width:4px
