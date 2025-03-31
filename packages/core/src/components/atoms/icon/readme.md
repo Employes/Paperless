@@ -27,6 +27,7 @@
  - [p-cropper](../../molecules/cropper)
  - [p-dropdown-menu-item](../dropdown-menu-item)
  - [p-field](../../molecules/field)
+ - [p-helper](../helper)
  - [p-info-panel](../info-panel)
  - [p-input-error](../../molecules/input-error)
  - [p-input-group](../../molecules/input-group)
@@ -50,6 +51,7 @@ graph TD;
   p-cropper --> p-icon
   p-dropdown-menu-item --> p-icon
   p-field --> p-icon
+  p-helper --> p-icon
   p-info-panel --> p-icon
   p-input-error --> p-icon
   p-input-group --> p-icon

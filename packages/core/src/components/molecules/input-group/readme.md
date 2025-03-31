@@ -44,6 +44,7 @@ graph TD;
   p-input-group --> p-icon
   p-input-group --> p-input-error
   p-helper --> p-tooltip
+  p-helper --> p-icon
   p-tooltip --> p-portal
   p-input-error --> p-tooltip
   p-input-error --> p-icon

@@ -27,11 +27,13 @@
 ### Depends on
 
 - [p-tooltip](../tooltip)
+- [p-icon](../icon)
 
 ### Graph
 ```mermaid
 graph TD;
   p-helper --> p-tooltip
+  p-helper --> p-icon
   p-tooltip --> p-portal
   p-field-container --> p-helper
   p-input-group --> p-helper
