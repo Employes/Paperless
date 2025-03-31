@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.67.9](https://github.com/ionic-team/stencil-component-starter/compare/v1.67.8...v1.67.9) (2025-03-31)
+
+
+### Bug Fixes
+
+* **molecules/dropdown:** Set block instead of flex on menu ([0a32467](https://github.com/ionic-team/stencil-component-starter/commit/0a32467932ac1dec45e3baa144f7b7df2039dcc8))
+* **molecules/profile:** Make sure we don't leak content classes to dropdown ([b70c389](https://github.com/ionic-team/stencil-component-starter/commit/b70c3898211de35587fa07c604bd8ed9f2d802d5))
+
+
+
+
+
 ## [1.67.8](https://github.com/ionic-team/stencil-component-starter/compare/v1.67.7...v1.67.8) (2025-03-20)
 
 
