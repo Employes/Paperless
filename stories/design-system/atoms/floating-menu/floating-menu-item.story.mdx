@@ -2,7 +2,7 @@ import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
 import { StoryCategories } from '../../../categories';
 import Docs from '../../../../packages/core/src/components/atoms/floating-menu-container/readme.md';
 
-<Meta title={`${StoryCategories.Atoms}/Floating Menu/Item`} />
+<Meta title={`${StoryCategories.Atoms}/Rebranding/Floating Menu/Item`} />
 
 <Docs />
 
@@ -11,13 +11,34 @@ import Docs from '../../../../packages/core/src/components/atoms/floating-menu-c
 ## Default
 
 <Canvas>
-    <p-floating-menu-item>Some content</p-floating-menu-item>
+	<p-floating-menu-item>Some content</p-floating-menu-item>
 </Canvas>
 
 ## With Content & Icon
 
 <Canvas>
-    <p-floating-menu-item>
-        Delete <p-icon variant="trash" />
-    </p-floating-menu-item>
+	<p-floating-menu-item icon='trash'>Delete</p-floating-menu-item>
+</Canvas>
+
+## Disabled
+
+<Canvas>
+	<p-floating-menu-item disabled>Disabled</p-floating-menu-item>
+</Canvas>
+
+## No hover
+
+<Canvas>
+	<p-floating-menu-item hover={false}>No hover</p-floating-menu-item>
+</Canvas>
+
+## Loading
+
+<Canvas>
+	<p-floating-menu-item
+		loading={true}
+		icon='user'
+	>
+		Loading
+	</p-floating-menu-item>
 </Canvas>
