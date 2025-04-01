@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.35](https://github.com/employes/paperless/compare/v2.0.1-beta.34...v2.0.1-beta.35) (2025-04-01)
+
+
+### Features
+
+* **atoms/helper:** Add hover state ([d530bae](https://github.com/employes/paperless/commit/d530baeb7be6df491b1bc2b4e95f3253f55cfebd))
+
+
+
+
+
 ## [2.0.1-beta.34](https://github.com/employes/paperless/compare/v1.67.9...v2.0.1-beta.34) (2025-03-31)
 
 
