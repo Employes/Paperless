@@ -8,6 +8,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property                | Attribute                 | Description                                        | Type       | Default              |
@@ -20,12 +21,14 @@
 | `pageSizeOptions`       | --                        | The options for the page size                      | `number[]` | `defaultSizeOptions` |
 | `total` _(required)_    | `total`                   | The total amount of items                          | `number`   | `undefined`          |
 
+
 ## Events
 
 | Event            | Description                     | Type                  |
 | ---------------- | ------------------------------- | --------------------- |
 | `pageChange`     | Event whenever the page changes | `CustomEvent<number>` |
 | `pageSizeChange` | Event whenever the page changes | `CustomEvent<number>` |
+
 
 ## Dependencies
 
@@ -36,7 +39,6 @@
 - [p-pagination-pages](../pagination-pages)
 
 ### Graph
-
 ```mermaid
 graph TD;
   p-pagination --> p-pagination-size
@@ -55,6 +57,6 @@ graph TD;
   style p-pagination fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*
