@@ -826,7 +826,7 @@ export class Select {
 		);
 	}
 
-	private _getParsedItems(applyPagination = false) {
+	private _getParsedItems(applyPagination = true) {
 		if (!this.items || this.loading) {
 			return [];
 		}
