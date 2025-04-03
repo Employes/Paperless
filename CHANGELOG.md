@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.67.11](https://github.com/employes/paperless/compare/v1.67.10...v1.67.11) (2025-04-03)
+
+
+### Bug Fixes
+
+* **molecules/select:** apply pagination by default ([c929a6f](https://github.com/employes/paperless/commit/c929a6fa29507a7875ea595d3bba23838ea97f8f))
+
+
+
+
+
 ## [1.67.10](https://github.com/employes/paperless/compare/v1.67.9...v1.67.10) (2025-04-03)
 
 
