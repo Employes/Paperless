@@ -268,37 +268,7 @@ export class Select {
 	private _resizeDebounceTimer: NodeJS.Timer;
 
 	get _items() {
-		if (!this.items || this.loading) {
-			return [];
-		}
-
-		let items =
-			typeof this.items === 'string' ? JSON.parse(this.items) : this.items;
-
-		if (typeof items?.[0] === 'string') {
-			this.displayKey = 'text';
-			this.valueKey = 'value';
-
-			items = items.map(str => ({
-				value: str,
-				text: str,
-			}));
-		}
-
-		if (this.query?.length && !this.asyncFilter) {
-			items = items.filter(item => {
-				if (this.queryKey) {
-					return this._checkvalue(this.queryKey, item);
-				}
-
-				return (
-					this._checkvalue(this._identifierKey, item) ||
-					this._checkvalue(this.displayKey, item)
-				);
-			});
-		}
-
-		return items?.slice(0, this.maxDisplayedItems);
+		return this._getParsedItems();
 	}
 
 	get _displayValue() {
@@ -529,7 +499,8 @@ export class Select {
 			return;
 		}
 
-		const item = this._items.find(i => {
+		const items = this._getParsedItems(false);
+		const item = items.find(i => {
 			const itemIdentifier = i?.[this._identifierKey];
 			const parsedItemIdentifier =
 				typeof itemIdentifier === 'string' || typeof itemIdentifier === 'number'
@@ -853,5 +824,43 @@ export class Select {
 				{content}
 			</div>
 		);
+	}
+
+	private _getParsedItems(applyPagination = false) {
+		if (!this.items || this.loading) {
+			return [];
+		}
+
+		let items =
+			typeof this.items === 'string' ? JSON.parse(this.items) : this.items;
+
+		if (typeof items?.[0] === 'string') {
+			this.displayKey = 'text';
+			this.valueKey = 'value';
+
+			items = items.map(str => ({
+				value: str,
+				text: str,
+			}));
+		}
+
+		if (this.query?.length && !this.asyncFilter) {
+			items = items.filter(item => {
+				if (this.queryKey) {
+					return this._checkvalue(this.queryKey, item);
+				}
+
+				return (
+					this._checkvalue(this._identifierKey, item) ||
+					this._checkvalue(this.displayKey, item)
+				);
+			});
+		}
+
+		if (!applyPagination) {
+			return items;
+		}
+
+		return items?.slice(0, this.maxDisplayedItems);
 	}
 }
