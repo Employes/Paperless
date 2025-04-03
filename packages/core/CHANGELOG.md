@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.68.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.67.11...v1.68.0) (2025-04-03)
+
+
+### Bug Fixes
+
+* **molecules/stepper:** Don't apply `min-h-full` to vertical variant ([aaf756f](https://github.com/ionic-team/stencil-component-starter/commit/aaf756f0b4c1143a6156a78449ad70cd6815009a))
+
+
+### Features
+
+* **molecules/select:** Add properties to pass portal & strategy to dropdown ([612f8a9](https://github.com/ionic-team/stencil-component-starter/commit/612f8a9127a959cc7b0bfe73b76b5d57fe399c21))
+
+
+
+
+
 ## [1.67.11](https://github.com/ionic-team/stencil-component-starter/compare/v1.67.10...v1.67.11) (2025-04-03)
 
 
