@@ -12,6 +12,7 @@ import {
 } from '@stencil/core';
 import { childOf } from '../../../utils';
 import { IconVariant } from '../../atoms/icon/icon.component';
+import { Strategy } from '@floating-ui/dom';
 
 @Component({
 	tag: 'p-select',
@@ -27,6 +28,16 @@ export class Select {
 	 * Wether to enable multi select
 	 */
 	@Prop({ reflect: true }) multi: boolean;
+
+	/**
+	 * Wether to use a portal for the dropdown container of the select
+	 */
+	@Prop() usePortal: boolean = false;
+
+	/**
+	 * The strategy to use for the dropdown placement
+	 */
+	@Prop() strategy: Strategy = 'absolute';
 
 	/**
 	 * Icon of the select box
@@ -361,6 +372,8 @@ export class Select {
 					scrollable={this.enableAutocomplete ? 'large' : true}
 					show={this._showDropdown}
 					onIsOpen={ev => this._onDropdownOpen(ev)}
+					usePortal={this.usePortal}
+					strategy={this.strategy}
 				>
 					<p-input-group
 						slot='trigger'
