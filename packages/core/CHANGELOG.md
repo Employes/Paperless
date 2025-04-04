@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.68.1](https://github.com/ionic-team/stencil-component-starter/compare/v1.68.0...v1.68.1) (2025-04-04)
+
+
+### Bug Fixes
+
+* **molecules/select:** Add type to autocomplete input so the style is applied ([2468842](https://github.com/ionic-team/stencil-component-starter/commit/2468842fe8669bf85cc9de30d515e5bd1d365f7b))
+
+
+
+
+
 # [1.68.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.67.11...v1.68.0) (2025-04-03)
 
 
