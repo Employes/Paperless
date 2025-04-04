@@ -14,6 +14,36 @@ import { childOf } from '../../../utils';
 import { IconVariant } from '../../atoms/icon/icon.component';
 import { Strategy } from '@floating-ui/dom';
 
+import { cva } from 'class-variance-authority';
+
+const multiContainer = cva([
+	'flex items-center gap-2',
+	'flex-1 min-w-0 h-full',
+	'pointer-events-none overflow-hidden',
+]);
+
+const multiItem = cva([
+	'item group/item',
+	'pointer-events-auto cursor-pointer',
+	'flex h-[1.625rem] items-center gap-2',
+	'h-[1.625rem] px-2',
+	'text-sm font-semibold whitespace-nowrap',
+	'rounded-lg',
+	'bg-supportive-lilac-100',
+]);
+
+const textContainer = cva(
+	'block w-full overflow-hidden text-ellipsis whitespace-nowrap text-start',
+	{
+		variants: {
+			variant: {
+				placeholder: 'text-black-teal-400',
+				default: null,
+			},
+		},
+	}
+);
+
 @Component({
 	tag: 'p-select',
 	styleUrl: 'select.component.css',
@@ -630,9 +660,9 @@ export class Select {
 					Array.isArray(this._selectedItem)
 						? this._selectedItem.findIndex(
 								i => i[this._identifierKey] === item[this._identifierKey]
-						  ) >= 0
+							) >= 0
 						: item[this._identifierKey] ===
-						  this._selectedItem?.[this._identifierKey]
+							this._selectedItem?.[this._identifierKey]
 				}
 				checkbox={this.multi ? true : false}
 				slot='items'
@@ -813,7 +843,7 @@ export class Select {
 				{
 					item[
 						isSelection
-							? this.selectionDisplayKey ?? this.displayKey
+							? (this.selectionDisplayKey ?? this.displayKey)
 							: this.displayKey
 					]
 				}
