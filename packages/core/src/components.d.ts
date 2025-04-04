@@ -1132,6 +1132,14 @@ export namespace Components {
          */
         "size": 'small' | 'medium';
         /**
+          * The strategy to use for the dropdown placement
+         */
+        "strategy": Strategy;
+        /**
+          * Wether to use a portal for the dropdown container of the select
+         */
+        "usePortal": boolean;
+        /**
           * The current value
          */
         "value": any;
@@ -3453,6 +3461,14 @@ declare namespace LocalJSX {
           * The size of the input group used by the select
          */
         "size"?: 'small' | 'medium';
+        /**
+          * The strategy to use for the dropdown placement
+         */
+        "strategy"?: Strategy;
+        /**
+          * Wether to use a portal for the dropdown container of the select
+         */
+        "usePortal"?: boolean;
         /**
           * The current value
          */

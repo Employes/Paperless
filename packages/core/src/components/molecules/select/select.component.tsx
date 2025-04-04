@@ -719,6 +719,7 @@ export class Select {
 				<input
 					class='p-input size-small sticky top-2 mb-2'
 					placeholder={this.autocompletePlaceholder}
+					type='text'
 					onInput={ev => this._onAutoComplete(ev)}
 					ref={ref => (this.autocompleteInputRef = ref)}
 					value={this.query}
