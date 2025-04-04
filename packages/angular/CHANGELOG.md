@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.36](https://github.com/Employes/Paperless/compare/v1.68.1...v2.0.1-beta.36) (2025-04-04)
+
+
+### Bug Fixes
+
+* **angular/organisms/table:** Don't use self closing tags (yet) ([8599c67](https://github.com/Employes/Paperless/commit/8599c67e4eca699632e0affe8cad2b811aebbcc5))
+* **angular:** use Typescript 4.8.2 ([1f25c04](https://github.com/Employes/Paperless/commit/1f25c04fe0ba1880e668d0783b387bb14fa69d26))
+
+
+### Features
+
+* **angular:** Add directives for field & radio ([ce3f34d](https://github.com/Employes/Paperless/commit/ce3f34df40434e27851d9561ecdbe99c01f43a69))
+* **atoms/avatar:** New branding implementation ([2fc2e46](https://github.com/Employes/Paperless/commit/2fc2e461a69a872b423bf79597c983648abfe5fc))
+* **atoms:** Add checkbox component ([f30acb6](https://github.com/Employes/Paperless/commit/f30acb6937837a84b837a16d64dd35c967b2f9da))
+* **atoms:** Add toggle component ([0b8490e](https://github.com/Employes/Paperless/commit/0b8490ea6f7b507b3ff34551ae16822a5ee64e1c))
+* **molecules/button:** New rebranding implementation ([138d777](https://github.com/Employes/Paperless/commit/138d7774adc0a3cd62dfe14196fc906e170a56bc))
+* New tailwindconfiguration ([13893b9](https://github.com/Employes/Paperless/commit/13893b93a151883a0e7df79d44a2fee3c5110d84))
+
+
+
+
+
 ## [2.0.1-beta.35](https://github.com/Employes/Paperless/compare/v2.0.1-beta.34...v2.0.1-beta.35) (2025-04-01)
 
 **Note:** Version bump only for package @paperless/angular
