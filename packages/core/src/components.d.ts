@@ -1986,10 +1986,6 @@ export namespace Components {
           * Wether the checkbox is required
          */
         "required": boolean;
-        /**
-          * The size of the checkbox
-         */
-        "size": 'sm' | 'base';
     }
     interface PTooltip {
         /**
@@ -5218,10 +5214,6 @@ declare namespace LocalJSX {
           * Wether the checkbox is required
          */
         "required"?: boolean;
-        /**
-          * The size of the checkbox
-         */
-        "size"?: 'sm' | 'base';
     }
     interface PTooltip {
         /**
