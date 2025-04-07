@@ -14,13 +14,10 @@ const checkbox = cva(
 	[
 		'peer appearance-none m-0 outline-none flex-shrink-0',
 		'border border-inset border-solid ',
+		'rounded w-4 h-4',
 	],
 	{
 		variants: {
-			size: {
-				sm: 'rounded w-4 h-4',
-				base: 'rounded-lg w-6 h-6',
-			},
 			disabled: {
 				false: [
 					'cursor-pointer shadow-1',
@@ -39,7 +36,7 @@ const checkbox = cva(
 	}
 );
 
-const icon = cva(
+const iconContainer = cva(
 	[
 		'hidden peer-indeterminate:flex peer-checked:flex',
 		'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none',
@@ -53,6 +50,15 @@ const icon = cva(
 		},
 	}
 );
+
+const icon = cva(['drop-shadow-black-teal-10% text-xs'], {
+	variants: {
+		disabled: {
+			false: 'group-hover/p-checkbox:text-sm',
+			true: null,
+		},
+	},
+});
 
 @Component({
 	tag: 'p-checkbox',
@@ -68,11 +74,6 @@ export class Checkbox {
 	 * Wether the checkbox is in indeterminate state
 	 */
 	@Prop() indeterminate: boolean;
-
-	/**
-	 * The size of the checkbox
-	 */
-	@Prop() size: 'sm' | 'base' = 'base';
 
 	/**
 	 * Wether the checkbox is disabled
@@ -110,12 +111,11 @@ export class Checkbox {
 			<Host class='p-checkbox'>
 				<label
 					htmlFor={this.id ?? this._nonce}
-					class='flex items-center justify-start gap-2 text-black-teal'
+					class='group/p-checkbox flex items-center justify-start gap-2 text-black-teal'
 				>
 					<div class='relative flex flex-shrink-0 items-center'>
 						<input
 							class={checkbox({
-								size: this.size,
 								disabled: this.disabled,
 							})}
 							type='checkbox'
@@ -128,13 +128,15 @@ export class Checkbox {
 							onChange={ev => this._onChange(ev)}
 						/>
 						<div
-							class={icon({
+							class={iconContainer({
 								disabled: this.disabled,
 							})}
 						>
 							<p-icon
-								size={this.size}
-								class='drop-shadow-black-teal-10%'
+								class={icon({
+									disabled: this.disabled,
+								})}
+								size='auto'
 								variant={!!this.indeterminate ? 'minus' : 'checkmarkThick'}
 							/>
 						</div>

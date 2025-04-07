@@ -222,7 +222,6 @@ export class DropdownMenuItem {
 
 				{this.checkbox && (
 					<p-checkbox
-						size='sm'
 						checked={this.active}
 						disabled={this.disabled}
 					/>
