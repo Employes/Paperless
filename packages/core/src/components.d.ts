@@ -314,10 +314,6 @@ export namespace Components {
           * Wether the checkbox is required
          */
         "required": boolean;
-        /**
-          * The size of the checkbox
-         */
-        "size": 'sm' | 'base';
     }
     interface PContentSlider {
         /**
@@ -3353,10 +3349,6 @@ declare namespace LocalJSX {
           * Wether the checkbox is required
          */
         "required"?: boolean;
-        /**
-          * The size of the checkbox
-         */
-        "size"?: 'sm' | 'base';
     }
     interface PContentSlider {
         /**
