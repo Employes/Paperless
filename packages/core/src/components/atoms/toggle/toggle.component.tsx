@@ -14,13 +14,10 @@ const checkbox = cva(
 	[
 		'peer appearance-none m-0 outline-none flex-shrink-0',
 		'border border-inset border-solid ',
+		'rounded-full w-8 h-4',
 	],
 	{
 		variants: {
-			size: {
-				sm: 'rounded-full w-8 h-4',
-				base: 'rounded-full w-10 h-6',
-			},
 			disabled: {
 				false: [
 					'cursor-pointer shadow-1',
@@ -44,51 +41,21 @@ const circle = cva(
 	],
 	{
 		variants: {
-			size: {
-				sm: null,
-				base: null,
-			},
 			disabled: {
 				false: [
 					'bg-white ring-1 ring-black-teal/10',
 					'left-[1px] peer-checked:-translate-x-[calc(100%+1px)]',
 					"after:content-[] peer-checked:after:content-['']  after:bg-supportive-lilac-800 after:rounded-full after:transition-all",
+					'w-[14px] h-[14px] group-hover:w-[18px]',
+					'after:w-1 after:h-1 group-hover:after:w-2',
 				],
 				true: [
 					'bg-black-teal-100 peer-checked:bg-black-teal-200',
 					'left-[2px] peer-checked:-translate-x-[calc(100%+2px)]',
+					'w-3 h-3',
 				],
 			},
 		},
-		compoundVariants: [
-			{
-				size: 'sm',
-				disabled: false,
-				class: [
-					'w-[14px] h-[14px] group-hover:w-[18px]',
-					'after:w-1 after:h-1 group-hover:after:w-2',
-				],
-			},
-			{
-				size: 'base',
-				disabled: false,
-				class: [
-					'w-[22px] h-[22px] group-hover:w-[26px]',
-					'after:w-2 after:h-2 group-hover:after:w-3',
-				],
-			},
-
-			{
-				size: 'sm',
-				disabled: true,
-				class: 'w-3 h-3',
-			},
-			{
-				size: 'base',
-				disabled: true,
-				class: 'w-[20px] h-[20px]',
-			},
-		],
 	}
 );
 
@@ -106,11 +73,6 @@ export class Toggle {
 	 * Wether the checkbox is in indeterminate state
 	 */
 	@Prop() indeterminate: boolean;
-
-	/**
-	 * The size of the checkbox
-	 */
-	@Prop() size: 'sm' | 'base' = 'base';
 
 	/**
 	 * Wether the checkbox is disabled
@@ -153,7 +115,6 @@ export class Toggle {
 					<div class='group relative flex flex-shrink-0 items-center'>
 						<input
 							class={checkbox({
-								size: this.size,
 								disabled: this.disabled,
 							})}
 							type='checkbox'
@@ -167,7 +128,6 @@ export class Toggle {
 						/>
 						<div
 							class={circle({
-								size: this.size,
 								disabled: this.disabled,
 							})}
 						></div>
