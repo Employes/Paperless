@@ -1249,10 +1249,6 @@ export namespace Components {
          */
         "required": boolean;
         /**
-          * The size of the radio
-         */
-        "size": 'sm' | 'base';
-        /**
           * The value of the radio button
          */
         "value": string;
@@ -4360,10 +4356,6 @@ declare namespace LocalJSX {
           * Wether the radio is required
          */
         "required"?: boolean;
-        /**
-          * The size of the radio
-         */
-        "size"?: 'sm' | 'base';
         /**
           * The value of the radio button
          */
