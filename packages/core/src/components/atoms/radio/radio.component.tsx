@@ -14,13 +14,10 @@ const radio = cva(
 	[
 		'peer appearance-none m-0 outline-none flex-shrink-0',
 		'rounded-full border border-inset border-solid ',
+		'w-4 h-4',
 	],
 	{
 		variants: {
-			size: {
-				sm: 'w-4 h-4',
-				base: 'w-6 h-6',
-			},
 			disabled: {
 				false: [
 					'cursor-pointer shadow-1',
@@ -52,13 +49,10 @@ const circle = cva(
 		'block',
 		'rounded-full bg-transparent',
 		'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none',
+		'w-2 h-2',
 	],
 	{
 		variants: {
-			size: {
-				sm: 'w-2 h-2',
-				base: 'w-3 h-3',
-			},
 			disabled: {
 				false:
 					'peer-checked:bg-white peer-checked:ring-1 peer-checked:ring-black-teal/10',
@@ -77,11 +71,6 @@ export class Radio {
 	 * The value of the radio button
 	 */
 	@Prop() value: string;
-
-	/**
-	 * The size of the radio
-	 */
-	@Prop() size: 'sm' | 'base' = 'base';
 
 	/**
 	 * Wether the radio is disabled
@@ -125,7 +114,6 @@ export class Radio {
 					<div class='relative flex flex-shrink-0 items-center'>
 						<input
 							class={radio({
-								size: this.size,
 								disabled: this.disabled,
 							})}
 							type='radio'
@@ -139,7 +127,6 @@ export class Radio {
 						/>
 						<div
 							class={circle({
-								size: this.size,
 								disabled: this.disabled,
 							})}
 						/>
