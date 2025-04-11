@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.69.0](https://github.com/employes/paperless/compare/v1.68.1...v1.69.0) (2025-04-11)
+
+
+### Features
+
+* **atoms/icons:** Add duplicate ([26f6ff6](https://github.com/employes/paperless/commit/26f6ff6e7e2badd802709c9e1303d987a7b7446c))
+
+
+
+
+
 ## [1.68.1](https://github.com/employes/paperless/compare/v1.68.0...v1.68.1) (2025-04-04)
 
 
