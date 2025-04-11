@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1em" height="1em" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>⚛️ Atoms/icons/duplicate</title>
+    <g id="⚛️-Atoms/icons/duplicate" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Bounding-box" x="0" y="0" width="16" height="16"></rect>
+        <rect id="Rectangle" fill="currentColor" x="0" y="3" width="13" height="13" rx="2"></rect>
+        <path d="M3,11 C3,12.1045695 3.8954305,13 5,13 L3,13 Z M14,4 C14,2.8954305 13.1045695,2 12,2 L3,2 C3,0.8954305 3.8954305,2.22044605e-16 5,0 L14,0 C15.1045695,0 16,0.8954305 16,2 L16,11 C16,12.1045695 15.1045695,13 14,13 Z" id="Combined-Shape" fill="currentColor"></path>
+    </g>
+</svg>

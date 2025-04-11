@@ -17,6 +17,7 @@ import company from '../assets/icons/company.svg';
 import deactivate from '../assets/icons/deactivate.svg';
 import document from '../assets/icons/document.svg';
 import download from '../assets/icons/download.svg';
+import duplicate from '../assets/icons/duplicate.svg';
 import envelope from '../assets/icons/envelope.svg';
 import explanation from '../assets/icons/explanation.svg';
 import eye from '../assets/icons/eye.svg';
@@ -85,6 +86,7 @@ export default {
 	deactivate,
 	document,
 	download,
+	duplicate,
 	envelope,
 	explanation,
 	eye,
