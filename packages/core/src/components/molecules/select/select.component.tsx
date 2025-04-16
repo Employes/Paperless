@@ -418,6 +418,7 @@ export class Select {
 				>
 					<p-field-container
 						slot='trigger'
+						variant='write'
 						prefix={this.prefix}
 						label={this.label}
 						helper={this.helper}
@@ -660,9 +661,9 @@ export class Select {
 					Array.isArray(this._selectedItem)
 						? this._selectedItem.findIndex(
 								i => i[this._identifierKey] === item[this._identifierKey]
-							) >= 0
+						  ) >= 0
 						: item[this._identifierKey] ===
-							this._selectedItem?.[this._identifierKey]
+						  this._selectedItem?.[this._identifierKey]
 				}
 				checkbox={this.multi ? true : false}
 				slot='items'
@@ -843,7 +844,7 @@ export class Select {
 				{
 					item[
 						isSelection
-							? (this.selectionDisplayKey ?? this.displayKey)
+							? this.selectionDisplayKey ?? this.displayKey
 							: this.displayKey
 					]
 				}
