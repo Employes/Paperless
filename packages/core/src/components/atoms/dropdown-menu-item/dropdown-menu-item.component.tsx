@@ -1,6 +1,7 @@
 import { Component, Host, Prop, h } from '@stencil/core';
 import { IconVariant } from '../icon/icon.component';
 import { cva } from 'class-variance-authority';
+import { asBoolean } from '../../../utils/as-boolean';
 
 const dropdownMenuItem = cva(
 	[
@@ -179,7 +180,7 @@ export class DropdownMenuItem {
 	/**
 	 * Wether to enable the hover state
 	 */
-	@Prop() enableHover: boolean = true;
+	@Prop() enableHover?: boolean = false;
 
 	/**
 	 * Wether the item is disabled
@@ -201,20 +202,17 @@ export class DropdownMenuItem {
 			<Host
 				class={dropdownMenuItem({
 					variant: this.variant,
-					active: this.active,
-					enableHover: this.enableHover,
-					disabled: this.disabled,
+					active: asBoolean(this.active),
+					enableHover: asBoolean(this.enableHover ?? true),
+					disabled: asBoolean(this.disabled),
 				})}
 			>
-				{/* class={`p-dropdown-menu-item ${this.active && 'active'} ${ */}
-				{/* 	this.enableHover && 'hover' */}
-				{/* }`} */}
 				{this.icon && (
 					<p-icon
 						class={dropdownMenuItemIcon({
 							variant: this.variant,
-							active: this.active,
-							disabled: this.disabled,
+							active: asBoolean(this.active),
+							disabled: asBoolean(this.disabled),
 						})}
 						variant={this.icon}
 					/>

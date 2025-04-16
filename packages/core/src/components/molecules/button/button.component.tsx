@@ -10,6 +10,7 @@ import {
 import { cva } from 'class-variance-authority';
 import { RotateOptions } from '../../../types/tailwind';
 import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
+import { asBoolean } from '../../../utils/as-boolean';
 
 const button = cva(
 	[
@@ -405,7 +406,7 @@ export class Button {
 				? 'a'
 				: 'button';
 
-		const active = this.active || this.class?.includes('active');
+		const active = asBoolean(this.active) || this.class?.includes('active');
 
 		return (
 			<Host class='p-button inline-block'>
@@ -417,11 +418,11 @@ export class Button {
 					class={button({
 						variant: this.variant,
 						size: this.size,
-						underline: this.underline,
-						loading: this.loading,
-						disabled: this.disabled,
+						underline: asBoolean(this.underline, true),
+						loading: asBoolean(this.loading),
+						disabled: asBoolean(this.disabled),
 						buttonGroupPosition: this.buttonGroupPosition,
-						iconOnly: this.iconOnly,
+						iconOnly: asBoolean(this.iconOnly),
 						active,
 					})}
 				>
@@ -478,8 +479,8 @@ export class Button {
 				class={icon({
 					size: this.size,
 					variant: this.variant,
-					disabled: this.disabled,
-					active: this.active,
+					disabled: asBoolean(this.disabled),
+					active: asBoolean(this.active),
 				})}
 				variant={this.icon}
 				flip={this.iconFlip}

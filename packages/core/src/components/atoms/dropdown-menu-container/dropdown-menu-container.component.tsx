@@ -1,5 +1,6 @@
 import { Component, h, Host, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+import { asBoolean } from '../../../utils/as-boolean';
 
 const dropdownMenuContainer = cva(
 	['p-dropdown-menu-container', 'p-1', 'rounded-lg z-10', 'border'],
@@ -79,8 +80,8 @@ export class DropdownMenuContainer {
 				class={dropdownMenuContainer({
 					class: this.class,
 					variant: this.variant,
-					fullWidth: this.fullWidth,
-					allowOverflow: this.allowOverflow,
+					fullWidth: asBoolean(this.fullWidth, true),
+					allowOverflow: asBoolean(this.allowOverflow),
 					scrollable,
 					maxWidth: this.maxWidth,
 				})}

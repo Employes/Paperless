@@ -9,6 +9,7 @@ import {
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { nonce } from '../../../utils/nonce';
+import { asBoolean } from '../../../utils/as-boolean';
 
 const checkbox = cva(
 	[
@@ -115,7 +116,7 @@ export class Toggle {
 					<div class='group relative flex flex-shrink-0 items-center'>
 						<input
 							class={checkbox({
-								disabled: this.disabled,
+								disabled: asBoolean(this.disabled),
 							})}
 							type='checkbox'
 							id={this.id ?? this._nonce}
@@ -123,7 +124,7 @@ export class Toggle {
 							required={this.required}
 							checked={!!this.checked}
 							indeterminate={this.indeterminate}
-							disabled={this.disabled}
+							disabled={asBoolean(this.disabled)}
 							onChange={ev => this._onChange(ev)}
 						/>
 						<div
@@ -139,7 +140,7 @@ export class Toggle {
 	}
 
 	private _onChange(ev: Event) {
-		if (this.disabled) {
+		if (asBoolean(this.disabled)) {
 			ev.preventDefault();
 			return;
 		}

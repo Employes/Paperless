@@ -9,6 +9,7 @@ import {
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { nonce } from '../../../utils/nonce';
+import { asBoolean } from '../../../utils/as-boolean';
 
 const checkbox = cva(
 	[
@@ -116,25 +117,25 @@ export class Checkbox {
 					<div class='relative flex flex-shrink-0 items-center'>
 						<input
 							class={checkbox({
-								disabled: this.disabled,
+								disabled: asBoolean(this.disabled),
 							})}
 							type='checkbox'
 							id={this.id ?? this._nonce}
 							name={this.name}
-							required={this.required}
+							required={asBoolean(this.required)}
 							checked={!!this.checked}
 							indeterminate={this.indeterminate}
-							disabled={this.disabled}
+							disabled={asBoolean(this.disabled)}
 							onChange={ev => this._onChange(ev)}
 						/>
 						<div
 							class={iconContainer({
-								disabled: this.disabled,
+								disabled: asBoolean(this.disabled),
 							})}
 						>
 							<p-icon
 								class={icon({
-									disabled: this.disabled,
+									disabled: asBoolean(this.disabled),
 								})}
 								size='auto'
 								variant={!!this.indeterminate ? 'minus' : 'checkmarkThick'}

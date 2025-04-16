@@ -24,6 +24,7 @@ import {
 	startOfYear,
 } from 'date-fns';
 import { childOf, isMobileBrowser } from '../../../utils';
+import { asBoolean } from '../../../utils/as-boolean';
 
 @Component({
 	tag: 'p-datepicker',
@@ -278,9 +279,9 @@ export class Datepicker {
 						prefix={this.prefix}
 						label={this.label}
 						helper={this.helper}
-						required={this.required}
+						required={asBoolean(this.required)}
 						error={this.error}
-						disabled={this.disabled}
+						disabled={asBoolean(this.disabled)}
 						focused={this._showDropdown}
 						value={this._getFormattedDate()}
 						placeholder={this.placeholder}

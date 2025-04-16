@@ -2,6 +2,7 @@ import { Component, h, Host, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { RotateOptions } from '../../../types/tailwind';
 import { IconFlipOptions, IconVariant } from '../icon/icon.component';
+import { asBoolean } from '../../../utils/as-boolean';
 
 const segmentItem = cva(
 	[
@@ -71,8 +72,8 @@ export class SegmentItem {
 			<Host
 				class={segmentItem({
 					variant: this.variant,
-					active: this.active,
-					iconOnly: this.iconOnly,
+					active: asBoolean(this.active),
+					iconOnly: asBoolean(this.iconOnly),
 				})}
 			>
 				{this.icon && (
