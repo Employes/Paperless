@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.42](https://github.com/employes/paperless/compare/v2.0.1-beta.41...v2.0.1-beta.42) (2025-04-16)
+
+
+### Bug Fixes
+
+* **molecules/button:** Host display block to inline-block ([0eadd56](https://github.com/employes/paperless/commit/0eadd5643a95a31a3ad03f086a0cc45f5a10f2f3))
+
+
+
+
+
 ## [2.0.1-beta.41](https://github.com/employes/paperless/compare/v2.0.1-beta.40...v2.0.1-beta.41) (2025-04-16)
 
 
