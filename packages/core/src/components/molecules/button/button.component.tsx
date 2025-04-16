@@ -408,7 +408,7 @@ export class Button {
 		const active = this.active || this.class?.includes('active');
 
 		return (
-			<Host class='p-button block'>
+			<Host class='p-button inline-block'>
 				<VariableTag
 					disabled={this.disabled}
 					href={this.href}
