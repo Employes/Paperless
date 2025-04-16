@@ -36,18 +36,17 @@ const backdrop = cva(
 const contentContainer = cva(
 	[
 		'h-full w-full overflow-y-auto overflow-x-hidden',
-		'pt-16 tablet:px-16 desktop-xs:p-16',
-		'flex items-end justify-center desktop-xs:items-stretch',
+		'flex',
 		'max-h-screen max-w-screen',
 	],
 	{
 		variants: {
 			variant: {
-				modal: null,
-				drawer: [
-					'items-start justify-end desktop-xs:items-start',
-					'p-0 tablet:p-0 desktop-xs:p-0',
+				modal: [
+					'pt-16 tablet:px-16 desktop-xs:p-16',
+					'items-end desktop-xs:items-stretch justify-center',
 				],
+				drawer: ['items-start justify-end desktop-xs:items-start'],
 			},
 			closing: {
 				false: null,
