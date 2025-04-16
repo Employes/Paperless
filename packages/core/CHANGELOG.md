@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.39](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.38...v2.0.1-beta.39) (2025-04-16)
+
+
+### Bug Fixes
+
+* **molecules/field-container:** Only apply w-full on write ([0070385](https://github.com/ionic-team/stencil-component-starter/commit/00703853f7dc556ffa6e42dfa804230d17b6c15a))
+
+
+
+
+
 ## [2.0.1-beta.38](https://github.com/ionic-team/stencil-component-starter/compare/v1.69.0...v2.0.1-beta.38) (2025-04-16)
 
 
