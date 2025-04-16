@@ -281,7 +281,6 @@ export const icons = {
 	diamond,
 	docter,
 	download,
-	duplicate,
 	envelope,
 	euro,
 	exam,
