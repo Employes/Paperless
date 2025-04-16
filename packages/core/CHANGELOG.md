@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.43](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.42...v2.0.1-beta.43) (2025-04-16)
+
+
+### Bug Fixes
+
+* **atoms/segment/item:** Fix text styling for block variant ([c07d334](https://github.com/ionic-team/stencil-component-starter/commit/c07d33481af5aa23c1cbd9b35389629d86232501))
+
+
+
+
+
 ## [2.0.1-beta.42](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.41...v2.0.1-beta.42) (2025-04-16)
 
 
