@@ -8,13 +8,44 @@ import SegmentItemDocs from '../../../../packages/core/src/components/atoms/segm
 
 # Examples
 
+## Variants
+
 ### Default
 
 <Canvas>
 	<div class='flex items-center justify-center gap-4'>
 		<p-segment-item>I am an item</p-segment-item>
 		<p-segment-item
-			icon='hash'
+			icon='user'
+			icon-only
+		/>
+	</div>
+</Canvas>
+
+### Block
+
+<Canvas>
+	<div class='flex items-center gap-4 justify-center'>
+		<p-segment-item variant="block">
+			<span slot="title">I am an item</span>
+			<span slot="description">The description of the item which can be a little long sometimes</span>
+		</p-segment-item>
+		<p-segment-item variant="block" icon="user">
+			<span slot="title">I am an item</span>
+			<span slot="description">The description of the item which can be a little long sometimes</span>
+		</p-segment-item>
+	</div>
+</Canvas>
+
+## Active
+
+### Default
+
+<Canvas>
+	<div class='flex items-center justify-center gap-4'>
+		<p-segment-item>I am an item</p-segment-item>
+		<p-segment-item
+			icon='user'
 			icon-only
 		/>
 	</div>
@@ -26,7 +57,7 @@ import SegmentItemDocs from '../../../../packages/core/src/components/atoms/segm
 	<div class='flex items-center justify-center gap-4'>
 		<p-segment-item active>I am an active item</p-segment-item>
 		<p-segment-item
-			icon='hash'
+			icon='user'
 			icon-only
 			active
 		/>
