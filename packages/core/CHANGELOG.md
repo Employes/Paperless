@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.44](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.43...v2.0.1-beta.44) (2025-04-16)
+
+
+### Bug Fixes
+
+* **atoms/floating-menu/item:** Remove reflecting hover/disabled so it's not an empty string ([7e2deb7](https://github.com/ionic-team/stencil-component-starter/commit/7e2deb719a5c60d74f6fa345a3600d04be04dcde))
+
+
+
+
+
 ## [2.0.1-beta.43](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.42...v2.0.1-beta.43) (2025-04-16)
 
 
