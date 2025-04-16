@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.40](https://github.com/employes/paperless/compare/v2.0.1-beta.39...v2.0.1-beta.40) (2025-04-16)
+
+
+### Bug Fixes
+
+* **molecules/select:** Pass variant="write" to field-container ([289be7d](https://github.com/employes/paperless/commit/289be7d2aa969477fd3bbf52b9ec022572c1c2d5))
+
+
+
+
+
 ## [2.0.1-beta.39](https://github.com/employes/paperless/compare/v2.0.1-beta.38...v2.0.1-beta.39) (2025-04-16)
 
 
