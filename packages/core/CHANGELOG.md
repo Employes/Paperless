@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.41](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.40...v2.0.1-beta.41) (2025-04-16)
+
+
+### Bug Fixes
+
+* **molecules/field:** Auto adjust height of field on read ([6ed8671](https://github.com/ionic-team/stencil-component-starter/commit/6ed86712b575da06210b8c58a21c0cd18f5909d0))
+
+
+
+
+
 ## [2.0.1-beta.40](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.39...v2.0.1-beta.40) (2025-04-16)
 
 
