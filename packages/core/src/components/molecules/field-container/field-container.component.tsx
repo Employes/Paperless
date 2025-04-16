@@ -134,7 +134,7 @@ export class FieldContainer {
 						)}
 					</div>
 					<p-tooltip
-						class='w-full'
+						class={this.variant === 'write' ? 'w-full' : ''}
 						variant='error'
 						content={this.error}
 						show={errorAndErrorIsNotBoolean && this.forceShowTooltip}
