@@ -7,11 +7,15 @@ const segmentItem = cva(
 	[
 		'p-segment-item',
 		'flex items-center justify-center',
-		'h-6 gap-2 rounded-full',
+		'rounded-2xl',
 		'cursor-pointer text-sm',
 	],
 	{
 		variants: {
+			variant: {
+				default: 'h-6 gap-2',
+				block: 'flex-col p-4',
+			},
 			active: {
 				false: 'cursor-pointer text-black-teal-400 hover:bg-black-teal-50',
 				true: 'bg-dark-teal-600 text-white',
@@ -29,6 +33,11 @@ const segmentItem = cva(
 	styleUrl: 'segment-item.component.css',
 })
 export class SegmentItem {
+	/**
+	 * The size of the
+	 */
+	@Prop() variant: 'default' | 'block' = 'default';
+
 	/**
 	 * Wether the segment item is active
 	 */
@@ -55,9 +64,15 @@ export class SegmentItem {
 	@Prop() iconRotate: RotateOptions;
 
 	render() {
+		const titleSlot =
+			this.variant === 'block' ? <slot name='title' /> : <slot />;
+		const descriptionSlot =
+			this.variant === 'block' ? <slot name='description' /> : null;
+
 		return (
 			<Host
 				class={segmentItem({
+					variant: this.variant,
 					active: this.active,
 					iconOnly: this.iconOnly,
 				})}
@@ -69,7 +84,8 @@ export class SegmentItem {
 						rotate={this.iconRotate}
 					/>
 				)}
-				<slot />
+				<p class='empty:hidden'>{titleSlot}</p>
+				{descriptionSlot && <p>{descriptionSlot}</p>}
 			</Host>
 		);
 	}
