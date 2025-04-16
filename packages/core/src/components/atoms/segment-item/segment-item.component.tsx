@@ -14,7 +14,7 @@ const segmentItem = cva(
 		variants: {
 			variant: {
 				default: 'h-6 gap-2',
-				block: 'flex-col p-4',
+				block: 'flex-col p-4 text-center',
 			},
 			active: {
 				false: 'cursor-pointer text-black-teal-400 hover:bg-black-teal-50',
@@ -64,8 +64,6 @@ export class SegmentItem {
 	@Prop() iconRotate: RotateOptions;
 
 	render() {
-		const titleSlot =
-			this.variant === 'block' ? <slot name='title' /> : <slot />;
 		const descriptionSlot =
 			this.variant === 'block' ? <slot name='description' /> : null;
 
@@ -84,8 +82,17 @@ export class SegmentItem {
 						rotate={this.iconRotate}
 					/>
 				)}
-				<p class='empty:hidden'>{titleSlot}</p>
-				{descriptionSlot && <p>{descriptionSlot}</p>}
+
+				{this.variant === 'default' ? (
+					<slot />
+				) : (
+					<div class='flex flex-col items-center gap-1'>
+						<p class='font-semibold empty:hidden'>
+							<slot name='title' />
+						</p>
+						{descriptionSlot && <p class='text-xs'>{descriptionSlot}</p>}
+					</div>
+				)}
 			</Host>
 		);
 	}
