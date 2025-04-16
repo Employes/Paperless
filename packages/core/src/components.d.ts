@@ -601,7 +601,7 @@ export namespace Components {
         /**
           * Wether to enable the hover state
          */
-        "enableHover": boolean;
+        "enableHover"?: boolean;
         /**
           * Icon of the navigation item
          */

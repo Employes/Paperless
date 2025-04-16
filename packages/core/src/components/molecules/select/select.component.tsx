@@ -770,9 +770,8 @@ export class Select {
 			return;
 		}
 
-		this._multiContainerRef.style.maxWidth = `${
-			this._inputRef.clientWidth - 16
-		}px`;
+		const calced = this._inputRef.clientWidth - 16;
+		this._multiContainerRef.style.maxWidth = `${calced >= 16 ? calced : 16}px`;
 	}
 
 	private _setCheckSelectedItemsTimeout() {

@@ -12,6 +12,7 @@ import {
 } from '@stencil/core';
 import { formatTranslation, getLocaleComponentStrings } from '../../../utils';
 import { Placement } from '@floating-ui/dom';
+import { asBoolean } from '../../../utils/as-boolean';
 
 export type templateFunc = () => string;
 
@@ -109,9 +110,9 @@ export class FieldContainer {
 							</div>
 						)}
 
-						{(!this.required || helper || hasHeaderSlot) && (
+						{(!asBoolean(this.required) || helper || hasHeaderSlot) && (
 							<div class='flex items-center gap-1'>
-								{!this.required && this.variant === 'write' && (
+								{!asBoolean(this.required) && this.variant === 'write' && (
 									<span class='text-xs font-medium text-black-teal-200'>
 										{this.optionalTemplate()}
 									</span>
@@ -137,7 +138,7 @@ export class FieldContainer {
 						class={this.variant === 'write' ? 'w-full' : ''}
 						variant='error'
 						content={this.error}
-						show={errorAndErrorIsNotBoolean && this.forceShowTooltip}
+						show={errorAndErrorIsNotBoolean && asBoolean(this.forceShowTooltip)}
 						enableUserInput={false}
 						placement={this.errorPlacement}
 					>

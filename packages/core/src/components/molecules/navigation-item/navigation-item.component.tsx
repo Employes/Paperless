@@ -2,6 +2,7 @@ import { Component, h, Host, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { IconVariant } from '../../atoms/icon/icon.component';
 import { cn } from '../../../utils/cn';
+import { asBoolean } from '../../../utils/as-boolean';
 
 const navigationItem = cva(
 	[
@@ -88,7 +89,7 @@ export class NavigationItem {
 	render() {
 		const TagType = this.as;
 
-		const active = this.active || this.class?.includes('active');
+		const active = asBoolean(this.active) || this.class?.includes('active');
 
 		return (
 			<Host class={cn('p-navigation-item inline-block', this.class)}>

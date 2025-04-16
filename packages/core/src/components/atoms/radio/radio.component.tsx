@@ -9,6 +9,7 @@ import {
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { nonce } from '../../../utils/nonce';
+import { asBoolean } from '../../../utils/as-boolean';
 
 const radio = cva(
 	[
@@ -114,7 +115,7 @@ export class Radio {
 					<div class='relative flex flex-shrink-0 items-center'>
 						<input
 							class={radio({
-								disabled: this.disabled,
+								disabled: asBoolean(this.disabled),
 							})}
 							type='radio'
 							id={this.id ?? this._nonce}
@@ -122,12 +123,12 @@ export class Radio {
 							required={this.required}
 							value={this.value}
 							checked={this.checked}
-							disabled={this.disabled}
+							disabled={asBoolean(this.disabled)}
 							onChange={ev => this._onChange(ev)}
 						/>
 						<div
 							class={circle({
-								disabled: this.disabled,
+								disabled: asBoolean(this.disabled),
 							})}
 						/>
 					</div>
@@ -138,7 +139,7 @@ export class Radio {
 	}
 
 	private _onChange(ev: Event) {
-		if (this.disabled) {
+		if (asBoolean(this.disabled)) {
 			ev.preventDefault();
 			return;
 		}

@@ -2,6 +2,7 @@ import { Component, h, Host, Prop } from '@stencil/core';
 import { IconFlipOptions, IconVariant } from '../icon/icon.component';
 import { RotateOptions } from '../../../types';
 import { cva } from 'class-variance-authority';
+import { asBoolean } from '../../../utils/as-boolean';
 
 const item = cva(
 	[
@@ -94,8 +95,8 @@ export class FloatingMenuItem {
 		return (
 			<Host
 				class={item({
-					hover: this.hover && !this.loading,
-					disabled: this.disabled,
+					hover: asBoolean(this.hover) && !asBoolean(this.loading),
+					disabled: asBoolean(this.disabled),
 				})}
 			>
 				{this._getIcon()}
@@ -119,8 +120,8 @@ export class FloatingMenuItem {
 		return (
 			<p-icon
 				class={icon({
-					hover: this.hover,
-					disabled: this.disabled,
+					hover: asBoolean(this.hover),
+					disabled: asBoolean(this.disabled),
 				})}
 				variant={this.icon}
 				flip={this.iconFlip}

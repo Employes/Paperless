@@ -16,6 +16,7 @@ import { RotateOptions } from '../../../types/tailwind';
 import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
 import { templateFunc } from '../field-container/field-container.component';
 import { cn } from '../../../utils/cn';
+import { asBoolean } from '../../../utils/as-boolean';
 
 const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 	variants: {
@@ -365,8 +366,8 @@ export class Field {
 					<div
 						class={field({
 							error: !!this.error?.length,
-							disabled: this.disabled,
-							focused: this.focused || this._focused,
+							disabled: asBoolean(this.disabled),
+							focused: asBoolean(this.focused) || this._focused,
 							size: this.size,
 							variant: this.variant,
 							isTextarea: this.type === 'textarea',
@@ -377,8 +378,8 @@ export class Field {
 							<div
 								class={prefixAndSuffix({
 									error: !!this.error?.length,
-									disabled: this.disabled,
-									focused: this.focused || this._focused,
+									disabled: asBoolean(this.disabled),
+									focused: asBoolean(this.focused) || this._focused,
 									isText: typeof suffix === 'string',
 								})}
 								onClick={() => this._focusInput()}
@@ -404,8 +405,8 @@ export class Field {
 							<div
 								class={prefixAndSuffix({
 									error: !!this.error?.length,
-									disabled: this.disabled,
-									focused: this.focused || this._focused,
+									disabled: asBoolean(this.disabled),
+									focused: asBoolean(this.focused) || this._focused,
 									isText: typeof suffix === 'string',
 								})}
 								onClick={() => this._focusInput()}
@@ -497,7 +498,7 @@ export class Field {
 
 		const props = {
 			class: input({
-				disabled: this.disabled,
+				disabled: asBoolean(this.disabled),
 				isTextarea: this.type === 'textarea',
 			}),
 			value: this.value,

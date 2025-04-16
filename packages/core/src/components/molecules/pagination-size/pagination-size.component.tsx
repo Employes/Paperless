@@ -15,6 +15,7 @@ import {
 } from '../../../utils/localization';
 import { defaultSize, defaultSizeOptions } from './constants';
 import { cva } from 'class-variance-authority';
+import { asBoolean } from '../../../utils/as-boolean';
 
 export type templateFunc = (value: number) => string;
 
@@ -101,7 +102,7 @@ export class PaginationSize {
 
 	render() {
 		return (
-			<Host class={paginationSize({ hidden: this.hidden })}>
+			<Host class={paginationSize({ hidden: asBoolean(this.hidden) })}>
 				<p-dropdown
 					variant='dark-teal'
 					placement='top-start'
