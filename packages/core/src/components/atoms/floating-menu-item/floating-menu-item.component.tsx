@@ -58,12 +58,12 @@ export class FloatingMenuItem {
 	/**
 	 * Wether it should have a hover effect
 	 */
-	@Prop({ reflect: true }) hover: boolean = true;
+	@Prop() hover: boolean = true;
 
 	/**
 	 * Wether the item is disabled
 	 */
-	@Prop({ reflect: true }) disabled: boolean = false;
+	@Prop() disabled: boolean = false;
 
 	/**
 	 * Wether loading is applied
