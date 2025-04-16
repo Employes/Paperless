@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.45](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.44...v2.0.1-beta.45) (2025-04-16)
+
+
+### Features
+
+* **util:** Introduce `asBoolean` utility to fix weird issue with angular ([d69d59e](https://github.com/ionic-team/stencil-component-starter/commit/d69d59e813bfdfb85dcc1f14cf79ee42135b1c9e))
+
+
+
+
+
 ## [2.0.1-beta.44](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.43...v2.0.1-beta.44) (2025-04-16)
 
 
