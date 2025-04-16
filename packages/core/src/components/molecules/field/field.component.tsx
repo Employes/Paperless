@@ -15,11 +15,12 @@ import { HTMLInputTypeAttribute } from 'react';
 import { RotateOptions } from '../../../types/tailwind';
 import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
 import { templateFunc } from '../field-container/field-container.component';
+import { cn } from '../../../utils/cn';
 
 const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 	variants: {
 		variant: {
-			read: 'border-0 items-center',
+			read: 'border-0 items-start',
 			write: 'border px-2',
 		},
 		size: {
@@ -60,12 +61,12 @@ const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 		{
 			size: 'sm',
 			variant: 'read',
-			class: 'h-4',
+			class: 'min-h-4',
 		},
 		{
 			size: 'base',
 			variant: 'read',
-			class: 'h-6',
+			class: 'min-h-6',
 		},
 
 		{
@@ -384,7 +385,9 @@ export class Field {
 							>
 								{this.icon && this.iconPosition === 'start' ? (
 									<p-icon
-										class='flex'
+										class={cn('flex', {
+											'mt-1': this.variant === 'read' && this.size === 'base',
+										})}
 										variant={this.icon}
 										rotate={this.iconRotate}
 										flip={this.iconFlip}
