@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.48](https://github.com/employes/paperless/compare/v2.0.1-beta.47...v2.0.1-beta.48) (2025-04-17)
+
+
+### Bug Fixes
+
+* **storybook:** Include component-docs in artifacts ([919eee8](https://github.com/employes/paperless/commit/919eee8d685d6c262d09e5f0632ac83dd1ef9e39))
+
+
+
+
+
 ## [2.0.1-beta.47](https://github.com/employes/paperless/compare/v2.0.1-beta.46...v2.0.1-beta.47) (2025-04-17)
 
 
