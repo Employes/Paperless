@@ -86,6 +86,8 @@ jobs:
             CHANGELOG.md
             packages/core/package.json
             packages/core/CHANGELOG.md
+            packages/core/component-docs.json
+            packages/core/component-docs.d.ts
             packages/conventions/package.json
             packages/conventions/CHANGELOG.md
             packages/angular/package.json
