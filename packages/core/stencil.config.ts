@@ -48,6 +48,7 @@ export const config: Config = {
 		storiesOutputTarget(),
 		angular({
 			componentCorePackage: '@paperless/core',
+			outputType: 'component',
 			directivesProxyFile:
 				'../angular/projects/paperless/src/lib/stencil/components.ts',
 			directivesArrayFile:
@@ -61,7 +62,7 @@ export const config: Config = {
 			],
 		}),
 		react({
-			outDir: '../react/src/stencil',
+			outDir: '../react/src',
 		}),
 		{
 			type: 'docs-readme',

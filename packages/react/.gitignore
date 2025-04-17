@@ -62,6 +62,6 @@ typings/
 
 # Produced build files
 dist
-./src/components/stencil
+src/components.ts
 
 README.md
