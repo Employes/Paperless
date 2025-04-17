@@ -390,7 +390,8 @@ export class Field {
 								{this.icon && this.iconPosition === 'start' ? (
 									<p-icon
 										class={cn('flex', {
-											'mt-1': this.variant === 'read' && this.size === 'base',
+											'mt-[0.125rem]':
+												this.variant === 'read' && this.size === 'base',
 										})}
 										variant={this.icon}
 										rotate={this.iconRotate}
