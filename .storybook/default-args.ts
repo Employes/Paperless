@@ -36,6 +36,14 @@ export const extractDefaultArgs = (componentName: string, dashCase = false) => {
 						result = value.trim().replace(/^'(.+(?='$))'$/, '$1');
 				}
 
+				if (result === 'true' || result === 'false') {
+					result = result === 'true' ? true : false;
+				}
+
+				if (result === 'null') {
+					result = undefined;
+				}
+
 				return { ...prop, default: result };
 			})
 			.reduce((acc, { attr, name, default: value }) => {
