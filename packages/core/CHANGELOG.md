@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.47](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.46...v2.0.1-beta.47) (2025-04-17)
+
+
+### Bug Fixes
+
+* **atoms/loader:** Bring it back ([fb085fc](https://github.com/ionic-team/stencil-component-starter/commit/fb085fc04cefe521cca53535498d6a311aa38ec7))
+* Skip react build for now ([9e0b9b0](https://github.com/ionic-team/stencil-component-starter/commit/9e0b9b090f508db003c1d749d4f7c081e46a65b0))
+
+
+### Features
+
+* **atoms/radio:** Update story to contain label & apply nonce if id length is null ([afbcfae](https://github.com/ionic-team/stencil-component-starter/commit/afbcfae32942193ab88ff065ab97eeab56a7c372))
+* update storybook ([888a5f8](https://github.com/ionic-team/stencil-component-starter/commit/888a5f85d1464d4bc1897d14a3ae7fe84ad141e8))
+
+
+
+
+
 ## [2.0.1-beta.46](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.45...v2.0.1-beta.46) (2025-04-17)
 
 
