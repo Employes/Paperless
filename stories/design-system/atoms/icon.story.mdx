@@ -14,17 +14,23 @@ import { categorized, icons } from '../../../packages/core/src/utils/icons';
 ### Categorized
 
 <Canvas>
-	<div class='flex flex-col gap-12'>
+	<div className='flex flex-col gap-12'>
 		{Object.keys(categorized).map(category => (
-			<div class='flex flex-col gap-6'>
+			<div
+				className='flex flex-col gap-6'
+				key={category}
+			>
 				<h2>{category}</h2>
-				<div class='flex w-full flex-wrap gap-4'>
+				<div className='flex w-full flex-wrap gap-4'>
 					{Object.keys(categorized[category]).map(variant => (
-						<p-tooltip content={variant}>
+						<p-tooltip
+							content={variant}
+							key={variant}
+						>
 							<p-icon
 								key={variant}
 								variant={variant}
-								class='text-2xl text-black-teal hover:scale-125 hover:text-supportive-lilac'
+								className='text-2xl text-black-teal hover:scale-125 hover:text-supportive-lilac'
 								slot='trigger'
 							></p-icon>
 						</p-tooltip>
@@ -38,25 +44,32 @@ import { categorized, icons } from '../../../packages/core/src/utils/icons';
 ### List
 
 <Canvas>
-	<table class='w-full table-fixed'>
-		<tr>
-			<th class='py-2 text-start'>Icon</th>
-			<th class='py-2 text-start'>Variant</th>
-		</tr>
-		{Object.keys(icons).map(icon => (
-			<tr class='group border-b border-b-mystic-dark'>
-				<td class='py-2'>
-					<p-icon
-						key={icon}
-						variant={icon}
-						class='text-2xl text-black-teal group-hover:text-supportive-lilac'
-					></p-icon>
-				</td>
-				<td class='py-2 group-hover:font-semibold group-hover:text-supportive-lilac'>
-					{icon}
-				</td>
+	<table className='w-full table-fixed'>
+		<thead>
+			<tr>
+				<th className='py-2 text-start'>Icon</th>
+				<th className='py-2 text-start'>Variant</th>
 			</tr>
-		))}
+		</thead>
+		<tbody>
+			{Object.keys(icons).map(icon => (
+				<tr
+					className='group border-b border-b-mystic-dark'
+					key={icon}
+				>
+					<td className='py-2'>
+						<p-icon
+							key={icon}
+							variant={icon}
+							className='text-2xl text-black-teal group-hover:text-supportive-lilac'
+						></p-icon>
+					</td>
+					<td className='py-2 group-hover:font-semibold group-hover:text-supportive-lilac'>
+						{icon}
+					</td>
+				</tr>
+			))}
+		</tbody>
 	</table>
 </Canvas>
 
@@ -65,7 +78,7 @@ import { categorized, icons } from '../../../packages/core/src/utils/icons';
 #### Horizontal
 
 <Canvas>
-	<div class='flex'>
+	<div className='flex'>
 		<p-icon
 			variant='arrow'
 			flip='horizontal'
@@ -76,7 +89,7 @@ import { categorized, icons } from '../../../packages/core/src/utils/icons';
 #### Vertical
 
 <Canvas>
-	<div class='flex'>
+	<div className='flex'>
 		<p-icon
 			variant='user'
 			flip='vertical'
@@ -89,7 +102,7 @@ import { categorized, icons } from '../../../packages/core/src/utils/icons';
 #### 45 degrees
 
 <Canvas>
-	<div class='flex'>
+	<div className='flex'>
 		<p-icon
 			variant='arrow'
 			rotate={45}
@@ -100,7 +113,7 @@ import { categorized, icons } from '../../../packages/core/src/utils/icons';
 #### -25 degrees
 
 <Canvas>
-	<div class='flex'>
+	<div className='flex'>
 		<p-icon
 			variant='arrow'
 			rotate={-25}
