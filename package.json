@@ -65,9 +65,9 @@
 		"lerna:version:nopush": "yarn lerna:version --no-push",
 		"lerna:lint": "lerna run lint",
 		"lerna:lint:fix": "lerna run lint:fix",
-		"lerna:publish": "lerna run yarn:publish --stream",
-		"lerna:build": "lerna run build --scope=@paperless/core && lerna run build --ignore=@paperless/core --stream",
-		"lerna:build:prod": "lerna run build:prod --scope=@paperless/core && lerna run build:prod --ignore=@paperless/core --stream",
+		"lerna:publish": "lerna run yarn:publish --stream --ignore=@paperless/react",
+		"lerna:build": "lerna run build --scope=@paperless/core && lerna run build --scope=@paperless/angular --stream",
+		"lerna:build:prod": "lerna run build:prod --scope=@paperless/core && lerna run build:prod --scope=@paperless/angular --stream",
 		"lerna:prettier": "lerna run prettier:check",
 		"lerna:prettier:write": "lerna run prettier:write"
 	},

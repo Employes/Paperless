@@ -16,7 +16,7 @@
 		"build:prod": "yarn build",
 		"clean": "rm -rf dist",
 		"compile": "yarn tsc",
-		"tsc": "tsc -p .",
+		"tsc": "tsc -p . --outDir ./dist",
 		"rollup": "rollup -c",
 		"preyarn:publish": "cp ../../README.md .",
 		"yarn:publish": "yarn publish",
@@ -27,7 +27,7 @@
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"files": [
-		"dist/"
+		"dist"
 	],
 	"devDependencies": {
 		"@types/jest": "^29.5.14",
