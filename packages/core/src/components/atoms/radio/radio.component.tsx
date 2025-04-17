@@ -109,7 +109,7 @@ export class Radio {
 		return (
 			<Host class='p-radio'>
 				<label
-					htmlFor={this.id ?? this._nonce}
+					htmlFor={this.id?.length ? this.id : this._nonce}
 					class='flex items-center justify-start gap-2 text-black-teal'
 				>
 					<div class='relative flex flex-shrink-0 items-center'>
@@ -118,7 +118,7 @@ export class Radio {
 								disabled: asBoolean(this.disabled),
 							})}
 							type='radio'
-							id={this.id ?? this._nonce}
+							id={this.id?.length ? this.id : this._nonce}
 							name={this.name}
 							required={this.required}
 							value={this.value}
