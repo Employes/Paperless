@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.46](https://github.com/employes/paperless/compare/v2.0.1-beta.45...v2.0.1-beta.46) (2025-04-17)
+
+
+### Features
+
+* update stencil ([865924c](https://github.com/employes/paperless/commit/865924c899828e40ed45b03cbf126cb2205968d9))
+
+
+
+
+
 ## [2.0.1-beta.45](https://github.com/employes/paperless/compare/v2.0.1-beta.44...v2.0.1-beta.45) (2025-04-16)
 
 
