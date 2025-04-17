@@ -16,8 +16,7 @@
 	},
 	"files": [
 		"dist/",
-		"loader/",
-		"hydrate/"
+		"loader/"
 	],
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org"
@@ -52,8 +51,8 @@
 	},
 	"devDependencies": {
 		"@stencil-community/postcss": "^2.2.0",
-		"@stencil/angular-output-target": "0.6.0",
-		"@stencil/react-output-target": "0.5.0",
+		"@stencil/angular-output-target": "0.10.2",
+		"@stencil/react-output-target": "1.0.2",
 		"@stencil/sass": "3.0.2",
 		"@tailwindcss/aspect-ratio": "0.4.2",
 		"@tailwindcss/forms": "0.5.3",

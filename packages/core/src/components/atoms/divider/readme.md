@@ -1,14 +1,6 @@
-# Divider
+# p-divider
 
-## Usage:
 
-```html
-<p-divider />
-
-<!-- or -->
-
-<p-divider> Content </p-divider>
-```
 
 <!-- Auto Generated Below -->
 
@@ -24,12 +16,12 @@
 
 ### Used by
 
- - [p-accordion](../../molecules/accordion)
- - [p-floating-menu-container](../floating-menu-container)
- - [p-modal-footer](../modal-footer)
- - [p-pagination](../../molecules/pagination)
- - [p-tab-group](../tab-group)
- - [p-table-row](../../molecules/table-row)
+ - [p-accordion](../../deprecated/molecules/accordion)
+ - [p-floating-menu-container](../floating-menu/container)
+ - [p-modal-footer](../../deprecated/atoms/modal/footer)
+ - [p-pagination](../../molecules/pagination/pagination)
+ - [p-tab-group](../../deprecated/atoms/tab/group)
+ - [p-table-row](../../deprecated/molecules/table/row)
 
 ### Graph
 ```mermaid

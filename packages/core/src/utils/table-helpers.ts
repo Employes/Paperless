@@ -1,4 +1,4 @@
-import { TableColumn } from '../components';
+import { TableColumn } from '../components/helpers/table/column/table-column.component';
 import {
 	isTableColumnSizesKey,
 	TableColumnSizes,

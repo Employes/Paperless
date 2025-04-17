@@ -1,10 +1,6 @@
-# Helper
+# p-helper
 
-## Usage:
 
-```html
-<p-helper>Content of the tooltip</p-helper>
-```
 
 <!-- Auto Generated Below -->
 
@@ -21,8 +17,8 @@
 
 ### Used by
 
- - [p-field-container](../../molecules/field-container)
- - [p-input-group](../../molecules/input-group)
+ - [p-field-container](../../molecules/field/container)
+ - [p-input-group](../../deprecated/molecules/input/group)
 
 ### Depends on
 

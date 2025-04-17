@@ -1,10 +1,6 @@
-# Iban icon 
+# p-iban-icon
 
-## Usage:
 
-```html
-<p-iban-icon variant="abna"/>
-```
 
 <!-- Auto Generated Below -->
 

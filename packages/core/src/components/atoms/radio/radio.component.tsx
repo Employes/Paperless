@@ -132,7 +132,7 @@ export class Radio {
 							})}
 						/>
 					</div>
-					<slot></slot>
+					<slot />
 				</label>
 			</Host>
 		);

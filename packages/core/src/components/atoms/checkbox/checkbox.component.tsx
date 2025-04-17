@@ -142,7 +142,7 @@ export class Checkbox {
 							/>
 						</div>
 					</div>
-					<slot></slot>
+					<slot />
 				</label>
 			</Host>
 		);

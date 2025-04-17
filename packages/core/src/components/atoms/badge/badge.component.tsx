@@ -1,4 +1,14 @@
 import { Component, h, Host } from '@stencil/core';
+import { cva } from 'class-variance-authority';
+
+const badge = cva([
+	'p-badge',
+	'inline-flex items-center justify-center',
+	'h-4 min-w-[1.5rem] px-1',
+	'rounded-full',
+	'bg-teal',
+	'text-center text-xs font-semibold text-white',
+]);
 
 @Component({
 	tag: 'p-badge',
@@ -8,7 +18,7 @@ import { Component, h, Host } from '@stencil/core';
 export class Badge {
 	render() {
 		return (
-			<Host class='p-badge inline-flex h-4 min-w-[1.5rem] items-center justify-center rounded-full bg-teal px-1 text-center text-xs font-semibold text-white'>
+			<Host class={badge()}>
 				<slot />
 			</Host>
 		);

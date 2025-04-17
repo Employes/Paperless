@@ -1,14 +1,6 @@
-# Toggle
+# p-toggle
 
-## Usage:
 
-```html
-<p-toggle />
-
-<!-- or -->
-
-<p-toggle> Label </p-toggle>
-```
 
 <!-- Auto Generated Below -->
 

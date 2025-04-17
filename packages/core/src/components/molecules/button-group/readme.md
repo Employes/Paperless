@@ -1,15 +1,6 @@
-# Button group 
+# p-button-group
 
-## Usage:
 
-```html
-<p-button-group>
-	<p-button>Button 1</p-button>
-	<p-button>Button 2</p-button>
-	<p-button>Button 3</p-button>
-	<p-button>Button 4</p-button>
-</p-button-group>
-```
 
 <!-- Auto Generated Below -->
 

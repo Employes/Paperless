@@ -1,22 +1,6 @@
-# Radio
+# p-radio
 
-## Usage:
 
-```html
-<p-radio
-	name="name"
-	value="value"
-/>
-
-<!-- or -->
-
-<p-radio
-	name="name"
-	value="value"
->
-	Label
-</p-radio>
-```
 
 <!-- Auto Generated Below -->
 

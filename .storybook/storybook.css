@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
 @import url('https://fonts.cdnfonts.com/css/ambit');
 
+#storybook-explorer-tree .sidebar-subheading > button {
+	font-size: 0.75rem !important;
+	line-height: 1rem !important;
+	font-weight: 500 !important;
+	color: #687f7c !important;
+	text-transform: initial !important;
+}
+
 #storybook-explorer-tree .sidebar-item {
 	margin: 0 0.5rem 1px 0;
 	/* padding-left: 1rem; */
@@ -11,44 +19,62 @@
 	gap: 8px;
 	align-items: center;
 	font-size: 14px;
-	font-weight: 500;
-	color: #355550;
+	font-weight: 500 !important;
+	color: #355550 !important;
 }
 
 #storybook-explorer-tree .sidebar-item:hover,
 #storybook-explorer-tree .sidebar-item:focus {
 	background: #f3f1ed !important;
-	color: #032a24;
+	color: #032a24 !important;
 }
 
 #storybook-explorer-tree button.sidebar-item {
 	/* margin: 0 1rem 0 0; */
 }
 
-#storybook-explorer-tree button.sidebar-item span:first-child {
-	margin: 0;
-	border-top-width: 4px;
-	border-bottom-width: 4px;
-	border-left-width: 4px;
+#storybook-explorer-tree .sidebar-item > a,
+#storybook-explorer-tree .sidebar-item > button {
+	display: flex;
+	align-items: center;
 }
 
-#storybook-explorer-tree .sidebar-item svg {
+#storybook-explorer-tree .sidebar-item > a > div,
+#storybook-explorer-tree .sidebar-item > button > div {
 	color: inherit;
 	background: transparent;
 	margin: 0;
 	padding: 4px;
+	border-radius: 100%;
+	border-radius: 100%;
+
 	width: 1.4375rem;
 	height: 1.5rem;
-	border-radius: 100%;
+
+	> svg {
+		width: 100%;
+		height: 100%;
+		color: inherit;
+	}
+}
+
+#storybook-explorer-tree .sidebar-item > button > div {
+	width: auto;
+	padding-right: 0.5rem;
 }
 
 #storybook-explorer-tree .sidebar-item[data-selected='true'],
 #storybook-explorer-tree .sidebar-item[aria-expanded='true'] {
 	background: #eceae5 !important;
-	color: #032a24;
-	font-weight: 600;
+	color: #032a24 !important;
+	font-weight: 600 !important;
 
-	svg {
+	div {
 		background: #d1aeff;
 	}
+}
+
+#storybook-explorer-tree .sidebar-item > button[aria-expanded='true'] {
+	color: #032a24 !important;
+	font-weight: 600 !important;
 }

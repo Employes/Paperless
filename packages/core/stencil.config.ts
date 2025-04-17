@@ -10,6 +10,8 @@ import tailwind, {
 } from 'stencil-tailwind-plugin';
 import tailwindConf from './src/tailwind.config';
 
+import { storiesOutputTarget } from './stencil-storybook-stories-output/';
+
 setPluginConfigurationDefaults({
 	enableDebug: false,
 	tailwindCssContents:
@@ -20,6 +22,7 @@ setPluginConfigurationDefaults({
 export const config: Config = {
 	namespace: 'paperless',
 	globalStyle: 'src/style/paperless.scss',
+	watchIgnoredRegex: [/.*\.stories\.ts$/],
 	extras: {
 		experimentalImportInjection: true,
 	},
@@ -33,6 +36,16 @@ export const config: Config = {
 		browserArgs: ['--no-sandbox'],
 	},
 	outputTargets: [
+		{
+			type: 'dist',
+			esmLoaderPath: '../loader',
+		},
+		{
+			type: 'dist-custom-elements',
+			customElementsExportBehavior: 'auto-define-custom-elements',
+			externalRuntime: false,
+		},
+		storiesOutputTarget(),
 		angular({
 			componentCorePackage: '@paperless/core',
 			directivesProxyFile:
@@ -48,26 +61,18 @@ export const config: Config = {
 			],
 		}),
 		react({
-			componentCorePackage: '@paperless/core',
-			proxiesFile: '../react/src/components/stencil/index.ts',
-			includeDefineCustomElements: true,
+			outDir: '../react/src/stencil',
 		}),
-		{
-			type: 'dist',
-			esmLoaderPath: '../loader',
-		},
-		{
-			type: 'dist-custom-elements',
-		},
 		{
 			type: 'docs-readme',
 		},
 		{
-			type: 'www',
-			serviceWorker: null, // disable service workers
+			type: 'docs-json',
+			file: 'component-docs.json',
 		},
 		{
-			type: 'dist-hydrate-script',
+			type: 'www',
+			serviceWorker: null, // disable service workers
 		},
 		{
 			type: 'www',

@@ -133,7 +133,7 @@ export class Toggle {
 							})}
 						></div>
 					</div>
-					<slot></slot>
+					<slot />
 				</label>
 			</Host>
 		);

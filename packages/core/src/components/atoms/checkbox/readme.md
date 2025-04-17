@@ -1,14 +1,6 @@
-# Checkbox
+# p-checkbox
 
-## Usage:
 
-```html
-<p-checkbox />
-
-<!-- or -->
-
-<p-checkbox> Label </p-checkbox>
-```
 
 <!-- Auto Generated Below -->
 
@@ -37,8 +29,8 @@
 
 ### Used by
 
- - [p-dropdown-menu-item](../dropdown-menu-item)
- - [p-table](../../organisms/table)
+ - [p-dropdown-menu-item](../dropdown-menu/item)
+ - [p-table](../../deprecated/organisms/table)
 
 ### Depends on
 

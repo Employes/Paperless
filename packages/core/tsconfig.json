@@ -15,6 +15,9 @@
 		"jsxFragmentFactory": "h.Fragment",
 		"skipLibCheck": true
 	},
+	"watchOptions": {
+		"excludeFiles": ["**/*.stories.ts"]
+	},
 	"include": ["src"],
-	"exclude": ["node_modules", "../../node_modules"]
+	"exclude": ["node_modules", "../../node_modules", "**/*.stories.ts"]
 }

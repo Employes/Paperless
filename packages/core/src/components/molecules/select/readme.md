@@ -68,12 +68,12 @@
 
 - [p-icon](../../atoms/icon)
 - [p-dropdown](../dropdown)
-- [p-field-container](../field-container)
+- [p-field-container](../field/container)
 - [p-button](../button)
-- [p-dropdown-menu-item](../../atoms/dropdown-menu-item)
-- [p-loader](../../atoms/loader)
-- [p-field](../field)
-- [p-avatar](../../atoms/avatar)
+- [p-dropdown-menu-item](../../atoms/dropdown-menu/item)
+- [p-loader](../../deprecated/atoms/loader)
+- [p-field](../field/field)
+- [p-avatar](../../atoms/avatar/avatar)
 
 ### Graph
 ```mermaid

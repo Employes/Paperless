@@ -1,10 +1,6 @@
-# Portal
+# p-portal
 
-## Usage:
 
-```html
-<p-portal> Content to move </p-portal>
-```
 
 <!-- Auto Generated Below -->
 
