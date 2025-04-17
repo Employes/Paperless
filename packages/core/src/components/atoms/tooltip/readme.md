@@ -31,11 +31,11 @@
 
 ### Used by
 
- - [p-field-container](../../molecules/field-container)
+ - [p-field-container](../../molecules/field/container)
  - [p-helper](../helper)
- - [p-input-error](../../molecules/input-error)
- - [p-input-group](../../molecules/input-group)
- - [p-table](../../organisms/table)
+ - [p-input-error](../../deprecated/molecules/input/error)
+ - [p-input-group](../../deprecated/molecules/input/group)
+ - [p-table](../../deprecated/organisms/table)
 
 ### Depends on
 

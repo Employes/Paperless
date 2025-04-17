@@ -1,10 +1,6 @@
-# Badge
+# p-badge
 
-## Usage:
 
-```html
-<p-badge> Content </p-badge>
-```
 
 <!-- Auto Generated Below -->
 
@@ -13,8 +9,8 @@
 
 ### Used by
 
- - [p-navigation-item](../../molecules/navigation-item)
- - [p-table-header](../../molecules/table-header)
+ - [p-navigation-item](../../molecules/navigation/item)
+ - [p-table-header](../../deprecated/molecules/table/header)
 
 ### Graph
 ```mermaid

@@ -1,10 +1,6 @@
-# Navigation title
+# p-navigation-title
 
-## Usage:
 
-```html
-<p-navigation-title> Content </p-navigation-title>
-```
 
 <!-- Auto Generated Below -->
 
@@ -13,7 +9,7 @@
 
 ### Used by
 
- - [p-navigation-section](../../molecules/navigation-section)
+ - [p-navigation-section](../../molecules/navigation/section)
 
 ### Graph
 ```mermaid

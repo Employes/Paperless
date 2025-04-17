@@ -11,6 +11,7 @@ import { cva } from 'class-variance-authority';
 import { RotateOptions } from '../../../types/tailwind';
 import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
 import { asBoolean } from '../../../utils/as-boolean';
+import { cn } from '../../../utils/cn';
 
 const button = cva(
 	[
@@ -406,10 +407,11 @@ export class Button {
 				? 'a'
 				: 'button';
 
-		const active = asBoolean(this.active) || this.class?.includes('active');
+		const hostClass = cn('p-button inline-block', this.class);
+		const active = asBoolean(this.active) || hostClass?.includes('active');
 
 		return (
-			<Host class='p-button inline-block'>
+			<Host class={hostClass}>
 				<VariableTag
 					disabled={this.disabled}
 					href={this.href}

@@ -1,10 +1,6 @@
-# Calendar
+# p-calendar
 
-## Usage:
 
-```html
-<p-calendar />
-```
 
 <!-- Auto Generated Below -->
 

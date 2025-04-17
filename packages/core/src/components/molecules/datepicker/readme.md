@@ -1,12 +1,6 @@
-# Select
+# p-datepicker
 
-## Usage:
 
-```html
-<p-datepicker>
-    <!-- content -->
-</p-datepicker>
-```
 
 <!-- Auto Generated Below -->
 
@@ -49,7 +43,7 @@
 ### Depends on
 
 - [p-dropdown](../dropdown)
-- [p-field](../field)
+- [p-field](../field/field)
 - [p-calendar](../calendar)
 
 ### Graph

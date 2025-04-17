@@ -1,14 +1,6 @@
-# Profile
+# p-profile
 
-## Usage:
 
-```html
-<p-profile>
-    <p-avatar slot="avatar" />
-    <span slot="title">John Doe</span>
-    <span slot="subtitle">Software Engineer</span>
-</p-profile>
-```
 
 <!-- Auto Generated Below -->
 

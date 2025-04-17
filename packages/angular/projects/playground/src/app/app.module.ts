@@ -1,4 +1,8 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import {
+	APP_INITIALIZER,
+	CUSTOM_ELEMENTS_SCHEMA,
+	NgModule,
+} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaperlessModule } from 'projects/paperless/src/public-api';
@@ -19,6 +23,8 @@ import { StepperComponent } from './features/stepper/stepper.component';
 import { TableComponent } from './features/table/table.component';
 import { ToastComponent } from './features/toast/toast.component';
 import { InputsComponent } from './features/inputs/inputs.component';
+
+import { defineCustomElements } from '@paperless/core/loader';
 
 @NgModule({
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -46,7 +52,13 @@ import { InputsComponent } from './features/inputs/inputs.component';
 		AppRoutingModule,
 		PaperlessModule.forRoot(),
 	],
-	providers: [],
+	providers: [
+		{
+			provide: APP_INITIALIZER,
+			useFactory: () => defineCustomElements,
+			multi: true,
+		},
+	],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

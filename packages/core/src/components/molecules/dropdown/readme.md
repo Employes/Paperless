@@ -39,14 +39,14 @@
 ### Used by
 
  - [p-datepicker](../datepicker)
- - [p-pagination-size](../pagination-size)
+ - [p-pagination-size](../pagination/size)
  - [p-profile](../profile)
  - [p-select](../select)
 
 ### Depends on
 
 - [p-portal](../../atoms/portal)
-- [p-dropdown-menu-container](../../atoms/dropdown-menu-container)
+- [p-dropdown-menu-container](../../atoms/dropdown-menu/container)
 
 ### Graph
 ```mermaid

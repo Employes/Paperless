@@ -42,22 +42,22 @@
 
 ### Used by
 
- - [p-attachment](../attachment)
+ - [p-attachment](../../deprecated/molecules/attachment)
  - [p-calendar](../calendar)
- - [p-drawer-header](../../atoms/drawer-header)
- - [p-modal-header](../../atoms/modal-header)
+ - [p-drawer-header](../../deprecated/atoms/drawer/header)
+ - [p-modal-header](../../deprecated/atoms/modal/header)
  - [p-navbar](../../organisms/navbar)
  - [p-profile](../profile)
  - [p-select](../select)
- - [p-table](../../organisms/table)
- - [p-table-footer](../table-footer)
- - [p-table-header](../table-header)
- - [p-toast](../toast)
+ - [p-table](../../deprecated/organisms/table)
+ - [p-table-footer](../../deprecated/molecules/table/footer)
+ - [p-table-header](../../deprecated/molecules/table/header)
+ - [p-toast](../../deprecated/molecules/toast)
 
 ### Depends on
 
 - [p-icon](../../atoms/icon)
-- [p-loader](../../atoms/loader)
+- [p-loader](../../deprecated/atoms/loader)
 
 ### Graph
 ```mermaid
