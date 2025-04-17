@@ -3,6 +3,7 @@ www/
 loader/
 hydrate/
 !src/components/atoms/loader
+!src/components/deprecated/atoms/loader
 public/
 
 *~
