@@ -14,16 +14,16 @@ export class Layout {
 	render() {
 		return (
 			<Host class={`p-layout variant-${this.variant}`}>
-				<div class="content">
-					<div class="inner-content">
-						<slot name="content" />
+				<div class='content'>
+					<div class='inner-content'>
+						<slot name='content' />
 					</div>
 				</div>
-				<div class="sidebar">
-					<slot name="sidebar" />
+				<div class='sidebar'>
+					<slot name='sidebar' />
 				</div>
-				<div class="topbar">
-					<slot name="topbar" />
+				<div class='topbar'>
+					<slot name='topbar' />
 				</div>
 			</Host>
 		);

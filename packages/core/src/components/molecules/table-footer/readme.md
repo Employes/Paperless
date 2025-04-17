@@ -16,7 +16,7 @@
 | `loading`            | `loading`             | Wether we want to show loading state               | `boolean`  | `false`              |
 | `page`               | `page`                | The current page                                   | `number`   | `1`                  |
 | `pageSize`           | `page-size`           | The amount of items per page                       | `number`   | `defaultSize`        |
-| `pageSizeOptions`    | --                    | The options for the page size                      | `number[]` | `defaultSizeOptions` |
+| `pageSizeOptions`    | `page-size-options`   | The options for the page size                      | `number[]` | `defaultSizeOptions` |
 | `total` _(required)_ | `total`               | The total amount of items                          | `number`   | `undefined`          |
 
 
