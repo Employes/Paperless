@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.49](https://github.com/employes/paperless/compare/v2.0.1-beta.48...v2.0.1-beta.49) (2025-04-18)
+
+
+### Bug Fixes
+
+* **molecules/button:** Make more use of optional props ([d52e9ab](https://github.com/employes/paperless/commit/d52e9ab9ba00fd708ceb0cba6893a19188d4a8ae))
+* **molecules/field:** Set mt to a better sizing ([6d95bd1](https://github.com/employes/paperless/commit/6d95bd12829fe1fa223d2e00206a491ce91319fe))
+* **tailwind:**  Use import instead of require ([0ede310](https://github.com/employes/paperless/commit/0ede310280b4105bd53668dca2f7462d24bdab1e))
+
+
+
+
+
 ## [2.0.1-beta.48](https://github.com/employes/paperless/compare/v2.0.1-beta.47...v2.0.1-beta.48) (2025-04-17)
 
 
