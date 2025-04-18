@@ -141,83 +141,87 @@ export namespace Components {
         /**
           * Wether to force an active state
          */
-        "active": boolean;
+        "active"?: boolean;
         /**
           * The type of the button
          */
-        "as": 'a' | 'button';
+        "as"?: 'a' | 'button';
         /**
           * Position of the button in the button group, mostly un-used if not in a group
          */
-        "buttonGroupPosition": 'start' | 'center' | 'end' | 'none';
+        "buttonGroupPosition"?: 'start' | 'center' | 'end' | 'none';
         /**
           * Wether to show a chevron or not
          */
-        "chevron": boolean | 'up' | 'down';
+        "chevron"?: boolean | 'up' | 'down';
         /**
           * Chevron position
          */
-        "chevronPosition": 'start' | 'end';
+        "chevronPosition"?: 'start' | 'end';
         /**
           * The class of the container passed by parent
          */
-        "class": string;
+        "class"?: string;
         /**
           * Wether the button is disabled
          */
-        "disabled": boolean;
+        "disabled"?: boolean;
         /**
           * Href in case of "text" version
          */
-        "href": string;
+        "href"?: string;
         /**
           * Icon to show on the button
          */
-        "icon": IconVariant;
+        "icon"?: IconVariant;
         /**
           * Icon flip
          */
-        "iconFlip": IconFlipOptions;
+        "iconFlip"?: IconFlipOptions;
         /**
           * Wether the button is icon only
          */
-        "iconOnly": boolean;
+        "iconOnly"?: boolean;
         /**
           * Icon position
          */
-        "iconPosition": 'start' | 'end';
+        "iconPosition"?: 'start' | 'end';
         /**
           * Icon rotate
          */
-        "iconRotate": RotateOptions;
+        "iconRotate"?: RotateOptions;
         /**
           * Wether the button should inherit text styles
          */
-        "inheritText": boolean;
+        "inheritText"?: boolean;
+        /**
+          * The label of the button (Can use slot)
+         */
+        "label"?: string;
         /**
           * Wether to show a loader or not
          */
-        "loading": boolean;
+        "loading"?: boolean;
         /**
           * The size of the button
          */
-        "size": 'sm' | 'base' | 'lg';
+        "size"?: 'sm' | 'base' | 'lg';
         /**
           * Target in case of "text" version
          */
-        "target": string;
+        "target"?: string;
         /**
           * The type of the button
          */
-        "type": 'button' | 'submit';
+        "type"?: 'button' | 'submit';
         /**
           * Wether the text variant has underline
          */
-        "underline": boolean;
+        "underline"?: boolean;
         /**
           * The variant of the button
          */
-        "variant": | 'primary'
+        "variant"?: | 'primary'
 		| 'secondary'
 		| 'transparent'
 		| 'text'
@@ -3209,6 +3213,10 @@ declare namespace LocalJSX {
           * Wether the button should inherit text styles
          */
         "inheritText"?: boolean;
+        /**
+          * The label of the button (Can use slot)
+         */
+        "label"?: string;
         /**
           * Wether to show a loader or not
          */
