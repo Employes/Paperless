@@ -279,14 +279,19 @@ const icon = cva([], {
 })
 export class Button {
 	/**
+	 * The label of the button (Can use slot)
+	 */
+	@Prop() label?: string;
+
+	/**
 	 * The type of the button
 	 */
-	@Prop() as: 'a' | 'button' = 'button';
+	@Prop() as?: 'a' | 'button' = 'button';
 
 	/**
 	 * The variant of the button
 	 */
-	@Prop() variant:
+	@Prop() variant?:
 		| 'primary'
 		| 'secondary'
 		| 'transparent'
@@ -296,92 +301,92 @@ export class Button {
 	/**
 	 * Wether to force an active state
 	 */
-	@Prop() active: boolean = false;
+	@Prop() active?: boolean = false;
 
 	/**
 	 * Wether the text variant has underline
 	 */
-	@Prop() underline: boolean = true;
+	@Prop() underline?: boolean = true;
 
 	/**
 	 * Href in case of "text" version
 	 */
-	@Prop() href: string;
+	@Prop() href?: string;
 
 	/**
 	 * Target in case of "text" version
 	 */
-	@Prop() target: string;
+	@Prop() target?: string;
 
 	/**
 	 * The size of the button
 	 */
-	@Prop() size: 'sm' | 'base' | 'lg' = 'base';
+	@Prop() size?: 'sm' | 'base' | 'lg' = 'base';
 
 	/**
 	 * The type of the button
 	 */
-	@Prop() type: 'button' | 'submit' = 'button';
+	@Prop() type?: 'button' | 'submit' = 'button';
 
 	/**
 	 * Wether to show a loader or not
 	 */
-	@Prop() loading: boolean = false;
+	@Prop() loading?: boolean = false;
 
 	/**
 	 * Wether to show a chevron or not
 	 */
-	@Prop() chevron: boolean | 'up' | 'down' = false;
+	@Prop() chevron?: boolean | 'up' | 'down' = false;
 
 	/**
 	 * Chevron position
 	 */
-	@Prop() chevronPosition: 'start' | 'end' = 'end';
+	@Prop() chevronPosition?: 'start' | 'end' = 'end';
 
 	/**
 	 * Wether the button is disabled
 	 */
-	@Prop() disabled: boolean = false;
+	@Prop() disabled?: boolean = false;
 
 	/**
 	 * Icon to show on the button
 	 */
-	@Prop() icon: IconVariant;
+	@Prop() icon?: IconVariant;
 
 	/**
 	 * Wether the button is icon only
 	 */
-	@Prop() iconOnly: boolean = false;
+	@Prop() iconOnly?: boolean = false;
 
 	/**
 	 * Icon position
 	 */
-	@Prop() iconPosition: 'start' | 'end' = 'end';
+	@Prop() iconPosition?: 'start' | 'end' = 'end';
 
 	/**
 	 * Icon flip
 	 */
-	@Prop() iconFlip: IconFlipOptions;
+	@Prop() iconFlip?: IconFlipOptions;
 
 	/**
 	 * Icon rotate
 	 */
-	@Prop() iconRotate: RotateOptions;
+	@Prop() iconRotate?: RotateOptions;
 
 	/**
 	 * Wether the button should inherit text styles
 	 */
-	@Prop() inheritText: boolean = false;
+	@Prop() inheritText?: boolean = false;
 
 	/**
 	 * Position of the button in the button group, mostly un-used if not in a group
 	 */
-	@Prop() buttonGroupPosition: 'start' | 'center' | 'end' | 'none' = 'none';
+	@Prop() buttonGroupPosition?: 'start' | 'center' | 'end' | 'none' = 'none';
 
 	/**
 	 * The class of the container passed by parent
 	 */
-	@Prop() class: string;
+	@Prop() class?: string;
 
 	/**
 	 * Button click event
@@ -440,7 +445,7 @@ export class Button {
 						!(this.iconOnly && this.loading) &&
 						this._getIcon()}
 
-					<slot />
+					{this.label ? this.label : <slot />}
 
 					{this.icon &&
 						this.iconPosition === 'end' &&
