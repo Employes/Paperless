@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.50](https://github.com/employes/paperless/compare/v2.0.1-beta.49...v2.0.1-beta.50) (2025-04-18)
+
+
+### Bug Fixes
+
+* **atoms/icon:** Apply inline-flex ([cd86c20](https://github.com/employes/paperless/commit/cd86c2017362de018dc09415987dedeeb6f8ecfc))
+* **molecules/dropdown:** Apply shadow & move slot to variable ([f456f2e](https://github.com/employes/paperless/commit/f456f2e163ea01a7a6986e59fefbf3da3f341a74))
+
+
+
+
+
 ## [2.0.1-beta.49](https://github.com/employes/paperless/compare/v2.0.1-beta.48...v2.0.1-beta.49) (2025-04-18)
 
 
