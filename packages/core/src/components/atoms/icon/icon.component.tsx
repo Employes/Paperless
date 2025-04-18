@@ -6,7 +6,7 @@ import { icons } from '../../../utils/icons';
 export type IconVariant = keyof typeof icons;
 export type IconFlipOptions = 'none' | 'horizontal' | 'vertical';
 
-const icon = cva(['p-icon flex'], {
+const icon = cva(['p-icon inline-flex'], {
 	variants: {
 		flip: {
 			none: null,
