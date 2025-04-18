@@ -33,6 +33,7 @@ const dropdownContainerClass = cva(['z-dropdown hidden'], {
 @Component({
 	tag: 'p-dropdown',
 	styleUrl: 'dropdown.component.css',
+	shadow: true,
 })
 export class Dropdown {
 	/**
@@ -168,6 +169,7 @@ export class Dropdown {
 		};
 
 		let dropdownContainer: HTMLElement;
+		const itemsSlot = <slot name='items' />;
 
 		if (this.usePortal) {
 			dropdownContainer = (
@@ -179,7 +181,7 @@ export class Dropdown {
 						allowOverflow={this.allowOverflow}
 						scrollable={this.scrollable}
 					>
-						<slot name='items' />
+						{itemsSlot}
 					</p-dropdown-menu-container>
 				</p-portal>
 			);
@@ -193,7 +195,7 @@ export class Dropdown {
 					scrollable={this.scrollable}
 					{...dropdownContainerProps}
 				>
-					<slot name='items' />
+					{itemsSlot}
 				</p-dropdown-menu-container>
 			);
 		}
