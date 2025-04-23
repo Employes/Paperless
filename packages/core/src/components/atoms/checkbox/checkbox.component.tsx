@@ -123,8 +123,8 @@ export class Checkbox {
 							id={this.id ?? this._nonce}
 							name={this.name}
 							required={asBoolean(this.required)}
-							checked={!!this.checked}
-							indeterminate={this.indeterminate}
+							checked={asBoolean(this.checked)}
+							indeterminate={asBoolean(this.indeterminate)}
 							disabled={asBoolean(this.disabled)}
 							onChange={ev => this._onChange(ev)}
 						/>
@@ -138,7 +138,9 @@ export class Checkbox {
 									disabled: asBoolean(this.disabled),
 								})}
 								size='auto'
-								variant={!!this.indeterminate ? 'minus' : 'checkmarkThick'}
+								variant={
+									asBoolean(this.indeterminate) ? 'minus' : 'checkmarkThick'
+								}
 							/>
 						</div>
 					</div>
@@ -154,8 +156,10 @@ export class Checkbox {
 			return;
 		}
 
-		const checked = (ev.target as HTMLInputElement).checked;
-		const indeterminate = (ev.target as HTMLInputElement).indeterminate;
+		const checked = asBoolean((ev.target as HTMLInputElement).checked);
+		const indeterminate = asBoolean(
+			(ev.target as HTMLInputElement).indeterminate
+		);
 
 		if (checked != this.checked) {
 			this.checked = checked;

@@ -10,7 +10,7 @@
 ### Used by
 
  - [p-dropdown](../../molecules/dropdown)
- - [p-tooltip](../tooltip)
+ - [p-tooltip](../../atoms/tooltip)
 
 ### Graph
 ```mermaid

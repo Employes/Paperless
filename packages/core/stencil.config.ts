@@ -22,7 +22,7 @@ setPluginConfigurationDefaults({
 export const config: Config = {
 	namespace: 'paperless',
 	globalStyle: 'src/style/paperless.scss',
-	watchIgnoredRegex: [/.*\.stories\.ts$/],
+	watchIgnoredRegex: [/.*\.story\.mdx$/, /.*\.stories\.ts$/],
 	extras: {
 		experimentalImportInjection: true,
 	},

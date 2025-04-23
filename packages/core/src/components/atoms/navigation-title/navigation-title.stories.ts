@@ -1,16 +1,14 @@
-import { html } from 'lit';
+import { html, nothing } from 'lit';
 
 const meta = {
 	title: 'Design System/Atoms/Navigation title',
 	component: 'p-navigation-title',
 	args: {
-		content: 'Navigation title',
+		content: 'NavigationTitle',
 	},
 	argTypes: {
 		content: {
-			type: {
-				required: true,
-			},
+			type: 'string',
 		},
 	},
 };
@@ -18,7 +16,8 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({ content }) =>
-		html`<p-navigation-title>${content}</p-navigation-title>`,
+	render: ({
+		content,
+	}) => html`<p-navigation-title>${content}</p-navigation-title>`,
 	tags: ['!dev'],
 };

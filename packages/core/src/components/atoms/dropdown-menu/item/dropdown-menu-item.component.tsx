@@ -160,6 +160,7 @@ const dropdownMenuItemIcon = cva(['text-base'], {
 @Component({
 	tag: 'p-dropdown-menu-item',
 	styleUrl: 'dropdown-menu-item.component.css',
+	shadow: true,
 })
 export class DropdownMenuItem {
 	/**
@@ -180,7 +181,7 @@ export class DropdownMenuItem {
 	/**
 	 * Wether to enable the hover state
 	 */
-	@Prop() enableHover?: boolean = false;
+	@Prop() enableHover?: boolean = true;
 
 	/**
 	 * Wether the item is disabled
@@ -199,39 +200,41 @@ export class DropdownMenuItem {
 
 	render() {
 		return (
-			<Host
-				class={dropdownMenuItem({
-					variant: this.variant,
-					active: asBoolean(this.active),
-					enableHover: asBoolean(this.enableHover ?? true),
-					disabled: asBoolean(this.disabled),
-				})}
-			>
-				{this.icon && (
-					<p-icon
-						class={dropdownMenuItemIcon({
-							variant: this.variant,
-							active: asBoolean(this.active),
-							disabled: asBoolean(this.disabled),
-						})}
-						variant={this.icon}
-					/>
-				)}
+			<Host>
+				<div
+					class={dropdownMenuItem({
+						variant: this.variant,
+						active: asBoolean(this.active),
+						enableHover: asBoolean(this.enableHover ?? true, true),
+						disabled: asBoolean(this.disabled),
+					})}
+				>
+					{this.icon && (
+						<p-icon
+							class={dropdownMenuItemIcon({
+								variant: this.variant,
+								active: asBoolean(this.active),
+								disabled: asBoolean(this.disabled),
+							})}
+							variant={this.icon}
+						/>
+					)}
 
-				{this.checkbox && (
-					<p-checkbox
-						checked={this.active}
-						disabled={this.disabled}
-					/>
-				)}
+					{this.checkbox && (
+						<p-checkbox
+							checked={this.active}
+							disabled={this.disabled}
+						/>
+					)}
 
-				{this.useContainer ? (
-					<div class='block w-full overflow-hidden text-ellipsis whitespace-nowrap text-start'>
+					{this.useContainer ? (
+						<div class='block w-full overflow-hidden text-ellipsis whitespace-nowrap text-start'>
+							<slot />
+						</div>
+					) : (
 						<slot />
-					</div>
-				) : (
-					<slot />
-				)}
+					)}
+				</div>
 			</Host>
 		);
 	}

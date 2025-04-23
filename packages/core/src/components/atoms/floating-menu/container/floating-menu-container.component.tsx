@@ -126,7 +126,7 @@ export class FloatingMenuContainer {
 
 					{this.enableClose && (
 						<div
-							class='ml-auto cursor-pointer p-2 text-dark-teal-300 hover:text-dark-teal-100'
+							class='ml-auto box-content size-4 cursor-pointer p-2 text-dark-teal-300 hover:text-dark-teal-100'
 							onClick={ev => this.close.emit(ev)}
 						>
 							<p-icon variant='negative' />

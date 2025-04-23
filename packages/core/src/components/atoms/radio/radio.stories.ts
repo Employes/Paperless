@@ -1,16 +1,15 @@
-import { html } from 'lit';
+import { html, nothing } from 'lit';
+import { action } from '@storybook/addon-actions';
 
 const meta = {
 	title: 'Design System/Atoms/Radio',
 	component: 'p-radio',
 	args: {
-		content: 'Label',
+		content: 'Radio',
 	},
 	argTypes: {
 		content: {
-			control: {
-				type: 'text',
-			},
+			type: 'string',
 		},
 	},
 };
@@ -20,21 +19,20 @@ export default meta;
 export const Default = {
 	render: ({
 		content,
-		checked,
+		value,
 		disabled,
+		required,
 		id,
 		name,
-		required,
-		value,
-		checkedChange,
-	}) => html` <p-radio
-		checked=${checked}
-		disabled=${disabled}
-		id=${id}
-		name=${name}
-		required=${required}
-		value=${value}
-		@checkedChange=${checkedChange}
+		checked,
+	}) => html`<p-radio
+		value=${value ?? nothing}
+		disabled=${disabled ?? nothing}
+		required=${required ?? nothing}
+		id=${id ?? nothing}
+		name=${name ?? nothing}
+		checked=${checked ?? nothing}
+		@checkedChange=${action('checkedChange')}
 	>
 		${content}
 	</p-radio>`,

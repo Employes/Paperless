@@ -26,9 +26,16 @@ const dropdownMenuContainer = cva(
 			},
 			maxWidth: {
 				false: null,
-				true: 'w-auto max-w-[13.875rem]',
+				true: 'max-w-[13.875rem]',
 			},
 		},
+		compoundVariants: [
+			{
+				fullWidth: false,
+				maxWidth: true,
+				class: 'w-auto',
+			},
+		],
 	}
 );
 

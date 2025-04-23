@@ -1,6 +1,6 @@
 import { Meta, Title, Canvas, Markdown, Controls } from '@storybook/blocks';
+import { IntendedUsage } from '@doc-blocks/intended-usage';
 import * as Stories from './table-cell.stories';
-import Docs from './readme.md?raw';
 
 <Meta of={Stories} />
 
@@ -13,8 +13,21 @@ import Docs from './readme.md?raw';
 
 <Controls of={Stories.Default} />
 
----
+## Intended usage
 
-<br /><br />
-
-<Markdown>{Docs}</Markdown>
+<IntendedUsage
+	sectionTitle="Do's"
+	icon='✅'
+>
+	<ul>
+		<li>Do</li>
+	</ul>
+</IntendedUsage>
+<IntendedUsage
+	sectionTitle="Dont's"
+	icon='❌'
+>
+	<ul>
+		<li>Don't</li>
+	</ul>
+</IntendedUsage>

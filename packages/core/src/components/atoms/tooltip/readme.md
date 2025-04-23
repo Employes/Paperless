@@ -39,7 +39,7 @@
 
 ### Depends on
 
-- [p-portal](../portal)
+- [p-portal](../../helpers/portal)
 
 ### Graph
 ```mermaid

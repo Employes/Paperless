@@ -45,7 +45,7 @@
 
 ### Depends on
 
-- [p-portal](../../atoms/portal)
+- [p-portal](../../helpers/portal)
 - [p-dropdown-menu-container](../../atoms/dropdown-menu/container)
 
 ### Graph

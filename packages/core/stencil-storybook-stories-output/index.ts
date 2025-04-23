@@ -1,7 +1,9 @@
 import {
 	BuildCtx,
 	CompilerCtx,
+	ComponentCompilerEvent,
 	ComponentCompilerMeta,
+	ComponentCompilerProperty,
 	Config,
 	OutputTargetCustom,
 } from '@stencil/core/internal';
@@ -10,20 +12,23 @@ import { kebabToSpaces, titleCase } from '../src/utils/transformers';
 
 const PLUGIN_NAME = 'stories';
 
-export const STORIES_TEMPLATE = `const meta = {
+export const STORIES_TEMPLATE = `import { html, nothing } from 'lit';
+COMPONENT_IMPORTS
+const meta = {
 	title: 'COMPONENT_TITLE',
 	component: 'COMPONENT_TAG',
-};
+COMPONENT_META_CLOSING
 
 export default meta;
 
 export const Default = {
+	render: (COMPONENT_PROPERTIES_OBJ) => html\`<COMPONENT_TAGCOMPONENT_PROPERTIESCOMPONENT_SUFFIX\`,
 	tags: ['!dev'],
 };`;
 
 export const MDX_TEMPLATE = `import { Meta, Title, Canvas, Markdown, Controls } from '@storybook/blocks';
+import { IntendedUsage } from '@doc-blocks/intended-usage';
 import * as Stories from './COMPONENT_NAME.stories';
-import Docs from './readme.md?raw';
 
 <Meta of={Stories} />
 
@@ -36,11 +41,50 @@ import Docs from './readme.md?raw';
 
 <Controls of={Stories.Default} />
 
----
+## Intended usage
 
-<br /><br />
+<IntendedUsage
+	sectionTitle="Do's"
+	icon='✅'
+>
+	<ul>
+		<li>Do</li>
+	</ul>
+</IntendedUsage>
+<IntendedUsage
+	sectionTitle="Dont's"
+	icon='❌'
+>
+	<ul>
+		<li>Don't</li>
+	</ul>
+</IntendedUsage>`;
 
-<Markdown>{Docs}</Markdown>`;
+const isEvent = (
+	prop: ComponentCompilerEvent | ComponentCompilerProperty
+): prop is ComponentCompilerEvent => 'method' in prop;
+
+const getActualName = (
+	prop: ComponentCompilerEvent | ComponentCompilerProperty
+) => {
+	const overrides = {
+		class: 'className',
+		delete: 'deleteFn',
+		export: 'exportFn',
+	};
+
+	if (overrides[prop.name]) {
+		return {
+			...prop,
+			actualName: overrides[prop.name],
+		};
+	}
+
+	return {
+		...prop,
+		actualName: prop.name,
+	};
+};
 
 const generateTitle = (dirPath: string) => {
 	const baseDir = resolve(__dirname, '../src/components');
@@ -73,6 +117,7 @@ const generateStories = async (
 	const title = generateTitle(dirPath);
 
 	const created: Array<'mdx' | 'stories'> = [];
+
 	if (!mdxExists) {
 		const mdx = MDX_TEMPLATE.replaceAll('COMPONENT_NAME', name);
 		await fs.writeFile(mdxPath, mdx);
@@ -80,13 +125,81 @@ const generateStories = async (
 	}
 
 	if (!storiesExists) {
+		let COMPONENT_META_CLOSING = '};';
+		let hasSlot = false;
+
+		if (component.htmlTagNames.includes('slot')) {
+			const sourceContent = await fs.readFile(component.sourceFilePath);
+			hasSlot = sourceContent.includes('<slot />');
+		}
+
+		let properties = component.properties
+			.map(prop => getActualName(prop))
+			.map(prop =>
+				!isEvent(prop) && prop.attribute !== prop.actualName
+					? `'${prop.attribute}': ${prop.actualName}`
+					: prop.name
+			);
+		if (hasSlot) {
+			properties = ['content', ...properties];
+		}
+
+		const COMPONENT_PROPERTIES_OBJ = [...properties].join(`,\n\t\t`);
+		const COMPONENT_PROPERTIES = [...component.properties, ...component.events]
+			.map(prop => getActualName(prop))
+			.map(
+				prop =>
+					`${isEvent(prop) ? `@${prop.name}` : prop.attribute}=\${${
+						isEvent(prop)
+							? `action('${prop.name}')`
+							: `${prop.actualName} ?? nothing`
+					}}`
+			)
+			.join(`\n\t\t`);
+
+		let COMPONENT_SUFFIX = COMPONENT_PROPERTIES?.length ? '/>' : ' />';
+		if (hasSlot) {
+			COMPONENT_SUFFIX = `>${
+				COMPONENT_PROPERTIES?.length ? `\n\t\t` : ''
+			}\${content}${COMPONENT_PROPERTIES?.length ? `\n\t` : ''}</${
+				component.tagName
+			}>`;
+			COMPONENT_META_CLOSING = `	args: {
+		content: '${component.componentClassName}',
+	},
+	argTypes: {
+		content: {
+			type: 'string',
+		},
+	},
+};`;
+		}
+
+		const COMPONENT_IMPORTS = component.events.length
+			? `import { action } from '@storybook/addon-actions';\n`
+			: '';
+
 		const stories = STORIES_TEMPLATE.replaceAll(
 			'COMPONENT_TAG',
 			component.tagName
-		).replaceAll('COMPONENT_TITLE', title);
+		)
+			.replaceAll('COMPONENT_IMPORTS', COMPONENT_IMPORTS)
+			.replaceAll('COMPONENT_TITLE', title)
+			.replaceAll('COMPONENT_META_CLOSING', COMPONENT_META_CLOSING)
+			.replaceAll(
+				'COMPONENT_PROPERTIES_OBJ',
+				COMPONENT_PROPERTIES_OBJ?.length
+					? `{\n\t\t${COMPONENT_PROPERTIES_OBJ},\n\t}`
+					: ''
+			)
+			.replaceAll(
+				'COMPONENT_PROPERTIES',
+				COMPONENT_PROPERTIES?.length ? `\n\t\t${COMPONENT_PROPERTIES}\n\t` : ''
+			)
+			.replaceAll('COMPONENT_SUFFIX', COMPONENT_SUFFIX);
 
 		await fs.writeFile(storiesPath, stories);
-		created.push('mdx');
+		created.push('stories');
 	}
 
 	if (!created.length) {
