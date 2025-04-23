@@ -8,9 +8,7 @@ const meta = {
 	},
 	argTypes: {
 		content: {
-			type: {
-				required: true,
-			},
+			type: 'string',
 		},
 	},
 };

@@ -1,10 +1,36 @@
+import { html, nothing } from 'lit';
+import { action } from '@storybook/addon-actions';
+
 const meta = {
 	title: 'Design System/Deprecated/Molecules/Accordion',
 	component: 'p-accordion',
+	args: {
+		content: 'Accordion',
+	},
+	argTypes: {
+		content: {
+			type: 'string',
+		},
+	},
 };
 
 export default meta;
 
 export const Default = {
+	render: ({
+		content,
+		header,
+		open,
+		closeable,
+		openable,
+	}) => html`<p-accordion
+		header=${header ?? nothing}
+		open=${open ?? nothing}
+		closeable=${closeable ?? nothing}
+		openable=${openable ?? nothing}
+		@isOpen=${action('isOpen')}
+	>
+		${content}
+	</p-accordion>`,
 	tags: ['!dev'],
 };

@@ -1,3 +1,5 @@
+import { html, nothing } from 'lit';
+
 const meta = {
 	title: 'Design System/Atoms/Avatar/Avatar',
 	component: 'p-avatar',
@@ -6,5 +8,16 @@ const meta = {
 export default meta;
 
 export const Default = {
+	render: ({
+		size,
+		'default-image': defaultImage,
+		src,
+		letters,
+	}) => html`<p-avatar
+		size=${size ?? nothing}
+		default-image=${defaultImage ?? nothing}
+		src=${src ?? nothing}
+		letters=${letters ?? nothing}
+	/>`,
 	tags: ['!dev'],
 };

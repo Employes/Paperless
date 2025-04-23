@@ -1,16 +1,14 @@
-import { html } from 'lit';
+import { html, nothing } from 'lit';
 
 const meta = {
 	title: 'Design System/Molecules/Navigation/Item',
 	component: 'p-navigation-item',
 	args: {
-		content: 'Navigation item',
+		content: 'NavigationItem',
 	},
 	argTypes: {
 		content: {
-			type: {
-				required: true,
-			},
+			type: 'string',
 		},
 	},
 };
@@ -20,26 +18,25 @@ export default meta;
 export const Default = {
 	render: ({
 		content,
+		icon,
 		active,
+		loading,
 		as,
-		class: classInput,
 		counter,
 		href,
-		icon,
-		loading,
 		target,
-	}) =>
-		html`<p-navigation-item
-			active=${active}
-			as=${as}
-			class=${classInput}
-			counter=${counter}
-			href=${href}
-			icon=${icon}
-			loading=${loading}
-			target=${target}
-		>
-			${content}
-		</p-navigation-item>`,
+		'class': className,
+	}) => html`<p-navigation-item
+		icon=${icon ?? nothing}
+		active=${active ?? nothing}
+		loading=${loading ?? nothing}
+		as=${as ?? nothing}
+		counter=${counter ?? nothing}
+		href=${href ?? nothing}
+		target=${target ?? nothing}
+		class=${className ?? nothing}
+	>
+		${content}
+	</p-navigation-item>`,
 	tags: ['!dev'],
 };

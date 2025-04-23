@@ -1,10 +1,10 @@
 import { html, nothing } from 'lit';
 
 const meta = {
-	title: 'Design System/Deprecated/Atoms/Tab/Group',
-	component: 'p-tab-group',
+	title: 'Design System/Helpers/Portal',
+	component: 'p-portal',
 	args: {
-		content: 'TabGroup',
+		content: 'Portal',
 	},
 	argTypes: {
 		content: {
@@ -16,8 +16,6 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({
-		content,
-	}) => html`<p-tab-group>${content}</p-tab-group>`,
+	render: ({ content }) => html`<p-portal>${content}</p-portal>`,
 	tags: ['!dev'],
 };

@@ -16,8 +16,13 @@
 		"skipLibCheck": true
 	},
 	"watchOptions": {
-		"excludeFiles": ["**/*.stories.ts"]
+		"excludeFiles": ["**/*.story.mdx", "**/*.stories.ts"]
 	},
 	"include": ["src"],
-	"exclude": ["node_modules", "../../node_modules", "**/*.stories.ts"]
+	"exclude": [
+		"node_modules",
+		"../../node_modules",
+		"**/*.stories.ts",
+		"**/*.story.mdx"
+	]
 }
