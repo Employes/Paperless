@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.51](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.50...v2.0.1-beta.51) (2025-04-23)
+
+
+### Features
+
+* **atoms/divider:** New branding implementation ([4b4553a](https://github.com/ionic-team/stencil-component-starter/commit/4b4553a263da44106aa812c16ce22727f40c4efd))
+* Improve generated stories ([d4e95fb](https://github.com/ionic-team/stencil-component-starter/commit/d4e95fbc0dc9d4bd39586e815d5bcb7c0a791c46))
+
+
+
+
+
 ## [2.0.1-beta.50](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.49...v2.0.1-beta.50) (2025-04-18)
 
 
