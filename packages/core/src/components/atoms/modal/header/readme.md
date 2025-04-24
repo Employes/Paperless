@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property    | Attribute    | Description                               | Type      | Default |
-| ----------- | ------------ | ----------------------------------------- | --------- | ------- |
-| `showClose` | `show-close` | Wether to show the close button on mobile | `boolean` | `true`  |
+| Property    | Attribute    | Description                               | Type                              | Default  |
+| ----------- | ------------ | ----------------------------------------- | --------------------------------- | -------- |
+| `showClose` | `show-close` | Wether to show the close button on mobile | `boolean`                         | `true`   |
+| `size`      | `size`       | Size of the header                        | `"2xl" \| "base" \| "lg" \| "xl"` | `'base'` |
 
 
 ## Events
@@ -27,12 +28,14 @@
 
 ### Depends on
 
-- [p-button](../../../../molecules/button)
+- [p-button](../../../molecules/button)
+- [p-smile-footer](../../smile-footer)
 
 ### Graph
 ```mermaid
 graph TD;
   p-modal-header --> p-button
+  p-modal-header --> p-smile-footer
   p-button --> p-icon
   p-button --> p-loader
   p-modal --> p-modal-header

@@ -2,14 +2,34 @@ import { html, nothing } from 'lit';
 import { action } from '@storybook/addon-actions';
 
 const meta = {
-	title: 'Design System/Deprecated/Organisms/Modal',
+	title: 'Design System/Organisms/Modal',
 	component: 'p-modal',
+	args: {
+		header: 'Modal',
+		content: 'Modal content',
+		show: true,
+		'scroll-lock': false,
+	},
+	argTypes: {
+		content: {
+			type: 'string',
+		},
+	},
+	parameters: {
+		docs: {
+			iframeHeight: 600,
+			story: {
+				height: '700px',
+			},
+		},
+	},
 };
 
 export default meta;
 
 export const Default = {
 	render: ({
+		content,
 		size,
 		variant,
 		header,
@@ -33,6 +53,21 @@ export const Default = {
 		padding=${padding ?? nothing}
 		@closeClicked=${action('closeClicked')}
 		@closed=${action('closed')}
-	/>`,
+	>
+		<slot slot="content">${content}</slot>
+		<p-button
+			slot="footer"
+			class="hidden tablet:inline-block"
+			variant="secondary"
+		>
+			Cancel
+		</p-button>
+		<p-button
+			slot="footer"
+			class="w-full tablet:ml-auto tablet:w-auto"
+		>
+			Submit
+		</p-button>
+	</p-modal>`,
 	tags: ['!dev'],
 };

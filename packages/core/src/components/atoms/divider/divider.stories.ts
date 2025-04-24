@@ -16,13 +16,9 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({
-		content,
-		variant,
-	}) => html`<p-divider
-		variant=${variant ?? nothing}
-	>
-		${content}
-	</p-divider>`,
+	render: ({ content, variant }) =>
+		!!content.length
+			? html`<p-divider variant=${variant ?? nothing}> ${content} </p-divider>`
+			: html`<p-divider variant=${variant ?? nothing} />`,
 	tags: ['!dev'],
 };

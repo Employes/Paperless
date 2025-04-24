@@ -4,7 +4,6 @@ import {
 	Event,
 	EventEmitter,
 	h,
-	Host,
 	Listen,
 	Prop,
 } from '@stencil/core';
@@ -44,7 +43,7 @@ const contentContainer = cva(
 		variants: {
 			variant: {
 				modal: [
-					'pt-16 tablet:px-16 desktop-xs:p-16',
+					'pt-16 tablet:px-16 desktop-xs:py-8',
 					'items-end desktop-xs:items-stretch justify-center',
 				],
 				drawer: ['items-start justify-end desktop-xs:items-start'],
@@ -60,6 +59,7 @@ const contentContainer = cva(
 @Component({
 	tag: 'p-backdrop',
 	styleUrl: 'backdrop.component.css',
+	shadow: true,
 })
 export class Backdrop {
 	/**
@@ -124,7 +124,7 @@ export class Backdrop {
 
 	render() {
 		return (
-			<Host
+			<div
 				class={backdrop({
 					blur: asBoolean(this.applyBlur),
 					closing: asBoolean(this.closing),
@@ -138,7 +138,7 @@ export class Backdrop {
 				>
 					<slot />
 				</div>
-			</Host>
+			</div>
 		);
 	}
 

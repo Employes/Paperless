@@ -16,7 +16,6 @@ import hover from './plugins/hover';
 import safeArea from './plugins/safe-area';
 
 import aspectRatioPlugin from '@tailwindcss/aspect-ratio';
-import animatePlugin from 'tailwindcss-animate';
 import scrollbarHidePlugin from 'tailwind-scrollbar-hide';
 
 export const paperless = plugin(
@@ -50,12 +49,6 @@ export const paperless = plugin(
 				},
 			},
 		},
-		plugins: [
-			aspectRatioPlugin,
-			animatePlugin,
-			scrollbarHidePlugin,
-			safeArea,
-			hover,
-		],
+		plugins: [aspectRatioPlugin, scrollbarHidePlugin, safeArea, hover],
 	}
 );
