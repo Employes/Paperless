@@ -88,6 +88,7 @@ graph TD;
   p-select --> p-avatar
   p-dropdown --> p-portal
   p-dropdown --> p-dropdown-menu-container
+  p-field-container --> p-loader
   p-field-container --> p-helper
   p-field-container --> p-tooltip
   p-helper --> p-tooltip

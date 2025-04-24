@@ -4,6 +4,9 @@ import { action } from '@storybook/addon-actions';
 const meta = {
 	title: 'Design System/Molecules/Datepicker',
 	component: 'p-datepicker',
+	args: {
+		label: 'Label',
+	},
 };
 
 export default meta;
@@ -24,6 +27,7 @@ export const Default = {
 		size,
 		prefix,
 		label,
+		loading,
 		helper,
 		required,
 		error,
@@ -45,6 +49,7 @@ export const Default = {
 		size=${size ?? nothing}
 		prefix=${prefix ?? nothing}
 		label=${label ?? nothing}
+		loading=${loading ?? nothing}
 		helper=${helper ?? nothing}
 		required=${required ?? nothing}
 		error=${error ?? nothing}

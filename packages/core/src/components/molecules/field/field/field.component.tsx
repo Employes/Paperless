@@ -70,7 +70,7 @@ const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 		{
 			size: 'base',
 			variant: 'read',
-			class: 'min-h-6',
+			class: 'min-h-5',
 		},
 
 		{
@@ -235,6 +235,11 @@ export class Field {
 	@Prop() label: string;
 
 	/**
+	 * Wether the field is in loading state
+	 */
+	@Prop() loading: boolean = false;
+
+	/**
 	 * The placeholder of the input
 	 */
 	@Prop() placeholder: string;
@@ -333,6 +338,8 @@ export class Field {
 				<p-field-container
 					forceShowTooltip={this.forceShowTooltip || this._focused}
 					label={this.label}
+					loading={this.loading}
+					loadingSize={this.size}
 					helper={this.helper}
 					error={this.error}
 					required={this.required}
@@ -484,7 +491,7 @@ export class Field {
 	private _getContent(hasValueSlot = false) {
 		if (this.variant === 'read') {
 			return (
-				<div class='text-sm'>
+				<div class={this.size === 'base' ? 'text-sm' : 'text-xs'}>
 					{hasValueSlot ? (
 						<slot name='value' />
 					) : !!this.value && this.value.length > 0 ? (

@@ -4,6 +4,9 @@ import { action } from '@storybook/addon-actions';
 const meta = {
 	title: 'Design System/Molecules/Field/Container',
 	component: 'p-field-container',
+	args: {
+		label: 'Label',
+	},
 };
 
 export default meta;
@@ -11,6 +14,7 @@ export default meta;
 export const Default = {
 	render: ({
 		label,
+		loading,
 		variant,
 		helper,
 		required,
@@ -20,6 +24,7 @@ export const Default = {
 		'optional-template': optionalTemplate,
 	}) => html`<p-field-container
 		label=${label ?? nothing}
+		loading=${loading ?? nothing}
 		variant=${variant ?? nothing}
 		helper=${helper ?? nothing}
 		required=${required ?? nothing}
