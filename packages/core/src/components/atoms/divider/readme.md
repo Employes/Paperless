@@ -18,7 +18,7 @@
 
  - [p-accordion](../../deprecated/molecules/accordion)
  - [p-floating-menu-container](../floating-menu/container)
- - [p-modal-footer](../../deprecated/atoms/modal/footer)
+ - [p-modal-footer](../modal/footer)
  - [p-pagination](../../molecules/pagination/pagination)
  - [p-tab-group](../../deprecated/atoms/tab/group)
  - [p-table-row](../../deprecated/molecules/table/row)

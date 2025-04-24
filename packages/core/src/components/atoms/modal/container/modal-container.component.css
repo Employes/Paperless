@@ -1,0 +1,9 @@
+p-modal-container {
+	&.opening {
+		@apply animate-slide-in-bottom desktop-xs:animate-slide-in-bottom-small !important;
+	}
+
+	&.closing {
+		@apply animate-slide-out-bottom desktop-xs:animate-slide-out-bottom-small !important;
+	}
+}

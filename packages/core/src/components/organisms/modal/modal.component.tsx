@@ -1,13 +1,13 @@
 import {
-    Component,
-    Element,
-    Event,
-    EventEmitter,
-    h,
-    Host,
-    Listen,
-    Prop,
-    State
+	Component,
+	Element,
+	Event,
+	EventEmitter,
+	h,
+	Host,
+	Listen,
+	Prop,
+	State,
 } from '@stencil/core';
 
 @Component({
@@ -18,12 +18,7 @@ export class Modal {
 	/**
 	 * The size of the modal container
 	 */
-	@Prop() size: 'sm' | 'md' | 'lg' | 'xl' = 'md';
-
-	/**
-	 * The variant of the modal body
-	 */
-	@Prop() variant: 'default' | 'table-flush' = 'default';
+	@Prop() size: 'base' | 'lg' | 'xl' | '2xl' = 'base';
 
 	/**
 	 * The Header of the modal
@@ -61,11 +56,6 @@ export class Modal {
 	@Prop() scrollLock: boolean = true;
 
 	/**
-	 * Wether the body should have padding
-	 */
-	@Prop() padding: boolean = true;
-
-	/**
 	 * Close click event
 	 */
 	@Event({
@@ -92,12 +82,8 @@ export class Modal {
 	@State() private _closing = false;
 
 	componentWillLoad() {
-		this._hasFooterSlot = !!this._el.querySelector(
-			':scope > [slot="footer"]'
-		);
-		this._hasHeaderSlot = !!this._el.querySelector(
-			':scope > [slot="header"]'
-		);
+		this._hasFooterSlot = !!this._el.querySelector(':scope > [slot="footer"]');
+		this._hasHeaderSlot = !!this._el.querySelector(':scope > [slot="header"]');
 	}
 
 	render() {
@@ -105,34 +91,34 @@ export class Modal {
 			return;
 		}
 
-		const headerContent = <slot name="header" />;
-		const bodyContent = <slot name="content" />;
-		const footerContent = <slot name="footer" />;
+		const headerContent = <slot name='header' />;
+		const bodyContent = <slot name='content' />;
+		const footerContent = <slot name='footer' />;
 
 		return (
-			<Host class="p-modal">
+			<Host class='p-modal'>
 				<p-backdrop
 					applyBlur={this.applyBlur}
-					onClicked={(ev) => this._backdropClick(ev.detail)}
+					onClicked={ev => this._backdropClick(ev.detail)}
 					closing={this._closing}
 					scrollLock={this.scrollLock}
 				>
-					<p-modal-container size={this.size} closing={this._closing}>
+					<p-modal-container
+						size={this.size}
+						closing={this._closing}
+					>
 						{(this.header?.length || this._hasHeaderSlot) && (
 							<p-modal-header
+								size={this.size}
 								showClose={this.showClose}
-								onClose={(ev) => this.close('button', ev.detail)}
+								onClose={ev => this.close('button', ev.detail)}
 							>
-								{this._hasHeaderSlot
-									? headerContent
-									: this.header}
+								{this._hasHeaderSlot ? headerContent : this.header}
 							</p-modal-header>
 						)}
 						<p-modal-body
-							variant={this.variant}
 							roundedBottom={!this._hasFooterSlot}
 							roundedTop={!this._hasHeaderSlot && !this.header?.length}
-							padding={this.padding}
 						>
 							{bodyContent}
 						</p-modal-body>
@@ -150,7 +136,28 @@ export class Modal {
 			return;
 		}
 
+		const modal = this._findModal(ev.target as HTMLElement);
+		if (modal) {
+			return;
+		}
+
 		this.close('backdrop', ev);
+	}
+
+	private _findModal(el: HTMLElement | null): any {
+		if (!el) {
+			return null;
+		}
+
+		if (el.nodeName.toLowerCase() === 'p-modal-container') {
+			return el;
+		}
+
+		if (el?.tagName?.toLowerCase() === 'p-backdrop') {
+			return null;
+		}
+
+		return this._findModal(el?.parentElement);
 	}
 
 	public close(reason: string, ev?: MouseEvent) {
