@@ -1,6 +1,10 @@
 import { getComponentMetaData } from '@pxtrn/storybook-addon-docs-stencil';
 
-export const extractDefaultArgs = (componentName: string, dashCase = false) => {
+export const extractDefaultArgs = (
+	componentName: string,
+	dashCase = false,
+	initialArgs: { [key: string]: any }
+) => {
 	const metaData = getComponentMetaData(componentName);
 	const { props } = metaData;
 
@@ -53,7 +57,7 @@ export const extractDefaultArgs = (componentName: string, dashCase = false) => {
 
 				const key = dashCase === true ? attr || name : name;
 
-				acc[key] = value;
+				acc[key] = initialArgs[key] === undefined ? value : initialArgs[key];
 				return acc;
 			}, {} as Record<string, boolean | number | string>)
 	);
