@@ -33,13 +33,18 @@ const dropdownMenuItem = cva(
 				active: false,
 				enableHover: true,
 				disabled: false,
-				class: 'text-black-teal hover:bg-supportive-lilac-50',
+				class: 'hover:bg-supportive-lilac-50',
 			},
 			{
 				variant: 'default',
 				active: true,
 				disabled: false,
 				class: 'bg-supportive-lilac-100',
+			},
+			{
+				variant: 'default',
+				disabled: false,
+				class: 'text-black-teal',
 			},
 			{
 				variant: 'default',
