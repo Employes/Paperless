@@ -38,19 +38,19 @@ jobs:
       !contains(github.event.head_commit.message, 'Lerna publish')
     steps:
       - name: 'Checkout' # Download code from the repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
           fetch-depth: 0 # Checkout all branches and tags
 
       - name: Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3
         with:
           always-auth: true
           node-version: 20.9
           registry-url: 'https://registry.npmjs.org'
           cache: 'yarn'
 
-      - uses: oleksiyrudenko/gha-git-credentials@v2.1.2
+      - uses: oleksiyrudenko/gha-git-credentials@8bb1fe6d543b2233ef1856cd3b0181f5abbd4d6a # v2.1.2
         with:
           name: 'Github Actions'
           email: 'actions@github.com'
@@ -78,7 +78,7 @@ jobs:
           tags: true
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: build-artifact
           path: |
@@ -110,12 +110,12 @@ jobs:
       !contains(github.event.head_commit.message , 'docs(') &&
       !contains(github.event.head_commit.message, 'chore')
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
           fetch-depth: 0
 
       - name: Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3
         with:
           always-auth: true
           node-version: 20.9
@@ -123,7 +123,7 @@ jobs:
           cache: 'yarn'
 
       - name: Download a single artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
         with:
           name: build-artifact
 
@@ -144,17 +144,17 @@ jobs:
     runs-on: ubuntu-latest
     # Job steps
     steps:
-      - uses: actions/checkout@v4 # v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
           fetch-depth: 0
 
       - name: Download a single artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
         with:
           name: build-artifact
 
       - name: Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3
         with:
           always-auth: true
           node-version: 20.9
