@@ -16,6 +16,43 @@ import {
 } from '../../../../utils';
 import { Placement } from '@floating-ui/dom';
 import { asBoolean } from '../../../../utils/as-boolean';
+import { cva } from 'class-variance-authority';
+
+const loader = cva(['rounded-lg w-full'], {
+	variants: {
+		variant: {
+			read: null,
+			write: null,
+		},
+		size: {
+			base: null,
+			sm: null,
+		},
+	},
+	compoundVariants: [
+		{
+			variant: 'read',
+			size: 'base',
+			class: 'h-5',
+		},
+		{
+			variant: 'read',
+			size: 'sm',
+			class: 'h-4',
+		},
+
+		{
+			variant: 'write',
+			size: 'base',
+			class: 'h-8',
+		},
+		{
+			variant: 'write',
+			size: 'sm',
+			class: 'h-6',
+		},
+	],
+});
 
 export type templateFunc = () => string;
 
@@ -32,6 +69,16 @@ export class FieldContainer {
 	 * The label of the input group
 	 */
 	@Prop() label: string | HTMLSlotElement;
+
+	/**
+	 * Wether the field container is in loading state
+	 */
+	@Prop() loading: boolean = false;
+
+	/**
+	 * The size of the loader
+	 */
+	@Prop() loadingSize: 'base' | 'sm' = 'base';
 
 	/**
 	 * The variant of the field container
@@ -93,12 +140,22 @@ export class FieldContainer {
 			errorAndErrorIsNotBoolean,
 		} = this._getSlotInfo();
 
-		const contentSlot = (
+		let contentSlot = (
 			<slot
 				name='content'
 				slot='trigger'
 			/>
 		);
+
+		if (this.loading) {
+			contentSlot = (
+				<p-loader
+					variant='ghost'
+					class={loader({ variant: this.variant, size: this.loadingSize })}
+					slot='trigger'
+				/>
+			);
+		}
 
 		return (
 			<Host class='p-field-container'>
@@ -137,8 +194,9 @@ export class FieldContainer {
 							</div>
 						)}
 					</div>
+
 					<p-tooltip
-						class={this.variant === 'write' ? 'w-full' : ''}
+						class={this.variant === 'write' || this.loading ? 'w-full' : ''}
 						variant='error'
 						content={this.error}
 						show={errorAndErrorIsNotBoolean && asBoolean(this.forceShowTooltip)}

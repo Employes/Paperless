@@ -111,6 +111,11 @@ export class Datepicker {
 	@Prop() label: string;
 
 	/**
+	 * Wether the field is loading
+	 */
+	@Prop() loading: boolean = false;
+
+	/**
 	 * The helper of the input group used by the datepicker
 	 */
 	@Prop() helper: string;
@@ -278,6 +283,7 @@ export class Datepicker {
 						size={this.size}
 						prefix={this.prefix}
 						label={this.label}
+						loading={this.loading}
 						helper={this.helper}
 						required={asBoolean(this.required)}
 						error={this.error}

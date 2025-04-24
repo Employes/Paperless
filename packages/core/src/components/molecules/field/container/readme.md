@@ -7,16 +7,18 @@
 
 ## Properties
 
-| Property           | Attribute            | Description                        | Type                                                                                                                                                                 | Default                         |
-| ------------------ | -------------------- | ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
-| `error`            | `error`              | The helper of the input group      | `HTMLSlotElement \| string`                                                                                                                                          | `undefined`                     |
-| `errorPlacement`   | `error-placement`    | The placement of the error popover | `"bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `undefined`                     |
-| `forceShowTooltip` | `force-show-tooltip` | Force show the error tooltip       | `boolean`                                                                                                                                                            | `false`                         |
-| `helper`           | `helper`             | The helper of the input group      | `HTMLSlotElement \| string`                                                                                                                                          | `undefined`                     |
-| `label`            | `label`              | The label of the input group       | `HTMLSlotElement \| string`                                                                                                                                          | `undefined`                     |
-| `optionalTemplate` | `optional-template`  | The template for the optional text | `() => string`                                                                                                                                                       | `this._defaultOptionalTemplate` |
-| `required`         | `required`           | Wether the field is required       | `boolean`                                                                                                                                                            | `undefined`                     |
-| `variant`          | `variant`            | The variant of the field container | `"read" \| "write"`                                                                                                                                                  | `undefined`                     |
+| Property           | Attribute            | Description                                    | Type                                                                                                                                                                 | Default                         |
+| ------------------ | -------------------- | ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
+| `error`            | `error`              | The helper of the input group                  | `HTMLSlotElement \| string`                                                                                                                                          | `undefined`                     |
+| `errorPlacement`   | `error-placement`    | The placement of the error popover             | `"bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `undefined`                     |
+| `forceShowTooltip` | `force-show-tooltip` | Force show the error tooltip                   | `boolean`                                                                                                                                                            | `false`                         |
+| `helper`           | `helper`             | The helper of the input group                  | `HTMLSlotElement \| string`                                                                                                                                          | `undefined`                     |
+| `label`            | `label`              | The label of the input group                   | `HTMLSlotElement \| string`                                                                                                                                          | `undefined`                     |
+| `loading`          | `loading`            | Wether the field container is in loading state | `boolean`                                                                                                                                                            | `false`                         |
+| `loadingSize`      | `loading-size`       | The size of the loader                         | `"base" \| "sm"`                                                                                                                                                     | `'base'`                        |
+| `optionalTemplate` | `optional-template`  | The template for the optional text             | `() => string`                                                                                                                                                       | `this._defaultOptionalTemplate` |
+| `required`         | `required`           | Wether the field is required                   | `boolean`                                                                                                                                                            | `undefined`                     |
+| `variant`          | `variant`            | The variant of the field container             | `"read" \| "write"`                                                                                                                                                  | `undefined`                     |
 
 
 ## Events
@@ -35,12 +37,14 @@
 
 ### Depends on
 
+- [p-loader](../../../deprecated/atoms/loader)
 - [p-helper](../../../atoms/helper)
 - [p-tooltip](../../../atoms/tooltip)
 
 ### Graph
 ```mermaid
 graph TD;
+  p-field-container --> p-loader
   p-field-container --> p-helper
   p-field-container --> p-tooltip
   p-helper --> p-tooltip

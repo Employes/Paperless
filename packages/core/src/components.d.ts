@@ -399,6 +399,10 @@ export namespace Components {
          */
         "label": string;
         /**
+          * Wether the field is loading
+         */
+        "loading": boolean;
+        /**
           * Max date
          */
         "maxDate"?: Date | string;
@@ -673,6 +677,10 @@ export namespace Components {
          */
         "label": string;
         /**
+          * Wether the field is in loading state
+         */
+        "loading": boolean;
+        /**
           * The template for the optional text
          */
         "optionalTemplate": templateFunc;
@@ -738,6 +746,14 @@ export namespace Components {
           * The label of the input group
          */
         "label": string | HTMLSlotElement;
+        /**
+          * Wether the field container is in loading state
+         */
+        "loading": boolean;
+        /**
+          * The size of the loader
+         */
+        "loadingSize": 'base' | 'sm';
         /**
           * The template for the optional text
          */
@@ -3438,6 +3454,10 @@ declare namespace LocalJSX {
          */
         "label"?: string;
         /**
+          * Wether the field is loading
+         */
+        "loading"?: boolean;
+        /**
           * Max date
          */
         "maxDate"?: Date | string;
@@ -3736,6 +3756,10 @@ declare namespace LocalJSX {
          */
         "label"?: string;
         /**
+          * Wether the field is in loading state
+         */
+        "loading"?: boolean;
+        /**
           * Event whenever the input ref changes
          */
         "onInputRefChange"?: (event: PFieldCustomEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
@@ -3809,6 +3833,14 @@ declare namespace LocalJSX {
           * The label of the input group
          */
         "label"?: string | HTMLSlotElement;
+        /**
+          * Wether the field container is in loading state
+         */
+        "loading"?: boolean;
+        /**
+          * The size of the loader
+         */
+        "loadingSize"?: 'base' | 'sm';
         "onFocus"?: (event: PFieldContainerCustomEvent<void>) => void;
         /**
           * The template for the optional text

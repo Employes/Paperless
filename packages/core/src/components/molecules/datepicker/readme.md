@@ -18,6 +18,7 @@
 | `helper`             | `helper`                | The helper of the input group used by the datepicker      | `string`                                                                                                                                                             | `undefined`      |
 | `hideIconWhenFilled` | `hide-icon-when-filled` | Hides the icon when filled                                | `boolean`                                                                                                                                                            | `false`          |
 | `label`              | `label`                 | The label of the input group used by the datepicker       | `string`                                                                                                                                                             | `undefined`      |
+| `loading`            | `loading`               | Wether the field is loading                               | `boolean`                                                                                                                                                            | `false`          |
 | `maxDate`            | `max-date`              | Max date                                                  | `Date \| string`                                                                                                                                                     | `undefined`      |
 | `minDate`            | `min-date`              | Min date                                                  | `Date \| string`                                                                                                                                                     | `undefined`      |
 | `mode`               | `mode`                  | The mode of the datepicker                                | `"day" \| "month" \| "year"`                                                                                                                                         | `'day'`          |
@@ -56,6 +57,7 @@ graph TD;
   p-dropdown --> p-dropdown-menu-container
   p-field --> p-field-container
   p-field --> p-icon
+  p-field-container --> p-loader
   p-field-container --> p-helper
   p-field-container --> p-tooltip
   p-helper --> p-tooltip

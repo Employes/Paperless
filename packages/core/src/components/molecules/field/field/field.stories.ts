@@ -4,6 +4,9 @@ import { action } from '@storybook/addon-actions';
 const meta = {
 	title: 'Design System/Molecules/Field/Field',
 	component: 'p-field',
+	args: {
+		label: 'Label',
+	},
 };
 
 export default meta;
@@ -22,6 +25,7 @@ export const Default = {
 		'icon-position': iconPosition,
 		value,
 		label,
+		loading,
 		placeholder,
 		helper,
 		required,
@@ -47,6 +51,7 @@ export const Default = {
 		icon-position=${iconPosition ?? nothing}
 		value=${value ?? nothing}
 		label=${label ?? nothing}
+		loading=${loading ?? nothing}
 		placeholder=${placeholder ?? nothing}
 		helper=${helper ?? nothing}
 		required=${required ?? nothing}

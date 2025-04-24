@@ -5,6 +5,7 @@ const meta = {
 	title: 'Design System/Molecules/Select',
 	component: 'p-select',
 	args: {
+		label: 'Label',
 		items: JSON.stringify([
 			{
 				value: 'value',
