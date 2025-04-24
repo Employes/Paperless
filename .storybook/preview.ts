@@ -108,7 +108,7 @@ const preview = {
 			const { initialArgs, component } = context;
 
 			if (initialArgs) {
-				return extractDefaultArgs(component, false);
+				return extractDefaultArgs(component, false, initialArgs);
 			}
 
 			return {};
