@@ -1,7 +1,7 @@
 import { html, nothing } from 'lit';
 
 const meta = {
-	title: 'Design System/Deprecated/Atoms/Modal/Container',
+	title: 'Design System/Atoms/Modal/Container',
 	component: 'p-modal-container',
 	args: {
 		content: 'ModalContainer',
@@ -16,11 +16,7 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({
-		content,
-		size,
-		closing,
-	}) => html`<p-modal-container
+	render: ({ content, size, closing }) => html`<p-modal-container
 		size=${size ?? nothing}
 		closing=${closing ?? nothing}
 	>

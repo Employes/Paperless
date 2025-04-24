@@ -1047,10 +1047,6 @@ export namespace Components {
          */
         "header"?: string;
         /**
-          * Wether the body should have padding
-         */
-        "padding": boolean;
-        /**
           * Wether we should scroll lock the body
          */
         "scrollLock": boolean;
@@ -1069,17 +1065,9 @@ export namespace Components {
         /**
           * The size of the modal container
          */
-        "size": 'sm' | 'md' | 'lg' | 'xl';
-        /**
-          * The variant of the modal body
-         */
-        "variant": 'default' | 'table-flush';
+        "size": 'base' | 'lg' | 'xl' | '2xl';
     }
     interface PModalBody {
-        /**
-          * Wether the body should have padding
-         */
-        "padding": boolean;
         /**
           * Wether the modal body should be rounded at the bottom
          */
@@ -1088,10 +1076,6 @@ export namespace Components {
           * Wether the modal body should be rounded at the top
          */
         "roundedTop": boolean;
-        /**
-          * The variant of the modal body
-         */
-        "variant": 'default' | 'table-flush';
     }
     interface PModalContainer {
         /**
@@ -1101,7 +1085,7 @@ export namespace Components {
         /**
           * The size of the modal container
          */
-        "size": 'sm' | 'md' | 'lg' | 'xl';
+        "size": 'base' | 'lg' | 'xl' | '2xl';
     }
     interface PModalFooter {
     }
@@ -1110,6 +1094,10 @@ export namespace Components {
           * Wether to show the close button on mobile
          */
         "showClose": boolean;
+        /**
+          * Size of the header
+         */
+        "size": 'base' | 'lg' | 'xl' | '2xl';
     }
     interface PNavbar {
     }
@@ -1468,6 +1456,8 @@ export namespace Components {
           * Wether the slider indicator is active
          */
         "active": boolean;
+    }
+    interface PSmileFooter {
     }
     interface PStatus {
         /**
@@ -2780,6 +2770,12 @@ declare global {
         prototype: HTMLPSliderIndicatorElement;
         new (): HTMLPSliderIndicatorElement;
     };
+    interface HTMLPSmileFooterElement extends Components.PSmileFooter, HTMLStencilElement {
+    }
+    var HTMLPSmileFooterElement: {
+        prototype: HTMLPSmileFooterElement;
+        new (): HTMLPSmileFooterElement;
+    };
     interface HTMLPStatusElement extends Components.PStatus, HTMLStencilElement {
     }
     var HTMLPStatusElement: {
@@ -3044,6 +3040,7 @@ declare global {
         "p-segment-item": HTMLPSegmentItemElement;
         "p-select": HTMLPSelectElement;
         "p-slider-indicator": HTMLPSliderIndicatorElement;
+        "p-smile-footer": HTMLPSmileFooterElement;
         "p-status": HTMLPStatusElement;
         "p-stepper": HTMLPStepperElement;
         "p-stepper-item": HTMLPStepperItemElement;
@@ -4151,10 +4148,6 @@ declare namespace LocalJSX {
          */
         "onClosed"?: (event: PModalCustomEvent<string>) => void;
         /**
-          * Wether the body should have padding
-         */
-        "padding"?: boolean;
-        /**
           * Wether we should scroll lock the body
          */
         "scrollLock"?: boolean;
@@ -4173,17 +4166,9 @@ declare namespace LocalJSX {
         /**
           * The size of the modal container
          */
-        "size"?: 'sm' | 'md' | 'lg' | 'xl';
-        /**
-          * The variant of the modal body
-         */
-        "variant"?: 'default' | 'table-flush';
+        "size"?: 'base' | 'lg' | 'xl' | '2xl';
     }
     interface PModalBody {
-        /**
-          * Wether the body should have padding
-         */
-        "padding"?: boolean;
         /**
           * Wether the modal body should be rounded at the bottom
          */
@@ -4192,10 +4177,6 @@ declare namespace LocalJSX {
           * Wether the modal body should be rounded at the top
          */
         "roundedTop"?: boolean;
-        /**
-          * The variant of the modal body
-         */
-        "variant"?: 'default' | 'table-flush';
     }
     interface PModalContainer {
         /**
@@ -4205,7 +4186,7 @@ declare namespace LocalJSX {
         /**
           * The size of the modal container
          */
-        "size"?: 'sm' | 'md' | 'lg' | 'xl';
+        "size"?: 'base' | 'lg' | 'xl' | '2xl';
     }
     interface PModalFooter {
     }
@@ -4218,6 +4199,10 @@ declare namespace LocalJSX {
           * Wether to show the close button on mobile
          */
         "showClose"?: boolean;
+        /**
+          * Size of the header
+         */
+        "size"?: 'base' | 'lg' | 'xl' | '2xl';
     }
     interface PNavbar {
     }
@@ -4620,6 +4605,8 @@ declare namespace LocalJSX {
           * Wether the slider indicator is active
          */
         "active"?: boolean;
+    }
+    interface PSmileFooter {
     }
     interface PStatus {
         /**
@@ -5358,6 +5345,7 @@ declare namespace LocalJSX {
         "p-segment-item": PSegmentItem;
         "p-select": PSelect;
         "p-slider-indicator": PSliderIndicator;
+        "p-smile-footer": PSmileFooter;
         "p-status": PStatus;
         "p-stepper": PStepper;
         "p-stepper-item": PStepperItem;
@@ -5442,6 +5430,7 @@ declare module "@stencil/core" {
             "p-segment-item": LocalJSX.PSegmentItem & JSXBase.HTMLAttributes<HTMLPSegmentItemElement>;
             "p-select": LocalJSX.PSelect & JSXBase.HTMLAttributes<HTMLPSelectElement>;
             "p-slider-indicator": LocalJSX.PSliderIndicator & JSXBase.HTMLAttributes<HTMLPSliderIndicatorElement>;
+            "p-smile-footer": LocalJSX.PSmileFooter & JSXBase.HTMLAttributes<HTMLPSmileFooterElement>;
             "p-status": LocalJSX.PStatus & JSXBase.HTMLAttributes<HTMLPStatusElement>;
             "p-stepper": LocalJSX.PStepper & JSXBase.HTMLAttributes<HTMLPStepperElement>;
             "p-stepper-item": LocalJSX.PStepperItem & JSXBase.HTMLAttributes<HTMLPStepperItemElement>;

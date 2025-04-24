@@ -13,7 +13,7 @@
 
 ### Depends on
 
-- [p-divider](../../../../atoms/divider)
+- [p-divider](../../divider)
 
 ### Graph
 ```mermaid

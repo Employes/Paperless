@@ -4,11 +4,11 @@ p-drawer-container {
 	@apply w-full tablet:w-[22.5rem];
 	@apply bg-white;
 	@apply min-h-screen;
-	@apply animate-in slide-in-from-right;
+	@apply animate-slide-in-right;
 
 	@apply shadow-3 #{!important};
 
 	&.closing {
-		@apply slide-out-to-right;
+		@apply animate-slide-out-right;
 	}
 }
