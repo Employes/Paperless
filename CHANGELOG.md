@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.53](https://github.com/employes/paperless/compare/v2.0.1-beta.52...v2.0.1-beta.53) (2025-04-24)
+
+
+### Bug Fixes
+
+* **molecules/dropdown-menu/item:** Always set text-black-teal when disabled = false ([6933e43](https://github.com/employes/paperless/commit/6933e4357368c0f314e196134ac4709f89464535))
+
+
+
+
+
 ## [2.0.1-beta.52](https://github.com/employes/paperless/compare/v2.0.1-beta.51...v2.0.1-beta.52) (2025-04-24)
 
 
