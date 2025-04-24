@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.52](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.51...v2.0.1-beta.52) (2025-04-24)
+
+
+### Features
+
+* **molecules/field-container:** Add loading prop ([a8f4003](https://github.com/ionic-team/stencil-component-starter/commit/a8f4003da7230161397aa38158d90ae04e27aae4))
+
+
+
+
+
 ## [2.0.1-beta.51](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.50...v2.0.1-beta.51) (2025-04-23)
 
 
