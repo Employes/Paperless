@@ -2,7 +2,7 @@ import { html, nothing } from 'lit';
 import { action } from '@storybook/addon-actions';
 
 const meta = {
-	title: 'Design System/Deprecated/Atoms/Modal/Header',
+	title: 'Design System/Atoms/Modal/Header',
 	component: 'p-modal-header',
 	args: {
 		content: 'ModalHeader',
@@ -17,11 +17,9 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({
-		content,
-		'show-close': showClose,
-	}) => html`<p-modal-header
+	render: ({ content, size, 'show-close': showClose }) => html`<p-modal-header
 		show-close=${showClose ?? nothing}
+		size=${size ?? nothing}
 		@close=${action('close')}
 	>
 		${content}
