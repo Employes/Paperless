@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.57](https://github.com/employes/paperless/compare/v2.0.1-beta.56...v2.0.1-beta.57) (2025-04-25)
+
+
+### Reverts
+
+* Revert "fix(atoms/modal/footer): Try scoped instead of shadow" ([f3396dc](https://github.com/employes/paperless/commit/f3396dcf3f0feb5bc6d23c256444e3600917af05))
+
+
+
+
+
 ## [2.0.1-beta.56](https://github.com/employes/paperless/compare/v2.0.1-beta.55...v2.0.1-beta.56) (2025-04-25)
 
 
