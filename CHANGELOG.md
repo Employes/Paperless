@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.55](https://github.com/employes/paperless/compare/v2.0.1-beta.53...v2.0.1-beta.55) (2025-04-25)
+
+
+### Bug Fixes
+
+* **storybook:** Default args override ([eda2834](https://github.com/employes/paperless/commit/eda2834812b5edffe5871e0b66b9dae448ea03e7))
+
+
+### Features
+
+* **organisms/modal:** Rebranding implementation ([6f524a3](https://github.com/employes/paperless/commit/6f524a31b8cd0c81c1aabf58e3780d45b9e1149d))
+
+
+
+
+
 ## [2.0.1-beta.53](https://github.com/employes/paperless/compare/v2.0.1-beta.52...v2.0.1-beta.53) (2025-04-24)
 
 
