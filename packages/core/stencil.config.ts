@@ -4,29 +4,33 @@ import { reactOutputTarget as react } from '@stencil/react-output-target';
 import { sass } from '@stencil/sass';
 import { inlineSvg } from 'stencil-inline-svg';
 import tailwind, {
-	setPluginConfigurationDefaults,
-	tailwindGlobal,
-	tailwindHMR,
+    setPluginConfigurationDefaults,
+    tailwindGlobal,
+    tailwindHMR,
 } from 'stencil-tailwind-plugin';
-import tailwindConf from './src/tailwind.config';
+import { resolve } from 'path';
 
-import { storiesOutputTarget } from './stencil-storybook-stories-output/';
+import { storiesOutputTarget } from './outputs/stencil-storybook-stories-output';
 
 setPluginConfigurationDefaults({
 	enableDebug: false,
-	tailwindCssContents:
-		'@tailwind utilities;@tailwind components; * { @apply box-border; }',
-	tailwindConf: tailwindConf as any,
+	tailwindCssPath: resolve(__dirname, './tailwind.css'),
 });
 
 export const config: Config = {
 	namespace: 'paperless',
-	globalStyle: 'src/style/paperless.scss',
+	globalStyle: 'src/style/paperless.css',
 	watchIgnoredRegex: [/.*\.story\.mdx$/, /.*\.stories\.ts$/],
 	extras: {
 		experimentalImportInjection: true,
 	},
-	plugins: [sass(), tailwindGlobal(), tailwind(), tailwindHMR(), inlineSvg()],
+	plugins: [
+		sass(),
+		tailwindGlobal(),
+		tailwind(),
+		tailwindHMR(),
+		inlineSvg()
+	],
 	devServer: {
 		address: '0.0.0.0',
 		port: 8080,
@@ -80,7 +84,7 @@ export const config: Config = {
 			dir: 'dist',
 			copy: [
 				{ src: 'assets' },
-				{ src: 'tailwind.config.ts' },
+				{ src: 'tailwind.config.css' },
 				{ src: 'tailwind' },
 				{ src: 'style' },
 				{

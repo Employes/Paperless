@@ -95,13 +95,13 @@ const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 			disabled: false,
 			focused: true,
 			error: true,
-			class: 'ring ring-negative-red-50 selection:bg-negative-red-50',
+			class: 'ring-3 ring-negative-red-50 selection:bg-negative-red-50',
 		},
 	],
 });
 
 const input = cva(
-	'text-sm placeholder:text-sm placeholder:text-black-teal-200 text-black-teal border-none outline-none focus:outline-none bg-transparent flex-1 min-w-0',
+	'text-sm placeholder:text-sm placeholder:text-black-teal-200 text-black-teal border-none outline-hidden focus:outline-hidden bg-transparent flex-1 min-w-0',
 	{
 		variants: {
 			isTextarea: {
@@ -117,7 +117,7 @@ const input = cva(
 );
 
 const prefixAndSuffix = cva(
-	['flex flex-shrink-0 justify-center items-center text-center'],
+	['flex shrink-0 justify-center items-center text-center'],
 	{
 		variants: {
 			disabled: {

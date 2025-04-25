@@ -2,8 +2,8 @@
 	@apply flex justify-between items-center gap-2;
 	@apply w-full p-4 pl-5;
 	@apply bg-white rounded box-border;
-	@apply shadow-3 #{!important};
-	@apply border-l-4 border-solid #{!important};
+	@apply shadow-3 ;
+	@apply border-l-4 border-solid ;
 
 	p {
 		@apply m-0;
@@ -12,13 +12,13 @@
 }
 
 :host(.variant-positive) {
-	@apply border-l-positive  #{!important};
+	@apply border-l-positive  ;
 }
 
 :host(.variant-unbiased) {
-	@apply border-l-unbiased  #{!important};
+	@apply border-l-unbiased  ;
 }
 
 :host(.variant-negative) {
-	@apply border-l-negative  #{!important};
+	@apply border-l-negative  ;
 }

@@ -278,7 +278,7 @@ export class Calendar {
 						return day.active ? (
 							<p-button
 								variant='primary'
-								class={cn('w-full', `col-start-${day.offset}`)}
+								class={cn('w-8', `col-start-${day.offset}`)}
 								onClick={() => this._setValue(day.date)}
 							>
 								{/* class={`day ${day.active && 'active'} ${ */}

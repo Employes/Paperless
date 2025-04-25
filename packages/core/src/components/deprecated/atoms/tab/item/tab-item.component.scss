@@ -2,9 +2,9 @@
 	@apply flex h-10 items-center;
 	@apply whitespace-nowrap font-semibold text-storm-medium;
 	@apply cursor-pointer;
-	@apply border-0 border-b-2 border-transparent #{!important};
+	@apply border-0 border-b-2 border-transparent ;
 }
 
 :host(.active) {
-	@apply border-indigo text-indigo #{!important};
+	@apply border-indigo text-indigo ;
 }

@@ -13,7 +13,7 @@ import { asBoolean } from '../../../utils/as-boolean';
 
 const checkbox = cva(
 	[
-		'peer appearance-none m-0 outline-none flex-shrink-0',
+		'peer appearance-none m-0 outline-hidden shrink-0',
 		'border border-inset border-solid ',
 		'rounded w-4 h-4',
 	],
@@ -114,7 +114,7 @@ export class Checkbox {
 					htmlFor={this.id ?? this._nonce}
 					class='group/p-checkbox flex items-center justify-start gap-2 text-black-teal'
 				>
-					<div class='relative flex flex-shrink-0 items-center'>
+					<div class='relative flex shrink-0 items-center'>
 						<input
 							class={checkbox({
 								disabled: asBoolean(this.disabled),

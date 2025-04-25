@@ -1,4 +1,4 @@
-:host {
+p-navbar {
 	.safe-sidebar {
 		padding-top: calc(env(safe-area-inset-top, 0) + 1rem) !important;
 

@@ -8,10 +8,10 @@
 }
 
 :host([hoverable]:hover) {
-	@apply drop-shadow-3 #{!important};
+	@apply drop-shadow-3;
 }
 
 :host([shadow='true']),
 :host(:not([shadow='false'])) {
-	@apply drop-shadow-3 filter #{!important};
+	@apply drop-shadow-3;
 }

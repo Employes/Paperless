@@ -1,0 +1,1160 @@
+@theme {
+  --font-geist: "Geist", serif;
+  --font-geist--font-variant-numeric: lining-nums tabular-nums;
+
+  --font-ambit: "Ambit", sans-serif;
+
+  --default-font-family: var(--font-geist);
+  --default-mono-font-family: var(--font-geist);
+
+  --text-xxs: 0.5rem;
+  --text-xxs--line-height: 1rem;
+  --text-3xl: 2rem;
+  --text-3xl--line-height: 2.5rem;
+  --text-4xl: 2.5rem;
+  --text-4xl--line-height: 3rem;
+
+  --leading-xs: 1rem;
+  --leading-sm: 1.5rem;
+  --leading-base: 1.5rem;
+  --leading-lg: 1.75rem;
+  --leading-xl: 1.75rem;
+  --leading-2xl: 2rem;
+  --leading-3xl: 2.5rem;
+  --leading-4xl: 3rem;
+
+  --color-*: initial;
+
+  --color-white-600: #fafafa;
+  --color-white-700: #f2f2f2;
+  --color-white-800: #e4e3e3;
+  --color-white: #ffffff;
+
+  --color-negative-red-50: #fdeded;
+  --color-negative-red-100: #ffdddd;
+  --color-negative-red-500: #e61e1e;
+  --color-negative-red-800: #8d1010;
+  --color-negative-red: #e61e1e;
+
+  --color-positive-green-50: #eafde3;
+  --color-positive-green-100: #d5fbc7;
+  --color-positive-green-500: #5cc30e;
+  --color-positive-green-800: #2f6407;
+  --color-positive-green: #5cc30e;
+
+  --color-amber-50: #fffae0;
+  --color-amber-100: #fff6c2;
+  --color-amber-500: #e19f23;
+  --color-amber-800: #944d0b;
+  --color-amber: #e19f23;
+
+  --color-human-beige-50: #fdfcfb;
+  --color-human-beige-100: #fcfaf8;
+  --color-human-beige-200: #f8f4f1;
+  --color-human-beige-300: #f5efe9;
+  --color-human-beige-400: #f1e9e2;
+  --color-human-beige-500: #eee4db;
+  --color-human-beige-600: #ede0d5;
+  --color-human-beige-700: #e7d8cb;
+  --color-human-beige-800: #dec9b7;
+  --color-human-beige: #eee4db;
+
+  --color-off-white-50: #fefefd;
+  --color-off-white-100: #fdfcfb;
+  --color-off-white-200: #faf9f8;
+  --color-off-white-300: #f8f7f4;
+  --color-off-white-400: #f5f4f1;
+  --color-off-white-500: #f3f1ed;
+  --color-off-white-600: #eceae5;
+  --color-off-white-700: #dedbd5;
+  --color-off-white-800: #d5d0c3;
+  --color-off-white: #f3f1ed;
+
+  --color-supportive-lilac-50: #faf7ff;
+  --color-supportive-lilac-100: #f6efff;
+  --color-supportive-lilac-200: #eddfff;
+  --color-supportive-lilac-300: #e3ceff;
+  --color-supportive-lilac-400: #dabeff;
+  --color-supportive-lilac-500: #d1aeff;
+  --color-supportive-lilac-600: #cca8fc;
+  --color-supportive-lilac-700: #c89fff;
+  --color-supportive-lilac-800: #bd8cff;
+  --color-supportive-lilac-900: #5009b3;
+  --color-supportive-lilac: #d1aeff;
+
+  --color-growth-green-50: #f5ffee;
+  --color-growth-green-100: #ecffdd;
+  --color-growth-green-200: #d9ffbb;
+  --color-growth-green-300: #c6ff9a;
+  --color-growth-green-400: #b3ff78;
+  --color-growth-green-500: #a0ff56;
+  --color-growth-green-600: #8cfc35;
+  --color-growth-green-700: #7ff424;
+  --color-growth-green-800: #81ef2b;
+  --color-growth-green: #a0ff56;
+
+  --color-tech-breeze-50: #f4fffd;
+  --color-tech-breeze-100: #eafffb;
+  --color-tech-breeze-200: #d4fff8;
+  --color-tech-breeze-300: #bffff4;
+  --color-tech-breeze-400: #a9fff1;
+  --color-tech-breeze-500: #94ffed;
+  --color-tech-breeze-600: #83fae6;
+  --color-tech-breeze-700: #66f2da;
+  --color-tech-breeze-800: #3deacc;
+  --color-tech-breeze: #94ffed;
+
+  --color-teal-50: #e6f3f2;
+  --color-teal-100: #cee7e4;
+  --color-teal-200: #9ccfc9;
+  --color-teal-300: #6bb8af;
+  --color-teal-400: #39a094;
+  --color-teal-500: #088879;
+  --color-teal-600: #047f72;
+  --color-teal-700: #047367;
+  --color-teal-800: #02665c;
+  --color-teal: #088879;
+
+  --color-dark-teal-50: #e5eeed;
+  --color-dark-teal-100: #ccdcda;
+  --color-dark-teal-200: #99b9b6;
+  --color-dark-teal-300: #669791;
+  --color-dark-teal-400: #33746d;
+  --color-dark-teal-500: #005148;
+  --color-dark-teal-600: #004840;
+  --color-dark-teal-700: #003832;
+  --color-dark-teal-800: #012521;
+  --color-dark-teal: #005148;
+
+  --color-black-teal-50: #e6eae9;
+  --color-black-teal-100: #cdd4d3;
+  --color-black-teal-200: #9aaaa7;
+  --color-black-teal-300: #687f7c;
+  --color-black-teal-400: #355550;
+  --color-black-teal-500: #032a24;
+  --color-black-teal-600: #011815;
+  --color-black-teal-700: #000d0b;
+  --color-black-teal-800: #000202;
+  --color-black-teal: #032a24;
+
+  /* Deprecated colors */
+  --color-indigo-dark: #2c4ba9;
+  --color-indigo: #528afa;
+  --color-indigo-light: #f1f6ff;
+
+  --color-sky-dark: #30c2c9;
+  --color-sky: #1edae3;
+  --color-sky-light: #f5feff;
+  --color-sky-vague: #bbf4f6;
+
+  --color-mystic-blank: #fff;
+  --color-mystic-dark: #dae6f0;
+  --color-mystic: #f7fafc;
+  --color-mystic-light: #fcfdfe;
+  --color-mystic-medium: #e3ecf3;
+
+  --color-redberry-dark: #bd0f1e;
+  --color-redberry: #e63241;
+  --color-redberry-light: #ffe8ea;
+  --color-redberry-medium: #ff7d88;
+
+  --color-storm-dark: #272838;
+  --color-storm: #51536b;
+  --color-storm-light: #b0b2cb;
+  --color-storm-medium: #80829e;
+  --color-storm-vague: #989ab7;
+
+  --color-negative-dark: #8a0f1d;
+  --color-negative: #b91e28;
+  --color-negative-light: #ffccd3;
+
+  --color-positive-dark: #1da360;
+  --color-positive: #28d17c;
+  --color-positive-light: #e5fff2;
+
+  --color-unbiased-dark: #ffa231;
+  --color-unbiased: #ffc72d;
+  --color-unbiased-light: #fff6dc;
+
+  --shadow-*: initial;
+
+  --shadow-1: 0 1px 1px rgba(0, 2, 2, 0.08);
+  --shadow-2:
+    0 1px 1px rgba(0, 2, 2, 0.04), 0 2px 2px rgba(0, 2, 2, 0.04),
+    0 4px 4px rgba(0, 2, 2, 0.04);
+  --shadow-3:
+    0 1px 1px rgba(0, 2, 2, 0.08), 0 2px 2px rgba(0, 2, 2, 0.08),
+    0 4px 4px rgba(0, 2, 2, 0.08);
+  --shadow-modal:
+    0 0 0 1px rgba(0, 2, 2, 0.1), 0 1px 1px 0 rgba(0, 2, 2, 0.2),
+    0 2px 2px 0 rgba(0, 2, 2, 0.08), 0 4px 4px 0 rgba(0, 2, 2, 0.08),
+    0 8px 8px 0 rgba(0, 2, 2, 0.08);
+  --shadow-supportive-lilac: 0px 1px 1px rgba(189, 140, 255, 0.2);
+  --shadow-black-teal-10\%: 0px 1px 0px rgba(3, 42, 36, 0.1);
+  --shadow-inherit: inherit;
+  --shadow-transparent: transparent;
+
+  --drop-shadow-*: initial;
+
+  --drop-shadow-1: 0 1px 1px rgba(0, 2, 2, 0.08);
+  --drop-shadow-2:
+    0 1px 1px rgba(0, 2, 2, 0.04), 0 2px 2px rgba(0, 2, 2, 0.04),
+    0 4px 4px rgba(0, 2, 2, 0.04);
+  --drop-shadow-3:
+    0 1px 1px rgba(0, 2, 2, 0.08), 0 2px 2px rgba(0, 2, 2, 0.08),
+    0 4px 4px rgba(0, 2, 2, 0.08);
+  --drop-shadow-modal:
+    0 0 0 1px rgba(0, 2, 2, 0.1), 0 1px 1px 0 rgba(0, 2, 2, 0.2),
+    0 2px 2px 0 rgba(0, 2, 2, 0.08), 0 4px 4px 0 rgba(0, 2, 2, 0.08),
+    0 8px 8px 0 rgba(0, 2, 2, 0.08);
+  --drop-shadow-supportive-lilac: 0px 1px 1px rgba(189, 140, 255, 0.2);
+  --drop-shadow-black-teal-10\%: 0px 1px 0px rgba(3, 42, 36, 0.1);
+  --drop-shadow-inherit: inherit;
+  --drop-shadow-transparent: transparent;
+
+  --animate-fade-in: forwards fadeIn 0.2s ease;
+  --animate-fade-out: forwards fadeOut 0.2s ease;
+  --animate-slide-in-right: forwards slideInRight 0.5s ease;
+  --animate-slide-in-left: forwards slideInLeft 0.5s ease;
+  --animate-slide-in-top: forwards slideInTop 0.25 ease;
+  --animate-slide-in-bottom: forwards slideInBottom 0.5s ease;
+  --animate-slide-in-right-small: forwards slideInRightSmall 0.5s ease;
+  --animate-slide-in-left-small: forwards slideInLeftSmall 0.5s ease;
+  --animate-slide-in-top-small: forwards slideInTopSmall 0.5s ease;
+  --animate-slide-in-bottom-small: forwards slideInBottomSmall 0.5s ease;
+  --animate-slide-out-right: forwards slideOutRight 0.2s ease;
+  --animate-slide-out-left: forwards slideOutLeft 0.2s ease;
+  --animate-slide-out-top: forwards slideOutTop 0.2s ease;
+  --animate-slide-out-bottom: forwards slideOutBottom 0.5s ease;
+  --animate-slide-out-top-small: forwards slideOutTopSmall 0.5s ease;
+  --animate-slide-out-bottom-small: forwards slideOutBottomSmall 0.5s ease;
+
+  --scale-flip: -1;
+
+  --z-index-floating-menu: 190;
+  --z-index-dropdown: 200;
+  --z-index-navbar-topbar: 280;
+  --z-index-navbar-backdrop: 290;
+  --z-index-navbar: 300;
+  --z-index-backdrop: 490;
+  --z-index-drawer: 500;
+  --z-index-drawer-header: 501;
+  --z-index-modal: 600;
+  --z-index-tooltip: 601;
+  --z-index-toast: 700;
+
+  --breakpoint-tablet: 40rem;
+  --breakpoint-desktop-xs: 64rem;
+  --breakpoint-desktop-sm: 80rem;
+  --breakpoint-desktop: 85.375rem;
+  --breakpoint-desktop-lg: 90rem;
+  --breakpoint-desktop-xl: 120rem;
+  --breakpoint-layout-1280: 80rem;
+  --breakpoint-layout-1440: 90rem;
+  --breakpoint-layout-1536: 96rem;
+  --breakpoint-layout-1680: 105rem;
+  --breakpoint-layout-1920: 120rem;
+  --breakpoint-layout-2560: 160rem;
+
+  --width-content-mobile: 100%;
+  --width-content-1280: 62rem;
+  --width-content-1440: 71rem;
+  --width-content-1536: 77rem;
+  --width-content-1680: 83rem;
+  --width-sidebar-desktop-login: 100%;
+  --width-content-desktop-login: 21rem;
+
+  --spacing-inherit: inherit;
+  --spacing-18: 4.5rem;
+  --spacing-content-mobile-x: 1rem;
+  --spacing-content-mobile-y: 1.5rem;
+  --spacing-content-desktop-x: 2rem;
+  --spacing-content-desktop-y: 2rem;
+
+  --aspect-branding: 23/24;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 100;
+    }
+  }
+  @keyframes fadeOut {
+    0% {
+      opacity: 100;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideInTop {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes slideInBottom {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes slideInRightSmall {
+    0% {
+      transform: translateX(20%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideInLeftSmall {
+    0% {
+      transform: translateX(-20%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideInTopSmall {
+    0% {
+      transform: translateY(-20%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes slideInBottomSmall {
+    0% {
+      transform: translateY(20%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes slideOutRight {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  @keyframes slideOutLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes slideOutTop {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+  @keyframes slideOutBottom {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+  @keyframes slideOutTopSmall {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-20%);
+    }
+  }
+  @keyframes slideOutBottomSmall {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(20%);
+    }
+  }
+
+  --rotate-1: 1deg;
+  --rotate-2: 2deg;
+  --rotate-3: 3deg;
+  --rotate-4: 4deg;
+  --rotate-5: 5deg;
+  --rotate-6: 6deg;
+  --rotate-7: 7deg;
+  --rotate-8: 8deg;
+  --rotate-9: 9deg;
+  --rotate-10: 10deg;
+  --rotate-11: 11deg;
+  --rotate-12: 12deg;
+  --rotate-13: 13deg;
+  --rotate-14: 14deg;
+  --rotate-15: 15deg;
+  --rotate-16: 16deg;
+  --rotate-17: 17deg;
+  --rotate-18: 18deg;
+  --rotate-19: 19deg;
+  --rotate-20: 20deg;
+  --rotate-21: 21deg;
+  --rotate-22: 22deg;
+  --rotate-23: 23deg;
+  --rotate-24: 24deg;
+  --rotate-25: 25deg;
+  --rotate-26: 26deg;
+  --rotate-27: 27deg;
+  --rotate-28: 28deg;
+  --rotate-29: 29deg;
+  --rotate-30: 30deg;
+  --rotate-31: 31deg;
+  --rotate-32: 32deg;
+  --rotate-33: 33deg;
+  --rotate-34: 34deg;
+  --rotate-35: 35deg;
+  --rotate-36: 36deg;
+  --rotate-37: 37deg;
+  --rotate-38: 38deg;
+  --rotate-39: 39deg;
+  --rotate-40: 40deg;
+  --rotate-41: 41deg;
+  --rotate-42: 42deg;
+  --rotate-43: 43deg;
+  --rotate-44: 44deg;
+  --rotate-45: 45deg;
+  --rotate-46: 46deg;
+  --rotate-47: 47deg;
+  --rotate-48: 48deg;
+  --rotate-49: 49deg;
+  --rotate-50: 50deg;
+  --rotate-51: 51deg;
+  --rotate-52: 52deg;
+  --rotate-53: 53deg;
+  --rotate-54: 54deg;
+  --rotate-55: 55deg;
+  --rotate-56: 56deg;
+  --rotate-57: 57deg;
+  --rotate-58: 58deg;
+  --rotate-59: 59deg;
+  --rotate-60: 60deg;
+  --rotate-61: 61deg;
+  --rotate-62: 62deg;
+  --rotate-63: 63deg;
+  --rotate-64: 64deg;
+  --rotate-65: 65deg;
+  --rotate-66: 66deg;
+  --rotate-67: 67deg;
+  --rotate-68: 68deg;
+  --rotate-69: 69deg;
+  --rotate-70: 70deg;
+  --rotate-71: 71deg;
+  --rotate-72: 72deg;
+  --rotate-73: 73deg;
+  --rotate-74: 74deg;
+  --rotate-75: 75deg;
+  --rotate-76: 76deg;
+  --rotate-77: 77deg;
+  --rotate-78: 78deg;
+  --rotate-79: 79deg;
+  --rotate-80: 80deg;
+  --rotate-81: 81deg;
+  --rotate-82: 82deg;
+  --rotate-83: 83deg;
+  --rotate-84: 84deg;
+  --rotate-85: 85deg;
+  --rotate-86: 86deg;
+  --rotate-87: 87deg;
+  --rotate-88: 88deg;
+  --rotate-89: 89deg;
+  --rotate-90: 90deg;
+  --rotate-91: 91deg;
+  --rotate-92: 92deg;
+  --rotate-93: 93deg;
+  --rotate-94: 94deg;
+  --rotate-95: 95deg;
+  --rotate-96: 96deg;
+  --rotate-97: 97deg;
+  --rotate-98: 98deg;
+  --rotate-99: 99deg;
+  --rotate-100: 100deg;
+  --rotate-101: 101deg;
+  --rotate-102: 102deg;
+  --rotate-103: 103deg;
+  --rotate-104: 104deg;
+  --rotate-105: 105deg;
+  --rotate-106: 106deg;
+  --rotate-107: 107deg;
+  --rotate-108: 108deg;
+  --rotate-109: 109deg;
+  --rotate-110: 110deg;
+  --rotate-111: 111deg;
+  --rotate-112: 112deg;
+  --rotate-113: 113deg;
+  --rotate-114: 114deg;
+  --rotate-115: 115deg;
+  --rotate-116: 116deg;
+  --rotate-117: 117deg;
+  --rotate-118: 118deg;
+  --rotate-119: 119deg;
+  --rotate-120: 120deg;
+  --rotate-121: 121deg;
+  --rotate-122: 122deg;
+  --rotate-123: 123deg;
+  --rotate-124: 124deg;
+  --rotate-125: 125deg;
+  --rotate-126: 126deg;
+  --rotate-127: 127deg;
+  --rotate-128: 128deg;
+  --rotate-129: 129deg;
+  --rotate-130: 130deg;
+  --rotate-131: 131deg;
+  --rotate-132: 132deg;
+  --rotate-133: 133deg;
+  --rotate-134: 134deg;
+  --rotate-135: 135deg;
+  --rotate-136: 136deg;
+  --rotate-137: 137deg;
+  --rotate-138: 138deg;
+  --rotate-139: 139deg;
+  --rotate-140: 140deg;
+  --rotate-141: 141deg;
+  --rotate-142: 142deg;
+  --rotate-143: 143deg;
+  --rotate-144: 144deg;
+  --rotate-145: 145deg;
+  --rotate-146: 146deg;
+  --rotate-147: 147deg;
+  --rotate-148: 148deg;
+  --rotate-149: 149deg;
+  --rotate-150: 150deg;
+  --rotate-151: 151deg;
+  --rotate-152: 152deg;
+  --rotate-153: 153deg;
+  --rotate-154: 154deg;
+  --rotate-155: 155deg;
+  --rotate-156: 156deg;
+  --rotate-157: 157deg;
+  --rotate-158: 158deg;
+  --rotate-159: 159deg;
+  --rotate-160: 160deg;
+  --rotate-161: 161deg;
+  --rotate-162: 162deg;
+  --rotate-163: 163deg;
+  --rotate-164: 164deg;
+  --rotate-165: 165deg;
+  --rotate-166: 166deg;
+  --rotate-167: 167deg;
+  --rotate-168: 168deg;
+  --rotate-169: 169deg;
+  --rotate-170: 170deg;
+  --rotate-171: 171deg;
+  --rotate-172: 172deg;
+  --rotate-173: 173deg;
+  --rotate-174: 174deg;
+  --rotate-175: 175deg;
+  --rotate-176: 176deg;
+  --rotate-177: 177deg;
+  --rotate-178: 178deg;
+  --rotate-179: 179deg;
+  --rotate-180: 180deg;
+  --rotate-181: 181deg;
+  --rotate-182: 182deg;
+  --rotate-183: 183deg;
+  --rotate-184: 184deg;
+  --rotate-185: 185deg;
+  --rotate-186: 186deg;
+  --rotate-187: 187deg;
+  --rotate-188: 188deg;
+  --rotate-189: 189deg;
+  --rotate-190: 190deg;
+  --rotate-191: 191deg;
+  --rotate-192: 192deg;
+  --rotate-193: 193deg;
+  --rotate-194: 194deg;
+  --rotate-195: 195deg;
+  --rotate-196: 196deg;
+  --rotate-197: 197deg;
+  --rotate-198: 198deg;
+  --rotate-199: 199deg;
+  --rotate-200: 200deg;
+  --rotate-201: 201deg;
+  --rotate-202: 202deg;
+  --rotate-203: 203deg;
+  --rotate-204: 204deg;
+  --rotate-205: 205deg;
+  --rotate-206: 206deg;
+  --rotate-207: 207deg;
+  --rotate-208: 208deg;
+  --rotate-209: 209deg;
+  --rotate-210: 210deg;
+  --rotate-211: 211deg;
+  --rotate-212: 212deg;
+  --rotate-213: 213deg;
+  --rotate-214: 214deg;
+  --rotate-215: 215deg;
+  --rotate-216: 216deg;
+  --rotate-217: 217deg;
+  --rotate-218: 218deg;
+  --rotate-219: 219deg;
+  --rotate-220: 220deg;
+  --rotate-221: 221deg;
+  --rotate-222: 222deg;
+  --rotate-223: 223deg;
+  --rotate-224: 224deg;
+  --rotate-225: 225deg;
+  --rotate-226: 226deg;
+  --rotate-227: 227deg;
+  --rotate-228: 228deg;
+  --rotate-229: 229deg;
+  --rotate-230: 230deg;
+  --rotate-231: 231deg;
+  --rotate-232: 232deg;
+  --rotate-233: 233deg;
+  --rotate-234: 234deg;
+  --rotate-235: 235deg;
+  --rotate-236: 236deg;
+  --rotate-237: 237deg;
+  --rotate-238: 238deg;
+  --rotate-239: 239deg;
+  --rotate-240: 240deg;
+  --rotate-241: 241deg;
+  --rotate-242: 242deg;
+  --rotate-243: 243deg;
+  --rotate-244: 244deg;
+  --rotate-245: 245deg;
+  --rotate-246: 246deg;
+  --rotate-247: 247deg;
+  --rotate-248: 248deg;
+  --rotate-249: 249deg;
+  --rotate-250: 250deg;
+  --rotate-251: 251deg;
+  --rotate-252: 252deg;
+  --rotate-253: 253deg;
+  --rotate-254: 254deg;
+  --rotate-255: 255deg;
+  --rotate-256: 256deg;
+  --rotate-257: 257deg;
+  --rotate-258: 258deg;
+  --rotate-259: 259deg;
+  --rotate-260: 260deg;
+  --rotate-261: 261deg;
+  --rotate-262: 262deg;
+  --rotate-263: 263deg;
+  --rotate-264: 264deg;
+  --rotate-265: 265deg;
+  --rotate-266: 266deg;
+  --rotate-267: 267deg;
+  --rotate-268: 268deg;
+  --rotate-269: 269deg;
+  --rotate-270: 270deg;
+  --rotate-271: 271deg;
+  --rotate-272: 272deg;
+  --rotate-273: 273deg;
+  --rotate-274: 274deg;
+  --rotate-275: 275deg;
+  --rotate-276: 276deg;
+  --rotate-277: 277deg;
+  --rotate-278: 278deg;
+  --rotate-279: 279deg;
+  --rotate-280: 280deg;
+  --rotate-281: 281deg;
+  --rotate-282: 282deg;
+  --rotate-283: 283deg;
+  --rotate-284: 284deg;
+  --rotate-285: 285deg;
+  --rotate-286: 286deg;
+  --rotate-287: 287deg;
+  --rotate-288: 288deg;
+  --rotate-289: 289deg;
+  --rotate-290: 290deg;
+  --rotate-291: 291deg;
+  --rotate-292: 292deg;
+  --rotate-293: 293deg;
+  --rotate-294: 294deg;
+  --rotate-295: 295deg;
+  --rotate-296: 296deg;
+  --rotate-297: 297deg;
+  --rotate-298: 298deg;
+  --rotate-299: 299deg;
+  --rotate-300: 300deg;
+  --rotate-301: 301deg;
+  --rotate-302: 302deg;
+  --rotate-303: 303deg;
+  --rotate-304: 304deg;
+  --rotate-305: 305deg;
+  --rotate-306: 306deg;
+  --rotate-307: 307deg;
+  --rotate-308: 308deg;
+  --rotate-309: 309deg;
+  --rotate-310: 310deg;
+  --rotate-311: 311deg;
+  --rotate-312: 312deg;
+  --rotate-313: 313deg;
+  --rotate-314: 314deg;
+  --rotate-315: 315deg;
+  --rotate-316: 316deg;
+  --rotate-317: 317deg;
+  --rotate-318: 318deg;
+  --rotate-319: 319deg;
+  --rotate-320: 320deg;
+  --rotate-321: 321deg;
+  --rotate-322: 322deg;
+  --rotate-323: 323deg;
+  --rotate-324: 324deg;
+  --rotate-325: 325deg;
+  --rotate-326: 326deg;
+  --rotate-327: 327deg;
+  --rotate-328: 328deg;
+  --rotate-329: 329deg;
+  --rotate-330: 330deg;
+  --rotate-331: 331deg;
+  --rotate-332: 332deg;
+  --rotate-333: 333deg;
+  --rotate-334: 334deg;
+  --rotate-335: 335deg;
+  --rotate-336: 336deg;
+  --rotate-337: 337deg;
+  --rotate-338: 338deg;
+  --rotate-339: 339deg;
+  --rotate-340: 340deg;
+  --rotate-341: 341deg;
+  --rotate-342: 342deg;
+  --rotate-343: 343deg;
+  --rotate-344: 344deg;
+  --rotate-345: 345deg;
+  --rotate-346: 346deg;
+  --rotate-347: 347deg;
+  --rotate-348: 348deg;
+  --rotate-349: 349deg;
+  --rotate-350: 350deg;
+  --rotate-351: 351deg;
+  --rotate-352: 352deg;
+  --rotate-353: 353deg;
+  --rotate-354: 354deg;
+  --rotate-355: 355deg;
+  --rotate-356: 356deg;
+  --rotate-357: 357deg;
+  --rotate-358: 358deg;
+  --rotate-359: 359deg;
+
+  --rotate--1: -1deg;
+  --rotate--2: -2deg;
+  --rotate--3: -3deg;
+  --rotate--4: -4deg;
+  --rotate--5: -5deg;
+  --rotate--6: -6deg;
+  --rotate--7: -7deg;
+  --rotate--8: -8deg;
+  --rotate--9: -9deg;
+  --rotate--10: -10deg;
+  --rotate--11: -11deg;
+  --rotate--12: -12deg;
+  --rotate--13: -13deg;
+  --rotate--14: -14deg;
+  --rotate--15: -15deg;
+  --rotate--16: -16deg;
+  --rotate--17: -17deg;
+  --rotate--18: -18deg;
+  --rotate--19: -19deg;
+  --rotate--20: -20deg;
+  --rotate--21: -21deg;
+  --rotate--22: -22deg;
+  --rotate--23: -23deg;
+  --rotate--24: -24deg;
+  --rotate--25: -25deg;
+  --rotate--26: -26deg;
+  --rotate--27: -27deg;
+  --rotate--28: -28deg;
+  --rotate--29: -29deg;
+  --rotate--30: -30deg;
+  --rotate--31: -31deg;
+  --rotate--32: -32deg;
+  --rotate--33: -33deg;
+  --rotate--34: -34deg;
+  --rotate--35: -35deg;
+  --rotate--36: -36deg;
+  --rotate--37: -37deg;
+  --rotate--38: -38deg;
+  --rotate--39: -39deg;
+  --rotate--40: -40deg;
+  --rotate--41: -41deg;
+  --rotate--42: -42deg;
+  --rotate--43: -43deg;
+  --rotate--44: -44deg;
+  --rotate--45: -45deg;
+  --rotate--46: -46deg;
+  --rotate--47: -47deg;
+  --rotate--48: -48deg;
+  --rotate--49: -49deg;
+  --rotate--50: -50deg;
+  --rotate--51: -51deg;
+  --rotate--52: -52deg;
+  --rotate--53: -53deg;
+  --rotate--54: -54deg;
+  --rotate--55: -55deg;
+  --rotate--56: -56deg;
+  --rotate--57: -57deg;
+  --rotate--58: -58deg;
+  --rotate--59: -59deg;
+  --rotate--60: -60deg;
+  --rotate--61: -61deg;
+  --rotate--62: -62deg;
+  --rotate--63: -63deg;
+  --rotate--64: -64deg;
+  --rotate--65: -65deg;
+  --rotate--66: -66deg;
+  --rotate--67: -67deg;
+  --rotate--68: -68deg;
+  --rotate--69: -69deg;
+  --rotate--70: -70deg;
+  --rotate--71: -71deg;
+  --rotate--72: -72deg;
+  --rotate--73: -73deg;
+  --rotate--74: -74deg;
+  --rotate--75: -75deg;
+  --rotate--76: -76deg;
+  --rotate--77: -77deg;
+  --rotate--78: -78deg;
+  --rotate--79: -79deg;
+  --rotate--80: -80deg;
+  --rotate--81: -81deg;
+  --rotate--82: -82deg;
+  --rotate--83: -83deg;
+  --rotate--84: -84deg;
+  --rotate--85: -85deg;
+  --rotate--86: -86deg;
+  --rotate--87: -87deg;
+  --rotate--88: -88deg;
+  --rotate--89: -89deg;
+  --rotate--90: -90deg;
+  --rotate--91: -91deg;
+  --rotate--92: -92deg;
+  --rotate--93: -93deg;
+  --rotate--94: -94deg;
+  --rotate--95: -95deg;
+  --rotate--96: -96deg;
+  --rotate--97: -97deg;
+  --rotate--98: -98deg;
+  --rotate--99: -99deg;
+  --rotate--100: -100deg;
+  --rotate--101: -101deg;
+  --rotate--102: -102deg;
+  --rotate--103: -103deg;
+  --rotate--104: -104deg;
+  --rotate--105: -105deg;
+  --rotate--106: -106deg;
+  --rotate--107: -107deg;
+  --rotate--108: -108deg;
+  --rotate--109: -109deg;
+  --rotate--110: -110deg;
+  --rotate--111: -111deg;
+  --rotate--112: -112deg;
+  --rotate--113: -113deg;
+  --rotate--114: -114deg;
+  --rotate--115: -115deg;
+  --rotate--116: -116deg;
+  --rotate--117: -117deg;
+  --rotate--118: -118deg;
+  --rotate--119: -119deg;
+  --rotate--120: -120deg;
+  --rotate--121: -121deg;
+  --rotate--122: -122deg;
+  --rotate--123: -123deg;
+  --rotate--124: -124deg;
+  --rotate--125: -125deg;
+  --rotate--126: -126deg;
+  --rotate--127: -127deg;
+  --rotate--128: -128deg;
+  --rotate--129: -129deg;
+  --rotate--130: -130deg;
+  --rotate--131: -131deg;
+  --rotate--132: -132deg;
+  --rotate--133: -133deg;
+  --rotate--134: -134deg;
+  --rotate--135: -135deg;
+  --rotate--136: -136deg;
+  --rotate--137: -137deg;
+  --rotate--138: -138deg;
+  --rotate--139: -139deg;
+  --rotate--140: -140deg;
+  --rotate--141: -141deg;
+  --rotate--142: -142deg;
+  --rotate--143: -143deg;
+  --rotate--144: -144deg;
+  --rotate--145: -145deg;
+  --rotate--146: -146deg;
+  --rotate--147: -147deg;
+  --rotate--148: -148deg;
+  --rotate--149: -149deg;
+  --rotate--150: -150deg;
+  --rotate--151: -151deg;
+  --rotate--152: -152deg;
+  --rotate--153: -153deg;
+  --rotate--154: -154deg;
+  --rotate--155: -155deg;
+  --rotate--156: -156deg;
+  --rotate--157: -157deg;
+  --rotate--158: -158deg;
+  --rotate--159: -159deg;
+  --rotate--160: -160deg;
+  --rotate--161: -161deg;
+  --rotate--162: -162deg;
+  --rotate--163: -163deg;
+  --rotate--164: -164deg;
+  --rotate--165: -165deg;
+  --rotate--166: -166deg;
+  --rotate--167: -167deg;
+  --rotate--168: -168deg;
+  --rotate--169: -169deg;
+  --rotate--170: -170deg;
+  --rotate--171: -171deg;
+  --rotate--172: -172deg;
+  --rotate--173: -173deg;
+  --rotate--174: -174deg;
+  --rotate--175: -175deg;
+  --rotate--176: -176deg;
+  --rotate--177: -177deg;
+  --rotate--178: -178deg;
+  --rotate--179: -179deg;
+  --rotate--180: -180deg;
+  --rotate--181: -181deg;
+  --rotate--182: -182deg;
+  --rotate--183: -183deg;
+  --rotate--184: -184deg;
+  --rotate--185: -185deg;
+  --rotate--186: -186deg;
+  --rotate--187: -187deg;
+  --rotate--188: -188deg;
+  --rotate--189: -189deg;
+  --rotate--190: -190deg;
+  --rotate--191: -191deg;
+  --rotate--192: -192deg;
+  --rotate--193: -193deg;
+  --rotate--194: -194deg;
+  --rotate--195: -195deg;
+  --rotate--196: -196deg;
+  --rotate--197: -197deg;
+  --rotate--198: -198deg;
+  --rotate--199: -199deg;
+  --rotate--200: -200deg;
+  --rotate--201: -201deg;
+  --rotate--202: -202deg;
+  --rotate--203: -203deg;
+  --rotate--204: -204deg;
+  --rotate--205: -205deg;
+  --rotate--206: -206deg;
+  --rotate--207: -207deg;
+  --rotate--208: -208deg;
+  --rotate--209: -209deg;
+  --rotate--210: -210deg;
+  --rotate--211: -211deg;
+  --rotate--212: -212deg;
+  --rotate--213: -213deg;
+  --rotate--214: -214deg;
+  --rotate--215: -215deg;
+  --rotate--216: -216deg;
+  --rotate--217: -217deg;
+  --rotate--218: -218deg;
+  --rotate--219: -219deg;
+  --rotate--220: -220deg;
+  --rotate--221: -221deg;
+  --rotate--222: -222deg;
+  --rotate--223: -223deg;
+  --rotate--224: -224deg;
+  --rotate--225: -225deg;
+  --rotate--226: -226deg;
+  --rotate--227: -227deg;
+  --rotate--228: -228deg;
+  --rotate--229: -229deg;
+  --rotate--230: -230deg;
+  --rotate--231: -231deg;
+  --rotate--232: -232deg;
+  --rotate--233: -233deg;
+  --rotate--234: -234deg;
+  --rotate--235: -235deg;
+  --rotate--236: -236deg;
+  --rotate--237: -237deg;
+  --rotate--238: -238deg;
+  --rotate--239: -239deg;
+  --rotate--240: -240deg;
+  --rotate--241: -241deg;
+  --rotate--242: -242deg;
+  --rotate--243: -243deg;
+  --rotate--244: -244deg;
+  --rotate--245: -245deg;
+  --rotate--246: -246deg;
+  --rotate--247: -247deg;
+  --rotate--248: -248deg;
+  --rotate--249: -249deg;
+  --rotate--250: -250deg;
+  --rotate--251: -251deg;
+  --rotate--252: -252deg;
+  --rotate--253: -253deg;
+  --rotate--254: -254deg;
+  --rotate--255: -255deg;
+  --rotate--256: -256deg;
+  --rotate--257: -257deg;
+  --rotate--258: -258deg;
+  --rotate--259: -259deg;
+  --rotate--260: -260deg;
+  --rotate--261: -261deg;
+  --rotate--262: -262deg;
+  --rotate--263: -263deg;
+  --rotate--264: -264deg;
+  --rotate--265: -265deg;
+  --rotate--266: -266deg;
+  --rotate--267: -267deg;
+  --rotate--268: -268deg;
+  --rotate--269: -269deg;
+  --rotate--270: -270deg;
+  --rotate--271: -271deg;
+  --rotate--272: -272deg;
+  --rotate--273: -273deg;
+  --rotate--274: -274deg;
+  --rotate--275: -275deg;
+  --rotate--276: -276deg;
+  --rotate--277: -277deg;
+  --rotate--278: -278deg;
+  --rotate--279: -279deg;
+  --rotate--280: -280deg;
+  --rotate--281: -281deg;
+  --rotate--282: -282deg;
+  --rotate--283: -283deg;
+  --rotate--284: -284deg;
+  --rotate--285: -285deg;
+  --rotate--286: -286deg;
+  --rotate--287: -287deg;
+  --rotate--288: -288deg;
+  --rotate--289: -289deg;
+  --rotate--290: -290deg;
+  --rotate--291: -291deg;
+  --rotate--292: -292deg;
+  --rotate--293: -293deg;
+  --rotate--294: -294deg;
+  --rotate--295: -295deg;
+  --rotate--296: -296deg;
+  --rotate--297: -297deg;
+  --rotate--298: -298deg;
+  --rotate--299: -299deg;
+  --rotate--300: -300deg;
+  --rotate--301: -301deg;
+  --rotate--302: -302deg;
+  --rotate--303: -303deg;
+  --rotate--304: -304deg;
+  --rotate--305: -305deg;
+  --rotate--306: -306deg;
+  --rotate--307: -307deg;
+  --rotate--308: -308deg;
+  --rotate--309: -309deg;
+  --rotate--310: -310deg;
+  --rotate--311: -311deg;
+  --rotate--312: -312deg;
+  --rotate--313: -313deg;
+  --rotate--314: -314deg;
+  --rotate--315: -315deg;
+  --rotate--316: -316deg;
+  --rotate--317: -317deg;
+  --rotate--318: -318deg;
+  --rotate--319: -319deg;
+  --rotate--320: -320deg;
+  --rotate--321: -321deg;
+  --rotate--322: -322deg;
+  --rotate--323: -323deg;
+  --rotate--324: -324deg;
+  --rotate--325: -325deg;
+  --rotate--326: -326deg;
+  --rotate--327: -327deg;
+  --rotate--328: -328deg;
+  --rotate--329: -329deg;
+  --rotate--330: -330deg;
+  --rotate--331: -331deg;
+  --rotate--332: -332deg;
+  --rotate--333: -333deg;
+  --rotate--334: -334deg;
+  --rotate--335: -335deg;
+  --rotate--336: -336deg;
+  --rotate--337: -337deg;
+  --rotate--338: -338deg;
+  --rotate--339: -339deg;
+  --rotate--340: -340deg;
+  --rotate--341: -341deg;
+  --rotate--342: -342deg;
+  --rotate--343: -343deg;
+  --rotate--344: -344deg;
+  --rotate--345: -345deg;
+  --rotate--346: -346deg;
+  --rotate--347: -347deg;
+  --rotate--348: -348deg;
+  --rotate--349: -349deg;
+  --rotate--350: -350deg;
+  --rotate--351: -351deg;
+  --rotate--352: -352deg;
+  --rotate--353: -353deg;
+  --rotate--354: -354deg;
+  --rotate--355: -355deg;
+  --rotate--356: -356deg;
+  --rotate--357: -357deg;
+  --rotate--358: -358deg;
+  --rotate--359: -359deg;
+}
+
+@utility scroll-lock {
+    @apply touch-none overflow-hidden;
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: auto;
+}
+
+/* @utility layout-grid-mobile { */
+/* 	grid-template-columns: 1fr; */
+/* 	grid-template-rows: repeat(2, min-content) 1fr; */
+/* 	gap: 0; */
+/* 	grid-template-areas: */
+/* 		'sidebar' */
+/* 		'topbar' */
+/* 		'content'; */
+/* } */
+/**/
+/* @utility layout-grid-default { */
+/* 		grid-template-columns: auto 1fr; */
+/* 		grid-template-rows: min-content 1fr; */
+/* 		grid-template-areas: */
+/* 			'topbar topbar' */
+/* 			'sidebar content'; */
+/* } */
+/**/
+/* @utility layout-grid-mobile-login-mobile { */
+/* 		grid-template-areas: */
+/* 			'topbar topbar' */
+/* 			'content content'; */
+/* } */
+/**/
+/* @utility layout-grid-mobile-login-default { */
+/* 		grid-template-areas: */
+/* 			'topbar topbar' */
+/* 			'content sidebar'; */
+/* } */

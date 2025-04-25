@@ -1,6 +1,6 @@
 :host {
 	@apply flex w-full flex-col;
-	@apply outline-none #{!important};
+	@apply outline-hidden ;
 
 	.input-label {
 		@apply mb-[2px] text-xs font-semibold uppercase tracking-wider text-storm-vague;
@@ -21,7 +21,7 @@
 
 		.prefix {
 			@apply rounded-br-none rounded-tr-none;
-			@apply border-r-0 #{!important};
+			@apply border-r-0 ;
 			@apply order-1;
 			@apply pr-2;
 		}
@@ -30,7 +30,7 @@
 			@apply rounded-bl-none rounded-tl-none;
 			@apply order-3;
 			@apply pl-2;
-			@apply border-l-0 #{!important};
+			@apply border-l-0 ;
 		}
 	}
 }
@@ -39,7 +39,7 @@
 :host([focused]),
 :host(:focus-within),
 :host(:focus) {
-	@apply outline-none #{!important};
+	@apply outline-hidden ;
 
 	.prefix,
 	.suffix {

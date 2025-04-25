@@ -122,7 +122,7 @@ export class PaginationSize {
 								: this._defaultItemTemplate(this.size)}
 						</p>
 						<p-icon
-							class='flex-shrink-0'
+							class='shrink-0'
 							variant='double-caret'
 							size='sm'
 						/>

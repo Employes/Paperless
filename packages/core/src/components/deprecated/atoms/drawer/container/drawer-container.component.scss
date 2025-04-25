@@ -6,7 +6,7 @@ p-drawer-container {
 	@apply min-h-screen;
 	@apply animate-slide-in-right;
 
-	@apply shadow-3 #{!important};
+	@apply shadow-3 ;
 
 	&.closing {
 		@apply animate-slide-out-right;

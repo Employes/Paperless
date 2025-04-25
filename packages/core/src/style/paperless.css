@@ -1,0 +1,61 @@
+@import url(https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap);
+@import url(https://fonts.cdnfonts.com/css/ambit);
+
+html,
+body {
+	@apply font-geist;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+
+	@apply w-full;
+	@apply bg-white;
+	@apply max-w-dvw;
+}
+
+html {
+	height: -moz-stretch;
+	height: -webkit-stretch;
+	height: stretch;
+}
+
+body {
+	@apply text-base font-medium text-black-teal;
+
+	@apply h-dvh;
+	height: -moz-stretch;
+	height: -webkit-stretch;
+	height: stretch;
+}
+
+body * {
+	@apply font-geist;
+	@apply box-border;
+}
+
+a {
+	@apply text-inherit visited:text-inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	@apply font-ambit font-bold;
+}
+
+h1 {
+	@apply text-3xl;
+}
+
+h2 {
+	@apply text-2xl;
+}
+
+h3 {
+	@apply text-xl;
+}
+
+h4 {
+	@apply text-lg;
+}

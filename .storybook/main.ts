@@ -44,6 +44,7 @@ const config: StorybookConfig = {
 
 		const { mergeConfig } = await import('vite');
 		const { liveReload } = await import('vite-plugin-live-reload');
+		const { default: tailwindCss } = await import("@tailwindcss/vite");
 
 		return mergeConfig(config, {
 			plugins: [
@@ -51,6 +52,7 @@ const config: StorybookConfig = {
 					'packages/core/dist/build/paperless.esm.js',
 					'packages/core/dist/build/paperless.js',
 				]),
+				tailwindCss()
 			],
 			build: {
 				chunkSizeWarningLimit: 1000,

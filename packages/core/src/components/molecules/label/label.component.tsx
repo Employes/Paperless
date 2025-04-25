@@ -87,7 +87,7 @@ export class Label {
 				>
 					{this.icon && (
 						<p-icon
-							class='flex-shrink-0'
+							class='shrink-0'
 							variant={this.icon}
 							flip={this.iconFlip}
 							rotate={this.iconRotate}

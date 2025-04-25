@@ -2,8 +2,8 @@ import { Component, h, Host, Prop } from '@stencil/core';
 
 @Component({
 	tag: 'p-layout',
-	styleUrl: 'layout.component.scss',
-	shadow: true,
+	styleUrl: 'layout.component.css',
+	shadow: true
 })
 export class Layout {
 	/**

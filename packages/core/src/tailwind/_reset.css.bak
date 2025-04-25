@@ -1,0 +1,36 @@
+@layer base {
+	* {
+		@apply font-geist;
+	}
+
+	html,
+	body {
+		@apply w-full;
+		@apply bg-white;
+		@apply max-w-[100dvw]
+
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	html {
+		height: -moz-stretch;
+		height: -webkit-stretch;
+		height: stretch;
+	}
+
+	body {
+		@apply h-[100dvh];
+		height: -moz-stretch;
+		height: -webkit-stretch;
+		height: stretch;
+	}
+
+	body * {
+		@apply box-border;
+	}
+
+	a {
+		@apply text-inherit visited:text-inherit;
+	}
+}

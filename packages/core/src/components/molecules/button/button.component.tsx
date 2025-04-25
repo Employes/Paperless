@@ -76,14 +76,14 @@ const button = cva(
 				variant: ['primary', 'secondary', 'dropdown'],
 				disabled: false,
 				loading: false,
-				class: 'active:border-supportive-lilac-800 active:ring active:ring-2',
+				class: 'active:border-supportive-lilac-800 active:ring-2',
 			},
 			{
 				variant: ['primary', 'secondary', 'dropdown'],
 				disabled: false,
 				loading: false,
 				active: true,
-				class: 'border-supportive-lilac-800 ring ring-2',
+				class: 'border-supportive-lilac-800 ring-2',
 			},
 			{
 				variant: ['primary', 'secondary', 'transparent', 'dropdown'],

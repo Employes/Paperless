@@ -4,5 +4,5 @@
 }
 
 :host(:not(.no-shadow)) {
-	@apply shadow-3 #{!important};
+	@apply shadow-3 ;
 }

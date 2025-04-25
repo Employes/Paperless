@@ -13,8 +13,8 @@ if (docJson) setStencilDocJson(docJson);
 // import { defineCustomElements } from '../packages/core/loader';
 // defineCustomElements();
 
-import './tailwind.css';
-import './custom.css';
+// import './preview.css'
+
 import { extractDefaultArgs } from './default-args';
 
 // export const globalTypes = {

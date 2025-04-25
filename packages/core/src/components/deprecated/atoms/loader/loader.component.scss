@@ -7,16 +7,16 @@
 		will-change: transform;
 
 		&.color-storm {
-			@apply border-storm-light/40 border-t-storm #{!important};
+			@apply border-storm-light/40 border-t-storm ;
 		}
 
 		&.color-white {
-			@apply border-indigo-light/40 border-t-white #{!important};
+			@apply border-indigo-light/40 border-t-white ;
 		}
 	}
 
 	.loading-screen {
-		@apply fixed left-0 top-0 h-screen-safe w-screen-safe;
+		@apply fixed left-0 top-0 h-[100dvh] w-[100dvw];
 		@apply flex items-center justify-center;
 		@apply bg-mystic;
 

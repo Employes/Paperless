@@ -3,8 +3,8 @@ p-card-body {
 	@apply text-sm text-storm-vague;
 
 	&[inherit-text] {
-		color: inherit #{!important};
-		font-size: inherit #{!important};
-		font-weight: inherit #{!important};
+		color: inherit ;
+		font-size: inherit ;
+		font-weight: inherit ;
 	}
 }

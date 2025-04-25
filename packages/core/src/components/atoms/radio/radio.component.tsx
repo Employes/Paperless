@@ -13,7 +13,7 @@ import { asBoolean } from '../../../utils/as-boolean';
 
 const radio = cva(
 	[
-		'peer appearance-none m-0 outline-none flex-shrink-0',
+		'peer appearance-none m-0 outline-hidden shrink-0',
 		'rounded-full border border-inset border-solid ',
 		'w-4 h-4',
 	],
@@ -56,7 +56,7 @@ const circle = cva(
 		variants: {
 			disabled: {
 				false:
-					'peer-checked:bg-white peer-checked:ring-1 peer-checked:ring-black-teal/10',
+					'peer-checked:bg-white peer-checked:ring peer-checked:ring-black-teal/10',
 				true: 'peer-checked:bg-black-teal-200',
 			},
 		},
@@ -112,7 +112,7 @@ export class Radio {
 					htmlFor={this.id?.length ? this.id : this._nonce}
 					class='flex items-center justify-start gap-2 text-black-teal'
 				>
-					<div class='relative flex flex-shrink-0 items-center'>
+					<div class='relative flex shrink-0 items-center'>
 						<input
 							class={radio({
 								disabled: asBoolean(this.disabled),

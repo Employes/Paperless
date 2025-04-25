@@ -11,7 +11,7 @@
 :host(.variant-header) {
 	@apply bg-mystic-light;
 	@apply text-xs font-semibold uppercase text-storm-vague;
-	@apply border-x-0 border-y border-solid border-y-mystic-dark #{!important};
+	@apply border-x-0 border-y border-solid border-y-mystic-dark ;
 
 	.content {
 		@apply min-h-0 py-2 tablet:h-auto;

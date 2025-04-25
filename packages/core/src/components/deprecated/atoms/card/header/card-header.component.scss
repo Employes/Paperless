@@ -1,8 +1,8 @@
 p-card-header {
-	@apply mx-4 h-14 flex-shrink-0;
+	@apply mx-4 h-14 shrink-0;
 	@apply flex items-center gap-3;
 	@apply text-storm-medium;
-	@apply border-b border-b-mystic-medium #{!important};
+	@apply border-b border-b-mystic-medium ;
 
 	.content {
 		@apply order-2;

@@ -14,7 +14,7 @@
 		"prebuild:prod": "yarn set-version",
 		"build:prod": "ng build --configuration production",
 		"postbuild:prod": "yarn tailwind:process",
-		"tailwind:process": "tailwindcss -c ./projects/paperless/tailwind.config.js -i projects/paperless/src/paperless.scss -o dist/paperless.css",
+		"tailwind:process": "npx @tailwindcss/cli -i projects/paperless/src/paperless.css -o dist/paperless.css",
 		"watch": "ng build --watch --configuration development",
 		"test": "ng test",
 		"preyarn:publish": "cp ../../README.md ./dist/",
@@ -43,6 +43,7 @@
 		"@angular/cli": "15.2.8",
 		"@angular/compiler-cli": "15.2.9",
 		"@types/node": "^22.13.5",
+		"@tailwindcss/postcss": "4.1.4",
 		"autoprefixer": "10.4.14",
 		"jasmine-core": "5.0.0",
 		"karma": "6.4.2",
@@ -51,8 +52,8 @@
 		"karma-jasmine": "5.1.0",
 		"karma-jasmine-html-reporter": "2.0.0",
 		"ng-packagr": "15.2.2",
-		"postcss": "8.4.23",
-		"tailwindcss": "3.4.17",
+		"postcss": "8.5.3",
+		"tailwindcss": "4.1.4",
 		"typescript": "4.8.2"
 	}
 }
