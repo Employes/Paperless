@@ -1,7 +1,7 @@
 import { html, nothing } from 'lit';
 
 const meta = {
-	title: 'Design System/Deprecated/Atoms/Modal/Body',
+	title: 'Design System/Atoms/Modal/Body',
 	component: 'p-modal-body',
 	args: {
 		content: 'ModalBody',
