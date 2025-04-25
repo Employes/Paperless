@@ -4,7 +4,7 @@ module.exports = {
 	...config,
 	content: [
 		'./stories/**/*.{mdx,tsx}',
-		'./packages/core/components/**/*.story.mdx',
-		'./packages/core/components/**/*.stories.ts',
+		'./packages/core/src/components/**/*.story.mdx',
+		'./packages/core/src/components/**/*.stories.@(js|jsx|ts|tsx)',
 	],
 };
