@@ -3,7 +3,7 @@ import { Component, h } from '@stencil/core';
 @Component({
 	tag: 'p-modal-footer',
 	styleUrl: 'modal-footer.component.css',
-	shadow: true,
+	scoped: true,
 })
 export class ModalFooter {
 	render() {
