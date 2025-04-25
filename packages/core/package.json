@@ -25,11 +25,8 @@
 	"scripts": {
 		"build": "stencil build --docs",
 		"build:prod": "stencil build",
-		"tailwind:process": "tailwindcss -c ./src/tailwind.config.ts -i dist/paperless/paperless.css -o dist/paperless/paperless.css",
-		"tailwind:process:watch": "yarn tailwind:process --watch",
 		"watch": "stencil build --watch",
-		"watch:both": "concurrently \"yarn watch\" \"yarn tailwind:process:watch\"",
-		"watch:bg": "(yarn watch:both&)",
+		"watch:bg": "(yarn watch&)",
 		"start": "stencil build --dev --watch --serve",
 		"test": "stencil test --spec --e2e",
 		"watch:test": "stencil test --spec --e2e --watchAll",

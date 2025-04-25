@@ -1,36 +1,34 @@
-@layer base {
-	* {
-		@apply font-geist;
-	}
+* {
+	@apply font-geist;
+}
 
-	html,
-	body {
-		@apply w-full;
-		@apply bg-white;
-		@apply max-w-screen-safe;
+html,
+body {
+	@apply w-full;
+	@apply bg-white;
+	@apply max-w-screen-safe;
 
-		text-rendering: optimizeLegibility;
-		-webkit-font-smoothing: antialiased;
-	}
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}
 
-	html {
-		height: -moz-stretch;
-		height: -webkit-stretch;
-		height: stretch;
-	}
+html {
+	height: -moz-stretch;
+	height: -webkit-stretch;
+	height: stretch;
+}
 
-	body {
-		@apply h-screen-safe;
-		height: -moz-stretch;
-		height: -webkit-stretch;
-		height: stretch;
-	}
+body {
+	@apply h-screen-safe;
+	height: -moz-stretch;
+	height: -webkit-stretch;
+	height: stretch;
+}
 
-	body * {
-		@apply box-border;
-	}
+body * {
+	@apply box-border;
+}
 
-	a {
-		@apply text-inherit visited:text-inherit;
-	}
+a {
+	@apply text-inherit visited:text-inherit;
 }

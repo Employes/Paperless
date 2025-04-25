@@ -7,14 +7,6 @@ import {
 import docJson from '../packages/core/component-docs.json';
 if (docJson) setStencilDocJson(docJson);
 
-// import 'codemirror/lib/codemirror.css';
-// import './codemirror.css';
-
-// import { defineCustomElements } from '../packages/core/loader';
-// defineCustomElements();
-
-import './tailwind.css';
-import './custom.css';
 import { extractDefaultArgs } from './default-args';
 
 // export const globalTypes = {
@@ -31,7 +23,8 @@ import { extractDefaultArgs } from './default-args';
 //         },
 //     },
 // };
-//
+
+import './tailwind.css';
 
 const options = {
 	excludeCategories: ['properties'],
