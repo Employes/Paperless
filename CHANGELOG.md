@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.60](https://github.com/employes/paperless/compare/v2.0.1-beta.59...v2.0.1-beta.60) (2025-04-28)
+
+
+### Bug Fixes
+
+* **atoms/card/header:** Set a max height to the header ([86cbcc0](https://github.com/employes/paperless/commit/86cbcc00af50e378c947d0674e6ed66090b806c6))
+
+
+### Features
+
+* **atoms/card/body:** Set small text as default ([2e26ee0](https://github.com/employes/paperless/commit/2e26ee0b3f97f1a111d10cff3f0dd1ecf9ee53ec))
+* **atoms/card/container:** Add active property ([f4eaccf](https://github.com/employes/paperless/commit/f4eaccfd1ce2aeda0314e6bff85b8c8ba387081e))
+
+
+
+
+
 ## [2.0.1-beta.59](https://github.com/employes/paperless/compare/v2.0.1-beta.58...v2.0.1-beta.59) (2025-04-28)
 
 
