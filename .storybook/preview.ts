@@ -37,8 +37,7 @@ export const parameters = {
 		storySort: {
 			order: [
 				'Introduction',
-				['Welcome', 'Changelog'],
-				'Foundation',
+				['Welcome', 'Changelog', 'Atomic Design'],
 				'Design system',
 				[
 					'Typography',
