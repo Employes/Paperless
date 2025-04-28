@@ -5,19 +5,10 @@ const header = cva(
 	'inline-flex w-full flex-col relative bg-white rounded-t-2xl overflow-hidden'
 );
 
-const content = cva(
-	['flex justify-end', 'w-full p-4 pb-0 bg-off-white  -mb-1'],
-	{
-		variants: {
-			size: {
-				base: 'h-12',
-				lg: '',
-				xl: '',
-				'2xl': '',
-			},
-		},
-	}
-);
+const content = cva([
+	'flex justify-end',
+	'w-full p-4 pb-0 bg-off-white -mb-1 h-12',
+]);
 
 const title = cva([
 	'flex-1 text-center',
@@ -31,11 +22,6 @@ const title = cva([
 	shadow: true,
 })
 export class ModalHeader {
-	/**
-	 * Size of the header
-	 */
-	@Prop() size: 'base' | 'lg' | 'xl' | '2xl' = 'base';
-
 	/**
 	 * Wether to show the close button on mobile
 	 */
@@ -52,7 +38,7 @@ export class ModalHeader {
 	render() {
 		return (
 			<div class={header()}>
-				<div class={content({ size: this.size })}>
+				<div class={content()}>
 					<div class={title()}>
 						<slot />
 					</div>

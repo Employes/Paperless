@@ -7,10 +7,9 @@
 
 ## Properties
 
-| Property    | Attribute    | Description                               | Type                              | Default  |
-| ----------- | ------------ | ----------------------------------------- | --------------------------------- | -------- |
-| `showClose` | `show-close` | Wether to show the close button on mobile | `boolean`                         | `true`   |
-| `size`      | `size`       | Size of the header                        | `"2xl" \| "base" \| "lg" \| "xl"` | `'base'` |
+| Property    | Attribute    | Description                               | Type      | Default |
+| ----------- | ------------ | ----------------------------------------- | --------- | ------- |
+| `showClose` | `show-close` | Wether to show the close button on mobile | `boolean` | `true`  |
 
 
 ## Events

@@ -107,7 +107,6 @@ export class Modal {
 				>
 					{(this.header?.length || this._hasHeaderSlot) && (
 						<p-modal-header
-							size={this.size}
 							showClose={this.showClose}
 							onClose={ev => this.close('button', ev.detail)}
 						>
