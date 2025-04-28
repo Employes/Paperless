@@ -6,6 +6,10 @@ export const extractDefaultArgs = (
 	initialArgs: { [key: string]: any }
 ) => {
 	const metaData = getComponentMetaData(componentName);
+	if (!metaData) {
+		return initialArgs;
+	}
+
 	const { props } = metaData;
 
 	return (
