@@ -46,7 +46,7 @@ graph TD;
   p-modal --> p-modal-body
   p-modal --> p-modal-footer
   p-modal-header --> p-button
-  p-modal-header --> p-smile-footer
+  p-modal-header --> p-smile
   p-button --> p-icon
   p-button --> p-loader
   p-modal-footer --> p-divider

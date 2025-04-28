@@ -1,20 +1,20 @@
 import { newE2EPage } from '@stencil/core/testing';
 
-describe('p-smile-footer', () => {
+describe('p-smile', () => {
 	it('renders', async () => {
 		const page = await newE2EPage();
 
-		await page.setContent('<p-smile-footer></p-smile-footer>');
-		const element = await page.find('p-smile-footer');
+		await page.setContent('<p-smile></p-smile>');
+		const element = await page.find('p-smile');
 		expect(element).toHaveClass('hydrated');
 	});
 
 	it('renders changes to the content', async () => {
 		const page = await newE2EPage();
 
-		await page.setContent('<p-smile-footer></p-smile-footer>');
+		await page.setContent('<p-smile></p-smile>');
 		// const component = await page.find('p-button');
-		const element = await page.find('p-smile-footer');
+		const element = await page.find('p-smile');
 		expect(element.textContent).toEqual(``);
 
 		// component.setProperty('name', 'World');
