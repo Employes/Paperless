@@ -23,8 +23,8 @@ const container = cva(
 			},
 			closing: {
 				false:
-					'animate-slide-in-bottom desktop-xs:animate-slide-in-bottom-small opening',
-				true: 'animate-slide-out-bottom desktop-xs:animate-slide-out-bottom-small closing',
+					'animate-slide-in-bottom desktop-xs:animate-slide-in-bottom-small',
+				true: 'animate-slide-out-bottom desktop-xs:animate-slide-out-bottom-small pointer-events-none',
 			},
 		},
 	}

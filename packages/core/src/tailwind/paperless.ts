@@ -29,8 +29,8 @@ export const paperless = plugin(
 			boxShadow: shadows,
 			dropShadow: shadows,
 			extend: {
-				keyframes: animation.keyframes,
 				animation: animation.animation,
+				keyframes: animation.keyframes,
 				fontFamily: {
 					geist: ['Geist', 'serif'],
 					ambit: ['Ambit', 'sans-serif'],
