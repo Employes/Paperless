@@ -1,7 +1,7 @@
 import { html, nothing } from 'lit';
 
 const meta = {
-	title: 'Design System/Deprecated/Atoms/Card/Body',
+	title: 'Design System/Atoms/Card/Body',
 	component: 'p-card-body',
 	args: {
 		content: 'CardBody',
@@ -16,10 +16,7 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({
-		content,
-		'inherit-text': inheritText,
-	}) => html`<p-card-body
+	render: ({ content, 'inherit-text': inheritText }) => html`<p-card-body
 		inherit-text=${inheritText ?? nothing}
 	>
 		${content}

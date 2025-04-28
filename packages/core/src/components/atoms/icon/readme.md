@@ -22,7 +22,7 @@
  - [p-accordion](../../deprecated/molecules/accordion)
  - [p-attachment](../../deprecated/molecules/attachment)
  - [p-button](../../molecules/button)
- - [p-card-header](../../deprecated/atoms/card/header)
+ - [p-card-header](../card/header)
  - [p-checkbox](../checkbox)
  - [p-cropper](../../deprecated/molecules/cropper)
  - [p-dropdown-menu-item](../dropdown-menu/item)

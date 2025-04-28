@@ -28,13 +28,13 @@
 ### Depends on
 
 - [p-button](../../../molecules/button)
-- [p-smile-footer](../../smile-footer)
+- [p-smile](../../smile)
 
 ### Graph
 ```mermaid
 graph TD;
   p-modal-header --> p-button
-  p-modal-header --> p-smile-footer
+  p-modal-header --> p-smile
   p-button --> p-icon
   p-button --> p-loader
   p-modal --> p-modal-header
