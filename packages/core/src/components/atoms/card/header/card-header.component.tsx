@@ -13,7 +13,7 @@ const header = cva(
 		variants: {
 			variant: {
 				default: 'px-4',
-				curve: 'aspect-[5/1]',
+				curve: 'aspect-[5/1] max-h-[6.25rem]',
 			},
 		},
 	}
