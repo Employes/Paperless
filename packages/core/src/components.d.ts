@@ -1094,10 +1094,6 @@ export namespace Components {
           * Wether to show the close button on mobile
          */
         "showClose": boolean;
-        /**
-          * Size of the header
-         */
-        "size": 'base' | 'lg' | 'xl' | '2xl';
     }
     interface PNavbar {
     }
@@ -4199,10 +4195,6 @@ declare namespace LocalJSX {
           * Wether to show the close button on mobile
          */
         "showClose"?: boolean;
-        /**
-          * Size of the header
-         */
-        "size"?: 'base' | 'lg' | 'xl' | '2xl';
     }
     interface PNavbar {
     }
