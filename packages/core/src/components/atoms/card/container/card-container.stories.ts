@@ -1,7 +1,7 @@
 import { html, nothing } from 'lit';
 
 const meta = {
-	title: 'Design System/Deprecated/Atoms/Card/Container',
+	title: 'Design System/Atoms/Card/Container',
 	component: 'p-card-container',
 	args: {
 		content: 'CardContainer',
@@ -16,11 +16,7 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({
-		content,
-		hoverable,
-		shadow,
-	}) => html`<p-card-container
+	render: ({ content, hoverable, shadow }) => html`<p-card-container
 		hoverable=${hoverable ?? nothing}
 		shadow=${shadow ?? nothing}
 	>

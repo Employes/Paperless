@@ -17,6 +17,7 @@
 ### Used by
 
  - [p-accordion](../../deprecated/molecules/accordion)
+ - [p-card-header](../card/header)
  - [p-floating-menu-container](../floating-menu/container)
  - [p-modal-footer](../modal/footer)
  - [p-pagination](../../molecules/pagination/pagination)
@@ -27,6 +28,7 @@
 ```mermaid
 graph TD;
   p-accordion --> p-divider
+  p-card-header --> p-divider
   p-floating-menu-container --> p-divider
   p-modal-footer --> p-divider
   p-pagination --> p-divider

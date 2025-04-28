@@ -268,10 +268,6 @@ export namespace Components {
         "variant": 'default' | 'embedded';
     }
     interface PCardBody {
-        /**
-          * Wether the button should inherit text styles
-         */
-        "inheritText": boolean;
     }
     interface PCardContainer {
         /**
@@ -285,13 +281,25 @@ export namespace Components {
     }
     interface PCardHeader {
         /**
-          * Enable the title arrow
-         */
-        "arrow": boolean;
-        /**
           * Content of the card header
          */
         "header": string;
+        /**
+          * Icon to show on the button
+         */
+        "icon"?: IconVariant;
+        /**
+          * Icon flip
+         */
+        "iconFlip"?: IconFlipOptions;
+        /**
+          * Icon rotate
+         */
+        "iconRotate"?: RotateOptions;
+        /**
+          * The variant of the card header
+         */
+        "variant": 'default' | 'curve';
     }
     interface PCheckbox {
         /**
@@ -1453,7 +1461,11 @@ export namespace Components {
          */
         "active": boolean;
     }
-    interface PSmileFooter {
+    interface PSmile {
+        /**
+          * The variant of the smile footer
+         */
+        "variant": 'modal' | 'card';
     }
     interface PStatus {
         /**
@@ -2766,11 +2778,11 @@ declare global {
         prototype: HTMLPSliderIndicatorElement;
         new (): HTMLPSliderIndicatorElement;
     };
-    interface HTMLPSmileFooterElement extends Components.PSmileFooter, HTMLStencilElement {
+    interface HTMLPSmileElement extends Components.PSmile, HTMLStencilElement {
     }
-    var HTMLPSmileFooterElement: {
-        prototype: HTMLPSmileFooterElement;
-        new (): HTMLPSmileFooterElement;
+    var HTMLPSmileElement: {
+        prototype: HTMLPSmileElement;
+        new (): HTMLPSmileElement;
     };
     interface HTMLPStatusElement extends Components.PStatus, HTMLStencilElement {
     }
@@ -3036,7 +3048,7 @@ declare global {
         "p-segment-item": HTMLPSegmentItemElement;
         "p-select": HTMLPSelectElement;
         "p-slider-indicator": HTMLPSliderIndicatorElement;
-        "p-smile-footer": HTMLPSmileFooterElement;
+        "p-smile": HTMLPSmileElement;
         "p-status": HTMLPStatusElement;
         "p-stepper": HTMLPStepperElement;
         "p-stepper-item": HTMLPStepperItemElement;
@@ -3304,10 +3316,6 @@ declare namespace LocalJSX {
         "variant"?: 'default' | 'embedded';
     }
     interface PCardBody {
-        /**
-          * Wether the button should inherit text styles
-         */
-        "inheritText"?: boolean;
     }
     interface PCardContainer {
         /**
@@ -3321,13 +3329,25 @@ declare namespace LocalJSX {
     }
     interface PCardHeader {
         /**
-          * Enable the title arrow
-         */
-        "arrow"?: boolean;
-        /**
           * Content of the card header
          */
         "header"?: string;
+        /**
+          * Icon to show on the button
+         */
+        "icon"?: IconVariant;
+        /**
+          * Icon flip
+         */
+        "iconFlip"?: IconFlipOptions;
+        /**
+          * Icon rotate
+         */
+        "iconRotate"?: RotateOptions;
+        /**
+          * The variant of the card header
+         */
+        "variant"?: 'default' | 'curve';
     }
     interface PCheckbox {
         /**
@@ -4598,7 +4618,11 @@ declare namespace LocalJSX {
          */
         "active"?: boolean;
     }
-    interface PSmileFooter {
+    interface PSmile {
+        /**
+          * The variant of the smile footer
+         */
+        "variant"?: 'modal' | 'card';
     }
     interface PStatus {
         /**
@@ -5337,7 +5361,7 @@ declare namespace LocalJSX {
         "p-segment-item": PSegmentItem;
         "p-select": PSelect;
         "p-slider-indicator": PSliderIndicator;
-        "p-smile-footer": PSmileFooter;
+        "p-smile": PSmile;
         "p-status": PStatus;
         "p-stepper": PStepper;
         "p-stepper-item": PStepperItem;
@@ -5422,7 +5446,7 @@ declare module "@stencil/core" {
             "p-segment-item": LocalJSX.PSegmentItem & JSXBase.HTMLAttributes<HTMLPSegmentItemElement>;
             "p-select": LocalJSX.PSelect & JSXBase.HTMLAttributes<HTMLPSelectElement>;
             "p-slider-indicator": LocalJSX.PSliderIndicator & JSXBase.HTMLAttributes<HTMLPSliderIndicatorElement>;
-            "p-smile-footer": LocalJSX.PSmileFooter & JSXBase.HTMLAttributes<HTMLPSmileFooterElement>;
+            "p-smile": LocalJSX.PSmile & JSXBase.HTMLAttributes<HTMLPSmileElement>;
             "p-status": LocalJSX.PStatus & JSXBase.HTMLAttributes<HTMLPStatusElement>;
             "p-stepper": LocalJSX.PStepper & JSXBase.HTMLAttributes<HTMLPStepperElement>;
             "p-stepper-item": LocalJSX.PStepperItem & JSXBase.HTMLAttributes<HTMLPStepperItemElement>;

@@ -1,14 +1,12 @@
 import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
-const header = cva(
-	'inline-flex w-full flex-col relative bg-white rounded-t-2xl overflow-hidden'
-);
-
-const content = cva([
-	'flex justify-end',
-	'w-full p-4 pb-0 bg-off-white -mb-1 h-12',
+const header = cva([
+	'w-full flex-col bg-white relative rounded-t-2xl overflow-hidden z-[1]',
+	'inline-flex aspect-[7/1]',
 ]);
+
+const content = cva(['flex justify-end', 'w-full p-4 pb-0 h-12']);
 
 const title = cva([
 	'flex-1 text-center',
@@ -53,7 +51,7 @@ export class ModalHeader {
 					)}
 				</div>
 
-				<p-smile-footer />
+				<p-smile />
 			</div>
 		);
 	}
