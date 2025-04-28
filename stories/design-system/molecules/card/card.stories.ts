@@ -52,7 +52,6 @@ export const Default = {
 		containerHoverable,
 		containerShadow,
 	}) => html`<p-card-container
-		class="w-[20.5rem]"
 		hoverable=${containerHoverable}
 		shadow=${containerShadow}
 	>
