@@ -20,12 +20,12 @@ export default {
 
 	keyframes: {
 		fadeIn: {
-			'0%': { opacity: 0 },
-			'100%': { opacity: 100 },
+			'0%': { opacity: '0' },
+			'100%': { opacity: '100' },
 		},
 		fadeOut: {
-			'0%': { opacity: 100 },
-			'100%': { opacity: 0 },
+			'0%': { opacity: '100' },
+			'100%': { opacity: '0' },
 		},
 		slideInRight: {
 			'0%': { transform: 'translateX(100%)' },

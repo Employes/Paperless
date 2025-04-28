@@ -1,11 +1,3 @@
 :host {
 	@apply flex w-full justify-center desktop-xs:m-auto;
-
-	&.opening {
-		@apply animate-slide-in-bottom desktop-xs:animate-slide-in-bottom-small !important;
-	}
-
-	&.closing {
-		@apply animate-slide-out-bottom desktop-xs:animate-slide-out-bottom-small !important;
-	}
 }
