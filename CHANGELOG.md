@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.59](https://github.com/employes/paperless/compare/v2.0.1-beta.58...v2.0.1-beta.59) (2025-04-28)
+
+
+### Bug Fixes
+
+* **storybook:** Small configuration fixes ([deda7a5](https://github.com/employes/paperless/commit/deda7a524d5e252621177e76a61c05589da89620))
+
+
+### Features
+
+* **atoms/card/header, body & container:** Rebranding implementation ([9d7ebbd](https://github.com/employes/paperless/commit/9d7ebbd61ef891d33141272be4ca99c11153af3b))
+
+
+
+
+
 ## [2.0.1-beta.58](https://github.com/employes/paperless/compare/v2.0.1-beta.57...v2.0.1-beta.58) (2025-04-28)
 
 
