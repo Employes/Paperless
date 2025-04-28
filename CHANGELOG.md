@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.58](https://github.com/employes/paperless/compare/v2.0.1-beta.57...v2.0.1-beta.58) (2025-04-28)
+
+
+### Bug Fixes
+
+* **molecules/modal:** Apply animations ([d968feb](https://github.com/employes/paperless/commit/d968feb0028bacc10ca330d044f3dbafa0b28a16))
+* **storybook:** Move body & footer of modal to non-deprecated ([642f96b](https://github.com/employes/paperless/commit/642f96b15a9b76cb0183b2fc1bfee96edcb69ab5))
+* **tailwind:** Typo keyframs -> keyframes ([fc5cced](https://github.com/employes/paperless/commit/fc5cced15190a6237908f48b524ad2cd149dd3a9))
+
+
+
+
+
 ## [2.0.1-beta.57](https://github.com/employes/paperless/compare/v2.0.1-beta.56...v2.0.1-beta.57) (2025-04-25)
 
 
