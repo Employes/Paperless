@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { asBoolean } from '../../../../utils/as-boolean';
 
@@ -14,6 +14,10 @@ const dropdownMenuContainer = cva(
 				false: null,
 				true: 'w-full',
 			},
+			maxWidth: {
+				false: null,
+				true: 'max-w-[13.875rem]',
+			},
 			allowOverflow: {
 				false: 'overflow-y-auto overflow-x-hidden',
 				true: null,
@@ -23,10 +27,6 @@ const dropdownMenuContainer = cva(
 				default: 'max-h-[11.5rem]',
 				large: 'max-h-[13.875rem]',
 				xlarge: 'max-h-[20rem]',
-			},
-			maxWidth: {
-				false: null,
-				true: 'max-w-[13.875rem]',
 			},
 		},
 		compoundVariants: [
@@ -42,6 +42,7 @@ const dropdownMenuContainer = cva(
 @Component({
 	tag: 'p-dropdown-menu-container',
 	styleUrl: 'dropdown-menu-container.component.css',
+	shadow: true,
 })
 export class DropdownMenuContainer {
 	/**
@@ -83,7 +84,7 @@ export class DropdownMenuContainer {
 				: this.scrollable;
 
 		return (
-			<Host
+			<div
 				class={dropdownMenuContainer({
 					class: this.class,
 					variant: this.variant,
@@ -93,10 +94,10 @@ export class DropdownMenuContainer {
 					maxWidth: this.maxWidth,
 				})}
 			>
-				<div class='flex w-full flex-col gap-[1px]'>
+				<div class='flex w-full flex-col'>
 					<slot />
 				</div>
-			</Host>
+			</div>
 		);
 	}
 }

@@ -51,7 +51,6 @@ export class Profile {
 			<Host class='p-profile inline-block w-inherit'>
 				{this._hasDropdownSlot ? (
 					<p-dropdown
-						class='block'
 						strategy='absolute'
 						placement={this.dropdownLocation}
 						applyFullWidth={true}

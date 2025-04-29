@@ -6,6 +6,7 @@ const meta = {
 	args: {
 		title: 'Title',
 		subTitle: null,
+		'dropdown-location': 'bottom-end',
 	},
 	argTypes: {
 		title: {
@@ -15,6 +16,15 @@ const meta = {
 		},
 		subTitle: {
 			type: 'string',
+		},
+	},
+	parameters: {
+		layout: 'centered',
+		docs: {
+			iframeHeight: 300,
+			story: {
+				height: '300px',
+			},
 		},
 	},
 };
