@@ -1,7 +1,7 @@
-import { Component, Host, Prop, h } from '@stencil/core';
-import { IconVariant } from '../../icon/icon.component';
+import { Component, Prop, h } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { asBoolean } from '../../../../utils/as-boolean';
+import { IconVariant } from '../../icon/icon.component';
 
 const dropdownMenuItem = cva(
 	[
@@ -69,12 +69,12 @@ const dropdownMenuItem = cva(
 				active: false,
 				enableHover: true,
 				disabled: false,
-				class: 'hover:bg-dark-teal-400',
+				class: 'hover:bg-dark-teal-500',
 			},
 			{
 				variant: 'dark-teal',
 				active: true,
-				class: 'text-white bg-dark-teal-400',
+				class: 'text-white bg-dark-teal-600',
 			},
 			{
 				variant: 'dark-teal',
@@ -205,42 +205,40 @@ export class DropdownMenuItem {
 
 	render() {
 		return (
-			<Host>
-				<div
-					class={dropdownMenuItem({
-						variant: this.variant,
-						active: asBoolean(this.active),
-						enableHover: asBoolean(this.enableHover ?? true, true),
-						disabled: asBoolean(this.disabled),
-					})}
-				>
-					{this.icon && (
-						<p-icon
-							class={dropdownMenuItemIcon({
-								variant: this.variant,
-								active: asBoolean(this.active),
-								disabled: asBoolean(this.disabled),
-							})}
-							variant={this.icon}
-						/>
-					)}
+			<div
+				class={dropdownMenuItem({
+					variant: this.variant,
+					active: asBoolean(this.active),
+					enableHover: asBoolean(this.enableHover ?? true, true),
+					disabled: asBoolean(this.disabled),
+				})}
+			>
+				{this.icon && (
+					<p-icon
+						class={dropdownMenuItemIcon({
+							variant: this.variant,
+							active: asBoolean(this.active),
+							disabled: asBoolean(this.disabled),
+						})}
+						variant={this.icon}
+					/>
+				)}
 
-					{this.checkbox && (
-						<p-checkbox
-							checked={this.active}
-							disabled={this.disabled}
-						/>
-					)}
+				{this.checkbox && (
+					<p-checkbox
+						checked={this.active}
+						disabled={this.disabled}
+					/>
+				)}
 
-					{this.useContainer ? (
-						<div class='block w-full overflow-hidden text-ellipsis whitespace-nowrap text-start'>
-							<slot />
-						</div>
-					) : (
+				{this.useContainer ? (
+					<div class='block w-full overflow-hidden text-ellipsis whitespace-nowrap text-start'>
 						<slot />
-					)}
-				</div>
-			</Host>
+					</div>
+				) : (
+					<slot />
+				)}
+			</div>
 		);
 	}
 }
