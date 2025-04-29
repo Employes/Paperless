@@ -65,12 +65,12 @@ const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 		{
 			size: 'sm',
 			variant: 'read',
-			class: 'min-h-4',
+			class: 'min-h-4 text-xs',
 		},
 		{
 			size: 'base',
 			variant: 'read',
-			class: 'min-h-5',
+			class: 'min-h-5 text-sm',
 		},
 
 		{
@@ -490,16 +490,12 @@ export class Field {
 
 	private _getContent(hasValueSlot = false) {
 		if (this.variant === 'read') {
-			return (
-				<div class={this.size === 'base' ? 'text-sm' : 'text-xs'}>
-					{hasValueSlot ? (
-						<slot name='value' />
-					) : !!this.value && this.value.length > 0 ? (
-						this.value
-					) : (
-						'—'
-					)}
-				</div>
+			return hasValueSlot ? (
+				<slot name='value' />
+			) : !!this.value && this.value.length > 0 ? (
+				this.value
+			) : (
+				'—'
 			);
 		}
 
