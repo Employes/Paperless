@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.62](https://github.com/employes/paperless/compare/v2.0.1-beta.61...v2.0.1-beta.62) (2025-04-29)
+
+
+### Bug Fixes
+
+* **atom/segment/item:** Change text item ([3ebe3f5](https://github.com/employes/paperless/commit/3ebe3f5ed8b2665c5331408e2231487d40636ffb))
+
+
+
+
+
 ## [2.0.1-beta.61](https://github.com/employes/paperless/compare/v2.0.1-beta.60...v2.0.1-beta.61) (2025-04-29)
 
 **Note:** Version bump only for package paperless
