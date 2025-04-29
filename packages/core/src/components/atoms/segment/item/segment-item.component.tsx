@@ -18,7 +18,7 @@ const segmentItem = cva(
 				block: 'flex-col p-4 text-center',
 			},
 			active: {
-				false: 'cursor-pointer text-black-teal-600 hover:bg-black-teal-50',
+				false: 'cursor-pointer text-dark-teal-600 hover:bg-black-teal-50',
 				true: 'bg-dark-teal-400 text-white',
 			},
 			iconOnly: {
