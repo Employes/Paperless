@@ -1539,7 +1539,7 @@ export namespace Components {
          */
         "direction": 'horizontal' | 'vertical';
     }
-    interface PTabGroup {
+    interface PTabContainer {
     }
     interface PTabItem {
         /**
@@ -2812,11 +2812,11 @@ declare global {
         prototype: HTMLPStepperLineElement;
         new (): HTMLPStepperLineElement;
     };
-    interface HTMLPTabGroupElement extends Components.PTabGroup, HTMLStencilElement {
+    interface HTMLPTabContainerElement extends Components.PTabContainer, HTMLStencilElement {
     }
-    var HTMLPTabGroupElement: {
-        prototype: HTMLPTabGroupElement;
-        new (): HTMLPTabGroupElement;
+    var HTMLPTabContainerElement: {
+        prototype: HTMLPTabContainerElement;
+        new (): HTMLPTabContainerElement;
     };
     interface HTMLPTabItemElement extends Components.PTabItem, HTMLStencilElement {
     }
@@ -3057,7 +3057,7 @@ declare global {
         "p-stepper": HTMLPStepperElement;
         "p-stepper-item": HTMLPStepperItemElement;
         "p-stepper-line": HTMLPStepperLineElement;
-        "p-tab-group": HTMLPTabGroupElement;
+        "p-tab-container": HTMLPTabContainerElement;
         "p-tab-item": HTMLPTabItemElement;
         "p-table": HTMLPTableElement;
         "p-table-cell": HTMLPTableCellElement;
@@ -4700,7 +4700,7 @@ declare namespace LocalJSX {
          */
         "direction"?: 'horizontal' | 'vertical';
     }
-    interface PTabGroup {
+    interface PTabContainer {
     }
     interface PTabItem {
         /**
@@ -5374,7 +5374,7 @@ declare namespace LocalJSX {
         "p-stepper": PStepper;
         "p-stepper-item": PStepperItem;
         "p-stepper-line": PStepperLine;
-        "p-tab-group": PTabGroup;
+        "p-tab-container": PTabContainer;
         "p-tab-item": PTabItem;
         "p-table": PTable;
         "p-table-cell": PTableCell;
@@ -5459,7 +5459,7 @@ declare module "@stencil/core" {
             "p-stepper": LocalJSX.PStepper & JSXBase.HTMLAttributes<HTMLPStepperElement>;
             "p-stepper-item": LocalJSX.PStepperItem & JSXBase.HTMLAttributes<HTMLPStepperItemElement>;
             "p-stepper-line": LocalJSX.PStepperLine & JSXBase.HTMLAttributes<HTMLPStepperLineElement>;
-            "p-tab-group": LocalJSX.PTabGroup & JSXBase.HTMLAttributes<HTMLPTabGroupElement>;
+            "p-tab-container": LocalJSX.PTabContainer & JSXBase.HTMLAttributes<HTMLPTabContainerElement>;
             "p-tab-item": LocalJSX.PTabItem & JSXBase.HTMLAttributes<HTMLPTabItemElement>;
             "p-table": LocalJSX.PTable & JSXBase.HTMLAttributes<HTMLPTableElement>;
             "p-table-cell": LocalJSX.PTableCell & JSXBase.HTMLAttributes<HTMLPTableCellElement>;
