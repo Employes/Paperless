@@ -3,17 +3,15 @@ import { html, nothing } from 'lit';
 const meta = {
 	title: 'Design System/Atoms/Icon',
 	component: 'p-icon',
+	args: {
+		variant: 'caret',
+	},
 };
 
 export default meta;
 
 export const Default = {
-	render: ({
-		variant,
-		size,
-		rotate,
-		flip,
-	}) => html`<p-icon
+	render: ({ variant, size, rotate, flip }) => html`<p-icon
 		variant=${variant ?? nothing}
 		size=${size ?? nothing}
 		rotate=${rotate ?? nothing}
