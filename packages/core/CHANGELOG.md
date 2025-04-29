@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.67](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.66...v2.0.1-beta.67) (2025-04-29)
+
+
+### Bug Fixes
+
+* **molecules/field:** Don't apply focused when variant is read ([b2f4afd](https://github.com/ionic-team/stencil-component-starter/commit/b2f4afd08bebef6f4dd70b8873c42aab0abe65ae))
+
+
+
+
+
 ## [2.0.1-beta.66](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.65...v2.0.1-beta.66) (2025-04-29)
 
 
