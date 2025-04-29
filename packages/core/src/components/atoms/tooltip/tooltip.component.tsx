@@ -195,7 +195,7 @@ export class Tooltip {
 
 		return (
 			<Host class='p-popover flex cursor-pointer'>
-				<div class='relative h-inherit w-inherit'>
+				<div class='relative h-inherit w-inherit max-w-full'>
 					<slot name='trigger' />
 					{tooltip}
 				</div>

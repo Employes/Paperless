@@ -69,3 +69,71 @@ export const Default = {
 	/>`,
 	tags: ['!dev'],
 };
+
+export const OverflowReadOnly = {
+	render: ({
+		size,
+		type,
+		properties,
+		prefix,
+		suffix,
+		icon,
+		'icon-flip': iconFlip,
+		'icon-rotate': iconRotate,
+		'icon-position': iconPosition,
+		label,
+		loading,
+		placeholder,
+		helper,
+		required,
+		autofocus,
+		error,
+		'error-placement': errorPlacement,
+		disabled,
+		focused,
+		'force-show-tooltip': forceShowTooltip,
+		'select-all-on-focus': selectAllOnFocus,
+		'focus-method': focusMethod,
+		'optional-template': optionalTemplate,
+	}) => html`<p-field
+		variant="read"
+		size=${size ?? nothing}
+		type=${type ?? nothing}
+		properties=${properties ?? nothing}
+		prefix=${prefix ?? nothing}
+		suffix=${suffix ?? nothing}
+		icon=${icon ?? nothing}
+		icon-flip=${iconFlip ?? nothing}
+		icon-rotate=${iconRotate ?? nothing}
+		icon-position=${iconPosition ?? nothing}
+		label=${label ?? nothing}
+		loading=${loading ?? nothing}
+		placeholder=${placeholder ?? nothing}
+		helper=${helper ?? nothing}
+		required=${required ?? nothing}
+		autofocus=${autofocus ?? nothing}
+		error=${error ?? nothing}
+		error-placement=${errorPlacement ?? nothing}
+		disabled=${disabled ?? nothing}
+		focused=${focused ?? nothing}
+		force-show-tooltip=${forceShowTooltip ?? nothing}
+		select-all-on-focus=${selectAllOnFocus ?? nothing}
+		focus-method=${focusMethod ?? nothing}
+		optional-template=${optionalTemplate ?? nothing}
+		@valueChange=${action('valueChange')}
+		@inputRefChange=${action('inputRefChange')}
+	>
+		<a
+			slot="value"
+			class="block w-full overflow-hidden text-ellipsis whitespace-nowrap text-teal hover:text-teal-600 hover:underline"
+			href="https://google.com"
+		>
+			This is a very very very very very very long text This is a very very very
+			very very very long text This is a very very very very very very long text
+			This is a very very very very very very long text This is a very very very
+			very very very long text This is a very very very very very very long text
+			This is a very very very very very very long t;ext
+		</a>
+	</p-field>`,
+	tags: ['!dev'],
+};
