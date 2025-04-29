@@ -23,9 +23,18 @@ export const Default = {
 		allow-overflow=${allowOverflow ?? nothing}
 		scrollable=${scrollable ?? nothing}
 	>
-		<p-dropdown-menu-item>Item 1</p-dropdown-menu-item>
-		<p-dropdown-menu-item>Item 2</p-dropdown-menu-item>
-		<p-dropdown-menu-item>Item 3</p-dropdown-menu-item>
+		<p-dropdown-menu-item variant=${variant ?? nothing}>
+			Item 1
+		</p-dropdown-menu-item>
+		<p-dropdown-menu-item variant=${variant ?? nothing}>
+			Item 2
+		</p-dropdown-menu-item>
+		<p-dropdown-menu-item
+			active
+			variant=${variant ?? nothing}
+		>
+			Item 3
+		</p-dropdown-menu-item>
 	</p-dropdown-menu-container>`,
 	tags: ['!dev'],
 };

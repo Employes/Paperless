@@ -27,7 +27,22 @@ const dropdownContainerClass = cva(['z-dropdown hidden'], {
 			absolute: 'absolute',
 			fixed: 'fixed',
 		},
+		fullWidth: {
+			false: null,
+			true: 'w-full',
+		},
+		maxWidth: {
+			false: null,
+			true: 'max-w-[13.875rem]',
+		},
 	},
+	compoundVariants: [
+		{
+			fullWidth: false,
+			maxWidth: true,
+			class: 'w-auto',
+		},
+	],
 });
 
 @Component({
@@ -160,6 +175,8 @@ export class Dropdown {
 		const dropdownContainerProps = {
 			class: dropdownContainerClass({
 				strategy: this.strategy,
+				maxWidth: !this.calculateWidth && this.applyMaxWidth,
+				fullWidth: this.applyFullWidth && !this.applyMaxWidth,
 			}),
 			ref: el => this._load(el),
 			onClick: () => this._containerClickHandler(),
