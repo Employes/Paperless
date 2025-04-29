@@ -439,7 +439,7 @@ export class Select {
 							onClick={ev => this._onClick(ev)}
 						>
 							<div
-								class='relative flex-1'
+								class='relative min-w-0 flex-1'
 								ref={ref => (this._inputRef = ref)}
 							>
 								{this._displayValue}
