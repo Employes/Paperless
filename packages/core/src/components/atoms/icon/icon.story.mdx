@@ -1,6 +1,7 @@
 import { Meta, Title, Canvas, Markdown, Controls } from '@storybook/blocks';
 import { IntendedUsage } from '@doc-blocks/intended-usage';
 import * as Stories from './icon.stories';
+import { categorized, icons } from '../../../utils/icons';
 
 <Meta of={Stories} />
 
@@ -12,6 +13,51 @@ import * as Stories from './icon.stories';
 />
 
 <Controls of={Stories.Default} />
+
+## Categorized
+
+<div class='mb-8 flex flex-col gap-8'>
+	{Object.keys(categorized).map(category => (
+		<div class='flex flex-col gap-4'>
+			<b>{category}</b>
+			<div class='flex w-full flex-wrap gap-4'>
+				{Object.keys(categorized[category]).map(variant => (
+					<p-tooltip content={variant}>
+						<p-icon
+							key={variant}
+							variant={variant}
+							class='text-2xl text-black-teal hover:scale-125 hover:text-supportive-lilac'
+							slot='trigger'
+						></p-icon>
+					</p-tooltip>
+				))}
+			</div>
+		</div>
+	))}
+</div>
+
+## List
+
+<table class='w-full table-fixed'>
+	<tr>
+		<th class='py-2 text-start'>Icon</th>
+		<th class='py-2 text-start'>Variant</th>
+	</tr>
+	{Object.keys(icons).map(icon => (
+		<tr class='group border-b border-b-mystic-dark'>
+			<td class='py-2'>
+				<p-icon
+					key={icon}
+					variant={icon}
+					class='text-2xl text-black-teal group-hover:text-supportive-lilac'
+				></p-icon>
+			</td>
+			<td class='py-2 group-hover:font-semibold group-hover:text-supportive-lilac'>
+				{icon}
+			</td>
+		</tr>
+	))}
+</table>
 
 ## Intended usage
 
