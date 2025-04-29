@@ -4,6 +4,18 @@ import { action } from '@storybook/addon-actions';
 const meta = {
 	title: 'Design System/Molecules/Pagination/Pagination',
 	component: 'p-pagination',
+	args: {
+		total: 100,
+	},
+	parameters: {
+		layout: 'centered',
+		docs: {
+			iframeHeight: 300,
+			story: {
+				height: '300px',
+			},
+		},
+	},
 };
 
 export default meta;
