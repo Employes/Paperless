@@ -74,11 +74,13 @@ const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 		},
 
 		{
+			variant: 'write',
 			focused: false,
 			error: false,
 			class: 'border-black-teal-100',
 		},
 		{
+			variant: 'write',
 			disabled: false,
 			focused: true,
 			error: false,
