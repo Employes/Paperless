@@ -38,8 +38,8 @@ const trigger = cva(
 	{
 		variants: {
 			active: {
-				false: 'bg-dark-teal-600 hover:bg-dark-teal-700',
-				true: 'bg-dark-teal-800',
+				false: 'bg-dark-teal-400 hover:bg-dark-teal-500',
+				true: 'bg-dark-teal-600',
 			},
 		},
 	}
