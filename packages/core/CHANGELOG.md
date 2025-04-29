@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.65](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.64...v2.0.1-beta.65) (2025-04-29)
+
+
+### Bug Fixes
+
+* **molecules/field:** Overflow issue resolved for long values ([dffa8a2](https://github.com/ionic-team/stencil-component-starter/commit/dffa8a232280b236dc77979a87d4b691daccc0a1))
+
+
+
+
+
 ## [2.0.1-beta.64](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.63...v2.0.1-beta.64) (2025-04-29)
 
 **Note:** Version bump only for package @paperless/core
