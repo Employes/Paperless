@@ -9,13 +9,13 @@
 
 ### Depends on
 
-- [p-divider](../../../../atoms/divider)
+- [p-divider](../../divider)
 
 ### Graph
 ```mermaid
 graph TD;
-  p-tab-group --> p-divider
-  style p-tab-group fill:#f9f,stroke:#333,stroke-width:4px
+  p-tab-container --> p-divider
+  style p-tab-container fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------
