@@ -8,7 +8,7 @@ const dropdownMenuContainer = cva(
 		variants: {
 			variant: {
 				default: 'bg-white border-black-teal-100 drop-shadow-2',
-				'dark-teal': 'bg-dark-teal-600 drop-shadow-3 border-dark-teal-600',
+				'dark-teal': 'bg-dark-teal-400 drop-shadow-3 border-dark-teal-400',
 			},
 			fullWidth: {
 				false: null,
