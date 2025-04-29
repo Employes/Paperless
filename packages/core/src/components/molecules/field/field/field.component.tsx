@@ -302,7 +302,7 @@ export class Field {
 	/**
 	 * Event whenever the value changes
 	 */
-	@Event() valueChange: EventEmitter<string>;
+	@Event({ bubbles: false }) valueChange: EventEmitter<string>;
 
 	/**
 	 * Event whenever the input ref changes
