@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.66](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.65...v2.0.1-beta.66) (2025-04-29)
+
+
+### Bug Fixes
+
+* **molecules/field:** Don't bubble valueChange ([c64114e](https://github.com/ionic-team/stencil-component-starter/commit/c64114e8c02bcfa8682169c9a956fcc6b971ed1b))
+* **molecules/select:** Set min-w on content of the button ([6d2d5c2](https://github.com/ionic-team/stencil-component-starter/commit/6d2d5c2220522571b6279ac29f4a4ba7667eaa46))
+
+
+
+
+
 ## [2.0.1-beta.65](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.64...v2.0.1-beta.65) (2025-04-29)
 
 
