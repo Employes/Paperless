@@ -48,18 +48,18 @@ const item = cva(
 			{
 				variant: 'carousel',
 				disabled: false,
-				class: 'bg-dark-teal-600',
+				class: 'bg-dark-teal-400',
 			},
 			{
 				variant: 'carousel',
 				disabled: false,
 				hover: true,
-				class: 'hover:bg-dark-teal-700 focus:bg-dark-teal-800 cursor-pointer',
+				class: 'hover:bg-dark-teal-500 focus:bg-dark-teal-600 cursor-pointer',
 			},
 			{
 				variant: 'carousel',
 				disabled: true,
-				class: 'bg-dark-teal-600 opacity-20',
+				class: 'bg-dark-teal-400 opacity-20',
 			},
 		],
 	}
