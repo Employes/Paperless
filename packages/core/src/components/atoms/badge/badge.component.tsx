@@ -2,11 +2,10 @@ import { Component, h, Host } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
 const badge = cva([
-	'p-badge',
 	'inline-flex items-center justify-center',
 	'h-4 min-w-[1.5rem] px-1',
 	'rounded-full',
-	'bg-teal',
+	'bg-dark-teal-400',
 	'text-center text-xs font-semibold text-white',
 ]);
 
