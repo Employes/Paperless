@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.63](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.62...v2.0.1-beta.63) (2025-04-29)
+
+
+### Features
+
+* **atoms/tab/container & item:** Rebranding implementation ([1a87c69](https://github.com/ionic-team/stencil-component-starter/commit/1a87c699ba23c9d22da2a5ea74e62dadbbb0ef2e))
+
+
+
+
+
 ## [2.0.1-beta.62](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.61...v2.0.1-beta.62) (2025-04-29)
 
 
