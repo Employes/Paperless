@@ -3,21 +3,20 @@ import { html, nothing } from 'lit';
 const meta = {
 	title: 'Design System/Atoms/Segment/Container',
 	component: 'p-segment-container',
-	args: {
-		content: 'SegmentContainer',
-	},
-	argTypes: {
-		content: {
-			type: 'string',
-		},
+	parameters: {
+		layout: 'centered',
 	},
 };
 
 export default meta;
 
 export const Default = {
-	render: ({
-		content,
-	}) => html`<p-segment-container>${content}</p-segment-container>`,
+	render: () => html`<p-segment-container>
+		<p-segment-item>Item 1</p-segment-item>
+		<p-segment-item>Item 2</p-segment-item>
+		<p-segment-item active>Item 3</p-segment-item>
+		<p-segment-item>Item 4</p-segment-item>
+		<p-segment-item>Item 5</p-segment-item>
+	</p-segment-container>`,
 	tags: ['!dev'],
 };
