@@ -14,7 +14,7 @@ export const Default = {
 			slot="company"
 			*ngrxLet="accesses$ as accesses"
 		>
-			<p-profile variant="company">
+			<p-profile>
 				<p-avatar
 					slot="avatar"
 					letters="Company name"
