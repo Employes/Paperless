@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.75](https://github.com/employes/paperless/compare/v2.0.1-beta.74...v2.0.1-beta.75) (2025-04-30)
+
+
+### Bug Fixes
+
+* **organisms/navbar:** Apply scoped ([fb6640c](https://github.com/employes/paperless/commit/fb6640c1ed68598302768ef412f9c21886331d5c))
+
+
+
+
+
 ## [2.0.1-beta.74](https://github.com/employes/paperless/compare/v2.0.1-beta.73...v2.0.1-beta.74) (2025-04-30)
 
 
