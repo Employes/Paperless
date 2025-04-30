@@ -635,6 +635,40 @@ export namespace Components {
          */
         "variant": 'default' | 'dark-teal' | 'negative';
     }
+    interface PEmptyState {
+        /**
+          * The icon for the action button
+         */
+        "actionIcon": IconVariant1;
+        /**
+          * Wether the action is loading
+         */
+        "actionLoading": boolean;
+        /**
+          * The text on the action button
+         */
+        "actionText": string;
+        /**
+          * The variant of the action
+         */
+        "actionVariant": ButtonVariant1;
+        /**
+          * The content of the empty state
+         */
+        "content": string;
+        /**
+          * Wether to enable the action button
+         */
+        "enableAction": boolean;
+        /**
+          * The header of the empty state
+         */
+        "header": string;
+        /**
+          * The variant of the illustration
+         */
+        "illustration": IllustrationVariant;
+    }
     interface PField {
         /**
           * Wether to autofocus the field
@@ -2091,6 +2125,10 @@ export interface PDropdownCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPDropdownElement;
 }
+export interface PEmptyStateCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPEmptyStateElement;
+}
 export interface PFieldCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPFieldElement;
@@ -2445,6 +2483,23 @@ declare global {
     var HTMLPDropdownMenuItemElement: {
         prototype: HTMLPDropdownMenuItemElement;
         new (): HTMLPDropdownMenuItemElement;
+    };
+    interface HTMLPEmptyStateElementEventMap {
+        "action": MouseEvent;
+    }
+    interface HTMLPEmptyStateElement extends Components.PEmptyState, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPEmptyStateElementEventMap>(type: K, listener: (this: HTMLPEmptyStateElement, ev: PEmptyStateCustomEvent<HTMLPEmptyStateElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPEmptyStateElementEventMap>(type: K, listener: (this: HTMLPEmptyStateElement, ev: PEmptyStateCustomEvent<HTMLPEmptyStateElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPEmptyStateElement: {
+        prototype: HTMLPEmptyStateElement;
+        new (): HTMLPEmptyStateElement;
     };
     interface HTMLPFieldElementEventMap {
         "valueChange": string;
@@ -3043,6 +3098,7 @@ declare global {
         "p-dropdown": HTMLPDropdownElement;
         "p-dropdown-menu-container": HTMLPDropdownMenuContainerElement;
         "p-dropdown-menu-item": HTMLPDropdownMenuItemElement;
+        "p-empty-state": HTMLPEmptyStateElement;
         "p-field": HTMLPFieldElement;
         "p-field-container": HTMLPFieldContainerElement;
         "p-floating-menu-container": HTMLPFloatingMenuContainerElement;
@@ -3746,6 +3802,44 @@ declare namespace LocalJSX {
           * The variant of the item
          */
         "variant"?: 'default' | 'dark-teal' | 'negative';
+    }
+    interface PEmptyState {
+        /**
+          * The icon for the action button
+         */
+        "actionIcon"?: IconVariant1;
+        /**
+          * Wether the action is loading
+         */
+        "actionLoading"?: boolean;
+        /**
+          * The text on the action button
+         */
+        "actionText"?: string;
+        /**
+          * The variant of the action
+         */
+        "actionVariant"?: ButtonVariant1;
+        /**
+          * The content of the empty state
+         */
+        "content"?: string;
+        /**
+          * Wether to enable the action button
+         */
+        "enableAction"?: boolean;
+        /**
+          * The header of the empty state
+         */
+        "header"?: string;
+        /**
+          * The variant of the illustration
+         */
+        "illustration"?: IllustrationVariant;
+        /**
+          * The text on the action button
+         */
+        "onAction"?: (event: PEmptyStateCustomEvent<MouseEvent>) => void;
     }
     interface PField {
         /**
@@ -5361,6 +5455,7 @@ declare namespace LocalJSX {
         "p-dropdown": PDropdown;
         "p-dropdown-menu-container": PDropdownMenuContainer;
         "p-dropdown-menu-item": PDropdownMenuItem;
+        "p-empty-state": PEmptyState;
         "p-field": PField;
         "p-field-container": PFieldContainer;
         "p-floating-menu-container": PFloatingMenuContainer;
@@ -5448,6 +5543,7 @@ declare module "@stencil/core" {
             "p-dropdown": LocalJSX.PDropdown & JSXBase.HTMLAttributes<HTMLPDropdownElement>;
             "p-dropdown-menu-container": LocalJSX.PDropdownMenuContainer & JSXBase.HTMLAttributes<HTMLPDropdownMenuContainerElement>;
             "p-dropdown-menu-item": LocalJSX.PDropdownMenuItem & JSXBase.HTMLAttributes<HTMLPDropdownMenuItemElement>;
+            "p-empty-state": LocalJSX.PEmptyState & JSXBase.HTMLAttributes<HTMLPEmptyStateElement>;
             "p-field": LocalJSX.PField & JSXBase.HTMLAttributes<HTMLPFieldElement>;
             "p-field-container": LocalJSX.PFieldContainer & JSXBase.HTMLAttributes<HTMLPFieldContainerElement>;
             "p-floating-menu-container": LocalJSX.PFloatingMenuContainer & JSXBase.HTMLAttributes<HTMLPFloatingMenuContainerElement>;
