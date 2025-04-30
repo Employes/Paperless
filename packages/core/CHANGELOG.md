@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.74](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.73...v2.0.1-beta.74) (2025-04-30)
+
+
+### Bug Fixes
+
+* **organisms/navbar:** Revert shadow dom changes ([19e34ca](https://github.com/ionic-team/stencil-component-starter/commit/19e34ca83b098b591ae78650a2afc8d9c6d0c8f2))
+
+
+
+
+
 ## [2.0.1-beta.73](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.72...v2.0.1-beta.73) (2025-04-30)
 
 
