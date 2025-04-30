@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.72](https://github.com/employes/paperless/compare/v2.0.1-beta.71...v2.0.1-beta.72) (2025-04-30)
+
+
+### Bug Fixes
+
+* **atoms/modal/body:** Remove overflow scroll for now ([d7ec3d7](https://github.com/employes/paperless/commit/d7ec3d7666d1ffe976fd78bde0aaf7cc109a7393))
+* **molecules/table/footer:** Apply margin-bottom to footer ([fa852d5](https://github.com/employes/paperless/commit/fa852d5ddb51f50af0c670168040c3852c5ec688))
+
+
+
+
+
 ## [2.0.1-beta.71](https://github.com/employes/paperless/compare/v2.0.1-beta.70...v2.0.1-beta.71) (2025-04-30)
 
 **Note:** Version bump only for package paperless
