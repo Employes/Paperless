@@ -1,8 +1,0 @@
-:host {
-	@apply flex w-full flex-col overflow-hidden;
-	@apply rounded-lg bg-white;
-}
-
-:host(:not(.no-shadow)) {
-	@apply shadow-3 #{!important};
-}

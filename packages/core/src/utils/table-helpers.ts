@@ -1,3 +1,4 @@
+import { cva } from 'class-variance-authority';
 import { TableColumn } from '../components/helpers/table/column/table-column.component';
 import {
 	isTableColumnSizesKey,
@@ -7,24 +8,20 @@ import {
 
 export const getTableCellColumnClasses = (
 	definition: any | TableColumn,
-	variant: 'default' | 'header' | 'loading' | 'actions',
-	hasActions: boolean
+	variant: 'default' | 'header' | 'loading'
 ) => {
 	const sizes = definition ? getTableCellSizes(definition, variant) : {};
-	const isLastValues = definition
-		? getTableCellIsLastValues(definition, variant, hasActions)
-		: {};
 
 	return {
+		flex: true,
+		'items-center': true,
+		'gap-4': true,
 		'justify-start': !definition?.align || definition?.align === 'start',
 		'justify-center': definition?.align === 'center',
 		'justify-end': definition?.align === 'end',
 		'font-semibold': variant !== 'header' && definition?.type === 'th',
 		'text-storm-dark': variant !== 'header' && definition?.type === 'th',
-		'group-hover:flex': variant === 'actions' && hasActions,
-		hidden: variant === 'actions' && hasActions,
 		...sizes,
-		...isLastValues,
 	};
 };
 
@@ -110,51 +107,19 @@ export const getTableCellSizes = (
 	};
 };
 
-export const getTableCellIsLastValues = (
-	{
-		isLast,
-		parsedSizes,
-	}: {
-		isLast: { [key: string]: boolean };
-		parsedSizes: TableColumnSizes;
-	} /* Table Definition */,
-	variant: 'default' | 'header' | 'loading' | 'actions',
-	hasActions: boolean
-) => {
-	const values: { [key: string]: boolean } = {};
-
-	for (let size of Object.keys(isLast)) {
-		let prefix = '';
-		if (size !== 'default') {
-			prefix = `${size}:`;
-		}
-
-		values[`${prefix}pr-4`] = !isLast[size];
-		values[`${prefix}pr-0`] = isLast[size];
-
-		values[`${prefix}group-hover:hidden`] =
-			(isLast[size] ||
-				parsedSizes[size as keyof TableColumnSizes] === 'hidden') &&
-			hasActions &&
-			parsedSizes[size as keyof TableColumnSizes] !== 12 &&
-			variant === 'default';
-
-		const actionsShouldBeAbsolute =
-			parsedSizes[size as keyof TableColumnSizes] === 12 &&
-			variant === 'actions';
-		values[`${prefix}absolute`] = actionsShouldBeAbsolute;
-		values[`${prefix}right-6`] = actionsShouldBeAbsolute;
-
-		values[`${prefix}group-hover:flex`] =
-			(!isLast[size] &&
-				parsedSizes[size as keyof TableColumnSizes] !== 'hidden' &&
-				variant === 'default') ||
-			variant === 'actions';
-
-		values[`${prefix}flex`] =
-			parsedSizes[size as keyof TableColumnSizes] !== 'hidden' &&
-			variant !== 'actions';
-	}
-
-	return values;
-};
+export const floatingMenuContainerClass = cva(['sticky self-center'], {
+	variants: {
+		hasFooter: {
+			true: 'mt-4 -mb-5 bottom-11 z-[3]',
+			false: 'my-4 bottom-0',
+		},
+		active: {
+			false: 'animate-floating-menu-container-out',
+			true: 'animate-floating-menu-container-in',
+		},
+		shown: {
+			false: 'hidden',
+			true: 'inline-block',
+		},
+	},
+});

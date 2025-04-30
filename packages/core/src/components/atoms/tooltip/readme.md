@@ -35,7 +35,7 @@
  - [p-helper](../helper)
  - [p-input-error](../../deprecated/molecules/input/error)
  - [p-input-group](../../deprecated/molecules/input/group)
- - [p-table](../../deprecated/organisms/table)
+ - [p-table](../../organisms/table)
 
 ### Depends on
 

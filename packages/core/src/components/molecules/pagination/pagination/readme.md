@@ -28,6 +28,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [p-table-footer](../../table/footer)
+
 ### Depends on
 
 - [p-pagination-size](../size)
@@ -50,6 +54,7 @@ graph TD;
   p-checkbox --> p-icon
   p-pagination-pages --> p-pagination-pages-item
   p-pagination-pages --> p-icon
+  p-table-footer --> p-pagination
   style p-pagination fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

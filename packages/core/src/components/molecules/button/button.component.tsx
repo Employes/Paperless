@@ -361,7 +361,7 @@ export class Button {
 	/**
 	 * Icon position
 	 */
-	@Prop() iconPosition?: 'start' | 'end' = 'end';
+	@Prop() iconPosition?: 'start' | 'end' = 'start';
 
 	/**
 	 * Icon flip

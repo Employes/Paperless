@@ -384,6 +384,9 @@ export class Field {
 							variant: this.variant,
 							isTextarea: this.type === 'textarea',
 						})}
+						title={
+							this.variant === 'read' && !hasValueSlot ? this.value : undefined
+						}
 						slot='content'
 					>
 						{(prefix || (this.icon && this.iconPosition === 'start')) && (

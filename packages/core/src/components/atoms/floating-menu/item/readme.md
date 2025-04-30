@@ -22,7 +22,7 @@
 
 ### Used by
 
- - [p-table](../../../deprecated/organisms/table)
+ - [p-table](../../../organisms/table)
 
 ### Depends on
 

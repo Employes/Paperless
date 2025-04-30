@@ -50,7 +50,7 @@
 
  - [p-datepicker](../../datepicker)
  - [p-select](../../select)
- - [p-table-header](../../../deprecated/molecules/table/header)
+ - [p-table-header](../../table/header)
 
 ### Depends on
 

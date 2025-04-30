@@ -1,6 +1,7 @@
-<p-table-container [shadow]="shadow">
+<p-table-container>
 	<p-table-header
 		*ngIf="enableHeader"
+		class="mb-8"
 		[quickFilters]="quickFilters"
 		[activeQuickFilterIdentifier]="activeQuickFilterIdentifier"
 		(quickFilter)="onQuickFilter($event)"
@@ -20,6 +21,8 @@
 		[actionIcon]="actionButtonIcon"
 		(action)="action.emit()"
 		[itemsSelectedAmount]="selectedRows.length"
+		[enableExport]="enableExport"
+		(export)="export.emit()"
 		[loading]="headerLoading"
 	>
 		<ng-container *ngIf="headerCustomFilterTemplate">
@@ -115,9 +118,6 @@
 								[index]="index"
 								[rowIndex]="rowIndex"
 								[template]="col.template"
-								[tableHasActions]="
-									!!rowActionsRow?.length && !(isMobile$ | async)
-								"
 							></p-table-cell-ngx>
 
 							<ng-template #checkboxTemplate>
@@ -129,94 +129,61 @@
 							</ng-template>
 						</ng-container>
 
-						<ng-container
-							*ngIf="
-								!!rowActionsRow?.length &&
-								!!(rowActionsRowDefinition$ | async) &&
-								!(isMobile$ | async)
-							"
+						<p-table-row-actions-container
+							*ngIf="!!rowActionsRow?.length && !(isMobile$ | async)"
+							slot="actions"
 						>
-							<p-table-cell-ngx
-								variant="actions"
-								[definition]="rowActionsRowDefinition$ | async"
-								[item]="parsedItems[rowIndex]"
-								[index]="columns.length - 1"
-								[rowIndex]="rowIndex"
-								[tableHasActions]="!!rowActionsRow?.length"
-								[template]="actionsTemplate"
-							>
-							</p-table-cell-ngx>
-
-							<ng-template #actionsTemplate>
-								<div class="ml-auto flex items-center gap-2">
-									<ng-container *ngFor="let action of rowActionsRow">
-										<p-tooltip
-											*ngIf="
-												action.showFunction
-													? action.showFunction(parsedItems[rowIndex])
-													: true
-											"
-											[content]="action.label"
-										>
-											<p-button
-												data-is-action
-												variant="secondary"
-												slot="trigger"
-												[icon]="action.icon"
-												[iconRotate]="action.iconRotate"
-												iconFlip="action.iconFlip"
-												iconOnly="true"
-												size="sm"
-												[loading]="action.loading"
-												[disabled]="action.disabled"
-												[routerLink]="
-													action.routerLink
-														? (_getActionRouterLink(action.routerLink, rowIndex)
-														  | async)
-														: null
-												"
-												[queryParams]="
-													action.queryParams
-														? (_getActionQueryParams(
-																action.queryParams,
-																rowIndex
-														  ) | async)
-														: null
-												"
-												(onClick)="_rowActionClick(action, rowIndex)"
-											></p-button>
-										</p-tooltip>
-									</ng-container>
-								</div>
-							</ng-template>
-						</ng-container>
+							<ng-container *ngFor="let action of rowActionsRow">
+								<p-tooltip
+									*ngIf="
+										action.showFunction
+											? action.showFunction(parsedItems[rowIndex])
+											: true
+									"
+									[content]="action['label']"
+								>
+									<p-button
+										data-is-action
+										variant="secondary"
+										slot="trigger"
+										[icon]="action['icon']"
+										[iconRotate]="action['iconRotate']"
+										iconFlip="action.iconFlip"
+										iconOnly="true"
+										size="sm"
+										[loading]="action['loading']"
+										[disabled]="action['disabled']"
+										[routerLink]="
+											action.routerLink
+												? (_getActionRouterLink(action.routerLink, rowIndex)
+												  | async)
+												: null
+										"
+										[queryParams]="
+											action.queryParams
+												? (_getActionQueryParams(action.queryParams, rowIndex)
+												  | async)
+												: null
+										"
+										(onClick)="_rowActionClick(action, rowIndex)"
+									></p-button>
+								</p-tooltip>
+							</ng-container>
+						</p-table-row-actions-container>
 					</ng-container>
 				</p-table-row>
 			</ng-container>
 		</ng-template>
 	</div>
 
-	<p-table-footer
-		*ngIf="enableFooter"
-		[hideOnSinglePage]="hideOnSinglePage"
-		[enablePageSize]="enablePageSize"
-		[pageSize]="pageSize"
-		[pageSizeOptions]="pageSizeOptions"
-		(pageSizeChange)="onPageSizeChange($event)"
-		[enablePagination]="enablePagination"
-		[page]="page"
-		[total]="total"
-		(pageChange)="onPageChange($event)"
-		[enableExport]="enableExport"
-		(export)="export.emit()"
-		[loading]="footerLoading"
-	></p-table-footer>
-
 	<ng-container *ngIf="enableFloatingMenu && enableRowSelection">
 		<p-floating-menu-container
 			[usedInTable]="true"
-			[class.inactive]="!selectedRows.length"
-			[class.shown]="floatingMenuShown$ | async"
+			[class]="floatingMenuContainerClass({
+				hasFooter: enableFooter,
+				active: selectedRows.length > 0,
+				shown: $any(floatingMenuShown$ | async),
+			})"
 			[amount]="floatingMenuAmountSelectedText"
 			[enableAmountSelected]="!!(rowActionsFloating$ | async)?.length"
 			(close)="_selectAllChange(null, false)"
@@ -225,19 +192,33 @@
 				*ngFor="let action of rowActionsFloating$ | async"
 				slot="floating-menu-item"
 				[disabled]="
-					(action.type === 'single' && selectedRows.length > 1) ||
-					action.disabled
+					(action['type'] === 'single' && selectedRows.length > 1) ||
+					action['disabled']
 				"
-				[loading]="action.loading"
-				[icon]="action.icon"
-				[iconRotate]="action.iconRotate"
-				[iconFlip]="action.iconFlip"
+				[loading]="action['loading']"
+				[icon]="action['icon']"
+				[iconRotate]="action['iconRotate']"
+				[iconFlip]="action['iconFlip']"
 				(click)="_rowActionClick(action)"
 			>
-				{{ action.label }}
+				{{ action['label'] }}
 			</p-floating-menu-item>
 		</p-floating-menu-container>
 	</ng-container>
+
+	<p-table-footer
+		*ngIf="enableFooter"
+		[hideOnSinglePage]="hideOnSinglePage"
+		[enablePaginationSize]="enablePaginationSize"
+		[pageSize]="pageSize"
+		[pageSizeOptions]="pageSizeOptions"
+		(pageSizeChange)="onPageSizeChange($event)"
+		[enablePaginationPages]="enablePaginationPages"
+		[page]="page"
+		[total]="total"
+		(pageChange)="onPageChange($event)"
+		[loading]="footerLoading"
+	></p-table-footer>
 </p-table-container>
 
 <ng-container *ngIf="filterModalTemplate">

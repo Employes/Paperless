@@ -28,7 +28,6 @@
 ### Used by
 
  - [p-pagination](../pagination)
- - [p-table-footer](../../../deprecated/molecules/table/footer)
 
 ### Depends on
 
@@ -41,7 +40,6 @@ graph TD;
   p-pagination-pages --> p-pagination-pages-item
   p-pagination-pages --> p-icon
   p-pagination --> p-pagination-pages
-  p-table-footer --> p-pagination-pages
   style p-pagination-pages fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

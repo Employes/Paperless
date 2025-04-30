@@ -37,12 +37,6 @@ export class TableColumn {
 		'start';
 
 	/**
-	 * Wether the column is the last in the row
-	 */
-	@Prop({ reflect: true, mutable: true }) isLast: { [key: string]: boolean } =
-		{};
-
-	/**
 	 * Parsed sizes based on the complete set of columns
 	 */
 	@Prop({ reflect: true, mutable: true }) parsedSizes:

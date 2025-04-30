@@ -65,14 +65,13 @@ import {
     */
 @Component({
 	selector: 'p-table-cell-ngx',
-	styleUrls: ['table-cell.component.scss'],
 	templateUrl: './table-cell.component.html',
 })
 export class TableCell {
 	/**
 	 * The variant of the column
 	 */
-	@Input() variant: 'default' | 'loading' | 'header' | 'actions' = 'default';
+	@Input() variant: 'default' | 'loading' | 'header' = 'default';
 
 	/**
 	 * The index of the column
@@ -100,11 +99,6 @@ export class TableCell {
 	@Input() value: any;
 
 	/**
-	 * Wether the table has actions
-	 */
-	@Input() tableHasActions: boolean = false;
-
-	/**
 	 * The checkbox templateRef
 	 */
 	@Input() checkbox: TemplateRef<any> | undefined;
@@ -116,26 +110,13 @@ export class TableCell {
 
 	@HostBinding('class')
 	get class() {
-		return getTableCellColumnClasses(
-			this.definition,
-			this.variant,
-			this.tableHasActions
-		);
+		return getTableCellColumnClasses(this.definition, this.variant);
 	}
 
 	get data(): TableDefinitionData | { value: string } {
 		if (this.variant === 'header') {
 			return {
 				value: this.value,
-			};
-		}
-
-		if (this.variant === 'actions') {
-			return {
-				value: this.value,
-				item: this.item,
-				index: this.index,
-				rowIndex: this.rowIndex,
 			};
 		}
 

@@ -5,6 +5,7 @@ import {
 	ContentChild,
 	ContentChildren,
 	EventEmitter,
+	HostBinding,
 	HostListener,
 	Input,
 	OnChanges,
@@ -21,6 +22,7 @@ import {
 	QuickFilter,
 	RowClickEvent,
 	tableColumSizesOptions,
+	floatingMenuContainerClass,
 } from '@paperless/core';
 import {
 	IconVariant,
@@ -52,10 +54,11 @@ import { defaultSize, defaultSizeOptions } from './constants';
 @Component({
 	selector: 'p-table-ngx',
 	templateUrl: 'table.component.html',
-	styleUrls: ['table.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Table implements OnInit, OnChanges {
+	@HostBinding('class') className = 'flex flex-col z-0';
+
 	/**
 	 * The items to be fed to the table
 	 */
@@ -256,14 +259,14 @@ export class Table implements OnInit, OnChanges {
 	@Input() enableFooter: boolean = true;
 
 	/**
-	 * Wether to enable page size select
+	 * Wether to enable pagination size select
 	 */
-	@Input() enablePageSize: boolean = true;
+	@Input() enablePaginationSize: boolean = true;
 
 	/**
-	 * Wether to enable pagination
+	 * Wether to enable pagination pages
 	 */
-	@Input() enablePagination: boolean = true;
+	@Input() enablePaginationPages: boolean = true;
 
 	/**
 	 * Wether to enable export
@@ -406,13 +409,12 @@ export class Table implements OnInit, OnChanges {
 	@Output() filterModalReset: EventEmitter<boolean> = new EventEmitter();
 
 	public rowActionsRow$ = new BehaviorSubject<TableRowAction[]>([]);
-	public rowActionsRowDefinition$ = new BehaviorSubject<any | undefined>(
-		undefined
-	);
 	public rowActionsFloatingAll$ = new BehaviorSubject<TableRowAction[]>([]);
 	public rowActionsFloating$ = new BehaviorSubject<TableRowAction[]>([]);
 
 	public isMobile$ = new BehaviorSubject(isMobile());
+
+	public floatingMenuContainerClass = floatingMenuContainerClass;
 
 	private _resizeTimeout: unknown;
 	private _inputEnableRowSelection: boolean = this.enableRowSelection;
@@ -942,7 +944,6 @@ export class Table implements OnInit, OnChanges {
 			}
 			this.enableRowSelection = enableRowSelection;
 
-			this.rowActionsRowDefinition$.next(this._parseRowActionsRowDefinition());
 			this.rowActionsRow$.next(rowActionsRow);
 			this.rowActionsFloatingAll$.next(rowActionsFloating);
 
@@ -977,55 +978,10 @@ export class Table implements OnInit, OnChanges {
 	}
 
 	private _parseDefinitions(definitionsArray: TableColumn[]) {
-		const definitions = definitionsArray.map(definition => {
+		return definitionsArray.map(definition => {
 			definition = this._parseDefinitionSizes(definition);
-			definition.isLast = {};
 			return definition;
 		});
-
-		const matchedIsLast = tableColumSizesOptions.reduce(
-			(data: { [key: string]: boolean }, size) => {
-				data[size] = false;
-				return data;
-			},
-			{}
-		);
-
-		for (let i = definitions.length - 1; i >= 0; i--) {
-			const definition = definitions[i];
-
-			for (const size of tableColumSizesOptions) {
-				if (matchedIsLast[size]) {
-					definition.isLast[size] = false;
-					continue;
-				}
-
-				if (definition.parsedSizes![size] === 'hidden') {
-					definition.isLast[size] = false;
-					continue;
-				}
-
-				const isLastAtSizeFound = this._findLastDefinitionBySize(
-					definitions,
-					size
-				);
-				if (isLastAtSizeFound) {
-					definition.isLast[size] = false;
-					continue;
-				}
-
-				definition.isLast[size] = true;
-			}
-		}
-
-		return definitions;
-	}
-
-	private _findLastDefinitionBySize(definitions: TableColumn[], size: string) {
-		return definitions
-			.slice()
-			.reverse()
-			.find(d => d.isLast[size] === true);
 	}
 
 	private _parseDefinitionSizes(definition: TableColumn) {
@@ -1051,30 +1007,5 @@ export class Table implements OnInit, OnChanges {
 
 		definition.parsedSizes = parsedSizes;
 		return definition;
-	}
-
-	private _parseRowActionsRowDefinition() {
-		const isLast = tableColumSizesOptions.reduce(
-			(data: { [key: string]: boolean }, size) => {
-				data[size] = true;
-				return data;
-			},
-			{}
-		);
-		const sizes: TableColumnSizes = { default: 0 };
-
-		for (const size of tableColumSizesOptions) {
-			const lastColumn = this._findLastDefinitionBySize(this.columns, size);
-			sizes[size] = lastColumn!.parsedSizes![size]!;
-		}
-
-		return {
-			isLast,
-			sizes,
-			parsedSizes: sizes,
-			align: 'end',
-			type: 'td',
-			path: null,
-		};
 	}
 }
