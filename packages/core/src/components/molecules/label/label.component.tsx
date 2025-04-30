@@ -10,7 +10,7 @@ const label = cva(
 		variants: {
 			variant: {
 				positive: 'bg-positive-green-100 text-positive-green-800',
-				biased: 'bg-amber-100  text-amber-800',
+				unbiased: 'bg-amber-100  text-amber-800',
 				negative: 'bg-negative-red-100 text-negative-red-800',
 				neutral: 'bg-supportive-lilac-100 text-supportive-lilac-900',
 				unavailable: 'bg-white-700 text-dark-teal-800',
@@ -45,7 +45,7 @@ export class Label {
 	 */
 	@Prop({ reflect: true }) variant:
 		| 'positive'
-		| 'biased'
+		| 'unbiased'
 		| 'negative'
 		| 'neutral'
 		| 'unavailable' = 'neutral';
