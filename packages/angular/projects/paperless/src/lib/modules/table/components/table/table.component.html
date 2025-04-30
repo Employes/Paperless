@@ -265,46 +265,22 @@
 </ng-container>
 
 <ng-template #emptyStateTemplate>
-	<div
+	<p-empty-state
 		*ngIf="emptyStateType === 'filtered'; else emptyStateNonFilterTemplate"
-		class="flex max-w-[20rem] flex-col items-center self-center py-24 text-center"
-	>
-		<p-illustration
-			[variant]="emptyStateFilteredIllustration"
-			class="mb-6"
-		></p-illustration>
-		<p class="text-storm-default font-semibold">
-			{{ emptyStateFilteredHeader }}
-		</p>
-		<p class="mb-14 text-sm text-storm-medium">
-			{{ emptyStateFilteredContent }}
-		</p>
-	</div>
+		class="my-16 self-center"
+		[illustration]="emptyStateFilteredIllustration"
+		[header]="emptyStateFilteredHeader"
+		[content]="emptyStateFilteredContent"
+	></p-empty-state>
 </ng-template>
 
 <ng-template #emptyStateNonFilterTemplate>
-	<div
-		class="flex max-w-[20rem] flex-col items-center self-center py-24 text-center"
-		[class.cursor-pointer]="enableEmptyStateAction"
-		(click)="emptyStateClicked()"
-	>
-		<p-illustration
-			[variant]="emptyStateIllustration"
-			class="mb-6"
-		></p-illustration>
-		<p class="text-storm-default font-semibold">
-			{{ emptyStateHeader }}
-		</p>
-		<p class="mb-6 text-sm text-storm-medium">
-			{{ emptyStateContent }}
-		</p>
-		<p-button
-			*ngIf="enableEmptyStateAction"
-			variant="secondary"
-			icon="plus"
-			size="sm"
-		>
-			{{ emptyStateAction }}
-		</p-button>
-	</div>
+	<p-empty-state
+		class="my-16 self-center"
+		[illustration]="emptyStateIllustration"
+		[header]="emptyStateHeader"
+		[content]="emptyStateContent"
+		[enableAction]="enableEmptyStateAction"
+		(action)="emptyStateClicked()"
+	></p-empty-state>
 </ng-template>

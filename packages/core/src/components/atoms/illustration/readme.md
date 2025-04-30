@@ -17,13 +17,11 @@
 ### Used by
 
  - [p-empty-state](../../molecules/empty-state)
- - [p-table](../../organisms/table)
 
 ### Graph
 ```mermaid
 graph TD;
   p-empty-state --> p-illustration
-  p-table --> p-illustration
   style p-illustration fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
