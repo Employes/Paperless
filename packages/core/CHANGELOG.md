@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.73](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.72...v2.0.1-beta.73) (2025-04-30)
+
+
+### Bug Fixes
+
+* **organisms/navbar:** Fix profile dropdowns not sizing correctly ([09da124](https://github.com/ionic-team/stencil-component-starter/commit/09da1243bafd18fcef1f70a7e1e6c0ea4c416fa5))
+
+
+
+
+
 ## [2.0.1-beta.72](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.71...v2.0.1-beta.72) (2025-04-30)
 
 
