@@ -179,11 +179,13 @@
 	<ng-container *ngIf="enableFloatingMenu && enableRowSelection">
 		<p-floating-menu-container
 			[usedInTable]="true"
-			[class]="floatingMenuContainerClass({
-				hasFooter: enableFooter,
-				active: selectedRows.length > 0,
-				shown: $any(floatingMenuShown$ | async),
-			})"
+			[class]="
+				floatingMenuContainerClass({
+					hasFooter: enableFooter,
+					active: selectedRows.length > 0,
+					shown: $any(floatingMenuShown$ | async)
+				})
+			"
 			[amount]="floatingMenuAmountSelectedText"
 			[enableAmountSelected]="!!(rowActionsFloating$ | async)?.length"
 			(close)="_selectAllChange(null, false)"
