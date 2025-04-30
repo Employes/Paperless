@@ -273,6 +273,13 @@ const icon = cva([], {
 	],
 });
 
+export type ButtonVariant =
+	| 'primary'
+	| 'secondary'
+	| 'transparent'
+	| 'text'
+	| 'dropdown';
+
 @Component({
 	tag: 'p-button',
 	styleUrl: 'button.component.css',
@@ -291,12 +298,7 @@ export class Button {
 	/**
 	 * The variant of the button
 	 */
-	@Prop() variant?:
-		| 'primary'
-		| 'secondary'
-		| 'transparent'
-		| 'text'
-		| 'dropdown' = 'primary';
+	@Prop() variant?: ButtonVariant = 'primary';
 
 	/**
 	 * Wether to force an active state

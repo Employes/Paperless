@@ -5,9 +5,11 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { ButtonVariant } from "./components/molecules/button/button.component";
 import { IconFlipOptions, IconVariant } from "./components/atoms/icon/icon.component";
 import { RotateOptions, TextSizeOptions } from "./types/tailwind";
 import { Placement, Strategy } from "@floating-ui/dom";
+import { ButtonVariant as ButtonVariant1, IconFlipOptions as IconFlipOptions2, IconVariant as IconVariant1, unknown as IllustrationVariant, RotateOptions as RotateOptions2 } from "./components";
 import { HTMLInputTypeAttribute } from "react";
 import { templateFunc } from "./components/molecules/field/container/field-container.component";
 import { templateFunc as templateFunc1 } from "./components/molecules/field/container/field-container.component";
@@ -25,9 +27,11 @@ import { buttonTemplateFunc } from "./components/molecules/table/header/table-he
 import { TableColumn } from "./components/helpers/table/column/table-column.component";
 import { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc4 } from "./components/molecules/table/header/table-header.component";
 import { TableRowActionFunc, TableRowActionShowFunc } from "./components/helpers/table/row-action/table-row-action.component";
+export { ButtonVariant } from "./components/molecules/button/button.component";
 export { IconFlipOptions, IconVariant } from "./components/atoms/icon/icon.component";
 export { RotateOptions, TextSizeOptions } from "./types/tailwind";
 export { Placement, Strategy } from "@floating-ui/dom";
+export { ButtonVariant as ButtonVariant1, IconFlipOptions as IconFlipOptions2, IconVariant as IconVariant1, unknown as IllustrationVariant, RotateOptions as RotateOptions2 } from "./components";
 export { HTMLInputTypeAttribute } from "react";
 export { templateFunc } from "./components/molecules/field/container/field-container.component";
 export { templateFunc as templateFunc1 } from "./components/molecules/field/container/field-container.component";
@@ -221,11 +225,7 @@ export namespace Components {
         /**
           * The variant of the button
          */
-        "variant"?: | 'primary'
-		| 'secondary'
-		| 'transparent'
-		| 'text'
-		| 'dropdown';
+        "variant"?: ButtonVariant;
     }
     interface PButtonGroup {
         /**
@@ -3297,11 +3297,7 @@ declare namespace LocalJSX {
         /**
           * The variant of the button
          */
-        "variant"?: | 'primary'
-		| 'secondary'
-		| 'transparent'
-		| 'text'
-		| 'dropdown';
+        "variant"?: ButtonVariant;
     }
     interface PButtonGroup {
         /**
