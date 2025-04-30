@@ -320,6 +320,7 @@ export class Table implements OnInit, OnChanges {
 	@Input() emptyStateHeader!: string;
 	@Input() emptyStateContent!: string;
 	@Input() emptyStateAction!: string;
+	@Input() emptyStateActionIcon: IconVariant = 'plus';
 
 	@Input() enableEmptyStateAction: boolean = true;
 
