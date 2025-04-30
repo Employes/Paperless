@@ -385,6 +385,8 @@ export class Table {
 	@State() private _rowActionsFloating: TableRowAction[] = [];
 	@State() private _rowActionsRow: TableRowAction[] = [];
 
+	@State() private _footerHidden: boolean = false;
+
 	private _ctrlDown = false;
 	private _hasCustomFilterSlot = false;
 	private _hasCustomActionsSlot = false;
@@ -470,7 +472,7 @@ export class Table {
 						<p-floating-menu-container
 							usedInTable={true}
 							class={floatingMenuContainerClass({
-								hasFooter: this.enableFooter,
+								hasFooter: this.enableFooter && !this._footerHidden,
 								active: !!this.selectedRows?.length,
 								shown: this._floatingMenuShown,
 							})}
@@ -523,6 +525,7 @@ export class Table {
 							onPageChange={({ detail }) => this.pageChange.emit(detail)}
 							//loading
 							loading={this.footerLoading}
+							onHiddenChange={({ detail }) => (this._footerHidden = detail)}
 						></p-table-footer>
 					)}
 				</p-table-container>

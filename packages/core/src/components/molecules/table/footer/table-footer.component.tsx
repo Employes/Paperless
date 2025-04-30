@@ -16,7 +16,7 @@ import {
 
 const footer = cva(
 	[
-		'flex justify-center relative',
+		'justify-center relative',
 		'w-full py-8 px-6',
 		'after:absolute after:top-0 after:left-0  after:z-[0]',
 		'after:w-full after:h-full after:transition-opacity',
@@ -27,6 +27,10 @@ const footer = cva(
 			pinned: {
 				false: 'after:opacity-0',
 				true: 'after:opacity-100',
+			},
+			hidden: {
+				false: 'flex',
+				true: 'hidden',
 			},
 		},
 	}
@@ -90,6 +94,14 @@ export class TableFooter {
 	pageSizeChange: EventEmitter<number>;
 
 	/**
+	 * Event whenever the footer is hidden or nog
+	 */
+	@Event({
+		bubbles: false,
+	})
+	hiddenChange: EventEmitter<boolean>;
+
+	/**
 	 * Wether to hide when there is only 1 page available
 	 */
 	@Prop() hideOnSinglePage: boolean = true;
@@ -100,9 +112,27 @@ export class TableFooter {
 	@Element() private _el: HTMLElement;
 
 	@State() private _isPinned = false;
+	@State() private _hasPaginationPages = true;
+
+	private _hidePageSizeSelect = false;
+	private _hidden = false;
 
 	componentDidLoad() {
 		this._checkStuck();
+	}
+
+	componentWillRender() {
+		this._hidePageSizeSelect =
+			this.hideOnSinglePage && this.total <= this.pageSizeOptions?.[0];
+
+		const hidden =
+			(this._hidePageSizeSelect && !this._hasPaginationPages) ||
+			(!this.enablePaginationSize && !this.enablePaginationPages);
+
+		if (hidden !== this._hidden) {
+			this._hidden = hidden;
+			this.hiddenChange.emit(hidden);
+		}
 	}
 
 	render() {
@@ -110,6 +140,7 @@ export class TableFooter {
 			<div
 				class={footer({
 					pinned: this._isPinned,
+					hidden: this._hidden,
 				})}
 			>
 				{(this.enablePaginationPages || this.enablePaginationSize) &&
@@ -125,6 +156,9 @@ export class TableFooter {
 							hideOnSinglePage={this.hideOnSinglePage}
 							onPageChange={({ detail }) => this.pageChange.emit(detail)}
 							total={this.total}
+							onPagesChange={({ detail }) =>
+								(this._hasPaginationPages = detail > 1)
+							}
 						/>
 					)}
 			</div>

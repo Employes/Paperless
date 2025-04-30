@@ -21,10 +21,11 @@
 
 ## Events
 
-| Event            | Description                     | Type                  |
-| ---------------- | ------------------------------- | --------------------- |
-| `pageChange`     | Event whenever the page changes | `CustomEvent<number>` |
-| `pageSizeChange` | Event whenever the page changes | `CustomEvent<number>` |
+| Event            | Description                                | Type                   |
+| ---------------- | ------------------------------------------ | ---------------------- |
+| `hidden`         | Event whenever the footer is hidden or nog | `CustomEvent<boolean>` |
+| `pageChange`     | Event whenever the page changes            | `CustomEvent<number>`  |
+| `pageSizeChange` | Event whenever the page changes            | `CustomEvent<number>`  |
 
 
 ## Dependencies

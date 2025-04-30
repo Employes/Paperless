@@ -85,17 +85,22 @@ export class Pagination {
 	})
 	pageSizeChange: EventEmitter<number>;
 
+	/**
+	 * The pages that were generated
+	 */
+	@Event({ bubbles: false }) pagesChange: EventEmitter<number>;
+
 	@State() private _hasPaginationPages = true;
 
 	render() {
 		const hidePageSizeSelect =
-			this.hideOnSinglePage && this.total < this.pageSizeOptions?.[0];
+			this.hideOnSinglePage && this.total <= this.pageSizeOptions?.[0];
 
 		return (
 			<Host
 				class={pagination({
 					hidden:
-						(hidePageSizeSelect && !this.enablePaginationSize) ||
+						(hidePageSizeSelect && !this._hasPaginationPages) ||
 						(!this.enablePaginationSize && !this.enablePaginationPages),
 				})}
 			>
@@ -126,9 +131,10 @@ export class Pagination {
 						page={this.page}
 						hideOnSinglePage={this.hideOnSinglePage}
 						onPageChange={({ detail }) => this.pageChange.emit(detail)}
-						onPagesChange={({ detail }) =>
-							(this._hasPaginationPages = detail > 1)
-						}
+						onPagesChange={({ detail }) => {
+							this._hasPaginationPages = detail > 1;
+							this.pagesChange.emit(detail);
+						}}
 					/>
 				)}
 			</Host>
