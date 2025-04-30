@@ -226,7 +226,7 @@ export class Dropdown {
 				>
 					<slot name='trigger' />
 				</div>
-				{dropdownContainer}
+				<div class='relative w-full'>{dropdownContainer}</div>
 			</Host>
 		);
 	}

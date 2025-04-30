@@ -1,12 +1,4 @@
-import {
-	Component,
-	Element,
-	h,
-	Host,
-	Listen,
-	Prop,
-	State,
-} from '@stencil/core';
+import { Component, Element, h, Listen, Prop, State } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
 const profileContent = cva(['flex gap-2 items-center flex-1 min-w-0'], {
@@ -21,6 +13,7 @@ const profileContent = cva(['flex gap-2 items-center flex-1 min-w-0'], {
 @Component({
 	tag: 'p-profile',
 	styleUrl: 'profile.component.css',
+	shadow: true,
 })
 export class Profile {
 	/**
@@ -47,37 +40,33 @@ export class Profile {
 	render() {
 		const content = this._getContent();
 
-		return (
-			<Host class='p-profile inline-block w-inherit'>
-				{this._hasDropdownSlot ? (
-					<p-dropdown
-						strategy='absolute'
-						placement={this.dropdownLocation}
-						applyFullWidth={true}
-						applyMaxWidth={false}
-						onIsOpen={ev => (this._dropdownOpen = ev.detail)}
-					>
-						<p-button
-							variant='dropdown'
-							chevron={this._dropdownOpen ? 'up' : 'down'}
-							active={this._dropdownOpen}
-							slot='trigger'
-							size='lg'
-							class='w-full'
-						>
-							{content}
-						</p-button>
-						<div slot='items'>
-							<slot
-								name='dropdown'
-								onSlotchange={() => this._checkDropdownSlot()}
-							/>
-						</div>
-					</p-dropdown>
-				) : (
-					content
-				)}
-			</Host>
+		return this._hasDropdownSlot ? (
+			<p-dropdown
+				strategy='absolute'
+				placement={this.dropdownLocation}
+				applyFullWidth={true}
+				applyMaxWidth={false}
+				onIsOpen={ev => (this._dropdownOpen = ev.detail)}
+			>
+				<p-button
+					variant='dropdown'
+					chevron={this._dropdownOpen ? 'up' : 'down'}
+					active={this._dropdownOpen}
+					slot='trigger'
+					size='lg'
+					class='w-full'
+				>
+					{content}
+				</p-button>
+				<div slot='items'>
+					<slot
+						name='dropdown'
+						onSlotchange={() => this._checkDropdownSlot()}
+					/>
+				</div>
+			</p-dropdown>
+		) : (
+			content
 		);
 	}
 
@@ -105,10 +94,10 @@ export class Profile {
 			>
 				<slot name='avatar' />
 				<div class='flex min-w-0 flex-1 flex-col items-start'>
-					<p class='w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm font-medium'>
+					<p class='my-0 w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm font-medium'>
 						<slot name='title' />
 					</p>
-					<p class='w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-xs text-black-teal-300'>
+					<p class='my-0 w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-xs text-black-teal-300'>
 						<slot name='subtitle' />
 					</p>
 				</div>
