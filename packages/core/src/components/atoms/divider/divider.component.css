@@ -1,12 +1,3 @@
-:host {
-	@apply block;
+p-divider {
 	--tw-content: '';
-}
-
-:host([variant='horizontal']) {
-	@apply w-full;
-}
-
-:host([variant='vertical']) {
-	@apply h-full;
 }

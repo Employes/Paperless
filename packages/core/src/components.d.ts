@@ -18,12 +18,12 @@ import { IconDeprecatedVariant } from "./components/deprecated/atoms/icon-deprec
 import { IllustrationVariant } from "./components/deprecated/atoms/illustration/illustration.component";
 import { Observable } from "rxjs";
 import { templateFunc as templateFunc2 } from "./components/molecules/pagination/size/pagination-size.component";
-import { amountSelectedTemplateFunc as amountSelectedTemplateFunc1, templateFunc as templateFunc3 } from "./components/deprecated/organisms/table/table.component";
+import { amountSelectedTemplateFunc as amountSelectedTemplateFunc1, templateFunc as templateFunc3 } from "./components/organisms/table/table.component";
 import { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
 import { IconFlipOptions as IconFlipOptions2, IconVariant as IconVariant2, RotateOptions as RotateOptions2 } from "./components";
-import { buttonTemplateFunc } from "./components/deprecated/molecules/table/header/table-header.component";
+import { buttonTemplateFunc } from "./components/molecules/table/header/table-header.component";
 import { TableColumn } from "./components/helpers/table/column/table-column.component";
-import { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc4 } from "./components/deprecated/molecules/table/header/table-header.component";
+import { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc4 } from "./components/molecules/table/header/table-header.component";
 import { TableRowActionFunc, TableRowActionShowFunc } from "./components/helpers/table/row-action/table-row-action.component";
 export { IconFlipOptions, IconVariant } from "./components/atoms/icon/icon.component";
 export { RotateOptions, TextSizeOptions } from "./types/tailwind";
@@ -38,12 +38,12 @@ export { IconDeprecatedVariant } from "./components/deprecated/atoms/icon-deprec
 export { IllustrationVariant } from "./components/deprecated/atoms/illustration/illustration.component";
 export { Observable } from "rxjs";
 export { templateFunc as templateFunc2 } from "./components/molecules/pagination/size/pagination-size.component";
-export { amountSelectedTemplateFunc as amountSelectedTemplateFunc1, templateFunc as templateFunc3 } from "./components/deprecated/organisms/table/table.component";
+export { amountSelectedTemplateFunc as amountSelectedTemplateFunc1, templateFunc as templateFunc3 } from "./components/organisms/table/table.component";
 export { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
 export { IconFlipOptions as IconFlipOptions2, IconVariant as IconVariant2, RotateOptions as RotateOptions2 } from "./components";
-export { buttonTemplateFunc } from "./components/deprecated/molecules/table/header/table-header.component";
+export { buttonTemplateFunc } from "./components/molecules/table/header/table-header.component";
 export { TableColumn } from "./components/helpers/table/column/table-column.component";
-export { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc4 } from "./components/deprecated/molecules/table/header/table-header.component";
+export { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc4 } from "./components/molecules/table/header/table-header.component";
 export { TableRowActionFunc, TableRowActionShowFunc } from "./components/helpers/table/row-action/table-row-action.component";
 export namespace Components {
     interface PAccordion {
@@ -893,6 +893,12 @@ export namespace Components {
          */
         "variant": IllustrationVariant;
     }
+    interface PIllustrationDeprecated {
+        /**
+          * The icon the be displayed
+         */
+        "variant": IllustrationVariant;
+    }
     interface PInfoPanel {
         /**
           * Wether the panel can be closed
@@ -1618,13 +1624,13 @@ export namespace Components {
          */
         "enableHeader": boolean;
         /**
-          * Wether to enable page size select
+          * Wether to enable pagination pages
          */
-        "enablePageSize": boolean;
+        "enablePaginationPages": boolean;
         /**
-          * Wether to enable pagination
+          * Wether to enable pagination size select
          */
-        "enablePagination": boolean;
+        "enablePaginationSize": boolean;
         /**
           * Wether to enable row clicking
          */
@@ -1729,10 +1735,6 @@ export namespace Components {
          */
         "rowIndex": number;
         /**
-          * Wether the table has actions
-         */
-        "tableHasActions": boolean;
-        /**
           * The template to show
          */
         "template": TableDefinitionTemplateFunc;
@@ -1743,7 +1745,7 @@ export namespace Components {
         /**
           * The variant of the column
          */
-        "variant": 'default' | 'loading' | 'header' | 'actions';
+        "variant": 'default' | 'loading' | 'header';
     }
     interface PTableColumn {
         /**
@@ -1754,10 +1756,6 @@ export namespace Components {
           * Wether the column should have a checkbox
          */
         "hasCheckbox": boolean;
-        /**
-          * Wether the column is the last in the row
-         */
-        "isLast": { [key: string]: boolean };
         /**
           * The name of the column
          */
@@ -1789,21 +1787,16 @@ export namespace Components {
         "useSlot": boolean;
     }
     interface PTableContainer {
-        "shadow": boolean;
     }
     interface PTableFooter {
         /**
-          * Wether to enable export
+          * Wether to enable pagination pages
          */
-        "enableExport": boolean;
+        "enablePaginationPages": boolean;
         /**
-          * Wether to enable page size select
+          * Wether to enable pagination size select
          */
-        "enablePageSize": boolean;
-        /**
-          * Wether to enable pagination
-         */
-        "enablePagination": boolean;
+        "enablePaginationSize": boolean;
         /**
           * Wether to hide when there is only 1 page available
          */
@@ -1858,6 +1851,10 @@ export namespace Components {
           * Wether to show the action button
          */
         "enableAction": boolean;
+        /**
+          * Wether to show the export button
+         */
+        "enableExport": boolean;
         /**
           * Wether to show the filter button
          */
@@ -1946,6 +1943,8 @@ export namespace Components {
           * The type of action mutli = Only multi select action single = Only an action on the row both = Action on both locations
          */
         "type": 'both' | 'single' | 'multi';
+    }
+    interface PTableRowActionsContainer {
     }
     interface PToast {
         /**
@@ -2107,6 +2106,10 @@ export interface PFloatingMenuContainerCustomEvent<T> extends CustomEvent<T> {
 export interface PInfoPanelCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPInfoPanelElement;
+}
+export interface PLayoutCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPLayoutElement;
 }
 export interface PModalCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -2531,6 +2534,12 @@ declare global {
         prototype: HTMLPIllustrationElement;
         new (): HTMLPIllustrationElement;
     };
+    interface HTMLPIllustrationDeprecatedElement extends Components.PIllustrationDeprecated, HTMLStencilElement {
+    }
+    var HTMLPIllustrationDeprecatedElement: {
+        prototype: HTMLPIllustrationDeprecatedElement;
+        new (): HTMLPIllustrationDeprecatedElement;
+    };
     interface HTMLPInfoPanelElementEventMap {
         "closed": void;
     }
@@ -2566,7 +2575,18 @@ declare global {
         prototype: HTMLPLabelElement;
         new (): HTMLPLabelElement;
     };
+    interface HTMLPLayoutElementEventMap {
+        "scroll": any;
+    }
     interface HTMLPLayoutElement extends Components.PLayout, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPLayoutElementEventMap>(type: K, listener: (this: HTMLPLayoutElement, ev: PLayoutCustomEvent<HTMLPLayoutElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPLayoutElementEventMap>(type: K, listener: (this: HTMLPLayoutElement, ev: PLayoutCustomEvent<HTMLPLayoutElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPLayoutElement: {
         prototype: HTMLPLayoutElement;
@@ -2885,7 +2905,6 @@ declare global {
     interface HTMLPTableFooterElementEventMap {
         "pageChange": number;
         "pageSizeChange": number;
-        "export": number;
     }
     interface HTMLPTableFooterElement extends Components.PTableFooter, HTMLStencilElement {
         addEventListener<K extends keyof HTMLPTableFooterElementEventMap>(type: K, listener: (this: HTMLPTableFooterElement, ev: PTableFooterCustomEvent<HTMLPTableFooterElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -2906,6 +2925,7 @@ declare global {
         "queryChange": string;
         "filter": null;
         "action": null;
+        "export": number;
     }
     interface HTMLPTableHeaderElement extends Components.PTableHeader, HTMLStencilElement {
         addEventListener<K extends keyof HTMLPTableHeaderElementEventMap>(type: K, listener: (this: HTMLPTableHeaderElement, ev: PTableHeaderCustomEvent<HTMLPTableHeaderElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -2932,6 +2952,12 @@ declare global {
     var HTMLPTableRowActionElement: {
         prototype: HTMLPTableRowActionElement;
         new (): HTMLPTableRowActionElement;
+    };
+    interface HTMLPTableRowActionsContainerElement extends Components.PTableRowActionsContainer, HTMLStencilElement {
+    }
+    var HTMLPTableRowActionsContainerElement: {
+        prototype: HTMLPTableRowActionsContainerElement;
+        new (): HTMLPTableRowActionsContainerElement;
     };
     interface HTMLPToastElementEventMap {
         "action": MouseEvent;
@@ -3026,6 +3052,7 @@ declare global {
         "p-icon": HTMLPIconElement;
         "p-icon-deprecated": HTMLPIconDeprecatedElement;
         "p-illustration": HTMLPIllustrationElement;
+        "p-illustration-deprecated": HTMLPIllustrationDeprecatedElement;
         "p-info-panel": HTMLPInfoPanelElement;
         "p-input-error": HTMLPInputErrorElement;
         "p-input-group": HTMLPInputGroupElement;
@@ -3067,6 +3094,7 @@ declare global {
         "p-table-header": HTMLPTableHeaderElement;
         "p-table-row": HTMLPTableRowElement;
         "p-table-row-action": HTMLPTableRowActionElement;
+        "p-table-row-actions-container": HTMLPTableRowActionsContainerElement;
         "p-toast": HTMLPToastElement;
         "p-toast-container": HTMLPToastContainerElement;
         "p-toggle": HTMLPToggleElement;
@@ -3994,6 +4022,12 @@ declare namespace LocalJSX {
          */
         "variant": IllustrationVariant;
     }
+    interface PIllustrationDeprecated {
+        /**
+          * The icon the be displayed
+         */
+        "variant": IllustrationVariant;
+    }
     interface PInfoPanel {
         /**
           * Wether the panel can be closed
@@ -4123,6 +4157,10 @@ declare namespace LocalJSX {
 		| 'unavailable';
     }
     interface PLayout {
+        /**
+          * Event whenever the layout is being scrolled
+         */
+        "onScroll"?: (event: PLayoutCustomEvent<any>) => void;
         /**
           * Variant of the layout
          */
@@ -4779,13 +4817,13 @@ declare namespace LocalJSX {
          */
         "enableHeader"?: boolean;
         /**
-          * Wether to enable page size select
+          * Wether to enable pagination pages
          */
-        "enablePageSize"?: boolean;
+        "enablePaginationPages"?: boolean;
         /**
-          * Wether to enable pagination
+          * Wether to enable pagination size select
          */
-        "enablePagination"?: boolean;
+        "enablePaginationSize"?: boolean;
         /**
           * Wether to enable row clicking
          */
@@ -4942,10 +4980,6 @@ declare namespace LocalJSX {
          */
         "rowIndex"?: number;
         /**
-          * Wether the table has actions
-         */
-        "tableHasActions"?: boolean;
-        /**
           * The template to show
          */
         "template"?: TableDefinitionTemplateFunc;
@@ -4956,7 +4990,7 @@ declare namespace LocalJSX {
         /**
           * The variant of the column
          */
-        "variant"?: 'default' | 'loading' | 'header' | 'actions';
+        "variant"?: 'default' | 'loading' | 'header';
     }
     interface PTableColumn {
         /**
@@ -4967,10 +5001,6 @@ declare namespace LocalJSX {
           * Wether the column should have a checkbox
          */
         "hasCheckbox"?: boolean;
-        /**
-          * Wether the column is the last in the row
-         */
-        "isLast"?: { [key: string]: boolean };
         /**
           * The name of the column
          */
@@ -5006,21 +5036,16 @@ declare namespace LocalJSX {
         "useSlot"?: boolean;
     }
     interface PTableContainer {
-        "shadow"?: boolean;
     }
     interface PTableFooter {
         /**
-          * Wether to enable export
+          * Wether to enable pagination pages
          */
-        "enableExport"?: boolean;
+        "enablePaginationPages"?: boolean;
         /**
-          * Wether to enable page size select
+          * Wether to enable pagination size select
          */
-        "enablePageSize"?: boolean;
-        /**
-          * Wether to enable pagination
-         */
-        "enablePagination"?: boolean;
+        "enablePaginationSize"?: boolean;
         /**
           * Wether to hide when there is only 1 page available
          */
@@ -5029,10 +5054,6 @@ declare namespace LocalJSX {
           * Wether we want to show loading state
          */
         "loading"?: boolean;
-        /**
-          * Event whenever the page changes
-         */
-        "onExport"?: (event: PTableFooterCustomEvent<number>) => void;
         /**
           * Event whenever the page changes
          */
@@ -5088,6 +5109,10 @@ declare namespace LocalJSX {
          */
         "enableAction"?: boolean;
         /**
+          * Wether to show the export button
+         */
+        "enableExport"?: boolean;
+        /**
           * Wether to show the filter button
          */
         "enableFilter"?: boolean;
@@ -5115,6 +5140,10 @@ declare namespace LocalJSX {
           * Event when the action button is clicked
          */
         "onAction"?: (event: PTableHeaderCustomEvent<null>) => void;
+        /**
+          * Event whenever the export button is clicked
+         */
+        "onExport"?: (event: PTableHeaderCustomEvent<number>) => void;
         /**
           * Event when the filter button is clicked
          */
@@ -5191,6 +5220,8 @@ declare namespace LocalJSX {
           * The type of action mutli = Only multi select action single = Only an action on the row both = Action on both locations
          */
         "type"?: 'both' | 'single' | 'multi';
+    }
+    interface PTableRowActionsContainer {
     }
     interface PToast {
         /**
@@ -5343,6 +5374,7 @@ declare namespace LocalJSX {
         "p-icon": PIcon;
         "p-icon-deprecated": PIconDeprecated;
         "p-illustration": PIllustration;
+        "p-illustration-deprecated": PIllustrationDeprecated;
         "p-info-panel": PInfoPanel;
         "p-input-error": PInputError;
         "p-input-group": PInputGroup;
@@ -5384,6 +5416,7 @@ declare namespace LocalJSX {
         "p-table-header": PTableHeader;
         "p-table-row": PTableRow;
         "p-table-row-action": PTableRowAction;
+        "p-table-row-actions-container": PTableRowActionsContainer;
         "p-toast": PToast;
         "p-toast-container": PToastContainer;
         "p-toggle": PToggle;
@@ -5428,6 +5461,7 @@ declare module "@stencil/core" {
             "p-icon": LocalJSX.PIcon & JSXBase.HTMLAttributes<HTMLPIconElement>;
             "p-icon-deprecated": LocalJSX.PIconDeprecated & JSXBase.HTMLAttributes<HTMLPIconDeprecatedElement>;
             "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;
+            "p-illustration-deprecated": LocalJSX.PIllustrationDeprecated & JSXBase.HTMLAttributes<HTMLPIllustrationDeprecatedElement>;
             "p-info-panel": LocalJSX.PInfoPanel & JSXBase.HTMLAttributes<HTMLPInfoPanelElement>;
             "p-input-error": LocalJSX.PInputError & JSXBase.HTMLAttributes<HTMLPInputErrorElement>;
             "p-input-group": LocalJSX.PInputGroup & JSXBase.HTMLAttributes<HTMLPInputGroupElement>;
@@ -5469,6 +5503,7 @@ declare module "@stencil/core" {
             "p-table-header": LocalJSX.PTableHeader & JSXBase.HTMLAttributes<HTMLPTableHeaderElement>;
             "p-table-row": LocalJSX.PTableRow & JSXBase.HTMLAttributes<HTMLPTableRowElement>;
             "p-table-row-action": LocalJSX.PTableRowAction & JSXBase.HTMLAttributes<HTMLPTableRowActionElement>;
+            "p-table-row-actions-container": LocalJSX.PTableRowActionsContainer & JSXBase.HTMLAttributes<HTMLPTableRowActionsContainerElement>;
             "p-toast": LocalJSX.PToast & JSXBase.HTMLAttributes<HTMLPToastElement>;
             "p-toast-container": LocalJSX.PToastContainer & JSXBase.HTMLAttributes<HTMLPToastContainerElement>;
             "p-toggle": LocalJSX.PToggle & JSXBase.HTMLAttributes<HTMLPToggleElement>;

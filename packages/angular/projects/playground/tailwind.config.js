@@ -6,6 +6,7 @@ module.exports = {
 	content: [
 		path.join(__dirname, './src/**/*.{html,scss,ts}'),
 		path.join(__dirname, '../paperless/src/**/*.{html,scss,ts}'),
+		path.join(__dirname, '../../../core/src/utils/*.ts'),
 	],
 	plugins: [
 		require('@tailwindcss/aspect-ratio'),

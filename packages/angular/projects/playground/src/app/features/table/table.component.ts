@@ -11,9 +11,60 @@ import { BehaviorSubject } from 'rxjs';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TableComponent {
-	public items = JSON.parse(
-		'[{"date":"01/01/2022","hours":8,"status":"Ingediend", "canSelect": true, "hide": true},{"date":"02/01/2022","hours":6.5,"status":"Ingediend", "canSelect": true},{"date":"03/01/2022","hours":8,"status":"Goedgekeurd", "canSelect": true},{"date":"08/01/2022","hours":8,"status":"Goedgekeurd", "canSelect": true},{"date":"09/01/2022","hours":8,"status":"Afgekeurd", "canSelect": true},{"date":"10/01/2022","hours":8,"status":"Afgekeurd", "canSelect": true}]'
-	);
+	private _items = [
+		{
+			employee: 'Keven de Koning',
+			date: new Date(),
+			hours: 8,
+			status: 'Ingediend',
+			canSelect: true,
+			hide: true,
+		},
+		{
+			employee: 'Jurien Hamaker',
+			date: new Date(),
+			hours: 6.5,
+			status: 'Ingediend',
+			canSelect: true,
+		},
+		{
+			employee: 'Bart van Zanten',
+			date: new Date(),
+			hours: 8,
+			status: 'Goedgekeurd',
+			canSelect: true,
+		},
+		{
+			employee: 'Jim Overmeent',
+			date: new Date(),
+			hours: 8,
+			status: 'Goedgekeurd',
+			canSelect: true,
+		},
+		{
+			employee: 'Keven de Koning',
+			date: new Date(),
+			hours: 8,
+			status: 'Afgekeurd',
+			canSelect: true,
+		},
+		{
+			employee: 'Jurien Hamaker',
+			date: new Date(),
+			hours: 8,
+			status: 'Afgekeurd',
+			canSelect: true,
+		},
+	];
+
+	public items = [
+		...this._items,
+		...this._items,
+		...this._items,
+		...this._items,
+		...this._items,
+		...this._items,
+	];
 
 	public floatingMenuAmountSelectedText = '0 items selected';
 
@@ -68,5 +119,7 @@ export class TableComponent {
 		}
 
 		this.floatingMenuAmountSelectedText = `${rows.length} items selected`;
+
+		console.log(JSON.stringify(this.items, null, 2));
 	}
 }

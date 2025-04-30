@@ -22,7 +22,8 @@
  - [p-modal-footer](../modal/footer)
  - [p-pagination](../../molecules/pagination/pagination)
  - [p-tab-container](../tab/container)
- - [p-table-row](../../deprecated/molecules/table/row)
+ - [p-table-header](../../molecules/table/header)
+ - [p-table-row](../../molecules/table/row)
 
 ### Graph
 ```mermaid
@@ -33,6 +34,7 @@ graph TD;
   p-modal-footer --> p-divider
   p-pagination --> p-divider
   p-tab-container --> p-divider
+  p-table-header --> p-divider
   p-table-row --> p-divider
   style p-divider fill:#f9f,stroke:#333,stroke-width:4px
 ```

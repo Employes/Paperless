@@ -27,7 +27,6 @@
 ### Used by
 
  - [p-pagination](../pagination)
- - [p-table-footer](../../../deprecated/molecules/table/footer)
 
 ### Depends on
 
@@ -47,7 +46,6 @@ graph TD;
   p-dropdown-menu-item --> p-checkbox
   p-checkbox --> p-icon
   p-pagination --> p-pagination-size
-  p-table-footer --> p-pagination-size
   style p-pagination-size fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

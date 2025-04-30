@@ -1,0 +1,6 @@
+:host {
+	@apply sticky;
+	@apply z-[1];
+
+	--tw-content: '';
+}

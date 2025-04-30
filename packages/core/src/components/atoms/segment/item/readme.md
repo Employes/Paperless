@@ -21,7 +21,7 @@
 
 ### Used by
 
- - [p-table-header](../../../deprecated/molecules/table/header)
+ - [p-table-header](../../../molecules/table/header)
 
 ### Depends on
 

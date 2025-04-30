@@ -70,6 +70,7 @@ export class Icon {
 				style={{
 					'--tw-rotate': `${this.rotate}deg`,
 				}}
+				title={this.variant}
 				innerHTML={svg}
 			></Host>
 		);

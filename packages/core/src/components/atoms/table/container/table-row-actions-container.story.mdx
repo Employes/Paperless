@@ -1,0 +1,33 @@
+import { Meta, Title, Canvas, Markdown, Controls } from '@storybook/blocks';
+import { IntendedUsage } from '@doc-blocks/intended-usage';
+import * as Stories from './table-row-actions-container.stories';
+
+<Meta of={Stories} />
+
+<Title />
+
+<Canvas
+	of={Stories.Default}
+	meta={Stories}
+/>
+
+<Controls of={Stories.Default} />
+
+## Intended usage
+
+<IntendedUsage
+	sectionTitle="Do's"
+	icon='✅'
+>
+	<ul>
+		<li>Do</li>
+	</ul>
+</IntendedUsage>
+<IntendedUsage
+	sectionTitle="Dont's"
+	icon='❌'
+>
+	<ul>
+		<li>Don't</li>
+	</ul>
+</IntendedUsage>

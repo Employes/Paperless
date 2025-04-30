@@ -26,10 +26,9 @@
  - [p-floating-menu-item](../../../atoms/floating-menu/item)
  - [p-navigation-item](../../../molecules/navigation/item)
  - [p-select](../../../molecules/select)
- - [p-table](../../organisms/table)
- - [p-table-cell](../../molecules/table/cell)
- - [p-table-footer](../../molecules/table/footer)
- - [p-table-header](../../molecules/table/header)
+ - [p-table](../../../organisms/table)
+ - [p-table-cell](../../../molecules/table/cell)
+ - [p-table-header](../../../molecules/table/header)
 
 ### Graph
 ```mermaid
@@ -42,7 +41,6 @@ graph TD;
   p-select --> p-loader
   p-table --> p-loader
   p-table-cell --> p-loader
-  p-table-footer --> p-loader
   p-table-header --> p-loader
   style p-loader fill:#f9f,stroke:#333,stroke-width:4px
 ```

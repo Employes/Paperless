@@ -30,7 +30,7 @@
 ### Used by
 
  - [p-dropdown-menu-item](../dropdown-menu/item)
- - [p-table](../../deprecated/organisms/table)
+ - [p-table](../../organisms/table)
 
 ### Depends on
 

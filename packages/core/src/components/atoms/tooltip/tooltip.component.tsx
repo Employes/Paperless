@@ -272,6 +272,7 @@ export class Tooltip {
 		}
 
 		this._cleanup = autoUpdate(this._el, this._popover, () => this._update());
+
 		// Make the popover visible
 		this._popover.setAttribute('data-show', '');
 
