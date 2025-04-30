@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.69](https://github.com/Employes/Paperless/compare/v2.0.1-beta.68...v2.0.1-beta.69) (2025-04-30)
+
+
+### Bug Fixes
+
+* **angular/organisms/table:** Remove extra comma ([927c4ae](https://github.com/Employes/Paperless/commit/927c4ae842c9879a6e657b1ec714fb338809fc33))
+
+
+
+
+
 ## [2.0.1-beta.68](https://github.com/Employes/Paperless/compare/v2.0.1-beta.67...v2.0.1-beta.68) (2025-04-30)
 
 
