@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.76](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.75...v2.0.1-beta.76) (2025-04-30)
+
+
+### Features
+
+* **atoms/icon & illustration:** Add warning for non-existing variant ([66d182d](https://github.com/ionic-team/stencil-component-starter/commit/66d182d6066c41d74ed0b144f845adf00aef60e0))
+
+
+
+
+
 ## [2.0.1-beta.75](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.74...v2.0.1-beta.75) (2025-04-30)
 
 
