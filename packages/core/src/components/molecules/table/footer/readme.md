@@ -23,7 +23,7 @@
 
 | Event            | Description                                | Type                   |
 | ---------------- | ------------------------------------------ | ---------------------- |
-| `hidden`         | Event whenever the footer is hidden or nog | `CustomEvent<boolean>` |
+| `hiddenChange`   | Event whenever the footer is hidden or nog | `CustomEvent<boolean>` |
 | `pageChange`     | Event whenever the page changes            | `CustomEvent<number>`  |
 | `pageSizeChange` | Event whenever the page changes            | `CustomEvent<number>`  |
 
