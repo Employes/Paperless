@@ -1,4 +1,4 @@
-import { Component, h, Listen, State } from '@stencil/core';
+import { Component, h, Host, Listen, State } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
 const sidebarAndTopbar = cva([
@@ -57,14 +57,13 @@ const backdrop = cva(
 @Component({
 	tag: 'p-navbar',
 	styleUrl: 'navbar.component.css',
-	shadow: true,
 })
 export class Navbar {
 	@State() private _show = false;
 
 	render() {
 		return (
-			<div class='p-navbar w-full max-h-screen-safe layout-1280:w-60 layout-1680:w-72'>
+			<Host class='p-navbar w-full max-h-screen-safe layout-1280:w-60 layout-1680:w-72'>
 				<p-backdrop
 					class={backdrop({ show: this._show })}
 					scrollLock={this._show}
@@ -103,7 +102,7 @@ export class Navbar {
 
 					<slot name='topbar' />
 				</div>
-			</div>
+			</Host>
 		);
 	}
 
