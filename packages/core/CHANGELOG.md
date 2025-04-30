@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.77](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.76...v2.0.1-beta.77) (2025-04-30)
+
+
+### Reverts
+
+* Revert "refactor(molecules/label): Change biased to unbiased" ([d4cc3f5](https://github.com/ionic-team/stencil-component-starter/commit/d4cc3f5c4a81afe25b24f00bf81d2c5c8af52e85))
+
+
+
+
+
 ## [2.0.1-beta.76](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.75...v2.0.1-beta.76) (2025-04-30)
 
 
