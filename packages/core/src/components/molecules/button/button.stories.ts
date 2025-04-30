@@ -5,12 +5,7 @@ const meta = {
 	title: 'Design System/Molecules/Button',
 	component: 'p-button',
 	args: {
-		content: 'Button',
-	},
-	argTypes: {
-		content: {
-			type: 'string',
-		},
+		label: 'Button',
 	},
 };
 
@@ -18,7 +13,6 @@ export default meta;
 
 export const Default = {
 	render: ({
-		content,
 		label,
 		as,
 		variant,
@@ -39,7 +33,7 @@ export const Default = {
 		'icon-rotate': iconRotate,
 		'inherit-text': inheritText,
 		'button-group-position': buttonGroupPosition,
-		'class': className,
+		class: className,
 	}) => html`<p-button
 		label=${label ?? nothing}
 		as=${as ?? nothing}
@@ -64,7 +58,6 @@ export const Default = {
 		class=${className ?? nothing}
 		@onClick=${action('onClick')}
 	>
-		${content}
 	</p-button>`,
 	tags: ['!dev'],
 };
