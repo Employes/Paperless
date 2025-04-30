@@ -2733,6 +2733,7 @@ declare global {
     interface HTMLPPaginationElementEventMap {
         "pageChange": number;
         "pageSizeChange": number;
+        "pagesChange": number;
     }
     interface HTMLPPaginationElement extends Components.PPagination, HTMLStencilElement {
         addEventListener<K extends keyof HTMLPPaginationElementEventMap>(type: K, listener: (this: HTMLPPaginationElement, ev: PPaginationCustomEvent<HTMLPPaginationElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -2960,6 +2961,7 @@ declare global {
     interface HTMLPTableFooterElementEventMap {
         "pageChange": number;
         "pageSizeChange": number;
+        "hiddenChange": boolean;
     }
     interface HTMLPTableFooterElement extends Components.PTableFooter, HTMLStencilElement {
         addEventListener<K extends keyof HTMLPTableFooterElementEventMap>(type: K, listener: (this: HTMLPTableFooterElement, ev: PTableFooterCustomEvent<HTMLPTableFooterElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -4418,6 +4420,10 @@ declare namespace LocalJSX {
          */
         "onPageSizeChange"?: (event: PPaginationCustomEvent<number>) => void;
         /**
+          * The pages that were generated
+         */
+        "onPagesChange"?: (event: PPaginationCustomEvent<number>) => void;
+        /**
           * The current page
          */
         "page"?: number;
@@ -5144,6 +5150,10 @@ declare namespace LocalJSX {
           * Wether we want to show loading state
          */
         "loading"?: boolean;
+        /**
+          * Event whenever the footer is hidden or nog
+         */
+        "onHiddenChange"?: (event: PTableFooterCustomEvent<boolean>) => void;
         /**
           * Event whenever the page changes
          */

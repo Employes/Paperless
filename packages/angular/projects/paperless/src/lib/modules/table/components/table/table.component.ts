@@ -420,6 +420,8 @@ export class Table implements OnInit, OnChanges {
 	private _inputEnableRowSelection: boolean = this.enableRowSelection;
 	private _inputRowSelectionLimit: number | undefined = this.rowSelectionLimit;
 
+	public footerHidden$ = new BehaviorSubject(false);
+
 	constructor(private _changeDetection: ChangeDetectorRef) {}
 
 	ngOnInit() {

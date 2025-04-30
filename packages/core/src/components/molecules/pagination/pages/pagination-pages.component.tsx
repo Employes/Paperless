@@ -59,7 +59,7 @@ export class PaginationPages {
 	/**
 	 * The pages that were generated
 	 */
-	@Event() pagesChange: EventEmitter<number>;
+	@Event({ bubbles: false }) pagesChange: EventEmitter<number>;
 
 	private _pages: number[] = [];
 	private _set: PaginationSetItem[] = [];

@@ -35,6 +35,6 @@ export const Default = {
 		@pageChange=${action('pageChange')}
 		@pageSizeChange=${action('pageSizeChange')}
 		@export=${action('export')}
+		@hidden=${action('hidden')}
 	/>`,
-	tags: ['!dev'],
 };

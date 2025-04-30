@@ -23,6 +23,7 @@
 | Event            | Description                     | Type                  |
 | ---------------- | ------------------------------- | --------------------- |
 | `pageChange`     | Event whenever the page changes | `CustomEvent<number>` |
+| `pagesChange`    | The pages that were generated   | `CustomEvent<number>` |
 | `pageSizeChange` | Event whenever the page changes | `CustomEvent<number>` |
 
 

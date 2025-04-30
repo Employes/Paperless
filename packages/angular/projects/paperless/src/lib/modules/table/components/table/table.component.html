@@ -181,7 +181,7 @@
 			[usedInTable]="true"
 			[class]="
 				floatingMenuContainerClass({
-					hasFooter: enableFooter,
+					hasFooter: enableFooter && (footerHidden$ | async) === false,
 					active: selectedRows.length > 0,
 					shown: $any(floatingMenuShown$ | async)
 				})
@@ -220,6 +220,7 @@
 		[total]="total"
 		(pageChange)="onPageChange($event)"
 		[loading]="footerLoading"
+		(hiddenChange)="footerHidden$.next($event.detail)"
 	></p-table-footer>
 </p-table-container>
 
