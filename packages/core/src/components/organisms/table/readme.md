@@ -90,7 +90,7 @@
 - [p-button](../../molecules/button)
 - [p-loader](../../deprecated/atoms/loader)
 - [p-checkbox](../../atoms/checkbox)
-- [p-illustration](../../atoms/illustration)
+- [p-empty-state](../../molecules/empty-state)
 
 ### Graph
 ```mermaid
@@ -107,7 +107,7 @@ graph TD;
   p-table --> p-button
   p-table --> p-loader
   p-table --> p-checkbox
-  p-table --> p-illustration
+  p-table --> p-empty-state
   p-table-header --> p-loader
   p-table-header --> p-segment-container
   p-table-header --> p-segment-item
@@ -146,6 +146,8 @@ graph TD;
   p-pagination-pages --> p-icon
   p-table-row --> p-divider
   p-table-cell --> p-loader
+  p-empty-state --> p-illustration
+  p-empty-state --> p-button
   style p-table fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

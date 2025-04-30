@@ -813,7 +813,6 @@ export class Table {
 
 		const selectionContains = this._selectionContains(rowIndex);
 
-		console.log('??');
 		return (
 			<p-checkbox
 				class='flex-shrink-0'
@@ -832,48 +831,25 @@ export class Table {
 	private _getEmptyState() {
 		if (this.query?.length || this.selectedFiltersAmount) {
 			return (
-				<div class='flex max-w-[20rem] flex-col items-center self-center py-24 text-center'>
-					<p-illustration
-						variant='search'
-						class='mb-6'
-					/>
-					<p class='text-storm-default font-semibold'>
-						{this.emptyStateFilteredHeader()}
-					</p>
-					<p class='mb-14 text-sm text-storm-medium'>
-						{this.emptyStateFilteredContent()}
-					</p>
-				</div>
+				<p-empty-state
+					class='my-16 self-center'
+					illustration='search'
+					header={this.emptyStateFilteredHeader()}
+					content={this.emptyStateFilteredContent()}
+				></p-empty-state>
 			);
 		}
 
 		return (
-			<div
-				class={`flex max-w-[20rem] flex-col items-center self-center py-24 text-center ${
-					this.enableEmptyStateAction && 'cursor-pointer'
-				}`}
-				onClick={() =>
-					this.enableEmptyStateAction && this.emptyStateActionClick.emit(null)
-				}
-			>
-				<p-illustration
-					variant='table'
-					class='mb-6'
-				/>
-				<p class='text-storm-default font-semibold'>
-					{this.emptyStateHeader()}
-				</p>
-				<p class='mb-6 text-sm text-storm-medium'>{this.emptyStateContent()}</p>
-				{this.enableEmptyStateAction && (
-					<p-button
-						variant='secondary'
-						icon='plus'
-						size='sm'
-					>
-						{this.emptyStateAction()}
-					</p-button>
-				)}
-			</div>
+			<p-empty-state
+				class='my-16 self-center'
+				illustration='table'
+				header={this.emptyStateHeader()}
+				content={this.emptyStateContent()}
+				enableAction={this.enableEmptyStateAction}
+				actionIcon='plus'
+				actionText={this.emptyStateAction()}
+			></p-empty-state>
 		);
 	}
 
