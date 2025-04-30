@@ -2,15 +2,16 @@ import { html, nothing } from 'lit';
 
 const meta = {
 	title: 'Design System/Deprecated/Atoms/Illustration',
-	component: 'p-illustration',
+	component: 'p-illustration-deprecated',
+	args: {
+		variant: 'departments',
+	},
 };
 
 export default meta;
 
 export const Default = {
-	render: ({
-		variant,
-	}) => html`<p-illustration
+	render: ({ variant }) => html`<p-illustration-deprecated
 		variant=${variant ?? nothing}
 	/>`,
 	tags: ['!dev'],

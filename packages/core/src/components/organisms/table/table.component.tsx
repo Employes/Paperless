@@ -834,7 +834,7 @@ export class Table {
 			return (
 				<div class='flex max-w-[20rem] flex-col items-center self-center py-24 text-center'>
 					<p-illustration
-						variant='empty-state-search'
+						variant='search'
 						class='mb-6'
 					/>
 					<p class='text-storm-default font-semibold'>
@@ -857,7 +857,7 @@ export class Table {
 				}
 			>
 				<p-illustration
-					variant='empty-state-add'
+					variant='table'
 					class='mb-6'
 				/>
 				<p class='text-storm-default font-semibold'>

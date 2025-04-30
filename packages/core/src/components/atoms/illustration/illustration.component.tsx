@@ -1,5 +1,5 @@
 import { Component, h, Host, Prop } from '@stencil/core';
-import illustrations from '../../../../utils/illustrations';
+import illustrations from '../../../utils/illustrations';
 
 export type IllustrationVariant = keyof typeof illustrations;
 
@@ -18,7 +18,7 @@ export class Illustration {
 
 		return (
 			<Host
-				class='p-illustration block'
+				class='p-illustration block text-8xl'
 				innerHTML={illustration}
 			></Host>
 		);
