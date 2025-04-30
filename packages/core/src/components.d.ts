@@ -13,14 +13,14 @@ import { templateFunc } from "./components/molecules/field/container/field-conta
 import { templateFunc as templateFunc1 } from "./components/molecules/field/container/field-container.component";
 import { amountSelectedTemplateFunc } from "./components/atoms/floating-menu/container/floating-menu-container.component";
 import { IbanIconVariant, RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
-import { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1 } from "./components/atoms/icon/icon.component";
+import { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant2 } from "./components/atoms/icon/icon.component";
 import { IconDeprecatedVariant } from "./components/deprecated/atoms/icon-deprecated/icon.component";
-import { IllustrationVariant } from "./components/deprecated/atoms/illustration/illustration.component";
+import { IllustrationVariant as IllustrationVariant1 } from "./components/atoms/illustration/illustration.component";
+import { IllustrationDeprecatedVariant } from "./components/deprecated/atoms/illustration-deprecated/illustration-deprecated.component";
 import { Observable } from "rxjs";
 import { templateFunc as templateFunc2 } from "./components/molecules/pagination/size/pagination-size.component";
 import { amountSelectedTemplateFunc as amountSelectedTemplateFunc1, templateFunc as templateFunc3 } from "./components/organisms/table/table.component";
 import { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
-import { IconFlipOptions as IconFlipOptions2, IconVariant as IconVariant2, RotateOptions as RotateOptions2 } from "./components";
 import { buttonTemplateFunc } from "./components/molecules/table/header/table-header.component";
 import { TableColumn } from "./components/helpers/table/column/table-column.component";
 import { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc4 } from "./components/molecules/table/header/table-header.component";
@@ -33,14 +33,14 @@ export { templateFunc } from "./components/molecules/field/container/field-conta
 export { templateFunc as templateFunc1 } from "./components/molecules/field/container/field-container.component";
 export { amountSelectedTemplateFunc } from "./components/atoms/floating-menu/container/floating-menu-container.component";
 export { IbanIconVariant, RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
-export { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1 } from "./components/atoms/icon/icon.component";
+export { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant2 } from "./components/atoms/icon/icon.component";
 export { IconDeprecatedVariant } from "./components/deprecated/atoms/icon-deprecated/icon.component";
-export { IllustrationVariant } from "./components/deprecated/atoms/illustration/illustration.component";
+export { IllustrationVariant as IllustrationVariant1 } from "./components/atoms/illustration/illustration.component";
+export { IllustrationDeprecatedVariant } from "./components/deprecated/atoms/illustration-deprecated/illustration-deprecated.component";
 export { Observable } from "rxjs";
 export { templateFunc as templateFunc2 } from "./components/molecules/pagination/size/pagination-size.component";
 export { amountSelectedTemplateFunc as amountSelectedTemplateFunc1, templateFunc as templateFunc3 } from "./components/organisms/table/table.component";
 export { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
-export { IconFlipOptions as IconFlipOptions2, IconVariant as IconVariant2, RotateOptions as RotateOptions2 } from "./components";
 export { buttonTemplateFunc } from "./components/molecules/table/header/table-header.component";
 export { TableColumn } from "./components/helpers/table/column/table-column.component";
 export { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc4 } from "./components/molecules/table/header/table-header.component";
@@ -867,7 +867,7 @@ export namespace Components {
         /**
           * The icon the be displayed
          */
-        "variant": IconVariant1;
+        "variant": IconVariant2;
     }
     interface PIconDeprecated {
         /**
@@ -891,13 +891,13 @@ export namespace Components {
         /**
           * The icon the be displayed
          */
-        "variant": IllustrationVariant;
+        "variant": IllustrationVariant1;
     }
     interface PIllustrationDeprecated {
         /**
           * The icon the be displayed
          */
-        "variant": IllustrationVariant;
+        "variant": IllustrationDeprecatedVariant;
     }
     interface PInfoPanel {
         /**
@@ -1561,7 +1561,7 @@ export namespace Components {
         /**
           * The action button icon
          */
-        "actionButtonIcon": IconVariant2;
+        "actionButtonIcon": IconVariant1;
         /**
           * Wether the action button is loading
          */
@@ -1914,7 +1914,7 @@ export namespace Components {
         /**
           * Icon to show on the button
          */
-        "icon": IconVariant2;
+        "icon": IconVariant1;
         /**
           * Icon flip
          */
@@ -3996,7 +3996,7 @@ declare namespace LocalJSX {
         /**
           * The icon the be displayed
          */
-        "variant": IconVariant1;
+        "variant": IconVariant2;
     }
     interface PIconDeprecated {
         /**
@@ -4020,13 +4020,13 @@ declare namespace LocalJSX {
         /**
           * The icon the be displayed
          */
-        "variant": IllustrationVariant;
+        "variant": IllustrationVariant1;
     }
     interface PIllustrationDeprecated {
         /**
           * The icon the be displayed
          */
-        "variant": IllustrationVariant;
+        "variant": IllustrationDeprecatedVariant;
     }
     interface PInfoPanel {
         /**
@@ -4754,7 +4754,7 @@ declare namespace LocalJSX {
         /**
           * The action button icon
          */
-        "actionButtonIcon"?: IconVariant2;
+        "actionButtonIcon"?: IconVariant1;
         /**
           * Wether the action button is loading
          */
@@ -5191,7 +5191,7 @@ declare namespace LocalJSX {
         /**
           * Icon to show on the button
          */
-        "icon"?: IconVariant2;
+        "icon"?: IconVariant1;
         /**
           * Icon flip
          */

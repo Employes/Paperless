@@ -1,27 +1,19 @@
-import emptyState from '../assets/illustrations/default-empty-state.svg';
-import departments from '../assets/illustrations/departments.svg';
-import email from '../assets/illustrations/e-mail.svg';
-import emptyStateAdd from '../assets/illustrations/empty-state-add.svg';
-import emptyStateOverview from '../assets/illustrations/empty-state-overview.svg';
-import emptyStateSearch from '../assets/illustrations/empty-state-search.svg';
-import expenses from '../assets/illustrations/expenses.svg';
-import functions from '../assets/illustrations/functions.svg';
-import questions from '../assets/illustrations/questions.svg';
-import sickLeave from '../assets/illustrations/sick-leave.svg';
-import timeOff from '../assets/illustrations/time-off.svg';
-import upgradeToHr from '../assets/illustrations/upgrade-to-hr.svg';
+import calculator from '../assets/illustrations/calculator.svg';
+import clock from '../assets/illustrations/clock.svg';
+import coins from '../assets/illustrations/coins.svg';
+import fileInvoice from '../assets/illustrations/file-invoice.svg';
+import payment from '../assets/illustrations/payment.svg';
+import search from '../assets/illustrations/search.svg';
+import table from '../assets/illustrations/table.svg';
+import tag from '../assets/illustrations/tag.svg';
 
 export default {
-    'empty-state': emptyState,
-    'empty-state-search': emptyStateSearch,
-    'empty-state-overview': emptyStateOverview,
-    'empty-state-add': emptyStateAdd,
-    departments,
-    expenses,
-    functions,
-    questions,
-    'sick-leave': sickLeave,
-    'time-off': timeOff,
-    'upgrade-to-hr': upgradeToHr,
-    'e-mail': email,
+	calculator,
+	clock,
+	coins,
+	'file-invoice': fileInvoice,
+	payment,
+	search,
+	table,
+	tag,
 };

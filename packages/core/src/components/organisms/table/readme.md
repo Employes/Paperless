@@ -90,7 +90,7 @@
 - [p-button](../../molecules/button)
 - [p-loader](../../deprecated/atoms/loader)
 - [p-checkbox](../../atoms/checkbox)
-- [p-illustration](../../deprecated/atoms/illustration)
+- [p-illustration](../../atoms/illustration)
 
 ### Graph
 ```mermaid

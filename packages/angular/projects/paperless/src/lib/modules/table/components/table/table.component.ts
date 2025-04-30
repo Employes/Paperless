@@ -316,15 +316,14 @@ export class Table implements OnInit, OnChanges {
 	/* Empty state start */
 	@Input() emptyStateType: 'no_filter' | 'filtered' = 'no_filter';
 
-	@Input() emptyStateIllustration: IllustrationVariant = 'empty-state-add';
+	@Input() emptyStateIllustration: IllustrationVariant = 'table';
 	@Input() emptyStateHeader!: string;
 	@Input() emptyStateContent!: string;
 	@Input() emptyStateAction!: string;
 
 	@Input() enableEmptyStateAction: boolean = true;
 
-	@Input() emptyStateFilteredIllustration: IllustrationVariant =
-		'empty-state-search';
+	@Input() emptyStateFilteredIllustration: IllustrationVariant = 'search';
 	@Input() emptyStateFilteredHeader!: string;
 	@Input() emptyStateFilteredContent!: string;
 
