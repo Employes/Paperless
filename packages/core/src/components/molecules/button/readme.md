@@ -46,6 +46,7 @@
  - [p-attachment](../../deprecated/molecules/attachment)
  - [p-calendar](../calendar)
  - [p-drawer-header](../../deprecated/atoms/drawer/header)
+ - [p-empty-state](../empty-state)
  - [p-modal-header](../../atoms/modal/header)
  - [p-navbar](../../organisms/navbar)
  - [p-profile](../profile)
@@ -67,6 +68,7 @@ graph TD;
   p-attachment --> p-button
   p-calendar --> p-button
   p-drawer-header --> p-button
+  p-empty-state --> p-button
   p-modal-header --> p-button
   p-navbar --> p-button
   p-profile --> p-button
