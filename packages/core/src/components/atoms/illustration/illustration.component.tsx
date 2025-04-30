@@ -13,6 +13,15 @@ export class Illustration {
 	 */
 	@Prop() variant!: IllustrationVariant;
 
+	componentWillRender() {
+		const illustration = illustrations[this.variant];
+		if (!illustration) {
+			console.warn(
+				`[p-illustration] Variant "${this.variant}" does not exist `
+			);
+		}
+	}
+
 	render() {
 		const illustration = illustrations[this.variant];
 
