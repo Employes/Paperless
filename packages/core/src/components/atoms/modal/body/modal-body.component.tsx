@@ -1,7 +1,7 @@
 import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
-const body = cva('bg-white p-4 overflow-y-scroll', {
+const body = cva('bg-white p-4', {
 	variants: {
 		roundedBottom: {
 			true: 'rounded-b-none desktop-xs:rounded-b-2xl',
