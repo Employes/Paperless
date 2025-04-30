@@ -57,6 +57,13 @@ export class Icon {
 	 */
 	@Prop() flip: IconFlipOptions = 'none';
 
+	componentWillRender() {
+		const icon = icons[this.variant];
+		if (!icon) {
+			console.warn(`[p-icon] Variant "${this.variant}" does not exist `);
+		}
+	}
+
 	render() {
 		const svg = icons[this.variant];
 
