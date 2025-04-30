@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.68](https://github.com/Employes/Paperless/compare/v2.0.1-beta.67...v2.0.1-beta.68) (2025-04-30)
+
+
+### Features
+
+* **atoms/illustration:** Rebranded illustrations ([e9f1cab](https://github.com/Employes/Paperless/commit/e9f1cabc4eac5cfecc864b18396cf36dc4c59bc7))
+* **organisms/table:** Implement new empty-state component ([cef4292](https://github.com/Employes/Paperless/commit/cef4292f4a068c8441fb3be82bd8011e4a512eb9))
+* **organisms/table:** Rebranding implementation ([df48397](https://github.com/Employes/Paperless/commit/df48397e6e0251c6ddc63510d6450b20c9b76a17))
+
+
+
+
+
 ## [2.0.1-beta.67](https://github.com/Employes/Paperless/compare/v2.0.1-beta.66...v2.0.1-beta.67) (2025-04-29)
 
 **Note:** Version bump only for package @paperless/angular
