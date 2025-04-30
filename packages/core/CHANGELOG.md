@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.70](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.69...v2.0.1-beta.70) (2025-04-30)
+
+
+### Bug Fixes
+
+* **molecules/table/footer:** Don't show footer when total is lower than lowest page size option ([aca198a](https://github.com/ionic-team/stencil-component-starter/commit/aca198a6f5da946ff0857060a73d9229f39b114a))
+
+
+
+
+
 ## [2.0.1-beta.69](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.68...v2.0.1-beta.69) (2025-04-30)
 
 **Note:** Version bump only for package @paperless/core
