@@ -2,8 +2,13 @@ import { html, nothing } from 'lit';
 import { action } from '@storybook/addon-actions';
 
 const meta = {
-	title: 'Design System/Deprecated/Molecules/Toast',
+	title: 'Design System/Molecules/Toast',
 	component: 'p-toast',
+	args: {
+		header: 'This is a header',
+		content: 'This is content of the toast',
+		variant: 'neutral',
+	},
 };
 
 export default meta;

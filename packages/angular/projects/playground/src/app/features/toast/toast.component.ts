@@ -6,14 +6,22 @@ import { ToastService, ToastVariants } from 'projects/paperless/src/public-api';
 })
 export class ToastComponent {
 	public variants = {
+		neutral: ToastVariants.Neutral,
 		positive: ToastVariants.Positive,
-		unbiased: ToastVariants.Unbiased,
+		biased: ToastVariants.Biased,
 		negative: ToastVariants.Negative,
 	};
 
 	constructor(private _toast: ToastService) {}
 
 	showToast(variant: ToastVariants) {
-		this._toast.show(variant, 'This is a toast message', variant);
+		this._toast.show(
+			variant,
+			'This is a toast message This is a toast message This is a toast message This is a toast message ',
+			variant,
+			{
+				delay: 'infinite',
+			}
+		);
 	}
 }

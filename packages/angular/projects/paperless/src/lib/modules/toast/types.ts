@@ -7,10 +7,11 @@ import { ToastDirective } from './directives';
 
 export enum ToastVariants {
 	Success = 'positive',
-	Warning = 'unbiased',
+	Warning = 'biased',
 	Error = 'negative',
+	Neutral = 'neutral',
 	Positive = 'positive',
-	Unbiased = 'unbiased',
+	Biased = 'biased',
 	Negative = 'negative',
 }
 

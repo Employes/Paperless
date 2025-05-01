@@ -26,7 +26,7 @@ const button = cva(
 				primary: ['bg-supportive-lilac border-black-teal/20'],
 				secondary: null,
 				text: null,
-				transparent: ['bg-transparent'],
+				transparent: 'bg-transparent border-transparent',
 				dropdown: null,
 			},
 			active: {
