@@ -24,6 +24,7 @@ export const Default = {
 		'enable-hover': enableHover,
 		disabled,
 		icon,
+		'icon-wave': iconWave,
 		'use-container': useContainer,
 	}) => html`<p-dropdown-menu-item
 		active=${active ?? nothing}
@@ -32,6 +33,7 @@ export const Default = {
 		enable-hover=${enableHover ?? nothing}
 		disabled=${disabled ?? nothing}
 		icon=${icon ?? nothing}
+		icon-wave=${iconWave ?? nothing}
 		use-container=${useContainer ?? nothing}
 	>
 		${content}

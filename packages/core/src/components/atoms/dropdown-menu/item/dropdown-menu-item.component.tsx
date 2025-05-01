@@ -131,6 +131,10 @@ const dropdownMenuItemIcon = cva(['text-base'], {
 			false: null,
 			true: 'text-black-teal-100',
 		},
+		wave: {
+			true: 'group-hover:animate-wave',
+			false: null,
+		},
 	},
 	compoundVariants: [
 		{
@@ -199,6 +203,11 @@ export class DropdownMenuItem {
 	@Prop() icon: IconVariant;
 
 	/**
+	 * Wether to apply wave animation to icon
+	 */
+	@Prop() iconWave: boolean = false;
+
+	/**
 	 *  wether to use the container for text
 	 */
 	@Prop() useContainer = true;
@@ -219,6 +228,7 @@ export class DropdownMenuItem {
 							variant: this.variant,
 							active: asBoolean(this.active),
 							disabled: asBoolean(this.disabled),
+							wave: asBoolean(this.iconWave),
 						})}
 						variant={this.icon}
 					/>
