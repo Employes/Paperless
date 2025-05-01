@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.87](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.86...v2.0.1-beta.87) (2025-05-01)
+
+
+### Bug Fixes
+
+* **molecules/button:** Set correct icon sizing for small ([4397523](https://github.com/ionic-team/stencil-component-starter/commit/4397523e2ab50c1c2e3930444e0d510e907b9b69))
+
+
+
+
+
 ## [2.0.1-beta.86](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.85...v2.0.1-beta.86) (2025-05-01)
 
 
