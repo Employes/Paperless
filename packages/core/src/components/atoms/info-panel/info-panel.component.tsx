@@ -97,27 +97,25 @@ export class InfoPanel {
 
 		return (
 			<div class={infopanel({ variant: this.variant })}>
-				{this.header?.length ||
-					(hasHeaderSlot && (
-						<div class={header({ variant: this.variant })}>
-							{this.header?.length ? (
-								<p class='my-0'>{this.header}</p>
-							) : (
-								<slot name='header' />
-							)}
-						</div>
-					))}
+				{(this.header?.length || hasHeaderSlot) && (
+					<div class={header({ variant: this.variant })}>
+						{this.header?.length ? (
+							<p class='my-0'>{this.header}</p>
+						) : (
+							<slot name='header' />
+						)}
+					</div>
+				)}
 
-				{this.content?.length ||
-					(hasContentSlot && (
-						<div class='text-sm text-black-teal-800/60'>
-							{this.content?.length ? (
-								<p class='my-0'>{this.content}</p>
-							) : (
-								<slot name='content' />
-							)}
-						</div>
-					))}
+				{(this.content?.length || hasContentSlot) && (
+					<div class='text-sm text-black-teal-800/60'>
+						{this.content?.length ? (
+							<p class='my-0'>{this.content}</p>
+						) : (
+							<slot name='content' />
+						)}
+					</div>
+				)}
 
 				{this.closeable && (
 					<div
