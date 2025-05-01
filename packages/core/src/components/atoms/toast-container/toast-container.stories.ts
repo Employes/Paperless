@@ -1,7 +1,7 @@
 import { html, nothing } from 'lit';
 
 const meta = {
-	title: 'Design System/Deprecated/Atoms/Toast container',
+	title: 'Design System/Atoms/Toast container',
 	component: 'p-toast-container',
 	args: {
 		content: 'ToastContainer',
@@ -16,10 +16,7 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({
-		content,
-		placement,
-	}) => html`<p-toast-container
+	render: ({ content, placement }) => html`<p-toast-container
 		placement=${placement ?? nothing}
 	>
 		${content}
