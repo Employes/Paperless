@@ -90,23 +90,34 @@ export class InfoPanel {
 	@Element() private _el: HTMLElement;
 
 	render() {
+		const hasHeaderSlot = !!this._el.querySelector(':scope > [slot="header"]');
+		const hasContentSlot = !!this._el.querySelector(
+			':scope > [slot="content"]'
+		);
+
 		return (
 			<div class={infopanel({ variant: this.variant })}>
-				<div class={header({ variant: this.variant })}>
-					{this.header?.length ? (
-						<p class='my-0'>{this.header}</p>
-					) : (
-						<slot name='header' />
-					)}
-				</div>
+				{this.header?.length ||
+					(hasHeaderSlot && (
+						<div class={header({ variant: this.variant })}>
+							{this.header?.length ? (
+								<p class='my-0'>{this.header}</p>
+							) : (
+								<slot name='header' />
+							)}
+						</div>
+					))}
 
-				<div class='text-sm text-black-teal-800/60'>
-					{this.content?.length ? (
-						<p class='my-0'>{this.content}</p>
-					) : (
-						<slot name='content' />
-					)}
-				</div>
+				{this.content?.length ||
+					(hasContentSlot && (
+						<div class='text-sm text-black-teal-800/60'>
+							{this.content?.length ? (
+								<p class='my-0'>{this.content}</p>
+							) : (
+								<slot name='content' />
+							)}
+						</div>
+					))}
 
 				{this.closeable && (
 					<div
