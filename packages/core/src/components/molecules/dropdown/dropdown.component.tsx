@@ -241,14 +241,19 @@ export class Dropdown {
 		);
 
 		for (let button of [...buttons]) {
+			button.disabled = this.disableTriggerClick;
+			button.active = active;
+
+			if (button.iconOnly) {
+				continue;
+			}
+
 			button.chevronPosition = this.chevronPosition;
 			button.chevron = this.chevronDirection
 				? this.chevronDirection
 				: this.placement.indexOf('top') >= 0
 				? 'up'
 				: 'down';
-			button.disabled = this.disableTriggerClick;
-			button.active = active;
 		}
 	}
 
