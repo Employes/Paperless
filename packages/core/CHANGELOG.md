@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.81](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.80...v2.0.1-beta.81) (2025-05-01)
+
+
+### Bug Fixes
+
+* **atoms/info panel:** Check wether slot is filled ([ed12548](https://github.com/ionic-team/stencil-component-starter/commit/ed125483e44769bb004673a7d580da6164d97ad2))
+
+
+
+
+
 ## [2.0.1-beta.80](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.79...v2.0.1-beta.80) (2025-05-01)
 
 
