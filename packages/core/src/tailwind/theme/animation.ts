@@ -18,6 +18,7 @@ export default {
 		'slide-out-bottom-small': 'forwards slideOutBottomSmall .5s ease',
 		'floating-menu-container-out': 'forwards floatingMenuContainerOut .5s ease',
 		'floating-menu-container-in': 'forwards floatingMenuContainerIn .5s ease',
+		wave: 'wave .5s ease-in-out -0.5s infinite alternate forwards',
 	},
 
 	keyframes: {
@@ -117,6 +118,14 @@ export default {
 				display: 'flex',
 				transform: 'translateY(0)',
 				opacity: '100',
+			},
+		},
+		wave: {
+			from: {
+				transform: 'rotate(0deg)',
+			},
+			to: {
+				transform: 'rotate(-15deg)',
 			},
 		},
 	},

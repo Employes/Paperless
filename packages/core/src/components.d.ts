@@ -627,6 +627,10 @@ export namespace Components {
          */
         "icon": IconVariant;
         /**
+          * Wether to apply wave animation to icon
+         */
+        "iconWave": boolean;
+        /**
           * wether to use the container for text
          */
         "useContainer": boolean;
@@ -3800,6 +3804,10 @@ declare namespace LocalJSX {
           * Icon of the navigation item
          */
         "icon"?: IconVariant;
+        /**
+          * Wether to apply wave animation to icon
+         */
+        "iconWave"?: boolean;
         /**
           * wether to use the container for text
          */
