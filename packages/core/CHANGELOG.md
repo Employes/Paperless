@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.86](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.85...v2.0.1-beta.86) (2025-05-01)
+
+
+### Bug Fixes
+
+* **atoms/icon:** Apply shadow & fix sizing issue ([36af99f](https://github.com/ionic-team/stencil-component-starter/commit/36af99ff446365a9f4a9902c6aa530abf010a96a))
+
+
+
+
+
 ## [2.0.1-beta.85](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.84...v2.0.1-beta.85) (2025-05-01)
 
 
