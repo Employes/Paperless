@@ -2008,7 +2008,7 @@ export namespace Components {
         /**
           * The variant of the toast
          */
-        "variant": 'positive' | 'unbiased' | 'negative';
+        "variant": 'neutral' | 'positive' | 'biased' | 'negative';
     }
     interface PToastContainer {
         /**
@@ -5355,7 +5355,7 @@ declare namespace LocalJSX {
         /**
           * The variant of the toast
          */
-        "variant"?: 'positive' | 'unbiased' | 'negative';
+        "variant"?: 'neutral' | 'positive' | 'biased' | 'negative';
     }
     interface PToastContainer {
         /**

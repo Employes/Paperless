@@ -53,7 +53,7 @@
  - [p-select](../select)
  - [p-table](../../organisms/table)
  - [p-table-header](../table/header)
- - [p-toast](../../deprecated/molecules/toast)
+ - [p-toast](../toast)
 
 ### Depends on
 
