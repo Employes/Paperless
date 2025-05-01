@@ -949,7 +949,11 @@ export namespace Components {
         /**
           * The variant of the info panel
          */
-        "variant": 'info' | 'negative' | 'positive' | 'unbiased';
+        "variant": | 'neutral'
+		| 'positive'
+		| 'biased'
+		| 'negative'
+		| 'unavailable';
     }
     interface PInputError {
         /**
@@ -4140,7 +4144,11 @@ declare namespace LocalJSX {
         /**
           * The variant of the info panel
          */
-        "variant"?: 'info' | 'negative' | 'positive' | 'unbiased';
+        "variant"?: | 'neutral'
+		| 'positive'
+		| 'biased'
+		| 'negative'
+		| 'unavailable';
     }
     interface PInputError {
         /**
