@@ -1,4 +1,6 @@
 :host {
+	@apply w-full max-h-screen-safe layout-1280:w-60 layout-1680:w-72;
+
 	.safe-sidebar {
 		padding-top: calc(env(safe-area-inset-top, 0) + 1rem) !important;
 

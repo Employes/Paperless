@@ -43,7 +43,7 @@ const topbar = cva([
 ]);
 
 const backdrop = cva(
-	['z-navbar-backdrop layout-1280:hidden transition-opacity'],
+	['z-navbar-backdrop layout-1280:hidden transition-opacity relative'],
 	{
 		variants: {
 			show: {
@@ -57,14 +57,14 @@ const backdrop = cva(
 @Component({
 	tag: 'p-navbar',
 	styleUrl: 'navbar.component.css',
-	scoped: true,
+	shadow: true,
 })
 export class Navbar {
 	@State() private _show = false;
 
 	render() {
 		return (
-			<Host class='p-navbar w-full max-h-screen-safe layout-1280:w-60 layout-1680:w-72'>
+			<Host>
 				<p-backdrop
 					class={backdrop({ show: this._show })}
 					scrollLock={this._show}
