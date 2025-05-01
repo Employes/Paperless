@@ -72,8 +72,6 @@ export class Icon {
 
 	render() {
 		const hasTextSizeClass = /text-(xs|sm|base|lg|xl)/.test(this._el.className);
-		console.log(hasTextSizeClass);
-
 		const svg = icons[this.variant];
 
 		return (
