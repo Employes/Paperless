@@ -236,7 +236,7 @@ const button = cva(
 const icon = cva([], {
 	variants: {
 		size: {
-			sm: 'text-sm',
+			sm: 'text-xs',
 			base: 'text-base',
 			lg: 'text-base',
 		},
