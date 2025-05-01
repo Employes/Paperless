@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.78](https://github.com/employes/paperless/compare/v2.0.1-beta.77...v2.0.1-beta.78) (2025-05-01)
+
+
+### Bug Fixes
+
+* **molecules/dropdown:** Don't apply chevron if button is icon only ([c7a3ada](https://github.com/employes/paperless/commit/c7a3ada0b0a6263cc5fbb5de895c82e200141eae))
+
+
+
+
+
 ## [2.0.1-beta.77](https://github.com/employes/paperless/compare/v2.0.1-beta.76...v2.0.1-beta.77) (2025-04-30)
 
 
