@@ -114,7 +114,7 @@ export const floatingMenuContainerClass = cva(['sticky self-center'], {
 			false: 'my-4 bottom-0',
 		},
 		active: {
-			false: 'animate-floating-menu-container-out',
+			false: 'pointer-events-none animate-floating-menu-container-out',
 			true: 'animate-floating-menu-container-in',
 		},
 		shown: {
