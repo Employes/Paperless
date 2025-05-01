@@ -16,7 +16,7 @@ import { categorized, icons } from '../../../utils/icons';
 
 ## Categorized
 
-<div class='mb-8 flex flex-col gap-8'>
+<div class='mb-8 flex w-full flex-col gap-8'>
 	{Object.keys(categorized).map(category => (
 		<div class='flex flex-col gap-4'>
 			<b>{category}</b>
@@ -26,7 +26,8 @@ import { categorized, icons } from '../../../utils/icons';
 						<p-icon
 							key={variant}
 							variant={variant}
-							class='text-2xl text-black-teal hover:scale-125 hover:text-supportive-lilac'
+							class='text-black-teal hover:scale-125 hover:text-supportive-lilac cursor-pointer'
+							size="2xl"
 							slot='trigger'
 						></p-icon>
 					</p-tooltip>
@@ -44,12 +45,13 @@ import { categorized, icons } from '../../../utils/icons';
 		<th class='py-2 text-start'>Variant</th>
 	</tr>
 	{Object.keys(icons).map(icon => (
-		<tr class='group border-b border-b-mystic-dark'>
+		<tr class='group'>
 			<td class='py-2'>
 				<p-icon
 					key={icon}
 					variant={icon}
-					class='text-2xl text-black-teal group-hover:text-supportive-lilac'
+					class='text-black-teal group-hover:text-supportive-lilac-800'
+				size="2xl"
 				></p-icon>
 			</td>
 			<td class='py-2 group-hover:font-semibold group-hover:text-supportive-lilac'>

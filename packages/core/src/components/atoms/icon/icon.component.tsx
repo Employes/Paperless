@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, h, Prop, Element } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { TextSizeOptions } from '../../../types/tailwind';
 import { icons } from '../../../utils/icons';
@@ -14,7 +14,7 @@ const icon = cva(['p-icon inline-flex'], {
 			vertical: 'scale-y-flip',
 		},
 		size: {
-			auto: 'text-auto',
+			auto: null,
 			xxs: 'text-xxs',
 			xs: 'text-xs',
 			sm: 'text-sm',
@@ -35,6 +35,7 @@ const icon = cva(['p-icon inline-flex'], {
 @Component({
 	tag: 'p-icon',
 	styleUrl: 'icon.component.css',
+	shadow: true,
 })
 export class Icon {
 	/**
@@ -57,6 +58,11 @@ export class Icon {
 	 */
 	@Prop() flip: IconFlipOptions = 'none';
 
+	/**
+	 * The host element
+	 */
+	@Element() _el: HTMLElement;
+
 	componentWillRender() {
 		const icon = icons[this.variant];
 		if (!icon) {
@@ -65,13 +71,16 @@ export class Icon {
 	}
 
 	render() {
+		const hasTextSizeClass = /text-(xs|sm|base|lg|xl)/.test(this._el.className);
+		console.log(hasTextSizeClass);
+
 		const svg = icons[this.variant];
 
 		return (
-			<Host
+			<div
 				class={icon({
 					flip: this.flip,
-					size: this.size,
+					size: hasTextSizeClass ? 'auto': this.size,
 					transform: this.flip !== 'none' || this.rotate > 0 || this.rotate < 0,
 				})}
 				style={{
@@ -79,7 +88,7 @@ export class Icon {
 				}}
 				title={this.variant}
 				innerHTML={svg}
-			></Host>
+			></div>
 		);
 	}
 }
