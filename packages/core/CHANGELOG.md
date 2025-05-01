@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.80](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.79...v2.0.1-beta.80) (2025-05-01)
+
+
+### Bug Fixes
+
+* **molecules/table/footer:** Don't apply the complete padding ([4f26c9d](https://github.com/ionic-team/stencil-component-starter/commit/4f26c9d64de15fd3892c8bf57539c30ab8791fcc))
+* **tailwind:** Include styling of table-helpers util ([6398b0e](https://github.com/ionic-team/stencil-component-starter/commit/6398b0e6b668d737b384c9f56edf3c7817beb668))
+
+
+### Features
+
+* **atoms/info panel:** Rebranding applied ([643cd55](https://github.com/ionic-team/stencil-component-starter/commit/643cd55b94286e57580b7da8318d7c7d78938b18))
+* **molecules/toast:** Rebranding applied ([16119c9](https://github.com/ionic-team/stencil-component-starter/commit/16119c99a613d15a392d9a96e525e073e7407c38))
+
+
+
+
+
 ## [2.0.1-beta.79](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.78...v2.0.1-beta.79) (2025-05-01)
 
 **Note:** Version bump only for package @paperless/core
