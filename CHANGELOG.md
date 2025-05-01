@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.83](https://github.com/employes/paperless/compare/v2.0.1-beta.82...v2.0.1-beta.83) (2025-05-01)
+
+
+### Bug Fixes
+
+* **atoms/info-panel:** Fix showing header/content when prop is used ([b5240bd](https://github.com/employes/paperless/commit/b5240bd1e2e4db0c86a30cbf37df5beeab962970))
+
+
+
+
+
 ## [2.0.1-beta.82](https://github.com/employes/paperless/compare/v2.0.1-beta.81...v2.0.1-beta.82) (2025-05-01)
 
 **Note:** Version bump only for package paperless
