@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.89](https://github.com/employes/paperless/compare/v2.0.1-beta.88...v2.0.1-beta.89) (2025-05-01)
+
+
+### Bug Fixes
+
+* **atoms/layout:** Don't make sidebar go to w-72 ([199efa9](https://github.com/employes/paperless/commit/199efa94ec67bbde7c608460272ae359a0b8b97d))
+
+
+
+
+
 ## [2.0.1-beta.88](https://github.com/employes/paperless/compare/v2.0.1-beta.87...v2.0.1-beta.88) (2025-05-01)
 
 
