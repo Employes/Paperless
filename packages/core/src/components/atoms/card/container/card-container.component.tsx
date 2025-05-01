@@ -4,7 +4,7 @@ import { asBoolean } from '../../../../utils/as-boolean';
 
 const container = cva(
 	[
-		'flex flex-col w-inherit',
+		'flex flex-col w-inherit h-inherit',
 		'rounded-2xl border border-solid border-off-white-700 bg-white',
 	],
 	{
