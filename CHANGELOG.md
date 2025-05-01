@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.88](https://github.com/employes/paperless/compare/v2.0.1-beta.87...v2.0.1-beta.88) (2025-05-01)
+
+
+### Bug Fixes
+
+* **atoms/icon:** Remove console.log ([4ee16a0](https://github.com/employes/paperless/commit/4ee16a07d49e856be08818373fd561eb7e698702))
+
+
+
+
+
 ## [2.0.1-beta.87](https://github.com/employes/paperless/compare/v2.0.1-beta.86...v2.0.1-beta.87) (2025-05-01)
 
 
