@@ -34,7 +34,7 @@
 
 		@apply box-border flex h-full;
 		@apply w-full;
-		@apply layout-1280:w-60 layout-1680:w-72;
+		@apply layout-1280:w-60;
 	}
 
 	.content {
