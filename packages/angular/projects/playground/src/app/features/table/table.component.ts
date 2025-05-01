@@ -72,7 +72,6 @@ export class TableComponent {
 	private _downloadTimeout: any;
 
 	public showNavigateButton = (item: any) => {
-		console.log('Show navigate button');
 		return item.hide === undefined ? true : !item.hide;
 	};
 

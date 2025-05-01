@@ -187,7 +187,7 @@ export class TableFooter {
 				10
 			);
 			this._el.style.bottom = `-${layoutPaddingBottom}px`;
-			this._el.style.marginBottom = `-${layoutPaddingBottom}px`;
+			this._el.style.marginBottom = `-${layoutPaddingBottom - 1}px`;
 		}
 
 		this._isPinned = window.innerHeight - rect.bottom == 0;
