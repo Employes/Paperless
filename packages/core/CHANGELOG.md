@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.85](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.84...v2.0.1-beta.85) (2025-05-01)
+
+
+### Features
+
+* **atoms/dropdown/menu/item:** Add wave to icon for signout ([f00cd97](https://github.com/ionic-team/stencil-component-starter/commit/f00cd979e684a8c68722b38411bac82ddf1d1b1a))
+
+
+
+
+
 ## [2.0.1-beta.84](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.83...v2.0.1-beta.84) (2025-05-01)
 
 
