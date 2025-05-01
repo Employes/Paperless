@@ -30,7 +30,7 @@
  - [p-floating-menu-container](../floating-menu/container)
  - [p-floating-menu-item](../floating-menu/item)
  - [p-helper](../helper)
- - [p-info-panel](../../deprecated/atoms/info-panel)
+ - [p-info-panel](../info-panel)
  - [p-input-error](../../deprecated/molecules/input/error)
  - [p-input-group](../../deprecated/molecules/input/group)
  - [p-label](../../molecules/label)
