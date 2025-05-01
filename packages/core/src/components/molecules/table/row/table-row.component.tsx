@@ -1,20 +1,14 @@
 import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
-const row = cva(['flex w-full flex-col', 'group', 'px-4', 'relative z-[1]'], {
+const row = cva(['flex w-[calc(100%-0.5rem)] flex-col', 'group', 'relative'], {
 	variants: {
 		variant: {
-			default: ['text-sm text-black-teal-500'],
-			header: ['text-xs font-normal text-black-teal-400'],
+			default: ['px-3 m-1', 'text-sm text-black-teal-500'],
+			header: ['px-4', 'text-xs font-normal text-black-teal-400'],
 		},
 		enableHover: {
-			true: [
-				'after:bg-off-white-300 after:opacity-0 after:transition-opacity',
-				'after:w-[calc(100%-0.5rem)] after:h-[calc(100%-0.5rem)]',
-				'after:absolute after:top-1 after:left-1 after:z-[0]',
-				'after:pointer-events-none',
-				'after:rounded-lg',
-			],
+			true: null,
 			false: null,
 		},
 	},
@@ -22,17 +16,20 @@ const row = cva(['flex w-full flex-col', 'group', 'px-4', 'relative z-[1]'], {
 		{
 			variant: 'default',
 			enableHover: true,
-			class: ['hover:cursor-pointer hover:after:opacity-100'],
+			class: [
+				'rounded-lg transition-colors',
+				'hover:cursor-pointer hover:bg-off-white-300',
+			],
 		},
 	],
 });
 
 const content = cva(
-	'relative flex  w-full flex-nowrap items-center justify-between z-[1]',
+	'relative flex w-full flex-nowrap items-center justify-between',
 	{
 		variants: {
 			variant: {
-				default: 'min-h-[3.875rem] py-2 tablet:h-18 tablet:py-6',
+				default: 'min-h-14 py-2 tablet:py-4',
 				header: 'min-h-0 pb-4',
 			},
 		},
