@@ -25,7 +25,7 @@ const button = cva(
 			variant: {
 				primary: ['bg-supportive-lilac border-black-teal/20'],
 				secondary: null,
-				text: ['text-teal'],
+				text: null,
 				transparent: ['bg-transparent'],
 				dropdown: null,
 			},
@@ -146,26 +146,31 @@ const button = cva(
 
 			{
 				variant: 'text',
+				disabled: false,
+				class: 'text-dark-teal-400 hover:text-dark-teal-500',
+			},
+			{
+				variant: 'text',
+				disabled: true,
+				class: 'text-dark-teal-100',
+			},
+			{
+				variant: 'text',
 				underline: true,
 				disabled: false,
-				class: 'border-b border-teal',
+				class: 'border-b border-dark-teal-400 hover:border-dark-teal-500',
 			},
 			{
 				variant: 'text',
 				underline: true,
 				disabled: true,
-				class: 'border-b border-teal-100',
-			},
-			{
-				variant: 'text',
-				disabled: true,
-				class: 'text-teal-100',
+				class: 'border-b border-dark-teal-100',
 			},
 			{
 				variant: 'text',
 				disabled: false,
 				loading: false,
-				class: 'active:text-teal-800',
+				class: 'active:text-dark-teal-600 active:border-dark-teal-600',
 			},
 
 			{
@@ -257,12 +262,6 @@ const icon = cva([], {
 			disabled: false,
 			active: false,
 			class: 'text-black-teal-300 group-hover:text-black-teal',
-		},
-		{
-			variant: 'text',
-			disabled: false,
-			active: false,
-			class: 'text-teal-300 group-hover:text-teal',
 		},
 		{
 			variant: 'transparent',
