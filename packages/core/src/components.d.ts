@@ -16,7 +16,6 @@ import { templateFunc as templateFunc1 } from "./components/molecules/field/cont
 import { amountSelectedTemplateFunc } from "./components/atoms/floating-menu/container/floating-menu-container.component";
 import { IbanIconVariant, RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
 import { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant2 } from "./components/atoms/icon/icon.component";
-import { IconDeprecatedVariant } from "./components/deprecated/atoms/icon-deprecated/icon.component";
 import { IllustrationVariant as IllustrationVariant1 } from "./components/atoms/illustration/illustration.component";
 import { IllustrationDeprecatedVariant } from "./components/deprecated/atoms/illustration-deprecated/illustration-deprecated.component";
 import { Observable } from "rxjs";
@@ -38,7 +37,6 @@ export { templateFunc as templateFunc1 } from "./components/molecules/field/cont
 export { amountSelectedTemplateFunc } from "./components/atoms/floating-menu/container/floating-menu-container.component";
 export { IbanIconVariant, RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
 export { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant2 } from "./components/atoms/icon/icon.component";
-export { IconDeprecatedVariant } from "./components/deprecated/atoms/icon-deprecated/icon.component";
 export { IllustrationVariant as IllustrationVariant1 } from "./components/atoms/illustration/illustration.component";
 export { IllustrationDeprecatedVariant } from "./components/deprecated/atoms/illustration-deprecated/illustration-deprecated.component";
 export { Observable } from "rxjs";
@@ -906,24 +904,6 @@ export namespace Components {
           * The icon the be displayed
          */
         "variant": IconVariant2;
-    }
-    interface PIconDeprecated {
-        /**
-          * Wether to flip the icon horizontally or vertically
-         */
-        "flip": IconFlipOptions;
-        /**
-          * Wether to rotate the icon x degrees
-         */
-        "rotate": RotateOptions;
-        /**
-          * The size of the icon, using tailwind sizes
-         */
-        "size": TextSizeOptions;
-        /**
-          * The icon the be displayed
-         */
-        "variant": IconDeprecatedVariant;
     }
     interface PIllustration {
         /**
@@ -2585,12 +2565,6 @@ declare global {
         prototype: HTMLPIconElement;
         new (): HTMLPIconElement;
     };
-    interface HTMLPIconDeprecatedElement extends Components.PIconDeprecated, HTMLStencilElement {
-    }
-    var HTMLPIconDeprecatedElement: {
-        prototype: HTMLPIconDeprecatedElement;
-        new (): HTMLPIconDeprecatedElement;
-    };
     interface HTMLPIllustrationElement extends Components.PIllustration, HTMLStencilElement {
     }
     var HTMLPIllustrationElement: {
@@ -3116,7 +3090,6 @@ declare global {
         "p-helper": HTMLPHelperElement;
         "p-iban-icon": HTMLPIbanIconElement;
         "p-icon": HTMLPIconElement;
-        "p-icon-deprecated": HTMLPIconDeprecatedElement;
         "p-illustration": HTMLPIllustrationElement;
         "p-illustration-deprecated": HTMLPIllustrationDeprecatedElement;
         "p-info-panel": HTMLPInfoPanelElement;
@@ -4101,24 +4074,6 @@ declare namespace LocalJSX {
           * The icon the be displayed
          */
         "variant": IconVariant2;
-    }
-    interface PIconDeprecated {
-        /**
-          * Wether to flip the icon horizontally or vertically
-         */
-        "flip"?: IconFlipOptions;
-        /**
-          * Wether to rotate the icon x degrees
-         */
-        "rotate"?: RotateOptions;
-        /**
-          * The size of the icon, using tailwind sizes
-         */
-        "size"?: TextSizeOptions;
-        /**
-          * The icon the be displayed
-         */
-        "variant": IconDeprecatedVariant;
     }
     interface PIllustration {
         /**
@@ -5489,7 +5444,6 @@ declare namespace LocalJSX {
         "p-helper": PHelper;
         "p-iban-icon": PIbanIcon;
         "p-icon": PIcon;
-        "p-icon-deprecated": PIconDeprecated;
         "p-illustration": PIllustration;
         "p-illustration-deprecated": PIllustrationDeprecated;
         "p-info-panel": PInfoPanel;
@@ -5577,7 +5531,6 @@ declare module "@stencil/core" {
             "p-helper": LocalJSX.PHelper & JSXBase.HTMLAttributes<HTMLPHelperElement>;
             "p-iban-icon": LocalJSX.PIbanIcon & JSXBase.HTMLAttributes<HTMLPIbanIconElement>;
             "p-icon": LocalJSX.PIcon & JSXBase.HTMLAttributes<HTMLPIconElement>;
-            "p-icon-deprecated": LocalJSX.PIconDeprecated & JSXBase.HTMLAttributes<HTMLPIconDeprecatedElement>;
             "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;
             "p-illustration-deprecated": LocalJSX.PIllustrationDeprecated & JSXBase.HTMLAttributes<HTMLPIllustrationDeprecatedElement>;
             "p-info-panel": LocalJSX.PInfoPanel & JSXBase.HTMLAttributes<HTMLPInfoPanelElement>;
