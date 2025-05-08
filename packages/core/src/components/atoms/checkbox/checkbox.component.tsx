@@ -1,4 +1,5 @@
 import {
+    AttachInternals,
 	Component,
 	Event,
 	EventEmitter,
@@ -64,6 +65,7 @@ const icon = cva(['drop-shadow-black-teal-10% text-xs'], {
 @Component({
 	tag: 'p-checkbox',
 	styleUrl: 'checkbox.component.css',
+	formAssociated: true,
 })
 export class Checkbox {
 	/**
@@ -107,11 +109,28 @@ export class Checkbox {
 
 	@State() private _nonce = nonce(5);
 
+	@AttachInternals() _internals: ElementInternals;
+
+	formResetCallback() {
+		this.checked = false;
+		this.indeterminate = false;
+	}
+
+	formDisabledCallback(disabled: boolean) {
+		if(!this._internals.form) {
+			return;
+		}
+
+		this.disabled = disabled;
+	}
+
 	render() {
+		const id = this.id?.length ? `${this.id}-${this._nonce}` : this._nonce;
+
 		return (
 			<Host class='p-checkbox'>
 				<label
-					htmlFor={this.id ?? this._nonce}
+					htmlFor={id}
 					class='group/p-checkbox flex items-center justify-start gap-2 text-black-teal'
 				>
 					<div class='relative flex flex-shrink-0 items-center'>
@@ -120,7 +139,7 @@ export class Checkbox {
 								disabled: asBoolean(this.disabled),
 							})}
 							type='checkbox'
-							id={this.id ?? this._nonce}
+							id={id}
 							name={this.name}
 							required={asBoolean(this.required)}
 							checked={asBoolean(this.checked)}
@@ -170,5 +189,8 @@ export class Checkbox {
 			this.indeterminate = indeterminate;
 			this.indeterminateChange.emit(indeterminate);
 		}
+
+		this._internals.setFormValue(this.indeterminate ? "indeterminate" : this.checked ? "on" : "off");
 	}
+
 }

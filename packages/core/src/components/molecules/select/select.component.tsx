@@ -1,4 +1,5 @@
 import {
+    AttachInternals,
 	Component,
 	Element,
 	Event,
@@ -47,6 +48,7 @@ const textContainer = cva(
 @Component({
 	tag: 'p-select',
 	styleUrl: 'select.component.css',
+	formAssociated: true
 })
 export class Select {
 	/**
@@ -301,6 +303,8 @@ export class Select {
 
 	@State() private _amountHidden = 0;
 
+	@AttachInternals() _internals: ElementInternals;
+
 	private _inputRef: HTMLDivElement;
 	private autocompleteInputRef: HTMLInputElement | HTMLTextAreaElement;
 	private _multiContainerRef: HTMLElement;
@@ -359,6 +363,18 @@ export class Select {
 
 	get _identifierKey() {
 		return this.identifierKey ?? this.valueKey ?? 'value';
+	}
+
+	formResetCallback() {
+		this._selectValue(null)
+	}
+
+	formDisabledCallback(disabled: boolean) {
+		if(!this._internals.form) {
+			return;
+		}
+
+		this.disabled = disabled;
 	}
 
 	componentDidLoad() {

@@ -137,3 +137,18 @@ export const OverflowReadOnly = {
 	</p-field>`,
 	tags: ['!dev'],
 };
+
+const withPreventDefault = handler => e => {
+  e.preventDefault();
+  handler(e);
+}
+export const InsideForm = {
+	render: () =>
+	 html`<form @submit=${withPreventDefault(action('submit'))}>
+	<p-field value="Test" @input=${action('valuechange')}>
+	</p-field>
+<p-button type="submit">Submitt</p-button>
+</form>
+`,
+	tags: ['!dev']
+}

@@ -1,4 +1,5 @@
 import {
+    AttachInternals,
 	Component,
 	Event,
 	EventEmitter,
@@ -66,6 +67,7 @@ const circle = cva(
 @Component({
 	tag: 'p-radio',
 	styleUrl: 'radio.component.css',
+	formAssociated: true,
 })
 export class Radio {
 	/**
@@ -105,11 +107,27 @@ export class Radio {
 
 	@State() private _nonce = nonce(5);
 
+	@AttachInternals() _internals: ElementInternals;
+
+	formResetCallback() {
+		this._setValue(false);
+	}
+
+	formDisabledCallback(disabled: boolean) {
+		if(!this._internals.form) {
+			return;
+		}
+
+		this.disabled = disabled;
+	}
+
 	render() {
+		const id = this.id?.length ? `${this.id}-${this._nonce}` : this._nonce;
+
 		return (
 			<Host class='p-radio'>
 				<label
-					htmlFor={this.id?.length ? this.id : this._nonce}
+					htmlFor={id}
 					class='flex items-center justify-start gap-2 text-black-teal'
 				>
 					<div class='relative flex flex-shrink-0 items-center'>
@@ -118,7 +136,7 @@ export class Radio {
 								disabled: asBoolean(this.disabled),
 							})}
 							type='radio'
-							id={this.id?.length ? this.id : this._nonce}
+							id={id}
 							name={this.name}
 							required={this.required}
 							value={this.value}
@@ -145,7 +163,12 @@ export class Radio {
 		}
 
 		const checked = (ev.target as HTMLInputElement).checked;
+		this._setValue(checked);
+	}
+
+	private _setValue(checked: boolean) {
 		this.checked = checked;
 		this.checkedChange.emit(checked);
+		this._internals.setFormValue(checked ? "on" : "off");
 	}
 }

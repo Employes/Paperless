@@ -1,5 +1,6 @@
 import { Placement } from '@floating-ui/dom';
 import {
+    AttachInternals,
 	Component,
 	Element,
 	Event,
@@ -20,6 +21,7 @@ import {
 import { templateFunc } from '../container/field-container.component';
 import { cn } from '../../../../utils/cn';
 import { asBoolean } from '../../../../utils/as-boolean';
+import { nonce } from '../../../../utils/nonce';
 
 const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 	variants: {
@@ -175,12 +177,18 @@ const prefixAndSuffix = cva(
 	tag: 'p-field',
 	styleUrl: './field.component.css',
 	shadow: true,
+	formAssociated: true
 })
 export class Field {
 	/**
 	 * The variant of the field
 	 */
 	@Prop() variant: 'read' | 'write' = 'write';
+
+	/**
+	 * The id of the field
+	 */
+	@Prop() id: string;
 
 	/**
 	 * The size of the field
@@ -317,6 +325,9 @@ export class Field {
 	@Element() private _el: HTMLElement;
 
 	@State() private _focused = false;
+	@State() private _nonce = nonce(5);
+
+	@AttachInternals() _internals: ElementInternals;
 
 	private _inputRef: HTMLInputElement | HTMLTextAreaElement;
 
@@ -324,8 +335,22 @@ export class Field {
 		this._checkAutoFocus();
 	}
 
+	formResetCallback() {
+		this.value = null;
+		this.valueChange.emit(null);
+	}
+
+	formDisabledCallback(disabled: boolean) {
+		if(!this._internals.form) {
+			return;
+		}
+
+		this.disabled = disabled;
+	}
+
 	render() {
 		const {
+			id,
 			prefix,
 			suffix,
 			hasHeaderSlot,
@@ -334,6 +359,7 @@ export class Field {
 			hasErrorSlot,
 			hasValueSlot,
 		} = this._getSlotInfo();
+
 
 		return (
 			<Host class='p-field'>
@@ -415,7 +441,7 @@ export class Field {
 							</div>
 						)}
 
-						{this._getContent(hasValueSlot)}
+						{this._getContent(hasValueSlot, id)}
 
 						{(suffix || (this.icon && this.iconPosition === 'end')) && (
 							<div
@@ -464,6 +490,24 @@ export class Field {
 		this._focused = false;
 	}
 
+	@Listen('keyup', { capture: true })
+	handleKeyup(ev: KeyboardEvent) {
+		if(this.disabled) {
+			ev.preventDefault();
+			return;
+		}
+
+		if(!this._internals?.form) {
+			return;
+		}
+
+		if(this.type === 'textarea' || ev.key !== 'Enter'){
+			return;
+		}
+
+		this._internals.form.requestSubmit()
+	}
+
 	private _getSlotInfo() {
 		const hasHelperSlot = !!this._el.querySelector(':scope > [slot="helper"]');
 		const hasLabelSlot = !!this._el.querySelector(':scope > [slot="label"]');
@@ -479,7 +523,10 @@ export class Field {
 		const errorAndErrorIsNotBoolean =
 			this.error && typeof this.error === 'string' && this.error !== 'true';
 
+		const id = this.id?.length ? `${this.id}-${this._nonce}` : this._nonce;
+
 		return {
+			id,
 			hasHelperSlot,
 			hasLabelSlot,
 			hasPrefixSlot,
@@ -493,7 +540,7 @@ export class Field {
 		};
 	}
 
-	private _getContent(hasValueSlot = false) {
+	private _getContent(hasValueSlot = false, id: string) {
 		if (this.variant === 'read') {
 			return hasValueSlot ? (
 				<slot name='value' />
@@ -509,6 +556,7 @@ export class Field {
 		}
 
 		const props = {
+			id,
 			class: input({
 				disabled: asBoolean(this.disabled),
 				isTextarea: this.type === 'textarea',
@@ -516,7 +564,7 @@ export class Field {
 			value: this.value,
 			placeholder: this.placeholder,
 			disabled: this.disabled,
-			onInput: (ev: Event) => this._valueChange(ev),
+			onInput: (ev: InputEvent) => this._valueChange(ev),
 		};
 
 		let properties = this.properties ?? {};
@@ -568,9 +616,10 @@ export class Field {
 	}
 
 	private _valueChange(ev) {
-		const value = (ev.target as HTMLTextAreaElement | HTMLInputElement).value;
-		this.value = value;
-		this.valueChange.emit(value);
+		ev.stopPropagation();
+		const value = (ev.originalTarget as HTMLTextAreaElement | HTMLInputElement).value;
+		this.valueChange.emit(value)
+		this._internals.setFormValue(value);
 	}
 
 	private _checkAutoFocus() {
