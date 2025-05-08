@@ -1,27 +1,28 @@
 import { Placement, Strategy } from '@floating-ui/dom';
 import {
-	Component,
-	Element,
-	Event,
-	EventEmitter,
-	h,
-	Host,
-	Listen,
-	Prop,
-	State,
-	Watch,
+    AttachInternals,
+    Component,
+    Element,
+    Event,
+    EventEmitter,
+    h,
+    Host,
+    Listen,
+    Prop,
+    State,
+    Watch,
 } from '@stencil/core';
 import {
-	format,
-	isAfter,
-	isBefore,
-	isSameDay,
-	isValid,
-	isWeekend,
-	parse,
-	startOfDay,
-	startOfMonth,
-	startOfYear,
+    format,
+    isAfter,
+    isBefore,
+    isSameDay,
+    isValid,
+    isWeekend,
+    parse,
+    startOfDay,
+    startOfMonth,
+    startOfYear,
 } from 'date-fns';
 import { childOf, isMobileBrowser } from '../../../utils';
 import { asBoolean } from '../../../utils/as-boolean';
@@ -30,6 +31,7 @@ import { asBoolean } from '../../../utils/as-boolean';
 	tag: 'p-datepicker',
 	styleUrl: 'datepicker.component.css',
 	shadow: false,
+	formAssociated: true
 })
 export class Datepicker {
 	/**
@@ -157,6 +159,8 @@ export class Datepicker {
 	@State() private _disabledDates: Date[] = [];
 	@State() private _isMobileBrowser: boolean = false;
 
+	@AttachInternals() _internals: ElementInternals;
+
 	private _onInputTimeout: NodeJS.Timeout;
 	private _inputRef: HTMLInputElement | HTMLTextAreaElement;
 	private _dateInputRef: HTMLInputElement;
@@ -238,6 +242,18 @@ export class Datepicker {
 		if (this._isDisabledDay(this._value)) {
 			this._setValue(null);
 		}
+	}
+
+	formResetCallback() {
+		this._setValue(null);
+	}
+
+	formDisabledCallback(disabled: boolean) {
+		if(!this._internals.form) {
+			return;
+		}
+
+		this.disabled = disabled;
 	}
 
 	componentWillLoad() {

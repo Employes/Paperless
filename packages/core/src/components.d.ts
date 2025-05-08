@@ -721,6 +721,10 @@ export namespace Components {
          */
         "iconRotate": RotateOptions;
         /**
+          * The id of the field
+         */
+        "id": string;
+        /**
           * The label of the field
          */
         "label": string;
@@ -790,6 +794,10 @@ export namespace Components {
           * The helper of the input group
          */
         "helper": string | HTMLSlotElement;
+        /**
+          * The id for the label
+         */
+        "id": string;
         /**
           * The label of the input group
          */
@@ -2017,10 +2025,6 @@ export namespace Components {
           * The id of the checkbox button
          */
         "id": string;
-        /**
-          * Wether the checkbox is in indeterminate state
-         */
-        "indeterminate": boolean;
         /**
           * The name of the checkbox button
          */
@@ -3878,6 +3882,10 @@ declare namespace LocalJSX {
          */
         "iconRotate"?: RotateOptions;
         /**
+          * The id of the field
+         */
+        "id"?: string;
+        /**
           * The label of the field
          */
         "label"?: string;
@@ -3955,6 +3963,10 @@ declare namespace LocalJSX {
           * The helper of the input group
          */
         "helper"?: string | HTMLSlotElement;
+        /**
+          * The id for the label
+         */
+        "id"?: string;
         /**
           * The label of the input group
          */
@@ -5347,10 +5359,6 @@ declare namespace LocalJSX {
           * The id of the checkbox button
          */
         "id"?: string;
-        /**
-          * Wether the checkbox is in indeterminate state
-         */
-        "indeterminate"?: boolean;
         /**
           * The name of the checkbox button
          */

@@ -1,4 +1,5 @@
 import {
+    AttachInternals,
 	Component,
 	Event,
 	EventEmitter,
@@ -63,17 +64,13 @@ const circle = cva(
 @Component({
 	tag: 'p-toggle',
 	styleUrl: 'toggle.component.css',
+	formAssociated: true,
 })
 export class Toggle {
 	/**
 	 * Wether the checkbox is checked
 	 */
 	@Prop() checked: boolean;
-
-	/**
-	 * Wether the checkbox is in indeterminate state
-	 */
-	@Prop() indeterminate: boolean;
 
 	/**
 	 * Wether the checkbox is disabled
@@ -106,11 +103,27 @@ export class Toggle {
 
 	@State() private _nonce = nonce(5);
 
+	@AttachInternals() _internals: ElementInternals;
+
+	formResetCallback() {
+		this.checked = false;
+	}
+
+	formDisabledCallback(disabled: boolean) {
+		if(!this._internals.form) {
+			return;
+		}
+
+		this.disabled = disabled;
+	}
+
 	render() {
+		const id = this.id?.length ? `${this.id}-${this._nonce}` : this._nonce;
+
 		return (
 			<Host class='p-checkbox'>
 				<label
-					htmlFor={this.id ?? this._nonce}
+					htmlFor={id}
 					class='flex items-center justify-start gap-2 text-black-teal'
 				>
 					<div class='group relative flex flex-shrink-0 items-center'>
@@ -119,11 +132,10 @@ export class Toggle {
 								disabled: asBoolean(this.disabled),
 							})}
 							type='checkbox'
-							id={this.id ?? this._nonce}
+							id={id}
 							name={this.name}
 							required={this.required}
 							checked={!!this.checked}
-							indeterminate={this.indeterminate}
 							disabled={asBoolean(this.disabled)}
 							onChange={ev => this._onChange(ev)}
 						/>
@@ -146,16 +158,11 @@ export class Toggle {
 		}
 
 		const checked = (ev.target as HTMLInputElement).checked;
-		const indeterminate = (ev.target as HTMLInputElement).indeterminate;
-
 		if (checked != this.checked) {
 			this.checked = checked;
 			this.checkedChange.emit(checked);
+			this._internals.setFormValue(this.checked ? "on" : "off");
 		}
 
-		if (indeterminate != this.indeterminate) {
-			this.indeterminate = indeterminate;
-			this.indeterminateChange.emit(indeterminate);
-		}
 	}
 }

@@ -64,6 +64,10 @@ export type templateFunc = () => string;
 export class FieldContainer {
 	private _defaultOptionalTemplate: templateFunc = () =>
 		formatTranslation(this._locales.optional);
+	/**
+	 * The id for the label
+	 */
+	@Prop() id: string;
 
 	/**
 	 * The label of the input group
@@ -159,7 +163,10 @@ export class FieldContainer {
 
 		return (
 			<Host class='p-field-container'>
-				<div class='flex w-inherit flex-col gap-1'>
+				<label
+					htmlFor={this.id}
+					class='flex w-inherit flex-col gap-1'
+				>
 					<div class='flex items-end justify-between gap-1 empty:hidden'>
 						{!!label?.length && (
 							<div
@@ -212,7 +219,7 @@ export class FieldContainer {
 
 						{contentSlot}
 					</p-tooltip>
-				</div>
+				</label>
 			</Host>
 		);
 	}
