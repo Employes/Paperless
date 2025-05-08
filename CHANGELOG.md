@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.90](https://github.com/employes/paperless/compare/v2.0.1-beta.89...v2.0.1-beta.90) (2025-05-08)
+
+
+### Bug Fixes
+
+* **molecules/datepicker:** Only parse if inputted content is correct ([b745702](https://github.com/employes/paperless/commit/b7457024109a26994c4fd4d66305a7f311d6489b))
+
+
+### Features
+
+* Add form associated to a lot of inputs ([3a028e9](https://github.com/employes/paperless/commit/3a028e9ba30f14013ccfe2dd0c68500bf0f4ccc4))
+
+
+
+
+
 ## [2.0.1-beta.89](https://github.com/employes/paperless/compare/v2.0.1-beta.88...v2.0.1-beta.89) (2025-05-01)
 
 
