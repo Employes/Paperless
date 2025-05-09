@@ -594,6 +594,7 @@ export class Field {
 	}
 
 	private _setInputRef(ref: HTMLInputElement | HTMLTextAreaElement) {
+		console.log('inputRefChange', ref);
 		this._inputRef = ref;
 		this.inputRefChange.emit(ref);
 	}
