@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.93](https://github.com/employes/paperless/compare/v2.0.1-beta.92...v2.0.1-beta.93) (2025-05-09)
+
+
+### Bug Fixes
+
+* **molecules/field:** Add logging ([cdd3665](https://github.com/employes/paperless/commit/cdd3665fdd53823b416221b6e6cbda30c61abadc))
+
+
+
+
+
 ## [2.0.1-beta.92](https://github.com/employes/paperless/compare/v2.0.1-beta.91...v2.0.1-beta.92) (2025-05-09)
 
 **Note:** Version bump only for package paperless
