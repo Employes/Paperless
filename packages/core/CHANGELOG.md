@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.91](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.90...v2.0.1-beta.91) (2025-05-09)
+
+
+### Bug Fixes
+
+* **molecules/field:** Pass id to field container ([78db4ea](https://github.com/ionic-team/stencil-component-starter/commit/78db4eadbf0312212644a810cc76b3be36c2d3e0))
+
+
+
+
+
 ## [2.0.1-beta.90](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.89...v2.0.1-beta.90) (2025-05-08)
 
 
