@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.94](https://github.com/employes/paperless/compare/v2.0.1-beta.93...v2.0.1-beta.94) (2025-05-09)
+
+
+### Reverts
+
+* Revert "fix(molecules/field): Add logging" ([59ba7b5](https://github.com/employes/paperless/commit/59ba7b566550862314398a57abdc316ec18eb74a))
+
+
+
+
+
 ## [2.0.1-beta.93](https://github.com/employes/paperless/compare/v2.0.1-beta.92...v2.0.1-beta.93) (2025-05-09)
 
 
