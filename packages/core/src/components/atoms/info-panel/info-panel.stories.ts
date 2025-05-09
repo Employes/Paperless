@@ -24,3 +24,19 @@ export const Default = {
 	/>`,
 	tags: ['!dev'],
 };
+
+export const WithIcons = {
+	render: ({ variant, header, content, closeable }) => html`<p-info-panel
+		variant=${variant ?? nothing}
+		content=${content ?? nothing}
+		closeable=${closeable ?? nothing}
+		@closed=${action('closed')}
+	>
+		<div class="flex items-center gap-2" slot="header">
+			<p-icon variant="placeholder"></p-icon>
+			${header ?? nothing}
+			<p-icon variant="placeholder"></p-icon>
+		</div>
+	</p-info-panel>`,
+	tags: ['!dev'],
+};
