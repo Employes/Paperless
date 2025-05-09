@@ -365,6 +365,7 @@ export class Field {
 			<Host class='p-field'>
 				<p-field-container
 					forceShowTooltip={this.forceShowTooltip || this._focused}
+					id={id}
 					label={this.label}
 					loading={this.loading}
 					loadingSize={this.size}
