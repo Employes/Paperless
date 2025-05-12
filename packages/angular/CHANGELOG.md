@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.99](https://github.com/Employes/Paperless/compare/v2.0.1-beta.98...v2.0.1-beta.99) (2025-05-12)
+
+
+### Features
+
+* **angular/organisms/table:** Calculate cell widths on cell/row changes ([39df082](https://github.com/Employes/Paperless/commit/39df0820941edd50fe135810a24298dd1c756e9a))
+
+
+
+
+
 ## [2.0.1-beta.98](https://github.com/Employes/Paperless/compare/v2.0.1-beta.97...v2.0.1-beta.98) (2025-05-12)
 
 
