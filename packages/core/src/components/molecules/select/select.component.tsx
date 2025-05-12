@@ -1,19 +1,18 @@
+import { Strategy } from '@floating-ui/dom';
 import {
     AttachInternals,
-	Component,
-	Element,
-	Event,
-	EventEmitter,
-	h,
-	Host,
-	Listen,
-	Prop,
-	State,
-	Watch,
+    Component,
+    Element,
+    Event,
+    EventEmitter,
+    h,
+    Listen,
+    Prop,
+    State,
+    Watch,
 } from '@stencil/core';
-import { childOf } from '../../../utils';
+import { childOfComposed } from '../../../utils';
 import { IconVariant } from '../../atoms/icon/icon.component';
-import { Strategy } from '@floating-ui/dom';
 
 import { cva } from 'class-variance-authority';
 
@@ -48,7 +47,8 @@ const textContainer = cva(
 @Component({
 	tag: 'p-select',
 	styleUrl: 'select.component.css',
-	formAssociated: true
+	formAssociated: true,
+	shadow: true
 })
 export class Select {
 	/**
@@ -421,57 +421,55 @@ export class Select {
 
 	render() {
 		return (
-			<Host class='p-select'>
-				<p-dropdown
-					disableTriggerClick={true}
-					calculateWidth={true}
-					insideClick={true}
-					scrollable={this.enableAutocomplete ? 'large' : true}
-					show={this._showDropdown}
-					onIsOpen={ev => this._onDropdownOpen(ev)}
-					usePortal={this.usePortal}
-					strategy={this.strategy}
+			<p-dropdown
+				disableTriggerClick={true}
+				calculateWidth={true}
+				insideClick={true}
+				scrollable={this.enableAutocomplete ? 'large' : true}
+				show={this._showDropdown}
+				onIsOpen={ev => this._onDropdownOpen(ev)}
+				usePortal={this.usePortal}
+				strategy={this.strategy}
+			>
+				<p-field-container
+					slot='trigger'
+					variant='write'
+					prefix={this.prefix}
+					label={this.label}
+					helper={this.helper}
+					required={this.required}
+					error={this.error}
+					errorPlacement='top-start'
+					forceShowTooltip={this.error?.length && this._showDropdown}
 				>
-					<p-field-container
-						slot='trigger'
-						variant='write'
-						prefix={this.prefix}
-						label={this.label}
-						helper={this.helper}
-						required={this.required}
-						error={this.error}
-						errorPlacement='top-start'
-						forceShowTooltip={this.error?.length && this._showDropdown}
+					<p-button
+						class='w-full'
+						slot='content'
+						variant='secondary'
+						size={this.size}
+						chevron={this.showChevron}
+						disabled={this.disabled}
+						active={this._showDropdown}
+						icon={this.icon}
+						onClick={ev => this._onClick(ev)}
 					>
-						<p-button
-							class='w-full'
-							slot='content'
-							variant='secondary'
-							size={this.size}
-							chevron={this.showChevron}
-							disabled={this.disabled}
-							active={this._showDropdown}
-							icon={this.icon}
-							onClick={ev => this._onClick(ev)}
+						<div
+							class='relative min-w-0 flex-1'
+							ref={ref => (this._inputRef = ref)}
 						>
-							<div
-								class='relative min-w-0 flex-1'
-								ref={ref => (this._inputRef = ref)}
-							>
-								{this._displayValue}
-							</div>
-						</p-button>
-					</p-field-container>
-					{this.loading ? this._getLoadingItems() : this._getItems()}
-					{this.showAddItem && this._getAddItem()}
-				</p-dropdown>
-			</Host>
+							{this._displayValue}
+						</div>
+					</p-button>
+				</p-field-container>
+				{this.loading ? this._getLoadingItems() : this._getItems()}
+				{this.showAddItem && this._getAddItem()}
+			</p-dropdown>
 		);
 	}
 
 	@Listen('click', { target: 'document', capture: true })
-	protected documentClickHandler({ target }) {
-		if (!this._showDropdown || childOf(target, this._el)) {
+	protected documentClickHandler(event) {
+		if (!this._showDropdown || childOfComposed(event, this._el)) {
 			return;
 		}
 
