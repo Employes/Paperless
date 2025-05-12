@@ -8,7 +8,7 @@ import {
 } from '../../../atoms/icon/icon.component';
 
 const header = cva(
-	'inline-flex w-full relative flex-col justify-start z-[1] rounded-t-2xl overflow-hidden relative',
+	'inline-flex w-full relative flex-col justify-start z-[1] rounded-t-2xl relative',
 	{
 		variants: {
 			variant: {
@@ -96,7 +96,9 @@ export class CardHeader {
 				{this.variant === 'default' ? (
 					<p-divider />
 				) : (
-					<p-smile variant='card' />
+					<div class="absolute w-full h-full top-0 left-0 overflow-hidden rounded-t-2xl z-[-1] pointer-events-none">
+						<p-smile variant='card' />
+					</div>
 				)}
 			</div>
 		);

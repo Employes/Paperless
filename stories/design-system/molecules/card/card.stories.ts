@@ -61,13 +61,22 @@ export const Default = {
 		>
 			${header}
 			${showHeaderButton
-				? html`<p-button
-						slot="suffix"
+				? html`<p-dropdown
+					slot="suffix"
+				>
+					<p-button
 						icon="pencil"
 						variant="secondary"
-				  >
+						slot="trigger"
+					  >
 						Edit
-				  </p-button>`
+					</p-button>
+					<slot slot="items">
+        			    <p-dropdown-menu-item>Item 1</p-dropdown-menu-item>
+        			    <p-dropdown-menu-item>Item 2</p-dropdown-menu-item>
+        			    <p-dropdown-menu-item>Item 3</p-dropdown-menu-item>
+        			</slot>
+				</p-dropdown>`
 				: ''}
 		</p-card-header>
 		<p-card-body>${body}</p-card-body>
