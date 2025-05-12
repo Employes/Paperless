@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.100](https://github.com/employes/paperless/compare/v2.0.1-beta.99...v2.0.1-beta.100) (2025-05-12)
+
+
+### Features
+
+* **angular/organisms/table:** Make columns defineable on the fly ([7cf34ea](https://github.com/employes/paperless/commit/7cf34ea83b84ed0ed5d167225bceaa0dce700acb))
+
+
+
+
+
 ## [2.0.1-beta.99](https://github.com/employes/paperless/compare/v2.0.1-beta.98...v2.0.1-beta.99) (2025-05-12)
 
 
