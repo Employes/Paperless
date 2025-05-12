@@ -55,7 +55,7 @@ import {
 } from '../table-row-action/table-row-action.component';
 import { defaultSize, defaultSizeOptions } from './constants';
 import { TableCell } from '../table-cell/table-cell.component';
-import { PTableRow } from 'projects/paperless/src/public-api';
+import { PTableRow } from '../../../../stencil/components';
 
 @UntilDestroy({ checkProperties: true })
 @Component({
