@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.101](https://github.com/employes/paperless/compare/v2.0.1-beta.100...v2.0.1-beta.101) (2025-05-12)
+
+
+### Bug Fixes
+
+* **angular/organisms/table:** Fix jumpiness of loading ([43095eb](https://github.com/employes/paperless/commit/43095eb34c65b0d042e9d3205b0ad7fb59c0b0c7))
+
+
+
+
+
 ## [2.0.1-beta.100](https://github.com/employes/paperless/compare/v2.0.1-beta.99...v2.0.1-beta.100) (2025-05-12)
 
 
