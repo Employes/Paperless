@@ -348,6 +348,9 @@ export class Table implements OnInit, OnChanges {
 	private _totalWidth = 0;
 	private _calculateColumnWidthsTimeout?: number;
 
+	private _rowChangesSubscription?: Subscription;
+	private _cellChangesSubscription?: Subscription;
+
 	/**
 	 * Event whenever the empty state is clicked
 	 */
@@ -487,6 +490,7 @@ export class Table implements OnInit, OnChanges {
 
 		if(changes['enableScroll']?.currentValue) {
 			this._calculateColumnWidths();
+			this._checkChangesSubscriptions();
 		}
 	}
 
@@ -496,6 +500,7 @@ export class Table implements OnInit, OnChanges {
 		}
 
 		this._calculateColumnWidths();
+		this._checkChangesSubscriptions();
 	}
 
 
@@ -1055,6 +1060,16 @@ export class Table implements OnInit, OnChanges {
 		return definition;
 	}
 
+	private _checkChangesSubscriptions() {
+		if(this._rowChangesSubscription) {
+			this._rowChangesSubscription = this.tableRows.changes.pipe(untilDestroyed(this)).subscribe(() => this._calculateColumnWidths());
+		}
+
+		if(!this._cellChangesSubscription) {
+			this.tableCells.changes.pipe(untilDestroyed(this)).subscribe(() => this._calculateColumnWidths());
+		}
+	}
+
 	private _calculateColumnWidths()  {
 		if(!this.tableCells) {
 			return;
@@ -1089,7 +1104,7 @@ export class Table implements OnInit, OnChanges {
 			this._setRowsWidth(rows, 'min-content');
 
 			this._resetScrollPosition();
-		}, 200)
+		}, 200) as unknown as number;
 	}
 
 	private _setRowsWidth(rows: HTMLElement[], value: 'min-content' | null = null) {
@@ -1141,4 +1156,4 @@ export class Table implements OnInit, OnChanges {
 		const right = target.scrollLeft + target.getBoundingClientRect().width;
 		this.reachedScrollEnd$.next(right > this._totalWidth - 100)
 	}
-}
+	}
