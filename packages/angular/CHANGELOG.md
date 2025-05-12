@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.96](https://github.com/Employes/Paperless/compare/v2.0.1-beta.95...v2.0.1-beta.96) (2025-05-12)
+
+
+### Bug Fixes
+
+* **angular/directives/radio:** Parse string booleans to booleans ([85049a7](https://github.com/Employes/Paperless/commit/85049a74ed50fed9a314a4bfbfae55d899825da8))
+
+
+
+
+
 ## [2.0.1-beta.95](https://github.com/Employes/Paperless/compare/v2.0.1-beta.94...v2.0.1-beta.95) (2025-05-12)
 
 **Note:** Version bump only for package @paperless/angular
