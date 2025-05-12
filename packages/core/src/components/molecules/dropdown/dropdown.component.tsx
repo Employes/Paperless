@@ -19,7 +19,7 @@ import {
 	Watch,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
-import { childOf } from '../../../utils/child-of';
+import { childOfComposed } from '../../../utils/child-of';
 
 const dropdownContainerClass = cva(['z-dropdown hidden'], {
 	variants: {
@@ -282,8 +282,8 @@ export class Dropdown {
 	}
 
 	@Listen('click', { target: 'document', capture: true })
-	protected documentClickHandler({ target }) {
-		if (!this._menu.hasAttribute('data-show') || childOf(target, this._menu)) {
+	protected documentClickHandler(event) {
+		if (!this._menu.hasAttribute('data-show') || childOfComposed(event, this._menu)) {
 			return;
 		}
 
