@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.104](https://github.com/employes/paperless/compare/v2.0.1-beta.103...v2.0.1-beta.104) (2025-05-12)
+
+
+### Bug Fixes
+
+* **molecules/dropdown:** Inside click fix with shadow dom ([58eca11](https://github.com/employes/paperless/commit/58eca1107a1faf1c7256bcb2609369f1ba97f91b))
+
+
+
+
+
 ## [2.0.1-beta.103](https://github.com/employes/paperless/compare/v2.0.1-beta.102...v2.0.1-beta.103) (2025-05-12)
 
 
