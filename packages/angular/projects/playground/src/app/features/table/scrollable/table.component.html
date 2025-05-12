@@ -1,6 +1,14 @@
+<p-button (onClick)="doubleRows()">
+	Double rows
+</p-button>
+
+<p-button (onClick)="showExtraColumn$.next(!showExtraColumn$.value)">
+	Show extra column toggle
+</p-button>
+
 <p-table-ngx
 	selectionKey="date"
-	[items]="items"
+	[items]="$any(items$ | async)"
 	[total]="512"
 	[enableScroll]="true"
 	[quickFilters]="[
@@ -45,6 +53,33 @@
 			</p-profile>
 		</ng-template>
 	</p-table-column>
+
+	<p-table-column
+		*ngIf="showExtraColumn$ | async"
+		type="th"
+		name="Employee"
+		path="employee"
+		[sizes]="{
+			default: 8,
+			tablet: 7
+		}"
+	>
+		<ng-template
+			let-value="value"
+			let-item="item"
+		>
+			<p-profile>
+				<p-avatar
+					slot="avatar"
+					[letters]="value"
+				>
+				</p-avatar>
+				<p slot="title">{{ value }}</p>
+				<p slot="subtitle">{{ item.date | pdate }}</p>
+			</p-profile>
+		</ng-template>
+	</p-table-column>
+
 	<p-table-column
 		name="Dagen"
 		path="hours"

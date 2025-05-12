@@ -113,7 +113,7 @@
 
 <ng-template #rowsTemplate>
 	<p-table-row variant="header">
-		<ng-container *ngFor="let col of columns; let index = index">
+		<ng-container *ngFor="let col of columns$ | async; let index = index">
 			<p-table-cell-ngx
 				[definition]="col"
 				[value]="col.name"
@@ -143,7 +143,7 @@
 				*ngFor="let r of loadingRows; let rowIndex = index"
 				[enableHover]="enableRowSelection || enableRowClick"
 			>
-				<ng-container *ngFor="let col of columns; let index = index">
+				<ng-container *ngFor="let col of columns$ | async; let index = index">
 					<p-table-cell-ngx
 						[definition]="col"
 						variant="loading"
@@ -180,7 +180,7 @@
 							) as rowActionsRow
 						"
 					>
-						<ng-container *ngFor="let col of columns; let index = index">
+						<ng-container *ngFor="let col of columns$ | async; let index = index">
 							<p-table-cell-ngx
 								[definition]="col"
 								[item]="item"

@@ -57,14 +57,8 @@ export class ScrollableTableComponent {
 		},
 	];
 
-	public items = [
-		...this._items,
-		...this._items,
-		...this._items,
-		...this._items,
-		...this._items,
-		...this._items,
-	];
+	public items$ =  new BehaviorSubject<any[]>(this._items);
+	public showExtraColumn$=  new BehaviorSubject(false);
 
 	public floatingMenuAmountSelectedText = '0 items selected';
 
@@ -119,6 +113,10 @@ export class ScrollableTableComponent {
 
 		this.floatingMenuAmountSelectedText = `${rows.length} items selected`;
 
-		console.log(JSON.stringify(this.items, null, 2));
+		console.log(JSON.stringify(this.items$.value, null, 2));
+	}
+
+	doubleRows() {
+		this.items$.next([...this._items, ...this._items])
 	}
 }
