@@ -481,23 +481,19 @@ export class Table implements OnInit, OnChanges {
 		}
 
 		if(changes['enableScroll']?.currentValue) {
-			this._calculateColumnWidths();
 			this._checkChangesSubscriptions();
 		}
 	}
 
 	ngAfterViewInit() {
+		if(this.enableScroll) {
+			this._checkChangesSubscriptions();
+		}
+
 		if(this.columnDefinitions) {
 			this.columnDefinitions.changes.pipe(untilDestroyed(this), debounceTime(100)).subscribe(() => this._generateColumns());
 			this._generateColumns();
 		}
-
-		if(!this.enableScroll) {
-			return;
-		}
-
-		this._calculateColumnWidths();
-		this._checkChangesSubscriptions();
 	}
 
 
