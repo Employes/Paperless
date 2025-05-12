@@ -14,6 +14,7 @@ export const getTableCellColumnClasses = (
 
 	return {
 		flex: true,
+		'flex-shrink-0': true,
 		'items-center': true,
 		'gap-4': true,
 		'justify-start': !definition?.align || definition?.align === 'start',

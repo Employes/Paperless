@@ -3,7 +3,7 @@ import {
 	OverlayService,
 	TableRowActionClickEvent,
 } from 'projects/paperless/src/public-api';
-import { TestDrawerComponent } from '../drawer/test-drawer.component';
+import { TestDrawerComponent } from '../../drawer/test-drawer.component';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({

@@ -7,7 +7,8 @@ import { HomeComponent } from './features/home/home.component';
 import { ModalComponent } from './features/modal/modal.component';
 import { SelectComponent } from './features/select/select.component';
 import { StepperComponent } from './features/stepper/stepper.component';
-import { TableComponent } from './features/table/table.component';
+import { TableComponent } from './features/table/default/table.component';
+import { ScrollableTableComponent } from './features/table/scrollable/table.component';
 import { ToastComponent } from './features/toast/toast.component';
 import { InputsComponent } from './features/inputs/inputs.component';
 
@@ -31,6 +32,10 @@ const routes: Routes = [
 	{
 		path: 'table',
 		component: TableComponent,
+	},
+	{
+		path: 'scrollable-table',
+		component: ScrollableTableComponent,
 	},
 	{
 		path: 'datepicker',
