@@ -15,7 +15,7 @@ export class RadioDirective
 	extends BaseValueAccessor
 	implements ControlValueAccessor, OnInit, OnDestroy
 {
-	private _modelValue: string | undefined;
+	private _modelValue: string | boolean | undefined;
 	private _valueChanges: Subscription | undefined;
 
 	constructor(@Self() private _control: NgControl, el: ElementRef) {
@@ -30,16 +30,19 @@ export class RadioDirective
 	}
 
 	override writeValue(value: string) {
+		const elValue = this._getValue();
 		this._modelValue = value;
 		this.el.nativeElement.checked =
-			this._modelValue === this.el.nativeElement.value;
+			this._modelValue === elValue;
 	}
 
 	override handleChangeEvent() {
+		const elValue = this._getValue();
+
 		this._modelValue =
-			this._modelValue === this.el.nativeElement.value
+			this._modelValue === elValue
 				? undefined
-				: this.el.nativeElement.value;
+				: elValue;
 		this.onChange(this._modelValue);
 	}
 
@@ -47,5 +50,18 @@ export class RadioDirective
 		if (this._valueChanges) {
 			this._valueChanges.unsubscribe();
 		}
+	}
+
+	private _getValue() {
+		let value = this.el.nativeElement.value;
+		if(value === 'true') {
+			value = true;
+		}
+
+		if(value === 'false') {
+			value = false;
+		}
+
+		return value;
 	}
 }
