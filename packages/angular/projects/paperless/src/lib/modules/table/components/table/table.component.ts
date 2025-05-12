@@ -35,6 +35,7 @@ import {
 } from '@paperless/core/dist/types/components';
 import {
 	BehaviorSubject,
+	debounceTime,
 	distinctUntilChanged,
 	filter,
 	Subscription,
@@ -363,7 +364,7 @@ export class Table implements OnInit, OnChanges {
 	 */
 	@Input() shadow: boolean = true;
 
-	public columns: any[] = [];
+	public columns$ = new BehaviorSubject<any[]>([])
 	public parsedItems: any[] = [];
 	public loadingRows = Array.from({
 		length: this.amountOfLoadingRows,
@@ -386,16 +387,7 @@ export class Table implements OnInit, OnChanges {
 	public headerCustomActionsTemplate: TemplateRef<any> | undefined;
 
 	// column templates
-	private _columnDefinitions!: QueryList<TableColumn>;
-
-	@ContentChildren(TableColumn)
-	set columnDefinitions(v: QueryList<TableColumn>) {
-		this._columnDefinitions = v;
-		this._generateColumns();
-	}
-	get columnDefinitions(): QueryList<TableColumn> {
-		return this._columnDefinitions;
-	}
+	@ContentChildren(TableColumn) columnDefinitions!: QueryList<TableColumn>;
 
 	// filter modal
 	@ContentChild(TableFilterModalDirective, {
@@ -495,6 +487,11 @@ export class Table implements OnInit, OnChanges {
 	}
 
 	ngAfterViewInit() {
+		if(this.columnDefinitions) {
+			this.columnDefinitions.changes.pipe(untilDestroyed(this), debounceTime(100)).subscribe(() => this._generateColumns());
+			this._generateColumns();
+		}
+
 		if(!this.enableScroll) {
 			return;
 		}
@@ -606,11 +603,11 @@ export class Table implements OnInit, OnChanges {
 	}
 
 	private _generateColumns() {
-		let definitionsArray = Array.from(this._columnDefinitions) as TableColumn[];
+		let definitionsArray = Array.from(this.columnDefinitions) as TableColumn[];
 
 		definitionsArray = this._parseDefinitions(definitionsArray);
 
-		this.columns = definitionsArray;
+		this.columns$.next(definitionsArray);
 	}
 
 	public _checkboxDisabled(item: any, rowIndex: number) {
@@ -1061,17 +1058,17 @@ export class Table implements OnInit, OnChanges {
 	}
 
 	private _checkChangesSubscriptions() {
-		if(this._rowChangesSubscription) {
-			this._rowChangesSubscription = this.tableRows.changes.pipe(untilDestroyed(this)).subscribe(() => this._calculateColumnWidths());
+		if(!this._rowChangesSubscription && this.tableRows) {
+			this._rowChangesSubscription = this.tableRows.changes.pipe(untilDestroyed(this), debounceTime(100)).subscribe(() => this._calculateColumnWidths());
 		}
 
-		if(!this._cellChangesSubscription) {
-			this.tableCells.changes.pipe(untilDestroyed(this)).subscribe(() => this._calculateColumnWidths());
+		if(!this._cellChangesSubscription && this.tableCells) {
+			this._cellChangesSubscription = this.tableCells.changes.pipe(untilDestroyed(this), debounceTime(100)).subscribe(() => this._calculateColumnWidths());
 		}
 	}
 
 	private _calculateColumnWidths()  {
-		if(!this.tableCells) {
+		if(!this.tableCells || !this.tableRows) {
 			return;
 		}
 
