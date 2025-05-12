@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.98](https://github.com/Employes/Paperless/compare/v2.0.1-beta.97...v2.0.1-beta.98) (2025-05-12)
+
+
+### Bug Fixes
+
+* **angular/organisms/table:** pointer-events-none on the scroll effects ([2d9c302](https://github.com/Employes/Paperless/commit/2d9c302b39c8414ee202afd6667cb53aa5883e12))
+
+
+
+
+
 ## [2.0.1-beta.97](https://github.com/Employes/Paperless/compare/v2.0.1-beta.96...v2.0.1-beta.97) (2025-05-12)
 
 
