@@ -4,6 +4,7 @@ import {
 	Component,
 	ContentChild,
 	ContentChildren,
+	ElementRef,
 	EventEmitter,
 	HostBinding,
 	HostListener,
@@ -14,6 +15,8 @@ import {
 	QueryList,
 	SimpleChanges,
 	TemplateRef,
+    ViewChildren,
+	ViewChild
 } from '@angular/core';
 import { Params } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
@@ -23,6 +26,7 @@ import {
 	RowClickEvent,
 	tableColumSizesOptions,
 	floatingMenuContainerClass,
+    cn,
 } from '@paperless/core';
 import {
 	IconVariant,
@@ -49,6 +53,8 @@ import {
 	TableRowActionRouterLink,
 } from '../table-row-action/table-row-action.component';
 import { defaultSize, defaultSizeOptions } from './constants';
+import { TableCell } from '../table-cell/table-cell.component';
+import { PTableRow } from 'projects/paperless/src/public-api';
 
 @UntilDestroy({ checkProperties: true })
 @Component({
@@ -328,6 +334,20 @@ export class Table implements OnInit, OnChanges {
 	@Input() emptyStateFilteredHeader!: string;
 	@Input() emptyStateFilteredContent!: string;
 
+
+	/**
+	 * Wether to enable scrolling
+	 */
+	@Input() enableScroll: boolean = false;
+	@ViewChildren(PTableRow, { read: ElementRef }) tableRows!: QueryList<ElementRef<PTableRow>>;
+	@ViewChildren(TableCell, { read: ElementRef }) tableCells!: QueryList<ElementRef<TableCell>>;
+	@ViewChild('scrollContainer') scrollContainer!: ElementRef<HTMLDivElement>;
+
+	public reachedScrollStart$ = new BehaviorSubject(true);
+	public reachedScrollEnd$ = new BehaviorSubject(false);
+	private _totalWidth = 0;
+	private _calculateColumnWidthsTimeout?: number;
+
 	/**
 	 * Event whenever the empty state is clicked
 	 */
@@ -422,6 +442,8 @@ export class Table implements OnInit, OnChanges {
 
 	public footerHidden$ = new BehaviorSubject(false);
 
+	public cn = cn;
+
 	constructor(private _changeDetection: ChangeDetectorRef) {}
 
 	ngOnInit() {
@@ -462,11 +484,25 @@ export class Table implements OnInit, OnChanges {
 		if (calculateRowSelectionData || changes['selectedRows']) {
 			this._setRowSelectionData();
 		}
+
+		if(changes['enableScroll']?.currentValue) {
+			this._calculateColumnWidths();
+		}
 	}
+
+	ngAfterViewInit() {
+		if(!this.enableScroll) {
+			return;
+		}
+
+		this._calculateColumnWidths();
+	}
+
 
 	@HostListener('window:resize', ['$event'])
 	onResize() {
 		this._setRowSelectionData();
+		this._calculateColumnWidths();
 	}
 
 	@HostListener('document:keydown', ['$event'])
@@ -540,6 +576,14 @@ export class Table implements OnInit, OnChanges {
 		return actions.filter(
 			a => !a.showFunction || a.showFunction(this.parsedItems[rowIndex])
 		);
+	}
+
+	onContainerXScroll(ev: any) {
+		if(!this.enableScroll) {
+			return;
+		}
+
+		this._calculateScrollPosition(ev);
 	}
 
 	private _parseItems(items: string | any[]) {
@@ -1009,5 +1053,92 @@ export class Table implements OnInit, OnChanges {
 
 		definition.parsedSizes = parsedSizes;
 		return definition;
+	}
+
+	private _calculateColumnWidths()  {
+		if(!this.tableCells) {
+			return;
+		}
+
+		if(this._calculateColumnWidthsTimeout) {
+			clearTimeout(this._calculateColumnWidthsTimeout);
+			this._calculateColumnWidthsTimeout = 0;
+		}
+
+		const rows = this.tableRows.map(c => c.nativeElement as unknown as HTMLElement);
+		const cells = this.tableCells.map(c => c.nativeElement as unknown as HTMLElement);
+
+		this._calculateColumnWidthsTimeout = setTimeout(async () => {
+			this._setRowsWidth(rows);
+
+			const promises: Promise<void>[] = [];
+			for(const cell of cells) {
+				if(cell.style.width?.length) {
+					cell.style.width = '';
+				}
+
+				promises.push(new Promise(resolve => setTimeout(() => {
+					const rect = cell.getBoundingClientRect();
+					cell.setAttribute('style', `width: ${rect.width}px !important`);
+					resolve();
+				}, 100)))
+			}
+
+			await Promise.all(promises);
+
+			this._setRowsWidth(rows, 'min-content');
+
+			this._resetScrollPosition();
+		}, 200)
+	}
+
+	private _setRowsWidth(rows: HTMLElement[], value: 'min-content' | null = null) {
+		for(let i = 0; i < rows.length; i++) {
+			const row = rows[i];
+
+			const shadow = row.shadowRoot;
+			if(!shadow) {
+				continue;
+			}
+
+			const firstDiv = shadow.querySelector('*:nth-child(1)');
+			if(!firstDiv) {
+				continue;
+			}
+
+			const secondDiv = firstDiv.querySelector('*:nth-child(1)');
+			if(!secondDiv) {
+				continue;
+			}
+
+			if(value === null) {
+				firstDiv.setAttribute('style', '');
+				secondDiv.setAttribute('style', '');
+				continue;
+			}
+
+			firstDiv.setAttribute('style', 'width: min-content;')
+			secondDiv.setAttribute('style', 'width: min-content;')
+
+			if(i === 0) {
+				this._totalWidth = firstDiv.getBoundingClientRect().width;
+			}
+		}
+	}
+
+	private _resetScrollPosition() {
+		if(this.scrollContainer) {
+			this.scrollContainer.nativeElement.scrollLeft = 0;
+		}
+
+		this.reachedScrollStart$.next(true)
+		this.reachedScrollEnd$.next(false);
+	}
+
+	private _calculateScrollPosition({ target }: { target: HTMLDivElement }) {
+		this.reachedScrollStart$.next(target.scrollLeft < 100);
+
+		const right = target.scrollLeft + target.getBoundingClientRect().width;
+		this.reachedScrollEnd$.next(right > this._totalWidth - 100)
 	}
 }

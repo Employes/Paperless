@@ -38,6 +38,80 @@
 		</ng-container>
 	</p-table-header>
 
+	<div class="relative flex-1" *ngIf="enableScroll; else rowsTemplate">
+		<div class="flex flex-col overflow-x-auto"
+			#scrollContainer
+			[class]="cn(
+				'before:absolute before:top-0 before:left-0 before:z-[1]',
+				'before:w-[10%] before:h-full before:transition-opacity',
+				'before:bg-gradient-to-r before:from-white before:via-white/80 before:to-transparent',
+
+				'after:absolute after:top-0 after:right-0 after:z-[0]',
+				'after:w-[10%] after:h-full after:transition-opacity',
+				'after:bg-gradient-to-l after:from-white after:via-white/80 after:to-transparent',
+
+				{
+					'before:opacity-0': reachedScrollStart$ | async,
+					'after:opacity-0': reachedScrollEnd$ | async,
+					'before:opacity-100': (reachedScrollStart$ | async) === false,
+					'after:opacity-100': (reachedScrollEnd$ | async) === false,
+				}
+			)"
+			(scroll)="onContainerXScroll($event)"
+		>
+			<ng-container *ngTemplateOutlet="rowsTemplate"></ng-container>
+		</div>
+	</div>
+
+	<ng-container *ngIf="enableFloatingMenu && enableRowSelection">
+		<p-floating-menu-container
+			[usedInTable]="true"
+			[class]="
+				floatingMenuContainerClass({
+					hasFooter: enableFooter && (footerHidden$ | async) === false,
+					active: selectedRows.length > 0,
+					shown: $any(floatingMenuShown$ | async)
+				})
+			"
+			[amount]="floatingMenuAmountSelectedText"
+			[enableAmountSelected]="!!(rowActionsFloating$ | async)?.length"
+			(close)="_selectAllChange(null, false)"
+		>
+			<p-floating-menu-item
+				*ngFor="let action of rowActionsFloating$ | async"
+				slot="floating-menu-item"
+				[disabled]="
+					(action['type'] === 'single' && selectedRows.length > 1) ||
+					action['disabled']
+				"
+				[loading]="action['loading']"
+				[icon]="action['icon']"
+				[iconRotate]="action['iconRotate']"
+				[iconFlip]="action['iconFlip']"
+				(click)="_rowActionClick(action)"
+			>
+				{{ action['label'] }}
+			</p-floating-menu-item>
+		</p-floating-menu-container>
+	</ng-container>
+
+	<p-table-footer
+		*ngIf="enableFooter"
+		[hideOnSinglePage]="hideOnSinglePage"
+		[enablePaginationSize]="enablePaginationSize"
+		[pageSize]="pageSize"
+		[pageSizeOptions]="pageSizeOptions"
+		(pageSizeChange)="onPageSizeChange($event)"
+		[enablePaginationPages]="enablePaginationPages"
+		[page]="page"
+		[total]="total"
+		(pageChange)="onPageChange($event)"
+		[loading]="footerLoading"
+		(hiddenChange)="footerHidden$.next($event.detail)"
+	></p-table-footer>
+</p-table-container>
+
+<ng-template #rowsTemplate>
 	<p-table-row variant="header">
 		<ng-container *ngFor="let col of columns; let index = index">
 			<p-table-cell-ngx
@@ -175,54 +249,7 @@
 			</ng-container>
 		</ng-template>
 	</div>
-
-	<ng-container *ngIf="enableFloatingMenu && enableRowSelection">
-		<p-floating-menu-container
-			[usedInTable]="true"
-			[class]="
-				floatingMenuContainerClass({
-					hasFooter: enableFooter && (footerHidden$ | async) === false,
-					active: selectedRows.length > 0,
-					shown: $any(floatingMenuShown$ | async)
-				})
-			"
-			[amount]="floatingMenuAmountSelectedText"
-			[enableAmountSelected]="!!(rowActionsFloating$ | async)?.length"
-			(close)="_selectAllChange(null, false)"
-		>
-			<p-floating-menu-item
-				*ngFor="let action of rowActionsFloating$ | async"
-				slot="floating-menu-item"
-				[disabled]="
-					(action['type'] === 'single' && selectedRows.length > 1) ||
-					action['disabled']
-				"
-				[loading]="action['loading']"
-				[icon]="action['icon']"
-				[iconRotate]="action['iconRotate']"
-				[iconFlip]="action['iconFlip']"
-				(click)="_rowActionClick(action)"
-			>
-				{{ action['label'] }}
-			</p-floating-menu-item>
-		</p-floating-menu-container>
-	</ng-container>
-
-	<p-table-footer
-		*ngIf="enableFooter"
-		[hideOnSinglePage]="hideOnSinglePage"
-		[enablePaginationSize]="enablePaginationSize"
-		[pageSize]="pageSize"
-		[pageSizeOptions]="pageSizeOptions"
-		(pageSizeChange)="onPageSizeChange($event)"
-		[enablePaginationPages]="enablePaginationPages"
-		[page]="page"
-		[total]="total"
-		(pageChange)="onPageChange($event)"
-		[loading]="footerLoading"
-		(hiddenChange)="footerHidden$.next($event.detail)"
-	></p-table-footer>
-</p-table-container>
+</ng-template>
 
 <ng-container *ngIf="filterModalTemplate">
 	<p-modal

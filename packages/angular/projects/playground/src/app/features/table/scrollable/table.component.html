@@ -1,0 +1,164 @@
+<p-table-ngx
+	selectionKey="date"
+	[items]="items"
+	[total]="512"
+	[enableScroll]="true"
+	[quickFilters]="[
+			{
+				identifier: 'first',
+				text: 'First',
+			},
+			{
+				identifier: 'second',
+				text: 'Second',
+			},
+			{
+				identifier: 'third',
+				text: 'Third',
+			}
+	]"
+	(selectedRowsChange)="rowsChange($event)"
+	[floatingMenuAmountSelectedText]="floatingMenuAmountSelectedText"
+>
+	<p-table-column
+		type="th"
+		name="Employee"
+		path="employee"
+		[sizes]="{
+			default: 8,
+			tablet: 7
+		}"
+		[hasCheckbox]="true"
+	>
+		<ng-template
+			let-value="value"
+			let-item="item"
+		>
+			<p-profile>
+				<p-avatar
+					slot="avatar"
+					[letters]="value"
+				>
+				</p-avatar>
+				<p slot="title">{{ value }}</p>
+				<p slot="subtitle">{{ item.date | pdate }}</p>
+			</p-profile>
+		</ng-template>
+	</p-table-column>
+	<p-table-column
+		name="Dagen"
+		path="hours"
+		align="end"
+		[sizes]="{
+			default: 'hidden',
+			tablet: 3,
+			'desktop-xs': 2
+		}"
+	></p-table-column>
+	<p-table-column
+		name="Dagen"
+		path="hours"
+		align="end"
+		[sizes]="{
+			default: 'hidden',
+			tablet: 3,
+			'desktop-xs': 2
+		}"
+	></p-table-column>
+	<p-table-column
+		name="Dagen"
+		path="hours"
+		align="end"
+		[sizes]="{
+			default: 'hidden',
+			tablet: 3,
+			'desktop-xs': 2
+		}"
+	></p-table-column>
+	<p-table-column
+		name="Uren"
+		path="status"
+		align="end"
+		[sizes]="{
+			default: 'hidden',
+			'desktop-xs': 1
+		}"
+	></p-table-column>
+	<p-table-column
+		name="Status"
+		path="status"
+		align="end"
+		[sizes]="{
+			default: 'hidden',
+			'desktop-xs': 2
+		}"
+	>
+		<ng-template let-value="value">
+			<p-label
+				[icon]="
+					value === 'Goedgekeurd'
+						? 'checkmark'
+						: value === 'Afgekeurd'
+						? 'negative'
+						: 'clock'
+				"
+				[variant]="
+					value === 'Goedgekeurd'
+						? 'positive'
+						: value === 'Afgekeurd'
+						? 'negative'
+						: 'biased'
+				"
+			>
+				{{ value }}
+			</p-label>
+		</ng-template>
+	</p-table-column>
+	<p-table-column
+		name="Uren"
+		path="status"
+		align="end"
+		[sizes]="{
+			default: 4,
+			tablet: 2,
+			'desktop-xs': 'hidden'
+		}"
+	></p-table-column>
+
+	<p-table-row-action
+		type="both"
+		icon="arrow"
+		label="Navigate"
+		routerLink="../"
+		(action)="actionClick('navigate', $event)"
+		[showFunction]="showNavigateButton"
+	></p-table-row-action>
+	<p-table-row-action
+		type="single"
+		icon="arrow"
+		[iconRotate]="-90"
+		label="Navigate 2"
+		routerLink="../"
+		(action)="actionClick('navigate', $event)"
+		[showFunction]="showNavigateButton"
+	></p-table-row-action>
+	<p-table-row-action
+		type="both"
+		icon="download"
+		label="Download"
+		[loading]="downloading$ | async"
+		(action)="actionClick('download', $event)"
+	></p-table-row-action>
+	<p-table-row-action
+		type="single"
+		icon="eye"
+		label="View"
+		(action)="actionClick('view', $event)"
+	></p-table-row-action>
+	<p-table-row-action
+		type="multi"
+		icon="upload"
+		label="Upload"
+		(action)="actionClick('upload', $event)"
+	></p-table-row-action>
+</p-table-ngx>

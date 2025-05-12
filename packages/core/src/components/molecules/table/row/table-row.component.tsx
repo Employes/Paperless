@@ -1,7 +1,7 @@
 import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
-const row = cva(['flex w-[calc(100%-0.5rem)] flex-col', 'group', 'relative'], {
+const row = cva(['flex min-w-[calc(100%-0.5rem)] flex-col', 'group', 'relative'], {
 	variants: {
 		variant: {
 			default: ['px-3 m-1', 'text-sm text-black-teal-500'],
@@ -25,7 +25,7 @@ const row = cva(['flex w-[calc(100%-0.5rem)] flex-col', 'group', 'relative'], {
 });
 
 const content = cva(
-	'relative flex w-full flex-nowrap items-center justify-between',
+	'relative flex min-w-full flex-nowrap items-center justify-between',
 	{
 		variants: {
 			variant: {
