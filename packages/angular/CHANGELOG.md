@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.102](https://github.com/Employes/Paperless/compare/v2.0.1-beta.101...v2.0.1-beta.102) (2025-05-12)
+
+
+### Bug Fixes
+
+* **angular/organisms/table:** Fix angular 15 issues ([a12ecf8](https://github.com/Employes/Paperless/commit/a12ecf8f33cafeffd391861a9f206745748969c5))
+
+
+
+
+
 ## [2.0.1-beta.101](https://github.com/Employes/Paperless/compare/v2.0.1-beta.100...v2.0.1-beta.101) (2025-05-12)
 
 
