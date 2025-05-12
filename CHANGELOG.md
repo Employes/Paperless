@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.97](https://github.com/employes/paperless/compare/v2.0.1-beta.96...v2.0.1-beta.97) (2025-05-12)
+
+
+### Features
+
+* **angular/organisms/table:** Scrollable table o.o ([7d7a1e3](https://github.com/employes/paperless/commit/7d7a1e36c6a906e994a6b5b9c308dc3517ce3ae4))
+
+
+
+
+
 ## [2.0.1-beta.96](https://github.com/employes/paperless/compare/v2.0.1-beta.95...v2.0.1-beta.96) (2025-05-12)
 
 
