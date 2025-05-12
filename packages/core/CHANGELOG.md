@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.95](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.94...v2.0.1-beta.95) (2025-05-12)
+
+
+### Bug Fixes
+
+* **molecules/card/header:** Make sure we can have dropdowns working ([a612aa0](https://github.com/ionic-team/stencil-component-starter/commit/a612aa00394b0d5bc625969a00c9283e05b3f7d9))
+
+
+
+
+
 ## [2.0.1-beta.94](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.93...v2.0.1-beta.94) (2025-05-09)
 
 
