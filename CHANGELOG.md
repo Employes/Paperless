@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.103](https://github.com/employes/paperless/compare/v2.0.1-beta.102...v2.0.1-beta.103) (2025-05-12)
+
+
+### Bug Fixes
+
+* **angular/organisms/table:** Fix relative import issue ([25c82fa](https://github.com/employes/paperless/commit/25c82fab688e7f84244ce56fe292182ea60c304a))
+
+
+
+
+
 ## [2.0.1-beta.102](https://github.com/employes/paperless/compare/v2.0.1-beta.101...v2.0.1-beta.102) (2025-05-12)
 
 
