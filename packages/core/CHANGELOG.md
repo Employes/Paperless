@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.106](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.105...v2.0.1-beta.106) (2025-05-13)
+
+
+### Bug Fixes
+
+* **molecules/field:** Check for target if originalTarget does not exist ([5528332](https://github.com/ionic-team/stencil-component-starter/commit/55283323b7a0360d4d6aeb08c540998994278427))
+
+
+
+
+
 ## [2.0.1-beta.105](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.104...v2.0.1-beta.105) (2025-05-12)
 
 **Note:** Version bump only for package @paperless/core
