@@ -618,7 +618,8 @@ export class Field {
 
 	private _valueChange(ev) {
 		ev.stopPropagation();
-		const value = (ev.originalTarget as HTMLTextAreaElement | HTMLInputElement).value;
+		const target = (ev.originalTarget ?? ev.target) as HTMLTextAreaElement | HTMLInputElement;
+		const value = target.value;
 		this.valueChange.emit(value)
 		this._internals.setFormValue(value);
 	}
