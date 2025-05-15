@@ -88,7 +88,7 @@ export class CardHeader {
 						<slot name='content-suffix' />
 					</div>
 
-					<div class='ml-auto empty:hidden'>
+					<div class='flex items-center gap-4 ml-auto justify-end empty:hidden'>
 						<slot name='suffix' />
 					</div>
 				</div>
