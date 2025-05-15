@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.107](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.106...v2.0.1-beta.107) (2025-05-15)
+
+
+### Bug Fixes
+
+* **atoms/card/header:** Add flex to the header suffix ([df6631c](https://github.com/ionic-team/stencil-component-starter/commit/df6631cf3e145fc19e4f06a98a29b836359a7f72))
+
+
+
+
+
 ## [2.0.1-beta.106](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.105...v2.0.1-beta.106) (2025-05-13)
 
 
