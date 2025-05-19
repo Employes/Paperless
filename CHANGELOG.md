@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.111](https://github.com/employes/paperless/compare/v2.0.1-beta.110...v2.0.1-beta.111) (2025-05-19)
+
+
+### Bug Fixes
+
+* **organisms/drawer & modal:** backdrop event not triggered because container is in the way ([f3c10b3](https://github.com/employes/paperless/commit/f3c10b3115e16d6f25cce5b0534543c22c286a04))
+
+
+
+
+
 ## [2.0.1-beta.110](https://github.com/employes/paperless/compare/v2.0.1-beta.109...v2.0.1-beta.110) (2025-05-19)
 
 
