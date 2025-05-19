@@ -10,7 +10,7 @@ const container = cva(
 		'z-drawer flex flex-col',
 
 		'rounded-2xl bg-white',
-		'w-full tablet:max-w-[22.5rem]',
+		'w-full tablet:w-[22.5rem]',
 
 		'shadow-modal',
 	],
