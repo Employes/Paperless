@@ -1,19 +1,5 @@
 :host {
-	@apply flex flex-col w-full items-end p-2;
+	@apply flex flex-col items-end;
+	@apply w-full p-2 tablet:w-auto tablet:ml-auto;
 	@apply h-full overflow-y-auto;
 }
-
-/* p-drawer-container { */
-/* 	@apply z-drawer flex flex-col; */
-/* 	// tablet:w-[22.5rem] */
-/* 	@apply w-full tablet:w-[22.5rem]; */
-/* 	@apply bg-white; */
-/* 	@apply min-h-screen; */
-/* 	@apply animate-slide-in-right; */
-/**/
-/* 	@apply shadow-3 #{!important}; */
-/**/
-/* 	&.closing { */
-/* 		@apply animate-slide-out-right; */
-/* 	} */
-/* } */

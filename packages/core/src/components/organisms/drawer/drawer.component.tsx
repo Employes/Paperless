@@ -122,8 +122,8 @@ export class Drawer {
 			return;
 		}
 
-		const modal = this._findDrawer(ev.target as HTMLElement);
-		if (modal) {
+		const drawer = this._findDrawer(ev.target as HTMLElement);
+		if (drawer) {
 			return;
 		}
 
@@ -139,7 +139,7 @@ export class Drawer {
 			return el;
 		}
 
-		if (el?.tagName?.toLowerCase() === 'p-backdrop') {
+		if (el?.nodeName?.toLowerCase() === 'p-backdrop') {
 			return null;
 		}
 

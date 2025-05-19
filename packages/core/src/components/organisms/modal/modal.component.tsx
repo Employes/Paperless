@@ -149,7 +149,7 @@ export class Modal {
 			return el;
 		}
 
-		if (el?.tagName?.toLowerCase() === 'p-backdrop') {
+		if (el?.nodeName?.toLowerCase() === 'p-backdrop') {
 			return null;
 		}
 
