@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.110](https://github.com/employes/paperless/compare/v2.0.1-beta.109...v2.0.1-beta.110) (2025-05-19)
+
+
+### Bug Fixes
+
+* **organisms/drawer:** Pass on backdrop click ([c615e2a](https://github.com/employes/paperless/commit/c615e2a1a74ed4e0105ef78956f32aca73033836))
+
+
+
+
+
 ## [2.0.1-beta.109](https://github.com/employes/paperless/compare/v2.0.1-beta.108...v2.0.1-beta.109) (2025-05-19)
 
 
