@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.109](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.108...v2.0.1-beta.109) (2025-05-19)
+
+
+### Bug Fixes
+
+* **atoms/checkbox, radio & toggle:** Don't add nonce to the id if an id is supplied ([2645281](https://github.com/ionic-team/stencil-component-starter/commit/264528153a5aeadfeaf32057f0ecf3df6ecd17f1))
+
+
+
+
+
 ## [2.0.1-beta.108](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.107...v2.0.1-beta.108) (2025-05-19)
 
 
