@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { ModalHeader } from '../drawer-header.component';
+import { DrawerHeader } from '../drawer-header.component';
 
 describe('p-drawer-header', () => {
 	it('renders', async () => {
 		const { root } = await newSpecPage({
-			components: [ModalHeader],
+			components: [DrawerHeader],
 			html: '<p-drawer-header></p-drawer-header>',
 		});
 		expect(root).toEqualHtml(`

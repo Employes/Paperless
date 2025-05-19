@@ -2,7 +2,7 @@ import { html, nothing } from 'lit';
 import { action } from '@storybook/addon-actions';
 
 const meta = {
-	title: 'Design System/Deprecated/Atoms/Drawer/Header',
+	title: 'Design System/Atoms/Drawer/Header',
 	component: 'p-drawer-header',
 	args: {
 		content: 'ModalHeader',

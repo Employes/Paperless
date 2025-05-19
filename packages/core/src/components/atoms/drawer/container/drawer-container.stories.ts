@@ -1,7 +1,7 @@
 import { html, nothing } from 'lit';
 
 const meta = {
-	title: 'Design System/Deprecated/Atoms/Drawer/Container',
+	title: 'Design System/Atoms/Drawer/Container',
 	component: 'p-drawer-container',
 	args: {
 		content: 'ModalContainer',

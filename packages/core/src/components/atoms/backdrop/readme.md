@@ -27,7 +27,7 @@
 
 ### Used by
 
- - [p-drawer](../../deprecated/organisms/drawer)
+ - [p-drawer](../../organisms/drawer)
  - [p-modal](../../organisms/modal)
  - [p-navbar](../../organisms/navbar)
 
