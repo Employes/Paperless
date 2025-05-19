@@ -139,7 +139,7 @@ export class Drawer {
 			return el;
 		}
 
-		if (el?.tagName?.toLowerCase() === 'p-drawer') {
+		if (el?.tagName?.toLowerCase() === 'p-backdrop') {
 			return null;
 		}
 

@@ -22,7 +22,7 @@
 
 | Event          | Description       | Type                                                                                                            |
 | -------------- | ----------------- | --------------------------------------------------------------------------------------------------------------- |
-| `closeClicked` | Close click event | `CustomEvent<{ event: MouseEvent; canClose: boolean; source: "close" \| "backdrop" \| "unknown" \| "event"; }>` |
+| `closeClicked` | Close click event | `CustomEvent<{ event: MouseEvent; canClose: boolean; source: "unknown" \| "backdrop" \| "close" \| "event"; }>` |
 | `closed`       | Closed event      | `CustomEvent<null>`                                                                                             |
 
 
