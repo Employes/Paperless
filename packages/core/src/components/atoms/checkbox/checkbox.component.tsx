@@ -125,7 +125,7 @@ export class Checkbox {
 	}
 
 	render() {
-		const id = this.id?.length ? `${this.id}-${this._nonce}` : this._nonce;
+		const id = this.id?.length ? this.id : this._nonce;
 
 		return (
 			<Host class='p-checkbox'>
