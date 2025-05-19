@@ -45,7 +45,7 @@
 
  - [p-attachment](../../deprecated/molecules/attachment)
  - [p-calendar](../calendar)
- - [p-drawer-header](../../deprecated/atoms/drawer/header)
+ - [p-drawer-header](../../atoms/drawer/header)
  - [p-empty-state](../empty-state)
  - [p-modal-header](../../atoms/modal/header)
  - [p-navbar](../../organisms/navbar)

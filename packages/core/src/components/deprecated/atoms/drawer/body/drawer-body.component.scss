@@ -1,7 +1,0 @@
-:host {
-	@apply flex flex-1 flex-col;
-	@apply min-h-full w-full px-4 py-6;
-	@apply bg-mystic;
-
-	padding-bottom: env(safe-area-inset-bottom, 0);
-}

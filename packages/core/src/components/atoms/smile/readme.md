@@ -17,12 +17,14 @@
 ### Used by
 
  - [p-card-header](../card/header)
+ - [p-drawer-header](../drawer/header)
  - [p-modal-header](../modal/header)
 
 ### Graph
 ```mermaid
 graph TD;
   p-card-header --> p-smile
+  p-drawer-header --> p-smile
   p-modal-header --> p-smile
   style p-smile fill:#f9f,stroke:#333,stroke-width:4px
 ```

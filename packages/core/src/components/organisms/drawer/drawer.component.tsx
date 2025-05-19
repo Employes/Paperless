@@ -4,14 +4,12 @@ import {
 	Event,
 	EventEmitter,
 	h,
-	Host,
 	Listen,
 	Prop,
 	State,
 } from '@stencil/core';
 
-@Component({
-	tag: 'p-drawer',
+@Component({ tag: 'p-drawer',
 	styleUrl: 'drawer.component.scss',
 	shadow: true,
 })
@@ -95,7 +93,6 @@ export class Drawer {
 		const bodyContent = <slot name="content" />;
 
 		return (
-			<Host class="p-drawer">
 				<p-backdrop
 					variant="drawer"
 					applyBlur={this.applyBlur}
@@ -117,16 +114,36 @@ export class Drawer {
 						<p-drawer-body>{bodyContent}</p-drawer-body>
 					</p-drawer-container>
 				</p-backdrop>
-			</Host>
 		);
 	}
 
-	private _backdropClick(ev) {
+	private _backdropClick(ev: MouseEvent) {
 		if (!this.backdropClickClose) {
 			return;
 		}
 
+		const modal = this._findDrawer(ev.target as HTMLElement);
+		if (modal) {
+			return;
+		}
+
 		this.close(ev, 'backdrop');
+	}
+
+	private _findDrawer(el: HTMLElement | null): any {
+		if (!el) {
+			return null;
+		}
+
+		if (el.nodeName.toLowerCase() === 'p-drawer-container') {
+			return el;
+		}
+
+		if (el?.tagName?.toLowerCase() === 'p-drawer') {
+			return null;
+		}
+
+		return this._findDrawer(el?.parentElement);
 	}
 
 	public close(ev?: MouseEvent, source: 'unknown' | 'backdrop' | 'close' | 'event' = 'unknown', force = false) {
@@ -134,7 +151,7 @@ export class Drawer {
 			this.closeClicked.emit({
 				event: ev,
 				canClose: this.canClose,
-        source
+        		source
 			});
 
 			if (!this.canClose) {

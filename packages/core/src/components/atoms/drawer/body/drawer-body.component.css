@@ -1,0 +1,5 @@
+:host {
+	@apply flex flex-1 flex-col gap-4;
+	@apply w-full h-full p-4;
+	padding-bottom: calc(env(safe-area-inset-bottom, 0) + 1rem);
+}

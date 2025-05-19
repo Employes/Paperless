@@ -494,10 +494,6 @@ export namespace Components {
         "showClose": boolean;
     }
     interface PDrawerBody {
-        /**
-          * The variant of the modal body
-         */
-        "variant": 'default' | 'table';
     }
     interface PDrawerContainer {
         /**
@@ -3643,10 +3639,6 @@ declare namespace LocalJSX {
         "showClose"?: boolean;
     }
     interface PDrawerBody {
-        /**
-          * The variant of the modal body
-         */
-        "variant"?: 'default' | 'table';
     }
     interface PDrawerContainer {
         /**

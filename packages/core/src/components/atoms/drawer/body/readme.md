@@ -5,13 +5,6 @@
 <!-- Auto Generated Below -->
 
 
-## Properties
-
-| Property  | Attribute | Description                   | Type                   | Default     |
-| --------- | --------- | ----------------------------- | ---------------------- | ----------- |
-| `variant` | `variant` | The variant of the modal body | `"default" \| "table"` | `'default'` |
-
-
 ## Dependencies
 
 ### Used by

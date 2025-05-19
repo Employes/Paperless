@@ -2,8 +2,21 @@ import { html, nothing } from 'lit';
 import { action } from '@storybook/addon-actions';
 
 const meta = {
-	title: 'Design System/Deprecated/Organisms/Drawer',
+	title: 'Design System/Organisms/Drawer',
 	component: 'p-drawer',
+	args: {
+		header: 'Drawer',
+		show: true,
+		'scroll-lock': false,
+	},
+	parameters: {
+		docs: {
+			iframeHeight: 900,
+			story: {
+				height: '900px',
+			},
+		},
+	},
 };
 
 export default meta;
@@ -27,6 +40,15 @@ export const Default = {
 		scroll-lock=${scrollLock ?? nothing}
 		@closeClicked=${action('closeClicked')}
 		@closed=${action('closed')}
-	/>`,
+	>
+		<p-card-container slot="content" slot="content">
+			<p-card-header
+				header="Card header"
+			></p-card-header>
+			<p-card-body>
+				Card content!
+			</p-card-body>
+		</p-card-container>
+	</p-drawer>`,
 	tags: ['!dev'],
 };

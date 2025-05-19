@@ -30,7 +30,7 @@
 
 ### Depends on
 
-- [p-backdrop](../../../atoms/backdrop)
+- [p-backdrop](../../atoms/backdrop)
 - [p-drawer-container](../../atoms/drawer/container)
 - [p-drawer-header](../../atoms/drawer/header)
 - [p-drawer-body](../../atoms/drawer/body)
@@ -43,6 +43,7 @@ graph TD;
   p-drawer --> p-drawer-header
   p-drawer --> p-drawer-body
   p-drawer-header --> p-button
+  p-drawer-header --> p-smile
   p-button --> p-icon
   p-button --> p-loader
   style p-drawer fill:#f9f,stroke:#333,stroke-width:4px
