@@ -1064,6 +1064,10 @@ export class Table implements OnInit, OnChanges {
 	}
 
 	private _calculateColumnWidths()  {
+		if(!this.enableScroll) {
+			return;
+		}
+
 		if(!this.tableCells || !this.tableRows) {
 			return;
 		}
