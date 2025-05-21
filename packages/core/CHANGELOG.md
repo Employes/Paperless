@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.113](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.112...v2.0.1-beta.113) (2025-05-21)
+
+
+### Features
+
+* **molecules/stepper:** Rebranding implementation ([b926254](https://github.com/ionic-team/stencil-component-starter/commit/b926254f82980a098e202626a8978efe82c30765))
+* **molecules:** Add listing component ([196c751](https://github.com/ionic-team/stencil-component-starter/commit/196c75196563e01a3f88a6f3176e94d0a9282bf2))
+
+
+
+
+
 ## [2.0.1-beta.112](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.111...v2.0.1-beta.112) (2025-05-21)
 
 
