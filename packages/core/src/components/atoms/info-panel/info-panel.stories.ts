@@ -5,7 +5,7 @@ const meta = {
 	title: 'Design System/Atoms/Info panel',
 	component: 'p-info-panel',
 	args: {
-		variant: 'neutral',
+		variant: 'feedback',
 		header: 'Info panel',
 		content: 'More information can be put here.',
 		closeable: true,

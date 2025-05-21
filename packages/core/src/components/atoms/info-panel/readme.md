@@ -7,12 +7,12 @@
 
 ## Properties
 
-| Property    | Attribute   | Description                    | Type                                                                 | Default     |
-| ----------- | ----------- | ------------------------------ | -------------------------------------------------------------------- | ----------- |
-| `closeable` | `closeable` | Wether the panel can be closed | `boolean`                                                            | `false`     |
-| `content`   | `content`   | The content of the info panel  | `string`                                                             | `undefined` |
-| `header`    | `header`    | The header of the info panel   | `string`                                                             | `undefined` |
-| `variant`   | `variant`   | The variant of the info panel  | `"biased" \| "negative" \| "neutral" \| "positive" \| "unavailable"` | `'neutral'` |
+| Property    | Attribute   | Description                    | Type                                                              | Default      |
+| ----------- | ----------- | ------------------------------ | ----------------------------------------------------------------- | ------------ |
+| `closeable` | `closeable` | Wether the panel can be closed | `boolean`                                                         | `false`      |
+| `content`   | `content`   | The content of the info panel  | `string`                                                          | `undefined`  |
+| `header`    | `header`    | The header of the info panel   | `string`                                                          | `undefined`  |
+| `variant`   | `variant`   | The variant of the info panel  | `"biased" \| "feedback" \| "negative" \| "neutral" \| "positive"` | `'feedback'` |
 
 
 ## Events

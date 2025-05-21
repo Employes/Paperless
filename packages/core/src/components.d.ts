@@ -959,7 +959,7 @@ export namespace Components {
 		| 'positive'
 		| 'biased'
 		| 'negative'
-		| 'unavailable';
+		| 'feedback';
     }
     interface PLabel {
         /**
@@ -4056,7 +4056,7 @@ declare namespace LocalJSX {
 		| 'positive'
 		| 'biased'
 		| 'negative'
-		| 'unavailable';
+		| 'feedback';
     }
     interface PLabel {
         /**
