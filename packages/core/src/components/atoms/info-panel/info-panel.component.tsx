@@ -17,7 +17,7 @@ const infopanel = cva(
 				positive: 'bg-positive-green-100',
 				biased: 'bg-amber-50',
 				negative: 'bg-negative-red-100',
-				unavailable: 'bg-white-700',
+				feedback: 'bg-white-700',
 			},
 		},
 	}
@@ -30,7 +30,7 @@ const header = cva('text-sm font-medium', {
 			positive: 'text-positive-green-800',
 			biased: 'text-amber-800',
 			negative: 'text-negative-red-800',
-			unavailable: 'text-black-teal-800',
+			feedback: 'text-black-teal-800',
 		},
 	},
 });
@@ -59,7 +59,7 @@ export class InfoPanel {
 		| 'positive'
 		| 'biased'
 		| 'negative'
-		| 'unavailable' = 'neutral';
+		| 'feedback' = 'feedback';
 
 	/**
 	 * The header of the info panel
