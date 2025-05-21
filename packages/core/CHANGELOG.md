@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.116](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.115...v2.0.1-beta.116) (2025-05-21)
+
+
+### Features
+
+* **molecules/attachment:** Add ability to upload ([11de503](https://github.com/ionic-team/stencil-component-starter/commit/11de503bc26c88893b15cb4d198da4e08c0e63f6))
+
+
+
+
+
 ## [2.0.1-beta.115](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.114...v2.0.1-beta.115) (2025-05-21)
 
 
