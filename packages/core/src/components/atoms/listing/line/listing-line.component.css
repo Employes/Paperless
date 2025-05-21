@@ -1,0 +1,5 @@
+:host {
+	@apply block flex-auto;
+	@apply bg-off-white-700;
+	@apply min-h-[1rem] w-[1px] mx-[calc(0.5rem-1px)];
+}
