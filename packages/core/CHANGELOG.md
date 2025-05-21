@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.114](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.113...v2.0.1-beta.114) (2025-05-21)
+
+
+### Bug Fixes
+
+* **atoms/modal/header:** Set width to 100%-7rem ([81e2e69](https://github.com/ionic-team/stencil-component-starter/commit/81e2e69e44500aedab911f30d129b91d077e1fbe))
+* **molecules/field:** Font geist & textarea icon ([dea2d05](https://github.com/ionic-team/stencil-component-starter/commit/dea2d05a136b7926298901bc16fd8345432f35bb))
+
+
+### Features
+
+* **molecules/attachment:** Rebranding implementation ([9eab814](https://github.com/ionic-team/stencil-component-starter/commit/9eab814b078c2ea87a4366a2998117281dbb9055))
+* **molecules/field:** Allways show warning icon when there is an error ([eebcbc9](https://github.com/ionic-team/stencil-component-starter/commit/eebcbc9b12837276bf596efcce166567bd5104a2))
+
+
+
+
+
 ## [2.0.1-beta.113](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.112...v2.0.1-beta.113) (2025-05-21)
 
 
