@@ -1527,6 +1527,10 @@ export namespace Components {
          */
         "activeStep": number;
         /**
+          * The alignment of the content in case of vertical direction
+         */
+        "align": 'start' | 'center' | 'end';
+        /**
           * The position of the content in case of vertical direction
          */
         "contentPosition": 'start' | 'end';
@@ -1545,7 +1549,7 @@ export namespace Components {
          */
         "active": boolean;
         /**
-          * The alignment of the step content
+          * The alignment of the content in case of vertical direction
          */
         "align": 'start' | 'center' | 'end';
         /**
@@ -1553,13 +1557,13 @@ export namespace Components {
          */
         "contentPosition": 'start' | 'end';
         /**
-          * The direction of the stepper step
-         */
-        "direction": 'horizontal' | 'vertical';
-        /**
           * Wether the step is finished
          */
         "finished": boolean;
+        /**
+          * The number of the step
+         */
+        "number": number;
     }
     interface PStepperLine {
         /**
@@ -4765,6 +4769,10 @@ declare namespace LocalJSX {
          */
         "activeStep"?: number;
         /**
+          * The alignment of the content in case of vertical direction
+         */
+        "align"?: 'start' | 'center' | 'end';
+        /**
           * The position of the content in case of vertical direction
          */
         "contentPosition"?: 'start' | 'end';
@@ -4783,7 +4791,7 @@ declare namespace LocalJSX {
          */
         "active"?: boolean;
         /**
-          * The alignment of the step content
+          * The alignment of the content in case of vertical direction
          */
         "align"?: 'start' | 'center' | 'end';
         /**
@@ -4791,13 +4799,13 @@ declare namespace LocalJSX {
          */
         "contentPosition"?: 'start' | 'end';
         /**
-          * The direction of the stepper step
-         */
-        "direction"?: 'horizontal' | 'vertical';
-        /**
           * Wether the step is finished
          */
         "finished"?: boolean;
+        /**
+          * The number of the step
+         */
+        "number"?: number;
     }
     interface PStepperLine {
         /**

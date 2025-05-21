@@ -1,7 +1,7 @@
 import { html, nothing } from 'lit';
 
 const meta = {
-	title: 'Design System/Deprecated/Atoms/Stepper/Line',
+	title: 'Design System/Atoms/Stepper/Line',
 	component: 'p-stepper-line',
 };
 

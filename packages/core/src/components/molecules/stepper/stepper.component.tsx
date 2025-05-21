@@ -1,8 +1,30 @@
-import { Component, Element, h, Host, Prop, Watch } from '@stencil/core';
+import { Component, Element, h, Prop, Watch } from '@stencil/core';
+import { cva } from 'class-variance-authority';
+
+const stepper = cva(
+	['flex gap-2'],
+	{
+		variants: {
+			direction: {
+				vertical: 'w-full flex-col flex-wrap items-start',
+				horizontal: 'h-auto items-center'
+			},
+			contentPosition: {
+				start: null,
+				end: null
+			}
+		},
+		compoundVariants: [{
+			direction: 'vertical',
+			contentPosition: 'start',
+			class: 'items-end'
+		}]
+	}
+);
 
 @Component({
 	tag: 'p-stepper',
-	styleUrl: 'stepper.component.scss',
+	styleUrl: 'stepper.component.css',
 	shadow: true,
 })
 export class Stepper {
@@ -19,12 +41,17 @@ export class Stepper {
 	/**
 	 * The direction of the stepper
 	 */
-	@Prop({ reflect: true }) direction: 'horizontal' | 'vertical' = 'horizontal';
+	@Prop() direction: 'horizontal' | 'vertical' = 'horizontal';
+
+	/**
+	 * The alignment of the content in case of vertical direction
+	 */
+	@Prop() align: 'start' | 'center' | 'end' = 'center';
 
 	/**
 	 * The position of the content in case of vertical direction
 	 */
-	@Prop({ reflect: true }) contentPosition: 'start' | 'end' = 'end';
+	@Prop() contentPosition: 'start' | 'end' = 'end';
 
 	/**
 	 * The host element
@@ -74,15 +101,9 @@ export class Stepper {
 				directionChanged = true;
 			}
 
+			item.number = i + 1;
 			item.direction = this.direction;
-			item.align =
-				this.direction === 'vertical'
-					? 'start'
-					: i === 0
-					? 'start'
-					: i === items?.length - 1
-					? 'end'
-					: 'center';
+			item.align = this.direction === 'vertical' ? this.align : 'start';
 			item.contentPosition = this.contentPosition;
 		}
 
@@ -154,17 +175,35 @@ export class Stepper {
 		i: number,
 		activeStep: number
 	) => {
-		const heightDiff = item.clientHeight / 2;
-		const heightDiffNext = nextItem.clientHeight / 2;
+		let heightDiff = item.clientHeight - 24;
+		let heightDiffNext = nextItem.clientHeight - 24;
+
+		if(this.align === 'center') {
+			heightDiff = heightDiff / 2;
+			heightDiffNext = heightDiffNext / 2;
+		}
 
 		stepperLine.direction = this.direction;
 		stepperLine.active = i < activeStep;
 
 		if (heightDiff > 0 && this.direction === 'vertical') {
-			stepperLine.style.marginTop = `-${heightDiff / 16}rem`;
-			stepperLine.style.marginBottom = `-${heightDiffNext / 16}rem`;
-			stepperLine.style.minHeight = `calc(1rem + ${
-				(heightDiff + heightDiffNext) / 16
+			let totalHeight = 0;
+
+			stepperLine.style.marginTop = "0";
+			stepperLine.style.marginBottom= "0";
+
+			if(this.align === 'start' || this.align === 'center') {
+				stepperLine.style.marginTop = `-${heightDiff / 16}rem`;
+				totalHeight += heightDiff;
+			}
+
+			if(this.align === 'center' ||  this.align==="end") {
+				stepperLine.style.marginBottom = `-${heightDiffNext / 16}rem`;
+				totalHeight += heightDiffNext;
+			}
+
+			stepperLine.style.minHeight = `calc(${
+				(totalHeight / 16)
 			}rem)`;
 		}
 	};
@@ -182,10 +221,20 @@ export class Stepper {
 
 	render() {
 		return (
-			<Host class='p-stepper'>
+			<div class={stepper({ direction: this.direction })}>
 				<slot onSlotchange={() => this._generateStepsOnce()} />
-			</Host>
+			</div>
 		);
+	}
+
+	@Watch('align')
+	protected _onAlignChange() {
+		this._generateStepsOnce();
+	}
+
+	@Watch('direction')
+	protected _onDirectionChange() {
+		this._generateStepsOnce();
 	}
 
 	@Watch('activeStep')

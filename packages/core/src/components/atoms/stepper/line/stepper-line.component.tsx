@@ -2,7 +2,7 @@ import { Component, h, Host, Prop } from '@stencil/core';
 
 @Component({
 	tag: 'p-stepper-line',
-	styleUrl: 'stepper-line.component.scss',
+	styleUrl: 'stepper-line.component.css',
 	shadow: true,
 })
 export class StepperLine {
@@ -18,6 +18,6 @@ export class StepperLine {
 		'horizontal';
 
 	render() {
-		return <Host class="p-stepper-line"></Host>;
+		return <Host />;
 	}
 }
