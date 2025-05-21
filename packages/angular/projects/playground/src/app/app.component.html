@@ -12,105 +12,102 @@
 			class="flex flex-col"
 			slot="content"
 		>
-			<p class="mb-2 text-xs font-semibold uppercase text-storm-vague">
-				Overview
-			</p>
-			<p-navigation-item
-				icon="home"
-				routerLink="./"
-				routerLinkActive="active"
-				[routerLinkActiveOptions]="{ exact: true }"
-			>
-				Home
-			</p-navigation-item>
+			<p-navigation-section header="overview">
+				<p-navigation-item
+					icon="home"
+					routerLink="./"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact: true }"
+				>
+					Home
+				</p-navigation-item>
+			</p-navigation-section>
 
-			<p class="mb-2 mt-4 text-xs font-semibold uppercase text-storm-vague">
-				Overlays
-			</p>
-			<p-navigation-item
-				icon="envelope"
-				routerLink="./modal"
-				routerLinkActive="active"
-				[routerLinkActiveOptions]="{ exact: true }"
-			>
-				Modal
-			</p-navigation-item>
-			<p-navigation-item
-				icon="menu"
-				routerLink="./drawer"
-				routerLinkActive="active"
-				[routerLinkActiveOptions]="{ exact: true }"
-			>
-				Drawer
-			</p-navigation-item>
-			<p-navigation-item
-				icon="tasks"
-				routerLink="./toast"
-				routerLinkActive="active"
-				[routerLinkActiveOptions]="{ exact: true }"
-			>
-				Toast
-			</p-navigation-item>
+			<p-navigation-section header="Overlays">
+				<p-navigation-item
+					icon="envelope"
+					routerLink="./modal"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact: true }"
+				>
+					Modal
+				</p-navigation-item>
+				<p-navigation-item
+					icon="menu"
+					routerLink="./drawer"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact: true }"
+				>
+					Drawer
+				</p-navigation-item>
+				<p-navigation-item
+					icon="tasks"
+					routerLink="./toast"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact: true }"
+				>
+					Toast
+				</p-navigation-item>
+			</p-navigation-section>
 
-			<p class="mb-2 mt-4 text-xs font-semibold uppercase text-storm-vague">
-				Components
-			</p>
-			<p-navigation-item
-				icon="filter"
-				routerLink="./table"
-				routerLinkActive="active"
-				[routerLinkActiveOptions]="{ exact: true }"
-			>
-				Table
-			</p-navigation-item>
-			<p-navigation-item
-				icon="filter"
-				routerLink="./scrollable-table"
-				routerLinkActive="active"
-				[routerLinkActiveOptions]="{ exact: true }"
-			>
-				Scrollable Table
-			</p-navigation-item>
-			<p-navigation-item
-				icon="calendar"
-				routerLink="./datepicker"
-				routerLinkActive="active"
-				[routerLinkActiveOptions]="{ exact: true }"
-			>
-				Datepicker
-			</p-navigation-item>
-			<p-navigation-item
-				icon="settings"
-				routerLink="./cropper"
-				routerLinkActive="active"
-				[routerLinkActiveOptions]="{ exact: true }"
-			>
-				Cropper
-			</p-navigation-item>
-			<p-navigation-item
-				icon="menu"
-				routerLink="./select"
-				routerLinkActive="active"
-				[routerLinkActiveOptions]="{ exact: true }"
-			>
-				Select
-			</p-navigation-item>
-			<p-navigation-item
-				icon="pencil"
-				routerLink="./inputs"
-				routerLinkActive="active"
-				[routerLinkActiveOptions]="{ exact: true }"
-			>
-				Inputs
-			</p-navigation-item>
-			<p-navigation-item
-				icon="checkmark"
-				routerLink="./stepper"
-				routerLinkActive="active"
-				[routerLinkActiveOptions]="{ exact: true }"
-			>
-				Stepper
-			</p-navigation-item>
+			<p-navigation-section header="Components">
+				<p-navigation-item
+					icon="filter"
+					routerLink="./table"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact: true }"
+				>
+					Table
+				</p-navigation-item>
+				<p-navigation-item
+					icon="filter"
+					routerLink="./scrollable-table"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact: true }"
+				>
+					Scrollable Table
+				</p-navigation-item>
+				<p-navigation-item
+					icon="calendar"
+					routerLink="./datepicker"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact: true }"
+				>
+					Datepicker
+				</p-navigation-item>
+				<p-navigation-item
+					icon="settings"
+					routerLink="./cropper"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact: true }"
+				>
+					Cropper
+				</p-navigation-item>
+				<p-navigation-item
+					icon="menu"
+					routerLink="./select"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact: true }"
+				>
+					Select
+				</p-navigation-item>
+				<p-navigation-item
+					icon="pencil"
+					routerLink="./inputs"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact: true }"
+				>
+					Inputs
+				</p-navigation-item>
+				<p-navigation-item
+					icon="checkmark"
+					routerLink="./stepper"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact: true }"
+				>
+					Stepper
+				</p-navigation-item>
+			</p-navigation-section>
 		</div>
 	</p-navbar>
 

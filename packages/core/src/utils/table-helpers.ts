@@ -21,7 +21,9 @@ export const getTableCellColumnClasses = (
 		'justify-center': definition?.align === 'center',
 		'justify-end': definition?.align === 'end',
 		'font-semibold': variant !== 'header' && definition?.type === 'th',
-		'text-storm-dark': variant !== 'header' && definition?.type === 'th',
+		'text-black-teal-400': variant === 'header',
+		'text-black-teal-300': variant !== 'header' && definition?.type !== 'th',
+		'text-black-teal': variant !== 'header' && definition?.type === 'th',
 		...sizes,
 	};
 };
