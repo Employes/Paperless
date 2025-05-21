@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.112](https://github.com/employes/paperless/compare/v2.0.1-beta.111...v2.0.1-beta.112) (2025-05-21)
+
+
+### Features
+
+* test out Marius's idea to brighten the colors ([db2b042](https://github.com/employes/paperless/commit/db2b042a39b171c42cb259944c7b2a8b48478011))
+
+
+
+
+
 ## [2.0.1-beta.111](https://github.com/employes/paperless/compare/v2.0.1-beta.110...v2.0.1-beta.111) (2025-05-19)
 
 
