@@ -10,6 +10,7 @@ const content = cva(['flex justify-end', 'w-full p-4 pb-0 h-12']);
 
 const title = cva([
 	'flex-1 text-center',
+	'w-[calc(100%-7rem)]',
 	'absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2',
 	'black-teal-500 text-2xl text-ambit font-bold',
 ]);
