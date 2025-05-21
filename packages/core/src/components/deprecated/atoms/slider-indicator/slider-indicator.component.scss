@@ -1,7 +1,0 @@
-:host {
-	@apply block w-2 h-2 bg-mystic-dark rounded-full;
-}
-
-:host(.active) {
-	@apply bg-indigo;
-}

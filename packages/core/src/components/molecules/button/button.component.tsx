@@ -398,13 +398,15 @@ export class Button {
 	onClick: EventEmitter<MouseEvent>;
 
 	render() {
-		let loaderColor: 'white' | 'storm' | 'indigo' = 'white';
+		let loaderColor: 'white' | 'off-white' | 'supportive-lilac' | 'black-teal' = 'white';
 		switch (this.variant) {
 			case 'secondary':
-				loaderColor = 'storm';
+			case 'dropdown':
+			case 'transparent':
+				loaderColor = 'off-white';
 				break;
 			case 'text':
-				loaderColor = 'indigo';
+				loaderColor = 'black-teal';
 				break;
 		}
 

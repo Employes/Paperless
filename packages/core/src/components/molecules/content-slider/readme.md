@@ -15,19 +15,6 @@
 | `hideMobileIndicator`   | `hide-mobile-indicator`   | Wether to hide the indicator on mobile                   | `boolean` | `false` |
 
 
-## Dependencies
-
-### Depends on
-
-- [p-slider-indicator](../../atoms/slider-indicator)
-
-### Graph
-```mermaid
-graph TD;
-  p-content-slider --> p-slider-indicator
-  style p-content-slider fill:#f9f,stroke:#333,stroke-width:4px
-```
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

@@ -347,16 +347,6 @@ export namespace Components {
          */
         "hideMobileIndicator": boolean;
     }
-    interface PCounter {
-        /**
-          * The size of the counter
-         */
-        "size": 'default' | 'mini';
-        /**
-          * The variant of the counter
-         */
-        "variant": 'info' | 'negative' | 'positive' | 'unbiased';
-    }
     interface PCropper {
         /**
           * The return type of the onchange
@@ -943,82 +933,6 @@ export namespace Components {
 		| 'negative'
 		| 'unavailable';
     }
-    interface PInputError {
-        /**
-          * The error to show
-         */
-        "error": string;
-        /**
-          * Wether to force show the tooltip
-         */
-        "forceShowTooltip": boolean;
-    }
-    interface PInputGroup {
-        /**
-          * Wether the input group is disabled
-         */
-        "disabled": boolean;
-        /**
-          * The helper of the input group
-         */
-        "error": string;
-        /**
-          * The error variant to use
-         */
-        "errorVariant": 'auto' | 'suffix' | 'element';
-        /**
-          * The method to use when focusing the input
-         */
-        "focusMethod": 'focus' | 'click';
-        /**
-          * Wether the input group is focused
-         */
-        "focused": boolean;
-        /**
-          * Force show the error tooltip
-         */
-        "forceShowTooltip": boolean;
-        /**
-          * The helper of the input group
-         */
-        "helper": string;
-        /**
-          * Icon of the input group
-         */
-        "icon": IconVariant;
-        /**
-          * Icon flip
-         */
-        "iconFlip": IconFlipOptions;
-        /**
-          * Icon position
-         */
-        "iconPosition": 'start' | 'end';
-        /**
-          * Icon rotate
-         */
-        "iconRotate": RotateOptions;
-        /**
-          * The label of the input group
-         */
-        "label": string;
-        /**
-          * The prefix of the input group
-         */
-        "prefix": string;
-        /**
-          * Wether the field is required
-         */
-        "required": boolean;
-        /**
-          * The size of the input group
-         */
-        "size": 'small' | 'medium';
-        /**
-          * The suffix of the input group
-         */
-        "suffix": string;
-    }
     interface PLabel {
         /**
           * Icon to show on the label
@@ -1069,7 +983,7 @@ export namespace Components {
         /**
           * Color of the loader
          */
-        "color": 'indigo' | 'white' | 'storm';
+        "color": 'supportive-lilac' | 'white' | 'off-white' | 'black-teal';
         /**
           * !NOT IMPLEMENTED! Modal description for modal variant
          */
@@ -1501,35 +1415,11 @@ export namespace Components {
          */
         "valueKey": string;
     }
-    interface PSliderIndicator {
-        /**
-          * Wether the slider indicator is active
-         */
-        "active": boolean;
-    }
     interface PSmile {
         /**
           * The variant of the smile footer
          */
         "variant": 'modal' | 'card';
-    }
-    interface PStatus {
-        /**
-          * Icon to show on the status
-         */
-        "icon": IconVariant;
-        /**
-          * Icon flip
-         */
-        "iconFlip": IconFlipOptions;
-        /**
-          * Icon rotate
-         */
-        "iconRotate": RotateOptions;
-        /**
-          * The variant of the status
-         */
-        "variant": 'default' | 'positive' | 'unbiased' | 'negative';
     }
     interface PStepper {
         /**
@@ -2360,12 +2250,6 @@ declare global {
         prototype: HTMLPContentSliderElement;
         new (): HTMLPContentSliderElement;
     };
-    interface HTMLPCounterElement extends Components.PCounter, HTMLStencilElement {
-    }
-    var HTMLPCounterElement: {
-        prototype: HTMLPCounterElement;
-        new (): HTMLPCounterElement;
-    };
     interface HTMLPCropperElementEventMap {
         "valueChange": any;
     }
@@ -2607,18 +2491,6 @@ declare global {
     var HTMLPInfoPanelElement: {
         prototype: HTMLPInfoPanelElement;
         new (): HTMLPInfoPanelElement;
-    };
-    interface HTMLPInputErrorElement extends Components.PInputError, HTMLStencilElement {
-    }
-    var HTMLPInputErrorElement: {
-        prototype: HTMLPInputErrorElement;
-        new (): HTMLPInputErrorElement;
-    };
-    interface HTMLPInputGroupElement extends Components.PInputGroup, HTMLStencilElement {
-    }
-    var HTMLPInputGroupElement: {
-        prototype: HTMLPInputGroupElement;
-        new (): HTMLPInputGroupElement;
     };
     interface HTMLPLabelElement extends Components.PLabel, HTMLStencilElement {
     }
@@ -2866,23 +2738,11 @@ declare global {
         prototype: HTMLPSelectElement;
         new (): HTMLPSelectElement;
     };
-    interface HTMLPSliderIndicatorElement extends Components.PSliderIndicator, HTMLStencilElement {
-    }
-    var HTMLPSliderIndicatorElement: {
-        prototype: HTMLPSliderIndicatorElement;
-        new (): HTMLPSliderIndicatorElement;
-    };
     interface HTMLPSmileElement extends Components.PSmile, HTMLStencilElement {
     }
     var HTMLPSmileElement: {
         prototype: HTMLPSmileElement;
         new (): HTMLPSmileElement;
-    };
-    interface HTMLPStatusElement extends Components.PStatus, HTMLStencilElement {
-    }
-    var HTMLPStatusElement: {
-        prototype: HTMLPStatusElement;
-        new (): HTMLPStatusElement;
     };
     interface HTMLPStepperElement extends Components.PStepper, HTMLStencilElement {
     }
@@ -3103,7 +2963,6 @@ declare global {
         "p-card-header": HTMLPCardHeaderElement;
         "p-checkbox": HTMLPCheckboxElement;
         "p-content-slider": HTMLPContentSliderElement;
-        "p-counter": HTMLPCounterElement;
         "p-cropper": HTMLPCropperElement;
         "p-datepicker": HTMLPDatepickerElement;
         "p-divider": HTMLPDividerElement;
@@ -3125,8 +2984,6 @@ declare global {
         "p-illustration": HTMLPIllustrationElement;
         "p-illustration-deprecated": HTMLPIllustrationDeprecatedElement;
         "p-info-panel": HTMLPInfoPanelElement;
-        "p-input-error": HTMLPInputErrorElement;
-        "p-input-group": HTMLPInputGroupElement;
         "p-label": HTMLPLabelElement;
         "p-layout": HTMLPLayoutElement;
         "p-listing": HTMLPListingElement;
@@ -3152,9 +3009,7 @@ declare global {
         "p-segment-container": HTMLPSegmentContainerElement;
         "p-segment-item": HTMLPSegmentItemElement;
         "p-select": HTMLPSelectElement;
-        "p-slider-indicator": HTMLPSliderIndicatorElement;
         "p-smile": HTMLPSmileElement;
-        "p-status": HTMLPStatusElement;
         "p-stepper": HTMLPStepperElement;
         "p-stepper-item": HTMLPStepperItemElement;
         "p-stepper-line": HTMLPStepperLineElement;
@@ -3506,16 +3361,6 @@ declare namespace LocalJSX {
           * Wether to hide the indicator on mobile
          */
         "hideMobileIndicator"?: boolean;
-    }
-    interface PCounter {
-        /**
-          * The size of the counter
-         */
-        "size"?: 'default' | 'mini';
-        /**
-          * The variant of the counter
-         */
-        "variant"?: 'info' | 'negative' | 'positive' | 'unbiased';
     }
     interface PCropper {
         /**
@@ -4152,82 +3997,6 @@ declare namespace LocalJSX {
 		| 'negative'
 		| 'unavailable';
     }
-    interface PInputError {
-        /**
-          * The error to show
-         */
-        "error"?: string;
-        /**
-          * Wether to force show the tooltip
-         */
-        "forceShowTooltip"?: boolean;
-    }
-    interface PInputGroup {
-        /**
-          * Wether the input group is disabled
-         */
-        "disabled"?: boolean;
-        /**
-          * The helper of the input group
-         */
-        "error"?: string;
-        /**
-          * The error variant to use
-         */
-        "errorVariant"?: 'auto' | 'suffix' | 'element';
-        /**
-          * The method to use when focusing the input
-         */
-        "focusMethod"?: 'focus' | 'click';
-        /**
-          * Wether the input group is focused
-         */
-        "focused"?: boolean;
-        /**
-          * Force show the error tooltip
-         */
-        "forceShowTooltip"?: boolean;
-        /**
-          * The helper of the input group
-         */
-        "helper"?: string;
-        /**
-          * Icon of the input group
-         */
-        "icon"?: IconVariant;
-        /**
-          * Icon flip
-         */
-        "iconFlip"?: IconFlipOptions;
-        /**
-          * Icon position
-         */
-        "iconPosition"?: 'start' | 'end';
-        /**
-          * Icon rotate
-         */
-        "iconRotate"?: RotateOptions;
-        /**
-          * The label of the input group
-         */
-        "label"?: string;
-        /**
-          * The prefix of the input group
-         */
-        "prefix"?: string;
-        /**
-          * Wether the field is required
-         */
-        "required"?: boolean;
-        /**
-          * The size of the input group
-         */
-        "size"?: 'small' | 'medium';
-        /**
-          * The suffix of the input group
-         */
-        "suffix"?: string;
-    }
     interface PLabel {
         /**
           * Icon to show on the label
@@ -4282,7 +4051,7 @@ declare namespace LocalJSX {
         /**
           * Color of the loader
          */
-        "color"?: 'indigo' | 'white' | 'storm';
+        "color"?: 'supportive-lilac' | 'white' | 'off-white' | 'black-teal';
         /**
           * !NOT IMPLEMENTED! Modal description for modal variant
          */
@@ -4774,35 +4543,11 @@ declare namespace LocalJSX {
          */
         "valueKey"?: string;
     }
-    interface PSliderIndicator {
-        /**
-          * Wether the slider indicator is active
-         */
-        "active"?: boolean;
-    }
     interface PSmile {
         /**
           * The variant of the smile footer
          */
         "variant"?: 'modal' | 'card';
-    }
-    interface PStatus {
-        /**
-          * Icon to show on the status
-         */
-        "icon"?: IconVariant;
-        /**
-          * Icon flip
-         */
-        "iconFlip"?: IconFlipOptions;
-        /**
-          * Icon rotate
-         */
-        "iconRotate"?: RotateOptions;
-        /**
-          * The variant of the status
-         */
-        "variant"?: 'default' | 'positive' | 'unbiased' | 'negative';
     }
     interface PStepper {
         /**
@@ -5474,7 +5219,6 @@ declare namespace LocalJSX {
         "p-card-header": PCardHeader;
         "p-checkbox": PCheckbox;
         "p-content-slider": PContentSlider;
-        "p-counter": PCounter;
         "p-cropper": PCropper;
         "p-datepicker": PDatepicker;
         "p-divider": PDivider;
@@ -5496,8 +5240,6 @@ declare namespace LocalJSX {
         "p-illustration": PIllustration;
         "p-illustration-deprecated": PIllustrationDeprecated;
         "p-info-panel": PInfoPanel;
-        "p-input-error": PInputError;
-        "p-input-group": PInputGroup;
         "p-label": PLabel;
         "p-layout": PLayout;
         "p-listing": PListing;
@@ -5523,9 +5265,7 @@ declare namespace LocalJSX {
         "p-segment-container": PSegmentContainer;
         "p-segment-item": PSegmentItem;
         "p-select": PSelect;
-        "p-slider-indicator": PSliderIndicator;
         "p-smile": PSmile;
-        "p-status": PStatus;
         "p-stepper": PStepper;
         "p-stepper-item": PStepperItem;
         "p-stepper-line": PStepperLine;
@@ -5564,7 +5304,6 @@ declare module "@stencil/core" {
             "p-card-header": LocalJSX.PCardHeader & JSXBase.HTMLAttributes<HTMLPCardHeaderElement>;
             "p-checkbox": LocalJSX.PCheckbox & JSXBase.HTMLAttributes<HTMLPCheckboxElement>;
             "p-content-slider": LocalJSX.PContentSlider & JSXBase.HTMLAttributes<HTMLPContentSliderElement>;
-            "p-counter": LocalJSX.PCounter & JSXBase.HTMLAttributes<HTMLPCounterElement>;
             "p-cropper": LocalJSX.PCropper & JSXBase.HTMLAttributes<HTMLPCropperElement>;
             "p-datepicker": LocalJSX.PDatepicker & JSXBase.HTMLAttributes<HTMLPDatepickerElement>;
             "p-divider": LocalJSX.PDivider & JSXBase.HTMLAttributes<HTMLPDividerElement>;
@@ -5586,8 +5325,6 @@ declare module "@stencil/core" {
             "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;
             "p-illustration-deprecated": LocalJSX.PIllustrationDeprecated & JSXBase.HTMLAttributes<HTMLPIllustrationDeprecatedElement>;
             "p-info-panel": LocalJSX.PInfoPanel & JSXBase.HTMLAttributes<HTMLPInfoPanelElement>;
-            "p-input-error": LocalJSX.PInputError & JSXBase.HTMLAttributes<HTMLPInputErrorElement>;
-            "p-input-group": LocalJSX.PInputGroup & JSXBase.HTMLAttributes<HTMLPInputGroupElement>;
             "p-label": LocalJSX.PLabel & JSXBase.HTMLAttributes<HTMLPLabelElement>;
             "p-layout": LocalJSX.PLayout & JSXBase.HTMLAttributes<HTMLPLayoutElement>;
             "p-listing": LocalJSX.PListing & JSXBase.HTMLAttributes<HTMLPListingElement>;
@@ -5613,9 +5350,7 @@ declare module "@stencil/core" {
             "p-segment-container": LocalJSX.PSegmentContainer & JSXBase.HTMLAttributes<HTMLPSegmentContainerElement>;
             "p-segment-item": LocalJSX.PSegmentItem & JSXBase.HTMLAttributes<HTMLPSegmentItemElement>;
             "p-select": LocalJSX.PSelect & JSXBase.HTMLAttributes<HTMLPSelectElement>;
-            "p-slider-indicator": LocalJSX.PSliderIndicator & JSXBase.HTMLAttributes<HTMLPSliderIndicatorElement>;
             "p-smile": LocalJSX.PSmile & JSXBase.HTMLAttributes<HTMLPSmileElement>;
-            "p-status": LocalJSX.PStatus & JSXBase.HTMLAttributes<HTMLPStatusElement>;
             "p-stepper": LocalJSX.PStepper & JSXBase.HTMLAttributes<HTMLPStepperElement>;
             "p-stepper-item": LocalJSX.PStepperItem & JSXBase.HTMLAttributes<HTMLPStepperItemElement>;
             "p-stepper-line": LocalJSX.PStepperLine & JSXBase.HTMLAttributes<HTMLPStepperLineElement>;

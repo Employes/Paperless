@@ -88,7 +88,7 @@
 - [p-table-row-actions-container](../../atoms/table/container)
 - [p-tooltip](../../atoms/tooltip)
 - [p-button](../../molecules/button)
-- [p-loader](../../deprecated/atoms/loader)
+- [p-loader](../../atoms/loader)
 - [p-checkbox](../../atoms/checkbox)
 - [p-empty-state](../../molecules/empty-state)
 

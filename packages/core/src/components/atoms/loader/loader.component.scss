@@ -1,24 +1,32 @@
 :host {
 	.loader {
 		@apply inline-block h-[1em] w-[1em] rounded-full;
-		@apply border-2 border-solid border-indigo-light border-t-indigo;
+		@apply border-2 border-solid;
 		animation: 500ms spin linear infinite;
 
 		will-change: transform;
 
-		&.color-storm {
-			@apply border-storm-light/40 border-t-storm #{!important};
+		&.color-supportive-lilac {
+			@apply border-r-supportive-lilac/40 border-t-supportive-lilac #{!important};
+		}
+
+		&.color-off-white {
+			@apply border-off-white-600/40 border-t-off-white-800 #{!important};
 		}
 
 		&.color-white {
-			@apply border-indigo-light/40 border-t-white #{!important};
+			@apply border-white/40 border-t-white #{!important};
+		}
+
+		&.color-black-teal {
+			@apply border-r-black-teal-400 border-t-black-teal-700 #{!important};
 		}
 	}
 
 	.loading-screen {
 		@apply fixed left-0 top-0 h-screen-safe w-screen-safe;
 		@apply flex items-center justify-center;
-		@apply bg-mystic;
+		@apply bg-off-white-200;
 
 		z-index: 1001;
 

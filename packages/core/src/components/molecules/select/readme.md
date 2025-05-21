@@ -71,7 +71,7 @@
 - [p-field-container](../field/container)
 - [p-button](../button)
 - [p-dropdown-menu-item](../../atoms/dropdown-menu/item)
-- [p-loader](../../deprecated/atoms/loader)
+- [p-loader](../../atoms/loader)
 - [p-field](../field/field)
 - [p-avatar](../../atoms/avatar/avatar)
 

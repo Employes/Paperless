@@ -28,8 +28,7 @@
 ### Depends on
 
 - [p-icon](../../../atoms/icon)
-- [p-loader](../../atoms/loader)
-- [p-input-error](../input/error)
+- [p-loader](../../../atoms/loader)
 - [p-button](../../../molecules/button)
 
 ### Graph
@@ -37,11 +36,7 @@
 graph TD;
   p-attachment --> p-icon
   p-attachment --> p-loader
-  p-attachment --> p-input-error
   p-attachment --> p-button
-  p-input-error --> p-tooltip
-  p-input-error --> p-icon
-  p-tooltip --> p-portal
   p-button --> p-icon
   p-button --> p-loader
   style p-attachment fill:#f9f,stroke:#333,stroke-width:4px

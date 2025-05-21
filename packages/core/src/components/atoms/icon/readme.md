@@ -31,8 +31,6 @@
  - [p-floating-menu-item](../floating-menu/item)
  - [p-helper](../helper)
  - [p-info-panel](../info-panel)
- - [p-input-error](../../deprecated/molecules/input/error)
- - [p-input-group](../../deprecated/molecules/input/group)
  - [p-label](../../molecules/label)
  - [p-listing-item](../listing/item)
  - [p-navigation-item](../../molecules/navigation/item)
@@ -40,7 +38,6 @@
  - [p-pagination-size](../../molecules/pagination/size)
  - [p-segment-item](../segment/item)
  - [p-select](../../molecules/select)
- - [p-status](../../deprecated/atoms/status)
 
 ### Graph
 ```mermaid
@@ -57,8 +54,6 @@ graph TD;
   p-floating-menu-item --> p-icon
   p-helper --> p-icon
   p-info-panel --> p-icon
-  p-input-error --> p-icon
-  p-input-group --> p-icon
   p-label --> p-icon
   p-listing-item --> p-icon
   p-navigation-item --> p-icon
@@ -66,7 +61,6 @@ graph TD;
   p-pagination-size --> p-icon
   p-segment-item --> p-icon
   p-select --> p-icon
-  p-status --> p-icon
   style p-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

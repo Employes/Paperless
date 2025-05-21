@@ -25,7 +25,7 @@
 
 - [p-icon](../../../atoms/icon)
 - [p-badge](../../../atoms/badge)
-- [p-loader](../../../deprecated/atoms/loader)
+- [p-loader](../../../atoms/loader)
 
 ### Graph
 ```mermaid

@@ -27,7 +27,7 @@
 
 ### Depends on
 
-- [p-loader](../../../deprecated/atoms/loader)
+- [p-loader](../../../atoms/loader)
 
 ### Graph
 ```mermaid
