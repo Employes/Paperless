@@ -2,10 +2,11 @@ import { html, nothing } from 'lit';
 import { action } from '@storybook/addon-actions';
 
 const meta = {
-	title: 'Design System/Deprecated/Molecules/Accordion',
+	title: 'Design System/Molecules/Accordion',
 	component: 'p-accordion',
 	args: {
-		content: 'Accordion',
+		header: "Accordion header",
+		content: 'Accordion content!',
 	},
 	argTypes: {
 		content: {

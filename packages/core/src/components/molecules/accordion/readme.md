@@ -26,8 +26,8 @@
 
 ### Depends on
 
-- [p-icon](../../../atoms/icon)
-- [p-divider](../../../atoms/divider)
+- [p-icon](../../atoms/icon)
+- [p-divider](../../atoms/divider)
 
 ### Graph
 ```mermaid

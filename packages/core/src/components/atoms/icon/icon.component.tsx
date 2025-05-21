@@ -6,7 +6,7 @@ import { icons } from '../../../utils/icons';
 export type IconVariant = keyof typeof icons;
 export type IconFlipOptions = 'none' | 'horizontal' | 'vertical';
 
-const icon = cva(['p-icon inline-flex'], {
+const icon = cva(['p-icon inline-flex', 'transform-gpu transition-transform'], {
 	variants: {
 		flip: {
 			none: null,
@@ -26,7 +26,7 @@ const icon = cva(['p-icon inline-flex'], {
 			'4xl': 'text-4xl',
 		},
 		transform: {
-			true: 'transform-gpu scale-[0.99]',
+			true: 'scale-[0.9999]',
 			false: null,
 		},
 	},

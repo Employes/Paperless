@@ -16,7 +16,7 @@
 
 ### Used by
 
- - [p-accordion](../../deprecated/molecules/accordion)
+ - [p-accordion](../../molecules/accordion)
  - [p-card-header](../card/header)
  - [p-floating-menu-container](../floating-menu/container)
  - [p-modal-footer](../modal/footer)
