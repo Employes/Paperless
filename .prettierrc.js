@@ -7,5 +7,5 @@
 var conventions = require('./packages/conventions/.prettierrc');
 
 module.exports = Object.assign(conventions, {
-	tailwindConfig: './tailwind.config.js',
+	tailwindConfig: './tailwind.config.ts',
 });
