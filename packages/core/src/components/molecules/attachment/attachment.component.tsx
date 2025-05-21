@@ -315,10 +315,6 @@ export class Attachment {
 			this._cameraFileRef.value = '';
 		}
 
-		if (!this.value?.length) {
-			this.value = file.name;
-		}
-
 		this.loading = false;
 	}
 }
