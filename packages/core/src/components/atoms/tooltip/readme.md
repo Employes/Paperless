@@ -31,6 +31,7 @@
 
 ### Used by
 
+ - [p-attachment](../../molecules/attachment)
  - [p-field-container](../../molecules/field/container)
  - [p-helper](../helper)
  - [p-table](../../organisms/table)
@@ -43,6 +44,7 @@
 ```mermaid
 graph TD;
   p-tooltip --> p-portal
+  p-attachment --> p-tooltip
   p-field-container --> p-tooltip
   p-helper --> p-tooltip
   p-table --> p-tooltip

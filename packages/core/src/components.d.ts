@@ -68,21 +68,49 @@ export namespace Components {
     }
     interface PAttachment {
         /**
-          * Wether the attachment is downloading
+          * The text for the delete tooltip
          */
-        "downloading": boolean;
+        "deleteTooltip": string;
+        /**
+          * The text for the download tooltip
+         */
+        "downloadTooltip": string;
         /**
           * The error to show
          */
         "error": string;
         /**
-          * Wether the attachment is uploading/loading
+          * The helper of the attachment
+         */
+        "helper": string | HTMLSlotElement;
+        /**
+          * The label of the attachment
+         */
+        "label": string | HTMLSlotElement;
+        /**
+          * Wether the attachment is loading
          */
         "loading": boolean;
         /**
-          * The variant of the button
+          * The variant of the attachment
          */
         "mode": 'read' | 'write';
+        /**
+          * The placeholder of the attachment
+         */
+        "placeholder": string;
+        /**
+          * Wether the attachment is required
+         */
+        "required": boolean;
+        /**
+          * The text for the upload tooltip
+         */
+        "uploadTooltip": string;
+        /**
+          * The value of the attachment (usually the file name)
+         */
+        "value": string;
     }
     interface PAvatar {
         /**
@@ -2116,8 +2144,9 @@ declare global {
         new (): HTMLPAccordionElement;
     };
     interface HTMLPAttachmentElementEventMap {
-        "download": any;
-        "delete": any;
+        "upload": void;
+        "download": void;
+        "delete": void;
     }
     interface HTMLPAttachmentElement extends Components.PAttachment, HTMLStencilElement {
         addEventListener<K extends keyof HTMLPAttachmentElementEventMap>(type: K, listener: (this: HTMLPAttachmentElement, ev: PAttachmentCustomEvent<HTMLPAttachmentElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -3055,29 +3084,61 @@ declare namespace LocalJSX {
     }
     interface PAttachment {
         /**
-          * Wether the attachment is downloading
+          * The text for the delete tooltip
          */
-        "downloading"?: boolean;
+        "deleteTooltip"?: string;
+        /**
+          * The text for the download tooltip
+         */
+        "downloadTooltip"?: string;
         /**
           * The error to show
          */
         "error"?: string;
         /**
-          * Wether the attachment is uploading/loading
+          * The helper of the attachment
+         */
+        "helper"?: string | HTMLSlotElement;
+        /**
+          * The label of the attachment
+         */
+        "label"?: string | HTMLSlotElement;
+        /**
+          * Wether the attachment is loading
          */
         "loading"?: boolean;
         /**
-          * The variant of the button
+          * The variant of the attachment
          */
         "mode"?: 'read' | 'write';
         /**
           * Event when delete is pressed
          */
-        "onDelete"?: (event: PAttachmentCustomEvent<any>) => void;
+        "onDelete"?: (event: PAttachmentCustomEvent<void>) => void;
         /**
           * Event when download is pressed
          */
-        "onDownload"?: (event: PAttachmentCustomEvent<any>) => void;
+        "onDownload"?: (event: PAttachmentCustomEvent<void>) => void;
+        /**
+          * Event when upload is pressed
+         */
+        "onUpload"?: (event: PAttachmentCustomEvent<void>) => void;
+        /**
+          * The placeholder of the attachment
+         */
+        "placeholder"?: string;
+        /**
+          * Wether the attachment is required
+         */
+        "required"?: boolean;
+        /**
+          * The text for the upload tooltip
+         */
+        "uploadTooltip"?: string;
+        /**
+          * The value of the attachment (usually the file name)
+         */
+        "value"?: string;
     }
     interface PAvatar {
         /**
