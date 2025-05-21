@@ -1,22 +1,21 @@
-import {
-	Component,
-	Element,
-	EventEmitter,
-	h,
-	Host,
-	Event,
-	Prop,
-	Fragment,
-	State,
-	Listen,
-} from '@stencil/core';
-import {
-	formatTranslation,
-	getLocaleComponentStrings,
-} from '../../../../utils';
 import { Placement } from '@floating-ui/dom';
-import { asBoolean } from '../../../../utils/as-boolean';
+import {
+    Component,
+    Element,
+    Event,
+    EventEmitter,
+    Fragment,
+    h,
+    Listen,
+    Prop,
+    State
+} from '@stencil/core';
 import { cva } from 'class-variance-authority';
+import {
+    formatTranslation,
+    getLocaleComponentStrings,
+} from '../../../../utils';
+import { asBoolean } from '../../../../utils/as-boolean';
 
 const loader = cva(['rounded-lg w-full'], {
 	variants: {
@@ -162,65 +161,63 @@ export class FieldContainer {
 		}
 
 		return (
-			<Host class='p-field-container'>
-				<label
-					htmlFor={this.id}
-					class='flex w-inherit flex-col gap-1'
+			<label
+				htmlFor={this.id}
+				class='flex w-inherit flex-col gap-1'
+			>
+				<div class='flex items-end justify-between gap-1 empty:hidden'>
+					{!!label?.length && (
+						<div
+							class='text-xs font-medium text-black-teal-300'
+							onClick={() => this.focus.emit()}
+						>
+							{label}
+						</div>
+					)}
+
+					{(!asBoolean(this.required) || helper || hasHeaderSlot) && (
+						<div class='flex items-center gap-1'>
+							{!asBoolean(this.required) && this.variant === 'write' && (
+								<span class='text-xs font-medium text-black-teal-200'>
+									{this.optionalTemplate()}
+								</span>
+							)}
+
+							{(helper || hasHeaderSlot) && (
+								<Fragment>
+									{hasHeaderSlot && <slot name='header' />}
+									{helper && (
+										<p-helper
+											class={`flex ${hasHeaderSlot ? 'ml-2' : ''}`}
+											placement='top-end'
+										>
+											{helper}
+										</p-helper>
+									)}
+								</Fragment>
+							)}
+						</div>
+					)}
+				</div>
+
+				<p-tooltip
+					class={this.variant === 'write' || this.loading ? 'w-full' : ''}
+					variant='error'
+					content={this.error}
+					show={errorAndErrorIsNotBoolean && asBoolean(this.forceShowTooltip)}
+					enableUserInput={false}
+					placement={this.errorPlacement}
 				>
-					<div class='flex items-end justify-between gap-1 empty:hidden'>
-						{!!label?.length && (
-							<div
-								class='text-xs font-medium text-black-teal-300'
-								onClick={() => this.focus.emit()}
-							>
-								{label}
-							</div>
-						)}
+					{hasErrorSlot && (
+						<slot
+							name='error'
+							slot='content'
+						/>
+					)}
 
-						{(!asBoolean(this.required) || helper || hasHeaderSlot) && (
-							<div class='flex items-center gap-1'>
-								{!asBoolean(this.required) && this.variant === 'write' && (
-									<span class='text-xs font-medium text-black-teal-200'>
-										{this.optionalTemplate()}
-									</span>
-								)}
-
-								{(helper || hasHeaderSlot) && (
-									<Fragment>
-										{hasHeaderSlot && <slot name='header' />}
-										{helper && (
-											<p-helper
-												class={`flex ${hasHeaderSlot ? 'ml-2' : ''}`}
-												placement='top-end'
-											>
-												{helper}
-											</p-helper>
-										)}
-									</Fragment>
-								)}
-							</div>
-						)}
-					</div>
-
-					<p-tooltip
-						class={this.variant === 'write' || this.loading ? 'w-full' : ''}
-						variant='error'
-						content={this.error}
-						show={errorAndErrorIsNotBoolean && asBoolean(this.forceShowTooltip)}
-						enableUserInput={false}
-						placement={this.errorPlacement}
-					>
-						{hasErrorSlot && (
-							<slot
-								name='error'
-								slot='content'
-							/>
-						)}
-
-						{contentSlot}
-					</p-tooltip>
-				</label>
-			</Host>
+					{contentSlot}
+				</p-tooltip>
+			</label>
 		);
 	}
 

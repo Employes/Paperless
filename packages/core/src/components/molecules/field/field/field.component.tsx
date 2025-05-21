@@ -1,27 +1,26 @@
 import { Placement } from '@floating-ui/dom';
 import {
     AttachInternals,
-	Component,
-	Element,
-	Event,
-	EventEmitter,
-	h,
-	Host,
-	Listen,
-	Prop,
-	State,
+    Component,
+    Element,
+    Event,
+    EventEmitter,
+    h,
+    Listen,
+    Prop,
+    State
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { HTMLInputTypeAttribute } from 'react';
 import { RotateOptions } from '../../../../types/tailwind';
+import { asBoolean } from '../../../../utils/as-boolean';
+import { cn } from '../../../../utils/cn';
+import { nonce } from '../../../../utils/nonce';
 import {
-	IconFlipOptions,
-	IconVariant,
+    IconFlipOptions,
+    IconVariant,
 } from '../../../atoms/icon/icon.component';
 import { templateFunc } from '../container/field-container.component';
-import { cn } from '../../../../utils/cn';
-import { asBoolean } from '../../../../utils/as-boolean';
-import { nonce } from '../../../../utils/nonce';
 
 const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 	variants: {
@@ -362,113 +361,111 @@ export class Field {
 
 
 		return (
-			<Host class='p-field'>
-				<p-field-container
-					forceShowTooltip={this.forceShowTooltip || this._focused}
-					id={id}
-					label={this.label}
-					loading={this.loading}
-					loadingSize={this.size}
-					helper={this.helper}
-					error={this.error}
-					required={this.required}
-					variant={this.variant}
+			<p-field-container
+				forceShowTooltip={this.forceShowTooltip || this._focused}
+				id={id}
+				label={this.label}
+				loading={this.loading}
+				loadingSize={this.size}
+				helper={this.helper}
+				error={this.error}
+				required={this.required}
+				variant={this.variant}
+			>
+				{hasLabelSlot && (
+					<slot
+						name='label'
+						slot='label'
+					/>
+				)}
+
+				{hasHeaderSlot && (
+					<slot
+						name='header'
+						slot='header'
+					/>
+				)}
+
+				{hasHelperSlot && (
+					<slot
+						name='helper'
+						slot='helper'
+					/>
+				)}
+
+				{hasErrorSlot && (
+					<slot
+						name='error'
+						slot='error'
+					/>
+				)}
+
+				<div
+					class={field({
+						error: !!this.error?.length,
+						disabled: asBoolean(this.disabled),
+						focused: asBoolean(this.focused) || this._focused,
+						size: this.size,
+						variant: this.variant,
+						isTextarea: this.type === 'textarea',
+					})}
+					title={
+						this.variant === 'read' && !hasValueSlot ? this.value : undefined
+					}
+					slot='content'
 				>
-					{hasLabelSlot && (
-						<slot
-							name='label'
-							slot='label'
-						/>
+					{(prefix || (this.icon && this.iconPosition === 'start')) && (
+						<div
+							class={prefixAndSuffix({
+								error: !!this.error?.length,
+								disabled: asBoolean(this.disabled),
+								focused: asBoolean(this.focused) || this._focused,
+								isText: typeof suffix === 'string',
+							})}
+							onClick={() => this._focusInput()}
+						>
+							{this.icon && this.iconPosition === 'start' ? (
+								<p-icon
+									class={cn('flex', {
+										'mt-[0.125rem]':
+											this.variant === 'read' && this.size === 'base',
+									})}
+									variant={this.icon}
+									rotate={this.iconRotate}
+									flip={this.iconFlip}
+								/>
+							) : (
+								prefix
+							)}
+						</div>
 					)}
 
-					{hasHeaderSlot && (
-						<slot
-							name='header'
-							slot='header'
-						/>
+					{this._getContent(hasValueSlot, id)}
+
+					{(suffix || (this.icon && this.iconPosition === 'end')) && (
+						<div
+							class={prefixAndSuffix({
+								error: !!this.error?.length,
+								disabled: asBoolean(this.disabled),
+								focused: asBoolean(this.focused) || this._focused,
+								isText: typeof suffix === 'string',
+							})}
+							onClick={() => this._focusInput()}
+						>
+							{this.icon && this.iconPosition === 'end' ? (
+								<p-icon
+									class='flex'
+									variant={this.icon}
+									rotate={this.iconRotate}
+									flip={this.iconFlip}
+								/>
+							) : (
+								suffix
+							)}
+						</div>
 					)}
-
-					{hasHelperSlot && (
-						<slot
-							name='helper'
-							slot='helper'
-						/>
-					)}
-
-					{hasErrorSlot && (
-						<slot
-							name='error'
-							slot='error'
-						/>
-					)}
-
-					<div
-						class={field({
-							error: !!this.error?.length,
-							disabled: asBoolean(this.disabled),
-							focused: asBoolean(this.focused) || this._focused,
-							size: this.size,
-							variant: this.variant,
-							isTextarea: this.type === 'textarea',
-						})}
-						title={
-							this.variant === 'read' && !hasValueSlot ? this.value : undefined
-						}
-						slot='content'
-					>
-						{(prefix || (this.icon && this.iconPosition === 'start')) && (
-							<div
-								class={prefixAndSuffix({
-									error: !!this.error?.length,
-									disabled: asBoolean(this.disabled),
-									focused: asBoolean(this.focused) || this._focused,
-									isText: typeof suffix === 'string',
-								})}
-								onClick={() => this._focusInput()}
-							>
-								{this.icon && this.iconPosition === 'start' ? (
-									<p-icon
-										class={cn('flex', {
-											'mt-[0.125rem]':
-												this.variant === 'read' && this.size === 'base',
-										})}
-										variant={this.icon}
-										rotate={this.iconRotate}
-										flip={this.iconFlip}
-									/>
-								) : (
-									prefix
-								)}
-							</div>
-						)}
-
-						{this._getContent(hasValueSlot, id)}
-
-						{(suffix || (this.icon && this.iconPosition === 'end')) && (
-							<div
-								class={prefixAndSuffix({
-									error: !!this.error?.length,
-									disabled: asBoolean(this.disabled),
-									focused: asBoolean(this.focused) || this._focused,
-									isText: typeof suffix === 'string',
-								})}
-								onClick={() => this._focusInput()}
-							>
-								{this.icon && this.iconPosition === 'end' ? (
-									<p-icon
-										class='flex'
-										variant={this.icon}
-										rotate={this.iconRotate}
-										flip={this.iconFlip}
-									/>
-								) : (
-									suffix
-								)}
-							</div>
-						)}
-					</div>
-				</p-field-container>
-			</Host>
+				</div>
+			</p-field-container>
 		);
 	}
 
@@ -524,7 +521,7 @@ export class Field {
 		const errorAndErrorIsNotBoolean =
 			this.error && typeof this.error === 'string' && this.error !== 'true';
 
-		const id = this.id?.length ? `${this.id}-${this._nonce}` : this._nonce;
+		const id = this.id?.length ? this.id : this._nonce;
 
 		return {
 			id,

@@ -20,7 +20,7 @@
 
 ### Used by
 
- - [p-attachment](../../deprecated/molecules/attachment)
+ - [p-attachment](../../molecules/attachment)
  - [p-button](../../molecules/button)
  - [p-field-container](../../molecules/field/container)
  - [p-floating-menu-item](../floating-menu/item)

@@ -20,7 +20,7 @@
 ### Used by
 
  - [p-accordion](../../molecules/accordion)
- - [p-attachment](../../deprecated/molecules/attachment)
+ - [p-attachment](../../molecules/attachment)
  - [p-button](../../molecules/button)
  - [p-card-header](../card/header)
  - [p-checkbox](../checkbox)

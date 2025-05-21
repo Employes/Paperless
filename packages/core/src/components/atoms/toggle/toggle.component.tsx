@@ -1,16 +1,15 @@
 import {
     AttachInternals,
-	Component,
-	Event,
-	EventEmitter,
-	Host,
-	Prop,
-	State,
-	h,
+    Component,
+    Event,
+    EventEmitter,
+    Prop,
+    State,
+    h
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
-import { nonce } from '../../../utils/nonce';
 import { asBoolean } from '../../../utils/as-boolean';
+import { nonce } from '../../../utils/nonce';
 
 const checkbox = cva(
 	[
@@ -121,33 +120,31 @@ export class Toggle {
 		const id = this.id?.length ? this.id : this._nonce;
 
 		return (
-			<Host class='p-checkbox'>
-				<label
-					htmlFor={id}
-					class='flex items-center justify-start gap-2 text-black-teal'
-				>
-					<div class='group relative flex flex-shrink-0 items-center'>
-						<input
-							class={checkbox({
-								disabled: asBoolean(this.disabled),
-							})}
-							type='checkbox'
-							id={id}
-							name={this.name}
-							required={this.required}
-							checked={!!this.checked}
-							disabled={asBoolean(this.disabled)}
-							onChange={ev => this._onChange(ev)}
-						/>
-						<div
-							class={circle({
-								disabled: this.disabled,
-							})}
-						></div>
-					</div>
-					<slot />
-				</label>
-			</Host>
+			<label
+				htmlFor={id}
+				class='flex items-center justify-start gap-2 text-black-teal'
+			>
+				<div class='group relative flex flex-shrink-0 items-center'>
+					<input
+						class={checkbox({
+							disabled: asBoolean(this.disabled),
+						})}
+						type='checkbox'
+						id={id}
+						name={this.name}
+						required={this.required}
+						checked={!!this.checked}
+						disabled={asBoolean(this.disabled)}
+						onChange={ev => this._onChange(ev)}
+					/>
+					<div
+						class={circle({
+							disabled: this.disabled,
+						})}
+					></div>
+				</div>
+				<slot />
+			</label>
 		);
 	}
 

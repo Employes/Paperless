@@ -27,7 +27,7 @@ export class Illustration {
 
 		return (
 			<Host
-				class='p-illustration block text-8xl'
+				class='block text-8xl'
 				innerHTML={illustration}
 			></Host>
 		);

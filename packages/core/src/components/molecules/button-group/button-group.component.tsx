@@ -23,7 +23,7 @@ export class ButtonGroup {
 
 	render() {
 		return (
-			<Host class='p-button-group flex items-center'>
+			<Host class='flex items-center'>
 				<slot />
 			</Host>
 		);

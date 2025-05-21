@@ -1,8 +1,8 @@
-import { Component, h, Host, Prop } from '@stencil/core';
-import { RotateOptions } from '../../../types';
-import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
+import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+import { RotateOptions } from '../../../types';
 import { cn } from '../../../utils/cn';
+import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
 
 const label = cva(
 	['flex items-center justify-center gap-2', 'h-6 rounded-full'],
@@ -77,38 +77,36 @@ export class Label {
 
 	render() {
 		return (
-			<Host class='p-label'>
-				<div
-					class={label({
-						variant: this.variant,
-						iconOnly: this.iconOnly,
-						keepMobileContent: this.keepMobileContent,
-					})}
-				>
-					{this.icon && (
-						<p-icon
-							class='flex-shrink-0'
-							variant={this.icon}
-							flip={this.iconFlip}
-							rotate={this.iconRotate}
-						/>
-					)}
+	   		<div
+	   			class={label({
+	   				variant: this.variant,
+	   				iconOnly: this.iconOnly,
+	   				keepMobileContent: this.keepMobileContent,
+	   			})}
+	   		>
+	   			{this.icon && (
+	   				<p-icon
+	   					class='flex-shrink-0'
+	   					variant={this.icon}
+	   					flip={this.iconFlip}
+	   					rotate={this.iconRotate}
+	   				/>
+				)}
 
-					{!this.iconOnly && (
-						<div
-							class={cn(
-								'flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-sm',
-								{
-									hidden: !this.keepMobileContent,
-									'desktop-xs:block': !this.keepMobileContent,
-								}
-							)}
-						>
-							<slot />
-						</div>
-					)}
-				</div>
-			</Host>
+				{!this.iconOnly && (
+					<div
+						class={cn(
+							'flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-sm',
+							{
+								hidden: !this.keepMobileContent,
+								'desktop-xs:block': !this.keepMobileContent,
+							}
+						)}
+					>
+						<slot />
+					</div>
+				)}
+			</div>
 		);
 	}
 }

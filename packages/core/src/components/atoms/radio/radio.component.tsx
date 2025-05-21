@@ -1,16 +1,15 @@
 import {
     AttachInternals,
-	Component,
-	Event,
-	EventEmitter,
-	Host,
-	Prop,
-	State,
-	h,
+    Component,
+    Event,
+    EventEmitter,
+    Prop,
+    State,
+    h
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
-import { nonce } from '../../../utils/nonce';
 import { asBoolean } from '../../../utils/as-boolean';
+import { nonce } from '../../../utils/nonce';
 
 const radio = cva(
 	[
@@ -125,34 +124,32 @@ export class Radio {
 		const id = this.id?.length ? this.id : this._nonce;
 
 		return (
-			<Host class='p-radio'>
-				<label
-					htmlFor={id}
-					class='flex items-center justify-start gap-2 text-black-teal'
-				>
-					<div class='relative flex flex-shrink-0 items-center'>
-						<input
-							class={radio({
-								disabled: asBoolean(this.disabled),
-							})}
-							type='radio'
-							id={id}
-							name={this.name}
-							required={this.required}
-							value={this.value}
-							checked={this.checked}
-							disabled={asBoolean(this.disabled)}
-							onChange={ev => this._onChange(ev)}
-						/>
-						<div
-							class={circle({
-								disabled: asBoolean(this.disabled),
-							})}
-						/>
-					</div>
-					<slot />
-				</label>
-			</Host>
+			<label
+				htmlFor={id}
+				class='flex items-center justify-start gap-2 text-black-teal'
+			>
+				<div class='relative flex flex-shrink-0 items-center'>
+					<input
+						class={radio({
+							disabled: asBoolean(this.disabled),
+						})}
+						type='radio'
+						id={id}
+						name={this.name}
+						required={this.required}
+						value={this.value}
+						checked={this.checked}
+						disabled={asBoolean(this.disabled)}
+						onChange={ev => this._onChange(ev)}
+					/>
+					<div
+						class={circle({
+							disabled: asBoolean(this.disabled),
+						})}
+					/>
+				</div>
+				<slot />
+			</label>
 		);
 	}
 

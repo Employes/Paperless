@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 import { IBAN_ICON_VARIANTS_ARRAY, IbanIconVariant } from '../../../types';
 
 @Component({
@@ -27,13 +27,7 @@ export class IbanIcon {
 			variant as IbanIconVariant
 		);
 
-		return (
-			exists && (
-				<Host class='p-iban-icon'>
-					{this._getIcon(variant as IbanIconVariant)}
-				</Host>
-			)
-		);
+		return exists && this._getIcon(variant as IbanIconVariant);
 	}
 
 	private _getIcon(variant: IbanIconVariant) {

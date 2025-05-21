@@ -7,7 +7,7 @@ import { Component, h, Host } from '@stencil/core';
 export class SegmentContainer {
 	render() {
 		return (
-			<Host class='p-segment-container flex rounded-2xl border border-solid border-off-white-700 bg-off-white-300 p-1'>
+			<Host class='flex rounded-2xl border border-solid border-off-white-700 bg-off-white-300 p-1'>
 				<slot />
 			</Host>
 		);
