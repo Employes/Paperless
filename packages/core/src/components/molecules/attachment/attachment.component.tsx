@@ -2,18 +2,21 @@ import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 import { cn } from '../../../utils';
 import { cva } from 'class-variance-authority';
 
-const attachment = cva([
+const attachment = cva(
+	[
 		'flex flex-1 items-center justify-start gap-2',
 		'h-8 min-w-0 px-2 rounded-lg',
-		'border border-solid bg-white-600'
-	], {
+		'border border-solid bg-white-600',
+	],
+	{
 		variants: {
 			error: {
 				false: 'bg-white-600 border-black-teal-100 text-black-teal-200',
 				true: 'border-negative-red',
-			}
-		}
-	})
+			},
+		},
+	}
+);
 
 @Component({
 	tag: 'p-attachment',
@@ -40,7 +43,6 @@ export class Attachment {
 	 * Wether the attachment is required
 	 */
 	@Prop({ reflect: true }) required = true;
-
 
 	/**
 	 * The variant of the attachment
@@ -102,7 +104,12 @@ export class Attachment {
 	delete: EventEmitter<void>;
 
 	render() {
-		let prefix = <p-icon class="text-black-teal-300" variant='attachment' />;
+		let prefix = (
+			<p-icon
+				class='text-black-teal-300'
+				variant='attachment'
+			/>
+		);
 
 		if (this.loading) {
 			prefix = <p-loader />;
@@ -117,35 +124,63 @@ export class Attachment {
 			);
 		}
 
-		const baseText = 'min-w-0 flex-1 overflow-hidden text-ellipsis whitespace-nowrap  text-sm'
+		const baseText =
+			'min-w-0 flex-1 overflow-hidden text-ellipsis whitespace-nowrap  text-sm';
 		return (
-			<p-field-container variant="write" label={this.label} helper={this.helper} error={this.error} required={this.required}  forceShowTooltip={!!this.error?.length}>
-				<div slot="content" class='flex items-start gap-2 w-full'>
+			<p-field-container
+				variant='write'
+				label={this.label}
+				helper={this.helper}
+				error={this.error}
+				required={this.required}
+				forceShowTooltip={!!this.error?.length}
+			>
+				<div
+					slot='content'
+					class='flex w-full items-start gap-2'
+				>
 					<div
 						class={attachment({
-							error: !!this.error?.length
+							error: !!this.error?.length,
 						})}
 					>
 						{prefix}
 
-						<span class={cn(baseText, 'peer empty:hidden')}>
-							{this.value}
-						</span>
+						<span class={cn(baseText, 'peer empty:hidden')}>{this.value}</span>
 						<span class={cn(baseText, 'hidden peer-empty:block')}>
 							{this.placeholder}
 						</span>
 					</div>
 
-					<p-tooltip content={this.mode === 'read' ? this.downloadTooltip : this.value?.length ? this.deleteTooltip : this.uploadTooltip}>
+					<p-tooltip
+						content={
+							this.mode === 'read'
+								? this.downloadTooltip
+								: this.value?.length
+								? this.deleteTooltip
+								: this.uploadTooltip
+						}
+					>
 						<p-button
-							slot="trigger"
+							slot='trigger'
 							variant='secondary'
 							iconOnly={true}
-							icon={this.mode === 'read' ? 'download' : this.value?.length ? 'trash' : 'upload'}
+							icon={
+								this.mode === 'read'
+									? 'download'
+									: this.value?.length
+									? 'trash'
+									: 'upload'
+							}
 							disabled={this.loading}
 							loading={this.loading}
 							onOnClick={() =>
-								(this.mode === 'read' ? this.download : this.value?.length ? this.delete : this.upload).emit()
+								(this.mode === 'read'
+									? this.download
+									: this.value?.length
+									? this.delete
+									: this.upload
+								).emit()
 							}
 						/>
 					</p-tooltip>
