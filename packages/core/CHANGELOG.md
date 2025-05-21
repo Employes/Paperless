@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.117](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.116...v2.0.1-beta.117) (2025-05-21)
+
+
+### Bug Fixes
+
+* **molecules/attachment:** Only set value by parent so we don't get confusing situations ([af8d34a](https://github.com/ionic-team/stencil-component-starter/commit/af8d34a0576de0cad3662445ad5e89142612d210))
+
+
+
+
+
 ## [2.0.1-beta.116](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.115...v2.0.1-beta.116) (2025-05-21)
 
 
