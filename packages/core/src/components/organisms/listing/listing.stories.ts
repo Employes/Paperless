@@ -1,7 +1,7 @@
 import { html } from 'lit';
 
 const meta = {
-	title: 'Design System/Molecules/Listing',
+	title: 'Design System/Organisms/Listing',
 	component: 'p-listing',
 	parameters: {
 		docs: {

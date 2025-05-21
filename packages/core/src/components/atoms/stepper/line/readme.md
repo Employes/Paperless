@@ -17,7 +17,7 @@
 
 ### Used by
 
- - [p-stepper](../../../molecules/stepper)
+ - [p-stepper](../../../organisms/stepper)
 
 ### Graph
 ```mermaid
