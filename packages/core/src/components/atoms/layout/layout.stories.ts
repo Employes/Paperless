@@ -1,7 +1,7 @@
 import { html, nothing } from 'lit';
 
 const meta = {
-	title: 'Design System/Deprecated/Atoms/Layout',
+	title: 'Design System/Atoms/Layout',
 	component: 'p-layout',
 };
 

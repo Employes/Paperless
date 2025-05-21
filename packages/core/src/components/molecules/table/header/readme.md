@@ -47,7 +47,7 @@
 
 ### Depends on
 
-- [p-loader](../../../deprecated/atoms/loader)
+- [p-loader](../../../atoms/loader)
 - [p-segment-container](../../../atoms/segment/container)
 - [p-segment-item](../../../atoms/segment/item)
 - [p-field](../../field/field)

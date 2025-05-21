@@ -1,7 +1,7 @@
 import { html, nothing } from 'lit';
 
 const meta = {
-	title: 'Design System/Deprecated/Molecules/Content slider',
+	title: 'Design System/Molecules/Content slider',
 	component: 'p-content-slider',
 	args: {
 		content: 'ContentSlider',

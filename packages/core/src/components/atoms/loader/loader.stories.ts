@@ -1,7 +1,7 @@
 import { html, nothing } from 'lit';
 
 const meta = {
-	title: 'Design System/Deprecated/Atoms/Loader',
+	title: 'Design System/Atoms/Loader',
 	component: 'p-loader',
 	args: {
 		content: 'Loader',

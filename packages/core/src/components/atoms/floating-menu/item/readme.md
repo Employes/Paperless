@@ -26,7 +26,7 @@
 
 ### Depends on
 
-- [p-loader](../../../deprecated/atoms/loader)
+- [p-loader](../../loader)
 - [p-icon](../../icon)
 
 ### Graph

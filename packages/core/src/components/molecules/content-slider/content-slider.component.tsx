@@ -7,6 +7,7 @@ import {
 	Prop,
 	State,
 } from '@stencil/core';
+import { cn } from '../../../utils';
 
 @Component({
 	tag: 'p-content-slider',
@@ -106,9 +107,10 @@ export class ContentSlider {
 								!this.disableIndicatorClick && 'cursor-pointer'
 							}`}
 						>
-							<p-slider-indicator
-								active={i === this._visibleIndex}
-							/>
+							<div class={cn('block w-2 h-2 rounded-full', {
+								'bg-dark-teal-600': i === this._visibleIndex,
+								'bg-dark-teal-400': i !== this._visibleIndex,
+							})} />
 						</div>
 					))}
 				</div>

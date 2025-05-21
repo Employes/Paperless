@@ -33,8 +33,6 @@
 
  - [p-field-container](../../molecules/field/container)
  - [p-helper](../helper)
- - [p-input-error](../../deprecated/molecules/input/error)
- - [p-input-group](../../deprecated/molecules/input/group)
  - [p-table](../../organisms/table)
 
 ### Depends on
@@ -47,8 +45,6 @@ graph TD;
   p-tooltip --> p-portal
   p-field-container --> p-tooltip
   p-helper --> p-tooltip
-  p-input-error --> p-tooltip
-  p-input-group --> p-tooltip
   p-table --> p-tooltip
   style p-tooltip fill:#f9f,stroke:#333,stroke-width:4px
 ```
