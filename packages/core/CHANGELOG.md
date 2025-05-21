@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.115](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.114...v2.0.1-beta.115) (2025-05-21)
+
+
+### Bug Fixes
+
+* **molecules/attachment:** Set correct loader color ([898970e](https://github.com/ionic-team/stencil-component-starter/commit/898970eb449b8672f4ab7a1402c5add7e92087aa))
+
+
+
+
+
 ## [2.0.1-beta.114](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.113...v2.0.1-beta.114) (2025-05-21)
 
 
