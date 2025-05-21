@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.114](https://github.com/Employes/Paperless/compare/v2.0.1-beta.113...v2.0.1-beta.114) (2025-05-21)
+
+
+### Bug Fixes
+
+* **angular/organisms/table:** Don't calculate column width when scroll is not enabled ([6ca8bee](https://github.com/Employes/Paperless/commit/6ca8bee0a574d92cd7c7be40391bf0e12cae0e47))
+
+
+
+
+
 ## [2.0.1-beta.113](https://github.com/Employes/Paperless/compare/v2.0.1-beta.112...v2.0.1-beta.113) (2025-05-21)
 
 **Note:** Version bump only for package @paperless/angular
