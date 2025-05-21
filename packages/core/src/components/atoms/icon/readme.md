@@ -40,7 +40,6 @@
  - [p-segment-item](../segment/item)
  - [p-select](../../molecules/select)
  - [p-status](../../deprecated/atoms/status)
- - [p-stepper-item](../../deprecated/atoms/stepper/item)
 
 ### Graph
 ```mermaid
@@ -66,7 +65,6 @@ graph TD;
   p-segment-item --> p-icon
   p-select --> p-icon
   p-status --> p-icon
-  p-stepper-item --> p-icon
   style p-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
