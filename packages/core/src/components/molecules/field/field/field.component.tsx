@@ -33,8 +33,8 @@ const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 			base: null,
 		},
 		disabled: {
-			false: 'bg-white',
-			true: 'bg-white-600 cursor-not-allowed',
+			false: null,
+			true: null,
 		},
 		focused: {
 			false: null,
@@ -87,6 +87,17 @@ const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 			error: false,
 			class:
 				'border-supportive-lilac-800 ring ring-supportive-lilac-100 selection:bg-supportive-lilac',
+		},
+
+		{
+			variant: 'write',
+			disabled: false,
+			class: 'bg-white'
+		},
+		{
+			variant: 'write',
+			disabled: true,
+			class: 'bg-white-600  cursor-not-allowed'
 		},
 
 		{
@@ -414,7 +425,7 @@ export class Field {
 					}
 					slot='content'
 				>
-					{(prefix || (this.icon && this.iconPosition === 'start')) && (
+					{(this.error?.length || prefix || (this.icon && this.iconPosition === 'start')) && (
 						<div
 							class={prefixAndSuffix({
 								error: !!this.error?.length,
@@ -424,13 +435,13 @@ export class Field {
 							})}
 							onClick={() => this._focusInput()}
 						>
-							{this.icon && this.iconPosition === 'start' ? (
+							{(this.icon && this.iconPosition === 'start') || this.error?.length ? (
 								<p-icon
 									class={cn('flex', {
 										'mt-[0.125rem]':
 											this.variant === 'read' && this.size === 'base',
 									})}
-									variant={this.icon}
+									variant={this.error?.length ? 'warning' : this.icon}
 									rotate={this.iconRotate}
 									flip={this.iconFlip}
 								/>
