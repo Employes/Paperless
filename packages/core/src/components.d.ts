@@ -1055,6 +1055,16 @@ export namespace Components {
          */
         "variant": 'default' | 'login' | 'office';
     }
+    interface PListing {
+    }
+    interface PListingItem {
+        /**
+          * The icon of the step
+         */
+        "icon": IconVariant;
+    }
+    interface PListingLine {
+    }
     interface PLoader {
         /**
           * Color of the loader
@@ -2633,6 +2643,24 @@ declare global {
         prototype: HTMLPLayoutElement;
         new (): HTMLPLayoutElement;
     };
+    interface HTMLPListingElement extends Components.PListing, HTMLStencilElement {
+    }
+    var HTMLPListingElement: {
+        prototype: HTMLPListingElement;
+        new (): HTMLPListingElement;
+    };
+    interface HTMLPListingItemElement extends Components.PListingItem, HTMLStencilElement {
+    }
+    var HTMLPListingItemElement: {
+        prototype: HTMLPListingItemElement;
+        new (): HTMLPListingItemElement;
+    };
+    interface HTMLPListingLineElement extends Components.PListingLine, HTMLStencilElement {
+    }
+    var HTMLPListingLineElement: {
+        prototype: HTMLPListingLineElement;
+        new (): HTMLPListingLineElement;
+    };
     interface HTMLPLoaderElement extends Components.PLoader, HTMLStencilElement {
     }
     var HTMLPLoaderElement: {
@@ -3101,6 +3129,9 @@ declare global {
         "p-input-group": HTMLPInputGroupElement;
         "p-label": HTMLPLabelElement;
         "p-layout": HTMLPLayoutElement;
+        "p-listing": HTMLPListingElement;
+        "p-listing-item": HTMLPListingItemElement;
+        "p-listing-line": HTMLPListingLineElement;
         "p-loader": HTMLPLoaderElement;
         "p-modal": HTMLPModalElement;
         "p-modal-body": HTMLPModalBodyElement;
@@ -4236,6 +4267,16 @@ declare namespace LocalJSX {
           * Variant of the layout
          */
         "variant"?: 'default' | 'login' | 'office';
+    }
+    interface PListing {
+    }
+    interface PListingItem {
+        /**
+          * The icon of the step
+         */
+        "icon"?: IconVariant;
+    }
+    interface PListingLine {
     }
     interface PLoader {
         /**
@@ -5459,6 +5500,9 @@ declare namespace LocalJSX {
         "p-input-group": PInputGroup;
         "p-label": PLabel;
         "p-layout": PLayout;
+        "p-listing": PListing;
+        "p-listing-item": PListingItem;
+        "p-listing-line": PListingLine;
         "p-loader": PLoader;
         "p-modal": PModal;
         "p-modal-body": PModalBody;
@@ -5546,6 +5590,9 @@ declare module "@stencil/core" {
             "p-input-group": LocalJSX.PInputGroup & JSXBase.HTMLAttributes<HTMLPInputGroupElement>;
             "p-label": LocalJSX.PLabel & JSXBase.HTMLAttributes<HTMLPLabelElement>;
             "p-layout": LocalJSX.PLayout & JSXBase.HTMLAttributes<HTMLPLayoutElement>;
+            "p-listing": LocalJSX.PListing & JSXBase.HTMLAttributes<HTMLPListingElement>;
+            "p-listing-item": LocalJSX.PListingItem & JSXBase.HTMLAttributes<HTMLPListingItemElement>;
+            "p-listing-line": LocalJSX.PListingLine & JSXBase.HTMLAttributes<HTMLPListingLineElement>;
             "p-loader": LocalJSX.PLoader & JSXBase.HTMLAttributes<HTMLPLoaderElement>;
             "p-modal": LocalJSX.PModal & JSXBase.HTMLAttributes<HTMLPModalElement>;
             "p-modal-body": LocalJSX.PModalBody & JSXBase.HTMLAttributes<HTMLPModalBodyElement>;

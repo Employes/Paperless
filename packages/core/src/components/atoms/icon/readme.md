@@ -34,6 +34,7 @@
  - [p-input-error](../../deprecated/molecules/input/error)
  - [p-input-group](../../deprecated/molecules/input/group)
  - [p-label](../../molecules/label)
+ - [p-listing-item](../listing/item)
  - [p-navigation-item](../../molecules/navigation/item)
  - [p-pagination-pages](../../molecules/pagination/pages)
  - [p-pagination-size](../../molecules/pagination/size)
@@ -59,6 +60,7 @@ graph TD;
   p-input-error --> p-icon
   p-input-group --> p-icon
   p-label --> p-icon
+  p-listing-item --> p-icon
   p-navigation-item --> p-icon
   p-pagination-pages --> p-icon
   p-pagination-size --> p-icon
