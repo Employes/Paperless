@@ -33,6 +33,7 @@
 
 ### Used by
 
+ - [p-attachment](../../attachment)
  - [p-field](../field)
  - [p-select](../../select)
 
@@ -51,6 +52,7 @@ graph TD;
   p-helper --> p-tooltip
   p-helper --> p-icon
   p-tooltip --> p-portal
+  p-attachment --> p-field-container
   p-field --> p-field-container
   p-select --> p-field-container
   style p-field-container fill:#f9f,stroke:#333,stroke-width:4px
