@@ -68,6 +68,14 @@ export namespace Components {
     }
     interface PAttachment {
         /**
+          * The type of files to accept
+         */
+        "accept": string[] | string;
+        /**
+          * The text for the camera tooltip
+         */
+        "cameraTooltip": string;
+        /**
           * The text for the delete tooltip
          */
         "deleteTooltip": string;
@@ -76,9 +84,17 @@ export namespace Components {
          */
         "downloadTooltip": string;
         /**
+          * Wether to enable the camera button on mobile
+         */
+        "enableCameraOnMobile": boolean;
+        /**
           * The error to show
          */
         "error": string;
+        /**
+          * The fileID to use to track the file
+         */
+        "fileId": string;
         /**
           * The helper of the attachment
          */
@@ -2144,7 +2160,11 @@ declare global {
         new (): HTMLPAccordionElement;
     };
     interface HTMLPAttachmentElementEventMap {
-        "upload": void;
+        "upload": {
+		file: File;
+		fileId: string;
+		result: string;
+	};
         "download": void;
         "delete": void;
     }
@@ -3084,6 +3104,14 @@ declare namespace LocalJSX {
     }
     interface PAttachment {
         /**
+          * The type of files to accept
+         */
+        "accept"?: string[] | string;
+        /**
+          * The text for the camera tooltip
+         */
+        "cameraTooltip"?: string;
+        /**
           * The text for the delete tooltip
          */
         "deleteTooltip"?: string;
@@ -3092,9 +3120,17 @@ declare namespace LocalJSX {
          */
         "downloadTooltip"?: string;
         /**
+          * Wether to enable the camera button on mobile
+         */
+        "enableCameraOnMobile"?: boolean;
+        /**
           * The error to show
          */
         "error"?: string;
+        /**
+          * The fileID to use to track the file
+         */
+        "fileId"?: string;
         /**
           * The helper of the attachment
          */
@@ -3122,7 +3158,11 @@ declare namespace LocalJSX {
         /**
           * Event when upload is pressed
          */
-        "onUpload"?: (event: PAttachmentCustomEvent<void>) => void;
+        "onUpload"?: (event: PAttachmentCustomEvent<{
+		file: File;
+		fileId: string;
+		result: string;
+	}>) => void;
         /**
           * The placeholder of the attachment
          */
