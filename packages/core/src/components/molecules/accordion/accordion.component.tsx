@@ -2,7 +2,7 @@ import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
 
 @Component({
 	tag: 'p-accordion',
-	styleUrl: 'accordion.component.scss',
+	styleUrl: 'accordion.component.css',
 	shadow: true,
 })
 export class Accordion {
@@ -36,21 +36,21 @@ export class Accordion {
 
 	render() {
 		return (
-			<Host class='p-accordion'>
+			<Host>
 				<div
-					class='flex cursor-pointer items-center gap-3 text-storm-vague'
+					class='flex cursor-pointer items-center gap-2 text-black-teal-500'
 					onClick={() => this._onClick()}
 				>
 					<p-icon
-						class='flex'
+						class='flex shrink-0'
 						variant='caret'
 						rotate={this.open ? 0 : -90}
 					/>
-					<p class='m-0 whitespace-nowrap text-lg font-medium'>{this.header}</p>
-					<p-divider />
+					<p class='my-0 shrink-0 whitespace-nowrap text-base font-medium'>{this.header}</p>
+					<p-divider class="flex-1" />
 				</div>
 				{this.open && (
-					<div class='mt-6'>
+					<div class='mt-4'>
 						<slot />
 					</div>
 				)}
