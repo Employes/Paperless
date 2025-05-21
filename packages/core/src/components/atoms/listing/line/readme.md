@@ -7,7 +7,7 @@
 
 ### Used by
 
- - [p-listing](../../../molecules/listing)
+ - [p-listing](../../../organisms/listing)
 
 ### Graph
 ```mermaid

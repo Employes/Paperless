@@ -1,7 +1,7 @@
 import { html, nothing } from 'lit';
 
 const meta = {
-	title: 'Design System/Molecules/Stepper',
+	title: 'Design System/Organisms/Stepper',
 	component: 'p-stepper',
 	args: {
 		align: 'start'
