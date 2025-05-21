@@ -46,7 +46,7 @@ const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 		},
 		isTextarea: {
 			false: null,
-			true: null,
+			true: 'items-start',
 		},
 	},
 	compoundVariants: [
@@ -115,12 +115,17 @@ const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 });
 
 const input = cva(
-	'text-sm placeholder:text-sm placeholder:text-black-teal-200 text-black-teal border-none outline-none focus:outline-none bg-transparent flex-1 min-w-0',
+	[
+		'text-sm placeholder:text-sm placeholder:text-black-teal-200 text-black-teal',
+		'border-none  bg-transparent flex-1 min-w-0',
+		'outline-none focus:outline-none',
+		'font-geist'
+	],
 	{
 		variants: {
 			isTextarea: {
 				false: 'h-full',
-				true: null,
+				true: 'mt-1',
 			},
 			disabled: {
 				false: null,
@@ -149,6 +154,10 @@ const prefixAndSuffix = cva(
 			isText: {
 				false: null,
 				true: 'text-sm',
+			},
+			isTextarea: {
+				false: null,
+				true: 'mt-2',
 			},
 		},
 		compoundVariants: [
@@ -432,6 +441,7 @@ export class Field {
 								disabled: asBoolean(this.disabled),
 								focused: asBoolean(this.focused) || this._focused,
 								isText: typeof suffix === 'string',
+								isTextarea: this.type === 'textarea',
 							})}
 							onClick={() => this._focusInput()}
 						>
@@ -460,6 +470,7 @@ export class Field {
 								disabled: asBoolean(this.disabled),
 								focused: asBoolean(this.focused) || this._focused,
 								isText: typeof suffix === 'string',
+								isTextarea: this.type === 'textarea',
 							})}
 							onClick={() => this._focusInput()}
 						>
