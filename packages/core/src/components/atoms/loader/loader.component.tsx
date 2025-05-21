@@ -54,14 +54,14 @@ export class Loader {
 		}
 
 		if (this.variant === 'ghost') {
-			return <Host class='p-loader rounded-2xl min-h-4 min-w-4 variant-ghost'></Host>;
+			return <Host class='rounded-2xl min-h-4 min-w-4 variant-ghost'></Host>;
 		}
 
 		const loader = <div class={`loader color-${this.color}`}></div>;
 
 		if (this.variant === 'full-screen') {
 			return (
-				<Host class='p-loader variant-full-screen'>
+				<Host class='variant-full-screen'>
 					<div class='loading-screen'>
 						<div class='content'>
 							<slot />
@@ -75,7 +75,7 @@ export class Loader {
 
 		return (
 			<Host
-				class={`p-loader variant-default flex ${
+				class={`variant-default flex ${
 					this.variant === 'full-width' && 'flex w-full justify-center text-4xl'
 				}`}
 			>

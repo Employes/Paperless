@@ -12,7 +12,7 @@ export class NavigationSection {
 
 	render() {
 		return (
-			<Host class='p-navigation-section flex flex-col gap-2'>
+			<Host class='flex flex-col gap-2'>
 				{this.header?.length > 0 && (
 					<p-navigation-title>{this.header}</p-navigation-title>
 				)}

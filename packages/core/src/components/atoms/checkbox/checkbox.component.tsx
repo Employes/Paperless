@@ -1,16 +1,15 @@
 import {
     AttachInternals,
-	Component,
-	Event,
-	EventEmitter,
-	Host,
-	Prop,
-	State,
-	h,
+    Component,
+    Event,
+    EventEmitter,
+    Prop,
+    State,
+    h
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
-import { nonce } from '../../../utils/nonce';
 import { asBoolean } from '../../../utils/as-boolean';
+import { nonce } from '../../../utils/nonce';
 
 const checkbox = cva(
 	[
@@ -128,44 +127,42 @@ export class Checkbox {
 		const id = this.id?.length ? this.id : this._nonce;
 
 		return (
-			<Host class='p-checkbox'>
-				<label
-					htmlFor={id}
-					class='group/p-checkbox flex items-center justify-start gap-2 text-black-teal'
-				>
-					<div class='relative flex flex-shrink-0 items-center'>
-						<input
-							class={checkbox({
+			<label
+				htmlFor={id}
+				class='group/p-checkbox flex items-center justify-start gap-2 text-black-teal'
+			>
+				<div class='relative flex flex-shrink-0 items-center'>
+					<input
+						class={checkbox({
+							disabled: asBoolean(this.disabled),
+						})}
+						type='checkbox'
+						id={id}
+						name={this.name}
+						required={asBoolean(this.required)}
+						checked={asBoolean(this.checked)}
+						indeterminate={asBoolean(this.indeterminate)}
+						disabled={asBoolean(this.disabled)}
+						onChange={ev => this._onChange(ev)}
+					/>
+					<div
+						class={iconContainer({
+							disabled: asBoolean(this.disabled),
+						})}
+					>
+						<p-icon
+							class={icon({
 								disabled: asBoolean(this.disabled),
 							})}
-							type='checkbox'
-							id={id}
-							name={this.name}
-							required={asBoolean(this.required)}
-							checked={asBoolean(this.checked)}
-							indeterminate={asBoolean(this.indeterminate)}
-							disabled={asBoolean(this.disabled)}
-							onChange={ev => this._onChange(ev)}
+							size='auto'
+							variant={
+								asBoolean(this.indeterminate) ? 'minus' : 'checkmarkThick'
+							}
 						/>
-						<div
-							class={iconContainer({
-								disabled: asBoolean(this.disabled),
-							})}
-						>
-							<p-icon
-								class={icon({
-									disabled: asBoolean(this.disabled),
-								})}
-								size='auto'
-								variant={
-									asBoolean(this.indeterminate) ? 'minus' : 'checkmarkThick'
-								}
-							/>
-						</div>
 					</div>
-					<slot />
-				</label>
-			</Host>
+				</div>
+				<slot />
+			</label>
 		);
 	}
 

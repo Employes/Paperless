@@ -6,11 +6,10 @@ import {
     Event,
     EventEmitter,
     h,
-    Host,
     Listen,
     Prop,
     State,
-    Watch,
+    Watch
 } from '@stencil/core';
 import {
     format,
@@ -280,66 +279,64 @@ export class Datepicker {
 
 	render() {
 		return (
-			<Host class='p-datepicker'>
-				<p-dropdown
-					strategy={this.strategy}
-					placement={this.placement}
-					disableTriggerClick={true}
-					applyMaxWidth={false}
-					applyFullWidth={false}
-					insideClick={true}
-					show={this._showDropdown}
-				>
-					<p-field
-						slot='trigger'
-						icon={
-							this.hideIconWhenFilled && !!this._value ? null : 'calendar-multi'
-						}
-						iconPosition='start'
-						size={this.size}
-						prefix={this.prefix}
-						label={this.label}
-						loading={this.loading}
-						helper={this.helper}
-						required={asBoolean(this.required)}
-						error={this.error}
-						disabled={asBoolean(this.disabled)}
-						focused={this._showDropdown}
-						value={this._getFormattedDate()}
-						placeholder={this.placeholder}
-						onFocus={() => this._onFocus()}
-						onBlur={() => this._onBlur()}
-						onValueChange={ev => this._onValueChange(ev.detail)}
-						onInputRefChange={ev => (this._inputRef = ev.detail)}
-					></p-field>
+			<p-dropdown
+				strategy={this.strategy}
+				placement={this.placement}
+				disableTriggerClick={true}
+				applyMaxWidth={false}
+				applyFullWidth={false}
+				insideClick={true}
+				show={this._showDropdown}
+			>
+				<p-field
+					slot='trigger'
+					icon={
+						this.hideIconWhenFilled && !!this._value ? null : 'calendar-multi'
+					}
+					iconPosition='start'
+					size={this.size}
+					prefix={this.prefix}
+					label={this.label}
+					loading={this.loading}
+					helper={this.helper}
+					required={asBoolean(this.required)}
+					error={this.error}
+					disabled={asBoolean(this.disabled)}
+					focused={this._showDropdown}
+					value={this._getFormattedDate()}
+					placeholder={this.placeholder}
+					onFocus={() => this._onFocus()}
+					onBlur={() => this._onBlur()}
+					onValueChange={ev => this._onValueChange(ev.detail)}
+					onInputRefChange={ev => (this._inputRef = ev.detail)}
+				></p-field>
 
-					{this.enableNativePicker && this._isMobileBrowser && (
-						<input
-							slot='trigger'
-							type={this.mode === 'day' ? 'date' : 'month'}
-							class='h-0 overflow-hidden' // we use h-0 here so location dependent pickers can correctly place itself
-							onInput={ev => this._onNativeInput(ev)}
-							ref={ref => (this._dateInputRef = ref)}
-							value={this._value && format(this._value, 'yyyy-MM-dd')}
-							min={this.minDate && format(new Date(this.minDate), 'yyyy-MM-dd')}
-							max={this.maxDate && format(new Date(this.maxDate), 'yyyy-MM-dd')}
-						/>
-					)}
-					<div slot='items'>
-						<p-calendar
-							variant='embedded'
-							value={this._value}
-							onValueChange={({ detail }) => (this.value = detail)}
-							preselectToday={this.preselectToday}
-							disabledDates={this.disabledDates}
-							minDate={this.minDate}
-							maxDate={this.maxDate}
-							disableWeekends={this.disableWeekends}
-							mode={this.mode}
-						/>
-					</div>
-				</p-dropdown>
-			</Host>
+				{this.enableNativePicker && this._isMobileBrowser && (
+					<input
+						slot='trigger'
+						type={this.mode === 'day' ? 'date' : 'month'}
+						class='h-0 overflow-hidden' // we use h-0 here so location dependent pickers can correctly place itself
+						onInput={ev => this._onNativeInput(ev)}
+						ref={ref => (this._dateInputRef = ref)}
+						value={this._value && format(this._value, 'yyyy-MM-dd')}
+						min={this.minDate && format(new Date(this.minDate), 'yyyy-MM-dd')}
+						max={this.maxDate && format(new Date(this.maxDate), 'yyyy-MM-dd')}
+					/>
+				)}
+				<div slot='items'>
+					<p-calendar
+						variant='embedded'
+						value={this._value}
+						onValueChange={({ detail }) => (this.value = detail)}
+						preselectToday={this.preselectToday}
+						disabledDates={this.disabledDates}
+						minDate={this.minDate}
+						maxDate={this.maxDate}
+						disableWeekends={this.disableWeekends}
+						mode={this.mode}
+					/>
+				</div>
+			</p-dropdown>
 		);
 	}
 

@@ -12,7 +12,7 @@ export class AvatarGroup {
 
 	render() {
 		return (
-			<Host class='p-avatar-group flex items-center -space-x-1 overflow-hidden'>
+			<Host class='flex items-center -space-x-1 overflow-hidden'>
 				<slot />
 
 				{this.extra && (

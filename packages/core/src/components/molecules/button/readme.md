@@ -43,7 +43,7 @@
 
 ### Used by
 
- - [p-attachment](../../deprecated/molecules/attachment)
+ - [p-attachment](../attachment)
  - [p-calendar](../calendar)
  - [p-drawer-header](../../atoms/drawer/header)
  - [p-empty-state](../empty-state)
