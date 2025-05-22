@@ -1,15 +1,15 @@
 import { Strategy } from '@floating-ui/dom';
 import {
-    AttachInternals,
-    Component,
-    Element,
-    Event,
-    EventEmitter,
-    h,
-    Listen,
-    Prop,
-    State,
-    Watch,
+	AttachInternals,
+	Component,
+	Element,
+	Event,
+	EventEmitter,
+	h,
+	Listen,
+	Prop,
+	State,
+	Watch,
 } from '@stencil/core';
 import { childOfComposed } from '../../../utils';
 import { IconVariant } from '../../atoms/icon/icon.component';
@@ -48,7 +48,7 @@ const textContainer = cva(
 	tag: 'p-select',
 	styleUrl: 'select.component.css',
 	formAssociated: true,
-	shadow: true
+	shadow: true,
 })
 export class Select {
 	/**
@@ -366,11 +366,11 @@ export class Select {
 	}
 
 	formResetCallback() {
-		this._selectValue(null)
+		this._selectValue(null);
 	}
 
 	formDisabledCallback(disabled: boolean) {
-		if(!this._internals.form) {
+		if (!this._internals.form) {
 			return;
 		}
 
@@ -616,21 +616,17 @@ export class Select {
 		this._onBlur(forceBlur);
 	}
 
-	private _findOnClickTarget(target: HTMLElement) {
-		if (target.nodeName.toLowerCase() === 'p-button') {
-			return true;
-		}
+	private _onClick(event) {
+		const composed = event?.composedPath();
 
-		if (target.classList.contains('item')) {
-			return false;
-		}
+		for (const item of composed) {
+			if (item.nodeName.toLowerCase() === 'p-button') {
+				break;
+			}
 
-		return this._findOnClickTarget(target.parentElement);
-	}
-
-	private _onClick(ev) {
-		if (!this._findOnClickTarget(ev.target as HTMLElement)) {
-			return;
+			if (item.classList.contains('item')) {
+				return;
+			}
 		}
 
 		this._showDropdown = !this._showDropdown;
