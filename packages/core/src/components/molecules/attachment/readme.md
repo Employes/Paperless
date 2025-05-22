@@ -40,7 +40,6 @@
 ### Depends on
 
 - [p-icon](../../atoms/icon)
-- [p-loader](../../atoms/loader)
 - [p-field-container](../field/container)
 - [p-tooltip](../../atoms/tooltip)
 - [p-button](../button)
@@ -49,7 +48,6 @@
 ```mermaid
 graph TD;
   p-attachment --> p-icon
-  p-attachment --> p-loader
   p-attachment --> p-field-container
   p-attachment --> p-tooltip
   p-attachment --> p-button

@@ -145,10 +145,6 @@ export class Attachment {
 			/>
 		);
 
-		if (this.loading) {
-			prefix = <p-loader color='white' />;
-		}
-
 		if (this.error) {
 			prefix = (
 				<p-icon

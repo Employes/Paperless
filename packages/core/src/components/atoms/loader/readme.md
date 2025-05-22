@@ -20,7 +20,6 @@
 
 ### Used by
 
- - [p-attachment](../../molecules/attachment)
  - [p-button](../../molecules/button)
  - [p-field-container](../../molecules/field/container)
  - [p-floating-menu-item](../floating-menu/item)
@@ -33,7 +32,6 @@
 ### Graph
 ```mermaid
 graph TD;
-  p-attachment --> p-loader
   p-button --> p-loader
   p-field-container --> p-loader
   p-floating-menu-item --> p-loader
