@@ -239,6 +239,8 @@ export class Dropdown {
 			'p-button[slot="trigger"]'
 		);
 
+		const isOpen = this._menu.getAttribute('data-show') !== null;
+
 		for (let button of [...buttons]) {
 			button.disabled = this.disableTriggerClick;
 			button.active = active;
@@ -251,6 +253,10 @@ export class Dropdown {
 			button.chevron = this.chevronDirection
 				? this.chevronDirection
 				: this.placement.indexOf('top') >= 0
+				? isOpen
+					? 'down'
+					: 'up'
+				: isOpen
 				? 'up'
 				: 'down';
 		}
