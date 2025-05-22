@@ -213,6 +213,10 @@ export namespace Components {
          */
         "disabled"?: boolean;
         /**
+          * Wether to show a error state
+         */
+        "error"?: boolean;
+        /**
           * Href in case of "text" version
          */
         "href"?: string;
@@ -3268,6 +3272,10 @@ declare namespace LocalJSX {
           * Wether the button is disabled
          */
         "disabled"?: boolean;
+        /**
+          * Wether to show a error state
+         */
+        "error"?: boolean;
         /**
           * Href in case of "text" version
          */
