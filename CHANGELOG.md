@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.120](https://github.com/employes/paperless/compare/v2.0.1-beta.119...v2.0.1-beta.120) (2025-05-22)
+
+
+### Bug Fixes
+
+* **molecules/dropdown:** Rotate chevron when opened ([698b704](https://github.com/employes/paperless/commit/698b7041b7a3474f26c6cb44061167cbff67d661))
+
+
+### Features
+
+* **molecules/button:** Add error state ([daf921e](https://github.com/employes/paperless/commit/daf921e049bd55b462b9304d3a0b9127c3170eda))
+
+
+
+
+
 ## [2.0.1-beta.119](https://github.com/employes/paperless/compare/v2.0.1-beta.118...v2.0.1-beta.119) (2025-05-22)
 
 
