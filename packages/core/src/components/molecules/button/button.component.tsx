@@ -33,6 +33,10 @@ const button = cva(
 				true: null,
 				false: null,
 			},
+			error: {
+				true: null,
+				false: null,
+			},
 			loading: {
 				true: 'cursor-wait',
 				false: null,
@@ -65,25 +69,12 @@ const button = cva(
 			// variants
 			{
 				variant: ['secondary', 'dropdown'],
-				class: ['bg-white border-black-teal/10'],
+				class: 'bg-white',
 			},
 			{
 				variant: ['primary', 'secondary', 'dropdown'],
 				disabled: false,
 				class: 'border',
-			},
-			{
-				variant: ['primary', 'secondary', 'dropdown'],
-				disabled: false,
-				loading: false,
-				class: 'active:border-supportive-lilac-800 active:ring active:ring-2',
-			},
-			{
-				variant: ['primary', 'secondary', 'dropdown'],
-				disabled: false,
-				loading: false,
-				active: true,
-				class: 'border-supportive-lilac-800 ring ring-2',
 			},
 			{
 				variant: ['primary', 'secondary', 'transparent', 'dropdown'],
@@ -103,12 +94,26 @@ const button = cva(
 			{
 				variant: ['primary', 'secondary', 'dropdown'],
 				disabled: false,
+				error: false,
 				class: 'text-black-teal',
 			},
 			{
 				variant: 'primary',
 				disabled: true,
 				class: 'bg-supportive-lilac-100 text-black-teal-100',
+			},
+			{
+				variant: 'primary',
+				disabled: false,
+				loading: false,
+				class: 'active:border-supportive-lilac-800 active:ring active:ring-2',
+			},
+			{
+				variant: 'primary',
+				disabled: false,
+				loading: false,
+				active: true,
+				class: 'border-supportive-lilac-800 ring ring-2',
 			},
 			{
 				variant: 'primary',
@@ -140,8 +145,28 @@ const button = cva(
 				variant: ['secondary', 'dropdown'],
 				disabled: false,
 				loading: false,
+				error: false,
+				class: 'active:border-supportive-lilac-800 active:ring active:ring-2',
+			},
+			{
+				variant: ['secondary', 'dropdown'],
+				disabled: false,
+				loading: false,
 				active: true,
-				class: 'ring-supportive-lilac-100',
+				error: false,
+				class:
+					'border-supportive-lilac-800 ring ring-2 ring-supportive-lilac-100',
+			},
+			{
+				variant: ['secondary', 'dropdown'],
+				error: false,
+				class: ['border-black-teal/10'],
+			},
+			{
+				variant: ['secondary', 'dropdown'],
+				error: true,
+				class:
+					'border border-negative-red text-negative-red-800 ring ring-2 ring-negative-red-50  active:text-negative-red-800',
 			},
 
 			{
@@ -255,12 +280,17 @@ const icon = cva([], {
 			true: null,
 			false: null,
 		},
+		error: {
+			true: null,
+			false: null,
+		},
 	},
 	compoundVariants: [
 		{
 			variant: ['secondary', 'dropdown'],
 			disabled: false,
 			active: false,
+			error: false,
 			class: 'text-black-teal-300 group-hover:text-black-teal',
 		},
 		{
@@ -268,6 +298,18 @@ const icon = cva([], {
 			disabled: false,
 			active: false,
 			class: 'text-dark-teal-200 group-hover:text-dark-teal-100',
+		},
+		{
+			variant: ['secondary', 'dropdown'],
+			active: false,
+			error: true,
+			class: 'text-negative-red group-hover:text-negative-red-800',
+		},
+		{
+			variant: ['secondary', 'dropdown'],
+			active: true,
+			error: true,
+			class: 'text-negative-red-800',
 		},
 	],
 });
@@ -303,6 +345,11 @@ export class Button {
 	 * Wether to force an active state
 	 */
 	@Prop() active?: boolean = false;
+
+	/**
+	 * Wether to show a error state
+	 */
+	@Prop() error?: boolean = false;
 
 	/**
 	 * Wether the text variant has underline
@@ -398,7 +445,8 @@ export class Button {
 	onClick: EventEmitter<MouseEvent>;
 
 	render() {
-		let loaderColor: 'white' | 'off-white' | 'supportive-lilac' | 'black-teal' = 'white';
+		let loaderColor: 'white' | 'off-white' | 'supportive-lilac' | 'black-teal' =
+			'white';
 		switch (this.variant) {
 			case 'secondary':
 			case 'dropdown':
@@ -434,6 +482,7 @@ export class Button {
 						buttonGroupPosition: this.buttonGroupPosition,
 						iconOnly: asBoolean(this.iconOnly),
 						active,
+						error: asBoolean(this.error),
 					})}
 				>
 					{this.chevron && this.chevronPosition === 'start' && (
@@ -491,6 +540,7 @@ export class Button {
 					variant: this.variant,
 					disabled: asBoolean(this.disabled),
 					active: asBoolean(this.active),
+					error: asBoolean(this.error),
 				})}
 				variant={this.icon}
 				flip={this.iconFlip}

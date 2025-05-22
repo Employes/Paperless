@@ -34,6 +34,7 @@ export const Default = {
 		'inherit-text': inheritText,
 		'button-group-position': buttonGroupPosition,
 		class: className,
+		error,
 	}) => html`<p-button
 		label=${label ?? nothing}
 		as=${as ?? nothing}
@@ -56,6 +57,7 @@ export const Default = {
 		inherit-text=${inheritText ?? nothing}
 		button-group-position=${buttonGroupPosition ?? nothing}
 		class=${className ?? nothing}
+		error=${error ?? nothing}
 		@onClick=${action('onClick')}
 	>
 	</p-button>`,
