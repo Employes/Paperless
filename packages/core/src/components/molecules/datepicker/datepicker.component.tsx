@@ -1,27 +1,27 @@
 import { Placement, Strategy } from '@floating-ui/dom';
 import {
-    AttachInternals,
-    Component,
-    Element,
-    Event,
-    EventEmitter,
-    h,
-    Listen,
-    Prop,
-    State,
-    Watch
+	AttachInternals,
+	Component,
+	Element,
+	Event,
+	EventEmitter,
+	h,
+	Listen,
+	Prop,
+	State,
+	Watch,
 } from '@stencil/core';
 import {
-    format,
-    isAfter,
-    isBefore,
-    isSameDay,
-    isValid,
-    isWeekend,
-    parse,
-    startOfDay,
-    startOfMonth,
-    startOfYear,
+	format,
+	isAfter,
+	isBefore,
+	isSameDay,
+	isValid,
+	isWeekend,
+	parse,
+	startOfDay,
+	startOfMonth,
+	startOfYear,
 } from 'date-fns';
 import { childOf, isMobileBrowser } from '../../../utils';
 import { asBoolean } from '../../../utils/as-boolean';
@@ -30,7 +30,7 @@ import { asBoolean } from '../../../utils/as-boolean';
 	tag: 'p-datepicker',
 	styleUrl: 'datepicker.component.css',
 	shadow: false,
-	formAssociated: true
+	formAssociated: true,
 })
 export class Datepicker {
 	/**
@@ -248,7 +248,7 @@ export class Datepicker {
 	}
 
 	formDisabledCallback(disabled: boolean) {
-		if(!this._internals.form) {
+		if (!this._internals.form) {
 			return;
 		}
 
@@ -301,6 +301,7 @@ export class Datepicker {
 					helper={this.helper}
 					required={asBoolean(this.required)}
 					error={this.error}
+					forceShowTooltip={!!this.error?.length && !this._showDropdown}
 					disabled={asBoolean(this.disabled)}
 					focused={this._showDropdown}
 					value={this._getFormattedDate()}

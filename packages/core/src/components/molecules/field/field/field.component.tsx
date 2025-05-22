@@ -381,7 +381,9 @@ export class Field {
 
 		return (
 			<p-field-container
-				forceShowTooltip={this.forceShowTooltip || this._focused}
+				forceShowTooltip={
+					this.forceShowTooltip || this._focused || !!this.error?.length
+				}
 				id={id}
 				label={this.label}
 				loading={this.loading}
