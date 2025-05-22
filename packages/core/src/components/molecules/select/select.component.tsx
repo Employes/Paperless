@@ -439,18 +439,20 @@ export class Select {
 					helper={this.helper}
 					required={this.required}
 					error={this.error}
-					errorPlacement='top-start'
-					forceShowTooltip={this.error?.length && this._showDropdown}
+					forceShowTooltip={!!this.error?.length && !this._showDropdown}
 				>
 					<p-button
 						class='w-full'
 						slot='content'
 						variant='secondary'
 						size={this.size}
-						chevron={this.showChevron}
+						chevron={
+							this.showChevron ? (this._showDropdown ? 'up' : 'down') : false
+						}
 						disabled={this.disabled}
 						active={this._showDropdown}
-						icon={this.icon}
+						error={!!this.error?.length}
+						icon={this.error?.length ? 'warning' : this.icon}
 						onClick={ev => this._onClick(ev)}
 					>
 						<div
