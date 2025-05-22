@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.119](https://github.com/Employes/Paperless/compare/v2.0.1-beta.118...v2.0.1-beta.119) (2025-05-22)
+
+**Note:** Version bump only for package @paperless/conventions
+
+
+
+
+
 ## [2.0.1-beta.118](https://github.com/Employes/Paperless/compare/v2.0.1-beta.117...v2.0.1-beta.118) (2025-05-21)
 
 **Note:** Version bump only for package @paperless/conventions
