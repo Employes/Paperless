@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.119](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.118...v2.0.1-beta.119) (2025-05-22)
+
+
+### Bug Fixes
+
+* **molecules/select:** Attempt at fixing dropdown render in cards ([e022d23](https://github.com/ionic-team/stencil-component-starter/commit/e022d23b733ce2805164d1539e471f18dab40e2a))
+
+
+
+
+
 ## [2.0.1-beta.118](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.117...v2.0.1-beta.118) (2025-05-21)
 
 **Note:** Version bump only for package @paperless/core
