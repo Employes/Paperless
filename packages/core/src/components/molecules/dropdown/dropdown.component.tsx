@@ -186,7 +186,6 @@ export class Dropdown {
 		};
 
 		let dropdownContainer: HTMLElement;
-		const itemsSlot = <slot name='items' />;
 
 		if (this.usePortal) {
 			dropdownContainer = (
@@ -198,7 +197,7 @@ export class Dropdown {
 						allowOverflow={this.allowOverflow}
 						scrollable={this.scrollable}
 					>
-						{itemsSlot}
+						<slot name='items' />
 					</p-dropdown-menu-container>
 				</p-portal>
 			);
@@ -212,7 +211,7 @@ export class Dropdown {
 					scrollable={this.scrollable}
 					{...dropdownContainerProps}
 				>
-					{itemsSlot}
+					<slot name='items' />
 				</p-dropdown-menu-container>
 			);
 		}
@@ -283,7 +282,10 @@ export class Dropdown {
 
 	@Listen('click', { target: 'document', capture: true })
 	protected documentClickHandler(event) {
-		if (!this._menu.hasAttribute('data-show') || childOfComposed(event, this._menu)) {
+		if (
+			!this._menu.hasAttribute('data-show') ||
+			childOfComposed(event, this._menu)
+		) {
 			return;
 		}
 

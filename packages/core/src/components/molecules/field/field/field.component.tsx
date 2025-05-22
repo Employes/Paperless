@@ -1,14 +1,14 @@
 import { Placement } from '@floating-ui/dom';
 import {
-    AttachInternals,
-    Component,
-    Element,
-    Event,
-    EventEmitter,
-    h,
-    Listen,
-    Prop,
-    State
+	AttachInternals,
+	Component,
+	Element,
+	Event,
+	EventEmitter,
+	h,
+	Listen,
+	Prop,
+	State,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { HTMLInputTypeAttribute } from 'react';
@@ -17,8 +17,8 @@ import { asBoolean } from '../../../../utils/as-boolean';
 import { cn } from '../../../../utils/cn';
 import { nonce } from '../../../../utils/nonce';
 import {
-    IconFlipOptions,
-    IconVariant,
+	IconFlipOptions,
+	IconVariant,
 } from '../../../atoms/icon/icon.component';
 import { templateFunc } from '../container/field-container.component';
 
@@ -92,12 +92,12 @@ const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 		{
 			variant: 'write',
 			disabled: false,
-			class: 'bg-white'
+			class: 'bg-white',
 		},
 		{
 			variant: 'write',
 			disabled: true,
-			class: 'bg-white-600  cursor-not-allowed'
+			class: 'bg-white-600  cursor-not-allowed',
 		},
 
 		{
@@ -119,7 +119,7 @@ const input = cva(
 		'text-sm placeholder:text-sm placeholder:text-black-teal-200 text-black-teal',
 		'border-none  bg-transparent flex-1 min-w-0',
 		'outline-none focus:outline-none',
-		'font-geist'
+		'font-geist',
 	],
 	{
 		variants: {
@@ -196,7 +196,7 @@ const prefixAndSuffix = cva(
 	tag: 'p-field',
 	styleUrl: './field.component.css',
 	shadow: true,
-	formAssociated: true
+	formAssociated: true,
 })
 export class Field {
 	/**
@@ -360,7 +360,7 @@ export class Field {
 	}
 
 	formDisabledCallback(disabled: boolean) {
-		if(!this._internals.form) {
+		if (!this._internals.form) {
 			return;
 		}
 
@@ -378,7 +378,6 @@ export class Field {
 			hasErrorSlot,
 			hasValueSlot,
 		} = this._getSlotInfo();
-
 
 		return (
 			<p-field-container
@@ -434,7 +433,9 @@ export class Field {
 					}
 					slot='content'
 				>
-					{(this.error?.length || prefix || (this.icon && this.iconPosition === 'start')) && (
+					{(this.error?.length ||
+						prefix ||
+						(this.icon && this.iconPosition === 'start')) && (
 						<div
 							class={prefixAndSuffix({
 								error: !!this.error?.length,
@@ -445,7 +446,8 @@ export class Field {
 							})}
 							onClick={() => this._focusInput()}
 						>
-							{(this.icon && this.iconPosition === 'start') || this.error?.length ? (
+							{(this.icon && this.iconPosition === 'start') ||
+							this.error?.length ? (
 								<p-icon
 									class={cn('flex', {
 										'mt-[0.125rem]':
@@ -512,20 +514,20 @@ export class Field {
 
 	@Listen('keyup', { capture: true })
 	handleKeyup(ev: KeyboardEvent) {
-		if(this.disabled) {
+		if (this.disabled) {
 			ev.preventDefault();
 			return;
 		}
 
-		if(!this._internals?.form) {
+		if (!this._internals?.form) {
 			return;
 		}
 
-		if(this.type === 'textarea' || ev.key !== 'Enter'){
+		if (this.type === 'textarea' || ev.key !== 'Enter') {
 			return;
 		}
 
-		this._internals.form.requestSubmit()
+		this._internals.form.requestSubmit();
 	}
 
 	private _getSlotInfo() {
@@ -637,9 +639,11 @@ export class Field {
 
 	private _valueChange(ev) {
 		ev.stopPropagation();
-		const target = (ev.originalTarget ?? ev.target) as HTMLTextAreaElement | HTMLInputElement;
+		const target = (ev.originalTarget ?? ev.target) as
+			| HTMLTextAreaElement
+			| HTMLInputElement;
 		const value = target.value;
-		this.valueChange.emit(value)
+		this.valueChange.emit(value);
 		this._internals.setFormValue(value);
 	}
 
