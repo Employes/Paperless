@@ -1,26 +1,14 @@
 import { Component, Element, h, Prop, Watch } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
-const stepper = cva(
-	['flex gap-2'],
-	{
-		variants: {
-			direction: {
-				vertical: 'w-full flex-col flex-wrap items-start',
-				horizontal: 'h-auto items-center'
-			},
-			contentPosition: {
-				start: null,
-				end: null
-			}
+const stepper = cva(['flex gap-2'], {
+	variants: {
+		direction: {
+			vertical: 'w-full flex-col flex-wrap',
+			horizontal: 'h-auto items-center',
 		},
-		compoundVariants: [{
-			direction: 'vertical',
-			contentPosition: 'start',
-			class: 'items-end'
-		}]
-	}
-);
+	},
+});
 
 @Component({
 	tag: 'p-stepper',
@@ -178,7 +166,7 @@ export class Stepper {
 		let heightDiff = item.clientHeight - 24;
 		let heightDiffNext = nextItem.clientHeight - 24;
 
-		if(this.align === 'center') {
+		if (this.align === 'center') {
 			heightDiff = heightDiff / 2;
 			heightDiffNext = heightDiffNext / 2;
 		}
@@ -189,22 +177,20 @@ export class Stepper {
 		if (heightDiff > 0 && this.direction === 'vertical') {
 			let totalHeight = 0;
 
-			stepperLine.style.marginTop = "0";
-			stepperLine.style.marginBottom= "0";
+			stepperLine.style.marginTop = '0';
+			stepperLine.style.marginBottom = '0';
 
-			if(this.align === 'start' || this.align === 'center') {
+			if (this.align === 'start' || this.align === 'center') {
 				stepperLine.style.marginTop = `-${heightDiff / 16}rem`;
 				totalHeight += heightDiff;
 			}
 
-			if(this.align === 'center' ||  this.align==="end") {
+			if (this.align === 'center' || this.align === 'end') {
 				stepperLine.style.marginBottom = `-${heightDiffNext / 16}rem`;
 				totalHeight += heightDiffNext;
 			}
 
-			stepperLine.style.minHeight = `calc(${
-				(totalHeight / 16)
-			}rem)`;
+			stepperLine.style.minHeight = `calc(${totalHeight / 16}rem)`;
 		}
 	};
 
@@ -221,7 +207,11 @@ export class Stepper {
 
 	render() {
 		return (
-			<div class={stepper({ direction: this.direction })}>
+			<div
+				class={stepper({
+					direction: this.direction,
+				})}
+			>
 				<slot onSlotchange={() => this._generateStepsOnce()} />
 			</div>
 		);
