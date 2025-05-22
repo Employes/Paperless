@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.122](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.121...v2.0.1-beta.122) (2025-05-22)
+
+
+### Bug Fixes
+
+* **molecules/attachment:** Don't show loader in prefix ([934c309](https://github.com/ionic-team/stencil-component-starter/commit/934c30971074a8f7d2c0590eedd979c45792a909))
+
+
+
+
+
 ## [2.0.1-beta.121](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.120...v2.0.1-beta.121) (2025-05-22)
 
 
