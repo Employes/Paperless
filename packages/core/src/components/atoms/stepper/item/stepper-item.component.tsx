@@ -2,70 +2,74 @@ import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { asBoolean } from '../../../../utils/as-boolean';
 
-const item = cva(
-	'flex gap-2',
+const item = cva('flex gap-2', {
+	variants: {
+		align: {
+			start: 'items-start',
+			center: 'items-center',
+			end: 'items-end',
+		},
+		contentPosition: {
+			start: 'flex-row-reverse',
+			end: null,
+		},
+	},
+});
+
+const circle = cva(
+	[
+		'h-6 w-6 flex items-center justify-center',
+		'text-sm text-center font-medium',
+		'border border-solid border-dark-teal-400',
+		'rounded-full',
+	],
 	{
 		variants: {
-			align: {
-				start: 'items-start',
-				center: 'items-center',
-				end: 'items-end',
+			finished: {
+				true: null,
+				false: null,
 			},
-			contentPosition: {
-				start: 'flex-row-reverse',
-				end: null
+			active: {
+				true: null,
+				false: null,
 			},
-		}
+		},
+		compoundVariants: [
+			{
+				finished: false,
+				active: false,
+				class: 'text-dark-teal-400 bg-dark-teal-50',
+			},
+			{
+				active: true,
+				finished: false,
+				class: 'text-white bg-dark-teal-400',
+			},
+			{
+				active: false,
+				finished: true,
+				class: 'text-white bg-dark-teal-400',
+			},
+		],
 	}
 );
 
-const circle = cva(['h-6 w-6 flex items-center justify-center', 'text-sm text-center font-medium', 'border border-solid border-dark-teal-400', 'rounded-full'], {
+const content = cva('text-sm font-medium flex-1', {
 	variants: {
 		finished: {
 			true: null,
-			false: null
+			false: null,
 		},
 		active: {
 			true: null,
-			false: null
-		}
+			false: null,
+		},
 	},
 	compoundVariants: [
 		{
 			finished: false,
 			active: false,
-			class: 'text-dark-teal-400 bg-dark-teal-50'
-		},
-		{
-			active: true,
-			finished: false,
-			class: 'text-white bg-dark-teal-400',
-		},
-		{
-			active: false,
-			finished: true,
-			class: 'text-white bg-dark-teal-400',
-
-		}
-	]
-})
-
-const content = cva('text-sm font-medium', {
-	variants: {
-		finished: {
-			true: null,
-			false: null
-		},
-		active: {
-			true: null,
-			false: null
-		}
-	},
-	compoundVariants: [
-		{
-			finished: false,
-			active: false,
-			class: 'text-black-teal-400'
+			class: 'text-black-teal-400',
 		},
 		{
 			active: true,
@@ -76,10 +80,9 @@ const content = cva('text-sm font-medium', {
 			active: false,
 			finished: true,
 			class: 'text-black-teal-500',
-
-		}
-	]
-})
+		},
+	],
+});
 
 @Component({
 	tag: 'p-stepper-item',
@@ -114,20 +117,26 @@ export class StepperItem {
 
 	render() {
 		return (
-			<div class={item({
-				align: this.align,
-				contentPosition: this.contentPosition
-			})}>
-				<div class={circle({
-					active: asBoolean(this.active),
-					finished: asBoolean(this.finished)
-				})}>
+			<div
+				class={item({
+					align: this.align,
+					contentPosition: this.contentPosition,
+				})}
+			>
+				<div
+					class={circle({
+						active: asBoolean(this.active),
+						finished: asBoolean(this.finished),
+					})}
+				>
 					{this.number}
 				</div>
-				<div class={content({
-					active: asBoolean(this.active),
-					finished: asBoolean(this.finished)
-				})}>
+				<div
+					class={content({
+						active: asBoolean(this.active),
+						finished: asBoolean(this.finished),
+					})}
+				>
 					<slot />
 				</div>
 			</div>

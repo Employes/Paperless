@@ -4,7 +4,6 @@ const meta = {
 	title: 'Design System/Organisms/Stepper',
 	component: 'p-stepper',
 	args: {
-		align: 'start'
 	},
 	parameters: {
 		docs: {
