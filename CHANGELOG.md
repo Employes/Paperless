@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.126](https://github.com/employes/paperless/compare/v2.0.1-beta.125...v2.0.1-beta.126) (2025-05-23)
+
+
+### Bug Fixes
+
+* **organisms/stepper & listing:** Make it transition a bit smoother ([9689ff8](https://github.com/employes/paperless/commit/9689ff850f8656aec2627e7f9aabdd1823f6c519))
+
+
+
+
+
 ## [2.0.1-beta.125](https://github.com/employes/paperless/compare/v2.0.1-beta.124...v2.0.1-beta.125) (2025-05-23)
 
 
