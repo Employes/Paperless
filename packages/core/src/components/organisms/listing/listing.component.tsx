@@ -17,16 +17,40 @@ export class Listing {
 	private _generateTimeout: NodeJS.Timeout | undefined;
 	private _resizeObserver: ResizeObserver;
 
-	private _generateStepsOnce = () => {
+	componentDidLoad() {
+		this._resizeObserver = new ResizeObserver(() => this._generateLinesOnce());
+		this._resizeObserver.observe(this._el);
+	}
+
+	disconnectCallback() {
+		if (this._resizeObserver) {
+			this._resizeObserver.disconnect();
+		}
+	}
+
+	render() {
+		return (
+			<div
+				class={cn('flex w-full flex-col flex-wrap items-start gap-1', {
+					'opacity-100': this._generatedOnce,
+					'opacity-0': !this._generatedOnce,
+				})}
+			>
+				<slot onSlotchange={() => this._generateLinesOnce()} />
+			</div>
+		);
+	}
+
+	private _generateLinesOnce() {
 		if (this._generateTimeout) {
 			clearTimeout(this._generateTimeout);
 			this._generateTimeout = null;
 		}
 
-		this._generateTimeout = setTimeout(() => this._generateSteps(), 50);
-	};
+		this._generateTimeout = setTimeout(() => this._generateLines(), 20);
+	}
 
-	private _generateSteps = async () => {
+	private _generateLines() {
 		if (!this._el) {
 			return;
 		}
@@ -42,7 +66,7 @@ export class Listing {
 				if (nextItem && nextItem.tagName.toLowerCase() === 'p-listing-item') {
 					const listingLine = document.createElement('p-listing-line');
 					this._el.insertBefore(listingLine, nextItem);
-					this._setListingLineData(listingLine, item, nextItem);
+					this._setLineData(listingLine, item, nextItem);
 
 					const previous = listingLine.previousElementSibling;
 					if (previous && previous.tagName.toLowerCase() === 'p-listing-line') {
@@ -57,7 +81,7 @@ export class Listing {
 					nextItem = nextItem.nextElementSibling;
 
 					if (nextItem && nextItem.tagName.toLowerCase() === 'p-listing-item') {
-						this._setListingLineData(listingLine, item, nextItem);
+						this._setLineData(listingLine, item, nextItem);
 					}
 				}
 			}
@@ -72,15 +96,15 @@ export class Listing {
 		}
 
 		if (!this._generatedOnce) {
-			this._generatedOnce = true;
+			setTimeout(() => (this._generatedOnce = true), 50);
 		}
-	};
+	}
 
-	private _setListingLineData = (
+	private _setLineData(
 		listingLine: HTMLPListingLineElement,
 		item: HTMLPListingItemElement,
 		nextItem: HTMLPListingItemElement
-	) => {
+	) {
 		let heightDiff = (item.clientHeight - 16) / 2;
 		let heightDiffNext = (nextItem.clientHeight - 16) / 2;
 
@@ -94,32 +118,5 @@ export class Listing {
 				(totalHeight - 16) / 16
 			}rem)`;
 		}
-	};
-
-	componentDidLoad() {
-		this._resizeObserver = new ResizeObserver(() => this._generateStepsOnce());
-		this._resizeObserver.observe(this._el);
-	}
-
-	disconnectCallback() {
-		if (this._resizeObserver) {
-			this._resizeObserver.disconnect();
-		}
-	}
-
-	render() {
-		return (
-			<div
-				class={cn(
-					'flex w-full flex-col flex-wrap items-start gap-1 transition-opacity duration-[50]',
-					{
-						'opacity-100': this._generatedOnce,
-						'opacity-0': !this._generatedOnce,
-					}
-				)}
-			>
-				<slot onSlotchange={() => this._generateStepsOnce()} />
-			</div>
-		);
 	}
 }

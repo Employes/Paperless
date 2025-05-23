@@ -1,7 +1,7 @@
 import { Component, Element, h, Prop, State, Watch } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
-const stepper = cva(['flex gap-2 transition-opacity duration-[50]'], {
+const stepper = cva(['flex gap-2'], {
 	variants: {
 		direction: {
 			vertical: 'w-full flex-col flex-wrap',
@@ -55,24 +55,52 @@ export class Stepper {
 	private _generateTimeout: NodeJS.Timeout | undefined;
 	private _resizeObserver: ResizeObserver;
 
-	private _generateStepsOnce = () => {
-		if (this._generateTimeout) {
-			clearTimeout(this._generateTimeout);
-			this._generateTimeout = null;
+	componentDidLoad() {
+		this._resizeObserver = new ResizeObserver(() => this._generateLinesOnce());
+		this._resizeObserver.observe(this._el);
+	}
+
+	disconnectCallback() {
+		if (this._resizeObserver) {
+			this._resizeObserver.disconnect();
 		}
+	}
 
-		this._generateTimeout = setTimeout(() => this._generateSteps(), 50);
-	};
+	render() {
+		return (
+			<div
+				class={stepper({
+					direction: this.direction,
+					generatedOnce: this._generatedOnce,
+				})}
+			>
+				<slot onSlotchange={() => this._generateLinesOnce()} />
+			</div>
+		);
+	}
 
-	private _generateSteps = async () => {
-		if (!this._el) {
-			return;
-		}
+	@Watch('align')
+	protected _onAlignChange() {
+		this._checkItems();
+		this._generateLinesOnce();
+	}
 
+	@Watch('direction')
+	protected _onDirectionChange() {
+		this._checkItems();
+		this._generateLinesOnce();
+	}
+
+	@Watch('activeStep')
+	protected _onActiveStepChange() {
+		this._checkItems();
+		this._generateLinesOnce();
+	}
+
+	private _checkItems() {
 		let activeStep = this.activeStep - 1 || 0;
 		const items = this._el.querySelectorAll('p-stepper-item');
 
-		let directionChanged = false;
 		for (let i = 0; i < items?.length; i++) {
 			const item = items.item(i) as any;
 
@@ -91,20 +119,31 @@ export class Stepper {
 				}
 			}
 
-			if (item.direction !== this.direction && !directionChanged) {
-				directionChanged = true;
-			}
-
 			item.number = i + 1;
-			item.direction = this.direction;
 			item.align = this.direction === 'vertical' ? this.align : 'start';
 			item.contentPosition = this.contentPosition;
 		}
+	}
 
-		if (directionChanged) {
-			// super hacky way to ensure all elements that have a direction changed are re-rendered
-			await new Promise(resolve => setTimeout(resolve, 200));
+	private _generateLinesOnce() {
+		if (this._generateTimeout) {
+			clearTimeout(this._generateTimeout);
+			this._generateTimeout = null;
 		}
+
+		this._generateTimeout = setTimeout(() => {
+			this._generateLines();
+			this._generateTimeout = null;
+		}, 20);
+	}
+
+	private _generateLines() {
+		if (!this._el) {
+			return;
+		}
+
+		let activeStep = this.activeStep - 1 || 0;
+		const items = this._el.querySelectorAll('p-stepper-item');
 
 		for (let i = 0; i < items?.length; i++) {
 			const item = items.item(i) as any;
@@ -115,7 +154,7 @@ export class Stepper {
 				if (nextItem && nextItem.tagName.toLowerCase() === 'p-stepper-item') {
 					const stepperLine = document.createElement('p-stepper-line');
 					this._el.insertBefore(stepperLine, nextItem);
-					this._setStepperLineData(stepperLine, item, nextItem, i, activeStep);
+					this._setLineData(stepperLine, item, nextItem, i, activeStep);
 
 					const previous = stepperLine.previousElementSibling;
 					if (previous && previous.tagName.toLowerCase() === 'p-stepper-line') {
@@ -130,13 +169,7 @@ export class Stepper {
 					nextItem = nextItem.nextElementSibling;
 
 					if (nextItem && nextItem.tagName.toLowerCase() === 'p-stepper-item') {
-						this._setStepperLineData(
-							stepperLine,
-							item,
-							nextItem,
-							i,
-							activeStep
-						);
+						this._setLineData(stepperLine, item, nextItem, i, activeStep);
 					}
 				}
 			}
@@ -162,17 +195,17 @@ export class Stepper {
 		}
 
 		if (!this._generatedOnce) {
-			this._generatedOnce = true;
+			setTimeout(() => (this._generatedOnce = true), 50);
 		}
-	};
+	}
 
-	private _setStepperLineData = (
+	private _setLineData(
 		stepperLine: HTMLPStepperLineElement,
 		item: HTMLPStepperItemElement,
 		nextItem: HTMLPStepperItemElement,
 		i: number,
 		activeStep: number
-	) => {
+	) {
 		let heightDiff = item.clientHeight - 24;
 		let heightDiffNext = nextItem.clientHeight - 24;
 
@@ -202,44 +235,5 @@ export class Stepper {
 
 			stepperLine.style.minHeight = `calc(${totalHeight / 16}rem)`;
 		}
-	};
-
-	componentDidLoad() {
-		this._resizeObserver = new ResizeObserver(() => this._generateStepsOnce());
-		this._resizeObserver.observe(this._el);
-	}
-
-	disconnectCallback() {
-		if (this._resizeObserver) {
-			this._resizeObserver.disconnect();
-		}
-	}
-
-	render() {
-		return (
-			<div
-				class={stepper({
-					direction: this.direction,
-					generatedOnce: this._generatedOnce,
-				})}
-			>
-				<slot onSlotchange={() => this._generateStepsOnce()} />
-			</div>
-		);
-	}
-
-	@Watch('align')
-	protected _onAlignChange() {
-		this._generateStepsOnce();
-	}
-
-	@Watch('direction')
-	protected _onDirectionChange() {
-		this._generateStepsOnce();
-	}
-
-	@Watch('activeStep')
-	protected _onActiveStepChange() {
-		this._generateStepsOnce();
 	}
 }
