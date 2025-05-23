@@ -2,7 +2,7 @@
   "packages": [
     "packages/*"
   ],
-  "version": "2.0.1-beta.122",
+  "version": "2.0.1-beta.123",
   "npmClient": "yarn",
   "command": {
     "publish": {
