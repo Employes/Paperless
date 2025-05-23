@@ -1,4 +1,5 @@
-import { Component, Element, h } from '@stencil/core';
+import { Component, Element, h, State } from '@stencil/core';
+import { cn } from '../../../utils';
 
 @Component({
 	tag: 'p-listing',
@@ -10,6 +11,8 @@ export class Listing {
 	 * The host element
 	 */
 	@Element() private _el: HTMLElement;
+
+	@State() private _generatedOnce = false;
 
 	private _generateTimeout: NodeJS.Timeout | undefined;
 	private _resizeObserver: ResizeObserver;
@@ -54,11 +57,7 @@ export class Listing {
 					nextItem = nextItem.nextElementSibling;
 
 					if (nextItem && nextItem.tagName.toLowerCase() === 'p-listing-item') {
-						this._setListingLineData(
-							listingLine,
-							item,
-							nextItem,
-						);
+						this._setListingLineData(listingLine, item, nextItem);
 					}
 				}
 			}
@@ -71,12 +70,16 @@ export class Listing {
 			const line = lines.item(j);
 			line.remove();
 		}
+
+		if (!this._generatedOnce) {
+			this._generatedOnce = true;
+		}
 	};
 
 	private _setListingLineData = (
 		listingLine: HTMLPListingLineElement,
 		item: HTMLPListingItemElement,
-		nextItem: HTMLPListingItemElement,
+		nextItem: HTMLPListingItemElement
 	) => {
 		let heightDiff = (item.clientHeight - 16) / 2;
 		let heightDiffNext = (nextItem.clientHeight - 16) / 2;
@@ -88,7 +91,7 @@ export class Listing {
 			listingLine.style.marginBottom = `-${heightDiffNext / 16}rem`;
 
 			listingLine.style.minHeight = `calc(1.5rem + ${
-				((totalHeight - 16) / 16)
+				(totalHeight - 16) / 16
 			}rem)`;
 		}
 	};
@@ -106,7 +109,15 @@ export class Listing {
 
 	render() {
 		return (
-			<div class="flex gap-1 w-full flex-col flex-wrap items-start">
+			<div
+				class={cn(
+					'flex w-full flex-col flex-wrap items-start gap-1 transition-opacity duration-[50]',
+					{
+						'opacity-100': this._generatedOnce,
+						'opacity-0': !this._generatedOnce,
+					}
+				)}
+			>
 				<slot onSlotchange={() => this._generateStepsOnce()} />
 			</div>
 		);

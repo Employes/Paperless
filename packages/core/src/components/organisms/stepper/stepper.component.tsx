@@ -1,11 +1,15 @@
-import { Component, Element, h, Prop, Watch } from '@stencil/core';
+import { Component, Element, h, Prop, State, Watch } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
-const stepper = cva(['flex gap-2'], {
+const stepper = cva(['flex gap-2 transition-opacity duration-[50]'], {
 	variants: {
 		direction: {
 			vertical: 'w-full flex-col flex-wrap',
 			horizontal: 'h-auto items-center',
+		},
+		generatedOnce: {
+			true: 'opacity-100',
+			false: 'opacity-0',
 		},
 	},
 });
@@ -45,6 +49,8 @@ export class Stepper {
 	 * The host element
 	 */
 	@Element() private _el: HTMLElement;
+
+	@State() private _generatedOnce = false;
 
 	private _generateTimeout: NodeJS.Timeout | undefined;
 	private _resizeObserver: ResizeObserver;
@@ -154,6 +160,10 @@ export class Stepper {
 			const line = lines.item(j);
 			line.remove();
 		}
+
+		if (!this._generatedOnce) {
+			this._generatedOnce = true;
+		}
 	};
 
 	private _setStepperLineData = (
@@ -210,6 +220,7 @@ export class Stepper {
 			<div
 				class={stepper({
 					direction: this.direction,
+					generatedOnce: this._generatedOnce,
 				})}
 			>
 				<slot onSlotchange={() => this._generateStepsOnce()} />
