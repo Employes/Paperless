@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.124](https://github.com/employes/paperless/compare/v2.0.1-beta.123...v2.0.1-beta.124) (2025-05-23)
+
+
+### Bug Fixes
+
+* **molecules/field:** Apply flex wrap to read variant ([dbc0639](https://github.com/employes/paperless/commit/dbc0639e3bd873f0cf77e2879e3dda67ff49ab66))
+
+
+
+
+
 ## [2.0.1-beta.123](https://github.com/employes/paperless/compare/v2.0.1-beta.122...v2.0.1-beta.123) (2025-05-23)
 
 
