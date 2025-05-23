@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.128](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.127...v2.0.1-beta.128) (2025-05-23)
+
+
+### Bug Fixes
+
+* **organisms/stepper & listing:** Small improvements in generating lines & loading ([466e423](https://github.com/ionic-team/stencil-component-starter/commit/466e423641ff79479b288fafe669dffc4b536135))
+
+
+
+
+
 ## [2.0.1-beta.127](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.126...v2.0.1-beta.127) (2025-05-23)
 
 
