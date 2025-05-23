@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.127](https://github.com/employes/paperless/compare/v2.0.1-beta.126...v2.0.1-beta.127) (2025-05-23)
+
+
+### Bug Fixes
+
+* **atoms/stepper/item:** Add 1px margin ([f5e73ae](https://github.com/employes/paperless/commit/f5e73aec1de1618c46ccb7e3a41ceecb3d67e918))
+
+
+
+
+
 ## [2.0.1-beta.126](https://github.com/employes/paperless/compare/v2.0.1-beta.125...v2.0.1-beta.126) (2025-05-23)
 
 
