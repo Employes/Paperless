@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property               | Attribute | Description               | Type                                                                                                | Default     |
-| ---------------------- | --------- | ------------------------- | --------------------------------------------------------------------------------------------------- | ----------- |
-| `variant` _(required)_ | `variant` | The icon the be displayed | `"calculator" \| "clock" \| "coins" \| "file-invoice" \| "payment" \| "search" \| "table" \| "tag"` | `undefined` |
+| Property               | Attribute | Description               | Type                                                                                                              | Default     |
+| ---------------------- | --------- | ------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------- |
+| `variant` _(required)_ | `variant` | The icon the be displayed | `"calculator" \| "calendar" \| "clock" \| "coins" \| "file-invoice" \| "payment" \| "search" \| "table" \| "tag"` | `undefined` |
 
 
 ## Dependencies
