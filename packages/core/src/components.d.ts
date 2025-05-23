@@ -65,6 +65,10 @@ export namespace Components {
           * Wether the accordion can be opened
          */
         "openable": boolean;
+        /**
+          * The variant of the accordion
+         */
+        "variant": 'primary' | 'secondary';
     }
     interface PAttachment {
         /**
@@ -3105,6 +3109,10 @@ declare namespace LocalJSX {
           * Wether the accordion can be opened
          */
         "openable"?: boolean;
+        /**
+          * The variant of the accordion
+         */
+        "variant"?: 'primary' | 'secondary';
     }
     interface PAttachment {
         /**
