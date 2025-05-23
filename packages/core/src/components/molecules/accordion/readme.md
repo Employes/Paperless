@@ -7,12 +7,13 @@
 
 ## Properties
 
-| Property              | Attribute   | Description                        | Type      | Default     |
-| --------------------- | ----------- | ---------------------------------- | --------- | ----------- |
-| `closeable`           | `closeable` | Wether the accordion can be closed | `boolean` | `true`      |
-| `header` _(required)_ | `header`    | Header of the accordion            | `string`  | `undefined` |
-| `open`                | `open`      | Wether the accordion is open       | `boolean` | `false`     |
-| `openable`            | `openable`  | Wether the accordion can be opened | `boolean` | `true`      |
+| Property              | Attribute   | Description                        | Type                       | Default     |
+| --------------------- | ----------- | ---------------------------------- | -------------------------- | ----------- |
+| `closeable`           | `closeable` | Wether the accordion can be closed | `boolean`                  | `true`      |
+| `header` _(required)_ | `header`    | Header of the accordion            | `string`                   | `undefined` |
+| `open`                | `open`      | Wether the accordion is open       | `boolean`                  | `false`     |
+| `openable`            | `openable`  | Wether the accordion can be opened | `boolean`                  | `true`      |
+| `variant`             | `variant`   | The variant of the accordion       | `"primary" \| "secondary"` | `'primary'` |
 
 
 ## Events
