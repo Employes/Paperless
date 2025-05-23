@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.123](https://github.com/employes/paperless/compare/v2.0.1-beta.122...v2.0.1-beta.123) (2025-05-23)
+
+
+### Bug Fixes
+
+* **angular/organisms/table:** Don't show empty state action for filtered variant ([c448dfb](https://github.com/employes/paperless/commit/c448dfb43a679ccb93c50d324b0d12198cb23b07))
+
+
+
+
+
 ## [2.0.1-beta.122](https://github.com/employes/paperless/compare/v2.0.1-beta.121...v2.0.1-beta.122) (2025-05-22)
 
 
