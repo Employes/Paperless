@@ -25,7 +25,7 @@ import { templateFunc } from '../container/field-container.component';
 const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 	variants: {
 		variant: {
-			read: 'border-0 items-start',
+			read: 'border-0 items-start flex-wrap',
 			write: 'border px-2',
 		},
 		size: {
