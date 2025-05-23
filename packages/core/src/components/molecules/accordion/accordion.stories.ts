@@ -5,7 +5,7 @@ const meta = {
 	title: 'Design System/Molecules/Accordion',
 	component: 'p-accordion',
 	args: {
-		header: "Accordion header",
+		header: 'Accordion header',
 		content: 'Accordion content!',
 	},
 	argTypes: {
@@ -20,12 +20,14 @@ export default meta;
 export const Default = {
 	render: ({
 		content,
+		variant,
 		header,
 		open,
 		closeable,
 		openable,
 	}) => html`<p-accordion
 		header=${header ?? nothing}
+		variant=${variant ?? nothing}
 		open=${open ?? nothing}
 		closeable=${closeable ?? nothing}
 		openable=${openable ?? nothing}

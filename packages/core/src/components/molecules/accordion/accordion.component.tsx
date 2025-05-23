@@ -1,4 +1,5 @@
 import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
+import { cn } from '../../../utils';
 
 @Component({
 	tag: 'p-accordion',
@@ -6,6 +7,11 @@ import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
 	shadow: true,
 })
 export class Accordion {
+	/**
+	 * The variant of the accordion
+	 */
+	@Prop() variant: 'primary' | 'secondary' = 'primary';
+
 	/**
 	 * Header of the accordion
 	 */
@@ -38,7 +44,10 @@ export class Accordion {
 		return (
 			<Host>
 				<div
-					class='flex cursor-pointer items-center gap-2 text-black-teal-500'
+					class={cn('flex cursor-pointer items-center gap-2', {
+						'text-black-teal-500': this.variant === 'primary',
+						'text-black-teal-300': this.variant === 'secondary',
+					})}
 					onClick={() => this._onClick()}
 				>
 					<p-icon
@@ -46,8 +55,10 @@ export class Accordion {
 						variant='caret'
 						rotate={this.open ? 0 : -90}
 					/>
-					<p class='my-0 shrink-0 whitespace-nowrap text-base font-medium'>{this.header}</p>
-					<p-divider class="flex-1" />
+					<p class='my-0 shrink-0 whitespace-nowrap text-base font-medium'>
+						{this.header}
+					</p>
+					<p-divider class='flex-1' />
 				</div>
 				{this.open && (
 					<div class='mt-4'>
