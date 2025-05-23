@@ -38,23 +38,29 @@
 		</ng-container>
 	</p-table-header>
 
-	<div class="relative flex-1" *ngIf="enableScroll; else rowsTemplate">
-		<div class="flex flex-col overflow-x-auto"
+	<div
+		class="relative flex-1"
+		*ngIf="enableScroll; else rowsTemplate"
+	>
+		<div
+			class="flex flex-col overflow-x-auto"
 			#scrollContainer
-			[class]="cn(
-				'before:absolute before:top-0 before:left-0 before:z-[1] before:pointer-events-none',
-				'before:w-[10%] before:h-full before:transition-opacity',
-				'before:bg-gradient-to-r before:from-white before:via-white/80 before:to-transparent',
-				'after:absolute after:top-0 after:right-0 after:z-[0] before:pointer-events-none',
-				'after:w-[10%] after:h-full after:transition-opacity',
-				'after:bg-gradient-to-l after:from-white after:via-white/80 after:to-transparent',
-				{
-					'before:opacity-0': reachedScrollStart$ | async,
-					'after:opacity-0': reachedScrollEnd$ | async,
-					'before:opacity-100': (reachedScrollStart$ | async) === false,
-					'after:opacity-100': (reachedScrollEnd$ | async) === false
-				}
-			)"
+			[class]="
+				cn(
+					'before:absolute before:top-0 before:left-0 before:z-[1] before:pointer-events-none',
+					'before:w-[10%] before:h-full before:transition-opacity',
+					'before:bg-gradient-to-r before:from-white before:via-white/80 before:to-transparent',
+					'after:absolute after:top-0 after:right-0 after:z-[0] before:pointer-events-none',
+					'after:w-[10%] after:h-full after:transition-opacity',
+					'after:bg-gradient-to-l after:from-white after:via-white/80 after:to-transparent',
+					{
+						'before:opacity-0': reachedScrollStart$ | async,
+						'after:opacity-0': reachedScrollEnd$ | async,
+						'before:opacity-100': (reachedScrollStart$ | async) === false,
+						'after:opacity-100': (reachedScrollEnd$ | async) === false
+					}
+				)
+			"
 			(scroll)="onContainerXScroll($event)"
 		>
 			<ng-container *ngTemplateOutlet="rowsTemplate"></ng-container>
@@ -178,7 +184,9 @@
 							) as rowActionsRow
 						"
 					>
-						<ng-container *ngFor="let col of columns$ | async; let index = index">
+						<ng-container
+							*ngFor="let col of columns$ | async; let index = index"
+						>
 							<p-table-cell-ngx
 								[definition]="col"
 								[item]="item"
@@ -299,6 +307,7 @@
 		[illustration]="emptyStateFilteredIllustration"
 		[header]="emptyStateFilteredHeader"
 		[content]="emptyStateFilteredContent"
+		[enableAction]="false"
 	></p-empty-state>
 </ng-template>
 
