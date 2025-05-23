@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.125](https://github.com/employes/paperless/compare/v2.0.1-beta.124...v2.0.1-beta.125) (2025-05-23)
+
+
+### Features
+
+* **atoms/illustration:** Add calendar variant ([6484179](https://github.com/employes/paperless/commit/64841798bbf96c99c9afad9f90bb8d002eb42251))
+* **molecules/accordion:** Add secondary variant ([d03d55f](https://github.com/employes/paperless/commit/d03d55fb880052e7fa9851f27dfa4bdb15e2e601))
+
+
+
+
+
 ## [2.0.1-beta.124](https://github.com/employes/paperless/compare/v2.0.1-beta.123...v2.0.1-beta.124) (2025-05-23)
 
 
