@@ -54,7 +54,7 @@ const circle = cva(
 	}
 );
 
-const content = cva('text-sm font-medium flex-1', {
+const content = cva('text-sm font-medium flex-1 mt-[1px]', {
 	variants: {
 		finished: {
 			true: null,
