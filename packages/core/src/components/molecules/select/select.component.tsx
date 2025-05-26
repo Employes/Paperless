@@ -127,6 +127,11 @@ export class Select {
 	@Prop() iconKey: string;
 
 	/**
+	 * Wether to apply the item's icon on the selected item display
+	 */
+	@Prop() showIconOnSelectedItem: string;
+
+	/**
 	 * The key of a class in an item to apply
 	 */
 	@Prop() classKey: string = 'class';
@@ -421,7 +426,8 @@ export class Select {
 			this._selectedItem &&
 			!this.avatarKey &&
 			!!this.iconKey &&
-			this._selectedItem[this.iconKey]
+			this._selectedItem[this.iconKey] &&
+			!this.showIconOnSelectedItem
 		) {
 			buttonIcon = this._selectedItem[this.iconKey];
 		}
@@ -891,7 +897,7 @@ export class Select {
 			);
 		}
 
-		if (this.iconKey && !isSelection) {
+		if (this.iconKey && (!isSelection || this.showIconOnSelectedItem)) {
 			content = (
 				<span class='flex items-center gap-2'>
 					<p-icon
