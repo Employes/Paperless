@@ -81,19 +81,16 @@ export class Stepper {
 
 	@Watch('align')
 	protected _onAlignChange() {
-		this._checkItems();
 		this._generateLinesOnce();
 	}
 
 	@Watch('direction')
 	protected _onDirectionChange() {
-		this._checkItems();
 		this._generateLinesOnce();
 	}
 
 	@Watch('activeStep')
 	protected _onActiveStepChange() {
-		this._checkItems();
 		this._generateLinesOnce();
 	}
 
@@ -132,6 +129,7 @@ export class Stepper {
 		}
 
 		this._generateTimeout = setTimeout(() => {
+			this._checkItems();
 			this._generateLines();
 			this._generateTimeout = null;
 		}, 20);
