@@ -6,7 +6,7 @@ const badge = cva([
 	'h-4 min-w-[1.5rem] px-1',
 	'rounded-full',
 	'bg-dark-teal-400',
-	'text-center text-xs font-semibold text-white',
+	'text-center text-xs font-semibold text-white tracking-tight',
 ]);
 
 @Component({
