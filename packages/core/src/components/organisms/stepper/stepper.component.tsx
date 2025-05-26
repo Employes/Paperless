@@ -15,18 +15,21 @@ export interface StepperStepItemObj {
 	finished: boolean;
 }
 
-const stepper = cva(['flex gap-2'], {
-	variants: {
-		direction: {
-			vertical: 'w-full flex-col flex-wrap',
-			horizontal: 'h-auto items-center',
+const stepper = cva(
+	['flex gap-2 border border-solid border-negative-red resize overflow-auto'],
+	{
+		variants: {
+			direction: {
+				vertical: 'w-full flex-col flex-wrap',
+				horizontal: 'h-auto items-center',
+			},
+			generatedOnce: {
+				true: 'opacity-100',
+				false: 'opacity-0',
+			},
 		},
-		generatedOnce: {
-			true: 'opacity-100',
-			false: 'opacity-0',
-		},
-	},
-});
+	}
+);
 
 @Component({
 	tag: 'p-stepper',
@@ -73,16 +76,13 @@ export class Stepper {
 	@State() private _loaded = false;
 
 	private _generateTimeout: NodeJS.Timeout | undefined;
+	private _containerRef: HTMLDivElement;
 	private _resizeObserver: ResizeObserver;
 
 	private _hasSlotItems = false;
 
 	componentDidLoad() {
 		this._hasSlotItems = !!this._el.querySelector(':scope > *');
-
-		this._resizeObserver = new ResizeObserver(() => this._generateLinesOnce());
-		this._resizeObserver.observe(this._el);
-
 		this._loaded = true;
 	}
 
@@ -129,6 +129,7 @@ export class Stepper {
 						direction: this.direction,
 						generatedOnce: true,
 					})}
+					ref={ref => this._setContainerRef(ref)}
 				>
 					{items}
 				</div>
@@ -141,6 +142,7 @@ export class Stepper {
 					direction: this.direction,
 					generatedOnce: this._generatedOnce,
 				})}
+				ref={ref => this._setContainerRef(ref)}
 			>
 				<slot onSlotchange={() => this._generateLinesOnce()} />
 			</div>
@@ -160,6 +162,17 @@ export class Stepper {
 	@Watch('activeStep')
 	protected _onActiveStepChange() {
 		this._generateLinesOnce();
+	}
+
+	private _setContainerRef(ref: HTMLDivElement) {
+		this._containerRef = ref;
+
+		if (this._resizeObserver) {
+			this._resizeObserver.disconnect();
+		}
+
+		this._resizeObserver = new ResizeObserver(() => this._generateLinesOnce());
+		this._resizeObserver.observe(this._containerRef);
 	}
 
 	private _getItem(data: StepperStepItemObj, i: number) {
@@ -220,7 +233,7 @@ export class Stepper {
 			this._checkItems(items);
 			this._generateLines(items);
 			this._generateTimeout = null;
-		});
+		}, 50);
 	}
 
 	private _generateLines(items: NodeListOf<HTMLPStepperItemElement>) {
@@ -280,7 +293,7 @@ export class Stepper {
 		}
 
 		if (!this._generatedOnce) {
-			setTimeout(() => (this._generatedOnce = true), 0);
+			this._generatedOnce = true;
 		}
 	}
 
