@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.133](https://github.com/employes/paperless/compare/v2.0.1-beta.132...v2.0.1-beta.133) (2025-05-26)
+
+
+### Bug Fixes
+
+* **organisms/stepper:** Remove border ([04e84fc](https://github.com/employes/paperless/commit/04e84fc0e7d719997989748efb34cbdb6e964c9f))
+
+
+
+
+
 ## [2.0.1-beta.132](https://github.com/employes/paperless/compare/v2.0.1-beta.131...v2.0.1-beta.132) (2025-05-26)
 
 
