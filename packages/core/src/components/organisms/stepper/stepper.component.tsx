@@ -15,21 +15,18 @@ export interface StepperStepItemObj {
 	finished: boolean;
 }
 
-const stepper = cva(
-	['flex gap-2 border border-solid border-negative-red resize overflow-auto'],
-	{
-		variants: {
-			direction: {
-				vertical: 'w-full flex-col flex-wrap',
-				horizontal: 'h-auto items-center',
-			},
-			generatedOnce: {
-				true: 'opacity-100',
-				false: 'opacity-0',
-			},
+const stepper = cva(['flex gap-2'], {
+	variants: {
+		direction: {
+			vertical: 'w-full flex-col flex-wrap',
+			horizontal: 'h-auto items-center',
 		},
-	}
-);
+		generatedOnce: {
+			true: 'opacity-100',
+			false: 'opacity-0',
+		},
+	},
+});
 
 @Component({
 	tag: 'p-stepper',
