@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.131](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.130...v2.0.1-beta.131) (2025-05-26)
+
+
+### Bug Fixes
+
+* **organisms/stepper:** Resize based on the container not the element ([07fcf73](https://github.com/ionic-team/stencil-component-starter/commit/07fcf73415c416fa57a0dcf3253904fb8e57fff7))
+
+
+
+
+
 ## [2.0.1-beta.130](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.129...v2.0.1-beta.130) (2025-05-26)
 
 
