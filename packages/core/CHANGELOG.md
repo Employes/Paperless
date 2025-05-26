@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.130](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.129...v2.0.1-beta.130) (2025-05-26)
+
+
+### Features
+
+* **organisms/stepper:** Allow stepper to pass steps as Prop ([fb10d43](https://github.com/ionic-team/stencil-component-starter/commit/fb10d43c7addf15a2f6e3b24ef135226be5c73cc))
+
+
+
+
+
 ## [2.0.1-beta.129](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.128...v2.0.1-beta.129) (2025-05-26)
 
 
