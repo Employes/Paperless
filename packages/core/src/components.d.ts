@@ -1445,10 +1445,6 @@ export namespace Components {
          */
         "showChevron": boolean;
         /**
-          * Wether to show the icon also on the selected Item
-         */
-        "showIconInSelectedItem": string;
-        /**
           * The size of the input group used by the select
          */
         "size": 'sm' | 'base';
@@ -4641,10 +4637,6 @@ declare namespace LocalJSX {
           * Wether to show the chevron or not
          */
         "showChevron"?: boolean;
-        /**
-          * Wether to show the icon also on the selected Item
-         */
-        "showIconInSelectedItem"?: string;
         /**
           * The size of the input group used by the select
          */

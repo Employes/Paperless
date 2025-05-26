@@ -127,11 +127,6 @@ export class Select {
 	@Prop() iconKey: string;
 
 	/**
-	 * Wether to show the icon also on the selected Item
-	 */
-	@Prop() showIconInSelectedItem: string;
-
-	/**
 	 * The key of a class in an item to apply
 	 */
 	@Prop() classKey: string = 'class';
@@ -420,6 +415,25 @@ export class Select {
 	}
 
 	render() {
+		let buttonIcon = this.icon;
+
+		if (
+			this._selectedItem &&
+			!this.avatarKey &&
+			!!this.iconKey &&
+			this._selectedItem[this.iconKey]
+		) {
+			buttonIcon = this._selectedItem[this.iconKey];
+		}
+
+		if (this.avatarKey && this._selectedItem[this.avatarKey]) {
+			buttonIcon = null;
+		}
+
+		if (this.error?.length) {
+			buttonIcon = 'warning';
+		}
+
 		return (
 			<p-dropdown
 				disableTriggerClick={true}
@@ -452,7 +466,7 @@ export class Select {
 						disabled={this.disabled}
 						active={this._showDropdown}
 						error={!!this.error?.length}
-						icon={this.error?.length ? 'warning' : this.icon}
+						icon={buttonIcon}
 						onClick={ev => this._onClick(ev)}
 					>
 						<div
@@ -877,10 +891,13 @@ export class Select {
 			);
 		}
 
-		if (this.iconKey && (!isSelection || this.showIconInSelectedItem)) {
+		if (this.iconKey && !isSelection) {
 			content = (
 				<span class='flex items-center gap-2'>
-					<p-icon variant={item[this.iconKey] as IconVariant} />
+					<p-icon
+						class='black-teal-300'
+						variant={item[this.iconKey] as IconVariant}
+					/>
 					<div class={textContainer({ variant: 'default' })}>
 						{item[this.dropdownDisplayKey ?? this.displayKey]}
 					</div>
