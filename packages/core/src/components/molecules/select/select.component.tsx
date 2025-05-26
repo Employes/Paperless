@@ -48,7 +48,6 @@ const textContainer = cva(
 	tag: 'p-select',
 	styleUrl: 'select.component.css',
 	formAssociated: true,
-	shadow: true,
 })
 export class Select {
 	/**
