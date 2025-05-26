@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.139](https://github.com/employes/paperless/compare/v2.0.1-beta.138...v2.0.1-beta.139) (2025-05-26)
+
+
+### Features
+
+* **atoms/badge:** Apply tracking tight ([e9a0429](https://github.com/employes/paperless/commit/e9a0429c4a41a57c25c48099c20f26d95919d03d))
+
+
+
+
+
 ## [2.0.1-beta.138](https://github.com/employes/paperless/compare/v2.0.1-beta.137...v2.0.1-beta.138) (2025-05-26)
 
 
