@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.135](https://github.com/employes/paperless/compare/v2.0.1-beta.134...v2.0.1-beta.135) (2025-05-26)
+
+
+### Bug Fixes
+
+* **molecules/select:** Put icon on selected item back ([e092ff4](https://github.com/employes/paperless/commit/e092ff48250126b8b4983e8651a78cd2411e7d48))
+
+
+
+
+
 ## [2.0.1-beta.134](https://github.com/employes/paperless/compare/v2.0.1-beta.133...v2.0.1-beta.134) (2025-05-26)
 
 
