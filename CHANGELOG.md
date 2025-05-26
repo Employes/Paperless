@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.138](https://github.com/employes/paperless/compare/v2.0.1-beta.137...v2.0.1-beta.138) (2025-05-26)
+
+
+### Bug Fixes
+
+* **atoms/card/header:** Apply gap to header title ([aacc0ef](https://github.com/employes/paperless/commit/aacc0ef8b248785c13cb4dcd707f32221bbfb591))
+
+
+
+
+
 ## [2.0.1-beta.137](https://github.com/employes/paperless/compare/v2.0.1-beta.136...v2.0.1-beta.137) (2025-05-26)
 
 **Note:** Version bump only for package paperless
