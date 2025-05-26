@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.136](https://github.com/employes/paperless/compare/v2.0.1-beta.135...v2.0.1-beta.136) (2025-05-26)
+
+
+### Bug Fixes
+
+* **atoms/colors:** Fix some missed currentColors ([ea29089](https://github.com/employes/paperless/commit/ea29089aa4f0e00867aaac0314abd8bf48673b71))
+
+
+
+
+
 ## [2.0.1-beta.135](https://github.com/employes/paperless/compare/v2.0.1-beta.134...v2.0.1-beta.135) (2025-05-26)
 
 
