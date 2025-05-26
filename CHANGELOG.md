@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.132](https://github.com/employes/paperless/compare/v2.0.1-beta.131...v2.0.1-beta.132) (2025-05-26)
+
+
+### Bug Fixes
+
+* **atoms/toggle:** Use `asBoolean` for the disabled state of the toggle circle ([95d3b5e](https://github.com/employes/paperless/commit/95d3b5e476f17acd732161d261dd83a5b89ab487))
+
+
+
+
+
 ## [2.0.1-beta.131](https://github.com/employes/paperless/compare/v2.0.1-beta.130...v2.0.1-beta.131) (2025-05-26)
 
 
