@@ -20,6 +20,7 @@ import { IllustrationVariant as IllustrationVariant1 } from "./components/atoms/
 import { IllustrationDeprecatedVariant } from "./components/deprecated/atoms/illustration-deprecated/illustration-deprecated.component";
 import { Observable } from "rxjs";
 import { templateFunc as templateFunc2 } from "./components/molecules/pagination/size/pagination-size.component";
+import { StepperStepItemObj } from "./components/organisms/stepper/stepper.component";
 import { amountSelectedTemplateFunc as amountSelectedTemplateFunc1, templateFunc as templateFunc3 } from "./components/organisms/table/table.component";
 import { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
 import { buttonTemplateFunc } from "./components/molecules/table/header/table-header.component";
@@ -41,6 +42,7 @@ export { IllustrationVariant as IllustrationVariant1 } from "./components/atoms/
 export { IllustrationDeprecatedVariant } from "./components/deprecated/atoms/illustration-deprecated/illustration-deprecated.component";
 export { Observable } from "rxjs";
 export { templateFunc as templateFunc2 } from "./components/molecules/pagination/size/pagination-size.component";
+export { StepperStepItemObj } from "./components/organisms/stepper/stepper.component";
 export { amountSelectedTemplateFunc as amountSelectedTemplateFunc1, templateFunc as templateFunc3 } from "./components/organisms/table/table.component";
 export { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
 export { buttonTemplateFunc } from "./components/molecules/table/header/table-header.component";
@@ -1494,6 +1496,10 @@ export namespace Components {
           * Wether to automatically apply active & finished to items
          */
         "enableAutoStatus": boolean;
+        /**
+          * The steps but as a property, can also be used via slot
+         */
+        "steps": string | string[] | StepperStepItemObj[];
     }
     interface PStepperItem {
         /**
@@ -4687,6 +4693,10 @@ declare namespace LocalJSX {
           * Wether to automatically apply active & finished to items
          */
         "enableAutoStatus"?: boolean;
+        /**
+          * The steps but as a property, can also be used via slot
+         */
+        "steps"?: string | string[] | StepperStepItemObj[];
     }
     interface PStepperItem {
         /**

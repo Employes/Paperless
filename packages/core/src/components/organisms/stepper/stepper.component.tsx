@@ -1,5 +1,19 @@
-import { Component, Element, h, Prop, State, Watch } from '@stencil/core';
+import {
+	Component,
+	Element,
+	Fragment,
+	h,
+	Prop,
+	State,
+	Watch,
+} from '@stencil/core';
 import { cva } from 'class-variance-authority';
+
+export interface StepperStepItemObj {
+	content: string;
+	active: boolean;
+	finished: boolean;
+}
 
 const stepper = cva(['flex gap-2'], {
 	variants: {
@@ -20,6 +34,11 @@ const stepper = cva(['flex gap-2'], {
 	shadow: true,
 })
 export class Stepper {
+	/**
+	 * The steps but as a property, can also be used via slot
+	 */
+	@Prop() steps: string | string[] | StepperStepItemObj[];
+
 	/**
 	 * The currently active step
 	 */
@@ -51,13 +70,20 @@ export class Stepper {
 	@Element() private _el: HTMLElement;
 
 	@State() private _generatedOnce = false;
+	@State() private _loaded = false;
 
 	private _generateTimeout: NodeJS.Timeout | undefined;
 	private _resizeObserver: ResizeObserver;
 
+	private _hasSlotItems = false;
+
 	componentDidLoad() {
+		this._hasSlotItems = !!this._el.querySelector(':scope > *');
+
 		this._resizeObserver = new ResizeObserver(() => this._generateLinesOnce());
 		this._resizeObserver.observe(this._el);
+
+		this._loaded = true;
 	}
 
 	disconnectCallback() {
@@ -67,6 +93,48 @@ export class Stepper {
 	}
 
 	render() {
+		if (!this._loaded) {
+			return;
+		}
+
+		if (!this._hasSlotItems) {
+			const steps =
+				typeof this.steps === 'string' ? JSON.parse(this.steps) : this.steps;
+			if (!steps?.length) {
+				return;
+			}
+
+			const items = steps.map((step, index) => {
+				const item = this._getItem(
+					typeof step === 'string'
+						? {
+								active: false,
+								finished: false,
+								content: step,
+						  }
+						: step,
+					index
+				);
+				return (
+					<Fragment>
+						{item}
+						{index < steps.length - 1 && this._getLine(index)}
+					</Fragment>
+				);
+			});
+
+			return (
+				<div
+					class={stepper({
+						direction: this.direction,
+						generatedOnce: true,
+					})}
+				>
+					{items}
+				</div>
+			);
+		}
+
 		return (
 			<div
 				class={stepper({
@@ -94,9 +162,34 @@ export class Stepper {
 		this._generateLinesOnce();
 	}
 
-	private _checkItems() {
-		let activeStep = this.activeStep - 1 || 0;
-		const items = this._el.querySelectorAll('p-stepper-item');
+	private _getItem(data: StepperStepItemObj, i: number) {
+		const activeStep = this.activeStep - 1 || 0;
+
+		return (
+			<p-stepper-item
+				active={this.enableAutoStatus ? i === activeStep : data.active}
+				finished={this.enableAutoStatus ? i < activeStep : data.finished}
+				number={i + 1}
+				align={this.direction === 'vertical' ? this.align : 'start'}
+				contentPosition={this.contentPosition}
+			>
+				{data.content}
+			</p-stepper-item>
+		);
+	}
+
+	private _getLine(i: number) {
+		const activeStep = this.activeStep - 1 || 0;
+		return (
+			<p-stepper-line
+				active={i < activeStep}
+				direction={this.direction}
+			/>
+		);
+	}
+
+	private _checkItems(items: NodeListOf<HTMLPStepperItemElement>) {
+		const activeStep = this.activeStep - 1 || 0;
 
 		for (let i = 0; i < items?.length; i++) {
 			const item = items.item(i) as any;
@@ -106,16 +199,6 @@ export class Stepper {
 				item.finished = i < activeStep;
 			}
 
-			if (!this.activeStep || activeStep < 0) {
-				if (item.active) {
-					activeStep = i;
-				}
-
-				if (activeStep < 0 && item.finished) {
-					activeStep = i + 1;
-				}
-			}
-
 			item.number = i + 1;
 			item.align = this.direction === 'vertical' ? this.align : 'start';
 			item.contentPosition = this.contentPosition;
@@ -123,25 +206,29 @@ export class Stepper {
 	}
 
 	private _generateLinesOnce() {
+		if (!this._hasSlotItems) {
+			return;
+		}
+
 		if (this._generateTimeout) {
 			clearTimeout(this._generateTimeout);
 			this._generateTimeout = null;
 		}
 
 		this._generateTimeout = setTimeout(() => {
-			this._checkItems();
-			this._generateLines();
+			const items = this._el.querySelectorAll('p-stepper-item');
+			this._checkItems(items);
+			this._generateLines(items);
 			this._generateTimeout = null;
-		}, 20);
+		});
 	}
 
-	private _generateLines() {
+	private _generateLines(items: NodeListOf<HTMLPStepperItemElement>) {
 		if (!this._el) {
 			return;
 		}
 
 		let activeStep = this.activeStep - 1 || 0;
-		const items = this._el.querySelectorAll('p-stepper-item');
 
 		for (let i = 0; i < items?.length; i++) {
 			const item = items.item(i) as any;
@@ -193,7 +280,7 @@ export class Stepper {
 		}
 
 		if (!this._generatedOnce) {
-			setTimeout(() => (this._generatedOnce = true), 50);
+			setTimeout(() => (this._generatedOnce = true), 0);
 		}
 	}
 
