@@ -16,6 +16,19 @@
 | `number`          | `number`           | The number of the step                                     | `number`                       | `1`        |
 
 
+## Dependencies
+
+### Used by
+
+ - [p-stepper](../../../organisms/stepper)
+
+### Graph
+```mermaid
+graph TD;
+  p-stepper --> p-stepper-item
+  style p-stepper-item fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
