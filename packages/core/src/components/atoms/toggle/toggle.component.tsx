@@ -1,17 +1,17 @@
 import {
-    AttachInternals,
-    Component,
-    Event,
-    EventEmitter,
-    Prop,
-    State,
-    h
+	AttachInternals,
+	Component,
+	Event,
+	EventEmitter,
+	Prop,
+	State,
+	h,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { asBoolean } from '../../../utils/as-boolean';
 import { nonce } from '../../../utils/nonce';
 
-const checkbox = cva(
+const toggle = cva(
 	[
 		'peer appearance-none m-0 outline-none flex-shrink-0',
 		'border border-inset border-solid ',
@@ -28,7 +28,7 @@ const checkbox = cva(
 					'checked:ring-2 checked:ring-supportive-lilac-100',
 					'checked:hover:bg-supportive-lilac-700 checked:hover:border-black-teal/20',
 				],
-				true: 'bg-white-600 border-black-teal-50 cursor-not-allowed ',
+				true: ['bg-white-600 border-black-teal-50 cursor-not-allowed'],
 			},
 		},
 	}
@@ -109,7 +109,7 @@ export class Toggle {
 	}
 
 	formDisabledCallback(disabled: boolean) {
-		if(!this._internals.form) {
+		if (!this._internals.form) {
 			return;
 		}
 
@@ -126,7 +126,7 @@ export class Toggle {
 			>
 				<div class='group relative flex flex-shrink-0 items-center'>
 					<input
-						class={checkbox({
+						class={toggle({
 							disabled: asBoolean(this.disabled),
 						})}
 						type='checkbox'
@@ -137,9 +137,10 @@ export class Toggle {
 						disabled={asBoolean(this.disabled)}
 						onChange={ev => this._onChange(ev)}
 					/>
+
 					<div
 						class={circle({
-							disabled: this.disabled,
+							disabled: asBoolean(this.disabled),
 						})}
 					></div>
 				</div>
@@ -158,8 +159,7 @@ export class Toggle {
 		if (checked != this.checked) {
 			this.checked = checked;
 			this.checkedChange.emit(checked);
-			this._internals.setFormValue(this.checked ? "on" : "off");
+			this._internals.setFormValue(this.checked ? 'on' : 'off');
 		}
-
 	}
 }
