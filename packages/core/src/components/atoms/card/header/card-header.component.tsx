@@ -27,7 +27,7 @@ const content = cva('flex items-center gap-2', {
 		},
 	},
 });
-const title = cva('h-8 flex items-center font-bold text-sm');
+const title = cva('h-8 flex items-center font-bold text-sm gap-2');
 
 @Component({
 	tag: 'p-card-header',
@@ -88,7 +88,7 @@ export class CardHeader {
 						<slot name='content-suffix' />
 					</div>
 
-					<div class='flex items-center gap-4 ml-auto justify-end empty:hidden'>
+					<div class='ml-auto flex items-center justify-end gap-4 empty:hidden'>
 						<slot name='suffix' />
 					</div>
 				</div>
@@ -96,7 +96,7 @@ export class CardHeader {
 				{this.variant === 'default' ? (
 					<p-divider />
 				) : (
-					<div class="absolute w-full h-full top-0 left-0 overflow-hidden rounded-t-2xl z-[-1] pointer-events-none">
+					<div class='pointer-events-none absolute left-0 top-0 z-[-1] h-full w-full overflow-hidden rounded-t-2xl'>
 						<p-smile variant='card' />
 					</div>
 				)}
