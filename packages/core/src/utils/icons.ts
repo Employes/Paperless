@@ -2,6 +2,7 @@ import caret from '../assets/icons/arrows/caret.svg';
 import doubleCaret from '../assets/icons/arrows/double-caret.svg';
 import arrow from '../assets/icons/arrows/arrow.svg';
 import doubleArrow from '../assets/icons/arrows/double-arrow.svg';
+import turn from '../assets/icons/arrows/turn.svg';
 
 import bell from '../assets/icons/communication/bell.svg';
 import chat from '../assets/icons/communication/chat.svg';
@@ -33,6 +34,7 @@ import checkmark from '../assets/icons/general/checkmark.svg';
 import city from '../assets/icons/general/city.svg';
 import companies from '../assets/icons/general/companies.svg';
 import company from '../assets/icons/general/company.svg';
+import copy from '../assets/icons/general/copy.svg';
 import creditCard from '../assets/icons/general/credit-card.svg';
 import cutlery from '../assets/icons/general/cutlery.svg';
 import department from '../assets/icons/general/department.svg';
@@ -117,6 +119,7 @@ export const categorized = {
 		'double-caret': doubleCaret,
 		arrow,
 		'double-arrow': doubleArrow,
+		turn,
 	},
 	communication: {
 		bell,
@@ -151,6 +154,7 @@ export const categorized = {
 		city,
 		companies,
 		company,
+		copy,
 		'credit-card': creditCard,
 		cutlery,
 		department,
@@ -241,6 +245,7 @@ export const icons = {
 	'double-caret': doubleCaret,
 	arrow,
 	'double-arrow': doubleArrow,
+	turn,
 
 	//communication
 	bell,
@@ -275,6 +280,7 @@ export const icons = {
 	city,
 	companies,
 	company,
+	copy,
 	'credit-card': creditCard,
 	cutlery,
 	department,
