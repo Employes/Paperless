@@ -717,6 +717,10 @@ export namespace Components {
     }
     interface PField {
         /**
+          * The alignment of the container
+         */
+        "align": 'start' | 'end';
+        /**
           * Wether to autofocus the field
          */
         "autofocus": boolean;
@@ -822,6 +826,10 @@ export namespace Components {
         "variant": 'read' | 'write';
     }
     interface PFieldContainer {
+        /**
+          * Align content to the start or end
+         */
+        "align": 'start' | 'end';
         /**
           * The helper of the input group
          */
@@ -3837,6 +3845,10 @@ declare namespace LocalJSX {
     }
     interface PField {
         /**
+          * The alignment of the container
+         */
+        "align"?: 'start' | 'end';
+        /**
           * Wether to autofocus the field
          */
         "autofocus"?: boolean;
@@ -3950,6 +3962,10 @@ declare namespace LocalJSX {
         "variant"?: 'read' | 'write';
     }
     interface PFieldContainer {
+        /**
+          * Align content to the start or end
+         */
+        "align"?: 'start' | 'end';
         /**
           * The helper of the input group
          */

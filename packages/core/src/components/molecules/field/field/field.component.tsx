@@ -200,6 +200,11 @@ const prefixAndSuffix = cva(
 })
 export class Field {
 	/**
+	 * The alignment of the container
+	 */
+	@Prop() align: 'start' | 'end' = 'start';
+
+	/**
 	 * The variant of the field
 	 */
 	@Prop() variant: 'read' | 'write' = 'write';
@@ -386,6 +391,7 @@ export class Field {
 				}
 				id={id}
 				label={this.label}
+				align={this.align}
 				loading={this.loading}
 				loadingSize={this.size}
 				helper={this.helper}

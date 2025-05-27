@@ -1,19 +1,20 @@
 import { Placement } from '@floating-ui/dom';
 import {
-    Component,
-    Element,
-    Event,
-    EventEmitter,
-    Fragment,
-    h,
-    Listen,
-    Prop,
-    State
+	Component,
+	Element,
+	Event,
+	EventEmitter,
+	Fragment,
+	h,
+	Listen,
+	Prop,
+	State,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import {
-    formatTranslation,
-    getLocaleComponentStrings,
+	cn,
+	formatTranslation,
+	getLocaleComponentStrings,
 } from '../../../../utils';
 import { asBoolean } from '../../../../utils/as-boolean';
 
@@ -67,6 +68,11 @@ export class FieldContainer {
 	 * The id for the label
 	 */
 	@Prop() id: string;
+
+	/**
+	 * Align content to the start or end
+	 */
+	@Prop() align: 'start' | 'end' = 'start';
 
 	/**
 	 * The label of the input group
@@ -145,8 +151,8 @@ export class FieldContainer {
 
 		let contentSlot = (
 			<slot
-				name='content'
 				slot='trigger'
+				name='content'
 			/>
 		);
 
@@ -165,7 +171,11 @@ export class FieldContainer {
 				htmlFor={this.id}
 				class='flex w-inherit flex-col gap-1'
 			>
-				<div class='flex items-end justify-between gap-1 empty:hidden'>
+				<div
+					class={cn('flex items-end justify-between gap-1 empty:hidden', {
+						'flex-row-reverse': this.align === 'end',
+					})}
+				>
 					{!!label?.length && (
 						<div
 							class='text-xs font-medium text-black-teal-300'
@@ -201,7 +211,10 @@ export class FieldContainer {
 				</div>
 
 				<p-tooltip
-					class={this.variant === 'write' || this.loading ? 'w-full' : ''}
+					class={cn({
+						'w-full': this.variant === 'write' || this.loading,
+						'ml-auto': this.align === 'end',
+					})}
 					variant='error'
 					content={this.error}
 					show={errorAndErrorIsNotBoolean && asBoolean(this.forceShowTooltip)}

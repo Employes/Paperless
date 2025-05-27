@@ -6,6 +6,12 @@ const meta = {
 	component: 'p-field-container',
 	args: {
 		label: 'Label',
+		content: 'Content',
+	},
+	argTypes: {
+		content: {
+			type: 'string',
+		},
 	},
 };
 
@@ -19,6 +25,8 @@ export const Default = {
 		helper,
 		required,
 		error,
+		content,
+		align,
 		'error-placement': errorPlacement,
 		'force-show-tooltip': forceShowTooltip,
 		'optional-template': optionalTemplate,
@@ -29,10 +37,13 @@ export const Default = {
 		helper=${helper ?? nothing}
 		required=${required ?? nothing}
 		error=${error ?? nothing}
+		align=${align ?? nothing}
 		error-placement=${errorPlacement ?? nothing}
 		force-show-tooltip=${forceShowTooltip ?? nothing}
 		optional-template=${optionalTemplate ?? nothing}
 		@focus=${action('focus')}
-	/>`,
+	>
+		<div slot="content">${content ?? nothing}</div>
+	</p-field-container>`,
 	tags: ['!dev'],
 };
