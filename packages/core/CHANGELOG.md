@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.146](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.145...v2.0.1-beta.146) (2025-05-27)
+
+
+### Bug Fixes
+
+* **atoms/tooltip:** Add whitespace normal ([5f978ea](https://github.com/ionic-team/stencil-component-starter/commit/5f978ea0f814c35c7ebab4f2fa5448acc1c2f21b))
+
+
+
+
+
 ## [2.0.1-beta.145](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.144...v2.0.1-beta.145) (2025-05-27)
 
 
