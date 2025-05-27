@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.144](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.143...v2.0.1-beta.144) (2025-05-27)
+
+
+### Features
+
+* **molecules/field/container:** Add align prop ([d66ee70](https://github.com/ionic-team/stencil-component-starter/commit/d66ee70ca5db0d3bbef0ccf03e9e658b6521d9e7))
+
+
+
+
+
 ## [2.0.1-beta.143](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.142...v2.0.1-beta.143) (2025-05-27)
 
 
