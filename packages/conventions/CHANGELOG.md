@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.147](https://github.com/Employes/Paperless/compare/v2.0.1-beta.146...v2.0.1-beta.147) (2025-05-27)
+
+
+### Features
+
+* **eslint:** Add angular attribute order ([648f718](https://github.com/Employes/Paperless/commit/648f7183c62b278d106a651c60188e9f7ffc5717))
+
+
+
+
+
 ## [2.0.1-beta.146](https://github.com/Employes/Paperless/compare/v2.0.1-beta.145...v2.0.1-beta.146) (2025-05-27)
 
 **Note:** Version bump only for package @paperless/conventions
