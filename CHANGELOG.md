@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.145](https://github.com/employes/paperless/compare/v2.0.1-beta.144...v2.0.1-beta.145) (2025-05-27)
+
+
+### Bug Fixes
+
+* **atoms/info-panel:** Apply height inherit ([2cdbe1e](https://github.com/employes/paperless/commit/2cdbe1e484afe1cfab02fe6cede6786ed66be4c2))
+
+
+
+
+
 ## [2.0.1-beta.144](https://github.com/employes/paperless/compare/v2.0.1-beta.143...v2.0.1-beta.144) (2025-05-27)
 
 
