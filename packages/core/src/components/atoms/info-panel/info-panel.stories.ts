@@ -32,7 +32,10 @@ export const WithIcons = {
 		closeable=${closeable ?? nothing}
 		@closed=${action('closed')}
 	>
-		<div class="flex items-center gap-2" slot="header">
+		<div
+			class="flex items-center gap-2"
+			slot="header"
+		>
 			<p-icon variant="placeholder"></p-icon>
 			${header ?? nothing}
 			<p-icon variant="placeholder"></p-icon>

@@ -993,11 +993,7 @@ export namespace Components {
         /**
           * The variant of the info panel
          */
-        "variant": | 'neutral'
-		| 'positive'
-		| 'biased'
-		| 'negative'
-		| 'feedback';
+        "variant": 'neutral' | 'positive' | 'biased' | 'negative' | 'feedback';
     }
     interface PLabel {
         /**
@@ -4138,11 +4134,7 @@ declare namespace LocalJSX {
         /**
           * The variant of the info panel
          */
-        "variant"?: | 'neutral'
-		| 'positive'
-		| 'biased'
-		| 'negative'
-		| 'feedback';
+        "variant"?: 'neutral' | 'positive' | 'biased' | 'negative' | 'feedback';
     }
     interface PLabel {
         /**
