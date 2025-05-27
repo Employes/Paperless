@@ -17,6 +17,10 @@ const attachment = cva(
 	],
 	{
 		variants: {
+			click: {
+				false: null,
+				true: 'cursor-pointer',
+			},
 			error: {
 				false: 'bg-white-600 border-black-teal-100 text-black-teal-200',
 				true: 'border-negative-red',
@@ -175,8 +179,10 @@ export class Attachment {
 					>
 						<div
 							class={attachment({
+								click: this.mode === 'write' && !this.value?.length,
 								error: !!this.error?.length,
 							})}
+							onClick={() => this._uploadClick()}
 						>
 							{prefix}
 
@@ -264,7 +270,7 @@ export class Attachment {
 	}
 
 	private _uploadClick() {
-		if (!this._fileRef || this.mode !== 'write') {
+		if (!this._fileRef || this.mode !== 'write' || this.value?.length) {
 			return;
 		}
 
