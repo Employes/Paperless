@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.141](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.140...v2.0.1-beta.141) (2025-05-27)
+
+
+### Features
+
+* **atoms/card/container:** Add error variant ([3110a1c](https://github.com/ionic-team/stencil-component-starter/commit/3110a1c72dadb34749f0b86269ddf39e74ffd588))
+
+
+
+
+
 ## [2.0.1-beta.140](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.139...v2.0.1-beta.140) (2025-05-27)
 
 
