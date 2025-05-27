@@ -10,6 +10,9 @@ const meta = {
 		content: {
 			type: 'string',
 		},
+		counter: {
+			type: 'string',
+		},
 	},
 };
 
@@ -25,7 +28,7 @@ export const Default = {
 		counter,
 		href,
 		target,
-		'class': className,
+		class: className,
 	}) => html`<p-navigation-item
 		icon=${icon ?? nothing}
 		active=${active ?? nothing}

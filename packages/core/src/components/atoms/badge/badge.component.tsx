@@ -1,4 +1,4 @@
-import { Component, h, Host } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
 const badge = cva([
@@ -12,14 +12,14 @@ const badge = cva([
 @Component({
 	tag: 'p-badge',
 	styleUrl: 'badge.component.css',
-	shadow: false,
+	shadow: true,
 })
 export class Badge {
 	render() {
 		return (
-			<Host class={badge()}>
+			<div class={badge()}>
 				<slot />
-			</Host>
+			</div>
 		);
 	}
 }
