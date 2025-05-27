@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.142](https://github.com/employes/paperless/compare/v2.0.1-beta.141...v2.0.1-beta.142) (2025-05-27)
+
+
+### Features
+
+* **atoms/icon:** Add turn & copy icon ([883602e](https://github.com/employes/paperless/commit/883602ee13e3f7436093cbd1ab95e18992222665))
+
+
+
+
+
 ## [2.0.1-beta.141](https://github.com/employes/paperless/compare/v2.0.1-beta.140...v2.0.1-beta.141) (2025-05-27)
 
 
