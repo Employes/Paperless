@@ -10,6 +10,7 @@ const meta = {
 		headerVariant: 'curve',
 		headerIcon: 'none',
 		showHeaderButton: true,
+		containerVariant: 'default',
 		containerHoverable: false,
 		containerShadow: true,
 	},
@@ -31,6 +32,10 @@ const meta = {
 			type: 'select',
 			options: ['none', ...Object.keys(icons)],
 		},
+		containerVariant: {
+			type: 'select',
+			options: ['default', 'error'],
+		},
 		containerHoverable: {
 			type: 'boolean',
 		},
@@ -49,9 +54,11 @@ export const Default = {
 		headerVariant,
 		headerIcon,
 		showHeaderButton,
+		containerVariant,
 		containerHoverable,
 		containerShadow,
 	}) => html`<p-card-container
+		variant=${containerVariant}
 		hoverable=${containerHoverable}
 		shadow=${containerShadow}
 	>
@@ -61,22 +68,20 @@ export const Default = {
 		>
 			${header}
 			${showHeaderButton
-				? html`<p-dropdown
-					slot="suffix"
-				>
-					<p-button
-						icon="pencil"
-						variant="secondary"
-						slot="trigger"
-					  >
-						Edit
-					</p-button>
-					<slot slot="items">
-        			    <p-dropdown-menu-item>Item 1</p-dropdown-menu-item>
-        			    <p-dropdown-menu-item>Item 2</p-dropdown-menu-item>
-        			    <p-dropdown-menu-item>Item 3</p-dropdown-menu-item>
-        			</slot>
-				</p-dropdown>`
+				? html`<p-dropdown slot="suffix">
+						<p-button
+							icon="pencil"
+							variant="secondary"
+							slot="trigger"
+						>
+							Edit
+						</p-button>
+						<slot slot="items">
+							<p-dropdown-menu-item>Item 1</p-dropdown-menu-item>
+							<p-dropdown-menu-item>Item 2</p-dropdown-menu-item>
+							<p-dropdown-menu-item>Item 3</p-dropdown-menu-item>
+						</slot>
+				  </p-dropdown>`
 				: ''}
 		</p-card-header>
 		<p-card-body>${body}</p-card-body>

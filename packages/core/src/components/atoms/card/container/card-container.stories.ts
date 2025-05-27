@@ -16,9 +16,10 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({ content, hoverable, shadow }) => html`<p-card-container
+	render: ({ content, hoverable, shadow, variant }) => html`<p-card-container
 		hoverable=${hoverable ?? nothing}
 		shadow=${shadow ?? nothing}
+		variant=${variant ?? nothing}
 	>
 		${content}
 	</p-card-container>`,

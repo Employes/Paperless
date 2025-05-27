@@ -334,6 +334,10 @@ export namespace Components {
           * Wether the card should have shadow
          */
         "shadow": boolean;
+        /**
+          * The variant of the container
+         */
+        "variant": 'default' | 'error';
     }
     interface PCardHeader {
         /**
@@ -3410,6 +3414,10 @@ declare namespace LocalJSX {
           * Wether the card should have shadow
          */
         "shadow"?: boolean;
+        /**
+          * The variant of the container
+         */
+        "variant"?: 'default' | 'error';
     }
     interface PCardHeader {
         /**
