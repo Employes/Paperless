@@ -45,8 +45,13 @@ module.exports = {
 		},
 		{
 			files: ['*.html'],
-			extends: ['plugin:@nrwl/nx/angular-template'],
-			rules: {},
+			extends: [
+				'plugin:@nrwl/nx/angular-template',
+				'plugin:@angular-eslint/all',
+			],
+			rules: {
+				'@angular-eslint/template/attribute-order': 'error',
+			},
 		},
 		{
 			files: ['*.ts', '*.tsx'],
