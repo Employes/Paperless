@@ -9,7 +9,7 @@ import {
 import { cva } from 'class-variance-authority';
 
 const infopanel = cva(
-	['flex flex-col gap-1', 'w-full px-4 py-3', 'rounded-lg relative'],
+	['flex flex-col gap-1', 'w-full h-inherit px-4 py-3', 'rounded-lg relative'],
 	{
 		variants: {
 			variant: {
@@ -54,12 +54,8 @@ export class InfoPanel {
 	/**
 	 * The variant of the info panel
 	 */
-	@Prop() variant:
-		| 'neutral'
-		| 'positive'
-		| 'biased'
-		| 'negative'
-		| 'feedback' = 'feedback';
+	@Prop() variant: 'neutral' | 'positive' | 'biased' | 'negative' | 'feedback' =
+		'feedback';
 
 	/**
 	 * The header of the info panel
