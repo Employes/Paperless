@@ -169,7 +169,7 @@ export class Tooltip {
 				})}
 				{...(this.usePortal ? {} : tooltipProps)}
 			>
-				<div class='flex gap-2'>
+				<div class='flex gap-2 whitespace-normal'>
 					{this.variant === 'error' && (
 						<div class='w-[2px] bg-negative-red'></div>
 					)}
