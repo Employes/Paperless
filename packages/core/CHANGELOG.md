@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.148](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.147...v2.0.1-beta.148) (2025-05-28)
+
+
+### Bug Fixes
+
+* **atoms/divider:** Make it use all space ([1abba6a](https://github.com/ionic-team/stencil-component-starter/commit/1abba6a6dba3127b2508fcc10ef5d5bbb1662eb8))
+
+
+
+
+
 ## [2.0.1-beta.147](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.146...v2.0.1-beta.147) (2025-05-27)
 
 **Note:** Version bump only for package @paperless/core
