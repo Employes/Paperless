@@ -1287,6 +1287,24 @@ export namespace Components {
          */
         "value": string;
     }
+    interface PRange {
+        /**
+          * The max value of the range
+         */
+        "max": number;
+        /**
+          * The min value of the range
+         */
+        "min": number;
+        /**
+          * The steps to go by
+         */
+        "step": number;
+        /**
+          * The current value of the range
+         */
+        "value": number;
+    }
     interface PSegmentContainer {
     }
     interface PSegmentItem {
@@ -2135,6 +2153,10 @@ export interface PRadioCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPRadioElement;
 }
+export interface PRangeCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPRangeElement;
+}
 export interface PSelectCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPSelectElement;
@@ -2780,6 +2802,23 @@ declare global {
         prototype: HTMLPRadioElement;
         new (): HTMLPRadioElement;
     };
+    interface HTMLPRangeElementEventMap {
+        "valueChange": string;
+    }
+    interface HTMLPRangeElement extends Components.PRange, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPRangeElementEventMap>(type: K, listener: (this: HTMLPRangeElement, ev: PRangeCustomEvent<HTMLPRangeElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPRangeElementEventMap>(type: K, listener: (this: HTMLPRangeElement, ev: PRangeCustomEvent<HTMLPRangeElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPRangeElement: {
+        prototype: HTMLPRangeElement;
+        new (): HTMLPRangeElement;
+    };
     interface HTMLPSegmentContainerElement extends Components.PSegmentContainer, HTMLStencilElement {
     }
     var HTMLPSegmentContainerElement: {
@@ -3081,6 +3120,7 @@ declare global {
         "p-portal": HTMLPPortalElement;
         "p-profile": HTMLPProfileElement;
         "p-radio": HTMLPRadioElement;
+        "p-range": HTMLPRangeElement;
         "p-segment-container": HTMLPSegmentContainerElement;
         "p-segment-item": HTMLPSegmentItemElement;
         "p-select": HTMLPSelectElement;
@@ -4476,6 +4516,28 @@ declare namespace LocalJSX {
          */
         "value"?: string;
     }
+    interface PRange {
+        /**
+          * The max value of the range
+         */
+        "max"?: number;
+        /**
+          * The min value of the range
+         */
+        "min"?: number;
+        /**
+          * Event whenever the value changes
+         */
+        "onValueChange"?: (event: PRangeCustomEvent<string>) => void;
+        /**
+          * The steps to go by
+         */
+        "step"?: number;
+        /**
+          * The current value of the range
+         */
+        "value"?: number;
+    }
     interface PSegmentContainer {
     }
     interface PSegmentItem {
@@ -5413,6 +5475,7 @@ declare namespace LocalJSX {
         "p-portal": PPortal;
         "p-profile": PProfile;
         "p-radio": PRadio;
+        "p-range": PRange;
         "p-segment-container": PSegmentContainer;
         "p-segment-item": PSegmentItem;
         "p-select": PSelect;
@@ -5498,6 +5561,7 @@ declare module "@stencil/core" {
             "p-portal": LocalJSX.PPortal & JSXBase.HTMLAttributes<HTMLPPortalElement>;
             "p-profile": LocalJSX.PProfile & JSXBase.HTMLAttributes<HTMLPProfileElement>;
             "p-radio": LocalJSX.PRadio & JSXBase.HTMLAttributes<HTMLPRadioElement>;
+            "p-range": LocalJSX.PRange & JSXBase.HTMLAttributes<HTMLPRangeElement>;
             "p-segment-container": LocalJSX.PSegmentContainer & JSXBase.HTMLAttributes<HTMLPSegmentContainerElement>;
             "p-segment-item": LocalJSX.PSegmentItem & JSXBase.HTMLAttributes<HTMLPSegmentItemElement>;
             "p-select": LocalJSX.PSelect & JSXBase.HTMLAttributes<HTMLPSelectElement>;

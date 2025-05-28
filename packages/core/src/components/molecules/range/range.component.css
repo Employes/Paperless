@@ -1,0 +1,23 @@
+:host {
+	input {
+		@apply m-0 h-6 w-full appearance-none;
+	}
+
+	input::-webkit-slider-runnable-track {
+		@apply h-[2px] bg-off-white-700;
+	}
+
+	input::-moz-range-track {
+		@apply h-[2px] bg-off-white-700;
+	}
+
+	input::-webkit-slider-thumb {
+		@apply mt-[calc((0.5rem-1px)*-1)] h-4 w-4 appearance-none rounded-full border-0;
+		@apply bg-black-teal-300 hover:cursor-grab hover:bg-black-teal active:cursor-grabbing active:bg-black-teal;
+	}
+
+	input::-moz-range-thumb {
+		@apply h-4 w-4 rounded-full border-0;
+		@apply bg-black-teal-300 hover:cursor-grab hover:bg-black-teal active:cursor-grabbing active:bg-black-teal;
+	}
+}
