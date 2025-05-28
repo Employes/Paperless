@@ -1890,6 +1890,10 @@ export namespace Components {
     }
     interface PTableRow {
         /**
+          * Wether the row is checked
+         */
+        "checked": boolean;
+        /**
           * Enable hover
          */
         "enableHover": boolean;
@@ -5182,6 +5186,10 @@ declare namespace LocalJSX {
         "selectedFiltersAmount"?: number;
     }
     interface PTableRow {
+        /**
+          * Wether the row is checked
+         */
+        "checked"?: boolean;
         /**
           * Enable hover
          */

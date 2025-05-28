@@ -1,28 +1,40 @@
 import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
-const row = cva(['flex min-w-[calc(100%-0.5rem)] flex-col', 'group', 'relative'], {
-	variants: {
-		variant: {
-			default: ['px-3 m-1', 'text-sm text-black-teal-500'],
-			header: ['px-4', 'text-xs font-normal text-black-teal-400'],
+const row = cva(
+	['flex min-w-[calc(100%-0.5rem)] flex-col', 'group', 'relative'],
+	{
+		variants: {
+			variant: {
+				default: ['px-3 m-1', 'text-sm text-black-teal-500'],
+				header: ['px-4', 'text-xs font-normal text-black-teal-400'],
+			},
+			enableHover: {
+				true: null,
+				false: null,
+			},
+			checked: {
+				true: null,
+				false: null,
+			},
 		},
-		enableHover: {
-			true: null,
-			false: null,
-		},
-	},
-	compoundVariants: [
-		{
-			variant: 'default',
-			enableHover: true,
-			class: [
-				'rounded-lg transition-colors',
-				'hover:cursor-pointer hover:bg-off-white-300',
-			],
-		},
-	],
-});
+		compoundVariants: [
+			{
+				variant: 'default',
+				enableHover: true,
+				class: [
+					'rounded-lg transition-colors',
+					'hover:cursor-pointer hover:bg-off-white-300',
+				],
+			},
+			{
+				variant: 'default',
+				checked: true,
+				class: ['rounded-lg transition-colors', 'bg-off-white-300'],
+			},
+		],
+	}
+);
 
 const content = cva(
 	'relative flex min-w-full flex-nowrap items-center justify-between',
@@ -59,6 +71,11 @@ export class TableRow {
 	 */
 	@Prop() enableHover: boolean = true;
 
+	/**
+	 * Wether the row is checked
+	 */
+	@Prop() checked: boolean = false;
+
 	render() {
 		return (
 			<div class='flex flex-col'>
@@ -66,6 +83,7 @@ export class TableRow {
 					class={row({
 						variant: this.variant,
 						enableHover: this.enableHover,
+						checked: this.checked,
 					})}
 				>
 					<div
