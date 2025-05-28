@@ -37,9 +37,8 @@ export class Range {
 		return (
 			<div class='flex w-inherit items-center gap-2 text-black-teal-300'>
 				<p-icon variant='minus' />
-				<div class='relative h-6'>
+				<div class='relative h-6 flex-1'>
 					<input
-						class='z-0 flex-1'
 						type='range'
 						min={this.min}
 						max={this.max}

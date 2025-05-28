@@ -22,6 +22,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [p-cropper](../cropper)
+
 ### Depends on
 
 - [p-icon](../../atoms/icon)
@@ -30,6 +34,7 @@
 ```mermaid
 graph TD;
   p-range --> p-icon
+  p-cropper --> p-range
   style p-range fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
