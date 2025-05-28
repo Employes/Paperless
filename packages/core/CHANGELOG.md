@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.150](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.149...v2.0.1-beta.150) (2025-05-28)
+
+
+### Bug Fixes
+
+* **molecules/select:** Don't try to access selected item when it could be null ([13c3d37](https://github.com/ionic-team/stencil-component-starter/commit/13c3d3762256dfe370be3d55dabd2d2e93ad1e2d))
+
+
+
+
+
 ## [2.0.1-beta.149](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.148...v2.0.1-beta.149) (2025-05-28)
 
 
