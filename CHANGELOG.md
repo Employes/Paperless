@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.153](https://github.com/employes/paperless/compare/v2.0.1-beta.152...v2.0.1-beta.153) (2025-05-28)
+
+
+### Bug Fixes
+
+* **molecules/range:** Set flex to correct div ([d2616ad](https://github.com/employes/paperless/commit/d2616adac11c06647075885d54ecd50c1f78b7fd))
+
+
+
+
+
 ## [2.0.1-beta.152](https://github.com/employes/paperless/compare/v2.0.1-beta.151...v2.0.1-beta.152) (2025-05-28)
 
 
