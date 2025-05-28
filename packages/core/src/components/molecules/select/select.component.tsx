@@ -425,13 +425,13 @@ export class Select {
 			this._selectedItem &&
 			!this.avatarKey &&
 			!!this.iconKey &&
-			this._selectedItem[this.iconKey] &&
+			this._selectedItem?.[this.iconKey] &&
 			!this.showIconOnSelectedItem
 		) {
 			buttonIcon = this._selectedItem[this.iconKey];
 		}
 
-		if (this.avatarKey && this._selectedItem[this.avatarKey]) {
+		if (this.avatarKey && this._selectedItem?.[this.avatarKey]) {
 			buttonIcon = null;
 		}
 
