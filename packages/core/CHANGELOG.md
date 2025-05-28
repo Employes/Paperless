@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.152](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.151...v2.0.1-beta.152) (2025-05-28)
+
+
+### Features
+
+* **molecules/cropper:** Apply rebranding ([1af638b](https://github.com/ionic-team/stencil-component-starter/commit/1af638ba4a429eaf294fc5c7d88d889dfcad87cd))
+* **molecules:** Add range  component ([4f9b419](https://github.com/ionic-team/stencil-component-starter/commit/4f9b41931f03bc6ac0f6e3dcb1613ed9ec3534be))
+
+
+
+
+
 ## [2.0.1-beta.151](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.150...v2.0.1-beta.151) (2025-05-28)
 
 
