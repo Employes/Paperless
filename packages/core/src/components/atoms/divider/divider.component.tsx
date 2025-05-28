@@ -6,13 +6,12 @@ const content = cva(
 		'flex items-center',
 		'after:bg-current before:bg-current',
 		'after:flex-1 before:flex-1',
-		'h-inherit w-inherit',
 	],
 	{
 		variants: {
 			variant: {
-				horizontal: ['after:h-px before:h-px'],
-				vertical: ['flex-col', 'after:w-px before:w-px'],
+				horizontal: ['after:h-px before:h-px', 'w-full'],
+				vertical: ['flex-col', 'after:w-px before:w-px', 'h-full'],
 			},
 		},
 	}
