@@ -24,7 +24,6 @@
  - [p-button](../../molecules/button)
  - [p-card-header](../card/header)
  - [p-checkbox](../checkbox)
- - [p-cropper](../../deprecated/molecules/cropper)
  - [p-dropdown-menu-item](../dropdown-menu/item)
  - [p-field](../../molecules/field/field)
  - [p-floating-menu-container](../floating-menu/container)
@@ -36,6 +35,7 @@
  - [p-navigation-item](../../molecules/navigation/item)
  - [p-pagination-pages](../../molecules/pagination/pages)
  - [p-pagination-size](../../molecules/pagination/size)
+ - [p-range](../../molecules/range)
  - [p-segment-item](../segment/item)
  - [p-select](../../molecules/select)
 
@@ -47,7 +47,6 @@ graph TD;
   p-button --> p-icon
   p-card-header --> p-icon
   p-checkbox --> p-icon
-  p-cropper --> p-icon
   p-dropdown-menu-item --> p-icon
   p-field --> p-icon
   p-floating-menu-container --> p-icon
@@ -59,6 +58,7 @@ graph TD;
   p-navigation-item --> p-icon
   p-pagination-pages --> p-icon
   p-pagination-size --> p-icon
+  p-range --> p-icon
   p-segment-item --> p-icon
   p-select --> p-icon
   style p-icon fill:#f9f,stroke:#333,stroke-width:4px

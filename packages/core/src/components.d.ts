@@ -405,20 +405,6 @@ export namespace Components {
          */
         "hideMobileIndicator": boolean;
     }
-    interface PCropper {
-        /**
-          * The return type of the onchange
-         */
-        "returnType": 'canvas' | 'base64';
-        /**
-          * The image to crop (url or base64)
-         */
-        "value": any;
-        /**
-          * Variant of the image that's being cropped
-         */
-        "variant": 'user' | 'company';
-    }
     interface PDatepicker {
         /**
           * Wether to disable the weekends
@@ -2085,10 +2071,6 @@ export interface PCheckboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPCheckboxElement;
 }
-export interface PCropperCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLPCropperElement;
-}
 export interface PDatepickerCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPDatepickerElement;
@@ -2346,23 +2328,6 @@ declare global {
     var HTMLPContentSliderElement: {
         prototype: HTMLPContentSliderElement;
         new (): HTMLPContentSliderElement;
-    };
-    interface HTMLPCropperElementEventMap {
-        "valueChange": any;
-    }
-    interface HTMLPCropperElement extends Components.PCropper, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLPCropperElementEventMap>(type: K, listener: (this: HTMLPCropperElement, ev: PCropperCustomEvent<HTMLPCropperElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLPCropperElementEventMap>(type: K, listener: (this: HTMLPCropperElement, ev: PCropperCustomEvent<HTMLPCropperElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
-    }
-    var HTMLPCropperElement: {
-        prototype: HTMLPCropperElement;
-        new (): HTMLPCropperElement;
     };
     interface HTMLPDatepickerElementEventMap {
         "valueChange": any;
@@ -3077,7 +3042,6 @@ declare global {
         "p-card-header": HTMLPCardHeaderElement;
         "p-checkbox": HTMLPCheckboxElement;
         "p-content-slider": HTMLPContentSliderElement;
-        "p-cropper": HTMLPCropperElement;
         "p-datepicker": HTMLPDatepickerElement;
         "p-divider": HTMLPDividerElement;
         "p-drawer": HTMLPDrawerElement;
@@ -3540,24 +3504,6 @@ declare namespace LocalJSX {
           * Wether to hide the indicator on mobile
          */
         "hideMobileIndicator"?: boolean;
-    }
-    interface PCropper {
-        /**
-          * Event when the value changes
-         */
-        "onValueChange"?: (event: PCropperCustomEvent<any>) => void;
-        /**
-          * The return type of the onchange
-         */
-        "returnType"?: 'canvas' | 'base64';
-        /**
-          * The image to crop (url or base64)
-         */
-        "value"?: any;
-        /**
-          * Variant of the image that's being cropped
-         */
-        "variant"?: 'user' | 'company';
     }
     interface PDatepicker {
         /**
@@ -5432,7 +5378,6 @@ declare namespace LocalJSX {
         "p-card-header": PCardHeader;
         "p-checkbox": PCheckbox;
         "p-content-slider": PContentSlider;
-        "p-cropper": PCropper;
         "p-datepicker": PDatepicker;
         "p-divider": PDivider;
         "p-drawer": PDrawer;
@@ -5518,7 +5463,6 @@ declare module "@stencil/core" {
             "p-card-header": LocalJSX.PCardHeader & JSXBase.HTMLAttributes<HTMLPCardHeaderElement>;
             "p-checkbox": LocalJSX.PCheckbox & JSXBase.HTMLAttributes<HTMLPCheckboxElement>;
             "p-content-slider": LocalJSX.PContentSlider & JSXBase.HTMLAttributes<HTMLPContentSliderElement>;
-            "p-cropper": LocalJSX.PCropper & JSXBase.HTMLAttributes<HTMLPCropperElement>;
             "p-datepicker": LocalJSX.PDatepicker & JSXBase.HTMLAttributes<HTMLPDatepickerElement>;
             "p-divider": LocalJSX.PDivider & JSXBase.HTMLAttributes<HTMLPDividerElement>;
             "p-drawer": LocalJSX.PDrawer & JSXBase.HTMLAttributes<HTMLPDrawerElement>;
