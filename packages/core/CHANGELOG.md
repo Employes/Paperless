@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.149](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.148...v2.0.1-beta.149) (2025-05-28)
+
+
+### Bug Fixes
+
+* **atoms/info-panel:** Apply height inherit for content slot ([44cc60b](https://github.com/ionic-team/stencil-component-starter/commit/44cc60bba6ab6e8546e766b89df4ca98ccaa452e))
+
+
+
+
+
 ## [2.0.1-beta.148](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.147...v2.0.1-beta.148) (2025-05-28)
 
 
