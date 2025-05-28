@@ -8,7 +8,6 @@ import {
 	State,
 	h,
 } from '@stencil/core';
-import { clsx } from 'clsx';
 import 'cropperjs';
 import { CropperImage, CropperSelection } from 'cropperjs';
 
@@ -19,14 +18,9 @@ import { CropperImage, CropperSelection } from 'cropperjs';
 })
 export class Cropper {
 	/**
-	 * Variant of the image that's being cropped
-	 */
-	@Prop({ reflect: true }) variant: 'user' | 'company' = 'user';
-
-	/**
 	 * The image to crop (url or base64)
 	 */
-	@Prop() value: any;
+	@Prop() value: string;
 
 	/**
 	 * The return type of the onchange
@@ -79,7 +73,7 @@ export class Cropper {
 			<Host class='p-cropper'>
 				{this._loaded && (
 					<cropper-canvas
-						class='h-[17.5rem] w-full border-0 border-b border-solid border-mystic-medium bg-white'
+						class='h-[17.5rem] w-full border-0 border-b border-solid border-off-white-700 bg-white'
 						onAction={() => this._onAction()}
 					>
 						<cropper-image
@@ -87,13 +81,11 @@ export class Cropper {
 							alt='Picture'
 							ref={ref => this._setImageRef(ref as CropperImage)}
 							scalable
+							translatable
 							crossorigin='anonymous'
 						/>
 						<cropper-shade
-							class={clsx({
-								'rounded-round': this.variant === 'user',
-								rounded: this.variant === 'company',
-							})}
+							class='aspect-branding rounded-full'
 							theme-color='rgba(255, 255, 255, 0.5)'
 							hidden
 						/>
@@ -110,19 +102,11 @@ export class Cropper {
 					</cropper-canvas>
 				)}
 
-				<div class='flex w-full items-center gap-2 px-14 text-storm-vague tablet:max-w-xs tablet:px-1'>
-					<p-icon variant='minus' />
-					<input
-						class='p-input w-full'
-						type='range'
-						min='0'
-						max='100'
-						value={this._currentScale}
-						onInput={ev => this._onInput((ev.target as HTMLInputElement).value)}
-						step='0.5'
-					/>
-					<p-icon variant='plus' />
-				</div>
+				<p-range
+					class='w-full px-14 tablet:max-w-xs tablet:px-1'
+					value={this._currentScale}
+					onValueChange={ev => this._onInput(ev.detail)}
+				/>
 			</Host>
 		);
 	}
@@ -134,32 +118,26 @@ export class Cropper {
 
 		this._imageRef = ref;
 		this._imageRef.$ready(image =>
-			setTimeout(() => this._setInitialState(image), 200)
+			setTimeout(() => this._setInitialState(image), 100)
 		);
 	}
 
 	private _setInitialState(image) {
-		let scale: number;
-		if (image.naturalWidth > image.naturalHeight) {
-			// set scale by height
-			scale = 200 / image.naturalHeight;
-		}
+		let scale = 200 / image.naturalHeight;
 
 		if (image.naturalHeight >= image.naturalWidth) {
 			// set scale by width
 			scale = 200 / image.naturalWidth;
 		}
 
-		const current = this._imageRef.$getTransform();
-
 		this._minScale = scale;
-		this._maxScale = current[0];
+		this._maxScale = 5;
 
 		this._selectionRef.$resize('nw-resize', 200, 200, 1);
 		this._selectionRef.$center();
 
-		this._setScale(scale);
 		this._toCanvas();
+		this._setScale(scale);
 	}
 
 	private _onAction() {
