@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.151](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.150...v2.0.1-beta.151) (2025-05-28)
+
+
+### Features
+
+* **molecules/table/row:** Add checked variant ([ef14a14](https://github.com/ionic-team/stencil-component-starter/commit/ef14a14d9c90480f0f50b5fd33e7797e2f8bb4f7))
+
+
+
+
+
 ## [2.0.1-beta.150](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.149...v2.0.1-beta.150) (2025-05-28)
 
 
