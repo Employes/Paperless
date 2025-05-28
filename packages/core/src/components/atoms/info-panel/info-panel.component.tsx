@@ -104,7 +104,7 @@ export class InfoPanel {
 				)}
 
 				{(this.content?.length || hasContentSlot) && (
-					<div class='text-sm text-black-teal-800/60'>
+					<div class='h-inherit text-sm text-black-teal-800/60'>
 						{this.content?.length ? (
 							<p class='my-0'>{this.content}</p>
 						) : (
