@@ -702,6 +702,7 @@ export class Table {
 		return this._items.map((item, index) => (
 			<p-table-row
 				enableHover={this._enableRowSelection || this.enableRowClick}
+				checked={this._selectionContains(index)}
 				onClick={ev => this._rowClick(ev, index)}
 			>
 				{this._getRowColumns(item, index)}

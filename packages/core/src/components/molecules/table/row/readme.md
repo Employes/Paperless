@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property      | Attribute      | Description           | Type                    | Default     |
-| ------------- | -------------- | --------------------- | ----------------------- | ----------- |
-| `enableHover` | `enable-hover` | Enable hover          | `boolean`               | `true`      |
-| `variant`     | `variant`      | Variant of the header | `"default" \| "header"` | `'default'` |
+| Property      | Attribute      | Description               | Type                    | Default     |
+| ------------- | -------------- | ------------------------- | ----------------------- | ----------- |
+| `checked`     | `checked`      | Wether the row is checked | `boolean`               | `false`     |
+| `enableHover` | `enable-hover` | Enable hover              | `boolean`               | `true`      |
+| `variant`     | `variant`      | Variant of the header     | `"default" \| "header"` | `'default'` |
 
 
 ## Dependencies
