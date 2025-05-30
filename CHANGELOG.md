@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.156](https://github.com/employes/paperless/compare/v2.0.1-beta.155...v2.0.1-beta.156) (2025-05-30)
+
+
+### Bug Fixes
+
+* **ci:** Update node-version ([c216cd4](https://github.com/employes/paperless/commit/c216cd4d7ef0565de16331c2c20f0704f0477956))
+
+
+### Features
+
+* **eslint:** Set attribute order ([71bbc69](https://github.com/employes/paperless/commit/71bbc6916747673bc93dc28a9cd39e6eafde5f6c))
+
+
+
+
+
 ## [2.0.1-beta.155](https://github.com/employes/paperless/compare/v2.0.1-beta.154...v2.0.1-beta.155) (2025-05-30)
 
 
