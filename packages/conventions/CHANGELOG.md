@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.156](https://github.com/Employes/Paperless/compare/v2.0.1-beta.155...v2.0.1-beta.156) (2025-05-30)
+
+
+### Features
+
+* **eslint:** Set attribute order ([71bbc69](https://github.com/Employes/Paperless/commit/71bbc6916747673bc93dc28a9cd39e6eafde5f6c))
+
+
+
+
+
 ## [2.0.1-beta.155](https://github.com/Employes/Paperless/compare/v2.0.1-beta.154...v2.0.1-beta.155) (2025-05-30)
 
 
