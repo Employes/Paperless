@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.154](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.153...v2.0.1-beta.154) (2025-05-30)
+
+
+### Bug Fixes
+
+* **molecules/table/footer:** Apply padding of modal content if applicable ([052953a](https://github.com/ionic-team/stencil-component-starter/commit/052953a213bb38a9a2c1a5a6cfab6b2dce0da481))
+
+
+
+
+
 ## [2.0.1-beta.153](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.152...v2.0.1-beta.153) (2025-05-28)
 
 
