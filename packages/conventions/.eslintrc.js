@@ -51,7 +51,20 @@ module.exports = {
 				'plugin:@angular-eslint/all',
 			],
 			rules: {
-				'@angular-eslint/template/attributes-order': 'error',
+				'@angular-eslint/template/attributes-order': [
+					'error',
+					{
+						alphabetical: true,
+						order: [
+							'STRUCTURAL_DIRECTIVE',
+							'TEMPLATE_REFERENCE',
+							'ATTRIBUTE_BINDING',
+							'INPUT_BINDING',
+							'OUTPUT_BINDING',
+							'TWO_WAY_BINDING',
+						],
+					},
+				],
 			},
 		},
 		{
