@@ -45,12 +45,13 @@ module.exports = {
 		},
 		{
 			files: ['*.html'],
+			plugins: ['@angular-eslint/template'],
 			extends: [
 				'plugin:@nrwl/nx/angular-template',
 				'plugin:@angular-eslint/all',
 			],
 			rules: {
-				'@angular-eslint/template/attribute-order': 'error',
+				'@angular-eslint/template/attributes-order': 'error',
 			},
 		},
 		{
