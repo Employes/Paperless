@@ -176,9 +176,24 @@ export class TableFooter {
 
 	private _checkStuck() {
 		const rect = this._el.getBoundingClientRect();
+		const modal = this._el.closest('p-modal');
 		const layout = document.querySelector('p-layout');
 
-		if (layout) {
+		if (modal) {
+			const modalBody = modal.shadowRoot.querySelector('p-modal-body');
+			const innerContent = modalBody.shadowRoot.querySelector('div');
+
+			const innerContentComputed = getComputedStyle(innerContent);
+
+			const modalPaddingBottom = parseInt(
+				innerContentComputed.paddingBottom,
+				10
+			);
+			this._el.style.bottom = `-${modalPaddingBottom}px`;
+			this._el.style.marginBottom = `-${modalPaddingBottom - 1}px`;
+		}
+
+		if (layout && !modal) {
 			const innerContent = layout.shadowRoot.querySelector('.content');
 			const innerContentComputed = getComputedStyle(innerContent);
 
