@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.155](https://github.com/Employes/Paperless/compare/v2.0.1-beta.154...v2.0.1-beta.155) (2025-05-30)
+
+
+### Bug Fixes
+
+* **eslint:** Typo for attributes-order... ([3e6c1bf](https://github.com/Employes/Paperless/commit/3e6c1bf7c44f7359c6b6a7c170e75b5d39ff39b0))
+
+
+
+
+
 ## [2.0.1-beta.154](https://github.com/Employes/Paperless/compare/v2.0.1-beta.153...v2.0.1-beta.154) (2025-05-30)
 
 **Note:** Version bump only for package @paperless/conventions
