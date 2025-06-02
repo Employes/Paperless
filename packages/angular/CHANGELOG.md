@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.158](https://github.com/Employes/Paperless/compare/v1.69.0...v2.0.1-beta.158) (2025-06-02)
+
+
+### Bug Fixes
+
+* **angular/directives/radio:** Parse string booleans to booleans ([813c02d](https://github.com/Employes/Paperless/commit/813c02da03e7132cba4d99c276078baa85ecc99a))
+* **angular/organisms/table:** Don't calculate column width when scroll is not enabled ([d56b7ce](https://github.com/Employes/Paperless/commit/d56b7ce736eb9147dd11d50058ba1c6b33efb56a))
+* **angular/organisms/table:** Don't show empty state action for filtered variant ([e45e554](https://github.com/Employes/Paperless/commit/e45e554d28102fc7e8387a43a5ecd3156e45ad30))
+* **angular/organisms/table:** Don't use self closing tags (yet) ([d6da047](https://github.com/Employes/Paperless/commit/d6da04781c247e5fb871b3bb8af2a2de6b0f7c34))
+* **angular/organisms/table:** Fix angular 15 issues ([6d01b6c](https://github.com/Employes/Paperless/commit/6d01b6cd8a263324335f0ca31d1b50a6a8d64732))
+* **angular/organisms/table:** Fix jumpiness of loading ([7546d9a](https://github.com/Employes/Paperless/commit/7546d9a0822ec12f5062e1508e8f742ad96a2d82))
+* **angular/organisms/table:** Fix relative import issue ([2491b9c](https://github.com/Employes/Paperless/commit/2491b9c12f9f02c9e1c9ca1d1938356c1c6ef3f7))
+* **angular/organisms/table:** pointer-events-none on the scroll effects ([6c53023](https://github.com/Employes/Paperless/commit/6c53023f05f745064d1c8eb121a7b60f3271dbf8))
+* **angular/organisms/table:** Remove extra comma ([b109b14](https://github.com/Employes/Paperless/commit/b109b14a8e516b3dc89f83d9c593045b52c85f3e))
+* **angular:** use Typescript 4.8.2 ([eadeda6](https://github.com/Employes/Paperless/commit/eadeda68e15201841e1e2cae3dd8b2477f7ea474))
+* **molecules/organisms/table:** apply empty state aciton text & icon ([46b13c4](https://github.com/Employes/Paperless/commit/46b13c448f8b2d0cd1eff4d713226a74b0dafbe1))
+* **molecules/table/footer:** Don't apply the complete padding ([49f1373](https://github.com/Employes/Paperless/commit/49f1373f05153b5534c9c077127a9901981b9684))
+* **molecules/table/footer:** Don't show footer when total is lower than lowest page size option ([f1f93b4](https://github.com/Employes/Paperless/commit/f1f93b4732d3d3bb5583f9d038594022214190b7))
+* **tailwind:** Include styling of table-helpers util ([62b0c48](https://github.com/Employes/Paperless/commit/62b0c4898d78abc94ac7cadb70953f3088dcb58b))
+
+
+### Features
+
+* **angular/organisms/table:** Calculate cell widths on cell/row changes ([c7bc96d](https://github.com/Employes/Paperless/commit/c7bc96d5bd7f44027de4ac7613f58a04ea3daa85))
+* **angular/organisms/table:** Make columns defineable on the fly ([7209e23](https://github.com/Employes/Paperless/commit/7209e238b72f073f70a6789a6f416f9204184c9b))
+* **angular/organisms/table:** Scrollable table o.o ([977b4e7](https://github.com/Employes/Paperless/commit/977b4e75715234cb46e30b0e146824fc48890ef4))
+* **angular:** Add directives for field & radio ([0860c8a](https://github.com/Employes/Paperless/commit/0860c8a823f28f385d9b8cc677e2ee864422fe61))
+* **atoms/avatar:** New branding implementation ([e54da4a](https://github.com/Employes/Paperless/commit/e54da4a300194828d7ba3a7e8d5f842990d55d63))
+* **atoms/illustration:** Rebranded illustrations ([9a96101](https://github.com/Employes/Paperless/commit/9a961016c7f11232691a4f0bcc79c74957a229cf))
+* **atoms:** Add checkbox component ([5ed6766](https://github.com/Employes/Paperless/commit/5ed6766b49af3c128a72259e414cf667208c804d))
+* **atoms:** Add toggle component ([86df41f](https://github.com/Employes/Paperless/commit/86df41f93879c611c8af75554496761e11719af2))
+* **molecules/button:** New rebranding implementation ([65076d2](https://github.com/Employes/Paperless/commit/65076d2c4c895d583cd2e09dcfd6b809a50f50bb))
+* **molecules/table/row:** Add checked variant ([1c5a025](https://github.com/Employes/Paperless/commit/1c5a0255a5ec3ef3715558afd84b8db48c018641))
+* **molecules/toast:** Rebranding applied ([a74d52f](https://github.com/Employes/Paperless/commit/a74d52f67875ef6c6af405a495a54a3842798e00))
+* New tailwindconfiguration ([05973f2](https://github.com/Employes/Paperless/commit/05973f23b9054ba165cf748782417b7a3148a181))
+* **organisms/table:** Implement new empty-state component ([050abb1](https://github.com/Employes/Paperless/commit/050abb1fe3bc07d4dfeda94a75f82a34bb7c513a))
+* **organisms/table:** Rebranding implementation ([d8bc0a8](https://github.com/Employes/Paperless/commit/d8bc0a831e5745bebf576dd5be556d3931a697e1))
+* update storybook ([30e386a](https://github.com/Employes/Paperless/commit/30e386a804d198db8c0c647cd751eed8838677c2))
+
+
+
+
+
 ## [2.0.1-beta.157](https://github.com/Employes/Paperless/compare/v2.0.1-beta.156...v2.0.1-beta.157) (2025-06-02)
 
 **Note:** Version bump only for package @paperless/angular
