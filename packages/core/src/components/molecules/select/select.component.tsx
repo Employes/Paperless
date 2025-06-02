@@ -645,7 +645,7 @@ export class Select {
 				break;
 			}
 
-			if (item.classList.contains('item')) {
+			if (item.classList?.contains('item')) {
 				return;
 			}
 		}
