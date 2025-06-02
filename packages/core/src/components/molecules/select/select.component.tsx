@@ -780,7 +780,7 @@ export class Select {
 			return;
 		}
 
-		this.autocompleteInputRef.focus();
+		setTimeout(() => this.autocompleteInputRef.focus(), 100);
 	}
 
 	private _selectAllChange() {
