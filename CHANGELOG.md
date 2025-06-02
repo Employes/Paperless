@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.157](https://github.com/employes/paperless/compare/v2.0.1-beta.156...v2.0.1-beta.157) (2025-06-02)
+
+
+### Bug Fixes
+
+* **molecules/select:** Add null check to item.classList ([b119eb1](https://github.com/employes/paperless/commit/b119eb1198000b62c5420afa0ac63e1fbc6179fb))
+
+
+
+
+
 ## [2.0.1-beta.156](https://github.com/employes/paperless/compare/v2.0.1-beta.155...v2.0.1-beta.156) (2025-05-30)
 
 
