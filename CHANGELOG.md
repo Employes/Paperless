@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.69.1](https://github.com/employes/paperless/compare/v1.69.0...v1.69.1) (2025-06-02)
+
+
+### Bug Fixes
+
+* **molecules/select:** Apply focus after a little time ([45599a0](https://github.com/employes/paperless/commit/45599a0025278617bc5e989923013c61bc0820b2))
+
+
+
+
+
 # [1.69.0](https://github.com/employes/paperless/compare/v1.68.1...v1.69.0) (2025-04-11)
 
 
