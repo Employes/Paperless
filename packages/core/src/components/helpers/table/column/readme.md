@@ -15,8 +15,8 @@
 | `parsedSizes` | `parsed-sizes` | Parsed sizes based on the complete set of columns     | `TableColumnSizes`                                           | `undefined` |
 | `path`        | `path`         | The path of the value of the item you want to display | `string`                                                     | `undefined` |
 | `sizes`       | `sizes`        | The sizes of the column                               | `"auto" \| "full" \| "hidden" \| TableColumnSizes \| number` | `'auto'`    |
-| `type`        | `type`         | The type of the column                                | `"td" \| "th"`                                               | `'td'`      |
 | `useSlot`     | `use-slot`     | Wether the column should use the slot                 | `boolean`                                                    | `false`     |
+| `variant`     | `variant`      | The variant of the column                             | `"default" \| "highlight" \| "subject"`                      | `'default'` |
 
 
 ## Events

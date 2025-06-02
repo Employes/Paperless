@@ -1788,13 +1788,15 @@ export namespace Components {
 		| number
 		| TableColumnSizes;
         /**
-          * The type of the column
-         */
-        "type": 'td' | 'th';
-        /**
           * Wether the column should use the slot
          */
         "useSlot": boolean;
+        /**
+          * The variant of the column
+         */
+        "variant": | 'subject'
+		| 'default'
+		| 'highlight';
     }
     interface PTableContainer {
     }
@@ -5093,13 +5095,15 @@ declare namespace LocalJSX {
 		| number
 		| TableColumnSizes;
         /**
-          * The type of the column
-         */
-        "type"?: 'td' | 'th';
-        /**
           * Wether the column should use the slot
          */
         "useSlot"?: boolean;
+        /**
+          * The variant of the column
+         */
+        "variant"?: | 'subject'
+		| 'default'
+		| 'highlight';
     }
     interface PTableContainer {
     }

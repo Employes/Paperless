@@ -20,10 +20,16 @@ export const getTableCellColumnClasses = (
 		'justify-start': !definition?.align || definition?.align === 'start',
 		'justify-center': definition?.align === 'center',
 		'justify-end': definition?.align === 'end',
-		'font-semibold': variant !== 'header' && definition?.type === 'th',
+		'font-semibold': variant !== 'header' && definition?.variant === 'subject',
 		'text-black-teal-400': variant === 'header',
-		'text-black-teal-300': variant !== 'header' && definition?.type !== 'th',
-		'text-black-teal': variant !== 'header' && definition?.type === 'th',
+		'text-black-teal-300':
+			variant !== 'header' &&
+			definition?.variant !== 'subject' &&
+			definition?.variant !== 'highlight',
+		'text-black-teal':
+			variant !== 'header' &&
+			(definition?.variant === 'subject' ||
+				definition?.variant === 'highlight'),
 		...sizes,
 	};
 };

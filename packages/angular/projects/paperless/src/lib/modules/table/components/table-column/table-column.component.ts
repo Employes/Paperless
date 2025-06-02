@@ -23,13 +23,29 @@ export declare interface TableColumn extends Components.PTableColumn {
 
 @ProxyCmp({
 	defineCustomElementFn: undefined,
-	inputs: ['align', 'name', 'path', 'sizes', 'type', 'useSlot', 'hasCheckbox'],
+	inputs: [
+		'align',
+		'name',
+		'path',
+		'sizes',
+		'variant',
+		'useSlot',
+		'hasCheckbox',
+	],
 })
 @Component({
 	selector: 'p-table-column',
 	changeDetection: ChangeDetectionStrategy.OnPush,
 	template: '<ng-content></ng-content>',
-	inputs: ['align', 'name', 'path', 'sizes', 'type', 'useSlot', 'hasCheckbox'],
+	inputs: [
+		'align',
+		'name',
+		'path',
+		'sizes',
+		'variant',
+		'useSlot',
+		'hasCheckbox',
+	],
 })
 export class TableColumn {
 	protected el: HTMLElement;

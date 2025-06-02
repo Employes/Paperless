@@ -11,9 +11,12 @@ export class TableColumn {
 	@Prop({ reflect: true, mutable: true }) path: string;
 
 	/**
-	 * The type of the column
+	 * The variant of the column
 	 */
-	@Prop({ reflect: true, mutable: true }) type: 'td' | 'th' = 'td';
+	@Prop({ reflect: true, mutable: true }) variant:
+		| 'subject'
+		| 'default'
+		| 'highlight' = 'default';
 
 	/**
 	 * The name of the column
