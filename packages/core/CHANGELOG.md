@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.167](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.166...v2.0.1-beta.167) (2025-06-03)
+
+
+### Features
+
+* **atoms/checkbox, radio & toggle:** Add group hover effects for outside ([f7e6d97](https://github.com/ionic-team/stencil-component-starter/commit/f7e6d9763d4a6f1be2b0c0fa63d483909316d599))
+* **atoms/stepper/item:** Hide step content on mobile for horizontal ([ded694d](https://github.com/ionic-team/stencil-component-starter/commit/ded694dd3cfc79fc7e462bf867b13d7dc2129df1))
+
+
+
+
+
 ## [2.0.1-beta.166](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.165...v2.0.1-beta.166) (2025-06-03)
 
 
