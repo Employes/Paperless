@@ -1,11 +1,11 @@
 import {
-    AttachInternals,
-    Component,
-    Event,
-    EventEmitter,
-    Prop,
-    State,
-    h
+	AttachInternals,
+	Component,
+	Event,
+	EventEmitter,
+	Prop,
+	State,
+	h,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { asBoolean } from '../../../utils/as-boolean';
@@ -24,10 +24,12 @@ const radio = cva(
 					'cursor-pointer shadow-1',
 					'bg-white border-black-teal-100',
 					'hover:bg-supportivce-lilac-100 hover:border-black-teal-100',
+					'group-hover/radio-label:bg-supportivce-lilac-100 group-hover/radio-label:border-black-teal-100',
 					'checked:cursor-auto',
 					'checked:bg-supportive-lilac checked:border-black-teal/20',
 					'checked:ring-2 checked:ring-supportive-lilac-100',
 					'checked:hover:bg-supportive-lilac checked:hover:border-black-teal/20',
+					'checked:group-hover/radio-label:bg-supportive-lilac checked:group-hover/radio-label:border-black-teal/20',
 				],
 				true: 'bg-white-600 border-black-teal-50 cursor-not-allowed ',
 			},
@@ -39,6 +41,7 @@ const radio = cva(
 					'cursor-pointer shadow-1',
 					'bg-white border-black-teal-100',
 					'hover:bg-supportive-lilac-100 hover:border-black-teal-100',
+					'group-hover/radio-label:bg-supportive-lilac-100 group-hover/radio-label:border-black-teal-100',
 				],
 			},
 		],
@@ -113,7 +116,7 @@ export class Radio {
 	}
 
 	formDisabledCallback(disabled: boolean) {
-		if(!this._internals.form) {
+		if (!this._internals.form) {
 			return;
 		}
 
@@ -166,6 +169,6 @@ export class Radio {
 	private _setValue(checked: boolean) {
 		this.checked = checked;
 		this.checkedChange.emit(checked);
-		this._internals.setFormValue(checked ? "on" : "off");
+		this._internals.setFormValue(checked ? 'on' : 'off');
 	}
 }
