@@ -31,7 +31,7 @@ export class Illustration {
 	render() {
 		const illustration = illustrations[this.variant];
 		const hasSize = [...this._el.classList.values()].some(val =>
-			val.match(/['xs'|'sm'|'base'|'lg'|'xl']/)
+			val.match(/text-(xs|sm|base|lg|[2-7|9]?xl)/)
 		);
 
 		return (
