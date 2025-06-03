@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.163](https://github.com/employes/paperless/compare/v2.0.1-beta.162...v2.0.1-beta.163) (2025-06-03)
+
+
+### Bug Fixes
+
+* **atoms/illustration:** Apply text size except 8xl ([3dd4bbc](https://github.com/employes/paperless/commit/3dd4bbc785cd25b986fea65a35c074406108ce1b))
+
+
+
+
+
 ## [2.0.1-beta.162](https://github.com/employes/paperless/compare/v2.0.1-beta.161...v2.0.1-beta.162) (2025-06-03)
 
 
