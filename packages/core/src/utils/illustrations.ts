@@ -3,6 +3,7 @@ import calendar from '../assets/illustrations/calendar.svg';
 import clock from '../assets/illustrations/clock.svg';
 import coins from '../assets/illustrations/coins.svg';
 import fileInvoice from '../assets/illustrations/file-invoice.svg';
+import fileNotes from '../assets/illustrations/file-notes.svg';
 import payment from '../assets/illustrations/payment.svg';
 import search from '../assets/illustrations/search.svg';
 import table from '../assets/illustrations/table.svg';
@@ -14,6 +15,7 @@ export default {
 	clock,
 	coins,
 	'file-invoice': fileInvoice,
+	'file-notes': fileNotes,
 	payment,
 	search,
 	table,
