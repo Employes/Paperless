@@ -501,6 +501,10 @@ export namespace Components {
          */
         "required": boolean;
         /**
+          * Wether to show optional when not required
+         */
+        "showOptional": boolean;
+        /**
           * The size of the input group used by the datepicker
          */
         "size": 'sm' | 'base';
@@ -813,6 +817,10 @@ export namespace Components {
          */
         "selectAllOnFocus": boolean;
         /**
+          * Wether to show optional when not required
+         */
+        "showOptional": boolean;
+        /**
           * The size of the field
          */
         "size": 'sm' | 'base';
@@ -878,6 +886,10 @@ export namespace Components {
           * Wether the field is required
          */
         "required": boolean;
+        /**
+          * Wether to show optional when not required
+         */
+        "showOptional": boolean;
         /**
           * The variant of the field container
          */
@@ -1482,6 +1494,10 @@ export namespace Components {
           * Wether to apply the item's icon on the selected item display
          */
         "showIconOnSelectedItem": string;
+        /**
+          * Wether to show optional when not required
+         */
+        "showOptional": boolean;
         /**
           * The size of the input group used by the select
          */
@@ -3659,6 +3675,10 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
         /**
+          * Wether to show optional when not required
+         */
+        "showOptional"?: boolean;
+        /**
           * The size of the input group used by the datepicker
          */
         "size"?: 'sm' | 'base';
@@ -4003,6 +4023,10 @@ declare namespace LocalJSX {
          */
         "selectAllOnFocus"?: boolean;
         /**
+          * Wether to show optional when not required
+         */
+        "showOptional"?: boolean;
+        /**
           * The size of the field
          */
         "size"?: 'sm' | 'base';
@@ -4069,6 +4093,10 @@ declare namespace LocalJSX {
           * Wether the field is required
          */
         "required"?: boolean;
+        /**
+          * Wether to show optional when not required
+         */
+        "showOptional"?: boolean;
         /**
           * The variant of the field container
          */
@@ -4749,6 +4777,10 @@ declare namespace LocalJSX {
           * Wether to apply the item's icon on the selected item display
          */
         "showIconOnSelectedItem"?: string;
+        /**
+          * Wether to show optional when not required
+         */
+        "showOptional"?: boolean;
         /**
           * The size of the input group used by the select
          */

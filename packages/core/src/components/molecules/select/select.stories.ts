@@ -63,6 +63,7 @@ export const Default = {
 		label,
 		helper,
 		required,
+		'show-optional': showOptional,
 		error,
 		disabled,
 		'show-add-item': showAddItem,
@@ -104,6 +105,7 @@ export const Default = {
 		label=${label ?? nothing}
 		helper=${helper ?? nothing}
 		required=${required ?? nothing}
+		show-optional=${showOptional ?? nothing}
 		error=${error ?? nothing}
 		disabled=${disabled ?? nothing}
 		show-add-item=${showAddItem ?? nothing}

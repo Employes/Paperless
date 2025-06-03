@@ -24,6 +24,7 @@ export const Default = {
 		variant,
 		helper,
 		required,
+		'show-optional': showOptional,
 		error,
 		content,
 		align,
@@ -37,6 +38,7 @@ export const Default = {
 		helper=${helper ?? nothing}
 		required=${required ?? nothing}
 		error=${error ?? nothing}
+		show-optional=${showOptional ?? nothing}
 		align=${align ?? nothing}
 		error-placement=${errorPlacement ?? nothing}
 		force-show-tooltip=${forceShowTooltip ?? nothing}

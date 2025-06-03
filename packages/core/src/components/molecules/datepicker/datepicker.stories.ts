@@ -30,6 +30,7 @@ export const Default = {
 		loading,
 		helper,
 		required,
+		'show-optional': showOptional,
 		error,
 		disabled,
 		strategy,
@@ -52,6 +53,7 @@ export const Default = {
 		loading=${loading ?? nothing}
 		helper=${helper ?? nothing}
 		required=${required ?? nothing}
+		show-optional=${showOptional ?? nothing}
 		error=${error ?? nothing}
 		disabled=${disabled ?? nothing}
 		strategy=${strategy ?? nothing}

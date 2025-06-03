@@ -289,6 +289,11 @@ export class Field {
 	@Prop({ reflect: true }) required: boolean = true;
 
 	/**
+	 * Wether to show optional when not required
+	 */
+	@Prop({ reflect: true }) showOptional: boolean = true;
+
+	/**
 	 * Wether to autofocus the field
 	 */
 	@Prop({ reflect: true }) autofocus: boolean = false;
@@ -397,6 +402,7 @@ export class Field {
 				helper={this.helper}
 				error={this.error}
 				required={this.required}
+				showOptional={this.showOptional}
 				variant={this.variant}
 			>
 				{hasLabelSlot && (

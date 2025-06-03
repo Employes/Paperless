@@ -258,6 +258,11 @@ export class Select {
 	@Prop({ reflect: true }) required: boolean = true;
 
 	/**
+	 * Wether to show optional when not required
+	 */
+	@Prop({ reflect: true }) showOptional: boolean = true;
+
+	/**
 	 * The helper of the input group used by the select
 	 */
 	@Prop({ reflect: true }) error: string;
@@ -457,6 +462,7 @@ export class Select {
 					label={this.label}
 					helper={this.helper}
 					required={this.required}
+					showOptional={this.showOptional}
 					error={this.error}
 					forceShowTooltip={!!this.error?.length && !this._showDropdown}
 				>

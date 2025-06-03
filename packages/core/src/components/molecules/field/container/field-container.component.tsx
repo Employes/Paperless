@@ -105,6 +105,11 @@ export class FieldContainer {
 	@Prop({ reflect: true }) required: boolean;
 
 	/**
+	 * Wether to show optional when not required
+	 */
+	@Prop({ reflect: true }) showOptional: boolean = true;
+
+	/**
 	 * The helper of the input group
 	 */
 	@Prop({ reflect: true }) error: string | HTMLSlotElement;
@@ -185,13 +190,17 @@ export class FieldContainer {
 						</div>
 					)}
 
-					{(!asBoolean(this.required) || helper || hasHeaderSlot) && (
+					{((!asBoolean(this.required) && asBoolean(this.showOptional)) ||
+						helper ||
+						hasHeaderSlot) && (
 						<div class='flex items-center gap-1'>
-							{!asBoolean(this.required) && this.variant === 'write' && (
-								<span class='text-xs font-medium text-black-teal-200'>
-									{this.optionalTemplate()}
-								</span>
-							)}
+							{!asBoolean(this.required) &&
+								asBoolean(this.showOptional) &&
+								this.variant === 'write' && (
+									<span class='text-xs font-medium text-black-teal-200'>
+										{this.optionalTemplate()}
+									</span>
+								)}
 
 							{(helper || hasHeaderSlot) && (
 								<Fragment>

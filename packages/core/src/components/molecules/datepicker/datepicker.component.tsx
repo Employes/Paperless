@@ -127,6 +127,11 @@ export class Datepicker {
 	@Prop({ reflect: true }) required: boolean;
 
 	/**
+	 * Wether to show optional when not required
+	 */
+	@Prop({ reflect: true }) showOptional: boolean = true;
+
+	/**
 	 * The helper of the input group used by the datepicker
 	 */
 	@Prop({ reflect: true }) error: string;
@@ -300,6 +305,7 @@ export class Datepicker {
 					loading={this.loading}
 					helper={this.helper}
 					required={asBoolean(this.required)}
+					showOptional={asBoolean(this.showOptional)}
 					error={this.error}
 					forceShowTooltip={!!this.error?.length && !this._showDropdown}
 					disabled={asBoolean(this.disabled)}

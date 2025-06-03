@@ -20,6 +20,7 @@
 | `loadingSize`      | `loading-size`       | The size of the loader                         | `"base" \| "sm"`                                                                                                                                                     | `'base'`                        |
 | `optionalTemplate` | `optional-template`  | The template for the optional text             | `() => string`                                                                                                                                                       | `this._defaultOptionalTemplate` |
 | `required`         | `required`           | Wether the field is required                   | `boolean`                                                                                                                                                            | `undefined`                     |
+| `showOptional`     | `show-optional`      | Wether to show optional when not required      | `boolean`                                                                                                                                                            | `true`                          |
 | `variant`          | `variant`            | The variant of the field container             | `"read" \| "write"`                                                                                                                                                  | `undefined`                     |
 
 

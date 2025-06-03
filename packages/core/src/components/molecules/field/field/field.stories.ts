@@ -29,6 +29,7 @@ export const Default = {
 		placeholder,
 		helper,
 		required,
+		'show-optional': showOptional,
 		autofocus,
 		error,
 		'error-placement': errorPlacement,
@@ -55,6 +56,7 @@ export const Default = {
 		placeholder=${placeholder ?? nothing}
 		helper=${helper ?? nothing}
 		required=${required ?? nothing}
+		show-optional=${showOptional ?? nothing}
 		autofocus=${autofocus ?? nothing}
 		error=${error ?? nothing}
 		error-placement=${errorPlacement ?? nothing}
