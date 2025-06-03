@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.161](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.160...v2.0.1-beta.161) (2025-06-03)
+
+
+### Features
+
+* **atoms/card/header:** Add ability to hide divider ([384ce9a](https://github.com/ionic-team/stencil-component-starter/commit/384ce9a55d615a45ba482b90404d52ad5e65fcf1))
+
+
+
+
+
 ## [2.0.1-beta.160](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.159...v2.0.1-beta.160) (2025-06-03)
 
 
