@@ -327,6 +327,14 @@ export namespace Components {
          */
         "active": boolean;
         /**
+          * A bg class to apply to the container
+         */
+        "bgClass": string;
+        /**
+          * Wether the card should have a border
+         */
+        "border": boolean;
+        /**
           * Wether the card should be hoverable
          */
         "hoverable": boolean;
@@ -340,6 +348,10 @@ export namespace Components {
         "variant": 'default' | 'error';
     }
     interface PCardHeader {
+        /**
+          * Wether to show the divider
+         */
+        "enableDivider": boolean;
         /**
           * Content of the card header
          */
@@ -3453,6 +3465,14 @@ declare namespace LocalJSX {
          */
         "active"?: boolean;
         /**
+          * A bg class to apply to the container
+         */
+        "bgClass"?: string;
+        /**
+          * Wether the card should have a border
+         */
+        "border"?: boolean;
+        /**
           * Wether the card should be hoverable
          */
         "hoverable"?: boolean;
@@ -3466,6 +3486,10 @@ declare namespace LocalJSX {
         "variant"?: 'default' | 'error';
     }
     interface PCardHeader {
+        /**
+          * Wether to show the divider
+         */
+        "enableDivider"?: boolean;
         /**
           * Content of the card header
          */

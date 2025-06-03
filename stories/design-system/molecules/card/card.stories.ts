@@ -7,12 +7,13 @@ const meta = {
 	args: {
 		header: 'Header',
 		body: 'Body content',
-		headerVariant: 'curve',
+		headerVariant: 'default',
 		headerIcon: 'none',
 		showHeaderButton: true,
 		containerVariant: 'default',
 		containerHoverable: false,
 		containerShadow: true,
+		containerBorder: true,
 	},
 	argTypes: {
 		header: {
@@ -42,6 +43,12 @@ const meta = {
 		containerShadow: {
 			type: 'boolean',
 		},
+		containerBorder: {
+			type: 'boolean',
+		},
+		containerBgClass: {
+			type: 'string',
+		},
 	},
 };
 
@@ -57,14 +64,20 @@ export const Default = {
 		containerVariant,
 		containerHoverable,
 		containerShadow,
+		containerBorder,
+		containerBgClass,
 	}) => html`<p-card-container
+		bg-class=${containerBgClass ?? nothing}
 		variant=${containerVariant}
 		hoverable=${containerHoverable}
 		shadow=${containerShadow}
+		border=${containerBorder}
 	>
 		<p-card-header
 			variant=${headerVariant}
 			icon=${headerIcon !== 'none' ? headerIcon : nothing}
+			enable-divider=${false}
+			border=${false}
 		>
 			${header}
 			${showHeaderButton
