@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.166](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.165...v2.0.1-beta.166) (2025-06-03)
+
+
+### Bug Fixes
+
+* **atoms/listing/item:** Apply flex-1 to content ([ac1433d](https://github.com/ionic-team/stencil-component-starter/commit/ac1433d51968a01821caf1a24b0a3c8ca46f919b))
+
+
+
+
+
 ## [2.0.1-beta.165](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.164...v2.0.1-beta.165) (2025-06-03)
 
 
