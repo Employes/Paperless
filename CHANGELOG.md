@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.162](https://github.com/employes/paperless/compare/v2.0.1-beta.161...v2.0.1-beta.162) (2025-06-03)
+
+
+### Bug Fixes
+
+* **atoms/card/header:** Rename prop & add stories properties ([0e0e0c4](https://github.com/employes/paperless/commit/0e0e0c4b698c58c1b149b617844927b30f6ddc56))
+
+
+
+
+
 ## [2.0.1-beta.161](https://github.com/employes/paperless/compare/v2.0.1-beta.160...v2.0.1-beta.161) (2025-06-03)
 
 
