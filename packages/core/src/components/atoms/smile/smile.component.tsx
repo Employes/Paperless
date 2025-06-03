@@ -6,7 +6,7 @@ import smileSvg from '../../../assets/other/smile.svg';
 const smile = cva(null, {
 	variants: {
 		variant: {
-			full: 'w-full',
+			full: null,
 			modal: 'w-[355%]',
 			card: 'w-[310%]',
 		},
@@ -20,10 +20,10 @@ const smile = cva(null, {
 	],
 });
 
-const svg = cva('text-inherit w-full', {
+const svg = cva('text-inherit', {
 	variants: {
 		variant: {
-			full: null,
+			full: 'w-inherit',
 			modal: null,
 			card: null,
 		},
@@ -31,7 +31,7 @@ const svg = cva('text-inherit w-full', {
 	compoundVariants: [
 		{
 			variant: ['modal', 'card'],
-			class: 'absolute bottom-0 left-0 h-full',
+			class: 'absolute bottom-0 left-0 h-full w-full',
 		},
 	],
 });
