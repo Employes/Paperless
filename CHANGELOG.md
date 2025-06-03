@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.164](https://github.com/employes/paperless/compare/v2.0.1-beta.163...v2.0.1-beta.164) (2025-06-03)
+
+
+### Features
+
+* **atoms/smile:** Add ability to get full smile ([3207d8b](https://github.com/employes/paperless/commit/3207d8b770bc365d5779c703a30b48d32d07a3c2))
+
+
+
+
+
 ## [2.0.1-beta.163](https://github.com/employes/paperless/compare/v2.0.1-beta.162...v2.0.1-beta.163) (2025-06-03)
 
 
