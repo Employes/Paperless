@@ -1549,6 +1549,10 @@ export namespace Components {
          */
         "contentPosition": 'start' | 'end';
         /**
+          * The direction of the item
+         */
+        "direction": 'horizontal' | 'vertical';
+        /**
           * Wether the step is finished
          */
         "finished": boolean;
@@ -4811,6 +4815,10 @@ declare namespace LocalJSX {
           * The position of the content in case of vertical direction
          */
         "contentPosition"?: 'start' | 'end';
+        /**
+          * The direction of the item
+         */
+        "direction"?: 'horizontal' | 'vertical';
         /**
           * Wether the step is finished
          */

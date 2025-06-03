@@ -64,6 +64,10 @@ const content = cva('text-sm font-medium flex-1 mt-[1px]', {
 			true: null,
 			false: null,
 		},
+		direction: {
+			horizontal: null,
+			vertical: null,
+		},
 	},
 	compoundVariants: [
 		{
@@ -81,6 +85,11 @@ const content = cva('text-sm font-medium flex-1 mt-[1px]', {
 			finished: true,
 			class: 'text-black-teal-500',
 		},
+		{
+			direction: 'horizontal',
+			active: false,
+			class: 'hidden desktop-xs:inline-block',
+		},
 	],
 });
 
@@ -94,6 +103,11 @@ export class StepperItem {
 	 * The number of the step
 	 */
 	@Prop() number: number = 1;
+
+	/**
+	 * The direction of the item
+	 */
+	@Prop() direction: 'horizontal' | 'vertical' = 'horizontal';
 
 	/**
 	 * The alignment of the content in case of vertical direction
@@ -135,6 +149,7 @@ export class StepperItem {
 					class={content({
 						active: asBoolean(this.active),
 						finished: asBoolean(this.finished),
+						direction: this.direction,
 					})}
 				>
 					<slot />

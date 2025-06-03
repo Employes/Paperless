@@ -211,6 +211,7 @@ export class Stepper {
 
 			item.number = i + 1;
 			item.align = this.direction === 'vertical' ? this.align : 'start';
+			item.direction = this.direction;
 			item.contentPosition = this.contentPosition;
 		}
 	}
