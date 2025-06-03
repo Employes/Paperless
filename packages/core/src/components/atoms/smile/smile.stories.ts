@@ -8,6 +8,6 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: () => html`<p-smile />`,
+	render: ({ variant }) => html`<p-smile variant=${variant ?? nothing} />`,
 	tags: ['!dev'],
 };

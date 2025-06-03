@@ -1507,7 +1507,7 @@ export namespace Components {
         /**
           * The variant of the smile footer
          */
-        "variant": 'modal' | 'card';
+        "variant": 'modal' | 'card' | 'full';
     }
     interface PStepper {
         /**
@@ -4770,7 +4770,7 @@ declare namespace LocalJSX {
         /**
           * The variant of the smile footer
          */
-        "variant"?: 'modal' | 'card';
+        "variant"?: 'modal' | 'card' | 'full';
     }
     interface PStepper {
         /**

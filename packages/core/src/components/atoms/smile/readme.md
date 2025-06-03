@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property  | Attribute | Description                     | Type                | Default   |
-| --------- | --------- | ------------------------------- | ------------------- | --------- |
-| `variant` | `variant` | The variant of the smile footer | `"card" \| "modal"` | `'modal'` |
+| Property  | Attribute | Description                     | Type                          | Default   |
+| --------- | --------- | ------------------------------- | ----------------------------- | --------- |
+| `variant` | `variant` | The variant of the smile footer | `"card" \| "full" \| "modal"` | `'modal'` |
 
 
 ## Dependencies
