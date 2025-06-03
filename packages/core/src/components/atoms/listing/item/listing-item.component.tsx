@@ -1,7 +1,6 @@
 import { Component, h, Prop } from '@stencil/core';
 import { IconVariant } from '../../icon/icon.component';
 
-
 @Component({
 	tag: 'p-listing-item',
 	styleUrl: 'listing-item.component.css',
@@ -13,13 +12,11 @@ export class ListingItem {
 	 */
 	@Prop() icon: IconVariant = 'placeholder';
 
-
 	render() {
 		return (
-			<div class="flex gap-2  items-center text-black-teal">
+			<div class='flex items-center  gap-2 text-black-teal'>
 				<p-icon variant={this.icon} />
-				<div class="flex flex-col font-medium text-sm"
-				>
+				<div class='flex min-w-0 flex-1 flex-col text-sm font-medium'>
 					<slot />
 				</div>
 			</div>
