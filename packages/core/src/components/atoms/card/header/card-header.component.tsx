@@ -64,7 +64,7 @@ export class CardHeader {
 	/**
 	 * Wether to show the divider
 	 */
-	@Prop() enableDivider = true;
+	@Prop() divider = true;
 
 	render() {
 		return (
@@ -100,7 +100,7 @@ export class CardHeader {
 				</div>
 
 				{this.variant === 'default' ? (
-					asBoolean(this.enableDivider) && <p-divider />
+					asBoolean(this.divider) && <p-divider />
 				) : (
 					<div class='pointer-events-none absolute left-0 top-0 z-[-1] h-full w-full overflow-hidden rounded-t-2xl'>
 						<p-smile variant='card' />

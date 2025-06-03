@@ -8,9 +8,20 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({ header, arrow }) => html`<p-card-header
+	render: ({
+		header,
+		variant,
+		divider,
+		icon,
+		'icon-rotate': iconRotate,
+		'icon-flip': iconFlip,
+	}) => html`<p-card-header
 		header=${header ?? nothing}
-		arrow=${arrow ?? nothing}
+		variant=${variant ?? nothing}
+		divider=${divider ?? nothing}
+		icon=${icon ?? nothing}
+		icon-rotate=${iconRotate ?? nothing}
+		icon-flip=${iconFlip ?? nothing}
 	/>`,
 	tags: ['!dev'],
 };

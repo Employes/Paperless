@@ -351,7 +351,7 @@ export namespace Components {
         /**
           * Wether to show the divider
          */
-        "enableDivider": boolean;
+        "divider": boolean;
         /**
           * Content of the card header
          */
@@ -3489,7 +3489,7 @@ declare namespace LocalJSX {
         /**
           * Wether to show the divider
          */
-        "enableDivider"?: boolean;
+        "divider"?: boolean;
         /**
           * Content of the card header
          */
