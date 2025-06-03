@@ -1,5 +1,6 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, h, Host, Prop, Element } from '@stencil/core';
 import illustrations from '../../../utils/illustrations';
+import { cn } from '../../../utils';
 
 export type IllustrationVariant = keyof typeof illustrations;
 
@@ -13,6 +14,11 @@ export class Illustration {
 	 */
 	@Prop() variant!: IllustrationVariant;
 
+	/**
+	 * The host element
+	 */
+	@Element() private _el: HTMLElement;
+
 	componentWillRender() {
 		const illustration = illustrations[this.variant];
 		if (!illustration) {
@@ -24,10 +30,13 @@ export class Illustration {
 
 	render() {
 		const illustration = illustrations[this.variant];
+		const hasSize = [...this._el.classList.values()].some(val =>
+			val.match(/['xs'|'sm'|'base'|'lg'|'xl']/)
+		);
 
 		return (
 			<Host
-				class='block text-8xl'
+				class={cn('block', { 'text-8xl': !hasSize })}
 				innerHTML={illustration}
 			></Host>
 		);
