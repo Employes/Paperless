@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.160](https://github.com/employes/paperless/compare/v2.0.1-beta.159...v2.0.1-beta.160) (2025-06-03)
+
+
+### Bug Fixes
+
+* **molecules/empty-state:** Apply correct illustration size ([a81db0e](https://github.com/employes/paperless/commit/a81db0e1a9ddcd0ab90f0e1969140cfd8b6276e2))
+
+
+
+
+
 ## [2.0.1-beta.159](https://github.com/employes/paperless/compare/v2.0.1-beta.158...v2.0.1-beta.159) (2025-06-03)
 
 
