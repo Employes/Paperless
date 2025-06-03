@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.165](https://github.com/employes/paperless/compare/v2.0.1-beta.164...v2.0.1-beta.165) (2025-06-03)
+
+
+### Bug Fixes
+
+* **atoms/smile:** Remove full width for full variant ([4fa4c12](https://github.com/employes/paperless/commit/4fa4c12c208eb52328ea37b69b2138f556d8103f))
+
+
+
+
+
 ## [2.0.1-beta.164](https://github.com/employes/paperless/compare/v2.0.1-beta.163...v2.0.1-beta.164) (2025-06-03)
 
 
