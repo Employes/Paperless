@@ -23,6 +23,7 @@ export type buttonTemplateFunc = (amount: number) => string;
 const header = cva([
 	'flex flex-col gap-2 z-[1]',
 	'w-full',
+	'px-4 tablet:px-0',
 
 	'desktop-xs:grid desktop-xs:grid-cols-2',
 ]);
