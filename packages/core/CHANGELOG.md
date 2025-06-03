@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.169](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.168...v2.0.1-beta.169) (2025-06-03)
+
+
+### Features
+
+* **molecules/field-container:** Add show optional prop ([b273e83](https://github.com/ionic-team/stencil-component-starter/commit/b273e83432e722b55e7e7e21dbcb778aabb9525e))
+
+
+
+
+
 ## [2.0.1-beta.168](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.167...v2.0.1-beta.168) (2025-06-03)
 
 
