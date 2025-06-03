@@ -33,8 +33,8 @@ const popover = cva(
 	{
 		variants: {
 			variant: {
-				hover: 'bg-black-teal text-white py-1',
-				click: null,
+				hover: 'bg-black-teal text-white py-1 max-w-[14.5rem]',
+				click: 'max-w-[18rem]',
 				error: 'max-w-full w-full',
 			},
 			strategy: {
@@ -46,7 +46,7 @@ const popover = cva(
 		compoundVariants: [
 			{
 				variant: ['hover', 'click'],
-				class: 'max-w-[14.5rem] w-max',
+				class: 'w-max',
 			},
 			{
 				variant: ['click', 'error'],
