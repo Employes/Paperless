@@ -6,6 +6,7 @@ import {
 	IconFlipOptions,
 	IconVariant,
 } from '../../../atoms/icon/icon.component';
+import { asBoolean } from '../../../../utils/as-boolean';
 
 const header = cva(
 	'inline-flex w-full relative flex-col justify-start z-[1] rounded-t-2xl relative',
@@ -60,6 +61,11 @@ export class CardHeader {
 	 */
 	@Prop() iconRotate?: RotateOptions;
 
+	/**
+	 * Wether to show the divider
+	 */
+	@Prop() enableDivider = true;
+
 	render() {
 		return (
 			<div
@@ -94,7 +100,7 @@ export class CardHeader {
 				</div>
 
 				{this.variant === 'default' ? (
-					<p-divider />
+					asBoolean(this.enableDivider) && <p-divider />
 				) : (
 					<div class='pointer-events-none absolute left-0 top-0 z-[-1] h-full w-full overflow-hidden rounded-t-2xl'>
 						<p-smile variant='card' />
