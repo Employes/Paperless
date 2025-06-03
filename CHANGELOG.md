@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.159](https://github.com/employes/paperless/compare/v2.0.1-beta.158...v2.0.1-beta.159) (2025-06-03)
+
+
+### Features
+
+* **atoms/tooltip:** Click variant max-w change ([d1af118](https://github.com/employes/paperless/commit/d1af1182d971c1ca90da554c9f85d6ccf0a8c191))
+
+
+
+
+
 ## [2.0.1-beta.158](https://github.com/employes/paperless/compare/v1.69.0...v2.0.1-beta.158) (2025-06-02)
 
 
