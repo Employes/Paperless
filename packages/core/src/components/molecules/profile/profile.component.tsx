@@ -97,7 +97,7 @@ export class Profile {
 					<p class='my-0 w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm font-medium'>
 						<slot name='title' />
 					</p>
-					<p class='my-0 w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-xs text-black-teal-300'>
+					<p class='my-0 w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-xs text-black-teal-400'>
 						<slot name='subtitle' />
 					</p>
 				</div>
