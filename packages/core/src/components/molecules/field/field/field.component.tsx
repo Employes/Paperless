@@ -9,6 +9,7 @@ import {
 	Listen,
 	Prop,
 	State,
+	Watch,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { HTMLInputTypeAttribute } from 'react';
@@ -359,6 +360,7 @@ export class Field {
 	@AttachInternals() _internals: ElementInternals;
 
 	private _inputRef: HTMLInputElement | HTMLTextAreaElement;
+	private _lastValue: string | null;
 
 	componentDidLoad() {
 		this._checkAutoFocus();
@@ -507,6 +509,20 @@ export class Field {
 		);
 	}
 
+	@Watch('value')
+	watchvalue(value: string | null) {
+		if (!this._inputRef) {
+			return;
+		}
+
+		if (value === this._lastValue) {
+			return;
+		}
+
+		this._lastValue = value;
+		this._inputRef.value = value;
+	}
+
 	@Listen('focusin')
 	handleFocusIn() {
 		if (this.disabled) {
@@ -603,7 +619,6 @@ export class Field {
 			onInput: (ev: InputEvent) => this._valueChange(ev),
 		};
 
-		console.log('get content', this.value);
 		let properties = this.properties ?? {};
 		if (typeof properties === 'string') {
 			properties = JSON.parse(this.properties);
@@ -658,6 +673,8 @@ export class Field {
 			| HTMLTextAreaElement
 			| HTMLInputElement;
 		const value = target.value;
+		this._lastValue = value;
+		this.value = value;
 		this.valueChange.emit(value);
 		this._internals.setFormValue(value);
 	}

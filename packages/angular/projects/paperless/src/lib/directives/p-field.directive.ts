@@ -21,16 +21,8 @@ export class FieldDirective extends BaseValueAccessor {
 		super(el);
 	}
 
-	override handleChangeEvent(value: any) {
-		console.log(this.lastValue, value);
-		this.lastValue = value;
-		this.onChange(value);
-	}
-
 	override writeValue(value: any) {
-		value = value === null ? JSON.parse(value) : value;
-		console.log(this.lastValue, value);
-		this.el.nativeElement.value = value;
-		this.lastValue = value;
+		this.el.nativeElement.value = this.lastValue =
+			value === null ? JSON.parse(value) : value;
 	}
 }
