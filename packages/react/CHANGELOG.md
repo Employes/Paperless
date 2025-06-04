@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.170](https://github.com/ionic-team/ionic/compare/v2.0.1-beta.169...v2.0.1-beta.170) (2025-06-04)
+
+**Note:** Version bump only for package @paperless/react
+
+
+
+
+
 ## [2.0.1-beta.169](https://github.com/ionic-team/ionic/compare/v2.0.1-beta.168...v2.0.1-beta.169) (2025-06-03)
 
 **Note:** Version bump only for package @paperless/react
