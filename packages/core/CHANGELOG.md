@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.172](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.171...v2.0.1-beta.172) (2025-06-04)
+
+
+### Bug Fixes
+
+* **molecules/profile:** Set subtitle text color to black-teal-400 ([de20750](https://github.com/ionic-team/stencil-component-starter/commit/de207501bd34452bbac88ffb11ce43ca4269f2ac))
+
+
+
+
+
 ## [2.0.1-beta.171](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.170...v2.0.1-beta.171) (2025-06-04)
 
 
