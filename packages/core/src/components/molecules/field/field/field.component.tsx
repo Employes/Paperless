@@ -603,6 +603,7 @@ export class Field {
 			onInput: (ev: InputEvent) => this._valueChange(ev),
 		};
 
+		console.log('get content', this.value);
 		let properties = this.properties ?? {};
 		if (typeof properties === 'string') {
 			properties = JSON.parse(this.properties);
