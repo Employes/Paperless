@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.171](https://github.com/Employes/Paperless/compare/v2.0.1-beta.170...v2.0.1-beta.171) (2025-06-04)
+
+
+### Bug Fixes
+
+* **molecules/field:** Value changes by input should represent ([b8c46de](https://github.com/Employes/Paperless/commit/b8c46de8c37ad975ac67034e19ae19ead49d5e6f))
+
+
+
+
+
 ## [2.0.1-beta.170](https://github.com/Employes/Paperless/compare/v2.0.1-beta.169...v2.0.1-beta.170) (2025-06-04)
 
 
