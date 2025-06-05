@@ -68,6 +68,11 @@ export class EmptyState {
 	@Prop() actionIcon: IconVariant;
 
 	/**
+	 * The position of the action icon
+	 */
+	@Prop() actionIconPosition: 'start' | 'end' = 'start';
+
+	/**
 	 * Wether the action is loading
 	 */
 	@Prop() actionLoading: boolean = false;
@@ -131,6 +136,7 @@ export class EmptyState {
 						<p-button
 							class='mt-4'
 							icon={this.actionIcon}
+							iconPosition={this.actionIconPosition}
 							loading={this.actionLoading}
 							variant={this.actionVariant}
 						>

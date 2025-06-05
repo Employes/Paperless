@@ -699,6 +699,10 @@ export namespace Components {
          */
         "actionIcon": IconVariant1;
         /**
+          * The position of the action icon
+         */
+        "actionIconPosition": 'start' | 'end';
+        /**
           * Wether the action is loading
          */
         "actionLoading": boolean;
@@ -3892,6 +3896,10 @@ declare namespace LocalJSX {
           * The icon for the action button
          */
         "actionIcon"?: IconVariant1;
+        /**
+          * The position of the action icon
+         */
+        "actionIconPosition"?: 'start' | 'end';
         /**
           * Wether the action is loading
          */
