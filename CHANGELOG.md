@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.173](https://github.com/employes/paperless/compare/v2.0.1-beta.172...v2.0.1-beta.173) (2025-06-05)
+
+
+### Features
+
+* **organisms/modal/container:** Add xs size ([2042bd6](https://github.com/employes/paperless/commit/2042bd6c082f6a88cc13fca047cae95e64aa6bc4))
+
+
+
+
+
 ## [2.0.1-beta.172](https://github.com/employes/paperless/compare/v2.0.1-beta.171...v2.0.1-beta.172) (2025-06-04)
 
 
