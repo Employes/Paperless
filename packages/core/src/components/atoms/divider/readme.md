@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property  | Attribute | Description                   | Type                         | Default        |
-| --------- | --------- | ----------------------------- | ---------------------------- | -------------- |
-| `variant` | `variant` | The variant of the modal body | `"horizontal" \| "vertical"` | `'horizontal'` |
+| Property       | Attribute       | Description                   | Type                           | Default        |
+| -------------- | --------------- | ----------------------------- | ------------------------------ | -------------- |
+| `alignContent` | `align-content` | Where to align the content    | `"center" \| "end" \| "start"` | `'center'`     |
+| `variant`      | `variant`       | The variant of the modal body | `"horizontal" \| "vertical"`   | `'horizontal'` |
 
 
 ## Dependencies

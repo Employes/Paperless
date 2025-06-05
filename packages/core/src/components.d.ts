@@ -519,6 +519,10 @@ export namespace Components {
     }
     interface PDivider {
         /**
+          * Where to align the content
+         */
+        "alignContent": 'start' | 'center' | 'end';
+        /**
           * The variant of the modal body
          */
         "variant": 'horizontal' | 'vertical';
@@ -3696,6 +3700,10 @@ declare namespace LocalJSX {
         "value"?: Date | string | null | undefined;
     }
     interface PDivider {
+        /**
+          * Where to align the content
+         */
+        "alignContent"?: 'start' | 'center' | 'end';
         /**
           * The variant of the modal body
          */

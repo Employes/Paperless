@@ -13,6 +13,11 @@ const content = cva(
 				horizontal: ['after:h-px before:h-px', 'w-full'],
 				vertical: ['flex-col', 'after:w-px before:w-px', 'h-full'],
 			},
+			alignContent: {
+				start: 'before:hidden',
+				center: null,
+				end: 'after:hidden',
+			},
 		},
 	}
 );
@@ -28,6 +33,11 @@ export class Divider {
 	@Prop({ reflect: true }) variant: 'horizontal' | 'vertical' = 'horizontal';
 
 	/**
+	 * Where to align the content
+	 */
+	@Prop({ reflect: true }) alignContent: 'start' | 'center' | 'end' = 'center';
+
+	/**
 	 * The host element
 	 */
 	@Element() private _el: HTMLElement;
@@ -40,7 +50,12 @@ export class Divider {
 					'text-off-white-700': !this._el.className.includes('text'),
 				}}
 			>
-				<div class={content({ variant: this.variant })}>
+				<div
+					class={content({
+						variant: this.variant,
+						alignContent: this.alignContent,
+					})}
+				>
 					<div class='flex items-center px-2 text-xs font-semibold uppercase text-black-teal-200 empty:px-0'>
 						{hasContent && <slot />}
 					</div>
