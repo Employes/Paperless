@@ -94,10 +94,10 @@ export class Profile {
 			>
 				<slot name='avatar' />
 				<div class='flex min-w-0 flex-1 flex-col items-start'>
-					<p class='my-0 w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm font-medium'>
+					<p class='my-0 w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold'>
 						<slot name='title' />
 					</p>
-					<p class='my-0 w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-xs text-black-teal-400'>
+					<p class='my-0 w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-xs font-medium text-black-teal-400'>
 						<slot name='subtitle' />
 					</p>
 				</div>
