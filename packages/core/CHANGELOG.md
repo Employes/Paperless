@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.174](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.173...v2.0.1-beta.174) (2025-06-05)
+
+
+### Features
+
+* **atoms/icon:** Update unlocked icon ([71b1193](https://github.com/ionic-team/stencil-component-starter/commit/71b1193c322c31f59eff4f4a3594078136951e1c))
+* **molecules/empty-state:** Add icon position porp ([a10522a](https://github.com/ionic-team/stencil-component-starter/commit/a10522a3b71ea3ef72e5d0077bb5449bb026e12f))
+
+
+
+
+
 ## [2.0.1-beta.173](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.172...v2.0.1-beta.173) (2025-06-05)
 
 
