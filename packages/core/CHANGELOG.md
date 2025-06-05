@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.175](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.174...v2.0.1-beta.175) (2025-06-05)
+
+
+### Bug Fixes
+
+* **molecules/profile:** Set correct font weight for title and subtitle ([e601a8d](https://github.com/ionic-team/stencil-component-starter/commit/e601a8d35e0f05f12b6346abf7a1696f06adefef))
+
+
+### Features
+
+* **atoms/divider:** Add align content prop ([ca0a250](https://github.com/ionic-team/stencil-component-starter/commit/ca0a250e00753a3d06cf882fdb9444a4cdce9b9d))
+
+
+
+
+
 ## [2.0.1-beta.174](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.173...v2.0.1-beta.174) (2025-06-05)
 
 
