@@ -7,16 +7,16 @@
 
 ## Properties
 
-| Property             | Attribute              | Description                                           | Type                              | Default     |
-| -------------------- | ---------------------- | ----------------------------------------------------- | --------------------------------- | ----------- |
-| `applyBlur`          | `apply-blur`           | Wether to apply blur to the backdrop                  | `boolean`                         | `false`     |
-| `backdropClickClose` | `backdrop-click-close` | Wether to hide the modal when the backdrop is clicked | `boolean`                         | `true`      |
-| `header`             | `header`               | The Header of the modal                               | `string`                          | `undefined` |
-| `scrollLock`         | `scroll-lock`          | Wether we should scroll lock the body                 | `boolean`                         | `true`      |
-| `show`               | `show`                 | Wether to show the modal or not                       | `boolean`                         | `false`     |
-| `showClose`          | `show-close`           | Wether to show the close button in the header         | `boolean`                         | `true`      |
-| `showMobileFooter`   | `show-mobile-footer`   | Wether to show the footer on mobile                   | `boolean`                         | `false`     |
-| `size`               | `size`                 | The size of the modal container                       | `"2xl" \| "base" \| "lg" \| "xl"` | `'base'`    |
+| Property             | Attribute              | Description                                           | Type                                      | Default     |
+| -------------------- | ---------------------- | ----------------------------------------------------- | ----------------------------------------- | ----------- |
+| `applyBlur`          | `apply-blur`           | Wether to apply blur to the backdrop                  | `boolean`                                 | `false`     |
+| `backdropClickClose` | `backdrop-click-close` | Wether to hide the modal when the backdrop is clicked | `boolean`                                 | `true`      |
+| `header`             | `header`               | The Header of the modal                               | `string`                                  | `undefined` |
+| `scrollLock`         | `scroll-lock`          | Wether we should scroll lock the body                 | `boolean`                                 | `true`      |
+| `show`               | `show`                 | Wether to show the modal or not                       | `boolean`                                 | `false`     |
+| `showClose`          | `show-close`           | Wether to show the close button in the header         | `boolean`                                 | `true`      |
+| `showMobileFooter`   | `show-mobile-footer`   | Wether to show the footer on mobile                   | `boolean`                                 | `false`     |
+| `size`               | `size`                 | The size of the modal container                       | `"2xl" \| "base" \| "lg" \| "xl" \| "xs"` | `'base'`    |
 
 
 ## Events
