@@ -32,14 +32,6 @@
 
 		.content {
 			@apply max-w-xs;
-
-			.loader-wrapper {
-				@apply flex w-full justify-center;
-
-				.loader {
-					@apply text-4xl;
-				}
-			}
 		}
 	}
 }

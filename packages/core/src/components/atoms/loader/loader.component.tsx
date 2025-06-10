@@ -21,7 +21,8 @@ export class Loader {
 	/**
 	 * Color of the loader
 	 */
-	@Prop() color: 'supportive-lilac' | 'white' | 'off-white' | 'black-teal' = 'supportive-lilac';
+	@Prop() color: 'supportive-lilac' | 'white' | 'off-white' | 'black-teal' =
+		'supportive-lilac';
 
 	/**
 	 * !NOT IMPLEMENTED! Modal title for modal variant
@@ -54,7 +55,7 @@ export class Loader {
 		}
 
 		if (this.variant === 'ghost') {
-			return <Host class='rounded-2xl min-h-4 min-w-4 variant-ghost'></Host>;
+			return <Host class='variant-ghost min-h-4 min-w-4 rounded-2xl'></Host>;
 		}
 
 		const loader = <div class={`loader color-${this.color}`}></div>;
@@ -65,8 +66,6 @@ export class Loader {
 					<div class='loading-screen'>
 						<div class='content'>
 							<slot />
-
-							<div class='loader-wrapper'>{loader}</div>
 						</div>
 					</div>
 				</Host>
