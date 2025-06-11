@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.177](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.176...v2.0.1-beta.177) (2025-06-11)
+
+
+### Features
+
+* **atoms/illustration:** Add file, folder, sick-leave, task & user illustrations ([ee16f87](https://github.com/ionic-team/stencil-component-starter/commit/ee16f8726db89406eefdcd2686944d8974d63f10))
+
+
+
+
+
 ## [2.0.1-beta.176](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.175...v2.0.1-beta.176) (2025-06-10)
 
 **Note:** Version bump only for package @paperless/core
