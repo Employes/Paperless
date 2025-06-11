@@ -21,6 +21,8 @@ export const Default = {
 		'min-date': minDate,
 		'max-date': maxDate,
 		'disable-weekends': disableWeekends,
+		'enable-today': enableToday,
+		'today-text': todayText,
 		mode,
 		format,
 		'hide-icon-when-filled': hideIconWhenFilled,
@@ -44,6 +46,8 @@ export const Default = {
 		min-date=${minDate ?? nothing}
 		max-date=${maxDate ?? nothing}
 		disable-weekends=${disableWeekends ?? nothing}
+		enable-today=${enableToday ?? nothing}
+		today-text=${todayText ?? nothing}
 		mode=${mode ?? nothing}
 		format=${format ?? nothing}
 		hide-icon-when-filled=${hideIconWhenFilled ?? nothing}

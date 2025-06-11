@@ -32,6 +32,7 @@
 ### Used by
 
  - [p-attachment](../../molecules/attachment)
+ - [p-calendar](../../molecules/calendar)
  - [p-field-container](../../molecules/field/container)
  - [p-helper](../helper)
  - [p-table](../../organisms/table)
@@ -45,6 +46,7 @@
 graph TD;
   p-tooltip --> p-portal
   p-attachment --> p-tooltip
+  p-calendar --> p-tooltip
   p-field-container --> p-tooltip
   p-helper --> p-tooltip
   p-table --> p-tooltip

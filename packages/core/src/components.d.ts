@@ -295,6 +295,10 @@ export namespace Components {
          */
         "disabledDates"?: Array<Date | string> | string;
         /**
+          * Wether to enable the today button
+         */
+        "enableToday": boolean;
+        /**
           * Max date
          */
         "maxDate": Date | string;
@@ -310,6 +314,10 @@ export namespace Components {
           * Wether to automatically preselect today
          */
         "preselectToday": boolean;
+        /**
+          * The text to display on the today tooltip
+         */
+        "todayText": string;
         /**
           * The current value
          */
@@ -445,6 +453,10 @@ export namespace Components {
          */
         "enableNativePicker": boolean;
         /**
+          * Wether to enable the today button
+         */
+        "enableToday": boolean;
+        /**
           * The helper of the input group used by the datepicker
          */
         "error": string;
@@ -512,6 +524,10 @@ export namespace Components {
           * The strategy of the dropdown placement
          */
         "strategy": Strategy;
+        /**
+          * The text to display on the today tooltip
+         */
+        "todayText": string;
         /**
           * The current value
          */
@@ -3457,6 +3473,10 @@ declare namespace LocalJSX {
          */
         "disabledDates"?: Array<Date | string> | string;
         /**
+          * Wether to enable the today button
+         */
+        "enableToday"?: boolean;
+        /**
           * Max date
          */
         "maxDate"?: Date | string;
@@ -3476,6 +3496,10 @@ declare namespace LocalJSX {
           * Wether to automatically preselect today
          */
         "preselectToday"?: boolean;
+        /**
+          * The text to display on the today tooltip
+         */
+        "todayText"?: string;
         /**
           * The current value
          */
@@ -3623,6 +3647,10 @@ declare namespace LocalJSX {
          */
         "enableNativePicker"?: boolean;
         /**
+          * Wether to enable the today button
+         */
+        "enableToday"?: boolean;
+        /**
           * The helper of the input group used by the datepicker
          */
         "error"?: string;
@@ -3694,6 +3722,10 @@ declare namespace LocalJSX {
           * The strategy of the dropdown placement
          */
         "strategy"?: Strategy;
+        /**
+          * The text to display on the today tooltip
+         */
+        "todayText"?: string;
         /**
           * The current value
          */

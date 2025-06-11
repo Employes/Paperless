@@ -17,6 +17,8 @@ export const Default = {
 		'min-date': minDate,
 		'max-date': maxDate,
 		'disable-weekends': disableWeekends,
+		'enable-today': enableToday,
+		'today-text': todayText,
 		mode,
 	}) => html`<p-calendar
 		variant=${variant ?? nothing}
@@ -26,6 +28,8 @@ export const Default = {
 		min-date=${minDate ?? nothing}
 		max-date=${maxDate ?? nothing}
 		disable-weekends=${disableWeekends ?? nothing}
+		enable-today=${enableToday ?? nothing}
+		today-text=${todayText ?? nothing}
 		mode=${mode ?? nothing}
 		@valueChange=${action('valueChange')}
 	/>`,

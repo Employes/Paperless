@@ -13,6 +13,7 @@
 | `disabled`           | `disabled`              | Wether the input group is disabled used by the datepicker | `boolean`                                                                                                                                                            | `false`          |
 | `disabledDates`      | `disabled-dates`        | Disabled dates                                            | `(string \| Date)[] \| string`                                                                                                                                       | `undefined`      |
 | `enableNativePicker` | `enable-native-picker`  | Enable native picker for mobile devices                   | `boolean`                                                                                                                                                            | `true`           |
+| `enableToday`        | `enable-today`          | Wether to enable the today button                         | `boolean`                                                                                                                                                            | `true`           |
 | `error`              | `error`                 | The helper of the input group used by the datepicker      | `string`                                                                                                                                                             | `undefined`      |
 | `format`             | `format`                | The display & parse format to use                         | `string`                                                                                                                                                             | `'dd-MM-yyyy'`   |
 | `helper`             | `helper`                | The helper of the input group used by the datepicker      | `string`                                                                                                                                                             | `undefined`      |
@@ -30,6 +31,7 @@
 | `showOptional`       | `show-optional`         | Wether to show optional when not required                 | `boolean`                                                                                                                                                            | `true`           |
 | `size`               | `size`                  | The size of the input group used by the datepicker        | `"base" \| "sm"`                                                                                                                                                     | `'base'`         |
 | `strategy`           | `strategy`              | The strategy of the dropdown placement                    | `"absolute" \| "fixed"`                                                                                                                                              | `'absolute'`     |
+| `todayText`          | `today-text`            | The text to display on the today tooltip                  | `string`                                                                                                                                                             | `'today'`        |
 | `value`              | `value`                 | The current value                                         | `Date \| string`                                                                                                                                                     | `undefined`      |
 
 
@@ -65,6 +67,7 @@ graph TD;
   p-helper --> p-icon
   p-tooltip --> p-portal
   p-calendar --> p-button
+  p-calendar --> p-tooltip
   p-button --> p-icon
   p-button --> p-loader
   style p-datepicker fill:#f9f,stroke:#333,stroke-width:4px

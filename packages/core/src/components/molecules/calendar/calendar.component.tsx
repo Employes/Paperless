@@ -25,6 +25,7 @@ import {
 	isSameMonth,
 	isSameYear,
 	isValid,
+	isWeekend,
 	setDate,
 	setMonth,
 	setYear,
@@ -43,7 +44,7 @@ const calendar = cva(['p-calendar bg-white w-[17.5rem] flex flex-col gap-4'], {
 });
 
 const header = cva(
-	['flex items-center gap-1', 'w-full p-2', 'bg-off-white-300 rounded-lg'],
+	['flex items-center gap-2', 'w-full p-2', 'bg-off-white-300 rounded-lg'],
 	{
 		variants: {
 			type: {
@@ -106,6 +107,16 @@ export class Calendar {
 	@Prop() disableWeekends: boolean = false;
 
 	/**
+	 * Wether to enable the today button
+	 */
+	@Prop() enableToday: boolean = true;
+
+	/**
+	 * The text to display on the today tooltip
+	 */
+	@Prop() todayText: string = 'today';
+
+	/**
 	 * The mode of the datepicker
 	 */
 	@Prop() mode: 'year' | 'month' | 'day' = 'day';
@@ -131,6 +142,8 @@ export class Calendar {
 	@State() private _minDate: Date;
 	@State() private _maxDate: Date;
 	@State() private _disabledDates: Date[] = [];
+
+	@State() private _enableToday = true;
 
 	private _weekDays = Array.from(Array(7).keys());
 
@@ -160,6 +173,10 @@ export class Calendar {
 		if (isAfter(this._viewDate, this._maxDate)) {
 			this._viewDate = this._maxDate;
 		}
+	}
+
+	componentWillRender() {
+		this._enableToday = this.enableToday && this._checkTodayButton();
 	}
 
 	componentDidRender() {
@@ -245,6 +262,22 @@ export class Calendar {
 		return (
 			<Host class={calendar({ variant: this.variant })}>{this._getView()}</Host>
 		);
+	}
+
+	private _checkTodayButton() {
+		if (this._maxDate && isAfter(this._today, this._maxDate)) {
+			return false;
+		}
+
+		if (this._minDate && isBefore(this._today, this._minDate)) {
+			return false;
+		}
+
+		if (this.disableWeekends && isWeekend(this._today)) {
+			return false;
+		}
+
+		return true;
 	}
 
 	private _getView() {
@@ -383,7 +416,11 @@ export class Calendar {
 					/>
 				)}
 
-				<div class='flex gap-2'>
+				<div
+					class={cn('flex gap-2', {
+						'flex-1': this._enableToday,
+					})}
+				>
 					{this.mode !== 'year' && (
 						<p-button
 							variant='secondary'
@@ -405,6 +442,22 @@ export class Calendar {
 					>
 						{getYear(this._viewDate)}
 					</p-button>
+
+					{this._enableToday && (
+						<p-tooltip
+							class='ml-auto'
+							content={this.todayText}
+						>
+							<p-button
+								variant='secondary'
+								size='sm'
+								icon='calendar'
+								slot='trigger'
+								iconOnly={true}
+								onClick={() => this._setValue(this._today)}
+							></p-button>
+						</p-tooltip>
+					)}
 				</div>
 
 				{type !== 'year' && (

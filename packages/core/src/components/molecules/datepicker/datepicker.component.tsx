@@ -74,6 +74,16 @@ export class Datepicker {
 	@Prop() disableWeekends: boolean = false;
 
 	/**
+	 * Wether to enable the today button
+	 */
+	@Prop() enableToday: boolean = true;
+
+	/**
+	 * The text to display on the today tooltip
+	 */
+	@Prop() todayText: string = 'today';
+
+	/**
 	 * The mode of the datepicker
 	 */
 	@Prop() mode: 'year' | 'month' | 'day' = 'day';
@@ -340,6 +350,8 @@ export class Datepicker {
 						minDate={this.minDate}
 						maxDate={this.maxDate}
 						disableWeekends={this.disableWeekends}
+						enableToday={this.enableToday}
+						todayText={this.todayText}
 						mode={this.mode}
 					/>
 				</div>
