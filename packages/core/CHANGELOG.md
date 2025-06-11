@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.181](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.180...v2.0.1-beta.181) (2025-06-11)
+
+
+### Bug Fixes
+
+* **molecules/datepicker:** Allow overflow of dropdown to show tooltip of calendar ([22a7dc5](https://github.com/ionic-team/stencil-component-starter/commit/22a7dc52dc98bfbafdc6f513c551ad406c473156))
+
+
+
+
+
 ## [2.0.1-beta.180](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.179...v2.0.1-beta.180) (2025-06-11)
 
 
