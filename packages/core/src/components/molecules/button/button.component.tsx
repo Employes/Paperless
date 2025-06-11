@@ -469,7 +469,7 @@ export class Button {
 		return (
 			<Host class={hostClass}>
 				<VariableTag
-					disabled={this.disabled}
+					disabled={asBoolean(this.disabled)}
 					href={this.href}
 					type={this.variant !== 'text' ? this.type : undefined}
 					target={this.target}
