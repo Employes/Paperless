@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.178](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.177...v2.0.1-beta.178) (2025-06-11)
+
+
+### Features
+
+* **molecules/calendar:** Add today button ([b4015f3](https://github.com/ionic-team/stencil-component-starter/commit/b4015f3d0c573bfd83356be7c9f81b04ad77038f))
+
+
+
+
+
 ## [2.0.1-beta.177](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.176...v2.0.1-beta.177) (2025-06-11)
 
 
