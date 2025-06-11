@@ -295,6 +295,7 @@ export class Datepicker {
 	render() {
 		return (
 			<p-dropdown
+				allowOverflow={true}
 				strategy={this.strategy}
 				placement={this.placement}
 				disableTriggerClick={true}
