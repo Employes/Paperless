@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.180](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.179...v2.0.1-beta.180) (2025-06-11)
+
+
+### Features
+
+* **molecules/calendar:** Apply shadow root for better rendering ([a180a9a](https://github.com/ionic-team/stencil-component-starter/commit/a180a9a6ddaf213cfc959b5b5a432f825425b423))
+
+
+
+
+
 ## [2.0.1-beta.179](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.178...v2.0.1-beta.179) (2025-06-11)
 
 
