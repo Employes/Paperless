@@ -4,7 +4,6 @@ import {
 	Event,
 	EventEmitter,
 	h,
-	Host,
 	Prop,
 	State,
 	Watch,
@@ -34,7 +33,7 @@ import {
 } from 'date-fns';
 import { cn } from '../../../utils/cn';
 
-const calendar = cva(['p-calendar bg-white w-[17.5rem] flex flex-col gap-4'], {
+const calendar = cva(['bg-white w-[17.5rem] flex flex-col gap-4'], {
 	variants: {
 		variant: {
 			default: ['p-2 rounded-lg drop-shadow-2', 'border border-black-teal-100'],
@@ -69,6 +68,7 @@ const view = cva(['flex flex-col gap-2', 'w-full'], {
 @Component({
 	tag: 'p-calendar',
 	styleUrl: 'calendar.component.css',
+	shadow: true,
 })
 export class Calendar {
 	/**
@@ -260,7 +260,7 @@ export class Calendar {
 
 	render() {
 		return (
-			<Host class={calendar({ variant: this.variant })}>{this._getView()}</Host>
+			<div class={calendar({ variant: this.variant })}>{this._getView()}</div>
 		);
 	}
 
