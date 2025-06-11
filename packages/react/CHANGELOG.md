@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.183](https://github.com/ionic-team/ionic/compare/v2.0.1-beta.181...v2.0.1-beta.183) (2025-06-11)
+
+
+### Bug Fixes
+
+* **molecules/calendar:** Set view to today when clicking today button & small behavioral fixes ([8d783b6](https://github.com/ionic-team/ionic/commit/8d783b6c74e5f070babff86c9df9185a2b020228))
+
+
+
+
+
 ## [2.0.1-beta.182](https://github.com/ionic-team/ionic/compare/v2.0.1-beta.181...v2.0.1-beta.182) (2025-06-11)
 
 **Note:** Version bump only for package @paperless/react
