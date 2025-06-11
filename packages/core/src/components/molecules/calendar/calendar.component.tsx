@@ -258,6 +258,17 @@ export class Calendar {
 			.filter(date => isValid(date));
 	}
 
+	@Watch('mode')
+	_modeChange(mode: 'year' | 'month' | 'day') {
+		if (mode === 'year' && this._view !== 'year') {
+			this._view = 'year';
+		}
+
+		if (mode === 'month' && this._view === 'day') {
+			this._view = 'month';
+		}
+	}
+
 	render() {
 		return (
 			<div class={calendar({ variant: this.variant })}>{this._getView()}</div>
@@ -274,6 +285,10 @@ export class Calendar {
 		}
 
 		if (this.disableWeekends && isWeekend(this._today)) {
+			return false;
+		}
+
+		if (this.mode !== 'day') {
 			return false;
 		}
 
@@ -325,7 +340,7 @@ export class Calendar {
 							<time
 								class={cn(
 									'normal flex items-center justify-center rounded-lg',
-									'h-8 w-8 text-sm text-black-teal-300',
+									'h-8 w-8 text-sm font-semibold text-black-teal-300',
 									{
 										'cursor-pointer hover:bg-white-600 hover:text-black-teal':
 											!day.disabled,
@@ -403,8 +418,8 @@ export class Calendar {
 		}
 
 		return (
-			<div class={header({ type })}>
-				{type !== 'year' && (
+			<div class={header({ type: this.mode })}>
+				{this.mode !== 'year' && (
 					<p-button
 						variant='secondary'
 						iconOnly
@@ -412,7 +427,9 @@ export class Calendar {
 						iconRotate={90}
 						size='sm'
 						onClick={() => nextFn(-1)}
-						disabled={!this._canSetAmount(nextType, -1)}
+						disabled={
+							!this._canSetAmount(nextType, -1) || this._view === 'year'
+						}
 					/>
 				)}
 
@@ -454,13 +471,13 @@ export class Calendar {
 								icon='calendar'
 								slot='trigger'
 								iconOnly={true}
-								onClick={() => this._setValue(this._today)}
+								onClick={() => this._setToday()}
 							></p-button>
 						</p-tooltip>
 					)}
 				</div>
 
-				{type !== 'year' && (
+				{this.mode !== 'year' && (
 					<p-button
 						variant='secondary'
 						iconOnly
@@ -468,7 +485,7 @@ export class Calendar {
 						iconRotate={-90}
 						size='sm'
 						onClick={() => nextFn(1)}
-						disabled={!this._canSetAmount(nextType, 1)}
+						disabled={!this._canSetAmount(nextType, 1) || this._view == 'year'}
 					/>
 				)}
 			</div>
@@ -477,25 +494,31 @@ export class Calendar {
 
 	private _setYear(year: number) {
 		const date = setYear(this._viewDate, year);
-		if (this.mode === 'year') {
+		if (this.mode !== 'year') {
 			this._viewDate = date;
-			this._setValue(setMonth(setDate(date, 1), 0));
+			this._view = 'month';
 			return;
 		}
 
 		this._viewDate = date;
-		this._view = 'month';
+		this._setValue(setMonth(setDate(date, 1), 0));
 	}
 
 	private _setMonth(month: number) {
 		const date = setMonth(this._viewDate, month);
-		if (this.mode === 'month') {
+		if (this.mode === 'day') {
 			this._viewDate = date;
-			this._setValue(setDate(date, 1));
+			this._view = 'day';
 			return;
 		}
 
 		this._viewDate = date;
+		this._setValue(setDate(date, 1));
+	}
+
+	private _setToday() {
+		this._viewDate = this._today;
+		this._setValue(this._today);
 		this._view = 'day';
 	}
 
