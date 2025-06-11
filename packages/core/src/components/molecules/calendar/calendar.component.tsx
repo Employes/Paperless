@@ -277,6 +277,10 @@ export class Calendar {
 			return false;
 		}
 
+		if (this.mode !== 'day') {
+			return false;
+		}
+
 		return true;
 	}
 
@@ -454,7 +458,7 @@ export class Calendar {
 								icon='calendar'
 								slot='trigger'
 								iconOnly={true}
-								onClick={() => this._setValue(this._today)}
+								onClick={() => this._setToday()}
 							></p-button>
 						</p-tooltip>
 					)}
@@ -496,6 +500,12 @@ export class Calendar {
 		}
 
 		this._viewDate = date;
+		this._view = 'day';
+	}
+
+	private _setToday() {
+		this._viewDate = this._today;
+		this._setValue(this._today);
 		this._view = 'day';
 	}
 
