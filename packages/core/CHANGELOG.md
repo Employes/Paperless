@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.187](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.186...v2.0.1-beta.187) (2025-06-12)
+
+
+### Bug Fixes
+
+* **molecules/pagination:** Make sure pagination works as intended ([7dbb761](https://github.com/ionic-team/stencil-component-starter/commit/7dbb7618454c8933da94988a8646268b46d0421c))
+
+
+
+
+
 ## [2.0.1-beta.186](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.185...v2.0.1-beta.186) (2025-06-12)
 
 
