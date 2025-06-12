@@ -173,6 +173,8 @@ export class Calendar {
 		if (isAfter(this._viewDate, this._maxDate)) {
 			this._viewDate = this._maxDate;
 		}
+
+		this._modeChange(this.mode);
 	}
 
 	componentWillRender() {
