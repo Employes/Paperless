@@ -4,12 +4,11 @@ import {
 	EventEmitter,
 	Fragment,
 	h,
-	Host,
 	Prop,
 	State,
 } from '@stencil/core';
-import { defaultSize, defaultSizeOptions } from '../size/constants';
 import { cva } from 'class-variance-authority';
+import { defaultSize, defaultSizeOptions } from '../size/constants';
 
 const pagination = cva(
 	[
@@ -32,6 +31,7 @@ const pagination = cva(
 @Component({
 	tag: 'p-pagination',
 	styleUrl: 'pagination.component.css',
+	shadow: true,
 })
 export class Pagination {
 	/**
@@ -97,7 +97,7 @@ export class Pagination {
 			this.hideOnSinglePage && this.total <= this.pageSizeOptions?.[0];
 
 		return (
-			<Host
+			<div
 				class={pagination({
 					hidden:
 						(hidePageSizeSelect && !this._hasPaginationPages) ||
@@ -137,7 +137,7 @@ export class Pagination {
 						}}
 					/>
 				)}
-			</Host>
+			</div>
 		);
 	}
 

@@ -1,12 +1,4 @@
-import {
-	Component,
-	Event,
-	EventEmitter,
-	h,
-	Host,
-	Prop,
-	Watch,
-} from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop, Watch } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
 type PaginationSetItem = {
@@ -26,6 +18,7 @@ const pagination = cva(['p-pagination', 'flex gap-2 items-center'], {
 @Component({
 	tag: 'p-pagination-pages',
 	styleUrl: 'pagination-pages.component.css',
+	shadow: true,
 })
 export class PaginationPages {
 	/**
@@ -70,7 +63,7 @@ export class PaginationPages {
 
 	render() {
 		return (
-			<Host
+			<div
 				class={pagination({
 					hidden: this.hideOnSinglePage && this._set?.length === 3,
 				})}
@@ -109,7 +102,7 @@ export class PaginationPages {
 						</p-pagination-pages-item>
 					);
 				})}
-			</Host>
+			</div>
 		);
 	}
 

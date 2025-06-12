@@ -1,5 +1,6 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+import { asBoolean } from '../../../../utils/as-boolean';
 
 const item = cva(
 	[
@@ -68,6 +69,7 @@ const item = cva(
 @Component({
 	tag: 'p-pagination-pages-item',
 	styleUrl: 'pagination-pages-item.component.css',
+	shadow: true,
 })
 export class PaginationPagesItem {
 	/**
@@ -92,16 +94,16 @@ export class PaginationPagesItem {
 
 	render() {
 		return (
-			<Host
+			<div
 				class={item({
 					variant: this.variant,
-					active: this.active,
-					hover: this.hover,
-					disabled: this.disabled,
+					active: asBoolean(this.active),
+					hover: asBoolean(this.hover, true),
+					disabled: asBoolean(this.disabled),
 				})}
 			>
 				<slot />
-			</Host>
+			</div>
 		);
 	}
 }
