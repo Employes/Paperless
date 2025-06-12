@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.186](https://github.com/employes/paperless/compare/v2.0.1-beta.185...v2.0.1-beta.186) (2025-06-12)
+
+
+### Bug Fixes
+
+* **atoms/info-panel:** Set content font to normal ([8e00963](https://github.com/employes/paperless/commit/8e0096378e8104502a353de9854015a23ca9ddbc))
+
+
+
+
+
 ## [2.0.1-beta.185](https://github.com/employes/paperless/compare/v2.0.1-beta.184...v2.0.1-beta.185) (2025-06-12)
 
 **Note:** Version bump only for package paperless
