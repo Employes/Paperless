@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.184](https://github.com/employes/paperless/compare/v2.0.1-beta.183...v2.0.1-beta.184) (2025-06-12)
+
+
+### Bug Fixes
+
+* **molecules/calendar:** Set initial view on load ([4e46038](https://github.com/employes/paperless/commit/4e460381149b7db0b42e464fddaab1aa748eb6e9))
+
+
+
+
+
 ## [2.0.1-beta.183](https://github.com/employes/paperless/compare/v2.0.1-beta.181...v2.0.1-beta.183) (2025-06-11)
 
 
