@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.194](https://github.com/employes/paperless/compare/v2.0.1-beta.193...v2.0.1-beta.194) (2025-06-19)
+
+
+### Bug Fixes
+
+* **atoms/drawer/container:** Apply margin instead of paddings ([a59e666](https://github.com/employes/paperless/commit/a59e6666a7fa757159c4080507d8a2f291206191))
+
+
+
+
+
 ## [2.0.1-beta.193](https://github.com/employes/paperless/compare/v2.0.1-beta.192...v2.0.1-beta.193) (2025-06-19)
 
 
