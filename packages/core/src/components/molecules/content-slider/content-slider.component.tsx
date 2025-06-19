@@ -56,15 +56,8 @@ export class ContentSlider {
 	private _shouldCheckLocation = false;
 	@State() private _dragging = false;
 
-	componentWillRender() {
-		const items = this._el.querySelectorAll(':scope > *');
-		this._items = Array.from(items) as HTMLElement[];
-	}
-
 	componentDidLoad() {
 		this._innerSliderRef.style.setProperty('--tw-translate-x', `0px`);
-		this._calculateWidth();
-		this._calculateIndicator();
 	}
 
 	disconnectedCallback() {
@@ -175,9 +168,14 @@ export class ContentSlider {
 	}
 
 	private _slotChange() {
-		this._calculateWidth();
-		this._checkBoundary();
-		this._calculateIndicator();
+		const items = this._el.querySelectorAll(':scope > *');
+		this._items = Array.from(items) as HTMLElement[];
+
+		setTimeout(() => {
+			this._calculateWidth();
+			this._checkBoundary();
+			this._calculateIndicator();
+		}, 100);
 	}
 
 	@Listen('mouseup', { target: 'window' })
