@@ -333,7 +333,7 @@ export class Datepicker {
 					<input
 						slot='trigger'
 						type={this.mode === 'day' ? 'date' : 'month'}
-						class='h-0 overflow-hidden' // we use h-0 here so location dependent pickers can correctly place itself
+						class='pointer-events-none absolute left-0 top-0 z-[-10] overflow-hidden opacity-0'
 						onInput={ev => this._onNativeInput(ev)}
 						ref={ref => (this._dateInputRef = ref)}
 						value={this._value && format(this._value, 'yyyy-MM-dd')}
@@ -371,6 +371,7 @@ export class Datepicker {
 
 	private _onFocus() {
 		if (this._isMobileBrowser && this._dateInputRef) {
+			this._dateInputRef.focus();
 			this._dateInputRef.showPicker();
 			this._inputRef.blur();
 			return;
