@@ -14,6 +14,10 @@ const safeArea = ({ addUtilities }) => {
 			marginTop: 'env(safe-area-inset-top)',
 			marginBottom: 'env(safe-area-inset-bottom)',
 		},
+		'.my-safe-2': {
+			marginTop: 'calc(env(safe-area-inset-top)+0.5rem)',
+			marginBottom: 'calc(env(safe-area-inset-bottom)+0.5rem)',
+		},
 		'.mt-safe': {
 			marginTop: 'env(safe-area-inset-top)',
 		},
@@ -39,6 +43,10 @@ const safeArea = ({ addUtilities }) => {
 		'.py-safe': {
 			paddingTop: 'env(safe-area-inset-top)',
 			paddingBottom: 'env(safe-area-inset-bottom)',
+		},
+		'.py-safe-2': {
+			paddingTop: 'calc(env(safe-area-inset-top)+0.5rem)',
+			paddingBottom: 'calc(env(safe-area-inset-bottom)+0.5rem)',
 		},
 		'.pt-safe': {
 			paddingTop: 'env(safe-area-inset-top)',
@@ -67,7 +75,8 @@ const safeArea = ({ addUtilities }) => {
 				'calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))',
 		},
 		'.h-screen-safe': {
-			height: 'calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))',
+			height:
+				'calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))',
 		},
 		'.min-w-screen': {
 			minWidth: '100vw',
@@ -84,7 +93,8 @@ const safeArea = ({ addUtilities }) => {
 				'calc(100vw - (env(safe-area-inset-left) + env(safe-area-inset-right)))',
 		},
 		'.w-screen-safe': {
-			width: 'calc(100vw - (env(safe-area-inset-left) + env(safe-area-inset-right)))',
+			width:
+				'calc(100vw - (env(safe-area-inset-left) + env(safe-area-inset-right)))',
 		},
 	};
 

@@ -2,10 +2,9 @@ import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { asBoolean } from '../../../../utils/as-boolean';
 
-
 const container = cva(
 	[
-		'flex-1 min-w-0',
+		'flex-1 min-w-0 my-safe-2',
 
 		'z-drawer flex flex-col',
 
@@ -17,9 +16,8 @@ const container = cva(
 	{
 		variants: {
 			closing: {
-				false:
-					'animate-slide-in-right',
-				true: 'animate-slide-out-right'
+				false: 'animate-slide-in-right',
+				true: 'animate-slide-out-right',
 			},
 		},
 	}
@@ -28,7 +26,7 @@ const container = cva(
 @Component({
 	tag: 'p-drawer-container',
 	styleUrl: 'drawer-container.component.css',
-	shadow: true
+	shadow: true,
 })
 export class DrawerContainer {
 	/**

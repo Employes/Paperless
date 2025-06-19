@@ -1,5 +1,5 @@
 :host {
 	@apply flex flex-col items-end;
-	@apply w-full p-2 tablet:ml-auto tablet:w-auto;
-	@apply h-full overflow-y-auto overflow-x-hidden;
+	@apply w-full px-2 tablet:ml-auto tablet:w-auto;
+	@apply min-h-full overflow-x-hidden;
 }
