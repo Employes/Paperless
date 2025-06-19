@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.189](https://github.com/employes/paperless/compare/v2.0.1-beta.188...v2.0.1-beta.189) (2025-06-19)
+
+
+### Bug Fixes
+
+* **atoms/backdrop:** Add safe padding for drawer ([ef5da05](https://github.com/employes/paperless/commit/ef5da05271e758cc35d71b3213633ab7a7541d16))
+* **atoms/modal/body & footer:** Add safe padding for modal ([c098e60](https://github.com/employes/paperless/commit/c098e60518247e4ba75a6d79d4a2db99a461bd09))
+
+
+
+
+
 ## [2.0.1-beta.188](https://github.com/employes/paperless/compare/v2.0.1-beta.187...v2.0.1-beta.188) (2025-06-13)
 
 
