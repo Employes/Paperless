@@ -4,8 +4,8 @@ import { cva } from 'class-variance-authority';
 const body = cva('bg-white p-4', {
 	variants: {
 		roundedBottom: {
-			true: 'rounded-b-none desktop-xs:rounded-b-2xl',
-			false: null,
+			true: 'rounded-b-none desktop-xs:rounded-b-2xl pb-[calc(env(safe-area-inset-bottom)+1rem)]',
+			false: 'pb-4',
 		},
 		roundedTop: {
 			true: 'rounded-t-lg desktop-xs:rounded-t-2xl',
