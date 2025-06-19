@@ -75,7 +75,7 @@ export class ContentSlider {
 
 	render() {
 		return (
-			<Host class="p-content-slider">
+			<Host class='p-content-slider'>
 				<div
 					class={`slider ${!this.disableDrag && 'draggable'} ${
 						this._dragging && 'dragging'
@@ -83,34 +83,32 @@ export class ContentSlider {
 					style={{
 						height: `${this._outerHeight}px`,
 					}}
-					ref={(el) => (this._sliderRef = el)}
-					onMouseDown={(e) => this._mouseDownHandler(e)}
-					onTouchStart={(e) => this._mouseDownHandler(e)}
-					onMouseMove={(e) => this._mouseMoveHandler(e)}
-					onTouchMove={(e) => this._mouseMoveHandler(e)}
+					ref={el => (this._sliderRef = el)}
+					onMouseDown={e => this._mouseDownHandler(e)}
+					onTouchStart={e => this._mouseDownHandler(e)}
+					onMouseMove={e => this._mouseMoveHandler(e)}
+					onTouchMove={e => this._mouseMoveHandler(e)}
 				>
 					<div
-						class="inner-slider"
-						ref={(ref) => this._setInnerSliderReft(ref)}
+						class='inner-slider'
+						ref={ref => this._setInnerSliderReft(ref)}
 						onTransitionEnd={() => this._transitionEndHandler()}
 					>
-						<slot />
+						<slot onSlotchange={() => this._slotChange()} />
 					</div>
 				</div>
-				<div
-					class={`indicator ${this.hideMobileIndicator && 'hidden'}`}
-				>
+				<div class={`indicator ${this.hideMobileIndicator && 'hidden'}`}>
 					{this._items.map((_, i) => (
 						<div
 							onClick={() => this._scrollTo(i, true)}
-							class={`item ${
-								!this.disableIndicatorClick && 'cursor-pointer'
-							}`}
+							class={`item ${!this.disableIndicatorClick && 'cursor-pointer'}`}
 						>
-							<div class={cn('block w-2 h-2 rounded-full', {
-								'bg-dark-teal-600': i === this._visibleIndex,
-								'bg-dark-teal-400': i !== this._visibleIndex,
-							})} />
+							<div
+								class={cn('block h-2 w-2 rounded-full', {
+									'bg-dark-teal-600': i === this._visibleIndex,
+									'bg-dark-teal-400': i !== this._visibleIndex,
+								})}
+							/>
 						</div>
 					))}
 				</div>
@@ -151,9 +149,7 @@ export class ContentSlider {
 
 		this._shouldCheckLocation = true;
 
-		if (
-			this._innerSliderRef.style.getPropertyValue('pointer-events') === ''
-		) {
+		if (this._innerSliderRef.style.getPropertyValue('pointer-events') === '') {
 			this._innerSliderRef.style.pointerEvents = 'none';
 		}
 
@@ -175,6 +171,12 @@ export class ContentSlider {
 	}
 
 	private _transitionEndHandler() {
+		this._calculateIndicator();
+	}
+
+	private _slotChange() {
+		this._calculateWidth();
+		this._checkBoundary();
 		this._calculateIndicator();
 	}
 
@@ -222,8 +224,7 @@ export class ContentSlider {
 
 		const offsetLeft = elRect.x - innerSliderRect.x;
 
-		const centerOffset =
-			offsetLeft + elRect.width / 2 - sliderRect.width / 2;
+		const centerOffset = offsetLeft + elRect.width / 2 - sliderRect.width / 2;
 
 		this._innerSliderRef.style.setProperty(
 			'--tw-translate-x',
@@ -306,8 +307,7 @@ export class ContentSlider {
 		const sliderRect = this._sliderRef.getBoundingClientRect();
 
 		return (
-			(elRect.left >= sliderRect.left &&
-				elRect.right <= sliderRect.right) ||
+			(elRect.left >= sliderRect.left && elRect.right <= sliderRect.right) ||
 			(this._isMobile(el) &&
 				elRect.left + elRect.width / 2 >= sliderRect.left &&
 				elRect.left + elRect.width / 2 <= sliderRect.right)

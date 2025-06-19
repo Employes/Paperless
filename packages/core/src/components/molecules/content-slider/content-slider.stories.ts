@@ -3,21 +3,12 @@ import { html, nothing } from 'lit';
 const meta = {
 	title: 'Design System/Molecules/Content slider',
 	component: 'p-content-slider',
-	args: {
-		content: 'ContentSlider',
-	},
-	argTypes: {
-		content: {
-			type: 'string',
-		},
-	},
 };
 
 export default meta;
 
 export const Default = {
 	render: ({
-		content,
 		'hide-mobile-indicator': hideMobileIndicator,
 		'disable-drag': disableDrag,
 		'disable-auto-center': disableAutoCenter,
@@ -28,7 +19,30 @@ export const Default = {
 		disable-auto-center=${disableAutoCenter ?? nothing}
 		disable-indicator-click=${disableIndicatorClick ?? nothing}
 	>
-		${content}
+		<p-card-container class="w-full">
+			<p-card-header header="card"></p-card-header>
+			<p-card-body>
+				Some text in the<br />
+				card body <br />
+				to give it some height
+			</p-card-body>
+		</p-card-container>
+		<p-card-container class="w-full">
+			<p-card-header header="card"></p-card-header>
+			<p-card-body>
+				Some text in the<br />
+				card body <br />
+				to give it some height
+			</p-card-body>
+		</p-card-container>
+		<p-card-container class="w-full">
+			<p-card-header header="card"></p-card-header>
+			<p-card-body>
+				Some text in the<br />
+				card body <br />
+				to give it some height
+			</p-card-body>
+		</p-card-container>
 	</p-content-slider>`,
 	tags: ['!dev'],
 };
