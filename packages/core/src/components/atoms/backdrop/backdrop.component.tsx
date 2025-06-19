@@ -46,7 +46,7 @@ const contentContainer = cva(
 					'pt-16 tablet:px-16 desktop-xs:py-8',
 					'items-end desktop-xs:items-stretch justify-center',
 				],
-				drawer: ['items-start justify-end desktop-xs:items-start'],
+				drawer: ['items-start justify-end desktop-xs:items-start py-safe'],
 			},
 			closing: {
 				false: null,
