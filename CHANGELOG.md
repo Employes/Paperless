@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.192](https://github.com/employes/paperless/compare/v2.0.1-beta.191...v2.0.1-beta.192) (2025-06-19)
+
+
+### Bug Fixes
+
+* **molecules/content-slider:** Check content on slot change ([2cb7553](https://github.com/employes/paperless/commit/2cb7553c860206fea2b5c2665ebebb308d0b5a92))
+
+
+
+
+
 ## [2.0.1-beta.191](https://github.com/employes/paperless/compare/v2.0.1-beta.190...v2.0.1-beta.191) (2025-06-19)
 
 
