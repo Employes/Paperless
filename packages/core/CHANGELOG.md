@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.190](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.189...v2.0.1-beta.190) (2025-06-19)
+
+
+### Bug Fixes
+
+* **molecules/datepicker:** Show datepicker on both ios & android correctly now ([1745fa3](https://github.com/ionic-team/stencil-component-starter/commit/1745fa3024ff977cb22694c6f2c272380454aab0))
+
+
+
+
+
 ## [2.0.1-beta.189](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.188...v2.0.1-beta.189) (2025-06-19)
 
 
