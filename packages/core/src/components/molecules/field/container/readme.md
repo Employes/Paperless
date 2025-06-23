@@ -53,7 +53,6 @@ graph TD;
   p-field-container --> p-tooltip
   p-helper --> p-tooltip
   p-helper --> p-icon
-  p-tooltip --> p-portal
   p-attachment --> p-field-container
   p-field --> p-field-container
   p-select --> p-field-container

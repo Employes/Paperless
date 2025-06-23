@@ -46,7 +46,6 @@ graph TD;
   p-calendar --> p-tooltip
   p-button --> p-icon
   p-button --> p-loader
-  p-tooltip --> p-portal
   p-datepicker --> p-calendar
   style p-calendar fill:#f9f,stroke:#333,stroke-width:4px
 ```

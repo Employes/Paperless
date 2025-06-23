@@ -61,11 +61,6 @@ export class Select {
 	@Prop({ reflect: true }) multi: boolean;
 
 	/**
-	 * Wether to use a portal for the dropdown container of the select
-	 */
-	@Prop() usePortal: boolean = false;
-
-	/**
 	 * The strategy to use for the dropdown placement
 	 */
 	@Prop() strategy: Strategy = 'absolute';
@@ -452,7 +447,6 @@ export class Select {
 				scrollable={this.enableAutocomplete ? 'large' : true}
 				show={this._showDropdown}
 				onIsOpen={ev => this._onDropdownOpen(ev)}
-				usePortal={this.usePortal}
 				strategy={this.strategy}
 			>
 				<p-field-container

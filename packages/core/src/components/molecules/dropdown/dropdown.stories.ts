@@ -15,7 +15,6 @@ export const Default = {
 		offset,
 		strategy,
 		show,
-		'use-portal': usePortal,
 		'calculate-width': calculateWidth,
 		'apply-max-width': applyMaxWidth,
 		'apply-full-width': applyFullWidth,
@@ -32,7 +31,6 @@ export const Default = {
 		offset=${offset ?? nothing}
 		strategy=${strategy ?? nothing}
 		show=${show ?? nothing}
-		use-portal=${usePortal ?? nothing}
 		calculate-width=${calculateWidth ?? nothing}
 		apply-max-width=${applyMaxWidth ?? nothing}
 		apply-full-width=${applyFullWidth ?? nothing}

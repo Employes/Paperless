@@ -3,11 +3,17 @@ import { cva } from 'class-variance-authority';
 import { asBoolean } from '../../../../utils/as-boolean';
 
 const dropdownMenuContainer = cva(
-	['p-dropdown-menu-container', 'p-1', 'rounded-lg z-10', 'border'],
+	[
+		'p-dropdown-menu-container',
+		'p-1',
+		'rounded-lg z-10',
+		'border',
+		'transform-gpu will-change-transform',
+	],
 	{
 		variants: {
 			variant: {
-				default: 'bg-white border-black-teal-100 drop-shadow-2',
+				default: 'bg-white border-black-teal-100 drop-shadow-2 ',
 				'dark-teal': 'bg-dark-teal-400 drop-shadow-3 border-dark-teal-400',
 			},
 			fullWidth: {

@@ -16,7 +16,6 @@
 | `placement`        | `placement`          | The placement of the popover                     | `"bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `undefined`  |
 | `show`             | `show`               | Wether to show the popover                       | `boolean`                                                                                                                                                            | `false`      |
 | `strategy`         | `strategy`           | The strategy of the popover placement            | `"absolute" \| "fixed"`                                                                                                                                              | `'absolute'` |
-| `usePortal`        | `use-portal`         | Wether to use a portal for the tooltip           | `boolean`                                                                                                                                                            | `false`      |
 | `variant`          | `variant`            | The variant of the popover                       | `"click" \| "error" \| "hover"`                                                                                                                                      | `'hover'`    |
 
 
@@ -37,14 +36,9 @@
  - [p-helper](../helper)
  - [p-table](../../organisms/table)
 
-### Depends on
-
-- [p-portal](../../helpers/portal)
-
 ### Graph
 ```mermaid
 graph TD;
-  p-tooltip --> p-portal
   p-attachment --> p-tooltip
   p-calendar --> p-tooltip
   p-field-container --> p-tooltip

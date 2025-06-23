@@ -123,7 +123,6 @@ graph TD;
   p-field-container --> p-tooltip
   p-helper --> p-tooltip
   p-helper --> p-icon
-  p-tooltip --> p-portal
   p-button --> p-icon
   p-button --> p-loader
   p-floating-menu-container --> p-divider
@@ -137,7 +136,6 @@ graph TD;
   p-pagination-size --> p-dropdown
   p-pagination-size --> p-icon
   p-pagination-size --> p-dropdown-menu-item
-  p-dropdown --> p-portal
   p-dropdown --> p-dropdown-menu-container
   p-dropdown-menu-item --> p-icon
   p-dropdown-menu-item --> p-checkbox

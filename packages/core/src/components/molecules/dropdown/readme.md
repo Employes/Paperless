@@ -13,7 +13,6 @@
 | `applyChevron`        | `apply-chevron`         | Wether to apply chevron automatically                                         | `boolean`                                                                                                                                                            | `true`           |
 | `applyFullWidth`      | `apply-full-width`      | Wether to apply the full width                                                | `boolean`                                                                                                                                                            | `true`           |
 | `applyMaxWidth`       | `apply-max-width`       | Wether to apply the max width                                                 | `boolean`                                                                                                                                                            | `true`           |
-| `calculateWidth`      | `calculate-width`       | Wether to automatically calculate the width of the menu based on the trigger  | `boolean`                                                                                                                                                            | `false`          |
 | `chevronDirection`    | `chevron-direction`     | Chevron direction                                                             | `"down" \| "up"`                                                                                                                                                     | `undefined`      |
 | `chevronPosition`     | `chevron-position`      | Chevron position                                                              | `"end" \| "start"`                                                                                                                                                   | `'end'`          |
 | `disableTriggerClick` | `disable-trigger-click` | Wether to automatically close the dropdown menu after clicking inside         | `boolean`                                                                                                                                                            | `false`          |
@@ -23,7 +22,6 @@
 | `scrollable`          | `scrollable`            | Wether the dropdown container should be scrollable when the threshold is met. | `"default" \| "large" \| boolean`                                                                                                                                    | `false`          |
 | `show`                | `show`                  | Wether to show the dropdown menu                                              | `boolean`                                                                                                                                                            | `false`          |
 | `strategy`            | `strategy`              | The strategy of the dropdown placement                                        | `"absolute" \| "fixed"`                                                                                                                                              | `'absolute'`     |
-| `usePortal`           | `use-portal`            | Wether to use a portal for the dropdown container                             | `boolean`                                                                                                                                                            | `false`          |
 | `variant`             | `variant`               | The variant of the dropdown                                                   | `"dark-teal" \| "default"`                                                                                                                                           | `'default'`      |
 
 
@@ -45,13 +43,11 @@
 
 ### Depends on
 
-- [p-portal](../../helpers/portal)
 - [p-dropdown-menu-container](../../atoms/dropdown-menu/container)
 
 ### Graph
 ```mermaid
 graph TD;
-  p-dropdown --> p-portal
   p-dropdown --> p-dropdown-menu-container
   p-datepicker --> p-dropdown
   p-pagination-size --> p-dropdown

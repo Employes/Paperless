@@ -77,11 +77,6 @@ export class Dropdown {
 	@Prop() show: boolean = false;
 
 	/**
-	 * Wether to use a portal for the dropdown container
-	 */
-	@Prop() usePortal: boolean = false;
-
-	/**
 	 * Wether to automatically calculate the width of the menu based on the trigger
 	 */
 	@Prop() calculateWidth: boolean = false;
@@ -172,60 +167,35 @@ export class Dropdown {
 	}
 
 	render() {
-		const dropdownContainerProps = {
-			class: dropdownContainerClass({
-				strategy: this.strategy,
-				maxWidth: !this.calculateWidth && this.applyMaxWidth,
-				fullWidth: this.applyFullWidth && !this.applyMaxWidth,
-			}),
-			ref: el => this._load(el),
-			onClick: () => this._containerClickHandler(),
-			role: 'popover',
-			'data-placement': this.placement,
-			'data-strategy': this.strategy,
-		};
-
-		let dropdownContainer: HTMLElement;
-
-		if (this.usePortal) {
-			dropdownContainer = (
-				<p-portal {...dropdownContainerProps}>
-					<p-dropdown-menu-container
-						variant={this.variant}
-						maxWidth={!this.calculateWidth && this.applyMaxWidth}
-						fullWidth={this.applyFullWidth && !this.applyMaxWidth}
-						allowOverflow={this.allowOverflow}
-						scrollable={this.scrollable}
-					>
-						<slot name='items' />
-					</p-dropdown-menu-container>
-				</p-portal>
-			);
-		} else {
-			dropdownContainer = (
-				<p-dropdown-menu-container
-					variant={this.variant}
-					maxWidth={!this.calculateWidth && this.applyMaxWidth}
-					fullWidth={this.applyFullWidth && !this.applyMaxWidth}
-					allowOverflow={this.allowOverflow}
-					scrollable={this.scrollable}
-					{...dropdownContainerProps}
-				>
-					<slot name='items' />
-				</p-dropdown-menu-container>
-			);
-		}
-
 		return (
 			<Host class='relative'>
 				<div
 					class='trigger'
-					ref={ref => (this._trigger = ref)}
 					onClick={() => this._triggerClickHandler()}
 				>
 					<slot name='trigger' />
 				</div>
-				<div class='relative w-full'>{dropdownContainer}</div>
+				<div class='relative w-full'>
+					<p-dropdown-menu-container
+						variant={this.variant}
+						maxWidth={this.applyMaxWidth}
+						fullWidth={this.applyFullWidth && !this.applyMaxWidth}
+						allowOverflow={this.allowOverflow}
+						scrollable={this.scrollable}
+						class={dropdownContainerClass({
+							strategy: this.strategy,
+							maxWidth: this.applyMaxWidth,
+							fullWidth: this.applyFullWidth && !this.applyMaxWidth,
+						})}
+						ref={el => this._load(el)}
+						onClick={() => this._containerClickHandler()}
+						role='popover'
+						data-placement={this.placement}
+						data-strategy={this.strategy}
+					>
+						<slot name='items' />
+					</p-dropdown-menu-container>
+				</div>
 			</Host>
 		);
 	}

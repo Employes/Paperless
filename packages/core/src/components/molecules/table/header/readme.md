@@ -73,7 +73,6 @@ graph TD;
   p-field-container --> p-tooltip
   p-helper --> p-tooltip
   p-helper --> p-icon
-  p-tooltip --> p-portal
   p-button --> p-icon
   p-button --> p-loader
   p-table --> p-table-header

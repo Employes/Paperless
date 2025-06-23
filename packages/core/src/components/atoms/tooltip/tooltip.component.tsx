@@ -38,7 +38,6 @@ const popover = cva(
 				error: 'max-w-full w-full',
 			},
 			strategy: {
-				none: null,
 				fixed: 'fixed',
 				absolute: 'absolute',
 			},
@@ -55,15 +54,6 @@ const popover = cva(
 		],
 	}
 );
-
-const portal = cva('', {
-	variants: {
-		strategy: {
-			fixed: 'fixed',
-			absolute: 'absolute',
-		},
-	},
-});
 
 @Component({
 	tag: 'p-tooltip',
@@ -107,11 +97,6 @@ export class Tooltip {
 	@Prop() show: boolean = false;
 
 	/**
-	 * Wether to use a portal for the tooltip
-	 */
-	@Prop() usePortal: boolean = false;
-
-	/**
 	 * Wether to someone can manually close the popover
 	 */
 	@Prop() canManuallyClose: boolean = true;
@@ -153,51 +138,26 @@ export class Tooltip {
 	}
 
 	render() {
-		const tooltipProps = {
-			role: 'popover',
-			'data-placement': this.placement,
-			ref: el => this._load(el),
-		};
-
-		let tooltip: HTMLElement;
-
-		const tooltipElement = (
-			<div
-				class={popover({
-					variant: this.variant,
-					strategy: this.usePortal ? 'none' : this.strategy,
-				})}
-				{...(this.usePortal ? {} : tooltipProps)}
-			>
-				<div class='flex gap-2 whitespace-normal'>
-					{this.variant === 'error' && (
-						<div class='w-[2px] bg-negative-red'></div>
-					)}
-					{this.content ? this.content : <slot name='content' />}
-				</div>
-			</div>
-		);
-
-		if (this.usePortal) {
-			tooltip = (
-				<p-portal
-					class={portal({
-						strategy: this.strategy,
-					})}
-					{...tooltipProps}
-				>
-					{tooltipElement}
-				</p-portal>
-			);
-		} else {
-			tooltip = tooltipElement;
-		}
-
 		return (
 			<Host class='flex cursor-pointer'>
 				<div class='relative h-inherit w-inherit max-w-full'>
 					<slot name='trigger' />
-					{tooltip}
+					<div
+						class={popover({
+							variant: this.variant,
+							strategy: this.strategy,
+						})}
+						role='popover'
+						data-placement={this.placement}
+						ref={el => this._load(el)}
+					>
+						<div class='flex gap-2 whitespace-normal'>
+							{this.variant === 'error' && (
+								<div class='w-[2px] bg-negative-red'></div>
+							)}
+							{this.content ? this.content : <slot name='content' />}
+						</div>
+					</div>
 				</div>
 			</Host>
 		);

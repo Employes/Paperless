@@ -56,7 +56,6 @@ graph TD;
   p-datepicker --> p-dropdown
   p-datepicker --> p-field
   p-datepicker --> p-calendar
-  p-dropdown --> p-portal
   p-dropdown --> p-dropdown-menu-container
   p-field --> p-field-container
   p-field --> p-icon
@@ -65,7 +64,6 @@ graph TD;
   p-field-container --> p-tooltip
   p-helper --> p-tooltip
   p-helper --> p-icon
-  p-tooltip --> p-portal
   p-calendar --> p-button
   p-calendar --> p-tooltip
   p-button --> p-icon

@@ -17,7 +17,6 @@ export const Default = {
 		strategy,
 		'enable-user-input': enableUserInput,
 		show,
-		'use-portal': usePortal,
 		'can-manually-close': canManuallyClose,
 	}) => html`<p-tooltip
 		variant=${variant ?? nothing}
@@ -27,7 +26,6 @@ export const Default = {
 		strategy=${strategy ?? nothing}
 		enable-user-input=${enableUserInput ?? nothing}
 		show=${show ?? nothing}
-		use-portal=${usePortal ?? nothing}
 		can-manually-close=${canManuallyClose ?? nothing}
 		@isOpen=${action('isOpen')}
 	/>`,

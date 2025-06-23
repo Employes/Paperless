@@ -70,7 +70,6 @@ graph TD;
   p-field-container --> p-tooltip
   p-helper --> p-tooltip
   p-helper --> p-icon
-  p-tooltip --> p-portal
   p-datepicker --> p-field
   p-select --> p-field
   p-table-header --> p-field

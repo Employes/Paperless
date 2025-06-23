@@ -29,7 +29,6 @@
 graph TD;
   p-helper --> p-tooltip
   p-helper --> p-icon
-  p-tooltip --> p-portal
   p-field-container --> p-helper
   style p-helper fill:#f9f,stroke:#333,stroke-width:4px
 ```

@@ -605,10 +605,6 @@ export namespace Components {
          */
         "applyMaxWidth": boolean;
         /**
-          * Wether to automatically calculate the width of the menu based on the trigger
-         */
-        "calculateWidth": boolean;
-        /**
           * Chevron direction
          */
         "chevronDirection": 'up' | 'down';
@@ -644,10 +640,6 @@ export namespace Components {
           * The strategy of the dropdown placement
          */
         "strategy": Strategy;
-        /**
-          * Wether to use a portal for the dropdown container
-         */
-        "usePortal": boolean;
         /**
           * The variant of the dropdown
          */
@@ -1297,8 +1289,6 @@ export namespace Components {
          */
         "sizeOptions": number[];
     }
-    interface PPortal {
-    }
     interface PProfile {
         /**
           * The position of the dropdown
@@ -1530,10 +1520,6 @@ export namespace Components {
           * The strategy to use for the dropdown placement
          */
         "strategy": Strategy;
-        /**
-          * Wether to use a portal for the dropdown container of the select
-         */
-        "usePortal": boolean;
         /**
           * The current value
          */
@@ -2105,10 +2091,6 @@ export namespace Components {
           * The strategy of the popover placement
          */
         "strategy": Strategy;
-        /**
-          * Wether to use a portal for the tooltip
-         */
-        "usePortal": boolean;
         /**
           * The variant of the popover
          */
@@ -2827,12 +2809,6 @@ declare global {
         prototype: HTMLPPaginationSizeElement;
         new (): HTMLPPaginationSizeElement;
     };
-    interface HTMLPPortalElement extends Components.PPortal, HTMLStencilElement {
-    }
-    var HTMLPPortalElement: {
-        prototype: HTMLPPortalElement;
-        new (): HTMLPPortalElement;
-    };
     interface HTMLPProfileElement extends Components.PProfile, HTMLStencilElement {
     }
     var HTMLPProfileElement: {
@@ -3171,7 +3147,6 @@ declare global {
         "p-pagination-pages": HTMLPPaginationPagesElement;
         "p-pagination-pages-item": HTMLPPaginationPagesItemElement;
         "p-pagination-size": HTMLPPaginationSizeElement;
-        "p-portal": HTMLPPortalElement;
         "p-profile": HTMLPProfileElement;
         "p-radio": HTMLPRadioElement;
         "p-range": HTMLPRangeElement;
@@ -3819,10 +3794,6 @@ declare namespace LocalJSX {
          */
         "applyMaxWidth"?: boolean;
         /**
-          * Wether to automatically calculate the width of the menu based on the trigger
-         */
-        "calculateWidth"?: boolean;
-        /**
           * Chevron direction
          */
         "chevronDirection"?: 'up' | 'down';
@@ -3862,10 +3833,6 @@ declare namespace LocalJSX {
           * The strategy of the dropdown placement
          */
         "strategy"?: Strategy;
-        /**
-          * Wether to use a portal for the dropdown container
-         */
-        "usePortal"?: boolean;
         /**
           * The variant of the dropdown
          */
@@ -4576,8 +4543,6 @@ declare namespace LocalJSX {
          */
         "sizeOptions"?: number[];
     }
-    interface PPortal {
-    }
     interface PProfile {
         /**
           * The position of the dropdown
@@ -4837,10 +4802,6 @@ declare namespace LocalJSX {
           * The strategy to use for the dropdown placement
          */
         "strategy"?: Strategy;
-        /**
-          * Wether to use a portal for the dropdown container of the select
-         */
-        "usePortal"?: boolean;
         /**
           * The current value
          */
@@ -5517,10 +5478,6 @@ declare namespace LocalJSX {
          */
         "strategy"?: Strategy;
         /**
-          * Wether to use a portal for the tooltip
-         */
-        "usePortal"?: boolean;
-        /**
           * The variant of the popover
          */
         "variant"?: 'hover' | 'click' | 'error';
@@ -5580,7 +5537,6 @@ declare namespace LocalJSX {
         "p-pagination-pages": PPaginationPages;
         "p-pagination-pages-item": PPaginationPagesItem;
         "p-pagination-size": PPaginationSize;
-        "p-portal": PPortal;
         "p-profile": PProfile;
         "p-radio": PRadio;
         "p-range": PRange;
@@ -5666,7 +5622,6 @@ declare module "@stencil/core" {
             "p-pagination-pages": LocalJSX.PPaginationPages & JSXBase.HTMLAttributes<HTMLPPaginationPagesElement>;
             "p-pagination-pages-item": LocalJSX.PPaginationPagesItem & JSXBase.HTMLAttributes<HTMLPPaginationPagesItemElement>;
             "p-pagination-size": LocalJSX.PPaginationSize & JSXBase.HTMLAttributes<HTMLPPaginationSizeElement>;
-            "p-portal": LocalJSX.PPortal & JSXBase.HTMLAttributes<HTMLPPortalElement>;
             "p-profile": LocalJSX.PProfile & JSXBase.HTMLAttributes<HTMLPProfileElement>;
             "p-radio": LocalJSX.PRadio & JSXBase.HTMLAttributes<HTMLPRadioElement>;
             "p-range": LocalJSX.PRange & JSXBase.HTMLAttributes<HTMLPRangeElement>;

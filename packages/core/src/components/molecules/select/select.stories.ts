@@ -30,7 +30,6 @@ export const Default = {
 	render: ({
 		items,
 		multi,
-		'use-portal': usePortal,
 		strategy,
 		icon,
 		query,
@@ -72,7 +71,6 @@ export const Default = {
 	}) => html`<p-select
 		items=${items ?? nothing}
 		multi=${multi ?? nothing}
-		use-portal=${usePortal ?? nothing}
 		strategy=${strategy ?? nothing}
 		icon=${icon ?? nothing}
 		query=${query ?? nothing}
