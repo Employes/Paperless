@@ -77,11 +77,6 @@ export class Dropdown {
 	@Prop() show: boolean = false;
 
 	/**
-	 * Wether to automatically calculate the width of the menu based on the trigger
-	 */
-	@Prop() calculateWidth: boolean = false;
-
-	/**
 	 * Wether to apply the max width
 	 */
 	@Prop() applyMaxWidth: boolean = true;
@@ -140,7 +135,6 @@ export class Dropdown {
 	isOpen: EventEmitter<boolean>;
 
 	private _loaded = false;
-	private _trigger: HTMLElement;
 	private _menu: HTMLElement;
 	private _cleanup: () => void;
 
@@ -306,11 +300,6 @@ export class Dropdown {
 	private _show() {
 		if (!this._loaded) {
 			return;
-		}
-
-		// Make the popover visible
-		if (this.calculateWidth) {
-			this._menu.style.width = `${this._trigger.clientWidth}px`;
 		}
 
 		this._cleanup = autoUpdate(this._el, this._menu, () => this._update());

@@ -40,7 +40,6 @@ graph TD;
   p-pagination-size --> p-dropdown
   p-pagination-size --> p-icon
   p-pagination-size --> p-dropdown-menu-item
-  p-dropdown --> p-portal
   p-dropdown --> p-dropdown-menu-container
   p-dropdown-menu-item --> p-icon
   p-dropdown-menu-item --> p-checkbox

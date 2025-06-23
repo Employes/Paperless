@@ -441,8 +441,9 @@ export class Select {
 
 		return (
 			<p-dropdown
+				applyFullWidth={true}
+				applyMaxWidth={false}
 				disableTriggerClick={true}
-				calculateWidth={true}
 				insideClick={true}
 				scrollable={this.enableAutocomplete ? 'large' : true}
 				show={this._showDropdown}

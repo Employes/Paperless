@@ -104,10 +104,11 @@ export class PaginationSize {
 		return (
 			<Host class={paginationSize({ hidden: asBoolean(this.hidden) })}>
 				<p-dropdown
+					applyFullWidth={true}
+					applyMaxWidth={false}
 					variant='dark-teal'
 					placement='top-start'
 					chevronDirection='down'
-					calculateWidth={true}
 					onIsOpen={({ detail }) => (this.dropdownIsOpen = detail)}
 				>
 					<div

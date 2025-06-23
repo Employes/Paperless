@@ -22,6 +22,14 @@ const meta = {
 		]),
 		'identifier-key': 'value',
 	},
+	parameters: {
+		docs: {
+			iframeHeight: 300,
+			story: {
+				height: '350px',
+			},
+		},
+	},
 };
 
 export default meta;
