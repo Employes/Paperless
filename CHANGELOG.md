@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.196](https://github.com/employes/paperless/compare/v2.0.1-beta.195...v2.0.1-beta.196) (2025-06-23)
+
+
+### Bug Fixes
+
+* **atoms/dropdown-menu/container:** Try to fix overflow issue with shadows ([ea42d1b](https://github.com/employes/paperless/commit/ea42d1b3759e2e10eec48b1a8c441ac2d1f59c8b))
+
+
+
+
+
 ## [2.0.1-beta.195](https://github.com/employes/paperless/compare/v2.0.1-beta.194...v2.0.1-beta.195) (2025-06-23)
 
 **Note:** Version bump only for package paperless
