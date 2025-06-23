@@ -24,16 +24,6 @@ const dropdownMenuContainer = cva(
 				false: null,
 				true: 'max-w-[13.875rem]',
 			},
-			allowOverflow: {
-				false: 'overflow-y-auto overflow-x-hidden',
-				true: null,
-			},
-			scrollable: {
-				none: null,
-				default: 'max-h-[11.5rem]',
-				large: 'max-h-[13.875rem]',
-				xlarge: 'max-h-[20rem]',
-			},
 		},
 		compoundVariants: [
 			{
@@ -44,6 +34,21 @@ const dropdownMenuContainer = cva(
 		],
 	}
 );
+
+const innerContainer = cva('w-full min-h-full relative', {
+	variants: {
+		allowOverflow: {
+			false: 'overflow-y-auto overflow-x-hidden',
+			true: null,
+		},
+		scrollable: {
+			none: null,
+			default: 'max-h-[11.5rem]',
+			large: 'max-h-[13.875rem]',
+			xlarge: 'max-h-[20rem]',
+		},
+	},
+});
 
 @Component({
 	tag: 'p-dropdown-menu-container',
@@ -95,13 +100,18 @@ export class DropdownMenuContainer {
 					class: this.class,
 					variant: this.variant,
 					fullWidth: asBoolean(this.fullWidth, true),
-					allowOverflow: asBoolean(this.allowOverflow),
-					scrollable,
 					maxWidth: this.maxWidth,
 				})}
 			>
-				<div class='flex w-full flex-col'>
-					<slot />
+				<div
+					class={innerContainer({
+						allowOverflow: asBoolean(this.allowOverflow),
+						scrollable,
+					})}
+				>
+					<div class='flex w-full flex-col'>
+						<slot />
+					</div>
 				</div>
 			</div>
 		);

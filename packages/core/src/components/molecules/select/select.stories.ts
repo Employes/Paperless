@@ -19,6 +19,34 @@ const meta = {
 				value: 'value3',
 				text: 'Option 3',
 			},
+			{
+				value: 'value4',
+				text: 'Option 4',
+			},
+			{
+				value: 'value5',
+				text: 'Option 5',
+			},
+			{
+				value: 'value6',
+				text: 'Option 6',
+			},
+			{
+				value: 'value7',
+				text: 'Option 7',
+			},
+			{
+				value: 'value8',
+				text: 'Option 8',
+			},
+			{
+				value: 'value9',
+				text: 'Option 9',
+			},
+			{
+				value: 'value10',
+				text: 'Option 10',
+			},
 		]),
 		'identifier-key': 'value',
 	},
