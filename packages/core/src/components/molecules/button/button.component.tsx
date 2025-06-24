@@ -160,7 +160,7 @@ const button = cva(
 			{
 				variant: ['secondary', 'dropdown'],
 				error: false,
-				class: ['border-black-teal/10'],
+				class: ['border-black-teal/20'],
 			},
 			{
 				variant: ['secondary', 'dropdown'],
