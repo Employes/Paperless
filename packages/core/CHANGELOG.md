@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.201](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.200...v2.0.1-beta.201) (2025-06-24)
+
+
+### Bug Fixes
+
+* **atoms/icon:** Add default translate variables ([09e5ffc](https://github.com/ionic-team/stencil-component-starter/commit/09e5ffc9c2f81d40d3ab6effea9ed42167295940))
+
+
+### Features
+
+* **atoms/dropdown-menu/item:** Add ability to wrap text ([e4063ca](https://github.com/ionic-team/stencil-component-starter/commit/e4063ca5871a57fe4438f03a21bf39f99b5bfd4e))
+* **atoms/tooltip:** Hide tooltip automatically if content length is 0 ([1a9c2ed](https://github.com/ionic-team/stencil-component-starter/commit/1a9c2ed8f62fa3ff7c113c6811c388a876a2dc3b))
+* **molecules/select:** Add ability to enable text wrap for options ([170a56d](https://github.com/ionic-team/stencil-component-starter/commit/170a56dc9893374abca1a9d1b27e714d15347fe6))
+
+
+
+
+
 ## [2.0.1-beta.200](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.199...v2.0.1-beta.200) (2025-06-24)
 
 
