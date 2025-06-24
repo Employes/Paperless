@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.200](https://github.com/employes/paperless/compare/v2.0.1-beta.199...v2.0.1-beta.200) (2025-06-24)
+
+
+### Bug Fixes
+
+* **atoms/iban-icon:** Set correct extention for ing ([483ecd9](https://github.com/employes/paperless/commit/483ecd97dbd1ca0944b702f5ad2ace603e6206cc))
+
+
+
+
+
 ## [2.0.1-beta.199](https://github.com/employes/paperless/compare/v2.0.1-beta.198...v2.0.1-beta.199) (2025-06-24)
 
 **Note:** Version bump only for package paperless
