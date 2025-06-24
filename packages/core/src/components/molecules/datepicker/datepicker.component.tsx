@@ -183,6 +183,7 @@ export class Datepicker {
 		year: 'yyyy',
 		month: 'LLLL, yyyy',
 		day: 'dd-MM-yyyy',
+		dayNoDashes: 'ddMMyyyy',
 	};
 
 	@Watch('value')
@@ -380,7 +381,7 @@ export class Datepicker {
 		this._showDropdown = true;
 	}
 
-	private _onBlur() {
+	private _onBlur(parseFormat = this.format) {
 		if (this._isMobileBrowser && this._dateInputRef) {
 			return;
 		}
@@ -391,13 +392,18 @@ export class Datepicker {
 			return;
 		}
 
-		const value = parse(target.value, this.format, new Date());
+		const value = parse(target.value, parseFormat, new Date());
 
 		if (value === this._value) {
 			return;
 		}
 
-		if (!isValid(value) || this._isDisabledDay(value)) {
+		const valid = isValid(value);
+		if (!valid && parseFormat === this.format && this.mode === 'day') {
+			return this._onBlur(this._defaultFormats['dayNoDashes']);
+		}
+
+		if (!valid || this._isDisabledDay(value)) {
 			target.value = this._getFormattedDate();
 			return;
 		}
@@ -405,16 +411,20 @@ export class Datepicker {
 		this._setValue(value, false);
 	}
 
-	private _onValueChange(value: string) {
+	private _onValueChange(value: string, parseFormat = this.format) {
 		if (this._onInputTimeout) {
 			clearTimeout(this._onInputTimeout);
 			this._onInputTimeout = null;
 		}
 
 		this._onInputTimeout = setTimeout(() => {
-			const parsedValue = parse(value, this.format, new Date());
+			const parsedValue = parse(value, parseFormat, new Date());
 
-			if (!isValid(parsedValue) || format(parsedValue, this.format) !== value) {
+			if (!isValid(parsedValue) || format(parsedValue, parseFormat) !== value) {
+				if (this.mode === 'day') {
+					this._onValueChange(value, this._defaultFormats['dayNoDashes']);
+				}
+
 				return;
 			}
 
