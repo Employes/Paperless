@@ -13,8 +13,10 @@ export const Default = {
 		'default-image': defaultImage,
 		src,
 		letters,
+		variant,
 	}) => html`<p-avatar
 		size=${size ?? nothing}
+		variant=${variant ?? nothing}
 		default-image=${defaultImage ?? nothing}
 		src=${src ?? nothing}
 		letters=${letters ?? nothing}

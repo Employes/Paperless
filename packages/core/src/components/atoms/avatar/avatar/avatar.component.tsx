@@ -3,10 +3,14 @@ import { cva } from 'class-variance-authority';
 
 const avatar = cva(
 	[
-		'p-avatar bg-off-white rounded-full aspect-branding ring-inset ring-1 ring-black-teal/20 p-[1px] flex items-center justify-center font-ambit leading-none font-bold text-black-teal-300',
+		'p-avatar rounded-full aspect-branding ring-inset ring-1 ring-black-teal/20 p-[1px] flex items-center justify-center font-ambit leading-none font-bold',
 	],
 	{
 		variants: {
+			variant: {
+				secondary: 'bg-off-white text-black-teal-300',
+				primary: 'bg-supportive-lilac text-black-teal',
+			},
 			size: {
 				xs: 'h-4 text-xxs',
 				sm: 'h-6 text-xs',
@@ -27,6 +31,11 @@ const avatar = cva(
 	// shadow: true,
 })
 export class Avatar {
+	/**
+	 * The variant of the avatar in case of "letters"
+	 */
+	@Prop() variant: 'secondary' | 'primary' = 'secondary';
+
 	/**
 	 * The size of the avatar
 	 */
@@ -76,6 +85,7 @@ export class Avatar {
 			<Host
 				class={avatar({
 					size: this.size,
+					variant: this.variant,
 				})}
 			>
 				{this._failed ? (

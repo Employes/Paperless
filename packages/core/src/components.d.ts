@@ -158,6 +158,10 @@ export namespace Components {
           * The image used for the avatar
          */
         "src": string;
+        /**
+          * The variant of the avatar in case of "letters"
+         */
+        "variant": 'secondary' | 'primary';
     }
     interface PAvatarGroup {
         /**
@@ -3303,6 +3307,10 @@ declare namespace LocalJSX {
           * The image used for the avatar
          */
         "src": string;
+        /**
+          * The variant of the avatar in case of "letters"
+         */
+        "variant"?: 'secondary' | 'primary';
     }
     interface PAvatarGroup {
         /**
