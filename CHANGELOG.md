@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.197](https://github.com/employes/paperless/compare/v2.0.1-beta.196...v2.0.1-beta.197) (2025-06-24)
+
+
+### Features
+
+* **molecules/datepicker:** Add support for `ddMMYYYY` format parsing on blur/value ([a2683b5](https://github.com/employes/paperless/commit/a2683b52770d7c6e23d3efb96c974a30e38863d8))
+
+
+
+
+
 ## [2.0.1-beta.196](https://github.com/employes/paperless/compare/v2.0.1-beta.195...v2.0.1-beta.196) (2025-06-23)
 
 
