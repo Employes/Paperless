@@ -25,7 +25,7 @@ const header = cva([
 	'w-full',
 	'px-4 tablet:px-0',
 
-	'desktop-xs:grid desktop-xs:grid-cols-2',
+	'desktop-xs:flex-row',
 ]);
 
 @Component({
@@ -223,7 +223,7 @@ export class TableHeader {
 
 				{!this.loading &&
 					(hasCustomFilterSlot || this.quickFilters.length > 0) && (
-						<div class='col-start-1 flex flex-col justify-start gap-4 justify-self-start desktop-xs:flex-row'>
+						<div class='flex flex-col justify-start gap-4 justify-self-start desktop-xs:flex-row'>
 							{hasCustomFilterSlot && <slot name='custom-filter' />}
 
 							{this.quickFilters.length > 0 && (
@@ -244,7 +244,7 @@ export class TableHeader {
 						</div>
 					)}
 
-				<div class='col-start-2 flex flex-col justify-end gap-2 desktop-xs:flex-row desktop-xs:items-center'>
+				<div class='flex flex-col justify-end gap-2 desktop-xs:ml-auto desktop-xs:flex-row desktop-xs:items-center'>
 					{this.enableSearch && (
 						<p-field
 							icon='search'
