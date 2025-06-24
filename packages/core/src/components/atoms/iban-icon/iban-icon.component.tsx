@@ -37,7 +37,7 @@ export class IbanIcon {
 			case 'rabo':
 				return <img src='./assets/iban-icons/icon-rabo.svg' />;
 			case 'ingb':
-				return <img src='./assets/iban-icons/icon-ing.svg' />;
+				return <img src='./assets/iban-icons/icon-ing.png' />;
 			case 'bunq':
 				return <img src='./assets/iban-icons/icon-bunq.svg' />;
 			case 'asnb':
