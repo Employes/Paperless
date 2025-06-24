@@ -78,7 +78,7 @@ export class Icon {
 			<div
 				class={icon({
 					flip: this.flip,
-					size: hasTextSizeClass ? 'auto': this.size,
+					size: hasTextSizeClass ? 'auto' : this.size,
 					transform: this.flip !== 'none' || this.rotate > 0 || this.rotate < 0,
 				})}
 				style={{

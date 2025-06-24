@@ -6,6 +6,7 @@ const meta = {
 	component: 'p-select',
 	args: {
 		label: 'Label',
+		multi: true,
 		items: JSON.stringify([
 			{
 				value: 'value',
