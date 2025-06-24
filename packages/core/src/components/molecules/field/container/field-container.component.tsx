@@ -112,7 +112,7 @@ export class FieldContainer {
 	/**
 	 * The helper of the input group
 	 */
-	@Prop({ reflect: true }) error: string | HTMLSlotElement;
+	@Prop({ reflect: true }) error: string;
 
 	/**
 	 * The placement of the error popover

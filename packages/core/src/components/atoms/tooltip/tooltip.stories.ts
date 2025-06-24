@@ -28,6 +28,8 @@ export const Default = {
 		show=${show ?? nothing}
 		can-manually-close=${canManuallyClose ?? nothing}
 		@isOpen=${action('isOpen')}
-	/>`,
+	>
+		<div slot="trigger">Hover/click me</div>
+	</p-tooltip>`,
 	tags: ['!dev'],
 };

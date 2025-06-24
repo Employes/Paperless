@@ -69,7 +69,7 @@ export class Tooltip {
 	/**
 	 * The content of the popover
 	 */
-	@Prop() content: any = null;
+	@Prop() content: string;
 
 	/**
 	 * The placement of the popover
@@ -216,6 +216,15 @@ export class Tooltip {
 		}
 
 		return this._hide();
+	}
+
+	@Watch('content')
+	onContentChange(content: string) {
+		if (content.length > 0) {
+			return;
+		}
+
+		this._hide();
 	}
 
 	private _show() {

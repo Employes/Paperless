@@ -869,7 +869,7 @@ export namespace Components {
         /**
           * The helper of the input group
          */
-        "error": string | HTMLSlotElement;
+        "error": string;
         /**
           * The placement of the error popover
          */
@@ -2074,7 +2074,7 @@ export namespace Components {
         /**
           * The content of the popover
          */
-        "content": any;
+        "content": string;
         /**
           * Wether the tooltip can be shown by user input
          */
@@ -4078,7 +4078,7 @@ declare namespace LocalJSX {
         /**
           * The helper of the input group
          */
-        "error"?: string | HTMLSlotElement;
+        "error"?: string;
         /**
           * The placement of the error popover
          */
@@ -5460,7 +5460,7 @@ declare namespace LocalJSX {
         /**
           * The content of the popover
          */
-        "content"?: any;
+        "content"?: string;
         /**
           * Wether the tooltip can be shown by user input
          */
