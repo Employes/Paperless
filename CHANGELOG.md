@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.198](https://github.com/employes/paperless/compare/v2.0.1-beta.197...v2.0.1-beta.198) (2025-06-24)
+
+
+### Features
+
+* **atoms/avatar:** Add variants for avatar in case of letters ([4ef394d](https://github.com/employes/paperless/commit/4ef394de37ada91d4980c4d372cace7f6d460c00))
+
+
+
+
+
 ## [2.0.1-beta.197](https://github.com/employes/paperless/compare/v2.0.1-beta.196...v2.0.1-beta.197) (2025-06-24)
 
 
