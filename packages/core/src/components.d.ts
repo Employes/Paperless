@@ -1433,6 +1433,10 @@ export namespace Components {
          */
         "enableSelectAll": boolean;
         /**
+          * Wether to enable wrapping the text to a new line in the dropdown menu
+         */
+        "enableTextWrap"?: boolean;
+        /**
           * The helper of the input group used by the select
          */
         "error": string;
@@ -4702,6 +4706,10 @@ declare namespace LocalJSX {
           * Wether to show the select all item with multi select
          */
         "enableSelectAll"?: boolean;
+        /**
+          * Wether to enable wrapping the text to a new line in the dropdown menu
+         */
+        "enableTextWrap"?: boolean;
         /**
           * The helper of the input group used by the select
          */

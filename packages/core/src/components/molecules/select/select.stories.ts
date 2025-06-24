@@ -9,7 +9,7 @@ const meta = {
 		items: JSON.stringify([
 			{
 				value: 'value',
-				text: 'Option 1',
+				text: 'Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 ',
 			},
 			{
 				value: 'value2',
@@ -88,6 +88,7 @@ export const Default = {
 		'show-chevron': showChevron,
 		'max-displayed-items': maxDisplayedItems,
 		'enable-autocomplete': enableAutocomplete,
+		'enable-text-wrap': enableTextWrap,
 		'async-filter': asyncFilter,
 		loading,
 		'enable-select-all': enableSelectAll,
@@ -129,6 +130,7 @@ export const Default = {
 		show-chevron=${showChevron ?? nothing}
 		max-displayed-items=${maxDisplayedItems ?? nothing}
 		enable-autocomplete=${enableAutocomplete ?? nothing}
+		enable-text-wrap=${enableTextWrap ?? nothing}
 		async-filter=${asyncFilter ?? nothing}
 		loading=${loading ?? nothing}
 		enable-select-all=${enableSelectAll ?? nothing}

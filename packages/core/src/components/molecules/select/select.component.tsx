@@ -32,17 +32,18 @@ const multiItem = cva([
 	'bg-supportive-lilac-100',
 ]);
 
-const textContainer = cva(
-	'block w-full overflow-hidden text-ellipsis whitespace-nowrap text-start',
-	{
-		variants: {
-			variant: {
-				placeholder: 'text-black-teal-400',
-				default: null,
-			},
+const textContainer = cva('block w-full overflow-hidden text-start', {
+	variants: {
+		variant: {
+			placeholder: 'text-black-teal-400',
+			default: null,
 		},
-	}
-);
+		enableTextWrap: {
+			true: false,
+			false: 'text-ellipsis whitespace-nowrap',
+		},
+	},
+});
 
 @Component({
 	tag: 'p-select',
@@ -169,6 +170,11 @@ export class Select {
 	 * Wether to enable autocomplete
 	 */
 	@Prop() enableAutocomplete: boolean = true;
+
+	/**
+	 * Wether to enable wrapping the text to a new line in the dropdown menu
+	 */
+	@Prop() enableTextWrap?: boolean = false;
 
 	/**
 	 * Wether the input uses async filtering
@@ -685,6 +691,7 @@ export class Select {
 	private _getItems() {
 		let items = this._items.map(item => (
 			<p-dropdown-menu-item
+				enableTextWrap={this.enableTextWrap}
 				useContainer={false}
 				onClick={() => this._selectValue(item)}
 				active={
@@ -871,7 +878,12 @@ export class Select {
 
 	private _getDisplay(item, isSelection = false) {
 		let content = (
-			<div class={textContainer({ variant: 'default' })}>
+			<div
+				class={textContainer({
+					variant: 'default',
+					enableTextWrap: this.enableTextWrap && !isSelection,
+				})}
+			>
 				{
 					item[
 						isSelection
@@ -890,7 +902,12 @@ export class Select {
 						src={item[this.avatarKey]}
 						letters={item[this.avatarLettersKey]}
 					></p-avatar>
-					<div class={textContainer({ variant: 'default' })}>
+					<div
+						class={textContainer({
+							variant: 'default',
+							enableTextWrap: this.enableTextWrap && !isSelection,
+						})}
+					>
 						{item[this.dropdownDisplayKey ?? this.displayKey]}
 					</div>
 				</span>
@@ -904,7 +921,12 @@ export class Select {
 						class='black-teal-300'
 						variant={item[this.iconKey] as IconVariant}
 					/>
-					<div class={textContainer({ variant: 'default' })}>
+					<div
+						class={textContainer({
+							variant: 'default',
+							enableTextWrap: this.enableTextWrap && !isSelection,
+						})}
+					>
 						{item[this.dropdownDisplayKey ?? this.displayKey]}
 					</div>
 				</span>
