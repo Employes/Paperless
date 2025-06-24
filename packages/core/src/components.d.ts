@@ -693,6 +693,10 @@ export namespace Components {
          */
         "enableHover"?: boolean;
         /**
+          * Wether to enable wrapping the text to a new line
+         */
+        "enableTextWrap"?: boolean;
+        /**
           * Icon of the navigation item
          */
         "icon": IconVariant;
@@ -3889,6 +3893,10 @@ declare namespace LocalJSX {
           * Wether to enable the hover state
          */
         "enableHover"?: boolean;
+        /**
+          * Wether to enable wrapping the text to a new line
+         */
+        "enableTextWrap"?: boolean;
         /**
           * Icon of the navigation item
          */

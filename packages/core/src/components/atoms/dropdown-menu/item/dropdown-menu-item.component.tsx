@@ -2,10 +2,11 @@ import { Component, Prop, h } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { asBoolean } from '../../../../utils/as-boolean';
 import { IconVariant } from '../../icon/icon.component';
+import { cn } from '../../../../utils';
 
 const dropdownMenuItem = cva(
 	[
-		'p-dropdown-menu-item flex px-2 py-1 gap-2 text-sm font-medium group rounded-lg items-center h-8 max-w-full',
+		'p-dropdown-menu-item flex px-2 py-1 gap-2 text-sm font-medium group rounded-lg items-center max-w-full',
 	],
 	{
 		variants: {
@@ -25,6 +26,10 @@ const dropdownMenuItem = cva(
 			enableHover: {
 				false: null,
 				true: null,
+			},
+			enableTextWrap: {
+				true: 'min-h-8',
+				false: 'h-8',
 			},
 		},
 		compoundVariants: [
@@ -193,6 +198,11 @@ export class DropdownMenuItem {
 	@Prop() enableHover?: boolean = true;
 
 	/**
+	 * Wether to enable wrapping the text to a new line
+	 */
+	@Prop() enableTextWrap?: boolean = false;
+
+	/**
 	 * Wether the item is disabled
 	 */
 	@Prop() disabled: boolean = false;
@@ -219,6 +229,7 @@ export class DropdownMenuItem {
 					variant: this.variant,
 					active: asBoolean(this.active),
 					enableHover: asBoolean(this.enableHover ?? true, true),
+					enableTextWrap: this.enableTextWrap,
 					disabled: asBoolean(this.disabled),
 				})}
 			>
@@ -242,7 +253,11 @@ export class DropdownMenuItem {
 				)}
 
 				{this.useContainer ? (
-					<div class='block w-full overflow-hidden text-ellipsis whitespace-nowrap text-start'>
+					<div
+						class={cn('block w-full overflow-hidden text-start', {
+							'text-ellipsis whitespace-nowrap': !this.enableTextWrap,
+						})}
+					>
 						<slot />
 					</div>
 				) : (

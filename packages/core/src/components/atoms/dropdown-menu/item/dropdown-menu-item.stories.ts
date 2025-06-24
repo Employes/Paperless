@@ -22,6 +22,7 @@ export const Default = {
 		checkbox,
 		variant,
 		'enable-hover': enableHover,
+		'enable-text-wrap': enableTextWrap,
 		disabled,
 		icon,
 		'icon-wave': iconWave,
@@ -31,6 +32,7 @@ export const Default = {
 		checkbox=${checkbox ?? nothing}
 		variant=${variant ?? nothing}
 		enable-hover=${enableHover ?? nothing}
+		enable-text-wrap=${enableTextWrap ?? nothing}
 		disabled=${disabled ?? nothing}
 		icon=${icon ?? nothing}
 		icon-wave=${iconWave ?? nothing}
