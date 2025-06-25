@@ -220,7 +220,7 @@ export class Tooltip {
 
 	@Watch('content')
 	onContentChange(content: string) {
-		if (content.length > 0) {
+		if (!content || content.length > 0) {
 			return;
 		}
 
