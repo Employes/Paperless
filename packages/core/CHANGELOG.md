@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.204](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.203...v2.0.1-beta.204) (2025-06-26)
+
+
+### Bug Fixes
+
+* **molecules/attachment:** Set width for the button ([6b9c376](https://github.com/ionic-team/stencil-component-starter/commit/6b9c3765b002376f5245271dc6bcf526cdc78252))
+
+
+
+
+
 ## [2.0.1-beta.203](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.202...v2.0.1-beta.203) (2025-06-26)
 
 
