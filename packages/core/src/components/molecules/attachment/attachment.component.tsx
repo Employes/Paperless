@@ -195,6 +195,7 @@ export class Attachment {
 						</div>
 
 						<p-tooltip
+							class='w-8'
 							content={
 								this.mode === 'read'
 									? this.downloadTooltip
@@ -233,7 +234,7 @@ export class Attachment {
 							!this.value?.length && (
 								<p-tooltip
 									content={this.cameraTooltip}
-									class='desktop-xs:hidden'
+									class='w-8 desktop-xs:hidden'
 								>
 									<p-button
 										slot='trigger'
