@@ -1,3 +1,6 @@
 :host {
+	--tw-translate-y: 0px !important;
+	--tw-translate-x: 0px !important;
+
 	@apply inline-flex;
 }

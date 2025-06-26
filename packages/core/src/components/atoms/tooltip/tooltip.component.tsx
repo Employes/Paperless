@@ -139,24 +139,22 @@ export class Tooltip {
 
 	render() {
 		return (
-			<Host class='flex cursor-pointer'>
-				<div class='relative h-inherit w-inherit max-w-full'>
-					<slot name='trigger' />
-					<div
-						class={popover({
-							variant: this.variant,
-							strategy: this.strategy,
-						})}
-						role='popover'
-						data-placement={this.placement}
-						ref={el => this._load(el)}
-					>
-						<div class='flex gap-2 whitespace-normal'>
-							{this.variant === 'error' && (
-								<div class='w-[2px] bg-negative-red'></div>
-							)}
-							{this.content ? this.content : <slot name='content' />}
-						</div>
+			<Host>
+				<slot name='trigger' />
+				<div
+					class={popover({
+						variant: this.variant,
+						strategy: this.strategy,
+					})}
+					role='popover'
+					data-placement={this.placement}
+					ref={el => this._load(el)}
+				>
+					<div class='flex gap-2 whitespace-normal'>
+						{this.variant === 'error' && (
+							<div class='w-[2px] bg-negative-red'></div>
+						)}
+						{this.content ? this.content : <slot name='content' />}
 					</div>
 				</div>
 			</Host>

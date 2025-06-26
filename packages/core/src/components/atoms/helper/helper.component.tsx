@@ -1,5 +1,5 @@
 import { Placement, Strategy } from '@floating-ui/dom';
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Host, Prop } from '@stencil/core';
 
 @Component({
 	tag: 'p-helper',
@@ -19,21 +19,24 @@ export class Helper {
 
 	render() {
 		return (
-			<p-tooltip
-				placement={this.placement}
-				strategy={this.strategy}
-			>
-				<div slot='content'>
-					<slot />
-				</div>
+			<Host>
+				<p-tooltip
+					class='flex'
+					placement={this.placement}
+					strategy={this.strategy}
+				>
+					<p-icon
+						size='sm'
+						class='cursor-pointer text-black-teal-300 hover:text-black-teal'
+						variant='question-circle'
+						slot='trigger'
+					/>
 
-				<p-icon
-					size='sm'
-					class='cursor-pointer text-black-teal-300 hover:text-black-teal'
-					variant='question-circle'
-					slot='trigger'
-				/>
-			</p-tooltip>
+					<div slot='content'>
+						<slot />
+					</div>
+				</p-tooltip>
+			</Host>
 		);
 	}
 }
