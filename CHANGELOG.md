@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.203](https://github.com/employes/paperless/compare/v2.0.1-beta.202...v2.0.1-beta.203) (2025-06-26)
+
+
+### Bug Fixes
+
+* **atoms/helper:** Icon alignment fix & height fix ([b5c70eb](https://github.com/employes/paperless/commit/b5c70eb1200ed1058cedbbb89c99c440155599b8))
+
+
+
+
+
 ## [2.0.1-beta.202](https://github.com/employes/paperless/compare/v2.0.1-beta.201...v2.0.1-beta.202) (2025-06-25)
 
 
