@@ -446,30 +446,30 @@ export class Select {
 		}
 
 		return (
-			<p-dropdown
-				applyFullWidth={true}
-				applyMaxWidth={false}
-				disableTriggerClick={true}
-				insideClick={true}
-				scrollable={this.enableAutocomplete ? 'large' : true}
-				show={this._showDropdown}
-				onIsOpen={ev => this._onDropdownOpen(ev)}
-				strategy={this.strategy}
+			<p-field-container
+				variant='write'
+				prefix={this.prefix}
+				label={this.label}
+				helper={this.helper}
+				required={this.required}
+				showOptional={this.showOptional}
+				error={this.error}
+				forceShowTooltip={!!this.error?.length && !this._showDropdown}
 			>
-				<p-field-container
-					slot='trigger'
-					variant='write'
-					prefix={this.prefix}
-					label={this.label}
-					helper={this.helper}
-					required={this.required}
-					showOptional={this.showOptional}
-					error={this.error}
-					forceShowTooltip={!!this.error?.length && !this._showDropdown}
+				<p-dropdown
+					applyFullWidth={true}
+					applyMaxWidth={false}
+					disableTriggerClick={true}
+					slot='content'
+					insideClick={true}
+					scrollable={this.enableAutocomplete ? 'large' : true}
+					show={this._showDropdown}
+					onIsOpen={ev => this._onDropdownOpen(ev)}
+					strategy={this.strategy}
 				>
 					<p-button
+						slot='trigger'
 						class='w-full'
-						slot='content'
 						variant='secondary'
 						size={this.size}
 						chevron={
@@ -488,10 +488,10 @@ export class Select {
 							{this._displayValue}
 						</div>
 					</p-button>
-				</p-field-container>
-				{this.loading ? this._getLoadingItems() : this._getItems()}
-				{this.showAddItem && this._getAddItem()}
-			</p-dropdown>
+					{this.loading ? this._getLoadingItems() : this._getItems()}
+					{this.showAddItem && this._getAddItem()}
+				</p-dropdown>
+			</p-field-container>
 		);
 	}
 

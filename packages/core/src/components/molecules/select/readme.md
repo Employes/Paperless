@@ -68,8 +68,8 @@
 ### Depends on
 
 - [p-icon](../../atoms/icon)
-- [p-dropdown](../dropdown)
 - [p-field-container](../field/container)
+- [p-dropdown](../dropdown)
 - [p-button](../button)
 - [p-dropdown-menu-item](../../atoms/dropdown-menu/item)
 - [p-loader](../../atoms/loader)
@@ -80,19 +80,19 @@
 ```mermaid
 graph TD;
   p-select --> p-icon
-  p-select --> p-dropdown
   p-select --> p-field-container
+  p-select --> p-dropdown
   p-select --> p-button
   p-select --> p-dropdown-menu-item
   p-select --> p-loader
   p-select --> p-field
   p-select --> p-avatar
-  p-dropdown --> p-dropdown-menu-container
   p-field-container --> p-loader
   p-field-container --> p-helper
   p-field-container --> p-tooltip
   p-helper --> p-tooltip
   p-helper --> p-icon
+  p-dropdown --> p-dropdown-menu-container
   p-button --> p-icon
   p-button --> p-loader
   p-dropdown-menu-item --> p-icon
