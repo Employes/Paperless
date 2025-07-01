@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.206](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.205...v2.0.1-beta.206) (2025-07-01)
+
+
+### Bug Fixes
+
+* **molecules/select:** Make dropdown stick to button ([8366e80](https://github.com/ionic-team/stencil-component-starter/commit/8366e8076a472dc893b5d8bafabd421e5c055f39))
+
+
+
+
+
 ## [2.0.1-beta.205](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.204...v2.0.1-beta.205) (2025-07-01)
 
 
