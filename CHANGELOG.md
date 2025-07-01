@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.208](https://github.com/employes/paperless/compare/v2.0.1-beta.207...v2.0.1-beta.208) (2025-07-01)
+
+
+### Bug Fixes
+
+* **molecules/content-slider:** Reset to 0 on slot change ([b680997](https://github.com/employes/paperless/commit/b6809979a79e135fe3e5437236a37dde70a6bc1f))
+* **molecules/field:** Apply word break to read variant ([e42be92](https://github.com/employes/paperless/commit/e42be929ef1c68fb1827dee8af12665306594c19))
+
+
+
+
+
 ## [2.0.1-beta.207](https://github.com/employes/paperless/compare/v2.0.1-beta.206...v2.0.1-beta.207) (2025-07-01)
 
 
