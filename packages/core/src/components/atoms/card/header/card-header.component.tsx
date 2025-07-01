@@ -28,7 +28,7 @@ const content = cva('flex items-center gap-2', {
 		},
 	},
 });
-const title = cva('h-8 flex items-center font-bold text-sm gap-2');
+const title = cva('h-8 flex items-center font-bold text-sm gap-2 min-w-0');
 
 @Component({
 	tag: 'p-card-header',
@@ -89,7 +89,9 @@ export class CardHeader {
 					)}
 
 					<div class={title()}>
-						<span>{this.header?.length ? this.header : <slot />}</span>
+						<span class='max-w-full overflow-hidden text-ellipsis'>
+							{this.header?.length ? this.header : <slot />}
+						</span>
 
 						<slot name='content-suffix' />
 					</div>
