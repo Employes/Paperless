@@ -12,7 +12,7 @@ const label = cva(
 				positive: 'bg-positive-green-100 text-positive-green-800',
 				biased: 'bg-amber-100  text-amber-800',
 				negative: 'bg-negative-red-100 text-negative-red-800',
-				neutral: 'bg-supportive-lilac-100 text-supportive-lilac-900',
+				neutral: 'bg-supportive-lilac-200 text-supportive-lilac-900',
 				unavailable: 'bg-white-700 text-dark-teal-800',
 			},
 			iconOnly: {
@@ -77,20 +77,20 @@ export class Label {
 
 	render() {
 		return (
-	   		<div
-	   			class={label({
-	   				variant: this.variant,
-	   				iconOnly: this.iconOnly,
-	   				keepMobileContent: this.keepMobileContent,
-	   			})}
-	   		>
-	   			{this.icon && (
-	   				<p-icon
-	   					class='flex-shrink-0'
-	   					variant={this.icon}
-	   					flip={this.iconFlip}
-	   					rotate={this.iconRotate}
-	   				/>
+			<div
+				class={label({
+					variant: this.variant,
+					iconOnly: this.iconOnly,
+					keepMobileContent: this.keepMobileContent,
+				})}
+			>
+				{this.icon && (
+					<p-icon
+						class='flex-shrink-0'
+						variant={this.icon}
+						flip={this.iconFlip}
+						rotate={this.iconRotate}
+					/>
 				)}
 
 				{!this.iconOnly && (
