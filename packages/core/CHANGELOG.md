@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.205](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.204...v2.0.1-beta.205) (2025-07-01)
+
+
+### Features
+
+* **atoms/card/header:** Apply overflow for title ([6a49302](https://github.com/ionic-team/stencil-component-starter/commit/6a49302f4976c25f35af882f5b4026d2d6f1be51))
+
+
+
+
+
 ## [2.0.1-beta.204](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.203...v2.0.1-beta.204) (2025-06-26)
 
 
