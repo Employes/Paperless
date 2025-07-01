@@ -107,6 +107,11 @@ export class Dropdown {
 	@Prop() disableTriggerClick: boolean = false;
 
 	/**
+	 * Wether to open the dropdown manually
+	 */
+	@Prop() manual: boolean = false;
+
+	/**
 	 * Wether to apply chevron automatically
 	 */
 	@Prop() applyChevron: boolean = true;
@@ -274,6 +279,10 @@ export class Dropdown {
 
 	private _triggerClickHandler() {
 		if (this.disableTriggerClick) {
+			return;
+		}
+
+		if (this.manual) {
 			return;
 		}
 

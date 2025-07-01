@@ -625,6 +625,10 @@ export namespace Components {
          */
         "insideClick": boolean;
         /**
+          * Wether to open the dropdown manually
+         */
+        "manual": boolean;
+        /**
           * The offset of the dropdown menu
          */
         "offset": number;
@@ -3825,6 +3829,10 @@ declare namespace LocalJSX {
           * Wether to automatically close the dropdown menu after clicking inside
          */
         "insideClick"?: boolean;
+        /**
+          * Wether to open the dropdown manually
+         */
+        "manual"?: boolean;
         /**
           * The offset of the dropdown menu
          */
