@@ -49,6 +49,11 @@ export const paperless = plugin(
 				},
 			},
 		},
-		plugins: [aspectRatioPlugin, scrollbarHidePlugin, safeArea, hover],
+		plugins: [
+			aspectRatioPlugin,
+			scrollbarHidePlugin,
+			safeArea,
+			hover,
+		],
 	}
 );
