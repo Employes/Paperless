@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.209](https://github.com/employes/paperless/compare/v2.0.1-beta.208...v2.0.1-beta.209) (2025-07-01)
+
+
+### Bug Fixes
+
+* **molecules/label:** Change bg of neutral variant ([4e74720](https://github.com/employes/paperless/commit/4e747207017d64e7b71fb5521222307ec6b9a717))
+
+
+
+
+
 ## [2.0.1-beta.208](https://github.com/employes/paperless/compare/v2.0.1-beta.207...v2.0.1-beta.208) (2025-07-01)
 
 
