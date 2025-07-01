@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.207](https://github.com/employes/paperless/compare/v2.0.1-beta.206...v2.0.1-beta.207) (2025-07-01)
+
+
+### Features
+
+* **molecules/dropdown:** Add option to manually open dropdown so we don't disable the button ([2311521](https://github.com/employes/paperless/commit/23115217cf2d835d56ca84859eb2b7b9cb0981e2))
+
+
+
+
+
 ## [2.0.1-beta.206](https://github.com/employes/paperless/compare/v2.0.1-beta.205...v2.0.1-beta.206) (2025-07-01)
 
 
