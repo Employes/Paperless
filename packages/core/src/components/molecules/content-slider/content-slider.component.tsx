@@ -172,8 +172,8 @@ export class ContentSlider {
 		this._items = Array.from(items) as HTMLElement[];
 
 		setTimeout(() => {
+			this._innerSliderRef.style.setProperty('--tw-translate-x', '0px');
 			this._calculateWidth();
-			this._checkBoundary();
 			this._calculateIndicator();
 		}, 100);
 	}
