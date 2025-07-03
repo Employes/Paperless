@@ -1,8 +1,8 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { RotateOptions } from '../../../../types/tailwind';
-import { IconFlipOptions, IconVariant } from '../../icon/icon.component';
 import { asBoolean } from '../../../../utils/as-boolean';
+import { IconFlipOptions, IconVariant } from '../../icon/icon.component';
 
 const segmentItem = cva(
 	[
@@ -32,6 +32,7 @@ const segmentItem = cva(
 @Component({
 	tag: 'p-segment-item',
 	styleUrl: 'segment-item.component.css',
+	shadow: true,
 })
 export class SegmentItem {
 	/**
@@ -69,7 +70,7 @@ export class SegmentItem {
 			this.variant === 'block' ? <slot name='description' /> : null;
 
 		return (
-			<Host
+			<div
 				class={segmentItem({
 					variant: this.variant,
 					active: asBoolean(this.active),
@@ -94,7 +95,7 @@ export class SegmentItem {
 						{descriptionSlot && <p class='text-xs'>{descriptionSlot}</p>}
 					</div>
 				)}
-			</Host>
+			</div>
 		);
 	}
 }
