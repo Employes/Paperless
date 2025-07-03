@@ -116,10 +116,7 @@ export class TableFooter {
 
 	private _hidePageSizeSelect = false;
 	private _hidden = false;
-
-	componentDidLoad() {
-		this._checkStuck();
-	}
+	private _renderCheckTimeout: NodeJS.Timeout;
 
 	componentWillRender() {
 		this._hidePageSizeSelect =
@@ -133,6 +130,15 @@ export class TableFooter {
 			this._hidden = hidden;
 			this.hiddenChange.emit(hidden);
 		}
+	}
+
+	componentDidRender() {
+		if (this._renderCheckTimeout) {
+			clearTimeout(this._renderCheckTimeout);
+			this._renderCheckTimeout = null;
+		}
+
+		this._renderCheckTimeout = setTimeout(() => this._checkStuck(), 100);
 	}
 
 	render() {
