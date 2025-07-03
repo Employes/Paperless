@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.212](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.211...v2.0.1-beta.212) (2025-07-03)
+
+
+### Bug Fixes
+
+* **atoms/segment/container & item:** Apply shadow ([7116586](https://github.com/ionic-team/stencil-component-starter/commit/7116586b46437006e0212b42539e5fda79ebf175))
+* **molecules/field/container:** Force font-normal in read ([0d78c4a](https://github.com/ionic-team/stencil-component-starter/commit/0d78c4a003f3cbbbe8278a5ba935f82c97942aa1))
+
+
+
+
+
 ## [2.0.1-beta.211](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.210...v2.0.1-beta.211) (2025-07-03)
 
 
