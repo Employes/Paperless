@@ -223,6 +223,7 @@ export class FieldContainer {
 					class={cn({
 						'w-full': this.variant === 'write' || this.loading,
 						'ml-auto': this.align === 'end',
+						'font-normal': this.variant === 'read',
 					})}
 					variant='error'
 					content={this.error}
