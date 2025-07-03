@@ -71,13 +71,12 @@ export class Navbar {
 					onClicked={() => (this._show = false)}
 				></p-backdrop>
 				<div class={sidebar({ class: sidebarAndTopbar(), show: this._show })}>
-					<div class='flex w-full items-center justify-between layout-1280:hidden'>
+					<div class='flex w-full items-center justify-end layout-1280:hidden'>
 						<p-button
 							variant='secondary'
 							icon='menu-arrow'
 							iconFlip='horizontal'
 							iconOnly={true}
-							size='sm'
 							onClick={() => (this._show = false)}
 						></p-button>
 					</div>
@@ -97,7 +96,6 @@ export class Navbar {
 						variant='secondary'
 						iconOnly={true}
 						icon='menu-arrow'
-						size='sm'
 						onClick={() => (this._show = true)}
 					></p-button>
 
