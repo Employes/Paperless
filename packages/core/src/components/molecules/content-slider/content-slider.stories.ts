@@ -35,7 +35,7 @@ export const Default = {
 				to give it some height
 			</p-card-body>
 		</p-card-container>
-		<p-card-container class="w-full">
+		<p-card-container class="hidden w-full desktop-xs:block">
 			<p-card-header header="card"></p-card-header>
 			<p-card-body>
 				Some text in the<br />

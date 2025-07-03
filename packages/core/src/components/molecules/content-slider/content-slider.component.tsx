@@ -56,6 +56,10 @@ export class ContentSlider {
 	private _shouldCheckLocation = false;
 	@State() private _dragging = false;
 
+	get _filteredItems() {
+		return this._items.filter(item => item.checkVisibility());
+	}
+
 	componentDidLoad() {
 		this._innerSliderRef.style.setProperty('--tw-translate-x', `0px`);
 	}
@@ -91,7 +95,7 @@ export class ContentSlider {
 					</div>
 				</div>
 				<div class={`indicator ${this.hideMobileIndicator && 'hidden'}`}>
-					{this._items.map((_, i) => (
+					{this._filteredItems.map((_, i) => (
 						<div
 							onClick={() => this._scrollTo(i, true)}
 							class={`item ${!this.disableIndicatorClick && 'cursor-pointer'}`}
@@ -169,9 +173,7 @@ export class ContentSlider {
 
 	private _slotChange() {
 		const items = this._el.querySelectorAll(':scope > *');
-		this._items = (Array.from(items) as HTMLElement[]).filter(item =>
-			item.checkVisibility()
-		);
+		this._items = Array.from(items) as HTMLElement[];
 
 		setTimeout(() => {
 			this._innerSliderRef.style.setProperty('--tw-translate-x', '0px');
@@ -255,8 +257,8 @@ export class ContentSlider {
 	}
 
 	private _calculateIndicator() {
-		for (let i = 0; i < this._items.length; i++) {
-			const item = this._items[i];
+		for (let i = 0; i < this._filteredItems.length; i++) {
+			const item = this._filteredItems[i];
 			const visible = this._isVisible(item);
 
 			if (visible) {
@@ -317,7 +319,7 @@ export class ContentSlider {
 	private _calculateWidth() {
 		let totalWidth = 0;
 
-		for (let item of this._items) {
+		for (let item of this._filteredItems) {
 			const rect = item.getBoundingClientRect();
 			totalWidth += rect.width;
 		}
@@ -326,7 +328,8 @@ export class ContentSlider {
 		const padding = parseInt(sliderStyle.padding) * 2;
 
 		const innerSliderStyle = getComputedStyle(this._innerSliderRef);
-		const gap = parseInt(innerSliderStyle.gap) * (this._items.length - 1);
+		const gap =
+			parseInt(innerSliderStyle.gap) * (this._filteredItems.length - 1);
 
 		totalWidth += padding + gap;
 
@@ -334,7 +337,14 @@ export class ContentSlider {
 	}
 
 	private _calculateHeight() {
-		const outerHeight = this._items.at(0).getBoundingClientRect().height;
+		const items = this._filteredItems;
+		if (!items.length) {
+			return;
+		}
+
+		const outerHeight = this._filteredItems
+			.at(0)
+			.getBoundingClientRect().height;
 		if (outerHeight != this._outerHeight) {
 			this._outerHeight = outerHeight;
 		}
@@ -342,7 +352,7 @@ export class ContentSlider {
 
 	private _isMobile(el?: HTMLElement) {
 		if (!el) {
-			el = this._items.at(0);
+			el = this._filteredItems.at(0);
 		}
 
 		const elRect = el.getBoundingClientRect();
