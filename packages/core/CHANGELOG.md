@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.215](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.214...v2.0.1-beta.215) (2025-07-03)
+
+
+### Bug Fixes
+
+* **molecules/pagination:** Set border to solid ([92167d1](https://github.com/ionic-team/stencil-component-starter/commit/92167d1d94fd32e781d6a8f4cacba28811391851))
+* **organisms/navbar:** Make menu open/close buttons big/small ([85d027f](https://github.com/ionic-team/stencil-component-starter/commit/85d027ff2e06bf9ebb4d0fec198b7d0303d38760))
+
+
+
+
+
 ## [2.0.1-beta.214](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.213...v2.0.1-beta.214) (2025-07-03)
 
 
