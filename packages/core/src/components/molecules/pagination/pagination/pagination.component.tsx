@@ -15,7 +15,7 @@ const pagination = cva(
 		'p-pagination',
 		'items-center gap-2',
 		'rounded-full',
-		'bg-off-white-300 border border-off-white-700',
+		'bg-off-white-300 border border-solid border-off-white-700',
 		'p-1',
 	],
 	{
