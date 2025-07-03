@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.210](https://github.com/employes/paperless/compare/v2.0.1-beta.209...v2.0.1-beta.210) (2025-07-03)
+
+
+### Bug Fixes
+
+* **molecules/field:** Force 0 padding on the input ([239b9e5](https://github.com/employes/paperless/commit/239b9e544f31a17711c16f07be84fec6b74ff76e))
+* **molecules/label:** Force font-medium ([15a2d56](https://github.com/employes/paperless/commit/15a2d56037d76a8ac53bb82e0085fb4715307db4))
+
+
+
+
+
 ## [2.0.1-beta.209](https://github.com/employes/paperless/compare/v2.0.1-beta.208...v2.0.1-beta.209) (2025-07-01)
 
 
