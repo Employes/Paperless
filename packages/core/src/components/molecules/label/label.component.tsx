@@ -5,7 +5,7 @@ import { cn } from '../../../utils/cn';
 import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
 
 const label = cva(
-	['flex items-center justify-center gap-2', 'h-6 rounded-full'],
+	['flex items-center justify-center gap-2', 'h-6 rounded-full font-medium'],
 	{
 		variants: {
 			variant: {
