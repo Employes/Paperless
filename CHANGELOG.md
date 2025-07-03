@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.214](https://github.com/employes/paperless/compare/v2.0.1-beta.213...v2.0.1-beta.214) (2025-07-03)
+
+
+### Bug Fixes
+
+* **molecules/table/footer:** Check stuck on each render pass ([19ee461](https://github.com/employes/paperless/commit/19ee461c789ef9e720f6eecc25018af9a1e0ca6c))
+
+
+
+
+
 ## [2.0.1-beta.213](https://github.com/employes/paperless/compare/v2.0.1-beta.212...v2.0.1-beta.213) (2025-07-03)
 
 
