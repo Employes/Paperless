@@ -169,7 +169,9 @@ export class ContentSlider {
 
 	private _slotChange() {
 		const items = this._el.querySelectorAll(':scope > *');
-		this._items = Array.from(items) as HTMLElement[];
+		this._items = (Array.from(items) as HTMLElement[]).filter(item =>
+			item.checkVisibility()
+		);
 
 		setTimeout(() => {
 			this._innerSliderRef.style.setProperty('--tw-translate-x', '0px');
