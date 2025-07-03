@@ -5,7 +5,7 @@ import { cn } from '../../../utils/cn';
 import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
 
 const label = cva(
-	['flex items-center justify-center gap-2', 'h-6 rounded-full font-medium'],
+	['flex items-center justify-center gap-2', 'h-6 rounded-full'],
 	{
 		variants: {
 			variant: {
@@ -96,7 +96,7 @@ export class Label {
 				{!this.iconOnly && (
 					<div
 						class={cn(
-							'flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-sm',
+							'flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-sm font-medium',
 							{
 								hidden: !this.keepMobileContent,
 								'desktop-xs:block': !this.keepMobileContent,
