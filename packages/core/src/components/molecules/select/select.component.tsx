@@ -437,7 +437,10 @@ export class Select {
 			buttonIcon = this._selectedItem[this.iconKey];
 		}
 
-		if (this.avatarKey && this._selectedItem?.[this.avatarKey]) {
+		if (
+			(this.avatarKey && this._selectedItem?.[this.avatarKey]) ||
+			(this.avatarLettersKey && this._selectedItem?.[this.avatarLettersKey])
+		) {
 			buttonIcon = null;
 		}
 
