@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.218](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.217...v2.0.1-beta.218) (2025-07-04)
+
+
+### Bug Fixes
+
+* **molecules/select:** Also hide icon when only avatar letters are available ([48b9929](https://github.com/ionic-team/stencil-component-starter/commit/48b9929516ecd0694bf67e8d51a8c82d6b230f63))
+
+
+
+
+
 ## [2.0.1-beta.217](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.216...v2.0.1-beta.217) (2025-07-03)
 
 
