@@ -17,7 +17,7 @@ const button = cva(
 	[
 		'group',
 		'font-semibold leading-4',
-		'flex items-center justify-center gap-2',
+		'flex items-center justify-center',
 		'cursor-pointer',
 	],
 	{
@@ -42,9 +42,9 @@ const button = cva(
 				false: null,
 			},
 			size: {
-				sm: ['text-xs h-6'],
-				base: ['text-sm h-8'],
-				lg: ['text-base h-10'],
+				sm: ['text-xs h-6 gap-1'],
+				base: ['text-sm h-8 gap-2'],
+				lg: ['text-base h-10 gap-2'],
 			},
 			disabled: {
 				true: 'cursor-not-allowed',
