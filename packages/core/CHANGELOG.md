@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.221](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.220...v2.0.1-beta.221) (2025-07-07)
+
+
+### Bug Fixes
+
+* **molecules/button:** Set smaller gap for sm size ([ed43a40](https://github.com/ionic-team/stencil-component-starter/commit/ed43a4060fbd49634b7fde37170ef9346645012f))
+
+
+### Features
+
+* **molecules/field:** Add ability to show add button ([2d9f109](https://github.com/ionic-team/stencil-component-starter/commit/2d9f109ecd108dcd1d816a47b55eee520fbb1f04))
+
+
+
+
+
 ## [2.0.1-beta.220](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.219...v2.0.1-beta.220) (2025-07-07)
 
 
