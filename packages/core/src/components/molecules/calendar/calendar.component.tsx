@@ -1,6 +1,5 @@
 import {
 	Component,
-	Element,
 	Event,
 	EventEmitter,
 	h,
@@ -129,11 +128,6 @@ export class Calendar {
 	})
 	valueChange: EventEmitter<any>;
 
-	/**
-	 * The host element
-	 */
-	@Element() private _el: HTMLElement;
-
 	private _today = new Date();
 	@State() private _view: 'year' | 'month' | 'day' = this.mode;
 	@State() private _viewDate = this._today;
@@ -146,6 +140,7 @@ export class Calendar {
 	@State() private _enableToday = true;
 
 	private _weekDays = Array.from(Array(7).keys());
+	private _yearItemsRef: HTMLDivElement;
 
 	componentWillLoad() {
 		if (this.disabledDates) {
@@ -384,14 +379,11 @@ export class Calendar {
 	private _getYearView() {
 		const years = this._generateYears();
 		return (
-			<div
-				id='view-year'
-				class={view({ view: 'year' })}
-			>
+			<div class={view({ view: 'year' })}>
 				{this._getHeader('year')}
 				<div
-					id='items'
 					class='grid h-full grid-cols-4 gap-2 overflow-scroll'
+					ref={ref => (this._yearItemsRef = ref)}
 				>
 					{years.map(year => (
 						<p-button
@@ -629,7 +621,7 @@ export class Calendar {
 	}
 
 	private _scrollYearIntoView() {
-		const items = this._el.querySelector('#view-year > #items');
+		const items = this._yearItemsRef;
 		if (!items) {
 			return;
 		}
