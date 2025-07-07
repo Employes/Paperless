@@ -146,6 +146,7 @@
 			<p-table-row
 				*ngFor="let r of loadingRows; let rowIndex = index"
 				[enableHover]="enableRowSelection || enableRowClick"
+				[isLast]="rowIndex === loadingRows.length - 1"
 			>
 				<ng-container *ngFor="let col of columns$ | async; let index = index">
 					<p-table-cell-ngx
@@ -175,6 +176,7 @@
 					*ngFor="let item of parsedItems; let rowIndex = index"
 					[enableHover]="enableRowSelection || enableRowClick"
 					[checked]="_selectionContains(item, rowIndex)"
+					[isLast]="rowIndex === parsedItems.length - 1"
 					(click)="_rowClick($event, rowIndex)"
 				>
 					<ng-container

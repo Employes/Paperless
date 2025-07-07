@@ -688,6 +688,7 @@ export class Table {
 				(_, i) => (
 					<p-table-row
 						enableHover={this._enableRowSelection || this.enableRowClick}
+						isLast={i === this.amountOfLoadingRows - 1}
 					>
 						{this._getLoadingColumns(i)}
 					</p-table-row>
@@ -704,6 +705,7 @@ export class Table {
 				enableHover={this._enableRowSelection || this.enableRowClick}
 				checked={this._selectionContains(index)}
 				onClick={ev => this._rowClick(ev, index)}
+				isLast={index === this._items.length - 1}
 			>
 				{this._getRowColumns(item, index)}
 				{this._getActions(item)}
