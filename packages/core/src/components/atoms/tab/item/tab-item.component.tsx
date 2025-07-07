@@ -3,7 +3,7 @@ import { cva } from 'class-variance-authority';
 
 const item = cva(
 	[
-		'text-base h-8 flex flex-col justify-between text-sm',
+		'h-8 flex flex-col justify-between text-sm',
 		'cursor-pointer',
 		"after:h-[2px] after:content-[' ']",
 	],
