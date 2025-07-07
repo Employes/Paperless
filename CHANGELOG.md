@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.220](https://github.com/employes/paperless/compare/v2.0.1-beta.219...v2.0.1-beta.220) (2025-07-07)
+
+
+### Bug Fixes
+
+* **molecules/calendar:** Scroll correct year into view ([37cea88](https://github.com/employes/paperless/commit/37cea88151eb0819a6e2e4ed6a1ff498f804b727))
+
+
+### Features
+
+* **molecules/calendar:** Display today seperately on the grid ([adcce42](https://github.com/employes/paperless/commit/adcce422cfb25885c7e5bbdfc1afe1b36cfe58d2))
+* **molecules/table/row:** Add `isLast` prop to hide the divider ([1316a8f](https://github.com/employes/paperless/commit/1316a8f51f70c98ff5f3dfede9f442fcb8e9b0be))
+
+
+
+
+
 ## [2.0.1-beta.219](https://github.com/employes/paperless/compare/v2.0.1-beta.218...v2.0.1-beta.219) (2025-07-07)
 
 
