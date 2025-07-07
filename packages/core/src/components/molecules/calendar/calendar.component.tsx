@@ -328,14 +328,9 @@ export class Calendar {
 						return day.active ? (
 							<p-button
 								variant='primary'
-								class={cn('w-full', `col-start-${day.offset}`)}
+								class={cn('w-8', `col-start-${day.offset}`)}
 								onClick={() => this._setValue(day.date)}
 							>
-								{/* class={`day ${day.active && 'active'} ${ */}
-								{/* 	day.disabled && 'disabled' */}
-								{/* } ${day.current && 'current'} ${ */}
-								{/* 	day.offset !== false && */}
-								{/* }`} */}
 								{day.day}
 							</p-button>
 						) : (
@@ -348,7 +343,11 @@ export class Calendar {
 											!day.disabled,
 									},
 									`col-start-${day.offset}`,
-									{ 'cursor-not-allowed opacity-60': day.disabled }
+									{ 'cursor-not-allowed opacity-60': day.disabled },
+									{
+										'border border-solid border-off-white-700 bg-off-white-300 text-black-teal':
+											!day.disabled && isSameDay(day.date, new Date()),
+									}
 								)}
 								onClick={() => this._setValue(day.date)}
 							>
