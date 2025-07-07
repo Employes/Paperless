@@ -5,9 +5,17 @@ const meta = {
 	component: 'p-segment-item',
 	args: {
 		content: 'SegmentItem',
+		blockTitle: 'Title',
+		blockDescription: 'Description',
 	},
 	argTypes: {
 		content: {
+			type: 'string',
+		},
+		blockTitle: {
+			type: 'string',
+		},
+		blockDescription: {
 			type: 'string',
 		},
 	},
@@ -24,6 +32,8 @@ export const Default = {
 		icon,
 		'icon-flip': iconFlip,
 		'icon-rotate': iconRotate,
+		blockTitle,
+		blockDescription,
 	}) => html`<p-segment-item
 		variant=${variant ?? nothing}
 		active=${active ?? nothing}
@@ -33,6 +43,12 @@ export const Default = {
 		icon-rotate=${iconRotate ?? nothing}
 	>
 		${content}
+		${variant === 'block'
+			? html`
+					<span slot="title">${blockTitle}</span>
+					<span slot="description">${blockDescription}</span>
+			  `
+			: nothing}
 	</p-segment-item>`,
 	tags: ['!dev'],
 };

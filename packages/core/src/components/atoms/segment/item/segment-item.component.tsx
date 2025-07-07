@@ -3,19 +3,15 @@ import { cva } from 'class-variance-authority';
 import { RotateOptions } from '../../../../types/tailwind';
 import { asBoolean } from '../../../../utils/as-boolean';
 import { IconFlipOptions, IconVariant } from '../../icon/icon.component';
+import { cn } from '../../../../utils';
 
 const segmentItem = cva(
-	[
-		'p-segment-item',
-		'flex items-center justify-center',
-		'rounded-2xl',
-		'cursor-pointer text-sm',
-	],
+	['flex items-center justify-center', 'rounded-xl', 'cursor-pointer text-sm'],
 	{
 		variants: {
 			variant: {
 				default: 'h-6 gap-2',
-				block: 'flex-col p-4 text-center',
+				block: 'flex-col p-2 text-center',
 			},
 			active: {
 				false: 'cursor-pointer text-dark-teal-600 hover:bg-black-teal-50',
@@ -79,6 +75,10 @@ export class SegmentItem {
 			>
 				{this.icon && (
 					<p-icon
+						class={cn('mb-1', {
+							'text-dark-teal-400': !asBoolean(this.active),
+							'text-dark-teal-100': asBoolean(this.active),
+						})}
 						variant={this.icon}
 						flip={this.iconFlip}
 						rotate={this.iconRotate}
@@ -88,11 +88,20 @@ export class SegmentItem {
 				{this.variant === 'default' ? (
 					<slot />
 				) : (
-					<div class='flex flex-col items-center gap-1'>
-						<p class='font-semibold empty:hidden'>
+					<div class='flex flex-col items-center'>
+						<p class={cn('my-0 font-medium empty:hidden', {})}>
 							<slot name='title' />
 						</p>
-						{descriptionSlot && <p class='text-xs'>{descriptionSlot}</p>}
+						{descriptionSlot && (
+							<p
+								class={cn('my-0 text-xs font-medium', {
+									'text-dark-teal-400': !asBoolean(this.active),
+									'text-dark-teal-100': asBoolean(this.active),
+								})}
+							>
+								{descriptionSlot}
+							</p>
+						)}
 					</div>
 				)}
 			</div>

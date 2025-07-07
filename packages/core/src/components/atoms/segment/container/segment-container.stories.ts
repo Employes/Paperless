@@ -20,3 +20,30 @@ export const Default = {
 	</p-segment-container>`,
 	tags: ['!dev'],
 };
+
+export const Block = {
+	render: () => html`<div class="h-32 max-w-[17.5rem]">
+		<p-segment-container>
+			<p-segment-item
+				variant="block"
+				icon="company"
+				active
+			>
+				<span slot="title">Kantoor</span>
+				<span slot="description">
+					Ik voeg de klant toe en doe de verloning namens de klant
+				</span>
+			</p-segment-item>
+			<p-segment-item
+				variant="block"
+				icon="envelope"
+			>
+				<span slot="title">Klant</span>
+				<span slot="description">
+					Ik nodig de klant uit om de verloning via Employes te doen
+				</span>
+			</p-segment-item>
+		</p-segment-container>
+	</div>`,
+	tags: ['!dev'],
+};
