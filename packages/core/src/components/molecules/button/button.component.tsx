@@ -50,10 +50,6 @@ const button = cva(
 				true: 'cursor-not-allowed',
 				false: null,
 			},
-			underline: {
-				true: null,
-				false: null,
-			},
 			buttonGroupPosition: {
 				none: null,
 				start: null,
@@ -178,18 +174,6 @@ const button = cva(
 				variant: 'text',
 				disabled: true,
 				class: 'text-dark-teal-100',
-			},
-			{
-				variant: 'text',
-				underline: true,
-				disabled: false,
-				class: 'border-b border-dark-teal-400 hover:border-dark-teal-500',
-			},
-			{
-				variant: 'text',
-				underline: true,
-				disabled: true,
-				class: 'border-b border-dark-teal-100',
 			},
 			{
 				variant: 'text',
@@ -352,11 +336,6 @@ export class Button {
 	@Prop() error?: boolean = false;
 
 	/**
-	 * Wether the text variant has underline
-	 */
-	@Prop() underline?: boolean = true;
-
-	/**
 	 * Href in case of "text" version
 	 */
 	@Prop() href?: string;
@@ -476,7 +455,6 @@ export class Button {
 					class={button({
 						variant: this.variant,
 						size: this.size,
-						underline: asBoolean(this.underline, true),
 						loading: asBoolean(this.loading),
 						disabled: asBoolean(this.disabled),
 						buttonGroupPosition: this.buttonGroupPosition,

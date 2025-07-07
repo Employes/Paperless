@@ -275,10 +275,6 @@ export namespace Components {
          */
         "type"?: 'button' | 'submit';
         /**
-          * Wether the text variant has underline
-         */
-        "underline"?: boolean;
-        /**
           * The variant of the button
          */
         "variant"?: ButtonVariant;
@@ -3447,10 +3443,6 @@ declare namespace LocalJSX {
           * The type of the button
          */
         "type"?: 'button' | 'submit';
-        /**
-          * Wether the text variant has underline
-         */
-        "underline"?: boolean;
         /**
           * The variant of the button
          */
