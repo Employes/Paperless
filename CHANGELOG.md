@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.222](https://github.com/employes/paperless/compare/v2.0.1-beta.221...v2.0.1-beta.222) (2025-07-07)
+
+
+### Bug Fixes
+
+* **atoms/tab/item:** Remove text-base ([54d577d](https://github.com/employes/paperless/commit/54d577d727661ac5d0e04690aec251a37e24669b))
+
+
+
+
+
 ## [2.0.1-beta.221](https://github.com/employes/paperless/compare/v2.0.1-beta.220...v2.0.1-beta.221) (2025-07-07)
 
 
