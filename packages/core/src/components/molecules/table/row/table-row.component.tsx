@@ -1,5 +1,6 @@
 import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+import { asBoolean } from '../../../../utils/as-boolean';
 
 const row = cva(
 	['flex min-w-[calc(100%-0.5rem)] flex-col', 'group', 'relative'],
@@ -76,6 +77,11 @@ export class TableRow {
 	 */
 	@Prop() checked: boolean = false;
 
+	/**
+	 * Wether the row is the last one
+	 */
+	@Prop() isLast: boolean = false;
+
 	render() {
 		return (
 			<div class='flex flex-col'>
@@ -97,7 +103,7 @@ export class TableRow {
 						</div>
 					</div>
 				</div>
-				<p-divider />
+				{!asBoolean(this.isLast) && <p-divider />}
 			</div>
 		);
 	}

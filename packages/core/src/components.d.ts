@@ -1972,6 +1972,10 @@ export namespace Components {
          */
         "enableHover": boolean;
         /**
+          * Wether the row is the last one
+         */
+        "isLast": boolean;
+        /**
           * Variant of the header
          */
         "variant": 'default' | 'header';
@@ -5357,6 +5361,10 @@ declare namespace LocalJSX {
           * Enable hover
          */
         "enableHover"?: boolean;
+        /**
+          * Wether the row is the last one
+         */
+        "isLast"?: boolean;
         /**
           * Variant of the header
          */
