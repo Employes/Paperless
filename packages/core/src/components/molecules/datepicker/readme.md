@@ -59,15 +59,16 @@ graph TD;
   p-dropdown --> p-dropdown-menu-container
   p-field --> p-field-container
   p-field --> p-icon
+  p-field --> p-button
   p-field-container --> p-loader
   p-field-container --> p-helper
   p-field-container --> p-tooltip
   p-helper --> p-tooltip
   p-helper --> p-icon
-  p-calendar --> p-button
-  p-calendar --> p-tooltip
   p-button --> p-icon
   p-button --> p-loader
+  p-calendar --> p-button
+  p-calendar --> p-tooltip
   style p-datepicker fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

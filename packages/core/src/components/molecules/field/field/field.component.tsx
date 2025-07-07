@@ -26,7 +26,7 @@ import { templateFunc } from '../container/field-container.component';
 const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 	variants: {
 		variant: {
-			read: 'border-0 items-start flex-wrap break-all',
+			read: 'border-0 items-start flex-wrap break-all leading-6',
 			write: 'border px-2',
 		},
 		size: {
@@ -140,6 +140,10 @@ const prefixAndSuffix = cva(
 	['flex flex-shrink-0 justify-center items-center text-center'],
 	{
 		variants: {
+			variant: {
+				read: 'leading-6',
+				write: null,
+			},
 			disabled: {
 				false: null,
 				true: 'text-black-teal-100',
@@ -295,6 +299,16 @@ export class Field {
 	@Prop({ reflect: true }) showOptional: boolean = true;
 
 	/**
+	 * Wether to show an add button when empty
+	 */
+	@Prop({ reflect: true }) showAddOnEmpty: boolean = false;
+
+	/**
+	 * The text to show on the add button
+	 */
+	@Prop({ reflect: true }) addText: string = 'Add';
+
+	/**
 	 * Wether to autofocus the field
 	 */
 	@Prop({ reflect: true }) autofocus: boolean = false;
@@ -348,6 +362,11 @@ export class Field {
 	 * Event whenever the input ref changes
 	 */
 	@Event() inputRefChange: EventEmitter<HTMLInputElement | HTMLTextAreaElement>;
+
+	/**
+	 * Event whenever the value changes
+	 */
+	@Event({ bubbles: false }) add: EventEmitter<void>;
 
 	/**
 	 * The host element
@@ -454,6 +473,7 @@ export class Field {
 						(this.icon && this.iconPosition === 'start')) && (
 						<div
 							class={prefixAndSuffix({
+								variant: this.variant,
 								error: !!this.error?.length,
 								disabled: asBoolean(this.disabled),
 								focused: asBoolean(this.focused) || this._focused,
@@ -466,8 +486,7 @@ export class Field {
 							this.error?.length ? (
 								<p-icon
 									class={cn('flex', {
-										'mt-[0.125rem]':
-											this.variant === 'read' && this.size === 'base',
+										'mt-1': this.variant === 'read' && this.size === 'base',
 									})}
 									variant={this.error?.length ? 'warning' : this.icon}
 									rotate={this.iconRotate}
@@ -484,6 +503,7 @@ export class Field {
 					{(suffix || (this.icon && this.iconPosition === 'end')) && (
 						<div
 							class={prefixAndSuffix({
+								variant: this.variant,
 								error: !!this.error?.length,
 								disabled: asBoolean(this.disabled),
 								focused: asBoolean(this.focused) || this._focused,
@@ -494,7 +514,9 @@ export class Field {
 						>
 							{this.icon && this.iconPosition === 'end' ? (
 								<p-icon
-									class='flex'
+									class={cn('flex', {
+										'mt-1': this.variant === 'read' && this.size === 'base',
+									})}
 									variant={this.icon}
 									rotate={this.iconRotate}
 									flip={this.iconFlip}
@@ -598,6 +620,15 @@ export class Field {
 				<slot name='value' />
 			) : !!this.value && this.value.length > 0 ? (
 				this.value
+			) : this.showAddOnEmpty ? (
+				<p-button
+					variant='text'
+					icon='plus'
+					size='sm'
+					onClick={() => this.add.emit()}
+				>
+					{this.addText}
+				</p-button>
 			) : (
 				'—'
 			);

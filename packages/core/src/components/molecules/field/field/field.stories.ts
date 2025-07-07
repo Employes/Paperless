@@ -39,6 +39,8 @@ export const Default = {
 		'select-all-on-focus': selectAllOnFocus,
 		'focus-method': focusMethod,
 		'optional-template': optionalTemplate,
+		'show-add-on-empty': showAddOnEmpty,
+		'add-text': addText,
 	}) => html`<p-field
 		variant=${variant ?? nothing}
 		size=${size ?? nothing}
@@ -66,8 +68,11 @@ export const Default = {
 		select-all-on-focus=${selectAllOnFocus ?? nothing}
 		focus-method=${focusMethod ?? nothing}
 		optional-template=${optionalTemplate ?? nothing}
+		show-add-on-empty=${showAddOnEmpty ?? nothing}
+		add-text=${addText ?? nothing}
 		@valueChange=${action('valueChange')}
 		@inputRefChange=${action('inputRefChange')}
+		@add=${action('add clicked')}
 	/>`,
 	tags: ['!dev'],
 };

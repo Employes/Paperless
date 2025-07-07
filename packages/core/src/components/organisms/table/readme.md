@@ -118,6 +118,7 @@ graph TD;
   p-segment-item --> p-icon
   p-field --> p-field-container
   p-field --> p-icon
+  p-field --> p-button
   p-field-container --> p-loader
   p-field-container --> p-helper
   p-field-container --> p-tooltip

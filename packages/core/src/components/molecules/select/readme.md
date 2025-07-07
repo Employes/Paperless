@@ -100,6 +100,7 @@ graph TD;
   p-checkbox --> p-icon
   p-field --> p-field-container
   p-field --> p-icon
+  p-field --> p-button
   style p-select fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

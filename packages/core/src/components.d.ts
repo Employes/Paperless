@@ -753,6 +753,10 @@ export namespace Components {
     }
     interface PField {
         /**
+          * The text to show on the add button
+         */
+        "addText": string;
+        /**
           * The alignment of the container
          */
         "align": 'start' | 'end';
@@ -840,6 +844,10 @@ export namespace Components {
           * Wether to select all text on focus
          */
         "selectAllOnFocus": boolean;
+        /**
+          * Wether to show an add button when empty
+         */
+        "showAddOnEmpty": boolean;
         /**
           * Wether to show optional when not required
          */
@@ -2539,6 +2547,7 @@ declare global {
     interface HTMLPFieldElementEventMap {
         "valueChange": string;
         "inputRefChange": HTMLInputElement | HTMLTextAreaElement;
+        "add": void;
     }
     interface HTMLPFieldElement extends Components.PField, HTMLStencilElement {
         addEventListener<K extends keyof HTMLPFieldElementEventMap>(type: K, listener: (this: HTMLPFieldElement, ev: PFieldCustomEvent<HTMLPFieldElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -3966,6 +3975,10 @@ declare namespace LocalJSX {
     }
     interface PField {
         /**
+          * The text to show on the add button
+         */
+        "addText"?: string;
+        /**
           * The alignment of the container
          */
         "align"?: 'start' | 'end';
@@ -4030,6 +4043,10 @@ declare namespace LocalJSX {
          */
         "loading"?: boolean;
         /**
+          * Event whenever the value changes
+         */
+        "onAdd"?: (event: PFieldCustomEvent<void>) => void;
+        /**
           * Event whenever the input ref changes
          */
         "onInputRefChange"?: (event: PFieldCustomEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
@@ -4061,6 +4078,10 @@ declare namespace LocalJSX {
           * Wether to select all text on focus
          */
         "selectAllOnFocus"?: boolean;
+        /**
+          * Wether to show an add button when empty
+         */
+        "showAddOnEmpty"?: boolean;
         /**
           * Wether to show optional when not required
          */
