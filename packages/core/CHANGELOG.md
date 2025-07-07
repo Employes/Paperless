@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.219](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.218...v2.0.1-beta.219) (2025-07-07)
+
+
+### Bug Fixes
+
+* **atoms/tab/item:** Forcefully apply text-sm to tab item ([49f06cc](https://github.com/ionic-team/stencil-component-starter/commit/49f06ccd0fadec3cb82f0fe708d9803c89a74539))
+
+
+
+
+
 ## [2.0.1-beta.218](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.217...v2.0.1-beta.218) (2025-07-04)
 
 
