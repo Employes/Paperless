@@ -88,7 +88,7 @@ export class TableCell {
 	/**
 	 * The definition of the table column
 	 */
-	@Prop() definition?: TableColumn;
+	@Prop() definition?: TableColumn | any;
 
 	/**
 	 * The item in question
@@ -120,7 +120,10 @@ export class TableCell {
 		}
 
 		return {
-			value: this.value ?? objectGetByPath(this.item, this.definition.path),
+			value:
+				this.value ?? this.definition?.path
+					? objectGetByPath(this.item, this.definition.path)
+					: null,
 			item: this.item,
 			index: this.index,
 			rowIndex: this.rowIndex,
@@ -150,7 +153,9 @@ export class TableCell {
 		return (
 			<div
 				class={cn('flex', {
-					'justify-start': this.definition.align === 'start',
+					'justify-start':
+						this.definition.align === 'start' ||
+						this.definition.align === undefined,
 					'justify-center': this.definition.align === 'center',
 					'justify-end': this.definition.align === 'end',
 				})}

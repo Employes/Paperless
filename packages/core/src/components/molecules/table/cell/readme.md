@@ -10,7 +10,7 @@
 | Property     | Attribute    | Description                        | Type                                 | Default                                         |
 | ------------ | ------------ | ---------------------------------- | ------------------------------------ | ----------------------------------------------- |
 | `checkbox`   | `checkbox`   | The checkbox to show               | `any`                                | `undefined`                                     |
-| `definition` | `definition` | The definition of the table column | `TableColumn`                        | `undefined`                                     |
+| `definition` | `definition` | The definition of the table column | `any`                                | `undefined`                                     |
 | `index`      | `index`      | The index of the column            | `number`                             | `undefined`                                     |
 | `item`       | `item`       | The item in question               | `any`                                | `undefined`                                     |
 | `rowIndex`   | `row-index`  | The index of the row               | `number`                             | `undefined`                                     |

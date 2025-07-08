@@ -1793,7 +1793,7 @@ export namespace Components {
         /**
           * The definition of the table column
          */
-        "definition"?: TableColumn;
+        "definition"?: TableColumn | any;
         /**
           * The index of the column
          */
@@ -5156,7 +5156,7 @@ declare namespace LocalJSX {
         /**
           * The definition of the table column
          */
-        "definition"?: TableColumn;
+        "definition"?: TableColumn | any;
         /**
           * The index of the column
          */
