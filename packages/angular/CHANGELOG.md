@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.224](https://github.com/Employes/Paperless/compare/v2.0.1-beta.223...v2.0.1-beta.224) (2025-07-08)
+
+
+### Bug Fixes
+
+* **angular/table/cell:** Apply ng-content if no data.value ([494ce5f](https://github.com/Employes/Paperless/commit/494ce5f41b92245f44c3dde96f1ed342c93365ba))
+
+
+
+
+
 ## [2.0.1-beta.223](https://github.com/Employes/Paperless/compare/v2.0.1-beta.222...v2.0.1-beta.223) (2025-07-08)
 
 
