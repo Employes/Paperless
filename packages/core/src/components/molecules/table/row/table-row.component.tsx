@@ -9,6 +9,11 @@ const row = cva(
 			variant: {
 				default: ['px-3 m-1', 'text-sm text-black-teal-500'],
 				header: ['px-4', 'text-xs font-normal text-black-teal-400'],
+				secondary: [
+					'px-4',
+					'bg-off-white-300 rounded-lg',
+					'font-ambit text-lg font-bold',
+				],
 			},
 			enableHover: {
 				true: null,
@@ -42,10 +47,17 @@ const content = cva(
 	{
 		variants: {
 			variant: {
-				default: 'min-h-14 py-2 tablet:py-4',
+				default: null,
+				secondary: null,
 				header: 'min-h-0 pb-4',
 			},
 		},
+		compoundVariants: [
+			{
+				variant: ['default', 'secondary'],
+				class: 'min-h-14 py-2 tablet:py-4',
+			},
+		],
 	}
 );
 
@@ -65,7 +77,7 @@ export class TableRow {
 	/**
 	 * Variant of the header
 	 */
-	@Prop() variant: 'default' | 'header' = 'default';
+	@Prop() variant: 'default' | 'secondary' | 'header' = 'default';
 
 	/**
 	 * Enable hover
@@ -103,7 +115,9 @@ export class TableRow {
 						</div>
 					</div>
 				</div>
-				{!asBoolean(this.isLast) && <p-divider />}
+				{!asBoolean(this.isLast) && this.variant !== 'secondary' && (
+					<p-divider />
+				)}
 			</div>
 		);
 	}
