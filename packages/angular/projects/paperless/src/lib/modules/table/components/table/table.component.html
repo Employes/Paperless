@@ -257,6 +257,12 @@
 				</p-table-row>
 			</ng-container>
 		</ng-template>
+
+		<ng-container *ngFor="let customRow of customRows">
+			<p-table-row [variant]="customRow.variant">
+				<ng-container *ngTemplateOutlet="customRow.templateRef"></ng-container>
+			</p-table-row>
+		</ng-container>
 	</div>
 </ng-template>
 

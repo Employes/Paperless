@@ -131,99 +131,122 @@ export const Default = {
 		'empty-state-filtered-header': emptyStateFilteredHeader,
 		'empty-state-filtered-content': emptyStateFilteredContent,
 		shadow,
-	}) => html`
-		<p-table
-			items=${items ?? nothing}
-			loading=${loading ?? nothing}
-			header-loading=${headerLoading ?? nothing}
-			footer-loading=${footerLoading ?? nothing}
-			amount-of-loading-rows=${amountOfLoadingRows ?? nothing}
-			enable-row-selection=${enableRowSelection ?? nothing}
-			row-selection-limit=${rowSelectionLimit ?? nothing}
-			enable-row-click=${enableRowClick ?? nothing}
-			selected-rows=${selectedRows ?? nothing}
-			enable-floating-menu=${enableFloatingMenu ?? nothing}
-			floating-menu-amount-selected-template=${floatingMenuAmountSelectedTemplate ??
-			nothing}
-			selection-key=${selectionKey ?? nothing}
-			can-select-key=${canSelectKey ?? nothing}
-			enable-header=${enableHeader ?? nothing}
-			quick-filters=${quickFilters ?? nothing}
-			active-quick-filter-identifier=${activeQuickFilterIdentifier ?? nothing}
-			enable-search=${enableSearch ?? nothing}
-			query=${query ?? nothing}
-			enable-filter=${enableFilter ?? nothing}
-			enable-filter-desktop=${enableFilterDesktop ?? nothing}
-			selected-filters-amount=${selectedFiltersAmount ?? nothing}
-			filter-button-template=${filterButtonTemplate ?? nothing}
-			enable-action=${enableAction ?? nothing}
-			action-button-loading=${actionButtonLoading ?? nothing}
-			action-button-enabled=${actionButtonEnabled ?? nothing}
-			action-button-icon=${actionButtonIcon ?? nothing}
-			action-button-text=${actionButtonText ?? nothing}
-			action-button-template=${actionButtonTemplate ?? nothing}
-			enable-footer=${enableFooter ?? nothing}
-			enable-page-size=${enablePageSize ?? nothing}
-			enable-pagination=${enablePagination ?? nothing}
-			enable-export=${enableExport ?? nothing}
-			page=${page ?? nothing}
-			total=${total ?? nothing}
-			page-size=${pageSize ?? nothing}
-			page-size-options=${pageSizeOptions ?? nothing}
-			hide-on-single-page=${hideOnSinglePage ?? nothing}
-			empty-state-header=${emptyStateHeader ?? nothing}
-			empty-state-content=${emptyStateContent ?? nothing}
-			empty-state-action=${emptyStateAction ?? nothing}
-			enable-empty-state-action=${enableEmptyStateAction ?? nothing}
-			empty-state-filtered-header=${emptyStateFilteredHeader ?? nothing}
-			empty-state-filtered-content=${emptyStateFilteredContent ?? nothing}
-			shadow=${shadow ?? nothing}
-			@selectedRowsChange=${action('selectedRowsChange')}
-			@rowClick=${action('rowClick')}
-			@rowSelected=${action('rowSelected')}
-			@rowDeselected=${action('rowDeselected')}
-			@hasRendered=${action('hasRendered')}
-			@quickFilter=${action('quickFilter')}
-			@queryChange=${action('queryChange')}
-			@filter=${action('filter')}
-			@action=${action('action')}
-			@pageChange=${action('pageChange')}
-			@pageSizeChange=${action('pageSizeChange')}
-			@export=${action('export')}
-			@emptyStateActionClick=${action('emptyStateActionClick')}
-		>
-			<p-table-column
-				name="first"
-				path="first"
-			></p-table-column>
-			<p-table-column
-				name="second"
-				path="first"
-			></p-table-column>
-			<p-table-column
-				name="third"
-				path="first"
-			></p-table-column>
+	}) => {
+		const customRowFirstDefinition = {
+			variant: 'default',
+			align: 'start',
+			sizes: 6,
+		};
+		const customRowSecondDefinition = {
+			...customRowFirstDefinition,
+			align: 'end',
+		};
+		return html`
+			<p-table
+				items=${items ?? nothing}
+				loading=${loading ?? nothing}
+				header-loading=${headerLoading ?? nothing}
+				footer-loading=${footerLoading ?? nothing}
+				amount-of-loading-rows=${amountOfLoadingRows ?? nothing}
+				enable-row-selection=${enableRowSelection ?? nothing}
+				row-selection-limit=${rowSelectionLimit ?? nothing}
+				enable-row-click=${enableRowClick ?? nothing}
+				selected-rows=${selectedRows ?? nothing}
+				enable-floating-menu=${enableFloatingMenu ?? nothing}
+				floating-menu-amount-selected-template=${floatingMenuAmountSelectedTemplate ??
+				nothing}
+				selection-key=${selectionKey ?? nothing}
+				can-select-key=${canSelectKey ?? nothing}
+				enable-header=${enableHeader ?? nothing}
+				quick-filters=${quickFilters ?? nothing}
+				active-quick-filter-identifier=${activeQuickFilterIdentifier ?? nothing}
+				enable-search=${enableSearch ?? nothing}
+				query=${query ?? nothing}
+				enable-filter=${enableFilter ?? nothing}
+				enable-filter-desktop=${enableFilterDesktop ?? nothing}
+				selected-filters-amount=${selectedFiltersAmount ?? nothing}
+				filter-button-template=${filterButtonTemplate ?? nothing}
+				enable-action=${enableAction ?? nothing}
+				action-button-loading=${actionButtonLoading ?? nothing}
+				action-button-enabled=${actionButtonEnabled ?? nothing}
+				action-button-icon=${actionButtonIcon ?? nothing}
+				action-button-text=${actionButtonText ?? nothing}
+				action-button-template=${actionButtonTemplate ?? nothing}
+				enable-footer=${enableFooter ?? nothing}
+				enable-page-size=${enablePageSize ?? nothing}
+				enable-pagination=${enablePagination ?? nothing}
+				enable-export=${enableExport ?? nothing}
+				page=${page ?? nothing}
+				total=${total ?? nothing}
+				page-size=${pageSize ?? nothing}
+				page-size-options=${pageSizeOptions ?? nothing}
+				hide-on-single-page=${hideOnSinglePage ?? nothing}
+				empty-state-header=${emptyStateHeader ?? nothing}
+				empty-state-content=${emptyStateContent ?? nothing}
+				empty-state-action=${emptyStateAction ?? nothing}
+				enable-empty-state-action=${enableEmptyStateAction ?? nothing}
+				empty-state-filtered-header=${emptyStateFilteredHeader ?? nothing}
+				empty-state-filtered-content=${emptyStateFilteredContent ?? nothing}
+				shadow=${shadow ?? nothing}
+				@selectedRowsChange=${action('selectedRowsChange')}
+				@rowClick=${action('rowClick')}
+				@rowSelected=${action('rowSelected')}
+				@rowDeselected=${action('rowDeselected')}
+				@hasRendered=${action('hasRendered')}
+				@quickFilter=${action('quickFilter')}
+				@queryChange=${action('queryChange')}
+				@filter=${action('filter')}
+				@action=${action('action')}
+				@pageChange=${action('pageChange')}
+				@pageSizeChange=${action('pageSizeChange')}
+				@export=${action('export')}
+				@emptyStateActionClick=${action('emptyStateActionClick')}
+			>
+				<p-table-column
+					name="first"
+					path="first"
+				></p-table-column>
+				<p-table-column
+					name="second"
+					path="first"
+				></p-table-column>
+				<p-table-column
+					name="third"
+					path="first"
+				></p-table-column>
 
-			<p-table-row-action
-				icon="user"
-				type="both"
-				label="User both"
-				@action=${action('rowActionUserBoth')}
-			></p-table-row-action>
-			<p-table-row-action
-				icon="pencil"
-				type="single"
-				label="Pencil single"
-				@action=${action('rowActionPencilSingle')}
-			></p-table-row-action>
-			<p-table-row-action
-				icon="company"
-				type="multi"
-				label="Multi company"
-				@action=${action('rowActionCompanyMulti')}
-			></p-table-row-action>
-		</p-table>
-	`,
+				<p-table-row-action
+					icon="user"
+					type="both"
+					label="User both"
+					@action=${action('rowActionUserBoth')}
+				></p-table-row-action>
+				<p-table-row-action
+					icon="pencil"
+					type="single"
+					label="Pencil single"
+					@action=${action('rowActionPencilSingle')}
+				></p-table-row-action>
+				<p-table-row-action
+					icon="company"
+					type="multi"
+					label="Multi company"
+					@action=${action('rowActionCompanyMulti')}
+				></p-table-row-action>
+
+				<p-table-row
+					variant="secondary"
+					slot="custom-rows"
+				>
+					<p-table-cell definition=${customRowFirstDefinition}>
+						<span class="text-black">Subtotal</span>
+					</p-table-cell>
+					<p-table-cell definition=${customRowSecondDefinition}>
+						<span class="text-black-teal">&euro; 1.234,50</span>
+					</p-table-cell>
+				</p-table-row>
+			</p-table>
+		`;
+	},
 	tags: ['!dev'],
 };

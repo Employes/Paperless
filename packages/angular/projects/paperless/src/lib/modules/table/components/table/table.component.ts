@@ -15,8 +15,8 @@ import {
 	QueryList,
 	SimpleChanges,
 	TemplateRef,
-    ViewChildren,
-	ViewChild
+	ViewChildren,
+	ViewChild,
 } from '@angular/core';
 import { Params } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
@@ -26,7 +26,7 @@ import {
 	RowClickEvent,
 	tableColumSizesOptions,
 	floatingMenuContainerClass,
-    cn,
+	cn,
 } from '@paperless/core';
 import {
 	IconVariant,
@@ -56,6 +56,7 @@ import {
 import { defaultSize, defaultSizeOptions } from './constants';
 import { TableCell } from '../table-cell/table-cell.component';
 import { PTableRow } from '../../../../stencil/components';
+import { TableCustomRowDirective } from '../../directives/p-table-custom-row.directive';
 
 @UntilDestroy({ checkProperties: true })
 @Component({
@@ -335,13 +336,16 @@ export class Table implements OnInit, OnChanges {
 	@Input() emptyStateFilteredHeader!: string;
 	@Input() emptyStateFilteredContent!: string;
 
-
 	/**
 	 * Wether to enable scrolling
 	 */
 	@Input() enableScroll: boolean = false;
-	@ViewChildren(PTableRow, { read: ElementRef }) tableRows!: QueryList<ElementRef<PTableRow>>;
-	@ViewChildren(TableCell, { read: ElementRef }) tableCells!: QueryList<ElementRef<TableCell>>;
+	@ViewChildren(PTableRow, { read: ElementRef }) tableRows!: QueryList<
+		ElementRef<PTableRow>
+	>;
+	@ViewChildren(TableCell, { read: ElementRef }) tableCells!: QueryList<
+		ElementRef<TableCell>
+	>;
 	@ViewChild('scrollContainer') scrollContainer!: ElementRef<HTMLDivElement>;
 
 	public reachedScrollStart$ = new BehaviorSubject(true);
@@ -364,7 +368,7 @@ export class Table implements OnInit, OnChanges {
 	 */
 	@Input() shadow: boolean = true;
 
-	public columns$ = new BehaviorSubject<any[]>([])
+	public columns$ = new BehaviorSubject<any[]>([]);
 	public parsedItems: any[] = [];
 	public loadingRows = Array.from({
 		length: this.amountOfLoadingRows,
@@ -410,6 +414,10 @@ export class Table implements OnInit, OnChanges {
 	get rowActions(): QueryList<TableRowAction> {
 		return this._rowActions;
 	}
+
+	// custom rows templates
+	@ContentChildren(TableCustomRowDirective)
+	customRows!: QueryList<TableCustomRowDirective>;
 
 	@Input() filterModalHeaderText: string = 'Filters';
 	@Input() filterModalSaveText: string = 'Save';
@@ -480,22 +488,23 @@ export class Table implements OnInit, OnChanges {
 			this._setRowSelectionData();
 		}
 
-		if(changes['enableScroll']?.currentValue) {
+		if (changes['enableScroll']?.currentValue) {
 			this._checkChangesSubscriptions();
 		}
 	}
 
 	ngAfterViewInit() {
-		if(this.enableScroll) {
+		if (this.enableScroll) {
 			this._checkChangesSubscriptions();
 		}
 
-		if(this.columnDefinitions) {
-			this.columnDefinitions.changes.pipe(untilDestroyed(this), debounceTime(100)).subscribe(() => this._generateColumns());
+		if (this.columnDefinitions) {
+			this.columnDefinitions.changes
+				.pipe(untilDestroyed(this), debounceTime(100))
+				.subscribe(() => this._generateColumns());
 			this._generateColumns();
 		}
 	}
-
 
 	@HostListener('window:resize', ['$event'])
 	onResize() {
@@ -577,7 +586,7 @@ export class Table implements OnInit, OnChanges {
 	}
 
 	onContainerXScroll(ev: any) {
-		if(!this.enableScroll) {
+		if (!this.enableScroll) {
 			return;
 		}
 
@@ -1054,46 +1063,58 @@ export class Table implements OnInit, OnChanges {
 	}
 
 	private _checkChangesSubscriptions() {
-		if(!this._rowChangesSubscription && this.tableRows) {
-			this._rowChangesSubscription = this.tableRows.changes.pipe(untilDestroyed(this), debounceTime(100)).subscribe(() => this._calculateColumnWidths());
+		if (!this._rowChangesSubscription && this.tableRows) {
+			this._rowChangesSubscription = this.tableRows.changes
+				.pipe(untilDestroyed(this), debounceTime(100))
+				.subscribe(() => this._calculateColumnWidths());
 		}
 
-		if(!this._cellChangesSubscription && this.tableCells) {
-			this._cellChangesSubscription = this.tableCells.changes.pipe(untilDestroyed(this), debounceTime(100)).subscribe(() => this._calculateColumnWidths());
+		if (!this._cellChangesSubscription && this.tableCells) {
+			this._cellChangesSubscription = this.tableCells.changes
+				.pipe(untilDestroyed(this), debounceTime(100))
+				.subscribe(() => this._calculateColumnWidths());
 		}
 	}
 
-	private _calculateColumnWidths()  {
-		if(!this.enableScroll) {
+	private _calculateColumnWidths() {
+		if (!this.enableScroll) {
 			return;
 		}
 
-		if(!this.tableCells || !this.tableRows) {
+		if (!this.tableCells || !this.tableRows) {
 			return;
 		}
 
-		if(this._calculateColumnWidthsTimeout) {
+		if (this._calculateColumnWidthsTimeout) {
 			clearTimeout(this._calculateColumnWidthsTimeout);
 			this._calculateColumnWidthsTimeout = 0;
 		}
 
-		const rows = this.tableRows.map(c => c.nativeElement as unknown as HTMLElement);
-		const cells = this.tableCells.map(c => c.nativeElement as unknown as HTMLElement);
+		const rows = this.tableRows.map(
+			c => c.nativeElement as unknown as HTMLElement
+		);
+		const cells = this.tableCells.map(
+			c => c.nativeElement as unknown as HTMLElement
+		);
 
 		this._calculateColumnWidthsTimeout = setTimeout(async () => {
 			this._setRowsWidth(rows);
 
 			const promises: Promise<void>[] = [];
-			for(const cell of cells) {
-				if(cell.style.width?.length) {
+			for (const cell of cells) {
+				if (cell.style.width?.length) {
 					cell.style.width = '';
 				}
 
-				promises.push(new Promise(resolve => setTimeout(() => {
-					const rect = cell.getBoundingClientRect();
-					cell.setAttribute('style', `width: ${rect.width}px !important`);
-					resolve();
-				}, 100)))
+				promises.push(
+					new Promise(resolve =>
+						setTimeout(() => {
+							const rect = cell.getBoundingClientRect();
+							cell.setAttribute('style', `width: ${rect.width}px !important`);
+							resolve();
+						}, 100)
+					)
+				);
 			}
 
 			await Promise.all(promises);
@@ -1104,46 +1125,49 @@ export class Table implements OnInit, OnChanges {
 		}, 200) as unknown as number;
 	}
 
-	private _setRowsWidth(rows: HTMLElement[], value: 'min-content' | null = null) {
-		for(let i = 0; i < rows.length; i++) {
+	private _setRowsWidth(
+		rows: HTMLElement[],
+		value: 'min-content' | null = null
+	) {
+		for (let i = 0; i < rows.length; i++) {
 			const row = rows[i];
 
 			const shadow = row.shadowRoot;
-			if(!shadow) {
+			if (!shadow) {
 				continue;
 			}
 
 			const firstDiv = shadow.querySelector('*:nth-child(1)');
-			if(!firstDiv) {
+			if (!firstDiv) {
 				continue;
 			}
 
 			const secondDiv = firstDiv.querySelector('*:nth-child(1)');
-			if(!secondDiv) {
+			if (!secondDiv) {
 				continue;
 			}
 
-			if(value === null) {
+			if (value === null) {
 				firstDiv.setAttribute('style', '');
 				secondDiv.setAttribute('style', '');
 				continue;
 			}
 
-			firstDiv.setAttribute('style', 'width: min-content;')
-			secondDiv.setAttribute('style', 'width: min-content;')
+			firstDiv.setAttribute('style', 'width: min-content;');
+			secondDiv.setAttribute('style', 'width: min-content;');
 
-			if(i === 0) {
+			if (i === 0) {
 				this._totalWidth = firstDiv.getBoundingClientRect().width;
 			}
 		}
 	}
 
 	private _resetScrollPosition() {
-		if(this.scrollContainer) {
+		if (this.scrollContainer) {
 			this.scrollContainer.nativeElement.scrollLeft = 0;
 		}
 
-		this.reachedScrollStart$.next(true)
+		this.reachedScrollStart$.next(true);
 		this.reachedScrollEnd$.next(false);
 	}
 
@@ -1151,6 +1175,6 @@ export class Table implements OnInit, OnChanges {
 		this.reachedScrollStart$.next(target.scrollLeft < 100);
 
 		const right = target.scrollLeft + target.getBoundingClientRect().width;
-		this.reachedScrollEnd$.next(right > this._totalWidth - 100)
+		this.reachedScrollEnd$.next(right > this._totalWidth - 100);
 	}
-	}
+}

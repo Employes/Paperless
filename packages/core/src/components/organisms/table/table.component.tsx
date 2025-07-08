@@ -466,7 +466,10 @@ export class Table {
 					)}
 
 					{this._getHeader()}
-					<div class='flex flex-1 flex-col'>{this._getRows()}</div>
+					<div class='flex flex-1 flex-col'>
+						{this._getRows()}
+						<slot name='custom-rows' />
+					</div>
 
 					{this.enableFloatingMenu && this._enableRowSelection ? (
 						<p-floating-menu-container
