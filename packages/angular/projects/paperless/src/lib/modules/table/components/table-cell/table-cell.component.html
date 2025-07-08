@@ -39,5 +39,9 @@
 </ng-container>
 
 <ng-template #valueTemplate>
-	{{ data.value }}
+	<ng-container *ngIf="data.value">
+		{{ data.value }}
+	</ng-container>
+
+	<ng-content *ngIf="!data.value"></ng-content>
 </ng-template>

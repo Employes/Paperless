@@ -121,7 +121,10 @@ export class TableCell {
 		}
 
 		return {
-			value: this.value ?? objectGetByPath(this.item, this.definition.path),
+			value:
+				this.value ?? this.definition?.path
+					? objectGetByPath(this.item, this.definition.path)
+					: null,
 			item: this.item,
 			index: this.index,
 			rowIndex: this.rowIndex,
