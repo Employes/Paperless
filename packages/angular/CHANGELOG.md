@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.223](https://github.com/Employes/Paperless/compare/v2.0.1-beta.222...v2.0.1-beta.223) (2025-07-08)
+
+
+### Features
+
+* **organisms/table:** Add ability to add custom rows ([7c4a14f](https://github.com/Employes/Paperless/commit/7c4a14f83a2a6bac15cfcaf99bf935d5c2624d54))
+
+
+
+
+
 ## [2.0.1-beta.222](https://github.com/Employes/Paperless/compare/v2.0.1-beta.221...v2.0.1-beta.222) (2025-07-07)
 
 **Note:** Version bump only for package @paperless/angular

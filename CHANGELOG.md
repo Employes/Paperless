@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.223](https://github.com/employes/paperless/compare/v2.0.1-beta.222...v2.0.1-beta.223) (2025-07-08)
+
+
+### Bug Fixes
+
+* **molecules/table/cell:** Small fixes for usage of cell manually ([22e644e](https://github.com/employes/paperless/commit/22e644e51d74f6ef7435ddd044f908a6f6a25657))
+
+
+### Features
+
+* **molecules/table/row:** Add secondary variant ([f5f4654](https://github.com/employes/paperless/commit/f5f46546bbb4373069c79c9f9683c8d8667b950c))
+* **organisms/table:** Add ability to add custom rows ([7c4a14f](https://github.com/employes/paperless/commit/7c4a14f83a2a6bac15cfcaf99bf935d5c2624d54))
+
+
+
+
+
 ## [2.0.1-beta.222](https://github.com/employes/paperless/compare/v2.0.1-beta.221...v2.0.1-beta.222) (2025-07-07)
 
 
