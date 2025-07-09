@@ -8,7 +8,7 @@ const navigationItem = cva(
 	[
 		'h-8 w-[inherit]',
 		'flex items-center gap-2',
-		'text-black-teal-400 hover:text-black-teal-500',
+		'hover:text-black-teal-500',
 		'rounded-lg',
 		'py-1 px-2',
 		'text-sm font-medium',
@@ -17,8 +17,8 @@ const navigationItem = cva(
 	{
 		variants: {
 			active: {
-				false: ['hover:bg-off-white'],
-				true: ['bg-off-white-600 text-black-teal-500 font-semibold'],
+				false: ['text-black-teal-400', 'hover:bg-off-white'],
+				true: ['bg-off-white-600 text-black-teal font-semibold'],
 			},
 			icon: {
 				false: false,
