@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.225](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.224...v2.0.1-beta.225) (2025-07-09)
+
+
+### Bug Fixes
+
+* **molecules/navigation/item:** Don't bleed text-black-teal-400 into active state ([f8ce905](https://github.com/ionic-team/stencil-component-starter/commit/f8ce9051f8a761cd312b7ea838c096e32daa7696))
+
+
+
+
+
 ## [2.0.1-beta.224](https://github.com/ionic-team/stencil-component-starter/compare/v2.0.1-beta.223...v2.0.1-beta.224) (2025-07-08)
 
 **Note:** Version bump only for package @paperless/core
