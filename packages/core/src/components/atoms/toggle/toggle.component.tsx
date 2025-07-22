@@ -22,15 +22,15 @@ const toggle = cva(
 			disabled: {
 				false: [
 					'cursor-pointer shadow-1',
-					'bg-black-teal-50 border-black-teal-100',
-					'hover:bg-supportive-lilac-100 hover:border-black-teal-100',
-					'group-hover/toggle-label:bg-supportive-lilac-100 group-hover/toggle-label:border-black-teal-100',
-					'checked:bg-supportive-lilac checked:border-black-teal/20',
-					'checked:ring-2 checked:ring-supportive-lilac-100',
-					'checked:hover:bg-supportive-lilac-700 checked:hover:border-black-teal/20',
-					'checked:group-hover/toggle-label:bg-supportive-lilac-700 checked:group-hover/toggle-label:border-black-teal/20',
+					'bg-storm-50 border-storm-100',
+					'hover:bg-indigo-100 hover:border-storm/20',
+					'group-hover/toggle-label:bg-indigo-100 group-hover/toggle-label:border-storm/20',
+					'checked:bg-indigo-600 checked:border-storm/20',
+					'checked:ring-2 checked:ring-indigo-100',
+					'checked:hover:bg-indigo-700 checked:hover:border-storm/20',
+					'checked:group-hover/toggle-label:bg-indigo-700 checked:group-hover/toggle-label:border-storm/20',
 				],
-				true: ['bg-white-600 border-black-teal-50 cursor-not-allowed'],
+				true: ['bg-white-600 border-storm-50 cursor-not-allowed'],
 			},
 		},
 	}
@@ -40,20 +40,20 @@ const circle = cva(
 	[
 		'flex items-center justify-center',
 		'rounded-full transition-all ',
-		'absolute top-1/2  peer-checked:left-full  transform -translate-y-1/2 pointer-events-none',
+		'absolute top-1/2 peer-checked:left-full transform -translate-y-1/2 pointer-events-none',
 	],
 	{
 		variants: {
 			disabled: {
 				false: [
-					'bg-white ring-1 ring-black-teal/10',
+					'bg-white ring-1 ring-storm/10',
 					'left-[1px] peer-checked:-translate-x-[calc(100%+1px)]',
-					"after:content-[] peer-checked:after:content-['']  after:bg-supportive-lilac-800 after:rounded-full after:transition-all",
+					"after:content-[] peer-checked:after:content-['']  after:bg-indigo-800 after:rounded-full after:transition-all",
 					'w-[14px] h-[14px] group-hover/p-toggle:w-[18px] group-hover/toggle-label:w-[18px]',
 					'after:w-1 after:h-1 group-hover/p-toggle:after:w-2 group-hover/toggle-label:after:w-2',
 				],
 				true: [
-					'bg-black-teal-100 peer-checked:bg-black-teal-200',
+					'bg-storm-100 peer-checked:bg-storm-200',
 					'left-[2px] peer-checked:-translate-x-[calc(100%+2px)]',
 					'w-3 h-3',
 				],
@@ -124,7 +124,7 @@ export class Toggle {
 		return (
 			<label
 				htmlFor={id}
-				class='flex items-center justify-start gap-2 text-black-teal'
+				class='flex items-center justify-start gap-2'
 			>
 				<div class='group/p-toggle relative flex flex-shrink-0 items-center'>
 					<input
