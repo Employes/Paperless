@@ -22,16 +22,16 @@ const radio = cva(
 			disabled: {
 				false: [
 					'cursor-pointer shadow-1',
-					'bg-white border-black-teal-100',
-					'hover:bg-supportivce-lilac-100 hover:border-black-teal-100',
-					'group-hover/radio-label:bg-supportivce-lilac-100 group-hover/radio-label:border-black-teal-100',
+					'bg-white border-storm-100',
+					'hover:bg-indigo-100 hover:border-storm/20',
+					'group-hover/radio-label:bg-indigo-100 group-hover/radio-label:border-storm/20',
 					'checked:cursor-auto',
-					'checked:bg-supportive-lilac checked:border-black-teal/20',
-					'checked:ring-2 checked:ring-supportive-lilac-100',
-					'checked:hover:bg-supportive-lilac checked:hover:border-black-teal/20',
-					'checked:group-hover/radio-label:bg-supportive-lilac checked:group-hover/radio-label:border-black-teal/20',
+					'checked:bg-indigo-600 checked:border-storm/20',
+					'checked:ring-2 checked:ring-indigo-100',
+					'checked:hover:bg-indigo-700 checked:hover:border-storm/20',
+					'checked:group-hover/radio-label:bg-indigo-700 checked:group-hover/radio-label:border-storm/20',
 				],
-				true: 'bg-white-600 border-black-teal-50 cursor-not-allowed ',
+				true: 'bg-white-600 border-storm cursor-not-allowed ',
 			},
 		},
 		compoundVariants: [
@@ -39,9 +39,9 @@ const radio = cva(
 				disabled: false,
 				class: [
 					'cursor-pointer shadow-1',
-					'bg-white border-black-teal-100',
-					'hover:bg-supportive-lilac-100 hover:border-black-teal-100',
-					'group-hover/radio-label:bg-supportive-lilac-100 group-hover/radio-label:border-black-teal-100',
+					'bg-white border-storm-100',
+					'hover:bg-indigo-100 hover:border-storm/20',
+					'group-hover/radio-label:bg-indigo-100 group-hover/radio-label:border-storm/20',
 				],
 			},
 		],
@@ -59,8 +59,8 @@ const circle = cva(
 		variants: {
 			disabled: {
 				false:
-					'peer-checked:bg-white peer-checked:ring-1 peer-checked:ring-black-teal/10',
-				true: 'peer-checked:bg-black-teal-200',
+					'peer-checked:bg-white peer-checked:ring-1 peer-checked:ring-storm/10',
+				true: 'peer-checked:bg-storm-200',
 			},
 		},
 	}
@@ -129,7 +129,7 @@ export class Radio {
 		return (
 			<label
 				htmlFor={id}
-				class='flex items-center justify-start gap-2 text-black-teal'
+				class='flex items-center justify-start gap-2'
 			>
 				<div class='relative flex flex-shrink-0 items-center'>
 					<input
