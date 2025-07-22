@@ -1,13 +1,11 @@
 {
-  "packages": [
-    "packages/*"
-  ],
-  "version": "2.0.1-beta.227",
-  "npmClient": "yarn",
-  "command": {
-    "publish": {
-      "conventionalCommits": true,
-      "message": "chore(release): Lerna publish"
-    }
-  }
+	"packages": ["packages/*"],
+	"version": "2.0.0",
+	"npmClient": "yarn",
+	"command": {
+		"publish": {
+			"conventionalCommits": true,
+			"message": "chore(release): Lerna publish"
+		}
+	}
 }
