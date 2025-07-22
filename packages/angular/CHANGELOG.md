@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/Employes/Paperless/compare/v2.0.1-beta.226...v2.1.0) (2025-07-22)
+
+
+### Features
+
+* 2.0 ([18fec82](https://github.com/Employes/Paperless/commit/18fec823dce4f76e5fddd42e0f592a3f1c28b657))
+
+
+
+
+
 ## [2.0.1-beta.226](https://github.com/Employes/Paperless/compare/v2.0.1-beta.225...v2.0.1-beta.226) (2025-07-22)
 
 **Note:** Version bump only for package @paperless/angular
