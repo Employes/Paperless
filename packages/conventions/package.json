@@ -15,11 +15,11 @@
 		"prettier:write": "yarn prettier:check -w"
 	},
 	"devDependencies": {
-		"@angular-eslint/builder": "~19.0.0",
-		"@angular-eslint/eslint-plugin": "~19.0.0",
-		"@angular-eslint/eslint-plugin-template": "~19.0.0",
-		"@angular-eslint/schematics": "~19.0.0",
-		"@angular-eslint/template-parser": "~19.0.0",
+		"@angular-eslint/builder": "~20.1.0",
+		"@angular-eslint/eslint-plugin": "~20.1.0",
+		"@angular-eslint/eslint-plugin-template": "~20.1.0",
+		"@angular-eslint/schematics": "~20.1.0",
+		"@angular-eslint/template-parser": "~20.1.0",
 		"@nrwl/eslint-plugin-nx": "15.9.7",
 		"@typescript-eslint/eslint-plugin": "5.36.1",
 		"@typescript-eslint/parser": "5.36.1",
