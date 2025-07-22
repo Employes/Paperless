@@ -106,7 +106,7 @@
 		"cz-conventional-changelog": "3.3.0",
 		"cz-lerna-changelog": "2.0.3",
 		"doc-blocks": "^0.8.15",
-		"eslint": "~8.57.0",
+		"eslint": "~9.31.0",
 		"eslint-plugin-ava": "^15.0.1",
 		"eslint-plugin-import": "^2.29.1",
 		"eslint-plugin-jsonc": "^2.16.0",
