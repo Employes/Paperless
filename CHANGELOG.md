@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.226](https://github.com/employes/paperless/compare/v2.0.1-beta.225...v2.0.1-beta.226) (2025-07-22)
+
+
+### Features
+
+* **eslint:** enforce arrow body style ([#207](https://github.com/employes/paperless/issues/207)) ([4f66f40](https://github.com/employes/paperless/commit/4f66f40662a8f0858c599f6b92494836c5cdce2d))
+
+
+
+
+
 ## [2.0.1-beta.225](https://github.com/employes/paperless/compare/v2.0.1-beta.224...v2.0.1-beta.225) (2025-07-09)
 
 
