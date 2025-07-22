@@ -867,7 +867,7 @@ export namespace Components {
         /**
           * The value of the input
          */
-        "value": string;
+        "value": string | number;
         /**
           * The variant of the field
          */
@@ -2545,7 +2545,7 @@ declare global {
         new (): HTMLPEmptyStateElement;
     };
     interface HTMLPFieldElementEventMap {
-        "valueChange": string;
+        "valueChange": string | number;
         "inputRefChange": HTMLInputElement | HTMLTextAreaElement;
         "add": void;
     }
@@ -4053,7 +4053,7 @@ declare namespace LocalJSX {
         /**
           * Event whenever the value changes
          */
-        "onValueChange"?: (event: PFieldCustomEvent<string>) => void;
+        "onValueChange"?: (event: PFieldCustomEvent<string | number>) => void;
         /**
           * The template for the optional text
          */
@@ -4101,7 +4101,7 @@ declare namespace LocalJSX {
         /**
           * The value of the input
          */
-        "value"?: string;
+        "value"?: string | number;
         /**
           * The variant of the field
          */
