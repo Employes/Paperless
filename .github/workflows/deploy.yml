@@ -58,7 +58,7 @@ jobs:
 
       - name: Version
         if: |
-          github.ref == 'refs/heads/rebranding'
+          github.ref == 'refs/heads/main'
         run: yarn lerna:version:nopush
 
       - name: Install dependencies
@@ -69,7 +69,7 @@ jobs:
 
       - name: Push changes
         if: |
-          github.ref == 'refs/heads/rebranding' &&
+          github.ref == 'refs/heads/main' &&
           !contains(github.event.head_commit.message, 'chore')
         uses: ad-m/github-push-action@master
         with:
@@ -105,7 +105,7 @@ jobs:
     needs: [build]
     runs-on: ubuntu-latest
     if: |
-      github.ref == 'refs/heads/rebranding' &&
+      github.ref == 'refs/heads/main' &&
       !contains(github.event.head_commit.message, 'no-release') &&
       !contains(github.event.head_commit.message, 'Lerna publish') &&
       !contains(github.event.head_commit.message , 'docs:') &&
@@ -139,7 +139,7 @@ jobs:
   deploy-storybook:
     needs: [build]
     if: |
-      github.ref == 'refs/heads/rebranding' &&
+      github.ref == 'refs/heads/main' &&
       !contains(github.event.head_commit.message, 'no-build') &&
       !contains(github.event.head_commit.message, 'no-release') &&
       !contains(github.event.head_commit.message, 'Lerna publish')
@@ -175,4 +175,4 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        run: yarn storybook:deploy:beta
+        run: yarn storybook:deploy
