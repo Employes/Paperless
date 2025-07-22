@@ -39,8 +39,8 @@
 		"zone.js": "0.13.0"
 	},
 	"devDependencies": {
-		"@angular-devkit/build-angular": "15.2.8",
-		"@angular/cli": "15.2.8",
+		"@angular-devkit/build-angular": "20.1.1",
+		"@angular/cli": "20.1.1",
 		"@angular/compiler-cli": "15.2.9",
 		"@types/node": "^22.13.5",
 		"autoprefixer": "10.4.14",
