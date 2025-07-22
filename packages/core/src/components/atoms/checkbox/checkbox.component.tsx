@@ -22,19 +22,19 @@ const checkbox = cva(
 			disabled: {
 				false: [
 					'cursor-pointer shadow-1',
-					'bg-white border-black-teal-100',
-					'hover:bg-supportive-lilac-100 hover:border-black-teal-100',
-					'group-hover/checkbox-label:bg-supportive-lilac-100 group-hover/checkbox-label:border-black-teal-100',
-					'checked:bg-supportive-lilac checked:border-black-teal/20',
-					'checked:ring-2 checked:ring-supportive-lilac-100',
-					'checked:hover:bg-supportive-lilac-700 checked:hover:border-black-teal/20',
-					'checked:group-hover/checkbox-label:bg-supportive-lilac-700 checked:group-hover/checkbox-label:border-black-teal/20',
-					'indeterminate:bg-supportive-lilac-700 indeterminate:border-black-teal/20',
-					'indeterminate:ring-2 indeterminate:ring-supportive-lilac-100',
-					'indeterminate:hover:bg-supportive-lilac indeterminate:hover:border-black-teal/20',
-					'indeterminate:group-hover/checkbox-label:bg-supportive-lilac indeterminate:group-hover/checkbox-label:border-black-teal/20',
+					'bg-white border-storm-100',
+					'hover:bg-indigo-100 hover:border-storm/20',
+					'group-hover/checkbox-label:bg-indigo-100 group-hover/checkbox-label:border-storm-100',
+					'checked:bg-indigo-600 checked:border-storm/20',
+					'checked:ring-2 checked:ring-indigo-100',
+					'checked:hover:bg-indigo-700 checked:hover:border-storm/20',
+					'checked:group-hover/checkbox-label:bg-indigo-700 checked:group-hover/checkbox-label:border-storm/20',
+					'indeterminate:bg-indigo-600 indeterminate:border-storm/20',
+					'indeterminate:ring-2 indeterminate:ring-indigo-100',
+					'indeterminate:hover:bg-indigo-700 indeterminate:hover:border-storm/20',
+					'indeterminate:group-hover/checkbox-label:bg-indigo-700 indeterminate:group-hover/checkbox-label:border-storm/20',
 				],
-				true: 'bg-white-600 border-black-teal-50 cursor-not-allowed ',
+				true: 'bg-white-600 border-storm cursor-not-allowed ',
 			},
 		},
 	}
@@ -49,13 +49,13 @@ const iconContainer = cva(
 		variants: {
 			disabled: {
 				false: 'text-white',
-				true: 'text-black-teal-200',
+				true: 'text-storm-200',
 			},
 		},
 	}
 );
 
-const icon = cva(['drop-shadow-black-teal-10% text-xs'], {
+const icon = cva(['drop-shadow-2 text-xs'], {
 	variants: {
 		disabled: {
 			false:
@@ -133,7 +133,7 @@ export class Checkbox {
 		return (
 			<label
 				htmlFor={id}
-				class='group/p-checkbox flex items-center justify-start gap-2 text-black-teal'
+				class='group/p-checkbox flex items-center justify-start gap-2'
 			>
 				<div class='relative flex flex-shrink-0 items-center'>
 					<input
