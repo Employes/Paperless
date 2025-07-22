@@ -16,6 +16,7 @@ module.exports = {
 		{
 			files: ["*.ts", "*.tsx", "*.js", "*.jsx"],
 			rules: {
+				"arrow-body-style": ["error", "as-needed"],
 				"import/order": [
 					"error",
 					{
