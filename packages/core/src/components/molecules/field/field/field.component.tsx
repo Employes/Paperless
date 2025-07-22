@@ -266,7 +266,7 @@ export class Field {
 	/**
 	 * The value of the input
 	 */
-	@Prop() value: string;
+	@Prop() value: string | number;
 
 	/**
 	 * The label of the field
@@ -356,7 +356,7 @@ export class Field {
 	/**
 	 * Event whenever the value changes
 	 */
-	@Event({ bubbles: false }) valueChange: EventEmitter<string>;
+	@Event({ bubbles: false }) valueChange: EventEmitter<string | number>;
 
 	/**
 	 * Event whenever the input ref changes
@@ -379,7 +379,7 @@ export class Field {
 	@AttachInternals() _internals: ElementInternals;
 
 	private _inputRef: HTMLInputElement | HTMLTextAreaElement;
-	private _lastValue: string | null;
+	private _lastValue: string | number | null;
 
 	componentDidLoad() {
 		this._checkAutoFocus();
@@ -464,7 +464,9 @@ export class Field {
 						isTextarea: this.type === 'textarea',
 					})}
 					title={
-						this.variant === 'read' && !hasValueSlot ? this.value : undefined
+						this.variant === 'read' && !hasValueSlot
+							? `${this.value}`
+							: undefined
 					}
 					slot='content'
 				>
@@ -618,7 +620,7 @@ export class Field {
 		if (this.variant === 'read') {
 			return hasValueSlot ? (
 				<slot name='value' />
-			) : !!this.value && this.value.length > 0 ? (
+			) : !!this.value && `${this.value}`.length > 0 ? (
 				this.value
 			) : this.showAddOnEmpty ? (
 				<p-button
@@ -703,11 +705,12 @@ export class Field {
 		const target = (ev.originalTarget ?? ev.target) as
 			| HTMLTextAreaElement
 			| HTMLInputElement;
-		const value = target.value;
+		const value =
+			this.type === 'number' ? parseFloat(target.value) : target.value;
 		this._lastValue = value;
 		this.value = value;
 		this.valueChange.emit(value);
-		this._internals.setFormValue(value);
+		this._internals.setFormValue(target.value);
 	}
 
 	private _checkAutoFocus() {

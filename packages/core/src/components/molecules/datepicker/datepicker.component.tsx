@@ -326,7 +326,7 @@ export class Datepicker {
 					placeholder={this.placeholder}
 					onFocus={() => this._onFocus()}
 					onBlur={() => this._onBlur()}
-					onValueChange={ev => this._onValueChange(ev.detail)}
+					onValueChange={ev => this._onValueChange(ev.detail as string)}
 					onInputRefChange={ev => (this._inputRef = ev.detail)}
 				></p-field>
 

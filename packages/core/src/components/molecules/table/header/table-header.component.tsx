@@ -251,7 +251,9 @@ export class TableHeader {
 							class='desktop-xs:max-w-60'
 							placeholder='Zoeken...'
 							value={this.query}
-							onValueChange={ev => this._queryObserver.next(ev.detail)}
+							onValueChange={ev =>
+								this._queryObserver.next(ev.detail as string)
+							}
 						/>
 					)}
 
