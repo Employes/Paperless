@@ -118,7 +118,7 @@ export class Pagination {
 							this._hasPaginationPages && (
 								<p-divider
 									variant='vertical'
-									class='mx-0 h-4 text-human-beige-700'
+									class='mx-0 h-4 text-off-white-700'
 								/>
 							)}
 					</Fragment>

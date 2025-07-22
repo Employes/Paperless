@@ -8,14 +8,9 @@ import { asBoolean } from '../../../../utils/as-boolean';
 // bg-negative-red-50 bg-negative-red-100 bg-negative-red-500 bg-negative-red-800 bg-negative-red
 // bg-positive-green-50 bg-positive-green-100 bg-positive-green-500 bg-positive-green-800 bg-positive-green
 // bg-amber-50 bg-amber-100 bg-amber-500 bg-amber-800 bg-amber
-// bg-human-beige-50 bg-human-beige-100 bg-human-beige-200 bg-human-beige-300 bg-human-beige-400 bg-human-beige-500 bg-human-beige-600 bg-human-beige-700 bg-human-beige-800 bg-human-beige
 // bg-off-white-50 bg-off-white-100 bg-off-white-200 bg-off-white-300 bg-off-white-400 bg-off-white-500 bg-off-white-600 bg-off-white-700 bg-off-white-800 bg-off-white
-// bg-supportive-lilac-50 bg-supportive-lilac-100 bg-supportive-lilac-200 bg-supportive-lilac-300 bg-supportive-lilac-400 bg-supportive-lilac-500 bg-supportive-lilac-600 bg-supportive-lilac-700 bg-supportive-lilac-800 bg-supportive-lilac-900 bg-supportive-lilac
-// bg-growth-green-50 bg-growth-green-100 bg-growth-green-200 bg-growth-green-300 bg-growth-green-400 bg-growth-green-500 bg-growth-green-600 bg-growth-green-700 bg-growth-green-800 bg-growth-green
-// bg-tech-breeze-50 bg-tech-breeze-100 bg-tech-breeze-200 bg-tech-breeze-300 bg-tech-breeze-400 bg-tech-breeze-500 bg-tech-breeze-600 bg-tech-breeze-700 bg-tech-breeze-800 bg-tech-breeze
-// bg-teal-50 bg-teal-100 bg-teal-200 bg-teal-300 bg-teal-400 bg-teal-500 bg-teal-600 bg-teal-700 bg-teal-800 bg-teal
-// bg-dark-teal-50 bg-dark-teal-100 bg-dark-teal-200 bg-dark-teal-300 bg-dark-teal-400 bg-dark-teal-500 bg-dark-teal-600 bg-dark-teal-700 bg-dark-teal-800 bg-dark-teal
-// bg-black-teal-50 bg-black-teal-100 bg-black-teal-200 bg-black-teal-300 bg-black-teal-400 bg-black-teal-500 bg-black-teal-600 bg-black-teal-700 bg-black-teal-800 bg-black-teal
+// bg-indigo-50 bg-indigo-100 bg-indigo-200 bg-indigo-300 bg-indigo-400 bg-indigo-500 bg-indigo-600 bg-indigo-700 bg-indigo-800 bg-indigo-900 bg-indigo
+// bg-storm-50 bg-storm-100 bg-storm-200 bg-storm-300 bg-storm-400 bg-storm-500 bg-storm-600 bg-storm-700 bg-storm-800 bg-storm
 
 const container = cva(['flex flex-col w-inherit h-inherit', 'rounded-2xl'], {
 	variants: {

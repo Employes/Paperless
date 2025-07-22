@@ -4,7 +4,7 @@ import logo from '../packages/core/src/assets/images/paperless.png';
 export default create({
 	base: 'light',
 
-	colorPrimary: '#D1AEFF',
+	colorPrimary: '#8EB3FB',
 	colorSecondary: '#ECEAE5',
 
 	// UI
@@ -19,26 +19,26 @@ export default create({
 	fontCode: 'monospace',
 
 	// Text colors
-	textColor: '#355550',
+	textColor: '#74787F',
 	textInverseColor: '#fff',
 	textMutedColor: '#b0b2cb',
 
 	// Toolbar default and active colors
-	barTextColor: '#355550',
-	barHoverColor: '#032a24',
-	barSelectedColor: '#032a24',
+	barTextColor: '#464B54',
+	barHoverColor: '#181E29',
+	barSelectedColor: '#181E29',
 	barBg: '#fcfdfe',
 
-	buttonBg: '#D1AEFF',
+	buttonBg: '#8EB3FB',
 	buttonBorder: 'transparent',
 
 	booleanBg: '#fcfdfe',
-	booleanSelectedBg: '#D1AEFF',
+	booleanSelectedBg: '#8EB3FB',
 
 	// Form colors
 	inputBg: 'white',
-	inputBorder: '#D1AEFF',
-	inputTextColor: '#003832',
+	inputBorder: '#8EB3FB',
+	inputTextColor: '#181E29',
 	inputBorderRadius: 8,
 
 	brandTitle: 'Paperless',

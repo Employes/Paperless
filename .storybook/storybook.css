@@ -5,7 +5,7 @@
 	font-size: 0.75rem !important;
 	line-height: 1rem !important;
 	font-weight: 500 !important;
-	color: #687f7c !important;
+	color: #464b54 !important;
 	text-transform: initial !important;
 }
 
@@ -20,13 +20,13 @@
 	align-items: center;
 	font-size: 14px;
 	font-weight: 500 !important;
-	color: #355550 !important;
+	color: #181e29 !important;
 }
 
 #storybook-explorer-tree .sidebar-item:hover,
 #storybook-explorer-tree .sidebar-item:focus {
 	background: #f3f1ed !important;
-	color: #032a24 !important;
+	color: #181e29 !important;
 }
 
 #storybook-explorer-tree button.sidebar-item {
@@ -66,15 +66,15 @@
 #storybook-explorer-tree .sidebar-item[data-selected='true'],
 #storybook-explorer-tree .sidebar-item[aria-expanded='true'] {
 	background: #eceae5 !important;
-	color: #032a24 !important;
+	color: #181e29 !important;
 	font-weight: 600 !important;
 
 	div {
-		background: #d1aeff;
+		background: #8eb3fb;
 	}
 }
 
 #storybook-explorer-tree .sidebar-item > button[aria-expanded='true'] {
-	color: #032a24 !important;
+	color: #181e29 !important;
 	font-weight: 600 !important;
 }
