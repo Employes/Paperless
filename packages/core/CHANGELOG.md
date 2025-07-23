@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.2](https://github.com/ionic-team/stencil-component-starter/compare/v2.2.1...v2.2.2) (2025-07-23)
+
+
+### Bug Fixes
+
+* **molecules/navigation-item:** Apply correct icon color ([44a3c2d](https://github.com/ionic-team/stencil-component-starter/commit/44a3c2d7e1d80c3eae16b9959f09523f9230e049))
+
+
+
+
+
 ## [2.2.1](https://github.com/ionic-team/stencil-component-starter/compare/v2.2.0...v2.2.1) (2025-07-23)
 
 
