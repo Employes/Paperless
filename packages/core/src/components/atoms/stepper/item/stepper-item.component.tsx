@@ -20,7 +20,7 @@ const circle = cva(
 	[
 		'h-6 w-6 flex items-center justify-center',
 		'text-sm text-center font-medium',
-		'border border-solid border-dark-teal-400',
+		'border border-solid border-indigo-600',
 		'rounded-full',
 	],
 	{
@@ -38,17 +38,17 @@ const circle = cva(
 			{
 				finished: false,
 				active: false,
-				class: 'text-dark-teal-400 bg-dark-teal-50',
+				class: 'text-indigo-600 bg-indigo-50',
 			},
 			{
 				active: true,
 				finished: false,
-				class: 'text-white bg-dark-teal-400',
+				class: 'text-white bg-indigo-600',
 			},
 			{
 				active: false,
 				finished: true,
-				class: 'text-white bg-dark-teal-400',
+				class: 'text-white bg-indigo-600',
 			},
 		],
 	}
