@@ -19,6 +19,7 @@ export default {
 	],
 	'supportive-lilac': '0px 1px 1px rgba(189, 140, 255, 0.20)',
 	'black-teal-10%': '0px 1px 0px rgba(3, 42, 36, 0.1)',
+	'off-white-600': '0px 0px 0px 1px #ECEAE5',
 	inherit: 'inherit',
 	transparent: 'transparent',
 };
