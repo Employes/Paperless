@@ -435,8 +435,7 @@ export class Button {
 	onClick: EventEmitter<MouseEvent>;
 
 	render() {
-		let loaderColor: 'white' | 'off-white' | 'supportive-lilac' | 'black-teal' =
-			'white';
+		let loaderColor: 'white' | 'off-white' | 'indigo' | 'storm' = 'white';
 		switch (this.variant) {
 			case 'secondary':
 			case 'dropdown':
@@ -444,7 +443,7 @@ export class Button {
 				loaderColor = 'off-white';
 				break;
 			case 'text':
-				loaderColor = 'black-teal';
+				loaderColor = 'storm';
 				break;
 		}
 

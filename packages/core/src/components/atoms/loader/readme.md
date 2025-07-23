@@ -7,13 +7,13 @@
 
 ## Properties
 
-| Property           | Attribute           | Description                                           | Type                                                              | Default              |
-| ------------------ | ------------------- | ----------------------------------------------------- | ----------------------------------------------------------------- | -------------------- |
-| `color`            | `color`             | Color of the loader                                   | `"black-teal" \| "off-white" \| "supportive-lilac" \| "white"`    | `'supportive-lilac'` |
-| `modalDescription` | `modal-description` | !NOT IMPLEMENTED! Modal description for modal variant | `string`                                                          | `undefined`          |
-| `modalTitle`       | `modal-title`       | !NOT IMPLEMENTED! Modal title for modal variant       | `string`                                                          | `undefined`          |
-| `show`             | `show`              | Wether to show or hide the loader                     | `Observable<boolean> \| boolean`                                  | `true`               |
-| `variant`          | `variant`           | Variant of loader                                     | `"full-screen" \| "full-width" \| "ghost" \| "inline" \| "modal"` | `'inline'`           |
+| Property           | Attribute           | Description                                           | Type                                                              | Default     |
+| ------------------ | ------------------- | ----------------------------------------------------- | ----------------------------------------------------------------- | ----------- |
+| `color`            | `color`             | Color of the loader                                   | `"indigo" \| "off-white" \| "storm" \| "white"`                   | `'indigo'`  |
+| `modalDescription` | `modal-description` | !NOT IMPLEMENTED! Modal description for modal variant | `string`                                                          | `undefined` |
+| `modalTitle`       | `modal-title`       | !NOT IMPLEMENTED! Modal title for modal variant       | `string`                                                          | `undefined` |
+| `show`             | `show`              | Wether to show or hide the loader                     | `Observable<boolean> \| boolean`                                  | `true`      |
+| `variant`          | `variant`           | Variant of loader                                     | `"full-screen" \| "full-width" \| "ghost" \| "inline" \| "modal"` | `'inline'`  |
 
 
 ## Dependencies

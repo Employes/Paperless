@@ -21,8 +21,7 @@ export class Loader {
 	/**
 	 * Color of the loader
 	 */
-	@Prop() color: 'supportive-lilac' | 'white' | 'off-white' | 'black-teal' =
-		'supportive-lilac';
+	@Prop() color: 'indigo' | 'white' | 'off-white' | 'storm' = 'indigo';
 
 	/**
 	 * !NOT IMPLEMENTED! Modal title for modal variant

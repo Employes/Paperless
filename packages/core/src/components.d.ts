@@ -1097,7 +1097,7 @@ export namespace Components {
         /**
           * Color of the loader
          */
-        "color": 'supportive-lilac' | 'white' | 'off-white' | 'black-teal';
+        "color": 'indigo' | 'white' | 'off-white' | 'storm';
         /**
           * !NOT IMPLEMENTED! Modal description for modal variant
          */
@@ -4344,7 +4344,7 @@ declare namespace LocalJSX {
         /**
           * Color of the loader
          */
-        "color"?: 'supportive-lilac' | 'white' | 'off-white' | 'black-teal';
+        "color"?: 'indigo' | 'white' | 'off-white' | 'storm';
         /**
           * !NOT IMPLEMENTED! Modal description for modal variant
          */

@@ -6,8 +6,8 @@
 
 		will-change: transform;
 
-		&.color-supportive-lilac {
-			@apply border-r-supportive-lilac/40 border-t-supportive-lilac #{!important};
+		&.color-indigo {
+			@apply border-r-indigo/40 border-t-indigo #{!important};
 		}
 
 		&.color-off-white {
@@ -18,8 +18,8 @@
 			@apply border-white/40 border-t-white #{!important};
 		}
 
-		&.color-black-teal {
-			@apply border-r-black-teal-400 border-t-black-teal-700 #{!important};
+		&.color-storm {
+			@apply border-r-storm-400 border-t-storm-700 #{!important};
 		}
 	}
 
