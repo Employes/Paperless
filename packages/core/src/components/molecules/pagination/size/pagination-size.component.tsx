@@ -32,14 +32,15 @@ const trigger = cva(
 	[
 		'flex items-center gap-2',
 		'px-2 h-6',
-		'text-sm text-white font-medium ',
+		'text-sm text-storm font-medium ',
 		'cursor-pointer rounded-full',
+		'shadow-1 border border-solid',
 	],
 	{
 		variants: {
 			active: {
-				false: 'bg-dark-teal-400 hover:bg-dark-teal-500',
-				true: 'bg-dark-teal-600',
+				false: 'bg-white hover:bg-white-600 border-transparent',
+				true: 'bg-white-600 border-indigo-600 ring ring-2 ring-indigo-100',
 			},
 		},
 	}
