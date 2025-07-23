@@ -23,7 +23,7 @@ const button = cva(
 	{
 		variants: {
 			variant: {
-				primary: ['bg-supportive-lilac border-black-teal/20'],
+				primary: ['border-storm/20', 'text-white'],
 				secondary: null,
 				text: null,
 				transparent: 'bg-transparent border-transparent',
@@ -88,61 +88,67 @@ const button = cva(
 				class: 'rounded-e-lg',
 			},
 			{
-				variant: ['primary', 'secondary', 'dropdown'],
+				variant: ['secondary', 'dropdown'],
 				disabled: false,
 				error: false,
-				class: 'text-black-teal',
+				class: 'text-storm',
 			},
 			{
 				variant: 'primary',
 				disabled: true,
-				class: 'bg-supportive-lilac-100 text-black-teal-100',
+				class: 'bg-indigo-200',
+			},
+			{
+				variant: 'primary',
+				disabled: false,
+				class: 'bg-indigo-600',
 			},
 			{
 				variant: 'primary',
 				disabled: false,
 				loading: false,
-				class: 'active:border-supportive-lilac-800 active:ring active:ring-2',
-			},
-			{
-				variant: 'primary',
-				disabled: false,
-				loading: false,
-				active: true,
-				class: 'border-supportive-lilac-800 ring ring-2',
-			},
-			{
-				variant: 'primary',
-				disabled: false,
-				loading: false,
-				class:
-					'drop-shadow-supportive-lilac hover:drop-shadow-2 hover:bg-supportive-lilac-700 active:text-black-teal/60 active:ring-black-teal/10',
+				class: [
+					'active:border-storm/10 active:ring active:ring-2 active:text-white/60',
+					'drop-shadow-primary-button hover:drop-shadow-2 hover:bg-indigo-700 active:ring-indigo-100',
+				],
 			},
 			{
 				variant: 'primary',
 				disabled: false,
 				loading: false,
 				active: true,
-				class: 'ring-black-teal/10',
+				class: 'ring ring-2',
+			},
+			{
+				variant: 'primary',
+				disabled: false,
+				loading: false,
+				active: true,
+				class: 'ring-indigo-100',
 			},
 			{
 				variant: ['secondary', 'dropdown'],
 				disabled: true,
-				class: 'border bg-white-600 text-black-teal-100',
+				class: 'border bg-white-600 text-storm-100',
+			},
+			{
+				variant: ['secondary', 'dropdown'],
+				disabled: false,
+				class: 'text-storm',
 			},
 			{
 				variant: ['secondary', 'dropdown'],
 				disabled: false,
 				loading: false,
 				class:
-					'drop-shadow-1 hover:drop-shadow-1 hover:bg-white-600 active:text-black-teal/60 active:ring-supportive-lilac-100',
+					'drop-shadow-1 hover:drop-shadow-1 hover:bg-white-600 active:ring-indigo-100 active:text-storm-500/60',
 			},
 			{
 				variant: ['secondary', 'dropdown'],
 				disabled: false,
 				loading: false,
 				error: false,
-				class: 'active:border-supportive-lilac-800 active:ring active:ring-2',
+				class: 'active:border-indigo-600 active:ring active:ring-2',
 			},
 			{
 				variant: ['secondary', 'dropdown'],
@@ -150,13 +156,13 @@ const button = cva(
 				loading: false,
 				active: true,
 				error: false,
-				class:
-					'border-supportive-lilac-800 ring ring-2 ring-supportive-lilac-100',
+				class: 'border-indigo-600 ring ring-2 ring-indigo-100',
 			},
 			{
 				variant: ['secondary', 'dropdown'],
 				error: false,
-				class: ['border-black-teal/20'],
+				active: false,
+				class: ['border-storm/20'],
 			},
 			{
 				variant: ['secondary', 'dropdown'],
@@ -166,37 +172,20 @@ const button = cva(
 			},
 
 			{
-				variant: 'text',
+				variant: ['text', 'transparent'],
 				disabled: false,
-				class: 'text-dark-teal-400 hover:text-dark-teal-500',
+				class: 'text-indigo-700 hover:text-indigo-800',
 			},
 			{
-				variant: 'text',
+				variant: ['text', 'transparent'],
 				disabled: true,
-				class: 'text-dark-teal-100',
+				class: 'text-indigo-300',
 			},
 			{
-				variant: 'text',
+				variant: ['text', 'transparent'],
 				disabled: false,
 				loading: false,
-				class: 'active:text-dark-teal-600 active:border-dark-teal-600',
-			},
-
-			{
-				variant: 'transparent',
-				disabled: false,
-				class: 'text-dark-teal-100',
-			},
-			{
-				variant: 'transparent',
-				disabled: false,
-				loading: false,
-				class: 'hover:bg-dark-teal active:text-dark-teal-100/60',
-			},
-			{
-				variant: 'transparent',
-				disabled: true,
-				class: 'text-dark-teal-100/60',
+				class: 'active:text-indigo-800',
 			},
 
 			{
@@ -271,17 +260,39 @@ const icon = cva([], {
 	},
 	compoundVariants: [
 		{
+			variant: 'primary',
+			disabled: false,
+			active: false,
+			error: false,
+			class:
+				'text-indigo-300 group-hover:text-white group-active:text-white/60',
+		},
+		{
+			variant: 'primary',
+			disabled: false,
+			active: true,
+			class: 'text-white/60',
+		},
+		{
 			variant: ['secondary', 'dropdown'],
 			disabled: false,
 			active: false,
 			error: false,
-			class: 'text-black-teal-300 group-hover:text-black-teal',
+			class: 'text-storm-300 group-hover:text-storm group-active:text-storm/60',
 		},
 		{
-			variant: 'transparent',
+			variant: ['secondary', 'dropdown'],
+			disabled: false,
+			active: true,
+			error: false,
+			class: 'text-storm/60',
+		},
+		{
+			variant: ['transparent', 'text'],
 			disabled: false,
 			active: false,
-			class: 'text-dark-teal-200 group-hover:text-dark-teal-100',
+			class:
+				'text-indigo group-hover:text-indigo-700 group-active:text-indigo-800',
 		},
 		{
 			variant: ['secondary', 'dropdown'],
