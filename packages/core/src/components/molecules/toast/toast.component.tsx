@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 import { RotateOptions } from '../../../types';
 import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
 import { cva } from 'class-variance-authority';
@@ -6,7 +6,7 @@ import { cva } from 'class-variance-authority';
 const indicator = cva('w-[2px] rounded-full h-9 flex-shrink-0', {
 	variants: {
 		variant: {
-			neutral: 'bg-supportive-lilac-800',
+			neutral: 'bg-indigo-800',
 			positive: 'bg-positive-green-500',
 			biased: 'bg-amber-500',
 			negative: 'bg-negative-red-500',
@@ -70,30 +70,32 @@ export class Toast {
 
 	render() {
 		return (
-			<Host onClick={() => this._onClick()}>
+			<div
+				class='flex gap-2 rounded-lg border border-solid border-storm-100 bg-white p-2 shadow-2'
+				onClick={() => this._onClick()}
+			>
 				<div class={indicator({ variant: this.variant })} />
 				<div class={content()}>
 					<div class='flex w-full min-w-0 flex-col'>
-						<p class='m-0 overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold text-white-500'>
+						<p class='m-0 overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold text-storm'>
 							{this.header?.length ? this.header : <slot name='header' />}
 						</p>
-						<p class='m-0 w-full overflow-hidden text-ellipsis whitespace-nowrap text-xs text-dark-teal-200'>
+						<p class='m-0 w-full overflow-hidden text-ellipsis whitespace-nowrap text-xs text-storm-300'>
 							{this.content?.length ? this.content : <slot name='content' />}
 						</p>
 					</div>
 
 					{this.enableAction && (
-						<p-button
-							variant='transparent'
-							iconOnly
-							icon={this.actionIcon}
-							iconFlip={this.actionIconFlip}
-							iconRotate={this.actionIconRotate}
-							class='flex-shrink-0'
-						/>
+						<div class='flex-shrink-0 cursor-pointer p-2 text-storm-200 hover:text-storm'>
+							<p-icon
+								variant={this.actionIcon}
+								flip={this.actionIconFlip}
+								rotate={this.actionIconRotate}
+							/>
+						</div>
 					)}
 				</div>
-			</Host>
+			</div>
 		);
 	}
 

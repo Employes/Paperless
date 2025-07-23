@@ -54,7 +54,6 @@
  - [p-select](../select)
  - [p-table](../../organisms/table)
  - [p-table-header](../table/header)
- - [p-toast](../toast)
 
 ### Depends on
 
@@ -77,7 +76,6 @@ graph TD;
   p-select --> p-button
   p-table --> p-button
   p-table-header --> p-button
-  p-toast --> p-button
   style p-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

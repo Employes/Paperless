@@ -38,6 +38,7 @@
  - [p-range](../../molecules/range)
  - [p-segment-item](../segment/item)
  - [p-select](../../molecules/select)
+ - [p-toast](../../molecules/toast)
 
 ### Graph
 ```mermaid
@@ -61,6 +62,7 @@ graph TD;
   p-range --> p-icon
   p-segment-item --> p-icon
   p-select --> p-icon
+  p-toast --> p-icon
   style p-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
