@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.1](https://github.com/employes/paperless/compare/v2.2.0...v2.2.1) (2025-07-23)
+
+
+### Bug Fixes
+
+* **docs:** Don't set variant for button doc ([6517da9](https://github.com/employes/paperless/commit/6517da9f0a7f3d8444d22e10d1c75c6a01234c45))
+
+
+
+
+
 # [2.2.0](https://github.com/employes/paperless/compare/v2.1.0...v2.2.0) (2025-07-23)
 
 
