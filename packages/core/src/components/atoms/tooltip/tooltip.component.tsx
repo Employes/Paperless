@@ -33,7 +33,7 @@ const popover = cva(
 	{
 		variants: {
 			variant: {
-				hover: 'bg-black-teal text-white py-1 max-w-[14.5rem]',
+				hover: 'bg-storm text-white py-1 max-w-[14.5rem]',
 				click: 'max-w-[18rem]',
 				error: 'max-w-full w-full',
 			},
@@ -49,7 +49,7 @@ const popover = cva(
 			},
 			{
 				variant: ['click', 'error'],
-				class: 'bg-white text-black-teal-300 py-2',
+				class: 'bg-white text-storm-300 py-2',
 			},
 		],
 	}

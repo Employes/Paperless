@@ -16,7 +16,7 @@ export class AvatarGroup {
 				<slot />
 
 				{this.extra && (
-					<span class='pl-3 text-sm text-black-teal-300'>+{this.extra}</span>
+					<span class='pl-3 text-sm text-storm-300'>+{this.extra}</span>
 				)}
 			</Host>
 		);

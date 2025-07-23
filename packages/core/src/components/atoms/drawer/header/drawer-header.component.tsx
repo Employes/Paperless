@@ -10,7 +10,7 @@ const content = cva(['flex justify-between', 'w-full p-4 pb-0 min-h-12']);
 
 const title = cva([
 	'flex-1 text-center',
-	'black-teal-500 text-2xl text-ambit font-bold',
+	'storm-500 text-2xl text-ambit font-bold',
 ]);
 
 @Component({

@@ -45,8 +45,8 @@ export class Accordion {
 			<Host>
 				<div
 					class={cn('flex cursor-pointer items-center gap-2', {
-						'text-black-teal-500': this.variant === 'primary',
-						'text-black-teal-300': this.variant === 'secondary',
+						'text-storm-500': this.variant === 'primary',
+						'text-storm-300': this.variant === 'secondary',
 					})}
 					onClick={() => this._onClick()}
 				>

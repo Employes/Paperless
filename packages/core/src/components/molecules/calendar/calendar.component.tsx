@@ -35,7 +35,7 @@ import { cn } from '../../../utils/cn';
 const calendar = cva(['bg-white w-[17.5rem] flex flex-col gap-4'], {
 	variants: {
 		variant: {
-			default: ['p-2 rounded-lg drop-shadow-2', 'border border-black-teal-100'],
+			default: ['p-2 rounded-lg drop-shadow-2', 'border border-storm-100'],
 			embedded: 'p-1',
 		},
 	},
@@ -315,7 +315,7 @@ export class Calendar {
 
 				<div class='grid grid-cols-7 justify-between gap-1'>
 					{this._weekDays.map(weekday => (
-						<span class='w-8 text-center text-xs text-black-teal-200'>
+						<span class='w-8 text-center text-xs text-storm-200'>
 							{format(addDays(new Date(2022, 7, 1), weekday), 'eee')}
 						</span>
 					))}
@@ -332,15 +332,15 @@ export class Calendar {
 							<time
 								class={cn(
 									'normal flex items-center justify-center rounded-lg',
-									'h-8 w-8 text-sm font-semibold text-black-teal-300',
+									'h-8 w-8 text-sm font-semibold text-storm-300',
 									{
-										'cursor-pointer hover:bg-white-600 hover:text-black-teal':
+										'cursor-pointer hover:bg-white-600 hover:text-storm':
 											!day.disabled,
 									},
 									`col-start-${day.offset}`,
 									{ 'cursor-not-allowed opacity-60': day.disabled },
 									{
-										'border border-solid border-off-white-700 bg-off-white-300 text-black-teal':
+										'border border-solid border-off-white-700 bg-off-white-300 text-storm':
 											!day.disabled && isSameDay(day.date, new Date()),
 									}
 								)}

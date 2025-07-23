@@ -16,7 +16,7 @@ const backdrop = cva(
 		'fixed left-0 top-0 z-backdrop',
 		'h-full w-full',
 		'overflow-hidden',
-		'bg-black-teal-800/40',
+		'bg-storm-800/40',
 		'max-h-screen max-w-screen',
 	],
 	{

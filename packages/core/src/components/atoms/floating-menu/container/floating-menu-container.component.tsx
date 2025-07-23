@@ -116,7 +116,7 @@ export class FloatingMenuContainer {
 							</p>
 
 							<p-divider
-								class='mx-0 h-4 text-black-teal-400'
+								class='mx-0 h-4 text-storm-400'
 								variant='vertical'
 							/>
 						</Fragment>

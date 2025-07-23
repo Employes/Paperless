@@ -115,7 +115,7 @@ export class EmptyState {
 					<slot name='header' />
 				) : (
 					this.header?.length && (
-						<p class='my-0 text-center font-ambit text-sm font-bold text-black-teal'>
+						<p class='my-0 text-center font-ambit text-sm font-bold text-storm'>
 							{this.header}
 						</p>
 					)
@@ -124,7 +124,7 @@ export class EmptyState {
 					<slot name='content' />
 				) : (
 					this.content?.length && (
-						<p class='my-0 text-center text-sm text-black-teal-300'>
+						<p class='my-0 text-center text-sm text-storm-300'>
 							{this.content}
 						</p>
 					)

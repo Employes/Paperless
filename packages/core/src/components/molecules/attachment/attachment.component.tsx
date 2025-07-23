@@ -22,7 +22,7 @@ const attachment = cva(
 				true: 'cursor-pointer',
 			},
 			error: {
-				false: 'bg-white-600 border-black-teal-100 text-black-teal-200',
+				false: 'bg-white-600 border-storm-100 text-storm-200',
 				true: 'border-negative-red',
 			},
 		},
@@ -144,7 +144,7 @@ export class Attachment {
 	render() {
 		let prefix = (
 			<p-icon
-				class='text-black-teal-300'
+				class='text-storm-300'
 				variant='attachment'
 			/>
 		);

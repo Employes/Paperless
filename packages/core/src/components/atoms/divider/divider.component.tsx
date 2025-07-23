@@ -56,7 +56,7 @@ export class Divider {
 						alignContent: this.alignContent,
 					})}
 				>
-					<div class='flex items-center px-2 text-sm font-medium text-black-teal-400 empty:px-0'>
+					<div class='flex items-center px-2 text-sm font-medium text-storm-400 empty:px-0'>
 						{hasContent && <slot />}
 					</div>
 				</div>

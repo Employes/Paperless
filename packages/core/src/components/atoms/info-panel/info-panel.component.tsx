@@ -30,7 +30,7 @@ const header = cva('text-sm font-medium', {
 			positive: 'text-positive-green-800',
 			biased: 'text-amber-800',
 			negative: 'text-negative-red-800',
-			feedback: 'text-black-teal-800',
+			feedback: 'text-storm-800',
 		},
 	},
 });
@@ -40,7 +40,7 @@ const close = cva([
 	'flex items-center justify-center',
 
 	'rounded-lg cursor-pointer',
-	'text-black-teal-800/60 hover:text-black-teal-800/60 hover:bg-white-500/40',
+	'text-storm-800/60 hover:text-storm-800/60 hover:bg-white-500/40',
 
 	'h-6 w-6',
 ]);
@@ -104,7 +104,7 @@ export class InfoPanel {
 				)}
 
 				{(this.content?.length || hasContentSlot) && (
-					<div class='h-inherit text-sm font-normal text-black-teal-800/60'>
+					<div class='h-inherit text-sm font-normal text-storm-800/60'>
 						{this.content?.length ? (
 							<p class='my-0'>{this.content}</p>
 						) : (

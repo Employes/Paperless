@@ -13,11 +13,11 @@
 
 	input::-webkit-slider-thumb {
 		@apply mt-[calc((0.5rem-1px)*-1)] h-4 w-4 appearance-none rounded-full border-0;
-		@apply bg-black-teal-300 hover:cursor-grab hover:bg-black-teal active:cursor-grabbing active:bg-black-teal;
+		@apply bg-storm-300 hover:cursor-grab hover:bg-storm active:cursor-grabbing active:bg-storm;
 	}
 
 	input::-moz-range-thumb {
 		@apply h-4 w-4 rounded-full border-0;
-		@apply bg-black-teal-300 hover:cursor-grab hover:bg-black-teal active:cursor-grabbing active:bg-black-teal;
+		@apply bg-storm-300 hover:cursor-grab hover:bg-storm active:cursor-grabbing active:bg-storm;
 	}
 }

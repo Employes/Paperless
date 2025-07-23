@@ -73,17 +73,17 @@ const content = cva('text-sm font-medium flex-1 mt-[1px]', {
 		{
 			finished: false,
 			active: false,
-			class: 'text-black-teal-400',
+			class: 'text-storm-400',
 		},
 		{
 			active: true,
 			finished: false,
-			class: 'text-black-teal-500',
+			class: 'text-storm-500',
 		},
 		{
 			active: false,
 			finished: true,
-			class: 'text-black-teal-500',
+			class: 'text-storm-500',
 		},
 		{
 			direction: 'horizontal',

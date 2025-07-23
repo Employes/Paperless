@@ -8,7 +8,7 @@ import { Component, h, Host } from '@stencil/core';
 export class NavigationTitle {
 	render() {
 		return (
-			<Host class='text-xs font-medium text-black-teal-300'>
+			<Host class='text-xs font-medium text-storm-300'>
 				<slot />
 			</Host>
 		);

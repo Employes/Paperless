@@ -21,12 +21,12 @@ export const getTableCellColumnClasses = (
 		'justify-center': definition?.align === 'center',
 		'justify-end': definition?.align === 'end',
 		'font-semibold': variant !== 'header' && definition?.variant === 'subject',
-		'text-black-teal-400': variant === 'header',
-		'text-black-teal-300':
+		'text-storm-400': variant === 'header',
+		'text-storm-300':
 			variant !== 'header' &&
 			definition?.variant !== 'subject' &&
 			definition?.variant !== 'highlight',
-		'text-black-teal':
+		'text-storm':
 			variant !== 'header' &&
 			(definition?.variant === 'subject' ||
 				definition?.variant === 'highlight'),

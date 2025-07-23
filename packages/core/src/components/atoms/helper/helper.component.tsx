@@ -27,7 +27,7 @@ export class Helper {
 				>
 					<p-icon
 						size='sm'
-						class='cursor-pointer text-black-teal-300 hover:text-black-teal'
+						class='cursor-pointer text-storm-300 hover:text-storm'
 						variant='question-circle'
 						slot='trigger'
 					/>

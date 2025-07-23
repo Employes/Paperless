@@ -14,7 +14,7 @@ export class ListingItem {
 
 	render() {
 		return (
-			<div class='flex items-center  gap-2 text-black-teal'>
+			<div class='flex items-center  gap-2 text-storm'>
 				<p-icon variant={this.icon} />
 				<div class='flex min-w-0 flex-1 flex-col text-sm font-medium'>
 					<slot />

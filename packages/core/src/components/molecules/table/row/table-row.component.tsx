@@ -7,8 +7,8 @@ const row = cva(
 	{
 		variants: {
 			variant: {
-				default: ['px-3 m-1', 'text-sm text-black-teal-500'],
-				header: ['px-4', 'text-xs font-normal text-black-teal-400'],
+				default: ['px-3 m-1', 'text-sm text-storm-500'],
+				header: ['px-4', 'text-xs font-normal text-storm-400'],
 				secondary: [
 					'px-4',
 					'bg-off-white-300 rounded-lg',

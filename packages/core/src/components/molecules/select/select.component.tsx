@@ -35,7 +35,7 @@ const multiItem = cva([
 const textContainer = cva('block w-full overflow-hidden text-start', {
 	variants: {
 		variant: {
-			placeholder: 'text-black-teal-400',
+			placeholder: 'text-storm-400',
 			default: null,
 		},
 		enableTextWrap: {
@@ -356,7 +356,7 @@ export class Select {
 						</div>
 					))}
 
-					<div class='extra pointer-events-none hidden text-sm text-black-teal-100'>
+					<div class='extra pointer-events-none hidden text-sm text-storm-100'>
 						+{this._amountHidden}
 					</div>
 				</div>
@@ -717,7 +717,7 @@ export class Select {
 		if (!this._items.length) {
 			items = [
 				<p
-					class='w-full p-2 text-center text-sm text-black-teal-400'
+					class='w-full p-2 text-center text-sm text-storm-400'
 					slot='items'
 				>
 					{this.emptyStateText}
@@ -921,7 +921,7 @@ export class Select {
 			content = (
 				<span class='flex items-center gap-2'>
 					<p-icon
-						class='black-teal-300'
+						class='storm-300'
 						variant={item[this.iconKey] as IconVariant}
 					/>
 					<div
