@@ -34,7 +34,7 @@ const navigationItemIconContainer = cva(
 		variants: {
 			active: {
 				false: false,
-				true: ['bg-supportive-lilac'],
+				true: ['bg-indigo'],
 			},
 		},
 	}
