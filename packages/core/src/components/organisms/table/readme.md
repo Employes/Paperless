@@ -127,7 +127,7 @@ graph TD;
   p-button --> p-icon
   p-button --> p-loader
   p-floating-menu-container --> p-divider
-  p-floating-menu-container --> p-icon
+  p-floating-menu-container --> p-floating-menu-item
   p-floating-menu-item --> p-loader
   p-floating-menu-item --> p-icon
   p-table-footer --> p-pagination

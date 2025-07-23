@@ -22,6 +22,7 @@
 
 ### Used by
 
+ - [p-floating-menu-container](../container)
  - [p-table](../../../organisms/table)
 
 ### Depends on
@@ -34,6 +35,7 @@
 graph TD;
   p-floating-menu-item --> p-loader
   p-floating-menu-item --> p-icon
+  p-floating-menu-container --> p-floating-menu-item
   p-table --> p-floating-menu-item
   style p-floating-menu-item fill:#f9f,stroke:#333,stroke-width:4px
 ```

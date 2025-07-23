@@ -26,7 +26,6 @@
  - [p-checkbox](../checkbox)
  - [p-dropdown-menu-item](../dropdown-menu/item)
  - [p-field](../../molecules/field/field)
- - [p-floating-menu-container](../floating-menu/container)
  - [p-floating-menu-item](../floating-menu/item)
  - [p-helper](../helper)
  - [p-info-panel](../info-panel)
@@ -50,7 +49,6 @@ graph TD;
   p-checkbox --> p-icon
   p-dropdown-menu-item --> p-icon
   p-field --> p-icon
-  p-floating-menu-container --> p-icon
   p-floating-menu-item --> p-icon
   p-helper --> p-icon
   p-info-panel --> p-icon

@@ -32,13 +32,15 @@
 ### Depends on
 
 - [p-divider](../../divider)
-- [p-icon](../../icon)
+- [p-floating-menu-item](../item)
 
 ### Graph
 ```mermaid
 graph TD;
   p-floating-menu-container --> p-divider
-  p-floating-menu-container --> p-icon
+  p-floating-menu-container --> p-floating-menu-item
+  p-floating-menu-item --> p-loader
+  p-floating-menu-item --> p-icon
   p-table --> p-floating-menu-container
   style p-floating-menu-container fill:#f9f,stroke:#333,stroke-width:4px
 ```

@@ -5,11 +5,7 @@ import { cva } from 'class-variance-authority';
 import { asBoolean } from '../../../../utils/as-boolean';
 
 const item = cva(
-	[
-		'p-floating-menu-item group',
-		'flex gap-2 items-center h-6',
-		'text-sm text-dark-teal-300',
-	],
+	['group', 'flex gap-2 items-center h-8 px-2', 'text-sm', 'rounded-lg'],
 	{
 		variants: {
 			hover: {
@@ -23,15 +19,24 @@ const item = cva(
 		},
 		compoundVariants: [
 			{
+				disabled: true,
+				class: 'cursor-not-allowed text-storm-50',
+			},
+			{
+				disabled: false,
+				class: 'text-storm-100',
+			},
+			{
 				disabled: false,
 				hover: true,
-				class: 'cursor-pointer hover:text-dark-teal-100',
+				class:
+					'cursor-pointer active:text-storm-100/60 hover:bg-storm-800 active:bg-storm-700',
 			},
 		],
 	}
 );
 
-const icon = cva(['text-dark-teal-200'], {
+const icon = cva([], {
 	variants: {
 		hover: {
 			false: null,
@@ -46,7 +51,7 @@ const icon = cva(['text-dark-teal-200'], {
 		{
 			disabled: false,
 			hover: true,
-			class: 'group-hover:text-dark-teal-100',
+			class: 'group-hover:text-storm-100 group-active:text-storm-100/60',
 		},
 	],
 });
@@ -101,7 +106,7 @@ export class FloatingMenuItem {
 			>
 				{this._getIcon()}
 
-				<p class='min-w-0 overflow-hidden text-ellipsis text-nowrap font-semibold'>
+				<p class='min-w-0 overflow-hidden text-ellipsis text-nowrap font-semibold empty:hidden'>
 					<slot />
 				</p>
 			</Host>

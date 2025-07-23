@@ -19,7 +19,7 @@ import {
 const container = cva(
 	[
 		'floating-menu-container z-floating-menu',
-		'bg-dark-teal-600 shadow-3',
+		'bg-storm-500 shadow-3',
 		'h-10 py-1 w-auto',
 		'rounded-lg',
 		'text-sm',
@@ -36,7 +36,7 @@ const container = cva(
 );
 
 const amountSelected = cva([
-	'text-dark-teal-100',
+	'text-storm-100',
 	'min-w-0',
 	'overflow-hidden text-ellipsis text-nowrap',
 ]);
@@ -122,16 +122,16 @@ export class FloatingMenuContainer {
 						</Fragment>
 					)}
 
-					{this.usedInTable ? <slot name='floating-menu-item' /> : <slot />}
+					<div class='flex items-center'>
+						{this.usedInTable ? <slot name='floating-menu-item' /> : <slot />}
 
-					{this.enableClose && (
-						<div
-							class='ml-auto box-content size-4 cursor-pointer p-2 text-dark-teal-300 hover:text-dark-teal-100'
-							onClick={ev => this.close.emit(ev)}
-						>
-							<p-icon variant='negative' />
-						</div>
-					)}
+						{this.enableClose && (
+							<p-floating-menu-item
+								onClick={ev => this.close.emit(ev)}
+								icon='negative'
+							></p-floating-menu-item>
+						)}
+					</div>
 				</div>
 			</Host>
 		);
