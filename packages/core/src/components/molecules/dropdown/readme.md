@@ -23,7 +23,7 @@
 | `scrollable`          | `scrollable`            | Wether the dropdown container should be scrollable when the threshold is met. | `"default" \| "large" \| boolean`                                                                                                                                    | `false`          |
 | `show`                | `show`                  | Wether to show the dropdown menu                                              | `boolean`                                                                                                                                                            | `false`          |
 | `strategy`            | `strategy`              | The strategy of the dropdown placement                                        | `"absolute" \| "fixed"`                                                                                                                                              | `'absolute'`     |
-| `variant`             | `variant`               | The variant of the dropdown                                                   | `"dark-teal" \| "default"`                                                                                                                                           | `'default'`      |
+| `variant`             | `variant`               | The variant of the dropdown                                                   | `"default" \| "storm"`                                                                                                                                               | `'default'`      |
 
 
 ## Events

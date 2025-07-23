@@ -54,7 +54,7 @@ export class Dropdown {
 	/**
 	 * The variant of the dropdown
 	 */
-	@Prop() variant: 'default' | 'dark-teal' = 'default';
+	@Prop() variant: 'default' | 'storm' = 'default';
 
 	/**
 	 * The content of the dropdown menu

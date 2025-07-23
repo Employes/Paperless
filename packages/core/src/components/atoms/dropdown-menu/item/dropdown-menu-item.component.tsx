@@ -12,7 +12,7 @@ const dropdownMenuItem = cva(
 		variants: {
 			variant: {
 				default: null,
-				'dark-teal': null,
+				storm: null,
 				negative: null,
 			},
 			active: {
@@ -38,51 +38,51 @@ const dropdownMenuItem = cva(
 				active: false,
 				enableHover: true,
 				disabled: false,
-				class: 'hover:bg-supportive-lilac-50',
+				class: 'hover:bg-indigo-50',
 			},
 			{
 				variant: 'default',
 				active: true,
 				disabled: false,
-				class: 'bg-supportive-lilac-100',
+				class: 'bg-indigo-100',
 			},
 			{
 				variant: 'default',
 				disabled: false,
-				class: 'text-black-teal',
+				class: 'text-storm',
 			},
 			{
 				variant: 'default',
 				disabled: true,
-				class: 'text-black-teal-200',
+				class: 'text-storm-200',
 			},
 			{
 				variant: 'default',
 				disabled: true,
 				active: true,
-				class: 'bg-supportive-lilac-100',
+				class: 'bg-indigo-50',
 			},
 
 			{
-				variant: 'dark-teal',
+				variant: 'storm',
 				active: false,
 				enableHover: true,
 				class: 'text-white',
 			},
 			{
-				variant: 'dark-teal',
+				variant: 'storm',
 				active: false,
 				enableHover: true,
 				disabled: false,
-				class: 'hover:bg-dark-teal-500',
+				class: 'hover:bg-storm-500',
 			},
 			{
-				variant: 'dark-teal',
+				variant: 'storm',
 				active: true,
-				class: 'text-white bg-dark-teal-600',
+				class: 'text-white bg-storm-600',
 			},
 			{
-				variant: 'dark-teal',
+				variant: 'storm',
 				disabled: true,
 				class: 'opacity-40',
 			},
@@ -125,7 +125,7 @@ const dropdownMenuItemIcon = cva(['text-base'], {
 	variants: {
 		variant: {
 			default: null,
-			'dark-teal': null,
+			storm: null,
 			negative: null,
 		},
 		active: {
@@ -134,7 +134,7 @@ const dropdownMenuItemIcon = cva(['text-base'], {
 		},
 		disabled: {
 			false: null,
-			true: 'text-black-teal-100',
+			true: 'text-storm-100',
 		},
 		wave: {
 			true: 'group-hover:animate-wave',
@@ -146,14 +146,14 @@ const dropdownMenuItemIcon = cva(['text-base'], {
 			variant: 'default',
 			active: false,
 			disabled: false,
-			class: 'text-black-teal-300 group-hover:text-black-teal',
+			class: 'text-storm-300 group-hover:text-storm',
 		},
 
 		{
-			variant: 'dark-teal',
+			variant: 'storm',
 			active: false,
 			disabled: false,
-			class: 'text-dark-teal-100 group-hover:text-white',
+			class: 'text-storm-100 group-hover:text-white',
 		},
 
 		{
@@ -190,7 +190,7 @@ export class DropdownMenuItem {
 	/**
 	 * The variant of the item
 	 */
-	@Prop() variant: 'default' | 'dark-teal' | 'negative' = 'default';
+	@Prop() variant: 'default' | 'storm' | 'negative' = 'default';
 
 	/**
 	 * Wether to enable the hover state

@@ -106,7 +106,6 @@ export class PaginationSize {
 				<p-dropdown
 					applyFullWidth={true}
 					applyMaxWidth={false}
-					variant='dark-teal'
 					placement='top-start'
 					chevronDirection='down'
 					onIsOpen={({ detail }) => (this.dropdownIsOpen = detail)}

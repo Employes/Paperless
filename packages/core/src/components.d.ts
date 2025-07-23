@@ -647,7 +647,7 @@ export namespace Components {
         /**
           * The variant of the dropdown
          */
-        "variant": 'default' | 'dark-teal';
+        "variant": 'default' | 'storm';
     }
     interface PDropdownMenuContainer {
         /**
@@ -673,7 +673,7 @@ export namespace Components {
         /**
           * The variant of the container
          */
-        "variant": 'default' | 'dark-teal';
+        "variant": 'default' | 'storm';
     }
     interface PDropdownMenuItem {
         /**
@@ -711,7 +711,7 @@ export namespace Components {
         /**
           * The variant of the item
          */
-        "variant": 'default' | 'dark-teal' | 'negative';
+        "variant": 'default' | 'storm' | 'negative';
     }
     interface PEmptyState {
         /**
@@ -3865,7 +3865,7 @@ declare namespace LocalJSX {
         /**
           * The variant of the dropdown
          */
-        "variant"?: 'default' | 'dark-teal';
+        "variant"?: 'default' | 'storm';
     }
     interface PDropdownMenuContainer {
         /**
@@ -3891,7 +3891,7 @@ declare namespace LocalJSX {
         /**
           * The variant of the container
          */
-        "variant"?: 'default' | 'dark-teal';
+        "variant"?: 'default' | 'storm';
     }
     interface PDropdownMenuItem {
         /**
@@ -3929,7 +3929,7 @@ declare namespace LocalJSX {
         /**
           * The variant of the item
          */
-        "variant"?: 'default' | 'dark-teal' | 'negative';
+        "variant"?: 'default' | 'storm' | 'negative';
     }
     interface PEmptyState {
         /**

@@ -13,8 +13,8 @@ const dropdownMenuContainer = cva(
 	{
 		variants: {
 			variant: {
-				default: 'bg-white border-black-teal-100 drop-shadow-2 ',
-				'dark-teal': 'bg-dark-teal-400 drop-shadow-3 border-dark-teal-400',
+				default: 'bg-white border-storm-100 drop-shadow-2 ',
+				storm: 'bg-storm-400 drop-shadow-3 border-storm-400',
 			},
 			fullWidth: {
 				false: null,
@@ -59,7 +59,7 @@ export class DropdownMenuContainer {
 	/**
 	 * The variant of the container
 	 */
-	@Prop() variant: 'default' | 'dark-teal' = 'default';
+	@Prop() variant: 'default' | 'storm' = 'default';
 
 	/**
 	 * Wether the container applies it's max width
