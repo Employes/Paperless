@@ -6,8 +6,6 @@ const meta = {
 	component: 'p-button',
 	args: {
 		label: 'Button',
-		variant: 'text',
-		icon: 'placeholder',
 	},
 };
 
