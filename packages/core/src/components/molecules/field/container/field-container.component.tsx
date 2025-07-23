@@ -183,7 +183,7 @@ export class FieldContainer {
 				>
 					{!!label?.length && (
 						<div
-							class='text-xs font-medium text-black-teal-300'
+							class='text-xs font-medium text-storm-300'
 							onClick={() => this.focus.emit()}
 						>
 							{label}
@@ -197,7 +197,7 @@ export class FieldContainer {
 							{!asBoolean(this.required) &&
 								asBoolean(this.showOptional) &&
 								this.variant === 'write' && (
-									<span class='text-xs font-medium text-black-teal-200'>
+									<span class='text-xs font-medium text-storm-200'>
 										{this.optionalTemplate()}
 									</span>
 								)}

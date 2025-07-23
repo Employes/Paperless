@@ -79,15 +79,14 @@ const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 			variant: 'write',
 			focused: false,
 			error: false,
-			class: 'border-black-teal-100',
+			class: 'border-storm-100',
 		},
 		{
 			variant: 'write',
 			disabled: false,
 			focused: true,
 			error: false,
-			class:
-				'border-supportive-lilac-800 ring ring-supportive-lilac-100 selection:bg-supportive-lilac',
+			class: 'border-indigo-600 ring ring-indigo-100 selection:bg-indigo',
 		},
 
 		{
@@ -117,7 +116,7 @@ const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 
 const input = cva(
 	[
-		'text-sm placeholder:text-sm placeholder:text-black-teal-200 text-black-teal',
+		'text-sm placeholder:text-sm placeholder:text-storm/40 text-storm',
 		'border-none  bg-transparent flex-1 min-w-0 p-0',
 		'outline-none focus:outline-none',
 		'font-geist',
@@ -146,7 +145,7 @@ const prefixAndSuffix = cva(
 			},
 			disabled: {
 				false: null,
-				true: 'text-black-teal-100',
+				true: 'text-storm-100',
 			},
 			focused: {
 				false: null,
@@ -170,14 +169,14 @@ const prefixAndSuffix = cva(
 				disabled: false,
 				focused: false,
 				error: false,
-				class: 'text-black-teal-300',
+				class: 'text-storm-300',
 			},
 
 			{
 				disabled: false,
 				focused: true,
 				error: false,
-				class: 'text-black-teal-500',
+				class: 'text-storm',
 			},
 
 			{
