@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.3](https://github.com/employes/paperless/compare/v2.2.2...v2.2.3) (2025-07-23)
+
+
+### Bug Fixes
+
+* **atoms/info-panel:** added padding when panel is closeable ([#222](https://github.com/employes/paperless/issues/222)) ([8372fa7](https://github.com/employes/paperless/commit/8372fa784d13b8b52dd18c33b8872ec17f2b4275))
+
+
+
+
+
 ## [2.2.2](https://github.com/employes/paperless/compare/v2.2.1...v2.2.2) (2025-07-23)
 
 
