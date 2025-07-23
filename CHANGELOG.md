@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/employes/paperless/compare/v2.1.0...v2.2.0) (2025-07-23)
+
+
+### Features
+
+* Add new colors ([f51a677](https://github.com/employes/paperless/commit/f51a67708291af878f19a0a64a3257c282fc9abf))
+
+
+### Reverts
+
+* **atoms/avatar:** Small changes reverted for primary variant ([3e16bc9](https://github.com/employes/paperless/commit/3e16bc95868ce412fcd096e80a8c8a0150c12598))
+
+
+
+
+
 # [2.1.0](https://github.com/employes/paperless/compare/v2.0.1-beta.226...v2.1.0) (2025-07-22)
 
 
