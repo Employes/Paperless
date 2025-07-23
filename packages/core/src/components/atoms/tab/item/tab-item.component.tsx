@@ -10,9 +10,9 @@ const item = cva(
 	{
 		variants: {
 			active: {
-				true: 'after:bg-dark-teal-600 text-dark-teal-600',
+				true: 'after:bg-indigo-600 text-indigo-600',
 				false:
-					'text-dark-teal-400 after:bg-transparent hover:after:bg-dark-teal-100',
+					'text-storm-300 after:bg-transparent hover:after:bg-storm-400 hover:text-storm-400',
 			},
 		},
 	}
