@@ -3,14 +3,13 @@ import { cva } from 'class-variance-authority';
 
 const avatar = cva(
 	[
-		'p-avatar p-[1px] flex items-center justify-center font-ambit leading-none font-bold',
-		'ring-inset ring-1 ring-storm/20',
+		'p-avatar rounded-full aspect-branding ring-inset ring-1 ring-storm/20 p-[1px] flex items-center justify-center font-ambit leading-none font-bold',
 	],
 	{
 		variants: {
 			variant: {
-				secondary: 'bg-off-white text-storm-300 aspect-branding rounded-full',
-				primary: 'bg-indigo text-storm rounded',
+				secondary: 'bg-off-white text-storm-300',
+				primary: 'bg-indigo text-storm',
 			},
 			size: {
 				xs: 'h-4 text-xxs',
@@ -23,48 +22,6 @@ const avatar = cva(
 				'4xl': 'h-[8.5rem] text-[4.5rem] leading-[5rem]',
 			},
 		},
-		compoundVariants: [
-			{
-				size: 'xs',
-				variant: 'primary',
-				class: 'w-4',
-			},
-			{
-				size: 'sm',
-				variant: 'primary',
-				class: 'w-6',
-			},
-			{
-				size: 'base',
-				variant: 'primary',
-				class: 'w-8',
-			},
-			{
-				size: 'lg',
-				variant: 'primary',
-				class: 'w-10',
-			},
-			{
-				size: 'xl',
-				variant: 'primary',
-				class: 'w-14',
-			},
-			{
-				size: '2xl',
-				variant: 'primary',
-				class: 'w-20',
-			},
-			{
-				size: '3xl',
-				variant: 'primary',
-				class: 'w-[6.5rem]',
-			},
-			{
-				size: '4xl',
-				variant: 'primary',
-				class: 'w-[8.5rem]',
-			},
-		],
 	}
 );
 
