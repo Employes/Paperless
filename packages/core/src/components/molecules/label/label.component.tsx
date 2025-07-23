@@ -12,8 +12,8 @@ const label = cva(
 				positive: 'bg-positive-green-100 text-positive-green-800',
 				biased: 'bg-amber-100  text-amber-800',
 				negative: 'bg-negative-red-100 text-negative-red-800',
-				neutral: 'bg-supportive-lilac-200 text-supportive-lilac-900',
-				unavailable: 'bg-white-700 text-dark-teal-800',
+				neutral: 'bg-indigo-100 text-indigo-900',
+				unavailable: 'bg-white-700 text-storm-800',
 			},
 			iconOnly: {
 				false: 'px-2',
