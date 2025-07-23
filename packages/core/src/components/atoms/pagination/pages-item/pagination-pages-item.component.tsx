@@ -12,8 +12,8 @@ const item = cva(
 	{
 		variants: {
 			variant: {
-				default: 'rounded text-black-teal-500',
-				carousel: 'rounded-full text-white',
+				default: 'rounded text-storm-500',
+				carousel: 'rounded-full border border-solid',
 			},
 			active: {
 				false: null,
@@ -49,18 +49,19 @@ const item = cva(
 			{
 				variant: 'carousel',
 				disabled: false,
-				class: 'bg-dark-teal-400',
+				class: 'bg-white text-storm-300 border-storm-100',
 			},
 			{
 				variant: 'carousel',
 				disabled: false,
 				hover: true,
-				class: 'hover:bg-dark-teal-500 focus:bg-dark-teal-600 cursor-pointer',
+				class:
+					'hover:bg-white-600 hover:text-storm active:bg-white-600 active:border-indigo-600 active:ring active:ring-2 active:ring-indigo-100 cursor-pointer',
 			},
 			{
 				variant: 'carousel',
 				disabled: true,
-				class: 'bg-dark-teal-400 opacity-20',
+				class: 'bg-white-600 text-storm-100 border-storm/20 opacity-20',
 			},
 		],
 	}
