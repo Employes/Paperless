@@ -14,8 +14,9 @@ const segmentItem = cva(
 				block: 'flex-col p-2 text-center',
 			},
 			active: {
-				false: 'cursor-pointer text-dark-teal-600 hover:bg-black-teal-50',
-				true: 'bg-dark-teal-400 text-white',
+				false:
+					'cursor-pointer text-storm text-storm-300 hover:text-storm hover:bg-storm-50',
+				true: 'bg-indigo-600 text-white',
 			},
 			iconOnly: {
 				false: 'px-2',
@@ -76,8 +77,8 @@ export class SegmentItem {
 				{this.icon && (
 					<p-icon
 						class={cn('mb-1', {
-							'text-dark-teal-400': !asBoolean(this.active),
-							'text-dark-teal-100': asBoolean(this.active),
+							'text-storm-300': !asBoolean(this.active),
+							'text-indigo-200': asBoolean(this.active),
 						})}
 						variant={this.icon}
 						flip={this.iconFlip}
@@ -95,8 +96,8 @@ export class SegmentItem {
 						{descriptionSlot && (
 							<p
 								class={cn('my-0 text-xs font-medium', {
-									'text-dark-teal-400': !asBoolean(this.active),
-									'text-dark-teal-100': asBoolean(this.active),
+									'text-storm-300': !asBoolean(this.active),
+									'text-indigo-200': asBoolean(this.active),
 								})}
 							>
 								{descriptionSlot}
