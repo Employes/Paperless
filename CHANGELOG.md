@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.9](https://github.com/employes/paperless/compare/v2.2.8...v2.2.9) (2025-07-24)
+
+
+### Bug Fixes
+
+* **atoms/card/body:** Apply text-storm-500 to body ([05ecfcb](https://github.com/employes/paperless/commit/05ecfcb0b51a9f1737b1845fa0fcd37e337c123d))
+
+
+
+
+
 ## [2.2.8](https://github.com/employes/paperless/compare/v2.2.7...v2.2.8) (2025-07-24)
 
 
