@@ -23,7 +23,7 @@ const button = cva(
 	{
 		variants: {
 			variant: {
-				primary: ['border-storm/20', 'text-white'],
+				primary: ['border-storm-500/20', 'text-white'],
 				secondary: null,
 				text: null,
 				transparent: 'bg-transparent border-transparent',
@@ -108,7 +108,7 @@ const button = cva(
 				disabled: false,
 				loading: false,
 				class: [
-					'active:border-storm/10 active:ring active:ring-2 active:text-white/60',
+					'active:border-storm-500/10 active:ring active:ring-2 active:text-white/60',
 					'drop-shadow-primary-button hover:drop-shadow-2 hover:bg-indigo-700 active:ring-indigo-100',
 				],
 			},
@@ -162,7 +162,7 @@ const button = cva(
 				variant: ['secondary', 'dropdown'],
 				error: false,
 				active: false,
-				class: ['border-storm/20'],
+				class: ['border-storm-500/20'],
 			},
 			{
 				variant: ['secondary', 'dropdown'],
@@ -279,14 +279,14 @@ const icon = cva([], {
 			active: false,
 			error: false,
 			class:
-				'text-storm-300 group-hover:text-storm-500 group-active:text-storm/60',
+				'text-storm-300 group-hover:text-storm-500 group-active:text-storm-500/60',
 		},
 		{
 			variant: ['secondary', 'dropdown'],
 			disabled: false,
 			active: true,
 			error: false,
-			class: 'text-storm/60',
+			class: 'text-storm-500/60',
 		},
 		{
 			variant: ['transparent', 'text'],

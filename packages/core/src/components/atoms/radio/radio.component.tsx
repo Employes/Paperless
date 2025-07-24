@@ -23,13 +23,13 @@ const radio = cva(
 				false: [
 					'cursor-pointer shadow-1',
 					'bg-white border-storm-100',
-					'hover:bg-indigo-100 hover:border-storm/20',
-					'group-hover/radio-label:bg-indigo-100 group-hover/radio-label:border-storm/20',
+					'hover:bg-indigo-100 hover:border-storm-500/20',
+					'group-hover/radio-label:bg-indigo-100 group-hover/radio-label:border-storm-500/20',
 					'checked:cursor-auto',
-					'checked:bg-indigo-600 checked:border-storm/20',
+					'checked:bg-indigo-600 checked:border-storm-500/20',
 					'checked:ring-2 checked:ring-indigo-100',
-					'checked:hover:bg-indigo-700 checked:hover:border-storm/20',
-					'checked:group-hover/radio-label:bg-indigo-700 checked:group-hover/radio-label:border-storm/20',
+					'checked:hover:bg-indigo-700 checked:hover:border-storm-500/20',
+					'checked:group-hover/radio-label:bg-indigo-700 checked:group-hover/radio-label:border-storm-500/20',
 				],
 				true: 'bg-white-600 border-storm-500 cursor-not-allowed ',
 			},
@@ -40,8 +40,8 @@ const radio = cva(
 				class: [
 					'cursor-pointer shadow-1',
 					'bg-white border-storm-100',
-					'hover:bg-indigo-100 hover:border-storm/20',
-					'group-hover/radio-label:bg-indigo-100 group-hover/radio-label:border-storm/20',
+					'hover:bg-indigo-100 hover:border-storm-500/20',
+					'group-hover/radio-label:bg-indigo-100 group-hover/radio-label:border-storm-500/20',
 				],
 			},
 		],
@@ -59,7 +59,7 @@ const circle = cva(
 		variants: {
 			disabled: {
 				false:
-					'peer-checked:bg-white peer-checked:ring-1 peer-checked:ring-storm/10',
+					'peer-checked:bg-white peer-checked:ring-1 peer-checked:ring-storm-500/10',
 				true: 'peer-checked:bg-storm-200',
 			},
 		},

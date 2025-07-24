@@ -61,7 +61,7 @@ const item = cva(
 			{
 				variant: 'carousel',
 				disabled: true,
-				class: 'bg-white-600 text-storm-100 border-storm/20 opacity-20',
+				class: 'bg-white-600 text-storm-100 border-storm-500/20 opacity-20',
 			},
 		],
 	}

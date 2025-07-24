@@ -23,12 +23,12 @@ const toggle = cva(
 				false: [
 					'cursor-pointer shadow-1',
 					'bg-storm-50 border-storm-100',
-					'hover:bg-indigo-100 hover:border-storm/20',
-					'group-hover/toggle-label:bg-indigo-100 group-hover/toggle-label:border-storm/20',
-					'checked:bg-indigo-600 checked:border-storm/20',
+					'hover:bg-indigo-100 hover:border-storm-500/20',
+					'group-hover/toggle-label:bg-indigo-100 group-hover/toggle-label:border-storm-500/20',
+					'checked:bg-indigo-600 checked:border-storm-500/20',
 					'checked:ring-2 checked:ring-indigo-100',
-					'checked:hover:bg-indigo-700 checked:hover:border-storm/20',
-					'checked:group-hover/toggle-label:bg-indigo-700 checked:group-hover/toggle-label:border-storm/20',
+					'checked:hover:bg-indigo-700 checked:hover:border-storm-500/20',
+					'checked:group-hover/toggle-label:bg-indigo-700 checked:group-hover/toggle-label:border-storm-500/20',
 				],
 				true: ['bg-white-600 border-storm-50 cursor-not-allowed'],
 			},
@@ -46,7 +46,7 @@ const circle = cva(
 		variants: {
 			disabled: {
 				false: [
-					'bg-white ring-1 ring-storm/10',
+					'bg-white ring-1 ring-storm-500/10',
 					'left-[1px] peer-checked:-translate-x-[calc(100%+1px)]',
 					"after:content-[] peer-checked:after:content-['']  after:bg-indigo-800 after:rounded-full after:transition-all",
 					'w-[14px] h-[14px] group-hover/p-toggle:w-[18px] group-hover/toggle-label:w-[18px]',

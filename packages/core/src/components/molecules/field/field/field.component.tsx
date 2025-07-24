@@ -116,7 +116,7 @@ const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 
 const input = cva(
 	[
-		'text-sm placeholder:text-sm placeholder:text-storm/40 text-storm-500',
+		'text-sm placeholder:text-sm placeholder:text-storm-500/40 text-storm-500',
 		'border-none  bg-transparent flex-1 min-w-0 p-0',
 		'outline-none focus:outline-none',
 		'font-geist',

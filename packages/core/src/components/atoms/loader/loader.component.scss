@@ -7,7 +7,7 @@
 		will-change: transform;
 
 		&.color-indigo {
-			@apply border-r-indigo/40 border-t-indigo #{!important};
+			@apply border-r-indigo-500/40 border-t-indigo-500 #{!important};
 		}
 
 		&.color-off-white {
