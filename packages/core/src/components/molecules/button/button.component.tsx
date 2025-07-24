@@ -278,7 +278,8 @@ const icon = cva([], {
 			disabled: false,
 			active: false,
 			error: false,
-			class: 'text-storm-300 group-hover:text-storm-500 group-active:text-storm/60',
+			class:
+				'text-storm-300 group-hover:text-storm-500 group-active:text-storm/60',
 		},
 		{
 			variant: ['secondary', 'dropdown'],
@@ -292,7 +293,7 @@ const icon = cva([], {
 			disabled: false,
 			active: false,
 			class:
-				'text-indigo-500group-hover:text-indigo-700 group-active:text-indigo-800',
+				'text-indigo-500 group-hover:text-indigo-700 group-active:text-indigo-800',
 		},
 		{
 			variant: ['secondary', 'dropdown'],
