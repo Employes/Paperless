@@ -26,7 +26,7 @@ export const getTableCellColumnClasses = (
 			variant !== 'header' &&
 			definition?.variant !== 'subject' &&
 			definition?.variant !== 'highlight',
-		'text-storm':
+		'text-storm-500':
 			variant !== 'header' &&
 			(definition?.variant === 'subject' ||
 				definition?.variant === 'highlight'),

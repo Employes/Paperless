@@ -334,13 +334,13 @@ export class Calendar {
 									'normal flex items-center justify-center rounded-lg',
 									'h-8 w-8 text-sm font-semibold text-storm-300',
 									{
-										'cursor-pointer hover:bg-white-600 hover:text-storm':
+										'cursor-pointer hover:bg-white-600 hover:text-storm-500':
 											!day.disabled,
 									},
 									`col-start-${day.offset}`,
 									{ 'cursor-not-allowed opacity-60': day.disabled },
 									{
-										'border border-solid border-off-white-700 bg-off-white-300 text-storm':
+										'border border-solid border-off-white-700 bg-off-white-300 text-storm-500':
 											!day.disabled && isSameDay(day.date, new Date()),
 									}
 								)}

@@ -49,7 +49,7 @@ const dropdownMenuItem = cva(
 			{
 				variant: 'default',
 				disabled: false,
-				class: 'text-storm',
+				class: 'text-storm-500',
 			},
 			{
 				variant: 'default',
@@ -146,7 +146,7 @@ const dropdownMenuItemIcon = cva(['text-base'], {
 			variant: 'default',
 			active: false,
 			disabled: false,
-			class: 'text-storm-300 group-hover:text-storm',
+			class: 'text-storm-300 group-hover:text-storm-500',
 		},
 
 		{

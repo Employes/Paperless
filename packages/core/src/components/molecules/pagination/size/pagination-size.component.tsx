@@ -32,7 +32,7 @@ const trigger = cva(
 	[
 		'flex items-center gap-2',
 		'px-2 h-6',
-		'text-sm text-storm font-medium ',
+		'text-sm text-storm-500 font-medium ',
 		'cursor-pointer rounded-full',
 		'shadow-1 border border-solid',
 	],

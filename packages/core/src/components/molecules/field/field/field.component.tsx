@@ -86,7 +86,7 @@ const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 			disabled: false,
 			focused: true,
 			error: false,
-			class: 'border-indigo-600 ring ring-indigo-100 selection:bg-indigo',
+			class: 'border-indigo-600 ring ring-indigo-100 selection:bg-indigo-500',
 		},
 
 		{
@@ -116,7 +116,7 @@ const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 
 const input = cva(
 	[
-		'text-sm placeholder:text-sm placeholder:text-storm/40 text-storm',
+		'text-sm placeholder:text-sm placeholder:text-storm/40 text-storm-500',
 		'border-none  bg-transparent flex-1 min-w-0 p-0',
 		'outline-none focus:outline-none',
 		'font-geist',
@@ -176,7 +176,7 @@ const prefixAndSuffix = cva(
 				disabled: false,
 				focused: true,
 				error: false,
-				class: 'text-storm',
+				class: 'text-storm-500',
 			},
 
 			{

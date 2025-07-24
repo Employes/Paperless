@@ -15,7 +15,7 @@ const segmentItem = cva(
 			},
 			active: {
 				false:
-					'cursor-pointer text-storm text-storm-300 hover:text-storm hover:bg-storm-50',
+					'cursor-pointer text-storm-500 text-storm-300 hover:text-storm-500 hover:bg-storm-50',
 				true: 'bg-indigo-600 text-white',
 			},
 			iconOnly: {

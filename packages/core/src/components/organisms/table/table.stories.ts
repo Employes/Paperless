@@ -242,7 +242,7 @@ export const Default = {
 						<span class="text-black">Subtotal</span>
 					</p-table-cell>
 					<p-table-cell definition=${customRowSecondDefinition}>
-						<span class="text-storm">&euro; 1.234,50</span>
+						<span class="text-storm-500>&euro; 1.234,50</span>
 					</p-table-cell>
 				</p-table-row>
 			</p-table>

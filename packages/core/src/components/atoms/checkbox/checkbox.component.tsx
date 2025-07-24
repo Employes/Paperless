@@ -34,7 +34,7 @@ const checkbox = cva(
 					'indeterminate:hover:bg-indigo-700 indeterminate:hover:border-storm/20',
 					'indeterminate:group-hover/checkbox-label:bg-indigo-700 indeterminate:group-hover/checkbox-label:border-storm/20',
 				],
-				true: 'bg-white-600 border-storm cursor-not-allowed ',
+				true: 'bg-white-600 border-storm-500 cursor-not-allowed',
 			},
 		},
 	}

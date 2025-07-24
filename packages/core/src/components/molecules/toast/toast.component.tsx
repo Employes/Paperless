@@ -77,7 +77,7 @@ export class Toast {
 				<div class={indicator({ variant: this.variant })} />
 				<div class={content()}>
 					<div class='flex w-full min-w-0 flex-col'>
-						<p class='m-0 overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold text-storm'>
+						<p class='m-0 overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold text-storm-500'>
 							{this.header?.length ? this.header : <slot name='header' />}
 						</p>
 						<p class='m-0 w-full overflow-hidden text-ellipsis whitespace-nowrap text-xs text-storm-300'>
@@ -86,7 +86,7 @@ export class Toast {
 					</div>
 
 					{this.enableAction && (
-						<div class='flex-shrink-0 cursor-pointer p-2 text-storm-200 hover:text-storm'>
+						<div class='flex-shrink-0 cursor-pointer p-2 text-storm-200 hover:text-storm-500'>
 							<p-icon
 								variant={this.actionIcon}
 								flip={this.actionIconFlip}

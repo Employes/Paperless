@@ -56,7 +56,7 @@ const item = cva(
 				disabled: false,
 				hover: true,
 				class:
-					'hover:bg-white-600 hover:text-storm active:bg-white-600 active:border-indigo-600 active:ring active:ring-2 active:ring-indigo-100 cursor-pointer',
+					'hover:bg-white-600 hover:text-storm-500 active:bg-white-600 active:border-indigo-600 active:ring active:ring-2 active:ring-indigo-100 cursor-pointer',
 			},
 			{
 				variant: 'carousel',
