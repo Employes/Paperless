@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.10](https://github.com/ionic-team/stencil-component-starter/compare/v2.2.9...v2.2.10) (2025-07-24)
+
+
+### Bug Fixes
+
+* **style/typography:** Apply storm-500 to headers ([34a5003](https://github.com/ionic-team/stencil-component-starter/commit/34a5003206119a41e223bcb6360e87ca838d1de4))
+
+
+
+
+
 ## [2.2.9](https://github.com/ionic-team/stencil-component-starter/compare/v2.2.8...v2.2.9) (2025-07-24)
 
 
