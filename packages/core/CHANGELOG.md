@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.8](https://github.com/ionic-team/stencil-component-starter/compare/v2.2.7...v2.2.8) (2025-07-24)
+
+
+### Bug Fixes
+
+* **atoms/card/header:** Apply text-storm-500 to title ([93ac849](https://github.com/ionic-team/stencil-component-starter/commit/93ac849ea4a853b92d212b2bd8d59f6ba872b70c))
+
+
+
+
+
 ## [2.2.7](https://github.com/ionic-team/stencil-component-starter/compare/v2.2.6...v2.2.7) (2025-07-24)
 
 
