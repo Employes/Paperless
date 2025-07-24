@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.6](https://github.com/employes/paperless/compare/v2.2.5...v2.2.6) (2025-07-24)
+
+
+### Bug Fixes
+
+* Also replace storm/indigo instances that end with a / ([36c9917](https://github.com/employes/paperless/commit/36c9917657fe0372a970127bcb3e72505e5d94cb))
+
+
+
+
+
 ## [2.2.5](https://github.com/employes/paperless/compare/v2.2.4...v2.2.5) (2025-07-24)
 
 
