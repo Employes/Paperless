@@ -58,8 +58,8 @@ const view = cva(['flex flex-col gap-2', 'w-full'], {
 	variants: {
 		view: {
 			day: 'h-auto min-h-[12rem]',
-			month: null,
-			year: 'max-h-[14rem]',
+			month: 'min-h-[15rem]',
+			year: 'max-h-[15rem]',
 		},
 	},
 });
