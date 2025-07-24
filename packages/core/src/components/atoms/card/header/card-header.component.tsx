@@ -28,7 +28,9 @@ const content = cva('flex items-center gap-2', {
 		},
 	},
 });
-const title = cva('h-8 flex items-center font-bold text-sm gap-2 min-w-0');
+const title = cva(
+	'h-8 flex items-center font-bold text-sm gap-2 min-w-0 text-storm-500'
+);
 
 @Component({
 	tag: 'p-card-header',
