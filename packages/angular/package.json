@@ -1,6 +1,6 @@
 {
 	"name": "@paperless/angular",
-	"version": "2.2.6",
+	"version": "2.2.7",
 	"resolutions": {
 		"jasmine-core": "5.0.0"
 	},

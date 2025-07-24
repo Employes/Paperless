@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.7](https://github.com/employes/paperless/compare/v2.2.6...v2.2.7) (2025-07-24)
+
+
+### Bug Fixes
+
+* **molecules/profile:** Set title to storm-500 ([1d5f4fe](https://github.com/employes/paperless/commit/1d5f4fe5baba223dde5b6c0f3406b7ea6d70903f))
+
+
+
+
+
 ## [2.2.6](https://github.com/employes/paperless/compare/v2.2.5...v2.2.6) (2025-07-24)
 
 
