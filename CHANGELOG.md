@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.11](https://github.com/employes/paperless/compare/v2.2.10...v2.2.11) (2025-07-24)
+
+
+### Bug Fixes
+
+* **molecules/calendar:** Apply better heights for less jumpiness ([c021493](https://github.com/employes/paperless/commit/c021493a697d55144c4cc453502a3bd5cc338627))
+
+
+
+
+
 ## [2.2.10](https://github.com/employes/paperless/compare/v2.2.9...v2.2.10) (2025-07-24)
 
 
