@@ -107,7 +107,7 @@ export class EmptyState {
 			>
 				{this.illustration && (
 					<p-illustration
-						class='mb-8 text-5xl text-teal'
+						class='mb-8 text-5xl text-indigo-600'
 						variant={this.illustration}
 					/>
 				)}
