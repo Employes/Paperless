@@ -350,7 +350,7 @@ export class Select {
 						>
 							{item[this.selectionDisplayKey ?? this.displayKey]}
 							<p-icon
-								class='text-xs text-supportive-lilac group-hover/item:text-supportive-lilac-800'
+								class='text-supportive-lilac group-hover/item:text-supportive-lilac-800 text-xs'
 								variant='negative'
 							/>
 						</div>
@@ -762,7 +762,7 @@ export class Select {
 				useContainer={false}
 				slot='items'
 			>
-				<span class='flex items-center gap-1 font-semibold text-teal-800'>
+				<span class='flex items-center gap-1 font-semibold text-indigo-600'>
 					{this.addItemText}
 					<p-icon variant='plus' />
 				</span>
