@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.13](https://github.com/ionic-team/stencil-component-starter/compare/v2.2.12...v2.2.13) (2025-07-25)
+
+
+### Bug Fixes
+
+* **atoms/stepper/line:** Use correct active background ([fcfb166](https://github.com/ionic-team/stencil-component-starter/commit/fcfb166003ba0ab890982e7329bd8bf393ab47bc))
+* **molecules/select:** Use correct colors for "add item" entry ([97d7bb4](https://github.com/ionic-team/stencil-component-starter/commit/97d7bb4bd4191944de619b3ff7015d76998b52b0))
+
+
+
+
+
 ## [2.2.12](https://github.com/ionic-team/stencil-component-starter/compare/v2.2.11...v2.2.12) (2025-07-25)
 
 
