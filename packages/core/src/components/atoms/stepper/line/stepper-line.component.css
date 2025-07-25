@@ -14,5 +14,5 @@
 
 :host([active='true']),
 :host([active]:not([active='false'])) {
-	@apply bg-dark-teal-400;
+	@apply bg-indigo-600;
 }
