@@ -12,7 +12,7 @@ const title = cva([
 	'flex-1 text-center',
 	'w-[calc(100%-7rem)]',
 	'absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2',
-	'storm-500 text-2xl text-ambit font-bold',
+	'text-storm-500 text-2xl text-ambit font-bold',
 ]);
 
 @Component({
