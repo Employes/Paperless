@@ -132,7 +132,7 @@ export const OverflowReadOnly = {
 	>
 		<a
 			slot="value"
-			class="block w-full overflow-hidden text-ellipsis whitespace-nowrap text-teal hover:text-teal-600 hover:underline"
+			class="hover:text-inidgo-700 block w-full overflow-hidden text-ellipsis whitespace-nowrap text-indigo-600 hover:underline"
 			href="https://google.com"
 		>
 			This is a very very very very very very long text This is a very very very
