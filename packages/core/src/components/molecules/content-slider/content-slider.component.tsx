@@ -102,8 +102,8 @@ export class ContentSlider {
 						>
 							<div
 								class={cn('block h-2 w-2 rounded-full', {
-									'bg-dark-teal-600': i === this._visibleIndex,
-									'bg-dark-teal-400': i !== this._visibleIndex,
+									'bg-indigo-600': i === this._visibleIndex,
+									'bg-indigo-300': i !== this._visibleIndex,
 								})}
 							/>
 						</div>
