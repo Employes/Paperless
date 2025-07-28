@@ -23,7 +23,7 @@ const attachment = cva(
 			},
 			error: {
 				false: 'bg-white-600 border-storm-100 text-storm-200',
-				true: 'border-negative-red',
+				true: 'border-negative-red-500',
 			},
 		},
 	}
@@ -153,7 +153,7 @@ export class Attachment {
 			prefix = (
 				<p-icon
 					variant='warning'
-					class='text-negative-red'
+					class='text-negative-red-500'
 				/>
 			);
 		}

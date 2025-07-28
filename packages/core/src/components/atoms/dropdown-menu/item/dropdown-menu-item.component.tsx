@@ -92,13 +92,13 @@ const dropdownMenuItem = cva(
 				active: false,
 				enableHover: true,
 				disabled: false,
-				class: 'text-negative-red hover:bg-negative-red-50',
+				class: 'text-negative-red-500 hover:bg-negative-red-50',
 			},
 			{
 				variant: 'negative',
 				active: true,
 				disabled: false,
-				class: 'bg-negative-red-100 text-negative-red',
+				class: 'bg-negative-red-100 text-negative-red-500',
 			},
 			{
 				variant: 'negative',
@@ -160,7 +160,7 @@ const dropdownMenuItemIcon = cva(['text-base'], {
 			variant: 'negative',
 			active: false,
 			disabled: false,
-			class: 'text-negative-red group-hover:text-negative-red-800',
+			class: 'text-negative-red-500group-hover:text-negative-red-800',
 		},
 		{
 			variant: 'negative',

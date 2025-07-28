@@ -103,7 +103,7 @@ const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 		{
 			disabled: false,
 			error: true,
-			class: 'border-negative-red',
+			class: 'border-negative-red-500',
 		},
 		{
 			disabled: false,
@@ -183,7 +183,7 @@ const prefixAndSuffix = cva(
 				disabled: false,
 				focused: false,
 				error: true,
-				class: 'text-negative-red',
+				class: 'text-negative-red-500',
 			},
 
 			{

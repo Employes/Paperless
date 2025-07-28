@@ -168,7 +168,7 @@ const button = cva(
 				variant: ['secondary', 'dropdown'],
 				error: true,
 				class:
-					'border border-negative-red text-negative-red-800 ring ring-2 ring-negative-red-50  active:text-negative-red-800',
+					'border border-negative-red-500text-negative-red-800 ring ring-2 ring-negative-red-50  active:text-negative-red-800',
 			},
 
 			{
@@ -299,7 +299,7 @@ const icon = cva([], {
 			variant: ['secondary', 'dropdown'],
 			active: false,
 			error: true,
-			class: 'text-negative-red group-hover:text-negative-red-800',
+			class: 'text-negative-red-500group-hover:text-negative-red-800',
 		},
 		{
 			variant: ['secondary', 'dropdown'],
