@@ -31,7 +31,7 @@ const radio = cva(
 					'checked:hover:bg-indigo-700 checked:hover:border-storm-500/20',
 					'checked:group-hover/radio-label:bg-indigo-700 checked:group-hover/radio-label:border-storm-500/20',
 				],
-				true: 'bg-white-600 border-storm-500 cursor-not-allowed ',
+				true: 'bg-white-600 border-storm-50 cursor-not-allowed ',
 			},
 		},
 		compoundVariants: [
