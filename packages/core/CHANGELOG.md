@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.17](https://github.com/ionic-team/stencil-component-starter/compare/v2.2.16...v2.2.17) (2025-07-28)
+
+
+### Bug Fixes
+
+* Add space to instances where a space is missing in the class name ([5fdbfe8](https://github.com/ionic-team/stencil-component-starter/commit/5fdbfe8dce4a331e034dc29c0b2c16a4301c4098))
+* **atoms/checkbox:** Apply correct disabled border color ([417d94a](https://github.com/ionic-team/stencil-component-starter/commit/417d94ad4f7bf880d56df388a841329e28229fa1))
+* **atoms/radio:** Apply correct disabled border color ([782a912](https://github.com/ionic-team/stencil-component-starter/commit/782a912a77b876177c624541fe98a72bb748aa50))
+
+
+
+
+
 ## [2.2.16](https://github.com/ionic-team/stencil-component-starter/compare/v2.2.15...v2.2.16) (2025-07-28)
 
 
