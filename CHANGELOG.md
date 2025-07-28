@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.16](https://github.com/employes/paperless/compare/v2.2.15...v2.2.16) (2025-07-28)
+
+
+### Bug Fixes
+
+* **atoms/checkbox:** added fix for label overflowing ([e3b5ed5](https://github.com/employes/paperless/commit/e3b5ed5664f6d55e86eb26f9a514b39abbf70ae4))
+* **atoms/radio:** added fix for label overflowing ([f07f7d2](https://github.com/employes/paperless/commit/f07f7d2c8d98c1e210d689ea25c30f52df19b4d2))
+* **atoms/toggle:** added fix for label overflowing ([fad2e60](https://github.com/employes/paperless/commit/fad2e60247883ca6705510ec2198e0fdf2127385))
+
+
+
+
+
 ## [2.2.15](https://github.com/employes/paperless/compare/v2.2.14...v2.2.15) (2025-07-28)
 
 
