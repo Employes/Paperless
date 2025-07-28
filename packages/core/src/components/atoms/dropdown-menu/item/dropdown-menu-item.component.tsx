@@ -160,7 +160,7 @@ const dropdownMenuItemIcon = cva(['text-base'], {
 			variant: 'negative',
 			active: false,
 			disabled: false,
-			class: 'text-negative-red-500group-hover:text-negative-red-800',
+			class: 'text-negative-red-500 group-hover:text-negative-red-800',
 		},
 		{
 			variant: 'negative',

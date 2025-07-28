@@ -16,7 +16,7 @@ const container = cva(['flex flex-col w-inherit h-inherit', 'rounded-2xl'], {
 	variants: {
 		variant: {
 			default: 'border-off-white-700',
-			error: 'border-negative-red-500ring-2 ring-negative-red-50',
+			error: 'border-negative-red-500 ring-2 ring-negative-red-50',
 		},
 		hoverable: {
 			true: 'cursor-pointer hover:bg-off-white-200',
