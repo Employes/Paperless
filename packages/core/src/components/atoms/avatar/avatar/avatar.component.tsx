@@ -8,7 +8,7 @@ const avatar = cva(
 	{
 		variants: {
 			variant: {
-				secondary: 'bg-off-white text-storm-300',
+				secondary: 'bg-off-white-500 text-storm-300',
 				primary: 'bg-indigo-500 text-storm-500',
 			},
 			size: {

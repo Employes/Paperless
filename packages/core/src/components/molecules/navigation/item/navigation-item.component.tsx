@@ -17,7 +17,7 @@ const navigationItem = cva(
 	{
 		variants: {
 			active: {
-				false: ['text-storm-400', 'hover:bg-off-white'],
+				false: ['text-storm-400', 'hover:bg-off-white-500'],
 				true: ['bg-off-white-600 text-storm-500 font-semibold'],
 			},
 			icon: {
