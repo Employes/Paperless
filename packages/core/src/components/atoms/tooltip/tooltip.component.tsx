@@ -167,6 +167,10 @@ export class Tooltip {
 			return;
 		}
 
+		if (!this._popover) {
+			return;
+		}
+
 		if (this._popover.hasAttribute('data-show')) {
 			return;
 		}
@@ -177,6 +181,10 @@ export class Tooltip {
 	@Listen('click', { target: 'document', capture: true })
 	protected documentClickHandler() {
 		if (this.variant === 'hover' || !this.canManuallyClose || this.show) {
+			return;
+		}
+
+		if (!this._popover) {
 			return;
 		}
 
@@ -209,6 +217,10 @@ export class Tooltip {
 
 	@Watch('show')
 	onShowChange(show: boolean) {
+		if (!this._popover) {
+			return;
+		}
+
 		if (show && !this._popover.hasAttribute('data-show')) {
 			return this._show();
 		}
