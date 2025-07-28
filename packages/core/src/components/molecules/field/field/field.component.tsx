@@ -318,6 +318,11 @@ export class Field {
 	@Prop({ reflect: true }) error: string;
 
 	/**
+	 * Wether this component handles showing the error tooltip
+	 */
+	@Prop({ reflect: true }) autoShowError = true;
+
+	/**
 	 * The placement of the error popover
 	 */
 	@Prop() errorPlacement: Placement;
@@ -412,7 +417,8 @@ export class Field {
 		return (
 			<p-field-container
 				forceShowTooltip={
-					this.forceShowTooltip || this._focused || !!this.error?.length
+					(!!this.error?.length && !this._focused && this.autoShowError) ||
+					(!!this.error?.length && this.forceShowTooltip)
 				}
 				id={id}
 				label={this.label}

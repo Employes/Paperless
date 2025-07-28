@@ -227,7 +227,9 @@ export class FieldContainer {
 					})}
 					variant='error'
 					content={this.error}
-					show={errorAndErrorIsNotBoolean && asBoolean(this.forceShowTooltip)}
+					show={
+						errorAndErrorIsNotBoolean && asBoolean(this.forceShowTooltip, false)
+					}
 					enableUserInput={false}
 					placement={this.errorPlacement}
 				>

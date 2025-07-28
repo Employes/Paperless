@@ -761,6 +761,10 @@ export namespace Components {
          */
         "align": 'start' | 'end';
         /**
+          * Wether this component handles showing the error tooltip
+         */
+        "autoShowError": boolean;
+        /**
           * Wether to autofocus the field
          */
         "autofocus": boolean;
@@ -3982,6 +3986,10 @@ declare namespace LocalJSX {
           * The alignment of the container
          */
         "align"?: 'start' | 'end';
+        /**
+          * Wether this component handles showing the error tooltip
+         */
+        "autoShowError"?: boolean;
         /**
           * Wether to autofocus the field
          */
