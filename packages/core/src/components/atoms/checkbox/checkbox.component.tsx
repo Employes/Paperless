@@ -133,7 +133,7 @@ export class Checkbox {
 		return (
 			<label
 				htmlFor={id}
-				class='group/p-checkbox flex items-center justify-start gap-2'
+				class='group/p-checkbox flex items-center justify-start gap-2 '
 			>
 				<div class='relative flex flex-shrink-0 items-center'>
 					<input
@@ -165,7 +165,9 @@ export class Checkbox {
 						/>
 					</div>
 				</div>
-				<slot />
+				<div class='flex-1 overflow-hidden text-ellipsis'>
+					<slot />
+				</div>
 			</label>
 		);
 	}
