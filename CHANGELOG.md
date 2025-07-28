@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/employes/paperless/compare/v2.2.17...v2.3.0) (2025-07-28)
+
+
+### Features
+
+* **molecules/datepicker:** Apply autoShowError=false to the field ([761218c](https://github.com/employes/paperless/commit/761218ce643cc8e2f0e75eeaf88d4e924adafcae))
+* **molecules/field:** Add prop to let the field handle showing the error ([0b35e40](https://github.com/employes/paperless/commit/0b35e408b8a9a8ecebf5953db6f2b323f69ef3f4))
+
+
+
+
+
 ## [2.2.17](https://github.com/employes/paperless/compare/v2.2.16...v2.2.17) (2025-07-28)
 
 
