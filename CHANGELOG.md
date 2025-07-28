@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.14](https://github.com/employes/paperless/compare/v2.2.13...v2.2.14) (2025-07-28)
+
+
+### Bug Fixes
+
+* missing -500 for off white colors ([41d4e0b](https://github.com/employes/paperless/commit/41d4e0bfa6f7704636a96e98583021f39df476af))
+* **molecules/empty-state:** Set content font weight to normal ([d32198c](https://github.com/employes/paperless/commit/d32198cb377ac4c1ce9c38f3bfd08bf15d02b060))
+
+
+
+
+
 ## [2.2.13](https://github.com/employes/paperless/compare/v2.2.12...v2.2.13) (2025-07-25)
 
 
