@@ -151,7 +151,9 @@ export class Radio {
 						})}
 					/>
 				</div>
-				<slot />
+				<div class='flex-1 overflow-hidden text-ellipsis'>
+					<slot />
+				</div>
 			</label>
 		);
 	}
