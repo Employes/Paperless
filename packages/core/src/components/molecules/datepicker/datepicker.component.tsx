@@ -320,6 +320,7 @@ export class Datepicker {
 					showOptional={asBoolean(this.showOptional)}
 					error={this.error}
 					forceShowTooltip={!!this.error?.length && !this._showDropdown}
+					autoShowError={false}
 					disabled={asBoolean(this.disabled)}
 					focused={this._showDropdown}
 					value={this._getFormattedDate()}
