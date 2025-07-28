@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.15](https://github.com/employes/paperless/compare/v2.2.14...v2.2.15) (2025-07-28)
+
+
+### Bug Fixes
+
+* Missing -500 for more instances ([3cbeeee](https://github.com/employes/paperless/commit/3cbeeee69b9c7dab73ab78a1cc27bc372f3c0b58))
+
+
+
+
+
 ## [2.2.14](https://github.com/employes/paperless/compare/v2.2.13...v2.2.14) (2025-07-28)
 
 
