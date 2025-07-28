@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.1](https://github.com/ionic-team/stencil-component-starter/compare/v2.3.0...v2.3.1) (2025-07-28)
+
+
+### Bug Fixes
+
+* **atoms/tooltip:** Don't error when popover doesn't exist yet ([53ab9d0](https://github.com/ionic-team/stencil-component-starter/commit/53ab9d0f2cf3d2642e27c7a271cd7ec56a52aa86))
+
+
+
+
+
 # [2.3.0](https://github.com/ionic-team/stencil-component-starter/compare/v2.2.17...v2.3.0) (2025-07-28)
 
 
