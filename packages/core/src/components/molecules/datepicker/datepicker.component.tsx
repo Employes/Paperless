@@ -419,6 +419,15 @@ export class Datepicker {
 		}
 
 		this._onInputTimeout = setTimeout(() => {
+			if (value.length === 0) {
+				if (this._value === null) {
+					return;
+				}
+
+				this._setValue(null);
+				return;
+			}
+
 			const parsedValue = parse(value, parseFormat, new Date());
 
 			if (!isValid(parsedValue) || format(parsedValue, parseFormat) !== value) {
