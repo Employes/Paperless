@@ -62,12 +62,12 @@ const circle = cva(
 			{
 				direction: 'vertical',
 				align: 'start',
-				class: 'mt-4',
+				class: 'mt-5',
 			},
 			{
 				direction: 'vertical',
 				align: 'end',
-				class: 'mb-4',
+				class: 'mb-5',
 			},
 		],
 	}

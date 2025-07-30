@@ -321,23 +321,23 @@ export class Stepper {
 
 			if (this.align === 'start' || this.align === 'center') {
 				stepperLine.style.marginTop = `-${
-					heightDiff / 16 - (this.align === 'start' ? 1.25 : 0)
+					heightDiff / 16 - (this.align === 'start' ? 1.5 : 0)
 				}rem`;
 				totalHeight += heightDiff - (this.align === 'start' ? 8 : 0);
 
 				if (this.align === 'start') {
-					stepperLine.style.marginBottom = `-0.75rem`;
+					stepperLine.style.marginBottom = `-1rem`;
 				}
 			}
 
 			if (this.align === 'center' || this.align === 'end') {
 				stepperLine.style.marginBottom = `-${
-					heightDiffNext / 16 - (this.align === 'end' ? 1.25 : 0)
+					heightDiffNext / 16 - (this.align === 'end' ? 1.5 : 0)
 				}rem`;
 				totalHeight += heightDiffNext - (this.align === 'end' ? 8 : 0);
 
 				if (this.align === 'end') {
-					stepperLine.style.marginTop = `-0.75rem`;
+					stepperLine.style.marginTop = `-1rem`;
 				}
 			}
 
