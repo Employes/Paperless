@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.2](https://github.com/employes/paperless/compare/v2.4.1...v2.4.2) (2025-07-30)
+
+
+### Bug Fixes
+
+* **organisms/stepper:** Use the correct spacing (1.25rem) ([07f71ce](https://github.com/employes/paperless/commit/07f71ce8dce28b001d7a0cd81e9910a398150874))
+
+
+
+
+
 ## [2.4.1](https://github.com/employes/paperless/compare/v2.4.0...v2.4.1) (2025-07-30)
 
 
