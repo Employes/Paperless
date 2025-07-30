@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.2](https://github.com/employes/paperless/compare/v2.3.1...v2.3.2) (2025-07-30)
+
+
+### Bug Fixes
+
+* **molecules/datepicker:** Allow manually resetting a date by removing the value ([e4548e2](https://github.com/employes/paperless/commit/e4548e2fa0bd5f829e157bd852b5e1acb1898a6e))
+
+
+
+
+
 ## [2.3.1](https://github.com/employes/paperless/compare/v2.3.0...v2.3.1) (2025-07-28)
 
 
