@@ -320,13 +320,25 @@ export class Stepper {
 			stepperLine.style.marginBottom = '0';
 
 			if (this.align === 'start' || this.align === 'center') {
-				stepperLine.style.marginTop = `-${heightDiff / 16}rem`;
-				totalHeight += heightDiff;
+				stepperLine.style.marginTop = `-${
+					heightDiff / 16 - (this.align === 'start' ? 1 : 0)
+				}rem`;
+				totalHeight += heightDiff - (this.align === 'start' ? 8 : 0);
+
+				if (this.align === 'start') {
+					stepperLine.style.marginBottom = `-0.5rem`;
+				}
 			}
 
 			if (this.align === 'center' || this.align === 'end') {
-				stepperLine.style.marginBottom = `-${heightDiffNext / 16}rem`;
-				totalHeight += heightDiffNext;
+				stepperLine.style.marginBottom = `-${
+					heightDiffNext / 16 - (this.align === 'end' ? 1 : 0)
+				}rem`;
+				totalHeight += heightDiffNext - (this.align === 'end' ? 8 : 0);
+
+				if (this.align === 'end') {
+					stepperLine.style.marginTop = `-0.5rem`;
+				}
 			}
 
 			stepperLine.style.minHeight = `calc(${totalHeight / 16}rem)`;

@@ -50,16 +50,20 @@ export const Vertical = {
 	>
 		<p-stepper-item>
 			<p-card-container>
-				<p-card-body>Some content</p-card-body>
+				<p-card-body>
+					Some content but longer <br />
+					loooong <br />
+					Even longuuuuur
+				</p-card-body>
 			</p-card-container>
 		</p-stepper-item>
 		<p-stepper-item>
 			<p-card-container>
-				<p-card-body
-					>Some content but longer <br />
+				<p-card-body>
+					Some content but longer <br />
 					loooong <br />
-					Even longuuuuur</p-card-body
-				>
+					Even longuuuuur
+				</p-card-body>
 			</p-card-container>
 		</p-stepper-item>
 		<p-stepper-item>
