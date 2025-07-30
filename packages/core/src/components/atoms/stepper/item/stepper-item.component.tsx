@@ -25,6 +25,15 @@ const circle = cva(
 	],
 	{
 		variants: {
+			align: {
+				start: null,
+				center: null,
+				end: null,
+			},
+			direction: {
+				horizontal: null,
+				vertical: null,
+			},
 			finished: {
 				true: null,
 				false: null,
@@ -49,6 +58,16 @@ const circle = cva(
 				active: false,
 				finished: true,
 				class: 'text-white bg-indigo-600',
+			},
+			{
+				direction: 'vertical',
+				align: 'start',
+				class: 'mt-3',
+			},
+			{
+				direction: 'vertical',
+				align: 'end',
+				class: 'mb-3',
 			},
 		],
 	}
@@ -139,6 +158,8 @@ export class StepperItem {
 			>
 				<div
 					class={circle({
+						align: this.align,
+						direction: this.direction,
 						active: asBoolean(this.active),
 						finished: asBoolean(this.finished),
 					})}
