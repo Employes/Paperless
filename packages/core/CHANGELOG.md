@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/ionic-team/stencil-component-starter/compare/v2.3.2...v2.4.0) (2025-07-30)
+
+
+### Features
+
+* **atoms/stepper/item:** Apply a margin when align is start or end in vertical direction ([794dd7a](https://github.com/ionic-team/stencil-component-starter/commit/794dd7a2b832d772ffe52f7c151f2a8a23568419))
+
+
+
+
+
 ## [2.3.2](https://github.com/ionic-team/stencil-component-starter/compare/v2.3.1...v2.3.2) (2025-07-30)
 
 
