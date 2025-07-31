@@ -152,12 +152,12 @@ export class TableCell {
 
 		return (
 			<div
-				class={cn('flex', {
-					'justify-start':
+				class={cn('overflow-hidden text-ellipsis', {
+					'text-start':
 						this.definition.align === 'start' ||
 						this.definition.align === undefined,
-					'justify-center': this.definition.align === 'center',
-					'justify-end': this.definition.align === 'end',
+					'text-center': this.definition.align === 'center',
+					'text-end': this.definition.align === 'end',
 				})}
 			>
 				{this.variant === 'header' ? (

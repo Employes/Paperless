@@ -153,8 +153,9 @@ export const Default = {
 				enable-row-click=${enableRowClick ?? nothing}
 				selected-rows=${selectedRows ?? nothing}
 				enable-floating-menu=${enableFloatingMenu ?? nothing}
-				floating-menu-amount-selected-template=${floatingMenuAmountSelectedTemplate ??
-				nothing}
+				floating-menu-amount-selected-template=${
+					floatingMenuAmountSelectedTemplate ?? nothing
+				}
 				selection-key=${selectionKey ?? nothing}
 				can-select-key=${canSelectKey ?? nothing}
 				enable-header=${enableHeader ?? nothing}
@@ -205,14 +206,17 @@ export const Default = {
 				<p-table-column
 					name="first"
 					path="first"
+					sizes="4"
 				></p-table-column>
 				<p-table-column
 					name="second"
-					path="first"
+					path="second"
+					sizes="4"
 				></p-table-column>
 				<p-table-column
 					name="third"
-					path="first"
+					path="third"
+					sizes="4"
 				></p-table-column>
 
 				<p-table-row-action
