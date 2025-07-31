@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.3](https://github.com/ionic-team/stencil-component-starter/compare/v2.4.2...v2.4.3) (2025-07-31)
+
+
+### Bug Fixes
+
+* **molecules/content-slider:** Remove vertical padding/margin ([d8cd9f2](https://github.com/ionic-team/stencil-component-starter/commit/d8cd9f2802acbfe79b73425d4ab30260f8160d38))
+
+
+
+
+
 ## [2.4.2](https://github.com/ionic-team/stencil-component-starter/compare/v2.4.1...v2.4.2) (2025-07-30)
 
 
