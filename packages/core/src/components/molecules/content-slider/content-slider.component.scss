@@ -1,10 +1,10 @@
 :host {
 	@apply flex flex-col overflow-hidden;
 
-	@apply p-16 -m-16;
+	@apply -mx-16 px-16;
 
 	.slider {
-		@apply overflow-visible relative box-content;
+		@apply relative box-content overflow-visible;
 
 		&.draggable {
 			@apply cursor-grab desktop-xs:cursor-auto;
@@ -19,18 +19,18 @@
 		}
 
 		.inner-slider {
-			@apply absolute flex flex-nowrap items-stretch w-full gap-2;
+			@apply absolute flex w-full flex-nowrap items-stretch gap-2;
 
-			@apply will-change-transform transform-gpu translate-x-0;
+			@apply translate-x-0 transform-gpu will-change-transform;
 
-			@apply desktop-xs:gap-4 desktop-xs:flex-wrap;
+			@apply desktop-xs:flex-wrap desktop-xs:gap-4;
 
 			@apply transition-all;
 			transition-duration: 0.5s;
 
 			> ::slotted(*) {
 				@apply w-full;
-				@apply flex-shrink-0 z-10;
+				@apply z-10 flex-shrink-0;
 
 				@screen tablet {
 					width: calc(50% - 0.5rem);
@@ -46,10 +46,10 @@
 	}
 
 	.indicator {
-		@apply flex justify-center items-center desktop-xs:hidden;
+		@apply flex items-center justify-center desktop-xs:hidden;
 
 		.item {
-			@apply mt-3 pt-1 px-1;
+			@apply mt-3 px-1 pt-1;
 		}
 	}
 }
