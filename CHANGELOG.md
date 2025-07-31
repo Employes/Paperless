@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.4](https://github.com/employes/paperless/compare/v2.4.3...v2.4.4) (2025-07-31)
+
+
+### Bug Fixes
+
+* **molecules/content-slider:** Add small padding/margin for shadows ([261fd1f](https://github.com/employes/paperless/commit/261fd1fc366ed5d126686d81a0afbf30b48d5484))
+
+
+
+
+
 ## [2.4.3](https://github.com/employes/paperless/compare/v2.4.2...v2.4.3) (2025-07-31)
 
 
