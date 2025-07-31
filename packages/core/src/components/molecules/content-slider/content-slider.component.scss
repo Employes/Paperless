@@ -1,7 +1,7 @@
 :host {
 	@apply flex flex-col overflow-hidden;
 
-	@apply -mx-16 px-16;
+	@apply -mx-16 -my-4 px-16 py-4;
 
 	.slider {
 		@apply relative box-content overflow-visible;
