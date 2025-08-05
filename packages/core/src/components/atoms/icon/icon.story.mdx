@@ -22,7 +22,10 @@ import { categorized, icons } from '../../../utils/icons';
 			<b>{category}</b>
 			<div class='flex w-full flex-wrap gap-4'>
 				{Object.keys(categorized[category]).map(variant => (
-					<p-tooltip content={variant}>
+					<p-tooltip
+						class='w-auto'
+						content={variant}
+					>
 						<p-icon
 							key={variant}
 							variant={variant}

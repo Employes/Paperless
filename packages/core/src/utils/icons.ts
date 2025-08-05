@@ -15,6 +15,10 @@ import questionCircle from '../assets/icons/communication/question-circle.svg';
 import headset from '../assets/icons/communication/headset.svg';
 import warning from '../assets/icons/communication/warning.svg';
 
+import apple from '../assets/icons/external/apple.svg';
+import google from '../assets/icons/external/google.svg';
+import ideal from '../assets/icons/external/ideal.svg';
+
 import attachment from '../assets/icons/files/attachment.svg';
 import description from '../assets/icons/files/description.svg';
 import documentIcon from '../assets/icons/files/document.svg';
@@ -132,6 +136,11 @@ export const categorized = {
 		'question-circle': questionCircle,
 		headset,
 		warning,
+	},
+	external: {
+		apple,
+		google,
+		ideal,
 	},
 	files: {
 		attachment,
@@ -258,6 +267,11 @@ export const icons = {
 	'question-circle': questionCircle,
 	headset,
 	warning,
+
+	//external,
+	apple,
+	google,
+	ideal,
 
 	//files
 	attachment,
