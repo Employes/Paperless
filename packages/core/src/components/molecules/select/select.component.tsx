@@ -921,7 +921,7 @@ export class Select {
 			content = (
 				<span class='flex items-center gap-2'>
 					<p-icon
-						class='storm-300'
+						class='text-storm-300'
 						variant={item[this.iconKey] as IconVariant}
 					/>
 					<div
