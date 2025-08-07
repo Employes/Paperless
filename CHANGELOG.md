@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.1](https://github.com/employes/paperless/compare/v2.5.0...v2.5.1) (2025-08-07)
+
+
+### Bug Fixes
+
+* **atoms/drawer/header:** Set correct text color ([10de9a1](https://github.com/employes/paperless/commit/10de9a142fb1e3ceb9a71393b07012b604f587f7))
+
+
+
+
+
 # [2.5.0](https://github.com/employes/paperless/compare/v2.4.5...v2.5.0) (2025-08-05)
 
 
