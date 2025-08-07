@@ -10,7 +10,7 @@ const content = cva(['flex justify-between', 'w-full p-4 pb-0 min-h-12']);
 
 const title = cva([
 	'flex-1 text-center',
-	'storm-500 text-2xl text-ambit font-bold',
+	'text-storm-500 text-2xl text-ambit font-bold',
 ]);
 
 @Component({
@@ -49,7 +49,7 @@ export class DrawerHeader {
 						<slot />
 					</div>
 
-					{this.showClose && <div class="size-8" />}
+					{this.showClose && <div class='size-8' />}
 				</div>
 
 				<p-smile />

@@ -7,6 +7,11 @@ const meta = {
 	args: {
 		label: 'Label',
 	},
+	argTypes: {
+		value: {
+			type: 'string',
+		},
+	},
 };
 
 export default meta;
