@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.2](https://github.com/ionic-team/stencil-component-starter/compare/v2.5.1...v2.5.2) (2025-08-07)
+
+
+### Bug Fixes
+
+* **molecules/select:** Use correct text color for icon ([2927075](https://github.com/ionic-team/stencil-component-starter/commit/29270756044b132bdc3538a228a938c06c9e03f5))
+
+
+
+
+
 ## [2.5.1](https://github.com/ionic-team/stencil-component-starter/compare/v2.5.0...v2.5.1) (2025-08-07)
 
 
