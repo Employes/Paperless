@@ -61,7 +61,7 @@ const item = cva(
 			{
 				variant: 'carousel',
 				disabled: true,
-				class: 'bg-white-600 text-storm-100 border-storm-500/20 opacity-20',
+				class: 'bg-white-600 text-storm-100 border-storm-500/20',
 			},
 		],
 	}
@@ -97,7 +97,7 @@ export class PaginationPagesItem {
 		return (
 			<div
 				class={item({
-					variant: this.variant,
+					variant: this.variant ?? 'default',
 					active: asBoolean(this.active),
 					hover: asBoolean(this.hover, true),
 					disabled: asBoolean(this.disabled),
