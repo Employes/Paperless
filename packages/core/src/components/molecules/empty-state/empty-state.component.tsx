@@ -80,7 +80,9 @@ export class EmptyState {
 	/**
 	 * The text on the action button
 	 */
-	@Event() action: EventEmitter<MouseEvent>;
+	@Event({
+		bubbles: false
+	}) action: EventEmitter<MouseEvent>;
 
 	/**
 	 * The host element
