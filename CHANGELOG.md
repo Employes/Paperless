@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.4](https://github.com/employes/paperless/compare/v2.5.3...v2.5.4) (2025-08-11)
+
+
+### Bug Fixes
+
+* **atoms/pagination/page-item:** Add variant fallback & fix disabled styling ([35c0826](https://github.com/employes/paperless/commit/35c0826fec78b533563d1ca23d677d776e397369))
+* **molecules/select:** Ensure autocomplete search is always on top ([deb66a3](https://github.com/employes/paperless/commit/deb66a34db4112d9d2fabfc61de5757f16fe2135))
+
+
+
+
+
 ## [2.5.3](https://github.com/employes/paperless/compare/v2.5.2...v2.5.3) (2025-08-11)
 
 
