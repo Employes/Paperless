@@ -793,7 +793,7 @@ export class Select {
 	private _getAutoCompleteItem() {
 		return (
 			<div
-				class='sticky top-0 mb-3 h-8'
+				class='sticky top-0 z-10 mb-3 h-8'
 				slot='items'
 			>
 				<p-field
