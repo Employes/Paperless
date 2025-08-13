@@ -4,27 +4,13 @@ import {
 	extractArgTypesFactory,
 	stencilRender,
 } from '@pxtrn/storybook-addon-docs-stencil';
-import docJson from '../packages/core/component-docs.json';
+import docJson from '@paperless/core/component-docs.json';
 if (docJson) setStencilDocJson(docJson);
 
 import { extractDefaultArgs } from './default-args';
 
-// export const globalTypes = {
-//     locale: {
-//         name: 'Locale',
-//         description: 'Internationalization locale',
-//         defaultValue: 'en',
-//         toolbar: {
-//             icon: 'globe',
-//             items: [
-//                 { value: 'en', right: '🇺🇸', title: 'English' },
-//                 { value: 'nl', right: '🇳🇱', title: 'Nederlands' },
-//             ],
-//         },
-//     },
-// };
-
 import './tailwind.css';
+import { themeWrapper } from './theme-wrapper';
 
 const options = {
 	excludeCategories: ['properties'],
@@ -94,7 +80,9 @@ export const parameters = {
 };
 
 const preview = {
+	layout: 'centered',
 	render: stencilRender(),
+	decorators: [themeWrapper],
 	argsEnhancers: [
 		context => {
 			const { initialArgs, component } = context;

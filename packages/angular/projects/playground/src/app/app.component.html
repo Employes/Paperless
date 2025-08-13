@@ -12,6 +12,13 @@
 			class="flex flex-col"
 			slot="content"
 		>
+			<p-button
+				class="mb-10"
+				(onClick)="state.theme = state.theme === 'dark' ? 'light' : 'dark'"
+			>
+				Toggle theme: {{ state.theme }}
+			</p-button>
+
 			<p-navigation-section header="overview">
 				<p-navigation-item
 					icon="home"

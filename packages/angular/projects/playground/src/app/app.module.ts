@@ -26,6 +26,7 @@ import { ToastComponent } from './features/toast/toast.component';
 import { InputsComponent } from './features/inputs/inputs.component';
 
 import { defineCustomElements } from '@paperless/core/loader';
+import { initTheme } from '@paperless/core';
 
 @NgModule({
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -58,6 +59,11 @@ import { defineCustomElements } from '@paperless/core/loader';
 		{
 			provide: APP_INITIALIZER,
 			useFactory: () => defineCustomElements,
+			multi: true,
+		},
+		{
+			provide: APP_INITIALIZER,
+			useValue: () => initTheme(true, 'employes-theme'),
 			multi: true,
 		},
 	],

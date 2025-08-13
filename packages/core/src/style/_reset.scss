@@ -4,12 +4,19 @@
 
 html,
 body {
-	@apply w-full;
-	@apply bg-white;
+	@apply w-full transition;
 	@apply max-w-screen-safe;
 
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
+}
+
+body[data-theme='dark'] {
+	@apply bg-storm-test;
+}
+
+body:not([data-theme='dark']) {
+	@apply bg-white;
 }
 
 html {

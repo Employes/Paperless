@@ -3,7 +3,7 @@ h2,
 h3,
 h4,
 h5 {
-	@apply font-ambit font-bold text-storm-500;
+	@apply font-ambit font-bold;
 }
 
 h1 {
@@ -23,5 +23,29 @@ h4 {
 }
 
 body {
-	@apply text-base font-medium text-storm-300 #{!important};
+	@apply text-base font-medium #{!important};
+}
+
+body[data-theme='dark'] {
+	@apply text-storm-200 #{!important};
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		@apply text-white;
+	}
+}
+
+body:not([data-theme='dark']) {
+	@apply text-storm-300 #{!important};
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		@apply text-storm-500;
+	}
 }
