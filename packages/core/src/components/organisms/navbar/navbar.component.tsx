@@ -1,9 +1,11 @@
-import { Component, h, Host, Listen, State } from '@stencil/core';
+import { Component, h, Listen, State } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+import { ThemedHost } from '../../../internal/themed-host.component';
 
 const sidebarAndTopbar = cva([
-	'bg-off-white-300',
-	'border-0 border-solid border-off-white-700',
+	'transition',
+	'bg-off-white-300 dark:bg-storm-500',
+	'border-0 border-solid border-off-white-700 dark:border-black/10',
 	'p-4',
 ]);
 
@@ -64,7 +66,7 @@ export class Navbar {
 
 	render() {
 		return (
-			<Host>
+			<ThemedHost>
 				<p-backdrop
 					class={backdrop({ show: this._show })}
 					scrollLock={this._show}
@@ -101,7 +103,7 @@ export class Navbar {
 
 					<slot name='topbar' />
 				</div>
-			</Host>
+			</ThemedHost>
 		);
 	}
 

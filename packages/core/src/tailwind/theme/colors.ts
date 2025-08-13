@@ -52,6 +52,7 @@ export default {
 		200: '#A3A5A9',
 		100: '#D1D2D4',
 		50: '#E8E8EA',
+		test: '#232934',
 	},
 	'off-white': {
 		800: '#D5D0C3',
