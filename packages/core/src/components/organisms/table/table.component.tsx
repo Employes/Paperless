@@ -858,6 +858,7 @@ export class Table {
 				enableAction={this.enableEmptyStateAction}
 				actionIcon='plus'
 				actionText={this.emptyStateAction()}
+				onAction={() => this.enableAction && this.action.emit()}
 			></p-empty-state>
 		);
 	}

@@ -575,6 +575,11 @@ export class Table implements OnInit, OnChanges {
 	}
 
 	emptyStateClicked() {
+		if (!this.enableAction) {
+			this.action.emit();
+			return;
+		}
+
 		if (!this.enableEmptyStateAction) {
 			return;
 		}
