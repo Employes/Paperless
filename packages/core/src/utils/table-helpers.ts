@@ -71,7 +71,7 @@ export const getTableCellSizes = (
 					continue;
 				}
 
-				classes[`w-${sizes.default}/12`] = true;
+				classes[`w-[calc(${sizes.default}/12*100%-0.5rem)]`] = true;
 				previousSize = size;
 				continue;
 			}
@@ -97,7 +97,7 @@ export const getTableCellSizes = (
 				classes[`${size}:w-full`] = true;
 			}
 
-			classes[`${size}:w-${currentValue}/12`] = true;
+			classes[`${size}:w-[calc(${currentValue}/12*100%-0.5rem)]`] = true;
 			previousSize = size;
 		}
 
