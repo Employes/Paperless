@@ -6,11 +6,13 @@ const meta = {
 	component: 'p-select',
 	args: {
 		label: 'Label',
-		multi: true,
 		items: JSON.stringify([
 			{
 				value: 'value',
 				text: 'Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 ',
+				class: 'text-negative-red-500',
+				iconClass: 'text-negative-red-500 group-hover:text-negative-red-800',
+				icon: 'user',
 			},
 			{
 				value: 'value2',

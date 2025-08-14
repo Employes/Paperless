@@ -11,7 +11,7 @@ import {
 	State,
 	Watch,
 } from '@stencil/core';
-import { childOfComposed } from '../../../utils';
+import { childOfComposed, cn } from '../../../utils';
 import { IconVariant } from '../../atoms/icon/icon.component';
 
 import { cva } from 'class-variance-authority';
@@ -119,7 +119,12 @@ export class Select {
 	/**
 	 * The key of icon variant within an item to show
 	 */
-	@Prop() iconKey: string;
+	@Prop() iconKey: string = 'icon';
+
+	/**
+	 * The key of the class we can apploy to the icon
+	 */
+	@Prop() iconClassKey: string = 'iconClass';
 
 	/**
 	 * Wether to apply the item's icon on the selected item display
@@ -134,7 +139,7 @@ export class Select {
 	/**
 	 * Wether to apply the item's class also on the selected item
 	 */
-	@Prop() applyClassOnSelectedItem: string;
+	@Prop() applyClassOnSelectedItem: boolean;
 
 	/**
 	 * The key of avatar letters within an item to show when the avatar url doesn't work
@@ -482,6 +487,10 @@ export class Select {
 						active={this._showDropdown}
 						error={!!this.error?.length}
 						icon={buttonIcon}
+						iconClass={
+							this.applyClassOnSelectedItem &&
+							this._selectedItem?.[this.iconClassKey]
+						}
 						onClick={ev => this._onClick(ev)}
 					>
 						<div
@@ -921,7 +930,12 @@ export class Select {
 			content = (
 				<span class='flex items-center gap-2'>
 					<p-icon
-						class='text-storm-300'
+						class={cn(
+							'text-storm-300',
+							!isSelection || !!this.applyClassOnSelectedItem
+								? item?.[this.iconClassKey] ?? ''
+								: ''
+						)}
 						variant={item[this.iconKey] as IconVariant}
 					/>
 					<div
@@ -937,10 +951,10 @@ export class Select {
 		}
 
 		if (
-			(!isSelection || this.applyClassOnSelectedItem) &&
-			!!item?.class?.length
+			(!isSelection || !!this.applyClassOnSelectedItem) &&
+			!!item?.[this.classKey]?.length
 		) {
-			return <div class={item.class}>{content}</div>;
+			return <div class={item[this.classKey]}>{content}</div>;
 		}
 
 		return content;

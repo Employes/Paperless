@@ -1399,7 +1399,7 @@ export namespace Components {
         /**
           * Wether to apply the item's class also on the selected item
          */
-        "applyClassOnSelectedItem": string;
+        "applyClassOnSelectedItem": boolean;
         /**
           * Wether the input uses async filtering
          */
@@ -1464,6 +1464,10 @@ export namespace Components {
           * Icon of the select box
          */
         "icon": IconVariant;
+        /**
+          * The key of the class we can apploy to the icon
+         */
+        "iconClassKey": string;
         /**
           * The key of icon variant within an item to show
          */
@@ -4698,7 +4702,7 @@ declare namespace LocalJSX {
         /**
           * Wether to apply the item's class also on the selected item
          */
-        "applyClassOnSelectedItem"?: string;
+        "applyClassOnSelectedItem"?: boolean;
         /**
           * Wether the input uses async filtering
          */
@@ -4763,6 +4767,10 @@ declare namespace LocalJSX {
           * Icon of the select box
          */
         "icon"?: IconVariant;
+        /**
+          * The key of the class we can apploy to the icon
+         */
+        "iconClassKey"?: string;
         /**
           * The key of icon variant within an item to show
          */
