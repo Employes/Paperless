@@ -3,7 +3,7 @@ import { cva } from 'class-variance-authority';
 
 const header = cva([
 	'w-full flex-col bg-white relative rounded-t-2xl overflow-hidden z-[1]',
-	'inline-flex aspect-[7/1]',
+	'inline-flex aspect-[7/1] max-h-28',
 ]);
 
 const content = cva(['flex justify-end', 'w-full p-4 pb-0 h-12']);
