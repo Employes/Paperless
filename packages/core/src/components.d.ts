@@ -1401,6 +1401,10 @@ export namespace Components {
          */
         "applyClassOnSelectedItem": boolean;
         /**
+          * Wether to apply the item's class also on the selected item within the menu
+         */
+        "applyClassOnSelectedItemInMenu": boolean;
+        /**
           * Wether the input uses async filtering
          */
         "asyncFilter": boolean;
@@ -4703,6 +4707,10 @@ declare namespace LocalJSX {
           * Wether to apply the item's class also on the selected item
          */
         "applyClassOnSelectedItem"?: boolean;
+        /**
+          * Wether to apply the item's class also on the selected item within the menu
+         */
+        "applyClassOnSelectedItemInMenu"?: boolean;
         /**
           * Wether the input uses async filtering
          */

@@ -142,6 +142,11 @@ export class Select {
 	@Prop() applyClassOnSelectedItem: boolean;
 
 	/**
+	 * Wether to apply the item's class also on the selected item within the menu
+	 */
+	@Prop() applyClassOnSelectedItemInMenu: boolean;
+
+	/**
 	 * The key of avatar letters within an item to show when the avatar url doesn't work
 	 */
 	@Prop() avatarLettersKey: string;
@@ -701,27 +706,27 @@ export class Select {
 	}
 
 	private _getItems() {
-		let items = this._items.map(item => (
-			<p-dropdown-menu-item
-				enableTextWrap={this.enableTextWrap}
-				useContainer={false}
-				onClick={() => this._selectValue(item)}
-				active={
-					this.multi &&
-					!!this._selectedItem &&
-					Array.isArray(this._selectedItem)
-						? this._selectedItem.findIndex(
-								i => i[this._identifierKey] === item[this._identifierKey]
-						  ) >= 0
-						: item[this._identifierKey] ===
-						  this._selectedItem?.[this._identifierKey]
-				}
-				checkbox={this.multi ? true : false}
-				slot='items'
-			>
-				{this._getDisplay(item)}
-			</p-dropdown-menu-item>
-		));
+		let items = this._items.map(item => {
+			const isSelected =
+				this.multi && !!this._selectedItem && Array.isArray(this._selectedItem)
+					? this._selectedItem.findIndex(
+							i => i[this._identifierKey] === item[this._identifierKey]
+					  ) >= 0
+					: item[this._identifierKey] ===
+					  this._selectedItem?.[this._identifierKey];
+			return (
+				<p-dropdown-menu-item
+					enableTextWrap={this.enableTextWrap}
+					useContainer={false}
+					onClick={() => this._selectValue(item)}
+					active={isSelected}
+					checkbox={this.multi ? true : false}
+					slot='items'
+				>
+					{this._getDisplay(item, false, isSelected)}
+				</p-dropdown-menu-item>
+			);
+		});
 
 		if (!this._items.length) {
 			items = [
@@ -888,7 +893,7 @@ export class Select {
 		this.selectAllChange.emit(this._allSelected);
 	}
 
-	private _getDisplay(item, isSelection = false) {
+	private _getDisplay(item, isSelection = false, isSelectedInMenu = false) {
 		let content = (
 			<div
 				class={textContainer({
@@ -932,7 +937,8 @@ export class Select {
 					<p-icon
 						class={cn(
 							'text-storm-300',
-							!isSelection || !!this.applyClassOnSelectedItem
+							(!isSelection || !!this.applyClassOnSelectedItem) &&
+								(!isSelectedInMenu || !!this.applyClassOnSelectedItemInMenu)
 								? item?.[this.iconClassKey] ?? ''
 								: ''
 						)}
@@ -952,6 +958,7 @@ export class Select {
 
 		if (
 			(!isSelection || !!this.applyClassOnSelectedItem) &&
+			(!isSelectedInMenu || !!this.applyClassOnSelectedItemInMenu) &&
 			!!item?.[this.classKey]?.length
 		) {
 			return <div class={item[this.classKey]}>{content}</div>;
