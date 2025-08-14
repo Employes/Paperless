@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/ionic-team/stencil-component-starter/compare/v2.7.1...v2.8.0) (2025-08-14)
+
+
+### Features
+
+* **molecules/button:** Add ability to pass icon class ([3b14ab5](https://github.com/ionic-team/stencil-component-starter/commit/3b14ab594aa7a4896ee13aad25380154d3359d80))
+* **molecules/select:** Add ability to add icon class to selects ([db00b4e](https://github.com/ionic-team/stencil-component-starter/commit/db00b4ea56a344a2b21f22bd4185f0f163f3e99e))
+
+
+
+
+
 ## [2.7.1](https://github.com/ionic-team/stencil-component-starter/compare/v2.7.0...v2.7.1) (2025-08-14)
 
 
