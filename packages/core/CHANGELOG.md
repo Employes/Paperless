@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.7.0](https://github.com/ionic-team/stencil-component-starter/compare/v2.6.3...v2.7.0) (2025-08-14)
+
+
+### Features
+
+* Add basic setup for dark mode & locale changes ([dd5f618](https://github.com/ionic-team/stencil-component-starter/commit/dd5f618967d270890699d239b32c0cfadcff29bc))
+* **molecules/calendar & datepicker:** Apply state locale ([1f40617](https://github.com/ionic-team/stencil-component-starter/commit/1f406175b585f26c404e722fa86ce5e2f561d3b9))
+
+
+
+
+
 ## [2.6.3](https://github.com/ionic-team/stencil-component-starter/compare/v2.6.2...v2.6.3) (2025-08-14)
 
 **Note:** Version bump only for package @paperless/core
