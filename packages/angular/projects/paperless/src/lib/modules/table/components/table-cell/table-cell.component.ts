@@ -9,7 +9,7 @@ import {
 /*
      With this, we shall hack the system in ways no one would ever have thought.
 
-	 justify-start justify-center justify-end
+	 justify-start justify-center justify-end items-center gap-4
      font-semibold text-storm-500 text-storm-500 text-storm-400 text-storm-300
      w-[calc(1/12*100%-0.5rem)] w-[calc(2/12*100%-0.5rem)] w-[calc(3/12*100%-0.5rem)] w-[calc(4/12*100%-0.5rem)] w-[calc(5/12*100%-0.5rem)] w-[calc(6/12*100%-0.5rem)] w-[calc(7/12*100%-0.5rem)] w-[calc(8/12*100%-0.5rem)] w-[calc(9/12*100%-0.5rem)] w-[calc(10/12*100%-0.5rem)] w-[calc(11/12*100%-0.5rem)] w-12/12
      tablet:w-[calc(1/12*100%-0.5rem)] tablet:w-[calc(2/12*100%-0.5rem)] tablet:w-[calc(3/12*100%-0.5rem)] tablet:w-[calc(4/12*100%-0.5rem)] tablet:w-[calc(5/12*100%-0.5rem)] tablet:w-[calc(6/12*100%-0.5rem)] tablet:w-[calc(7/12*100%-0.5rem)] tablet:w-[calc(8/12*100%-0.5rem)] tablet:w-[calc(9/12*100%-0.5rem)] tablet:w-[calc(10/12*100%-0.5rem)] tablet:w-[calc(11/12*100%-0.5rem)] tablet:w-12/12
@@ -19,7 +19,7 @@ import {
      desktop:w-[calc(1/12*100%-0.5rem)] desktop:w-[calc(2/12*100%-0.5rem)] desktop:w-[calc(3/12*100%-0.5rem)] desktop:w-[calc(4/12*100%-0.5rem)] desktop:w-[calc(5/12*100%-0.5rem)] desktop:w-[calc(6/12*100%-0.5rem)] desktop:w-[calc(7/12*100%-0.5rem)] desktop:w-[calc(8/12*100%-0.5rem)] desktop:w-[calc(9/12*100%-0.5rem)] desktop:w-[calc(10/12*100%-0.5rem)] desktop:w-[calc(11/12*100%-0.5rem)] desktop:w-[calc(12/12*100%-0.5rem)]
      desktop-lg:w-[calc(1/12*100%-0.5rem)] desktop-lg:w-[calc(2/12*100%-0.5rem)] desktop-lg:w-[calc(3/12*100%-0.5rem)] desktop-lg:w-[calc(4/12*100%-0.5rem)] desktop-lg:w-[calc(5/12*100%-0.5rem)] desktop-lg:w-[calc(6/12*100%-0.5rem)] desktop-lg:w-[calc(7/12*100%-0.5rem)] desktop-lg:w-[calc(8/12*100%-0.5rem)] desktop-lg:w-[calc(9/12*100%-0.5rem)] desktop-lg:w-[calc(10/12*100%-0.5rem)] desktop-lg:w-[calc(11/12*100%-0.5rem)] desktop-lg:w-[calc(12/12*100%-0.5rem)]
      desktop-xl:w-[calc(1/12*100%-0.5rem)] desktop-xl:w-[calc(2/12*100%-0.5rem)] desktop-xl:w-[calc(3/12*100%-0.5rem)] desktop-xl:w-[calc(4/12*100%-0.5rem)] desktop-xl:w-[calc(5/12*100%-0.5rem)] desktop-xl:w-[calc(6/12*100%-0.5rem)] desktop-xl:w-[calc(7/12*100%-0.5rem)] desktop-xl:w-[calc(8/12*100%-0.5rem)] desktop-xl:w-[calc(9/12*100%-0.5rem)] desktop-xl:w-[calc(10/12*100%-0.5rem)] desktop-xl:w-[calc(11/12*100%-0.5rem)] desktop-xl:w-[calc(12/12*100%-0.5rem)]
-     hidden flex group-hover:hidden group-hover:flex
+     hidden flex group-hover:hidden group-hover:flex flex-shrink-0
      tablet:hidden tablet:flex tablet:group-hover:hidden tablet:group-hover:flex
      desktop-xs:hidden desktop-xs:flex desktop-xs:group-hover:hidden desktop-xs:group-hover:flex
      desktop-sm:hidden desktop-sm:flex  desktop-sm:group-hover:hidden desktop-sm:group-hover:flex

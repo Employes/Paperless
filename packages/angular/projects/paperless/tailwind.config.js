@@ -3,10 +3,7 @@ const path = require('path');
 
 module.exports = {
 	important: true,
-	content: [
-		path.join(__dirname, './src/**/*.{html,scss,ts}'),
-		path.join(__dirname, '../../../core/src/utils/table-helpers.ts'),
-	],
+	content: [path.join(__dirname, './src/**/*.{html,scss,ts}')],
 	plugins: [
 		require('@tailwindcss/aspect-ratio'),
 		require('tailwindcss-animate'),

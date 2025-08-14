@@ -437,6 +437,13 @@ export class Table implements OnInit, OnChanges {
 
 	public isMobile$ = new BehaviorSubject(isMobile());
 
+	// sticky self-center
+	// mt-4 -mb-5 bottom-11 z-[3]
+	// my-4 bottom-0
+	// pointer-events-none animate-floating-menu-container-out
+	// animate-floating-menu-container-in
+	// hidden
+	// inline-block
 	public floatingMenuContainerClass = floatingMenuContainerClass;
 
 	private _resizeTimeout: unknown;
