@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.1](https://github.com/employes/paperless/compare/v2.7.0...v2.7.1) (2025-08-14)
+
+
+### Bug Fixes
+
+* **organism/table:** Pass empty state action ([d7f559f](https://github.com/employes/paperless/commit/d7f559f869c9b86d63f70deca101ff84cc5a907f))
+
+
+
+
+
 # [2.7.0](https://github.com/employes/paperless/compare/v2.6.3...v2.7.0) (2025-08-14)
 
 
