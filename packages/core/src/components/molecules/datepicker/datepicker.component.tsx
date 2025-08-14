@@ -25,6 +25,8 @@ import {
 } from 'date-fns';
 import { childOf, isMobileBrowser } from '../../../utils';
 import { asBoolean } from '../../../utils/as-boolean';
+import { state } from '../../../state';
+import { enUS, nl } from 'date-fns/locale';
 
 @Component({
 	tag: 'p-datepicker',
@@ -338,9 +340,24 @@ export class Datepicker {
 						class='pointer-events-none absolute left-0 top-0 z-[-10] overflow-hidden opacity-0'
 						onInput={ev => this._onNativeInput(ev)}
 						ref={ref => (this._dateInputRef = ref)}
-						value={this._value && format(this._value, 'yyyy-MM-dd')}
-						min={this.minDate && format(new Date(this.minDate), 'yyyy-MM-dd')}
-						max={this.maxDate && format(new Date(this.maxDate), 'yyyy-MM-dd')}
+						value={
+							this._value &&
+							format(this._value, 'yyyy-MM-dd', {
+								locale: state.locale === 'nl' ? nl : enUS,
+							})
+						}
+						min={
+							this.minDate &&
+							format(new Date(this.minDate), 'yyyy-MM-dd', {
+								locale: state.locale === 'nl' ? nl : enUS,
+							})
+						}
+						max={
+							this.maxDate &&
+							format(new Date(this.maxDate), 'yyyy-MM-dd', {
+								locale: state.locale === 'nl' ? nl : enUS,
+							})
+						}
 					/>
 				)}
 				<div slot='items'>
@@ -430,7 +447,12 @@ export class Datepicker {
 
 			const parsedValue = parse(value, parseFormat, new Date());
 
-			if (!isValid(parsedValue) || format(parsedValue, parseFormat) !== value) {
+			if (
+				!isValid(parsedValue) ||
+				format(parsedValue, parseFormat, {
+					locale: state.locale === 'nl' ? nl : enUS,
+				}) !== value
+			) {
 				if (this.mode === 'day') {
 					this._onValueChange(value, this._defaultFormats['dayNoDashes']);
 				}
@@ -474,7 +496,9 @@ export class Datepicker {
 		if (this._isDisabledDay(value)) {
 			if (!!this._dateInputRef?.value) {
 				this._dateInputRef.value = this._value
-					? format(this._value, 'yyyy-MM-dd')
+					? format(this._value, 'yyyy-MM-dd', {
+							locale: state.locale === 'nl' ? nl : enUS,
+					  })
 					: null;
 			}
 
@@ -515,6 +539,8 @@ export class Datepicker {
 			return '';
 		}
 
-		return format(this._value, this.format);
+		return format(this._value, this.format, {
+			locale: state.locale === 'nl' ? nl : enUS,
+		});
 	}
 }

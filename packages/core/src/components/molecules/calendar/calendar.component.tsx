@@ -30,7 +30,9 @@ import {
 	startOfDay,
 	startOfMonth,
 } from 'date-fns';
+import { nl, enUS } from 'date-fns/locale';
 import { cn } from '../../../utils/cn';
+import { state } from '../../../state';
 
 const calendar = cva(['bg-white w-[17.5rem] flex flex-col gap-4'], {
 	variants: {
@@ -316,7 +318,13 @@ export class Calendar {
 				<div class='grid grid-cols-7 justify-between gap-1'>
 					{this._weekDays.map(weekday => (
 						<span class='w-8 text-center text-xs text-storm-200'>
-							{format(addDays(new Date(2022, 7, 1), weekday), 'eee')}
+							{format(
+								addDays(new Date(2022, 7, 1), weekday),
+								state.locale === 'nl' ? 'EEEEEE' : 'eee',
+								{
+									locale: state.locale === 'nl' ? nl : enUS,
+								}
+							)}
 						</span>
 					))}
 					{daysInMonth.map(day => {
@@ -368,7 +376,9 @@ export class Calendar {
 							disabled={month.disabled}
 							onClick={() => this._setMonth(month.month)}
 						>
-							{format(setMonth(new Date(), month.month), 'MMMM')}
+							{format(setMonth(new Date(), month.month), 'MMMM', {
+								locale: state.locale === 'nl' ? nl : enUS,
+							})}
 						</p-button>
 					))}
 				</div>
@@ -439,7 +449,9 @@ export class Calendar {
 							disabled={!this._canChangeView('month')}
 							active={this._view === 'month' && this.mode !== 'month'}
 						>
-							{format(this._viewDate, 'MMMM')}
+							{format(this._viewDate, 'MMMM', {
+								locale: state.locale === 'nl' ? nl : enUS,
+							})}
 						</p-button>
 					)}
 
