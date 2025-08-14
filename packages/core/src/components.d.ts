@@ -235,6 +235,10 @@ export namespace Components {
          */
         "icon"?: IconVariant;
         /**
+          * A class to apply to the icon
+         */
+        "iconClass"?: string;
+        /**
           * Icon flip
          */
         "iconFlip"?: IconFlipOptions;
@@ -3412,6 +3416,10 @@ declare namespace LocalJSX {
           * Icon to show on the button
          */
         "icon"?: IconVariant;
+        /**
+          * A class to apply to the icon
+         */
+        "iconClass"?: string;
         /**
           * Icon flip
          */

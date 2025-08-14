@@ -398,6 +398,11 @@ export class Button {
 	@Prop() iconOnly?: boolean = false;
 
 	/**
+	 * A class to apply to the icon
+	 */
+	@Prop() iconClass?: string;
+
+	/**
 	 * Icon position
 	 */
 	@Prop() iconPosition?: 'start' | 'end' = 'start';
@@ -524,13 +529,16 @@ export class Button {
 
 		return (
 			<p-icon
-				class={icon({
-					size: this.size,
-					variant: this.variant,
-					disabled: asBoolean(this.disabled),
-					active: asBoolean(this.active),
-					error: asBoolean(this.error),
-				})}
+				class={cn(
+					icon({
+						size: this.size,
+						variant: this.variant,
+						disabled: asBoolean(this.disabled),
+						active: asBoolean(this.active),
+						error: asBoolean(this.error),
+					}),
+					this.iconClass ?? ''
+				)}
 				variant={this.icon}
 				flip={this.iconFlip}
 				rotate={this.iconRotate}

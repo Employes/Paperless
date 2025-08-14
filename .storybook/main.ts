@@ -28,7 +28,7 @@ const config: StorybookConfig = {
 		getAbsolutePath('@storybook/addon-essentials'),
 		getAbsolutePath('@storybook/addon-a11y'),
 		getAbsolutePath('@storybook/addon-styling-webpack'),
-		getAbsolutePath('storybook-dark-mode'),
+		// getAbsolutePath('storybook-dark-mode'),
 		// getAbsolutePath('@pxtrn/storybook-addon-docs-stencil'),
 	],
 	framework: {
