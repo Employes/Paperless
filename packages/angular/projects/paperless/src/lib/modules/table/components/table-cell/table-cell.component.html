@@ -17,20 +17,24 @@
 
 	<div
 		*ngSwitchCase="'header'"
-		class="flex w-full overflow-hidden"
-		[class.justify-start]="definition.align === 'start'"
-		[class.justify-center]="definition.align === 'center'"
-		[class.justify-end]="definition.align === 'end'"
+		class="overflow-hidden text-ellipsis"
+		[class.text-start]="
+			definition?.align === undefined || definition.align === 'start'
+		"
+		[class.text-center]="definition.align === 'center'"
+		[class.text-end]="definition.align === 'end'"
 	>
 		<ng-container *ngTemplateOutlet="valueTemplate"></ng-container>
 	</div>
 
 	<div
 		*ngSwitchCase="'default'"
-		class="flex min-w-0 flex-1"
-		[class.justify-start]="definition.align === 'start'"
-		[class.justify-center]="definition.align === 'center'"
-		[class.justify-end]="definition.align === 'end'"
+		class="overflow-hidden text-ellipsis"
+		[class.text-start]="
+			definition?.align === undefined || definition.align === 'start'
+		"
+		[class.text-center]="definition.align === 'center'"
+		[class.text-end]="definition.align === 'end'"
 	>
 		<ng-container *ngIf="template; else valueTemplate">
 			<ng-container *ngTemplateOutlet="template; context: data"></ng-container>
