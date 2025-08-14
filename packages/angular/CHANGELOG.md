@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.3](https://github.com/Employes/Paperless/compare/v2.6.2...v2.6.3) (2025-08-14)
+
+
+### Bug Fixes
+
+* **angular:** Don't include table-helpers ([7d401ed](https://github.com/Employes/Paperless/commit/7d401edf9dd5e60bf3eba2c6518df5d43bb34c6d))
+
+
+
+
+
 ## [2.6.2](https://github.com/Employes/Paperless/compare/v2.6.1...v2.6.2) (2025-08-14)
 
 **Note:** Version bump only for package @paperless/angular
