@@ -43,7 +43,7 @@ const row = cva(
 );
 
 const content = cva(
-	'relative flex min-w-full flex-nowrap items-center justify-between gap-4',
+	'relative flex min-w-full flex-nowrap items-center justify-between',
 	{
 		variants: {
 			variant: {
