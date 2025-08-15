@@ -131,7 +131,6 @@
 			></p-table-cell-ngx>
 			<ng-template #checkboxTemplate>
 				<p-checkbox
-					#selectAllCheckbox
 					(checkedChange)="_selectAllChange($event)"
 					[checked]="_selectionContainsAll()"
 					[indeterminate]="_selectionIndeterminate()"
