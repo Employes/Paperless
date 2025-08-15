@@ -16,6 +16,8 @@
 				text: 'Third',
 			}
 	]"
+	[enableAction]="true"
+	(action)="headerActionClick($event)"
 	(selectedRowsChange)="rowsChange($event)"
 	[floatingMenuAmountSelectedText]="floatingMenuAmountSelectedText"
 >

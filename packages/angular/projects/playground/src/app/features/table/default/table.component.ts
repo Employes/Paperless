@@ -121,4 +121,8 @@ export class TableComponent {
 
 		console.log(JSON.stringify(this.items, null, 2));
 	}
+
+	headerActionClick(event: unknown) {
+		console.log('action click', event);
+	}
 }
