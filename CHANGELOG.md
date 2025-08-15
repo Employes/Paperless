@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.4](https://github.com/employes/paperless/compare/v2.8.3...v2.8.4) (2025-08-15)
+
+
+### Reverts
+
+* Revert "fix(angular/table): Reset select box when selected rows is set to nothing" ([13d8860](https://github.com/employes/paperless/commit/13d886095c6e4edf26a9e2dc9ac85021fc6c304a))
+* Revert "fix(angular/table): Actually check  if changes.selectedRows exists" ([f2c7f65](https://github.com/employes/paperless/commit/f2c7f6590d300ab997481621076ef2c0e109477f))
+
+
+
+
+
 ## [2.8.3](https://github.com/employes/paperless/compare/v2.8.2...v2.8.3) (2025-08-15)
 
 
