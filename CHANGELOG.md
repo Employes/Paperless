@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.3](https://github.com/employes/paperless/compare/v2.8.2...v2.8.3) (2025-08-15)
+
+
+### Bug Fixes
+
+* **angular/table:** Actually check  if changes.selectedRows exists ([c1c9080](https://github.com/employes/paperless/commit/c1c908079206f671fe0fb12cd60aac88b244b938))
+
+
+
+
+
 ## [2.8.2](https://github.com/employes/paperless/compare/v2.8.1...v2.8.2) (2025-08-15)
 
 
