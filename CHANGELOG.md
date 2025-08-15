@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.7](https://github.com/employes/paperless/compare/v2.8.6...v2.8.7) (2025-08-15)
+
+
+### Bug Fixes
+
+* **molecules/select:** Replace supportive-lilac with indigo ([d081ba5](https://github.com/employes/paperless/commit/d081ba51228ffca6fc8ae4ed0f659162f79b4044))
+
+
+
+
+
 ## [2.8.6](https://github.com/employes/paperless/compare/v2.8.5...v2.8.6) (2025-08-15)
 
 
