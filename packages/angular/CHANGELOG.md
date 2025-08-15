@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.5](https://github.com/Employes/Paperless/compare/v2.8.4...v2.8.5) (2025-08-15)
+
+
+### Bug Fixes
+
+* **angular/table:** Fix typo ([7f2a1e5](https://github.com/Employes/Paperless/commit/7f2a1e5a8fd45a1cd16481750825fc6564223af8))
+
+
+
+
+
 ## [2.8.4](https://github.com/Employes/Paperless/compare/v2.8.3...v2.8.4) (2025-08-15)
 
 
