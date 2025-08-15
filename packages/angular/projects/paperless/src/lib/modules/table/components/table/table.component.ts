@@ -496,8 +496,9 @@ export class Table implements OnInit, OnChanges {
 
 		if (calculateRowSelectionData || changes['selectedRows']) {
 			this._setRowSelectionData();
+
 			if (
-				changes['selectedRows'].currentValue?.length == 0 &&
+				changes['selectedRows']?.currentValue?.length == 0 &&
 				!!this._selectAllCheckbox?.nativeElement.checked
 			) {
 				this._selectAllCheckbox.nativeElement.checked = false;
