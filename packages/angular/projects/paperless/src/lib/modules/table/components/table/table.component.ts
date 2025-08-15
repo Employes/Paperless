@@ -55,7 +55,7 @@ import {
 } from '../table-row-action/table-row-action.component';
 import { defaultSize, defaultSizeOptions } from './constants';
 import { TableCell } from '../table-cell/table-cell.component';
-import { PTableRow } from '../../../../stencil/components';
+import { PCheckbox, PTableRow } from '../../../../stencil/components';
 import { TableCustomRowDirective } from '../../directives/p-table-custom-row.directive';
 
 @UntilDestroy({ checkProperties: true })
@@ -116,6 +116,9 @@ export class Table implements OnInit, OnChanges {
 	 * Event whenever the current selection changes
 	 */
 	@Output() selectedRowsChange: EventEmitter<any> = new EventEmitter();
+
+	@ViewChild('selectAllCheckbox')
+	_selectAllCheckbox!: ElementRef<PCheckbox>;
 
 	/**
 	 * The key to determine if a row is selected
@@ -493,6 +496,12 @@ export class Table implements OnInit, OnChanges {
 
 		if (calculateRowSelectionData || changes['selectedRows']) {
 			this._setRowSelectionData();
+			if (
+				changes['selectedRows'].currentValue?.length == 0 &&
+				!!this._selectAllCheckbox?.nativeElement.checked
+			) {
+				this._selectAllCheckbox.nativeElement.checked = false;
+			}
 		}
 
 		if (changes['enableScroll']?.currentValue) {
