@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.6](https://github.com/Employes/Paperless/compare/v2.8.5...v2.8.6) (2025-08-15)
+
+
+### Reverts
+
+* Revert "refactor(molecules/table/cell): Apply better width calculation & add gap" ([e94dca2](https://github.com/Employes/Paperless/commit/e94dca2ad743f22abb5b481c418df09abc357000))
+
+
+
+
+
 ## [2.8.5](https://github.com/Employes/Paperless/compare/v2.8.4...v2.8.5) (2025-08-15)
 
 
