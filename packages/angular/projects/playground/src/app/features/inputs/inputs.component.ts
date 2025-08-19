@@ -12,5 +12,6 @@ export class InputsComponent {
 		checkboxTwo: new FormControl<boolean | 'indeterminate'>(false),
 		radio: new FormControl<'a' | 'b' | null>(null),
 		text: new FormControl<string | null>(null),
+		number: new FormControl<number | null>(null),
 	});
 }

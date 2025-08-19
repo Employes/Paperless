@@ -2,6 +2,7 @@ export * from './p-checkbox.directive';
 export * from './p-cropper.directive';
 export * from './p-datepicker.directive';
 export * from './p-field.directive';
+export * from './p-field-number.directive';
 export * from './p-pagination-pages.directive';
 export * from './p-pagination-size.directive';
 export * from './p-radio.directive';
@@ -11,6 +12,7 @@ export * from './p-toggle.directive';
 import { CheckboxDirective } from './p-checkbox.directive';
 import { CropperDirective } from './p-cropper.directive';
 import { DatepickerDirective } from './p-datepicker.directive';
+import { FieldNumberDirective } from './p-field-number.directive';
 import { FieldDirective } from './p-field.directive';
 import { PaginationPagesDirective } from './p-pagination-pages.directive';
 import { PaginationSizeDirective } from './p-pagination-size.directive';
@@ -25,6 +27,7 @@ export const DIRECTIVES = [
 	DatepickerDirective,
 	CropperDirective,
 	FieldDirective,
+	FieldNumberDirective,
 	RadioDirective,
 	CheckboxDirective,
 	ToggleDirective,

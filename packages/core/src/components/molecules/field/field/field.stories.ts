@@ -6,6 +6,7 @@ const meta = {
 	component: 'p-field',
 	args: {
 		label: 'Label',
+		type: 'number',
 	},
 	argTypes: {
 		value: {

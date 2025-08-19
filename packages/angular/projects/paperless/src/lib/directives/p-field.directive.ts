@@ -4,7 +4,7 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { BaseValueAccessor } from '../base';
 
 @Directive({
-	selector: 'p-field',
+	selector: 'p-field:not([type=number])',
 	host: {
 		'(valueChange)': 'handleChangeEvent($event.detail)',
 	},

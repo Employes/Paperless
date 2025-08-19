@@ -710,8 +710,9 @@ export class Field {
 		const target = (ev.originalTarget ?? ev.target) as
 			| HTMLTextAreaElement
 			| HTMLInputElement;
-		const value =
-			this.type === 'number' ? parseFloat(target.value) : target.value;
+
+		const value = target.value;
+
 		this._lastValue = value;
 		this.value = value;
 		this.valueChange.emit(value);

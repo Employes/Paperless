@@ -54,6 +54,12 @@
 		formControlName="text"
 	></p-field>
 
+	<p-field
+		label="Number"
+		type="number"
+		formControlName="number"
+	></p-field>
+
 	<p-button (click)="form.get('text')?.setValue('abc')"> Set to abc </p-button>
 
 	<p>Values:</p>
