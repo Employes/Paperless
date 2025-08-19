@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.9](https://github.com/ionic-team/stencil-component-starter/compare/v2.8.8...v2.8.9) (2025-08-19)
+
+
+### Bug Fixes
+
+* **atoms/tooltip:** Only use pointer cursor when there is a tooltip to show ([651a72d](https://github.com/ionic-team/stencil-component-starter/commit/651a72d20bce9f13caf61b51879f4a1553e5c069))
+* **molecules/field/container:** Only use pointer for label if in write mode ([7ac5b3e](https://github.com/ionic-team/stencil-component-starter/commit/7ac5b3e13f9134acfbb7172643aff3a21119fa6c))
+
+
+
+
+
 ## [2.8.8](https://github.com/ionic-team/stencil-component-starter/compare/v2.8.7...v2.8.8) (2025-08-19)
 
 **Note:** Version bump only for package @paperless/core
