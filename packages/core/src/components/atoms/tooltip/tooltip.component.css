@@ -1,3 +1,11 @@
 :host {
-	@apply relative h-inherit w-inherit max-w-full cursor-pointer;
+	@apply relative h-inherit w-inherit max-w-full;
+}
+
+:host([data-filled]) {
+	@apply cursor-pointer;
+}
+
+:host(:not([data-filled])) {
+	@apply cursor-auto;
 }

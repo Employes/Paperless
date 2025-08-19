@@ -139,7 +139,7 @@ export class Tooltip {
 
 	render() {
 		return (
-			<Host>
+			<Host data-filled={this.content?.length > 0 || this._hasContentSlot}>
 				<slot name='trigger' />
 				<div
 					class={popover({
