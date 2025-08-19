@@ -174,7 +174,9 @@ export class FieldContainer {
 		return (
 			<label
 				htmlFor={this.id}
-				class='flex w-inherit flex-col gap-1'
+				class={cn('flex w-inherit flex-col gap-1', {
+					'cursor-auto': this.variant === 'read',
+				})}
 			>
 				<div
 					class={cn('flex items-end justify-between gap-1 empty:hidden', {
