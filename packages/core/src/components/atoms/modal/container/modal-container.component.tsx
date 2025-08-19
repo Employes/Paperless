@@ -18,7 +18,7 @@ const container = cva(
 			size: {
 				xs: 'tablet:max-w-[20rem]',
 				base: 'tablet:max-w-[35rem]',
-				lg: 'tablet:max-w-[40rem]',
+				lg: 'tablet:max-w-[41rem]',
 				xl: 'tablet:max-w-[45rem]',
 				'2xl': 'tablet:max-w-[65rem]',
 			},
