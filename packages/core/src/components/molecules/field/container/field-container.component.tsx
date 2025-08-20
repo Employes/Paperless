@@ -4,7 +4,6 @@ import {
 	Element,
 	Event,
 	EventEmitter,
-	Fragment,
 	h,
 	Listen,
 	Prop,
@@ -183,17 +182,27 @@ export class FieldContainer {
 						'flex-row-reverse': this.align === 'end',
 					})}
 				>
-					{!!label?.length && (
+					{(!!label?.length || !!helper?.length) && (
 						<div
-							class='text-xs font-medium text-storm-300'
+							class='flex min-w-0 gap-2'
 							onClick={() => this.focus.emit()}
 						>
-							{label}
+							<span class='min-w-0 overflow-hidden text-ellipsis text-xs font-medium text-storm-300'>
+								{label}
+							</span>
+
+							{helper && (
+								<p-helper
+									class='flex flex-shrink-0'
+									placement='top'
+								>
+									{helper}
+								</p-helper>
+							)}
 						</div>
 					)}
 
 					{((!asBoolean(this.required) && asBoolean(this.showOptional)) ||
-						helper ||
 						hasHeaderSlot) && (
 						<div class='flex items-center gap-1'>
 							{!asBoolean(this.required) &&
@@ -204,19 +213,7 @@ export class FieldContainer {
 									</span>
 								)}
 
-							{(helper || hasHeaderSlot) && (
-								<Fragment>
-									{hasHeaderSlot && <slot name='header' />}
-									{helper && (
-										<p-helper
-											class={`flex ${hasHeaderSlot ? 'ml-2' : ''}`}
-											placement='top-end'
-										>
-											{helper}
-										</p-helper>
-									)}
-								</Fragment>
-							)}
+							{hasHeaderSlot && <slot name='header' />}
 						</div>
 					)}
 				</div>
