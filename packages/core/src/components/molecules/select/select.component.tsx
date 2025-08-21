@@ -384,14 +384,14 @@ export class Select {
 		this._selectValue(null);
 	}
 
-	formDisabledCallback(disabled: boolean) {
-		if (!this._internals.form) {
-			return;
-		}
-
-		this.disabled = disabled;
-	}
-
+	// formDisabledCallback(disabled: boolean) {
+	// 	if (!this._internals.form) {
+	// 		return;
+	// 	}
+	//
+	// 	//this.disabled = disabled;
+	// }
+	//
 	componentDidLoad() {
 		if (!this.valueKey && !this.identifierKey) {
 			throw new Error('You must provide a valueKey or identifierKey');
