@@ -67,6 +67,7 @@ const circle = cva(
 	tag: 'p-toggle',
 	styleUrl: 'toggle.component.css',
 	formAssociated: true,
+	scoped: true,
 })
 export class Toggle {
 	/**
