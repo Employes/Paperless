@@ -71,6 +71,7 @@ const circle = cva(
 	tag: 'p-radio',
 	styleUrl: 'radio.component.css',
 	formAssociated: true,
+	scoped: true,
 })
 export class Radio {
 	/**
