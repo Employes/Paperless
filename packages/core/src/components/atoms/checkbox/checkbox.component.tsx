@@ -10,6 +10,7 @@ import {
 import { cva } from 'class-variance-authority';
 import { asBoolean } from '../../../utils/as-boolean';
 import { nonce } from '../../../utils/nonce';
+import { ThemedHost } from '../../../internal/themed-host.component';
 
 const checkbox = cva(
 	[
@@ -22,11 +23,11 @@ const checkbox = cva(
 			disabled: {
 				false: [
 					'cursor-pointer shadow-1',
-					'bg-white border-storm-100',
-					'hover:bg-indigo-100 hover:border-storm-500/20',
+					'bg-white border-storm-100 dark:bg-white/10 dark:border-white/15',
+					'hover:bg-indigo-100 hover:border-storm-500/20 dark:hover:bg-white/20 dark:hover:border-white/15',
 					'group-hover/checkbox-label:bg-indigo-100 group-hover/checkbox-label:border-storm-100',
 					'checked:bg-indigo-600 checked:border-storm-500/20',
-					'checked:ring-2 checked:ring-indigo-100',
+					'checked:ring-2 checked:ring-indigo-100 dark:checked:ring-0',
 					'checked:hover:bg-indigo-700 checked:hover:border-storm-500/20',
 					'checked:group-hover/checkbox-label:bg-indigo-700 checked:group-hover/checkbox-label:border-storm-500/20',
 					'indeterminate:bg-indigo-600 indeterminate:border-storm-500/20',
@@ -34,7 +35,7 @@ const checkbox = cva(
 					'indeterminate:hover:bg-indigo-700 indeterminate:hover:border-storm-500/20',
 					'indeterminate:group-hover/checkbox-label:bg-indigo-700 indeterminate:group-hover/checkbox-label:border-storm-500/20',
 				],
-				true: 'bg-white-600 border-storm-50 cursor-not-allowed',
+				true: 'bg-white-600 border-storm-50 cursor-not-allowed dark:bg-white/5 dark:border-white/10',
 			},
 		},
 	}
@@ -49,7 +50,7 @@ const iconContainer = cva(
 		variants: {
 			disabled: {
 				false: 'text-white',
-				true: 'text-storm-200',
+				true: 'text-storm-200 dark:text-hurricane-300',
 			},
 		},
 	}
@@ -131,44 +132,46 @@ export class Checkbox {
 		const id = this.id?.length ? this.id : this._nonce;
 
 		return (
-			<label
-				htmlFor={id}
-				class='group/p-checkbox flex items-center justify-start gap-2'
-			>
-				<div class='relative flex flex-shrink-0 items-center'>
-					<input
-						class={checkbox({
-							disabled: asBoolean(this.disabled),
-						})}
-						type='checkbox'
-						id={id}
-						name={this.name}
-						required={asBoolean(this.required)}
-						checked={asBoolean(this.checked)}
-						indeterminate={asBoolean(this.indeterminate)}
-						disabled={asBoolean(this.disabled)}
-						onChange={ev => this._onChange(ev)}
-					/>
-					<div
-						class={iconContainer({
-							disabled: asBoolean(this.disabled),
-						})}
-					>
-						<p-icon
-							class={icon({
+			<ThemedHost>
+				<label
+					htmlFor={id}
+					class='group/p-checkbox flex items-center justify-start gap-2'
+				>
+					<div class='relative flex flex-shrink-0 items-center'>
+						<input
+							class={checkbox({
 								disabled: asBoolean(this.disabled),
 							})}
-							size='auto'
-							variant={
-								asBoolean(this.indeterminate) ? 'minus' : 'checkmarkThick'
-							}
+							type='checkbox'
+							id={id}
+							name={this.name}
+							required={asBoolean(this.required)}
+							checked={asBoolean(this.checked)}
+							indeterminate={asBoolean(this.indeterminate)}
+							disabled={asBoolean(this.disabled)}
+							onChange={ev => this._onChange(ev)}
 						/>
+						<div
+							class={iconContainer({
+								disabled: asBoolean(this.disabled),
+							})}
+						>
+							<p-icon
+								class={icon({
+									disabled: asBoolean(this.disabled),
+								})}
+								size='auto'
+								variant={
+									asBoolean(this.indeterminate) ? 'minus' : 'checkmarkThick'
+								}
+							/>
+						</div>
 					</div>
-				</div>
-				<div class='flex-1 overflow-hidden text-ellipsis'>
-					<slot />
-				</div>
-			</label>
+					<div class='flex-1 overflow-hidden text-ellipsis dark:text-white'>
+						<slot />
+					</div>
+				</label>
+			</ThemedHost>
 		);
 	}
 
