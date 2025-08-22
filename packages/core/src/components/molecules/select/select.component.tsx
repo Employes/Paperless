@@ -476,6 +476,7 @@ export class Select {
 					insideClick={true}
 					manual={true}
 					scrollable={this.enableAutocomplete ? 'large' : true}
+					disable-trigger-click={this.disabled}
 					show={this._showDropdown}
 					onIsOpen={ev => this._onDropdownOpen(ev)}
 					strategy={this.strategy}
@@ -488,7 +489,6 @@ export class Select {
 						chevron={
 							this.showChevron ? (this._showDropdown ? 'up' : 'down') : false
 						}
-						disabled={this.disabled}
 						active={this._showDropdown}
 						error={!!this.error?.length}
 						icon={buttonIcon}
