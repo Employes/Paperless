@@ -12,7 +12,7 @@ body {
 }
 
 body[data-theme='dark'] {
-	@apply bg-storm-test;
+	@apply bg-hurricane-700;
 }
 
 body:not([data-theme='dark']) {
