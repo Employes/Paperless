@@ -4,8 +4,8 @@ import { ThemedHost } from '../../../internal/themed-host.component';
 
 const sidebarAndTopbar = cva([
 	'transition',
-	'bg-off-white-300 dark:bg-storm-500',
-	'border-0 border-solid border-off-white-700 dark:border-black/10',
+	'bg-off-white-300 dark:bg-hurricane-800',
+	'border-0 border-solid border-off-white-700 dark:border-hurricane-500',
 	'p-4',
 ]);
 
