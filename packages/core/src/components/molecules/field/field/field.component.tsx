@@ -22,6 +22,7 @@ import {
 	IconVariant,
 } from '../../../atoms/icon/icon.component';
 import { templateFunc } from '../container/field-container.component';
+import { ThemedHost } from '../../../../internal/themed-host.component';
 
 const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 	variants: {
@@ -79,25 +80,27 @@ const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 			variant: 'write',
 			focused: false,
 			error: false,
-			class: 'border-storm-100',
+			class: 'border-storm-100 dark:border-hurricane-400',
 		},
 		{
 			variant: 'write',
 			disabled: false,
 			focused: true,
 			error: false,
-			class: 'border-indigo-600 ring ring-indigo-100 selection:bg-indigo-500',
+			class:
+				'border-indigo-600 ring dark:ring-0 ring-indigo-100 selection:bg-indigo-500',
 		},
 
 		{
 			variant: 'write',
 			disabled: false,
-			class: 'bg-white',
+			class: 'bg-white dark:bg-hurricane-500',
 		},
 		{
 			variant: 'write',
 			disabled: true,
-			class: 'bg-white-600  cursor-not-allowed',
+			class:
+				'bg-white-600 dark:bg-hurricane-600 dark:border-hurricane-500 cursor-not-allowed',
 		},
 
 		{
@@ -109,14 +112,15 @@ const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 			disabled: false,
 			focused: true,
 			error: true,
-			class: 'ring ring-negative-red-50 selection:bg-negative-red-50',
+			class:
+				'ring ring-negative-red-50 selection:bg-negative-red-50 dark:ring-0',
 		},
 	],
 });
 
 const input = cva(
 	[
-		'text-sm placeholder:text-sm placeholder:text-storm-500/40 text-storm-500',
+		'text-sm placeholder:text-sm placeholder:text-storm-500/40 dark:placeholder:text-hurricane-200',
 		'border-none  bg-transparent flex-1 min-w-0 p-0',
 		'outline-none focus:outline-none',
 		'font-geist',
@@ -130,6 +134,10 @@ const input = cva(
 			disabled: {
 				false: null,
 				true: 'cursor-not-allowed',
+			},
+			error: {
+				false: 'text-storm-500 dark:text-white',
+				true: 'text-negative-red-500',
 			},
 		},
 	}
@@ -145,7 +153,7 @@ const prefixAndSuffix = cva(
 			},
 			disabled: {
 				false: null,
-				true: 'text-storm-100',
+				true: 'text-storm-100 dark:text-hurricane-400',
 			},
 			focused: {
 				false: null,
@@ -169,14 +177,14 @@ const prefixAndSuffix = cva(
 				disabled: false,
 				focused: false,
 				error: false,
-				class: 'text-storm-300',
+				class: 'text-storm-300 dark:text-hurricane-300',
 			},
 
 			{
 				disabled: false,
 				focused: true,
 				error: false,
-				class: 'text-storm-500',
+				class: 'text-storm-500 dark:text-white',
 			},
 
 			{
@@ -415,126 +423,128 @@ export class Field {
 		} = this._getSlotInfo();
 
 		return (
-			<p-field-container
-				forceShowTooltip={
-					(!!this.error?.length && !this._focused && this.autoShowError) ||
-					(!!this.error?.length && this.forceShowTooltip)
-				}
-				id={id}
-				label={this.label}
-				align={this.align}
-				loading={this.loading}
-				loadingSize={this.size}
-				helper={this.helper}
-				error={this.error}
-				required={this.required}
-				showOptional={this.showOptional}
-				variant={this.variant}
-			>
-				{hasLabelSlot && (
-					<slot
-						name='label'
-						slot='label'
-					/>
-				)}
-
-				{hasHeaderSlot && (
-					<slot
-						name='header'
-						slot='header'
-					/>
-				)}
-
-				{hasHelperSlot && (
-					<slot
-						name='helper'
-						slot='helper'
-					/>
-				)}
-
-				{hasErrorSlot && (
-					<slot
-						name='error'
-						slot='error'
-					/>
-				)}
-
-				<div
-					class={field({
-						error: !!this.error?.length,
-						disabled: asBoolean(this.disabled),
-						focused: asBoolean(this.focused) || this._focused,
-						size: this.size,
-						variant: this.variant,
-						isTextarea: this.type === 'textarea',
-					})}
-					title={
-						this.variant === 'read' && !hasValueSlot
-							? `${this.value}`
-							: undefined
+			<ThemedHost>
+				<p-field-container
+					forceShowTooltip={
+						(!!this.error?.length && !this._focused && this.autoShowError) ||
+						(!!this.error?.length && this.forceShowTooltip)
 					}
-					slot='content'
+					id={id}
+					label={this.label}
+					align={this.align}
+					loading={this.loading}
+					loadingSize={this.size}
+					helper={this.helper}
+					error={this.error}
+					required={this.required}
+					showOptional={this.showOptional}
+					variant={this.variant}
 				>
-					{(this.error?.length ||
-						prefix ||
-						(this.icon && this.iconPosition === 'start')) && (
-						<div
-							class={prefixAndSuffix({
-								variant: this.variant,
-								error: !!this.error?.length,
-								disabled: asBoolean(this.disabled),
-								focused: asBoolean(this.focused) || this._focused,
-								isText: typeof suffix === 'string',
-								isTextarea: this.type === 'textarea',
-							})}
-							onClick={() => this._focusInput()}
-						>
-							{(this.icon && this.iconPosition === 'start') ||
-							this.error?.length ? (
-								<p-icon
-									class={cn('flex', {
-										'mt-1': this.variant === 'read' && this.size === 'base',
-									})}
-									variant={this.error?.length ? 'warning' : this.icon}
-									rotate={this.iconRotate}
-									flip={this.iconFlip}
-								/>
-							) : (
-								prefix
-							)}
-						</div>
+					{hasLabelSlot && (
+						<slot
+							name='label'
+							slot='label'
+						/>
 					)}
 
-					{this._getContent(hasValueSlot, id)}
-
-					{(suffix || (this.icon && this.iconPosition === 'end')) && (
-						<div
-							class={prefixAndSuffix({
-								variant: this.variant,
-								error: !!this.error?.length,
-								disabled: asBoolean(this.disabled),
-								focused: asBoolean(this.focused) || this._focused,
-								isText: typeof suffix === 'string',
-								isTextarea: this.type === 'textarea',
-							})}
-							onClick={() => this._focusInput()}
-						>
-							{this.icon && this.iconPosition === 'end' ? (
-								<p-icon
-									class={cn('flex', {
-										'mt-1': this.variant === 'read' && this.size === 'base',
-									})}
-									variant={this.icon}
-									rotate={this.iconRotate}
-									flip={this.iconFlip}
-								/>
-							) : (
-								suffix
-							)}
-						</div>
+					{hasHeaderSlot && (
+						<slot
+							name='header'
+							slot='header'
+						/>
 					)}
-				</div>
-			</p-field-container>
+
+					{hasHelperSlot && (
+						<slot
+							name='helper'
+							slot='helper'
+						/>
+					)}
+
+					{hasErrorSlot && (
+						<slot
+							name='error'
+							slot='error'
+						/>
+					)}
+
+					<div
+						class={field({
+							error: !!this.error?.length,
+							disabled: asBoolean(this.disabled),
+							focused: asBoolean(this.focused) || this._focused,
+							size: this.size,
+							variant: this.variant,
+							isTextarea: this.type === 'textarea',
+						})}
+						title={
+							this.variant === 'read' && !hasValueSlot
+								? `${this.value}`
+								: undefined
+						}
+						slot='content'
+					>
+						{(this.error?.length ||
+							prefix ||
+							(this.icon && this.iconPosition === 'start')) && (
+							<div
+								class={prefixAndSuffix({
+									variant: this.variant,
+									error: !!this.error?.length,
+									disabled: asBoolean(this.disabled),
+									focused: asBoolean(this.focused) || this._focused,
+									isText: typeof suffix === 'string',
+									isTextarea: this.type === 'textarea',
+								})}
+								onClick={() => this._focusInput()}
+							>
+								{(this.icon && this.iconPosition === 'start') ||
+								this.error?.length ? (
+									<p-icon
+										class={cn('flex', {
+											'mt-1': this.variant === 'read' && this.size === 'base',
+										})}
+										variant={this.error?.length ? 'warning' : this.icon}
+										rotate={this.iconRotate}
+										flip={this.iconFlip}
+									/>
+								) : (
+									prefix
+								)}
+							</div>
+						)}
+
+						{this._getContent(hasValueSlot, id)}
+
+						{(suffix || (this.icon && this.iconPosition === 'end')) && (
+							<div
+								class={prefixAndSuffix({
+									variant: this.variant,
+									error: !!this.error?.length,
+									disabled: asBoolean(this.disabled),
+									focused: asBoolean(this.focused) || this._focused,
+									isText: typeof suffix === 'string',
+									isTextarea: this.type === 'textarea',
+								})}
+								onClick={() => this._focusInput()}
+							>
+								{this.icon && this.iconPosition === 'end' ? (
+									<p-icon
+										class={cn('flex', {
+											'mt-1': this.variant === 'read' && this.size === 'base',
+										})}
+										variant={this.icon}
+										rotate={this.iconRotate}
+										flip={this.iconFlip}
+									/>
+								) : (
+									suffix
+								)}
+							</div>
+						)}
+					</div>
+				</p-field-container>
+			</ThemedHost>
 		);
 	}
 
@@ -650,6 +660,7 @@ export class Field {
 			class: input({
 				disabled: asBoolean(this.disabled),
 				isTextarea: this.type === 'textarea',
+				error: !!this.error?.length,
 			}),
 			value: this.value,
 			placeholder: this.placeholder,
