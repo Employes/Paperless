@@ -10,6 +10,7 @@ import {
 import { cva } from 'class-variance-authority';
 import { asBoolean } from '../../../utils/as-boolean';
 import { nonce } from '../../../utils/nonce';
+import { ThemedHost } from '../../../internal/themed-host.component';
 
 const toggle = cva(
 	[
@@ -22,15 +23,15 @@ const toggle = cva(
 			disabled: {
 				false: [
 					'cursor-pointer shadow-1',
-					'bg-storm-50 border-storm-100',
-					'hover:bg-indigo-100 hover:border-storm-500/20',
+					'bg-storm-50 border-storm-100 dark:bg-white/10 dark:border-white/15',
+					'hover:bg-indigo-100 hover:border-storm-500/20 dark:hover:bg-white/20 dark:hover:border-white/15',
 					'group-hover/toggle-label:bg-indigo-100 group-hover/toggle-label:border-storm-500/20',
 					'checked:bg-indigo-600 checked:border-storm-500/20',
-					'checked:ring-2 checked:ring-indigo-100',
+					'checked:ring-2 checked:ring-indigo-100 dark:checked:ring-0',
 					'checked:hover:bg-indigo-700 checked:hover:border-storm-500/20',
 					'checked:group-hover/toggle-label:bg-indigo-700 checked:group-hover/toggle-label:border-storm-500/20',
 				],
-				true: ['bg-white-600 border-storm-50 cursor-not-allowed'],
+				true: 'bg-white-600 border-storm-50 cursor-not-allowed dark:bg-white/5 dark:border-white/10',
 			},
 		},
 	}
@@ -53,7 +54,7 @@ const circle = cva(
 					'after:w-1 after:h-1 group-hover/p-toggle:after:w-2 group-hover/toggle-label:after:w-2',
 				],
 				true: [
-					'bg-storm-100 peer-checked:bg-storm-200',
+					'bg-storm-100 peer-checked:bg-storm-200 dark:bg-white/15 dark:peer-checked:bg-white/15',
 					'left-[2px] peer-checked:-translate-x-[calc(100%+2px)]',
 					'w-3 h-3',
 				],
@@ -122,34 +123,36 @@ export class Toggle {
 		const id = this.id?.length ? this.id : this._nonce;
 
 		return (
-			<label
-				htmlFor={id}
-				class='flex items-center justify-start gap-2'
-			>
-				<div class='group/p-toggle relative flex flex-shrink-0 items-center'>
-					<input
-						class={toggle({
-							disabled: asBoolean(this.disabled),
-						})}
-						type='checkbox'
-						id={id}
-						name={this.name}
-						required={this.required}
-						checked={!!this.checked}
-						disabled={asBoolean(this.disabled)}
-						onChange={ev => this._onChange(ev)}
-					/>
+			<ThemedHost>
+				<label
+					htmlFor={id}
+					class='flex items-center justify-start gap-2'
+				>
+					<div class='group/p-toggle relative flex flex-shrink-0 items-center'>
+						<input
+							class={toggle({
+								disabled: asBoolean(this.disabled),
+							})}
+							type='checkbox'
+							id={id}
+							name={this.name}
+							required={this.required}
+							checked={!!this.checked}
+							disabled={asBoolean(this.disabled)}
+							onChange={ev => this._onChange(ev)}
+						/>
 
-					<div
-						class={circle({
-							disabled: asBoolean(this.disabled),
-						})}
-					></div>
-				</div>
-				<div class='flex-1 overflow-hidden text-ellipsis'>
-					<slot />
-				</div>
-			</label>
+						<div
+							class={circle({
+								disabled: asBoolean(this.disabled),
+							})}
+						></div>
+					</div>
+					<div class='flex-1 overflow-hidden text-ellipsis dark:text-white'>
+						<slot />
+					</div>
+				</label>
+			</ThemedHost>
 		);
 	}
 
