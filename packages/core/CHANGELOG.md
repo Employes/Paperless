@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.13](https://github.com/ionic-team/stencil-component-starter/compare/v2.8.12...v2.8.13) (2025-08-22)
+
+
+### Bug Fixes
+
+* **molecules/select:** Apply disabled to the correct component ([a3587fd](https://github.com/ionic-team/stencil-component-starter/commit/a3587fd4e609859a2e4f13860f4ec76652db0561))
+
+
+
+
+
 ## [2.8.12](https://github.com/ionic-team/stencil-component-starter/compare/v2.8.11...v2.8.12) (2025-08-21)
 
 **Note:** Version bump only for package @paperless/core
