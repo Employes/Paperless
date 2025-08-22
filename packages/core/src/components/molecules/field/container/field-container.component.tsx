@@ -16,6 +16,7 @@ import {
 	getLocaleComponentStrings,
 } from '../../../../utils';
 import { asBoolean } from '../../../../utils/as-boolean';
+import { ThemedHost } from '../../../../internal/themed-host.component';
 
 const loader = cva(['rounded-lg w-full'], {
 	variants: {
@@ -171,77 +172,81 @@ export class FieldContainer {
 		}
 
 		return (
-			<label
-				htmlFor={this.id}
-				class={cn('flex w-inherit flex-col gap-1', {
-					'cursor-auto': this.variant === 'read',
-				})}
-			>
-				<div
-					class={cn('flex items-end justify-between gap-1 empty:hidden', {
-						'flex-row-reverse': this.align === 'end',
+			<ThemedHost>
+				<label
+					htmlFor={this.id}
+					class={cn('flex w-inherit flex-col gap-1', {
+						'cursor-auto': this.variant === 'read',
 					})}
 				>
-					{(!!label?.length || !!helper?.length) && (
-						<div
-							class='flex min-w-0 gap-2'
-							onClick={() => this.focus.emit()}
-						>
-							<span class='min-w-0 overflow-hidden text-ellipsis text-xs font-medium text-storm-300'>
-								{label}
-							</span>
+					<div
+						class={cn('flex items-end justify-between gap-1 empty:hidden', {
+							'flex-row-reverse': this.align === 'end',
+						})}
+					>
+						{(!!label?.length || !!helper?.length) && (
+							<div
+								class='flex min-w-0 gap-2'
+								onClick={() => this.focus.emit()}
+							>
+								<span class='min-w-0 overflow-hidden text-ellipsis text-xs font-medium text-storm-300 dark:text-hurricane-200'>
+									{label}
+								</span>
 
-							{helper && (
-								<p-helper
-									class='flex flex-shrink-0'
-									placement='top'
-								>
-									{helper}
-								</p-helper>
-							)}
-						</div>
-					)}
-
-					{((!asBoolean(this.required) && asBoolean(this.showOptional)) ||
-						hasHeaderSlot) && (
-						<div class='flex items-center gap-1'>
-							{!asBoolean(this.required) &&
-								asBoolean(this.showOptional) &&
-								this.variant === 'write' && (
-									<span class='text-xs font-medium text-storm-200'>
-										{this.optionalTemplate()}
-									</span>
+								{helper && (
+									<p-helper
+										class='flex flex-shrink-0'
+										placement='top'
+									>
+										{helper}
+									</p-helper>
 								)}
+							</div>
+						)}
 
-							{hasHeaderSlot && <slot name='header' />}
-						</div>
-					)}
-				</div>
+						{((!asBoolean(this.required) && asBoolean(this.showOptional)) ||
+							hasHeaderSlot) && (
+							<div class='flex items-center gap-1'>
+								{!asBoolean(this.required) &&
+									asBoolean(this.showOptional) &&
+									this.variant === 'write' && (
+										<span class='text-xs font-medium text-storm-200 dark:text-hurricane-300'>
+											{this.optionalTemplate()}
+										</span>
+									)}
 
-				<p-tooltip
-					class={cn({
-						'w-full': this.variant === 'write' || this.loading,
-						'ml-auto': this.align === 'end',
-						'font-normal': this.variant === 'read',
-					})}
-					variant='error'
-					content={this.error}
-					show={
-						errorAndErrorIsNotBoolean && asBoolean(this.forceShowTooltip, false)
-					}
-					enableUserInput={false}
-					placement={this.errorPlacement}
-				>
-					{hasErrorSlot && (
-						<slot
-							name='error'
-							slot='content'
-						/>
-					)}
+								{hasHeaderSlot && <slot name='header' />}
+							</div>
+						)}
+					</div>
 
-					{contentSlot}
-				</p-tooltip>
-			</label>
+					<p-tooltip
+						class={cn({
+							'w-full': this.variant === 'write' || this.loading,
+							'ml-auto': this.align === 'end',
+							'font-normal': this.variant === 'read',
+							'text-storm-500 dark:text-white': this.variant === 'read',
+						})}
+						variant='error'
+						content={this.error}
+						show={
+							errorAndErrorIsNotBoolean &&
+							asBoolean(this.forceShowTooltip, false)
+						}
+						enableUserInput={false}
+						placement={this.errorPlacement}
+					>
+						{hasErrorSlot && (
+							<slot
+								name='error'
+								slot='content'
+							/>
+						)}
+
+						{contentSlot}
+					</p-tooltip>
+				</label>
+			</ThemedHost>
 		);
 	}
 
