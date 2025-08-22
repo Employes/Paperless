@@ -13,12 +13,12 @@ import {
 	Event,
 	EventEmitter,
 	h,
-	Host,
 	Listen,
 	Prop,
 	Watch,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+import { ThemedHost } from '../../../internal/themed-host.component';
 
 const popover = cva(
 	[
@@ -33,7 +33,8 @@ const popover = cva(
 	{
 		variants: {
 			variant: {
-				hover: 'bg-storm-500 text-white py-1 max-w-[14.5rem]',
+				hover:
+					'bg-storm-500 dark:bg-white text-white dark:text-storm-300 py-1 max-w-[14.5rem]',
 				click: 'max-w-[18rem]',
 				error: 'max-w-full w-full',
 			},
@@ -49,7 +50,8 @@ const popover = cva(
 			},
 			{
 				variant: ['click', 'error'],
-				class: 'bg-white text-storm-300 py-2',
+				class:
+					'bg-white dark:bg-hurricane-800 text-storm-300 dark:text-hurricane-200 py-2',
 			},
 		],
 	}
@@ -139,7 +141,9 @@ export class Tooltip {
 
 	render() {
 		return (
-			<Host data-filled={this.content?.length > 0 || this._hasContentSlot}>
+			<ThemedHost
+				data-filled={this.content?.length > 0 || this._hasContentSlot}
+			>
 				<slot name='trigger' />
 				<div
 					class={popover({
@@ -157,7 +161,7 @@ export class Tooltip {
 						{this.content ? this.content : <slot name='content' />}
 					</div>
 				</div>
-			</Host>
+			</ThemedHost>
 		);
 	}
 
