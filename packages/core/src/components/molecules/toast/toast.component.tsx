@@ -2,6 +2,7 @@ import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 import { RotateOptions } from '../../../types';
 import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
 import { cva } from 'class-variance-authority';
+import { ThemedHost } from '../../../internal/themed-host.component';
 
 const indicator = cva('w-[2px] rounded-full h-9 flex-shrink-0', {
 	variants: {
@@ -70,32 +71,34 @@ export class Toast {
 
 	render() {
 		return (
-			<div
-				class='flex gap-2 rounded-lg border border-solid border-storm-100 bg-white p-2 shadow-2'
-				onClick={() => this._onClick()}
-			>
-				<div class={indicator({ variant: this.variant })} />
-				<div class={content()}>
-					<div class='flex w-full min-w-0 flex-col'>
-						<p class='m-0 overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold text-storm-500'>
-							{this.header?.length ? this.header : <slot name='header' />}
-						</p>
-						<p class='m-0 w-full overflow-hidden text-ellipsis whitespace-nowrap text-xs text-storm-300'>
-							{this.content?.length ? this.content : <slot name='content' />}
-						</p>
-					</div>
-
-					{this.enableAction && (
-						<div class='flex-shrink-0 cursor-pointer p-2 text-storm-200 hover:text-storm-500'>
-							<p-icon
-								variant={this.actionIcon}
-								flip={this.actionIconFlip}
-								rotate={this.actionIconRotate}
-							/>
+			<ThemedHost>
+				<div
+					class='flex gap-2 rounded-lg border border-solid border-storm-100 bg-white p-2 shadow-2 dark:border-hurricane-800 dark:bg-hurricane-800'
+					onClick={() => this._onClick()}
+				>
+					<div class={indicator({ variant: this.variant })} />
+					<div class={content()}>
+						<div class='flex w-full min-w-0 flex-col'>
+							<p class='m-0 overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold text-storm-500 dark:text-white'>
+								{this.header?.length ? this.header : <slot name='header' />}
+							</p>
+							<p class='m-0 w-full overflow-hidden text-ellipsis whitespace-nowrap text-xs text-storm-300 dark:text-hurricane-200'>
+								{this.content?.length ? this.content : <slot name='content' />}
+							</p>
 						</div>
-					)}
+
+						{this.enableAction && (
+							<div class='flex-shrink-0 cursor-pointer p-2 text-storm-200 hover:text-storm-500 hover:text-white dark:text-hurricane-200'>
+								<p-icon
+									variant={this.actionIcon}
+									flip={this.actionIconFlip}
+									rotate={this.actionIconRotate}
+								/>
+							</div>
+						)}
+					</div>
 				</div>
-			</div>
+			</ThemedHost>
 		);
 	}
 
