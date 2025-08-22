@@ -33,5 +33,4 @@ export const Default = {
 		mode=${mode ?? nothing}
 		@valueChange=${action('valueChange')}
 	/>`,
-	tags: ['!dev'],
 };

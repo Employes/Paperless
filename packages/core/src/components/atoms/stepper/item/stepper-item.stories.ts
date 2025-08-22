@@ -30,5 +30,4 @@ export const Default = {
 		finished=${finished ?? nothing}
 		active=${active ?? nothing}
 	>${content}</p-stepper-item>`,
-	tags: ['!dev'],
 };

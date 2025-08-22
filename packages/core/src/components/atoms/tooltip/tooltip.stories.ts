@@ -31,5 +31,4 @@ export const Default = {
 	>
 		<div slot="trigger">Hover/click me</div>
 	</p-tooltip>`,
-	tags: ['!dev'],
 };

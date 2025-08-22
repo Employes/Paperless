@@ -36,5 +36,4 @@ export const Default = {
 			Item 3
 		</p-dropdown-menu-item>
 	</p-dropdown-menu-container>`,
-	tags: ['!dev'],
 };

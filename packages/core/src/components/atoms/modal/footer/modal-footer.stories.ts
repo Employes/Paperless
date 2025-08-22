@@ -17,5 +17,4 @@ export default meta;
 
 export const Default = {
 	render: ({ content }) => html`<p-modal-footer>${content}</p-modal-footer>`,
-	tags: ['!dev'],
 };

@@ -24,5 +24,4 @@ export const Default = {
 	>
 		${content}
 	</p-drawer-container>`,
-	tags: ['!dev'],
 };

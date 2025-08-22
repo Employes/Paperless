@@ -21,5 +21,4 @@ export const Default = {
 	>
 		${content}
 	</p-table-row-actions-container>`,
-	tags: ['!dev'],
 };

@@ -21,5 +21,4 @@ export const Default = {
 		value=${value ?? nothing}
 		@valueChange=${action('valueChange')}
 	/>`,
-	tags: ['!dev'],
 };

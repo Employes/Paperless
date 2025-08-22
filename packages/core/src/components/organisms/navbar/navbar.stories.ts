@@ -50,5 +50,4 @@ export const Default = {
 			</div>
 		</p-profile>
 	</p-navbar>`,
-	tags: ['!dev'],
 };

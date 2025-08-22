@@ -69,5 +69,4 @@ export const Default = {
 			Submit
 		</p-button>
 	</p-modal>`,
-	tags: ['!dev'],
 };

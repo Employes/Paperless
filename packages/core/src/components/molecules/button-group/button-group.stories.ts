@@ -13,5 +13,4 @@ export const Default = {
 		<p-button>Two</p-button>
 		<p-button>Three</p-button>
 	</p-button-group>`,
-	tags: ['!dev'],
 };

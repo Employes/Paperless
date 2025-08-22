@@ -41,5 +41,4 @@ export const Default = {
 	>
 		${content}
 	</p-navigation-item>`,
-	tags: ['!dev'],
 };

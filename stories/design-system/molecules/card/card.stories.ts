@@ -99,5 +99,4 @@ export const Default = {
 		</p-card-header>
 		<p-card-body>${body}</p-card-body>
 	</p-card-container>`,
-	tags: ['!dev'],
 };

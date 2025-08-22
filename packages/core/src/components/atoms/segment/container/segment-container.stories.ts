@@ -18,7 +18,6 @@ export const Default = {
 		<p-segment-item>Item 4</p-segment-item>
 		<p-segment-item>Item 5</p-segment-item>
 	</p-segment-container>`,
-	tags: ['!dev'],
 };
 
 export const Block = {
@@ -45,5 +44,4 @@ export const Block = {
 			</p-segment-item>
 		</p-segment-container>
 	</div>`,
-	tags: ['!dev'],
 };

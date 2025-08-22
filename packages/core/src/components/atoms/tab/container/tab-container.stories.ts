@@ -18,5 +18,4 @@ export const Default = {
 		<p-tab-item>Item 4</p-tab-item>
 		<p-tab-item>Item 5</p-tab-item>
 	</p-tab-container>`,
-	tags: ['!dev'],
 };

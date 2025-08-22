@@ -36,5 +36,4 @@ export const Default = {
 		action-loading=${actionLoading ?? nothing}
 		@action=${action('action')}
 	/>`,
-	tags: ['!dev'],
 };

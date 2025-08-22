@@ -72,5 +72,4 @@ export const Default = {
 		placement=${placement ?? nothing}
 		@valueChange=${action('valueChange')}
 	/>`,
-	tags: ['!dev'],
 };

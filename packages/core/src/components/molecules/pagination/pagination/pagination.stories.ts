@@ -40,5 +40,4 @@ export const Default = {
 		@pageChange=${action('pageChange')}
 		@pageSizeChange=${action('pageSizeChange')}
 	/>`,
-	tags: ['!dev'],
 };

@@ -50,5 +50,4 @@ export const Default = {
 			  `
 			: nothing}
 	</p-segment-item>`,
-	tags: ['!dev'],
 };

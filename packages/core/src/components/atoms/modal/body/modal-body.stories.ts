@@ -30,5 +30,4 @@ export const Default = {
 	>
 		${content}
 	</p-modal-body>`,
-	tags: ['!dev'],
 };

@@ -39,5 +39,4 @@ export const Default = {
 		@upload=${action('upload')}
 	>
 	</p-attachment>`,
-	tags: ['!dev'],
 };

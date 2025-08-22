@@ -35,5 +35,4 @@ export const Default = {
 	>
 		${content}
 	</p-accordion>`,
-	tags: ['!dev'],
 };

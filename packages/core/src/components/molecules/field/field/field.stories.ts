@@ -79,7 +79,6 @@ export const Default = {
 		@inputRefChange=${action('inputRefChange')}
 		@add=${action('add clicked')}
 	/>`,
-	tags: ['!dev'],
 };
 
 export const OverflowReadOnly = {
@@ -147,7 +146,6 @@ export const OverflowReadOnly = {
 			This is a very very very very very very long t;ext
 		</a>
 	</p-field>`,
-	tags: ['!dev'],
 };
 
 const withPreventDefault = handler => e => {
@@ -164,5 +162,4 @@ export const InsideForm = {
 			</p-field>
 			<p-button type="submit">Submitt</p-button>
 		</form> `,
-	tags: ['!dev'],
 };

@@ -40,5 +40,4 @@ export const Default = {
 	>
 		${content}
 	</p-table-cell>`,
-	tags: ['!dev'],
 };

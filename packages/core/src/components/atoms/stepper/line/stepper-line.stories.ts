@@ -15,5 +15,4 @@ export const Default = {
 		active=${active ?? nothing}
 		direction=${direction ?? nothing}
 	/>`,
-	tags: ['!dev'],
 };

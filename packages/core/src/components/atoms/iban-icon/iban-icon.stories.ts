@@ -15,5 +15,4 @@ export const Default = {
 		iban=${iban ?? nothing}
 		variant=${variant ?? nothing}
 	/>`,
-	tags: ['!dev'],
 };

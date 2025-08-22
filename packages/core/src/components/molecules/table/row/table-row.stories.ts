@@ -26,5 +26,4 @@ export const Default = {
 	>
 		${content}
 	</p-table-row>`,
-	tags: ['!dev'],
 };

@@ -44,5 +44,4 @@ export const Default = {
 			</p-card-body>
 		</p-card-container>
 	</p-content-slider>`,
-	tags: ['!dev'],
 };

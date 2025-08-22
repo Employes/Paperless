@@ -36,5 +36,4 @@ export const Default = {
 	>
 		${content}
 	</p-floating-menu-item>`,
-	tags: ['!dev'],
 };

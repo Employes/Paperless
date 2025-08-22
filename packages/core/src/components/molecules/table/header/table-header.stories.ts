@@ -48,5 +48,4 @@ export const Default = {
 		@filter=${action('filter')}
 		@action=${action('action')}
 	/>`,
-	tags: ['!dev'],
 };

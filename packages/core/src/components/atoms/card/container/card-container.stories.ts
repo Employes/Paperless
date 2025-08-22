@@ -32,5 +32,4 @@ export const Default = {
 	>
 		${content}
 	</p-card-container>`,
-	tags: ['!dev'],
 };

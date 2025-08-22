@@ -22,7 +22,6 @@ export const Default = {
 		closeable=${closeable ?? nothing}
 		@closed=${action('closed')}
 	/>`,
-	tags: ['!dev'],
 };
 
 export const WithIcons = {
@@ -41,5 +40,4 @@ export const WithIcons = {
 			<p-icon variant="placeholder"></p-icon>
 		</div>
 	</p-info-panel>`,
-	tags: ['!dev'],
 };

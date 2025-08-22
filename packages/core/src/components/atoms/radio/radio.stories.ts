@@ -36,5 +36,4 @@ export const Default = {
 	>
 		${content}
 	</p-radio>`,
-	tags: ['!dev'],
 };

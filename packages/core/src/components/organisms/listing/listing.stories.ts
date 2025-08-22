@@ -30,5 +30,4 @@ export const Default = {
 			<p class="text-xs text-storm-300">Sub text of item 3</p>
 		</p-listing-item>
 	</p-listing>`,
-	tags: ['!dev'],
 };

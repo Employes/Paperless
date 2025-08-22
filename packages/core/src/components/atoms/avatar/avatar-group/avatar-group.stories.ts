@@ -24,5 +24,4 @@ export const Default = {
 	>
 		${content}
 	</p-avatar-group>`,
-	tags: ['!dev'],
 };

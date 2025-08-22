@@ -21,5 +21,4 @@ export const Default = {
 		src=${src ?? nothing}
 		letters=${letters ?? nothing}
 	/>`,
-	tags: ['!dev'],
 };

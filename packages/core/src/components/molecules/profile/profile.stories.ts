@@ -41,7 +41,6 @@ export const Default = {
 				letters="A"
 			/>
 		</p-profile>`,
-	tags: ['!dev'],
 };
 
 export const Dropdown = {
@@ -61,5 +60,4 @@ export const Dropdown = {
 				/>
 			</p-profile>
 		</div>`,
-	tags: ['!dev'],
 };

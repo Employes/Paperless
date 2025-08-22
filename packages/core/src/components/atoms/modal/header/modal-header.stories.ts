@@ -24,5 +24,4 @@ export const Default = {
 	>
 		${content}
 	</p-modal-header>`,
-	tags: ['!dev'],
 };

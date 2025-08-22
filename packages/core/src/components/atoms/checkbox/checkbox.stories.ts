@@ -37,5 +37,4 @@ export const Default = {
 	>
 		${content}
 	</p-checkbox>`,
-	tags: ['!dev'],
 };

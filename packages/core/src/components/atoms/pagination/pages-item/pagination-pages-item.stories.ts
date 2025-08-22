@@ -30,5 +30,4 @@ export const Default = {
 	>
 		${content}
 	</p-pagination-pages-item>`,
-	tags: ['!dev'],
 };

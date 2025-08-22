@@ -40,5 +40,4 @@ export const Default = {
 	>
 		${content}
 	</p-dropdown-menu-item>`,
-	tags: ['!dev'],
 };
