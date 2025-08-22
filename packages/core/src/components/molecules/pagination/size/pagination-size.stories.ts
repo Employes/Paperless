@@ -21,5 +21,4 @@ export const Default = {
 		hidden=${hidden ?? nothing}
 		@sizeChange=${action('sizeChange')}
 	/>`,
-	tags: ['!dev'],
 };

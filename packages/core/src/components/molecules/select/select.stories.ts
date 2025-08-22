@@ -156,5 +156,4 @@ export const Default = {
 		@dropdownShown=${action('dropdownShown')}
 		@add=${action('add')}
 	/>`,
-	tags: ['!dev'],
 };

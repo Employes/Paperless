@@ -25,5 +25,4 @@ export const Default = {
 					${content}
 			  </p-divider>`
 			: html`<p-divider variant=${variant ?? nothing} />`,
-	tags: ['!dev'],
 };

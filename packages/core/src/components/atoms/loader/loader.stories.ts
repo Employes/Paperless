@@ -32,5 +32,4 @@ export const Default = {
 	>
 		${content}
 	</p-loader>`,
-	tags: ['!dev'],
 };

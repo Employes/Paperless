@@ -47,5 +47,4 @@ export const Default = {
 	>
 		<div slot="content">${content ?? nothing}</div>
 	</p-field-container>`,
-	tags: ['!dev'],
 };

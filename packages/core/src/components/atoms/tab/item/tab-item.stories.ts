@@ -22,5 +22,4 @@ export const Default = {
 	render: ({ content, active }) => html`<p-tab-item active=${active ?? nothing}>
 		${content}
 	</p-tab-item>`,
-	tags: ['!dev'],
 };

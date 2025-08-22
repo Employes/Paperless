@@ -9,5 +9,4 @@ export default meta;
 
 export const Default = {
 	render: ({ variant }) => html`<p-smile variant=${variant ?? nothing} />`,
-	tags: ['!dev'],
 };

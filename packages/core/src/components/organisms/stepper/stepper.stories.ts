@@ -32,7 +32,6 @@ export const Horizontal = {
 		steps=${steps ?? nothing}
 	>
 	</p-stepper>`,
-	tags: ['!dev'],
 };
 
 export const Vertical = {
@@ -72,5 +71,4 @@ export const Vertical = {
 			</p-card-container>
 		</p-stepper-item>
 	</p-stepper>`,
-	tags: ['!dev'],
 };

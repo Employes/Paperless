@@ -14,5 +14,4 @@ export const Default = {
 	render: ({ variant }) => html`<p-illustration
 		variant=${variant ?? nothing}
 	/>`,
-	tags: ['!dev'],
 };

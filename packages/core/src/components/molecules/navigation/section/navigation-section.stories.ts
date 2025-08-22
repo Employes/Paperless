@@ -24,5 +24,4 @@ export const Default = {
 	>
 		${content}
 	</p-navigation-section>`,
-	tags: ['!dev'],
 };

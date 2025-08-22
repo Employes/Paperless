@@ -9,5 +9,4 @@ export default meta;
 
 export const Default = {
 	render: () => html`<p-listing-line />`,
-	tags: ['!dev'],
 };

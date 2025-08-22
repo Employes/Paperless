@@ -20,5 +20,4 @@ export const Default = {
 		return-type=${returnType ?? nothing}
 		@valueChange=${action('valueChange')}
 	/>`,
-	tags: ['!dev'],
 };

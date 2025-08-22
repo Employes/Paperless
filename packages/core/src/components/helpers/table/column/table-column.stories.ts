@@ -31,5 +31,4 @@ export const Default = {
 		sizes=${sizes ?? nothing}
 		@tableDefinitionChanged=${action('tableDefinitionChanged')}
 	/>`,
-	tags: ['!dev'],
 };

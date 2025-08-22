@@ -37,5 +37,4 @@ export const Default = {
 	>
 		${content}
 	</p-toggle>`,
-	tags: ['!dev'],
 };

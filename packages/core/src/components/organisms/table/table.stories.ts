@@ -252,5 +252,4 @@ export const Default = {
 			</p-table>
 		`;
 	},
-	tags: ['!dev'],
 };

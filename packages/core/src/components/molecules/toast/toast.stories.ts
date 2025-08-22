@@ -32,5 +32,4 @@ export const Default = {
 		action-icon-rotate=${actionIconRotate ?? nothing}
 		@action=${action('action')}
 	/>`,
-	tags: ['!dev'],
 };

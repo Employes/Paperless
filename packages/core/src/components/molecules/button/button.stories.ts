@@ -61,5 +61,4 @@ export const Default = {
 		@onClick=${action('onClick')}
 	>
 	</p-button>`,
-	tags: ['!dev'],
 };

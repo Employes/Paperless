@@ -31,5 +31,4 @@ export const Default = {
 		loading=${loading ?? nothing}
 		show-function=${showFunction ?? nothing}
 	/>`,
-	tags: ['!dev'],
 };

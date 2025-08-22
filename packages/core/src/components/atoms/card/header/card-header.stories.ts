@@ -23,5 +23,4 @@ export const Default = {
 		icon-rotate=${iconRotate ?? nothing}
 		icon-flip=${iconFlip ?? nothing}
 	/>`,
-	tags: ['!dev'],
 };

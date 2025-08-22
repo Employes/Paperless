@@ -50,5 +50,4 @@ export const Default = {
 			</p-card-body>
 		</p-card-container>
 	</p-drawer>`,
-	tags: ['!dev'],
 };

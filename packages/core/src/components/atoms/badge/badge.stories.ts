@@ -17,5 +17,4 @@ export default meta;
 
 export const Default = {
 	render: ({ content }) => html`<p-badge>${content}</p-badge>`,
-	tags: ['!dev'],
 };

@@ -19,5 +19,4 @@ export const Default = {
 	render: ({
 		content,
 	}) => html`<p-navigation-title>${content}</p-navigation-title>`,
-	tags: ['!dev'],
 };

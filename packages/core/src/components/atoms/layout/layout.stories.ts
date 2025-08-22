@@ -13,5 +13,4 @@ export const Default = {
 	}) => html`<p-layout
 		variant=${variant ?? nothing}
 	/>`,
-	tags: ['!dev'],
 };

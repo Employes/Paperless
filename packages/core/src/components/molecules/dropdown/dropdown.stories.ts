@@ -55,5 +55,4 @@ export const Default = {
 			<p-dropdown-menu-item>Item 3</p-dropdown-menu-item>
 		</slot>
 	</p-dropdown>`,
-	tags: ['!dev'],
 };

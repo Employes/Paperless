@@ -20,5 +20,4 @@ export const Default = {
 		icon,
 		content
 	}) => html`<p-listing-item icon=${icon ?? nothing}>${content}</p-listing-item>`,
-	tags: ['!dev'],
 };

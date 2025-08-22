@@ -21,5 +21,4 @@ export const Default = {
 	>
 		${content}
 	</p-card-body>`,
-	tags: ['!dev'],
 };
