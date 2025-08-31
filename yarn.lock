@@ -10790,10 +10790,10 @@ eslint-module-utils@^2.12.0, eslint-module-utils@^2.8.0:
   dependencies:
     debug "^3.2.7"
 
-eslint-plugin-ava@14.0.0:
-  version "14.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-ava/-/eslint-plugin-ava-14.0.0.tgz#3319e5e470342c17a467a3a3e08b0cebb88050ca"
-  integrity sha512-XmKT6hppaipwwnLVwwvQliSU6AF1QMHiNoLD5JQfzhUhf0jY7CO0O624fQrE+Y/fTb9vbW8r77nKf7M/oHulxw==
+eslint-plugin-ava@15.1.0:
+  version "15.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-ava/-/eslint-plugin-ava-15.1.0.tgz#546e55e06e76f42fea630c6bb4c403394ea7c661"
+  integrity sha512-+6Zxk1uYW3mf7lxCLWIQsFYgn3hfuCMbsKc0MtqfloOz1F6fiV5/PaWEaLgkL1egrSQmnyR7vOFP1wSPJbVUbw==
   dependencies:
     enhance-visitors "^1.0.0"
     eslint-utils "^3.0.0"
