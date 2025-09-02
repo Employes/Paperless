@@ -1,4 +1,5 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
+import { ThemedHost } from '../../../../internal/themed-host.component';
 
 @Component({
 	tag: 'p-navigation-section',
@@ -12,7 +13,7 @@ export class NavigationSection {
 
 	render() {
 		return (
-			<Host class='flex flex-col gap-2'>
+			<ThemedHost class='flex flex-col gap-2'>
 				{this.header?.length > 0 && (
 					<p-navigation-title>{this.header}</p-navigation-title>
 				)}
@@ -20,7 +21,7 @@ export class NavigationSection {
 				<div class='flex flex-col'>
 					<slot />
 				</div>
-			</Host>
+			</ThemedHost>
 		);
 	}
 }
