@@ -1,4 +1,5 @@
-import { Component, h, Host } from '@stencil/core';
+import { Component, h } from '@stencil/core';
+import { ThemedHost } from '../../../internal/themed-host.component';
 
 @Component({
 	tag: 'p-navigation-title',
@@ -8,9 +9,9 @@ import { Component, h, Host } from '@stencil/core';
 export class NavigationTitle {
 	render() {
 		return (
-			<Host class='text-xs font-medium text-storm-300'>
+			<ThemedHost class='text-xs font-medium text-storm-300 dark:text-hurricane-200'>
 				<slot />
-			</Host>
+			</ThemedHost>
 		);
 	}
 }
