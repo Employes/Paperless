@@ -65,7 +65,7 @@ export class Icon {
 
 	componentWillRender() {
 		const icon = icons[this.variant];
-		if (!icon) {
+		if (!icon && this.variant !== undefined) {
 			console.warn(`[p-icon] Variant "${this.variant}" does not exist `);
 		}
 	}
