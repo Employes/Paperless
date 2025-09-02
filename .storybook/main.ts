@@ -66,6 +66,9 @@ const config: StorybookConfig = {
 					},
 				},
 			},
+			server: {
+				allowedHosts: ['0.0.0.0', 'employes.local', 'laptop.local'],
+			},
 		});
 	},
 	// https://storybook.js.org/docs/react/configure/typescript#mainjs-configuration
