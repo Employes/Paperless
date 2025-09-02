@@ -1,21 +1,14 @@
-import {
-	Component,
-	Event,
-	EventEmitter,
-	h,
-	Host,
-	Listen,
-	Prop,
-} from '@stencil/core';
+import { Component, Event, EventEmitter, h, Listen, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+import { ThemedHost } from '../../../internal/themed-host.component';
 import { RotateOptions } from '../../../types/tailwind';
-import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
 import { asBoolean } from '../../../utils/as-boolean';
 import { cn } from '../../../utils/cn';
+import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
 
 const button = cva(
 	[
-		'group',
+		'group/p-button',
 		'font-semibold leading-4',
 		'flex items-center justify-center',
 		'cursor-pointer',
@@ -65,7 +58,7 @@ const button = cva(
 			// variants
 			{
 				variant: ['secondary', 'dropdown'],
-				class: 'bg-white',
+				class: 'bg-white dark:bg-white/15',
 			},
 			{
 				variant: ['primary', 'secondary', 'dropdown'],
@@ -91,7 +84,11 @@ const button = cva(
 				variant: ['secondary', 'dropdown'],
 				disabled: false,
 				error: false,
-				class: 'text-storm-500',
+				class: 'text-storm-500 dark:text-white',
+			},
+			{
+				variant: 'primary',
+				class: 'dark:border-0 dark:active:border-0',
 			},
 			{
 				variant: 'primary',
@@ -108,7 +105,7 @@ const button = cva(
 				disabled: false,
 				loading: false,
 				class: [
-					'active:border-storm-500/10 active:ring active:ring-2 active:text-white/60',
+					'active:border-storm-500/10 dark:active:ring-0 active:ring-2 active:text-white/60',
 					'drop-shadow-primary-button hover:drop-shadow-2 hover:bg-indigo-700 active:ring-indigo-100',
 				],
 			},
@@ -129,26 +126,32 @@ const button = cva(
 			{
 				variant: ['secondary', 'dropdown'],
 				disabled: true,
-				class: 'border bg-white-600 text-storm-100',
+				class:
+					'border bg-white-600 text-storm-100 dark:bg-white/5 dark:border-white/5 dark:text-hurricane-400',
 			},
 			{
 				variant: ['secondary', 'dropdown'],
 				disabled: false,
-				class: 'text-storm-500',
+				class: 'text-storm-500 dark:text-white',
 			},
 			{
 				variant: ['secondary', 'dropdown'],
 				disabled: false,
 				loading: false,
-				class:
+				class: [
 					'drop-shadow-1 hover:drop-shadow-1 hover:bg-white-600 active:ring-indigo-100 active:text-storm-500/60',
+					'dark:hover:bg-white/25 dark:active:bg-white/25 dark:active:ring-0 dark:active:text-white/60',
+				],
 			},
 			{
 				variant: ['secondary', 'dropdown'],
 				disabled: false,
 				loading: false,
 				error: false,
-				class: 'active:border-indigo-600 active:ring active:ring-2',
+				class: [
+					'active:border-indigo-600 active:ring active:ring-2',
+					'dark:active:ring-0',
+				],
 			},
 			{
 				variant: ['secondary', 'dropdown'],
@@ -156,13 +159,13 @@ const button = cva(
 				loading: false,
 				active: true,
 				error: false,
-				class: 'border-indigo-600 ring ring-2 ring-indigo-100',
+				class: ['border-indigo-600 ring ring-2 ring-indigo-100', 'dark:ring-0'],
 			},
 			{
 				variant: ['secondary', 'dropdown'],
 				error: false,
 				active: false,
-				class: ['border-storm-500/20'],
+				class: ['border-storm-500/20 dark:border-transparent'],
 			},
 			{
 				variant: ['secondary', 'dropdown'],
@@ -265,7 +268,7 @@ const icon = cva([], {
 			active: false,
 			error: false,
 			class:
-				'text-indigo-300 group-hover:text-white group-active:text-white/60',
+				'text-indigo-300 group-hover/p-button:text-white group-active/p-button:text-white/60',
 		},
 		{
 			variant: 'primary',
@@ -278,28 +281,30 @@ const icon = cva([], {
 			disabled: false,
 			active: false,
 			error: false,
-			class:
-				'text-storm-300 group-hover:text-storm-500 group-active:text-storm-500/60',
+			class: [
+				'text-storm-300 group-hover/p-button:text-storm-500 group-active/p-button:text-storm-500/60',
+				'dark:text-hurricane-200 dark:group-hover/p-button:text-white dark:group-active/p-button:text-white/60',
+			],
 		},
 		{
 			variant: ['secondary', 'dropdown'],
 			disabled: false,
 			active: true,
 			error: false,
-			class: 'text-storm-500/60',
+			class: 'text-storm-500/60 dark:text-white/60',
 		},
 		{
 			variant: ['transparent', 'text'],
 			disabled: false,
 			active: false,
 			class:
-				'text-indigo-500 group-hover:text-indigo-700 group-active:text-indigo-800',
+				'text-indigo-500 group-hover/p-button:text-indigo-700 group-active/p-button:text-indigo-800',
 		},
 		{
 			variant: ['secondary', 'dropdown'],
 			active: false,
 			error: true,
-			class: 'text-negative-red-500 group-hover:text-negative-red-800',
+			class: 'text-negative-red-500 group-hover/p-button:text-negative-red-800',
 		},
 		{
 			variant: ['secondary', 'dropdown'],
@@ -462,7 +467,7 @@ export class Button {
 		const active = asBoolean(this.active) || hostClass?.includes('active');
 
 		return (
-			<Host class={hostClass}>
+			<ThemedHost class={hostClass}>
 				<VariableTag
 					disabled={asBoolean(this.disabled)}
 					href={this.href}
@@ -508,7 +513,7 @@ export class Button {
 
 					{this.loading && <p-loader color={loaderColor} />}
 				</VariableTag>
-			</Host>
+			</ThemedHost>
 		);
 	}
 
