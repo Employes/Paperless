@@ -1,7 +1,11 @@
 import { FunctionalComponent, h, Host } from '@stencil/core';
 import { state } from '../state';
+import { HostAttributes } from '@stencil/core/internal';
 
-export const ThemedHost: FunctionalComponent = (props, children) => {
+export const ThemedHost: FunctionalComponent<HostAttributes> = (
+	props,
+	children
+) => {
 	return (
 		<Host
 			{...props}
