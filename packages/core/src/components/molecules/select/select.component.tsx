@@ -36,12 +36,16 @@ const multiItem = cva([
 const textContainer = cva('block w-full overflow-hidden text-start', {
 	variants: {
 		variant: {
-			placeholder: 'text-storm-400',
+			placeholder: 'text-storm-400 dark:text-white',
 			default: null,
 		},
 		enableTextWrap: {
 			true: false,
 			false: 'text-ellipsis whitespace-nowrap',
+		},
+		error: {
+			true: 'text-negative-red-700 dark:text-negative-red-alternative group-hover/button:text-negative-red-800',
+			false: null,
 		},
 	},
 });
@@ -901,6 +905,7 @@ export class Select {
 			<div
 				class={textContainer({
 					variant: 'default',
+					error: !!this.error?.length,
 					enableTextWrap: this.enableTextWrap && !isSelection,
 				})}
 			>
@@ -925,6 +930,7 @@ export class Select {
 					<div
 						class={textContainer({
 							variant: 'default',
+							error: !!this.error?.length,
 							enableTextWrap: this.enableTextWrap && !isSelection,
 						})}
 					>
@@ -950,6 +956,7 @@ export class Select {
 					<div
 						class={textContainer({
 							variant: 'default',
+							error: !!this.error?.length,
 							enableTextWrap: this.enableTextWrap && !isSelection,
 						})}
 					>
