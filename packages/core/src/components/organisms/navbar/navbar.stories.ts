@@ -32,6 +32,18 @@ export const Default = {
 			</p-profile>
 		</div>
 
+		<p-navigation-section
+			header="title"
+			slot="content"
+		>
+			<p-navigation-item icon="user">Item</p-navigation-item>
+			<p-navigation-item
+				active
+				icon="user"
+				>Item</p-navigation-item
+			>
+		</p-navigation-section>
+
 		<p-profile slot="user">
 			<p-avatar
 				slot="avatar"
@@ -46,7 +58,13 @@ export const Default = {
 				</p-profile>
 				<p-divider></p-divider>
 				<p-dropdown-menu-item icon="user"> Person </p-dropdown-menu-item>
-				<p-dropdown-menu-item icon="upload"> Signout </p-dropdown-menu-item>
+				<p-dropdown-menu-item
+					variant="negative"
+					icon="wave"
+					icon-wave
+				>
+					Signout
+				</p-dropdown-menu-item>
 			</div>
 		</p-profile>
 	</p-navbar>`,
