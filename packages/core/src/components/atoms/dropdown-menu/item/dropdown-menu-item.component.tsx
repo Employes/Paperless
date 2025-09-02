@@ -3,6 +3,7 @@ import { cva } from 'class-variance-authority';
 import { asBoolean } from '../../../../utils/as-boolean';
 import { IconVariant } from '../../icon/icon.component';
 import { cn } from '../../../../utils';
+import { ThemedHost } from '../../../../internal/themed-host.component';
 
 const dropdownMenuItem = cva(
 	[
@@ -38,48 +39,49 @@ const dropdownMenuItem = cva(
 				active: false,
 				enableHover: true,
 				disabled: false,
-				class: 'hover:bg-indigo-50',
+				class: 'hover:bg-indigo-50 dark:hover:bg-indigo-600/10',
 			},
 			{
 				variant: 'default',
 				active: true,
 				disabled: false,
-				class: 'bg-indigo-100',
+				class: 'bg-indigo-100 dark:bg-indigo-600/20',
 			},
 			{
 				variant: 'default',
 				disabled: false,
-				class: 'text-storm-500',
+				class: 'text-storm-500 dark:text-white',
 			},
 			{
 				variant: 'default',
 				disabled: true,
-				class: 'text-storm-200',
+				class: 'text-storm-200 dark:text-hurricane-300',
 			},
 			{
 				variant: 'default',
 				disabled: true,
 				active: true,
-				class: 'bg-indigo-50',
+				class: 'bg-indigo-50 dark:bg-white/5',
 			},
 
 			{
 				variant: 'storm',
 				active: false,
 				enableHover: true,
-				class: 'text-white',
+				class: 'text-white dark:text-storm-500',
 			},
 			{
 				variant: 'storm',
 				active: false,
 				enableHover: true,
 				disabled: false,
-				class: 'hover:bg-storm-500',
+				class: 'hover:bg-storm-500 dark:hover:bg-storm-500/15',
 			},
 			{
 				variant: 'storm',
 				active: true,
-				class: 'text-white bg-storm-600',
+				class:
+					'text-white bg-storm-600 dark:text-storm-500 dark:bg-storm-500/20',
 			},
 			{
 				variant: 'storm',
@@ -92,13 +94,15 @@ const dropdownMenuItem = cva(
 				active: false,
 				enableHover: true,
 				disabled: false,
-				class: 'text-negative-red-500 hover:bg-negative-red-50',
+				class:
+					'text-negative-red-500 hover:bg-negative-red-50 dark:hover:bg-negative-red-500/10',
 			},
 			{
 				variant: 'negative',
 				active: true,
 				disabled: false,
-				class: 'bg-negative-red-100 text-negative-red-500',
+				class:
+					'bg-negative-red-100 text-negative-red-500 dark:bg-negative-red-500/15',
 			},
 			{
 				variant: 'negative',
@@ -146,27 +150,34 @@ const dropdownMenuItemIcon = cva(['text-base'], {
 			variant: 'default',
 			active: false,
 			disabled: false,
-			class: 'text-storm-300 group-hover:text-storm-500',
+			class: [
+				'text-storm-300 group-hover:text-storm-500',
+				'dark:text-hurricane-200 dark:group-hover:text-white',
+			],
 		},
 
 		{
 			variant: 'storm',
 			active: false,
 			disabled: false,
-			class: 'text-storm-100 group-hover:text-white',
+			class: [
+				'text-storm-100 group-hover:text-white',
+				'dark:text-storm-300 dark:group-hover:text-storm-500',
+			],
 		},
 
 		{
 			variant: 'negative',
 			active: false,
 			disabled: false,
-			class: 'text-negative-red-500 group-hover:text-negative-red-800',
+			class:
+				'text-negative-red-500 group-hover:text-negative-red-800 dark:text-negative-red-800 dark:group-hover:text-negative-red-500',
 		},
 		{
 			variant: 'negative',
 			active: true,
 			disabled: false,
-			class: 'text-negative-red-800',
+			class: 'text-negative-red-800 dark:text-negative-red-500',
 		},
 	],
 });
@@ -224,46 +235,48 @@ export class DropdownMenuItem {
 
 	render() {
 		return (
-			<div
-				class={dropdownMenuItem({
-					variant: this.variant,
-					active: asBoolean(this.active),
-					enableHover: asBoolean(this.enableHover ?? true, true),
-					enableTextWrap: this.enableTextWrap,
-					disabled: asBoolean(this.disabled),
-				})}
-			>
-				{this.icon && (
-					<p-icon
-						class={dropdownMenuItemIcon({
-							variant: this.variant,
-							active: asBoolean(this.active),
-							disabled: asBoolean(this.disabled),
-							wave: asBoolean(this.iconWave),
-						})}
-						variant={this.icon}
-					/>
-				)}
+			<ThemedHost>
+				<div
+					class={dropdownMenuItem({
+						variant: this.variant,
+						active: asBoolean(this.active),
+						enableHover: asBoolean(this.enableHover ?? true, true),
+						enableTextWrap: this.enableTextWrap,
+						disabled: asBoolean(this.disabled),
+					})}
+				>
+					{this.icon && (
+						<p-icon
+							class={dropdownMenuItemIcon({
+								variant: this.variant,
+								active: asBoolean(this.active),
+								disabled: asBoolean(this.disabled),
+								wave: asBoolean(this.iconWave),
+							})}
+							variant={this.icon}
+						/>
+					)}
 
-				{this.checkbox && (
-					<p-checkbox
-						checked={this.active}
-						disabled={this.disabled}
-					/>
-				)}
+					{this.checkbox && (
+						<p-checkbox
+							checked={this.active}
+							disabled={this.disabled}
+						/>
+					)}
 
-				{this.useContainer ? (
-					<div
-						class={cn('block w-full overflow-hidden text-start', {
-							'text-ellipsis whitespace-nowrap': !this.enableTextWrap,
-						})}
-					>
+					{this.useContainer ? (
+						<div
+							class={cn('block w-full overflow-hidden text-start', {
+								'text-ellipsis whitespace-nowrap': !this.enableTextWrap,
+							})}
+						>
+							<slot />
+						</div>
+					) : (
 						<slot />
-					</div>
-				) : (
-					<slot />
-				)}
-			</div>
+					)}
+				</div>
+			</ThemedHost>
 		);
 	}
 }

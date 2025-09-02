@@ -4,6 +4,7 @@ import {
 	extractArgTypesFactory,
 	stencilRender,
 } from '@pxtrn/storybook-addon-docs-stencil';
+
 import docJson from '@paperless/core/component-docs.json';
 if (docJson) setStencilDocJson(docJson);
 
