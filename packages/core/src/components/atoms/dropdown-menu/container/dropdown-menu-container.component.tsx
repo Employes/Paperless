@@ -1,6 +1,7 @@
 import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { asBoolean } from '../../../../utils/as-boolean';
+import { ThemedHost } from '../../../../internal/themed-host.component';
 
 const dropdownMenuContainer = cva(
 	[
@@ -13,8 +14,14 @@ const dropdownMenuContainer = cva(
 	{
 		variants: {
 			variant: {
-				default: 'bg-white border-storm-100 drop-shadow-2 ',
-				storm: 'bg-storm-400 drop-shadow-3 border-storm-400',
+				default: [
+					'bg-white border-storm-100 drop-shadow-2',
+					'dark:bg-hurricane-400 dark:border-transparent',
+				],
+				storm: [
+					'bg-storm-400 drop-shadow-3 border-storm-400',
+					'dark:bg-white dark:border-white/60 dark:border-storm-100',
+				],
 			},
 			fullWidth: {
 				false: null,
@@ -95,25 +102,27 @@ export class DropdownMenuContainer {
 				: this.scrollable;
 
 		return (
-			<div
-				class={dropdownMenuContainer({
-					class: this.class,
-					variant: this.variant,
-					fullWidth: asBoolean(this.fullWidth, true),
-					maxWidth: this.maxWidth,
-				})}
-			>
+			<ThemedHost>
 				<div
-					class={innerContainer({
-						allowOverflow: asBoolean(this.allowOverflow),
-						scrollable,
+					class={dropdownMenuContainer({
+						class: this.class,
+						variant: this.variant,
+						fullWidth: asBoolean(this.fullWidth, true),
+						maxWidth: this.maxWidth,
 					})}
 				>
-					<div class='flex w-full flex-col'>
-						<slot />
+					<div
+						class={innerContainer({
+							allowOverflow: asBoolean(this.allowOverflow),
+							scrollable,
+						})}
+					>
+						<div class='flex w-full flex-col'>
+							<slot />
+						</div>
 					</div>
 				</div>
-			</div>
+			</ThemedHost>
 		);
 	}
 }
