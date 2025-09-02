@@ -1,14 +1,15 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
-import { IconVariant } from '../../../atoms/icon/icon.component';
-import { cn } from '../../../../utils/cn';
+import { ThemedHost } from '../../../../internal/themed-host.component';
 import { asBoolean } from '../../../../utils/as-boolean';
+import { cn } from '../../../../utils/cn';
+import { IconVariant } from '../../../atoms/icon/icon.component';
 
 const navigationItem = cva(
 	[
 		'h-8 w-[inherit]',
 		'flex items-center gap-2',
-		'hover:text-storm-500',
+		'hover:text-storm-500 dark:hover:text-white',
 		'rounded-lg',
 		'py-1 px-2',
 		'text-sm font-medium',
@@ -17,8 +18,13 @@ const navigationItem = cva(
 	{
 		variants: {
 			active: {
-				false: ['text-storm-400', 'hover:bg-off-white-500'],
-				true: ['bg-off-white-600 text-storm-500 font-semibold'],
+				false: [
+					'text-storm-400 dark:text-hurricane-200',
+					'hover:bg-off-white-500 dark:hover:bg-white/10',
+				],
+				true: [
+					'bg-off-white-600 dark:bg-white/10 text-storm-500 dark:text-white font-semibold',
+				],
 			},
 			icon: {
 				false: false,
@@ -34,7 +40,7 @@ const navigationItemIconContainer = cva(
 		variants: {
 			active: {
 				false: false,
-				true: ['bg-indigo-500'],
+				true: ['bg-indigo-500 text-storm-500'],
 			},
 		},
 	}
@@ -43,7 +49,7 @@ const navigationItemIconContainer = cva(
 @Component({
 	tag: 'p-navigation-item',
 	styleUrl: './navigation-item.component.css',
-	shadow: false,
+	scoped: true,
 })
 export class NavigationItem {
 	/**
@@ -92,7 +98,7 @@ export class NavigationItem {
 		const active = asBoolean(this.active) || this.class?.includes('active');
 
 		return (
-			<Host class={cn('p-navigation-item inline-block', this.class)}>
+			<ThemedHost class={cn('p-navigation-item inline-block', this.class)}>
 				<TagType
 					class={navigationItem({
 						icon: !!this.icon,
@@ -115,7 +121,7 @@ export class NavigationItem {
 
 					{!!this.loading && <p-loader class='ml-auto' />}
 				</TagType>
-			</Host>
+			</ThemedHost>
 		);
 	}
 }
