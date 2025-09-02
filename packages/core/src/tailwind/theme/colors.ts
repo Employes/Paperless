@@ -13,21 +13,25 @@ export default {
 	},
 	'negative-red': {
 		800: '#8D1010',
+		700: '#931010',
 		500: '#E61E1E',
 		100: '#FFDDDD',
 		50: '#FDEDED',
+		alternative: '#FF5C5C',
 	},
 	'positive-green': {
 		800: '#2F6407',
 		500: '#5CC30E',
 		100: '#D5FBC7',
 		50: '#EAFDE3',
+		alternative: '#62FF5C',
 	},
 	amber: {
 		800: '#944D0B',
 		500: '#E19F23',
 		100: '#FFF6C2',
 		50: '#FFFAE0',
+		alternative: '#FFE75C',
 	},
 
 	indigo: {

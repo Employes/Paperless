@@ -156,7 +156,7 @@ export class Tooltip {
 				>
 					<div class='flex gap-2 whitespace-normal'>
 						{this.variant === 'error' && (
-							<div class='w-[2px] bg-negative-red-500'></div>
+							<div class='w-[2px] bg-negative-red-500 dark:bg-negative-red-alternative'></div>
 						)}
 						{this.content ? this.content : <slot name='content' />}
 					</div>
