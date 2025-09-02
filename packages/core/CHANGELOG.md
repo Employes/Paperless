@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.14](https://github.com/ionic-team/stencil-component-starter/compare/v2.8.13...v2.8.14) (2025-09-02)
+
+
+### Bug Fixes
+
+* **atoms/icon:** Don't throw variant warning when variant is undefined ([efa15c6](https://github.com/ionic-team/stencil-component-starter/commit/efa15c6d8ef5929f6261ad5d384db24724e6c002))
+
+
+
+
+
 ## [2.8.13](https://github.com/ionic-team/stencil-component-starter/compare/v2.8.12...v2.8.13) (2025-08-22)
 
 
