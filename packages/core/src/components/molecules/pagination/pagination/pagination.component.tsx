@@ -9,6 +9,7 @@ import {
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { defaultSize, defaultSizeOptions } from '../size/constants';
+import { ThemedHost } from '../../../../internal/themed-host.component';
 
 const pagination = cva(
 	[
@@ -16,6 +17,7 @@ const pagination = cva(
 		'items-center gap-2',
 		'rounded-full',
 		'bg-off-white-300 border border-solid border-off-white-700',
+		'dark:bg-hurricane-500 dark:border-hurricane-400',
 		'p-1',
 	],
 	{
@@ -97,47 +99,49 @@ export class Pagination {
 			this.hideOnSinglePage && this.total <= this.pageSizeOptions?.[0];
 
 		return (
-			<div
-				class={pagination({
-					hidden:
-						(hidePageSizeSelect && !this._hasPaginationPages) ||
-						(!this.enablePaginationSize && !this.enablePaginationPages),
-				})}
-			>
-				{this.enablePaginationPages && this.enablePaginationSize && (
-					<Fragment>
-						<p-pagination-size
-							hidden={hidePageSizeSelect}
-							size={this.pageSize}
-							sizeOptions={this.pageSizeOptions}
-							onSizeChange={({ detail }) => this._changePageSize(detail)}
+			<ThemedHost>
+				<div
+					class={pagination({
+						hidden:
+							(hidePageSizeSelect && !this._hasPaginationPages) ||
+							(!this.enablePaginationSize && !this.enablePaginationPages),
+					})}
+				>
+					{this.enablePaginationPages && this.enablePaginationSize && (
+						<Fragment>
+							<p-pagination-size
+								hidden={hidePageSizeSelect}
+								size={this.pageSize}
+								sizeOptions={this.pageSizeOptions}
+								onSizeChange={({ detail }) => this._changePageSize(detail)}
+							/>
+
+							{!hidePageSizeSelect &&
+								this.hideOnSinglePage &&
+								this._hasPaginationPages && (
+									<p-divider
+										variant='vertical'
+										class='mx-0 h-4 text-off-white-700 dark:text-hurricane-400'
+									/>
+								)}
+						</Fragment>
+					)}
+
+					{this.enablePaginationPages && (
+						<p-pagination-pages
+							pageSize={this.pageSize}
+							total={this.total}
+							page={this.page}
+							hideOnSinglePage={this.hideOnSinglePage}
+							onPageChange={({ detail }) => this.pageChange.emit(detail)}
+							onPagesChange={({ detail }) => {
+								this._hasPaginationPages = detail > 1;
+								this.pagesChange.emit(detail);
+							}}
 						/>
-
-						{!hidePageSizeSelect &&
-							this.hideOnSinglePage &&
-							this._hasPaginationPages && (
-								<p-divider
-									variant='vertical'
-									class='mx-0 h-4 text-off-white-700'
-								/>
-							)}
-					</Fragment>
-				)}
-
-				{this.enablePaginationPages && (
-					<p-pagination-pages
-						pageSize={this.pageSize}
-						total={this.total}
-						page={this.page}
-						hideOnSinglePage={this.hideOnSinglePage}
-						onPageChange={({ detail }) => this.pageChange.emit(detail)}
-						onPagesChange={({ detail }) => {
-							this._hasPaginationPages = detail > 1;
-							this.pagesChange.emit(detail);
-						}}
-					/>
-				)}
-			</div>
+					)}
+				</div>
+			</ThemedHost>
 		);
 	}
 

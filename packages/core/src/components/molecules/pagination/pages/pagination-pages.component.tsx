@@ -1,5 +1,6 @@
 import { Component, Event, EventEmitter, h, Prop, Watch } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+import { ThemedHost } from '../../../../internal/themed-host.component';
 
 type PaginationSetItem = {
 	type: string;
@@ -63,46 +64,48 @@ export class PaginationPages {
 
 	render() {
 		return (
-			<div
-				class={pagination({
-					hidden: this.hideOnSinglePage && this._set?.length === 3,
-				})}
-			>
-				{this._set?.map(p => {
-					if (p.type === 'previous' || p.type === 'next') {
+			<ThemedHost>
+				<div
+					class={pagination({
+						hidden: this.hideOnSinglePage && this._set?.length === 3,
+					})}
+				>
+					{this._set?.map(p => {
+						if (p.type === 'previous' || p.type === 'next') {
+							return (
+								<p-pagination-pages-item
+									variant='carousel'
+									disabled={this._carouselDisabled(p.type)}
+									onClick={() =>
+										p.type === 'previous'
+											? this._previousClick()
+											: this._nextClick()
+									}
+								>
+									{p.value}
+								</p-pagination-pages-item>
+							);
+						}
+
+						if (p.type === 'ellipsis') {
+							return (
+								<p-pagination-pages-item hover={false}>
+									...
+								</p-pagination-pages-item>
+							);
+						}
+
 						return (
 							<p-pagination-pages-item
-								variant='carousel'
-								disabled={this._carouselDisabled(p.type)}
-								onClick={() =>
-									p.type === 'previous'
-										? this._previousClick()
-										: this._nextClick()
-								}
+								active={p.value === this.page}
+								onClick={() => this._pageClick(p.value as number)}
 							>
 								{p.value}
 							</p-pagination-pages-item>
 						);
-					}
-
-					if (p.type === 'ellipsis') {
-						return (
-							<p-pagination-pages-item hover={false}>
-								...
-							</p-pagination-pages-item>
-						);
-					}
-
-					return (
-						<p-pagination-pages-item
-							active={p.value === this.page}
-							onClick={() => this._pageClick(p.value as number)}
-						>
-							{p.value}
-						</p-pagination-pages-item>
-					);
-				})}
-			</div>
+					})}
+				</div>
+			</ThemedHost>
 		);
 	}
 
