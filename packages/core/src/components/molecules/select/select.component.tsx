@@ -15,6 +15,7 @@ import { childOfComposed, cn } from '../../../utils';
 import { IconVariant } from '../../atoms/icon/icon.component';
 
 import { cva } from 'class-variance-authority';
+import { ThemedHost } from '../../../internal/themed-host.component';
 
 const multiContainer = cva([
 	'flex items-center gap-2',
@@ -459,56 +460,58 @@ export class Select {
 		}
 
 		return (
-			<p-field-container
-				variant='write'
-				prefix={this.prefix}
-				label={this.label}
-				helper={this.helper}
-				required={this.required}
-				showOptional={this.showOptional}
-				error={this.error}
-				forceShowTooltip={!!this.error?.length && !this._showDropdown}
-			>
-				<p-dropdown
-					applyFullWidth={true}
-					applyMaxWidth={false}
-					slot='content'
-					insideClick={true}
-					manual={true}
-					scrollable={this.enableAutocomplete ? 'large' : true}
-					disable-trigger-click={this.disabled}
-					show={this._showDropdown}
-					onIsOpen={ev => this._onDropdownOpen(ev)}
-					strategy={this.strategy}
+			<ThemedHost>
+				<p-field-container
+					variant='write'
+					prefix={this.prefix}
+					label={this.label}
+					helper={this.helper}
+					required={this.required}
+					showOptional={this.showOptional}
+					error={this.error}
+					forceShowTooltip={!!this.error?.length && !this._showDropdown}
 				>
-					<p-button
-						slot='trigger'
-						class='w-full'
-						variant='secondary'
-						size={this.size}
-						chevron={
-							this.showChevron ? (this._showDropdown ? 'up' : 'down') : false
-						}
-						active={this._showDropdown}
-						error={!!this.error?.length}
-						icon={buttonIcon}
-						iconClass={
-							this.applyClassOnSelectedItem &&
-							this._selectedItem?.[this.iconClassKey]
-						}
-						onClick={ev => this._onClick(ev)}
+					<p-dropdown
+						applyFullWidth={true}
+						applyMaxWidth={false}
+						slot='content'
+						insideClick={true}
+						manual={true}
+						scrollable={this.enableAutocomplete ? 'large' : true}
+						disable-trigger-click={this.disabled}
+						show={this._showDropdown}
+						onIsOpen={ev => this._onDropdownOpen(ev)}
+						strategy={this.strategy}
 					>
-						<div
-							class='relative min-w-0 flex-1'
-							ref={ref => (this._inputRef = ref)}
+						<p-button
+							slot='trigger'
+							class='w-full'
+							variant='secondary'
+							size={this.size}
+							chevron={
+								this.showChevron ? (this._showDropdown ? 'up' : 'down') : false
+							}
+							active={this._showDropdown}
+							error={!!this.error?.length}
+							icon={buttonIcon}
+							iconClass={
+								this.applyClassOnSelectedItem &&
+								this._selectedItem?.[this.iconClassKey]
+							}
+							onClick={ev => this._onClick(ev)}
 						>
-							{this._displayValue}
-						</div>
-					</p-button>
-					{this.loading ? this._getLoadingItems() : this._getItems()}
-					{this.showAddItem && this._getAddItem()}
-				</p-dropdown>
-			</p-field-container>
+							<div
+								class='relative min-w-0 flex-1'
+								ref={ref => (this._inputRef = ref)}
+							>
+								{this._displayValue}
+							</div>
+						</p-button>
+						{this.loading ? this._getLoadingItems() : this._getItems()}
+						{this.showAddItem && this._getAddItem()}
+					</p-dropdown>
+				</p-field-container>
+			</ThemedHost>
 		);
 	}
 
