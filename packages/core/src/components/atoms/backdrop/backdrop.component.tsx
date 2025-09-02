@@ -9,6 +9,7 @@ import {
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { asBoolean } from '../../../utils/as-boolean';
+import { ThemedHost } from '../../../internal/themed-host.component';
 
 const backdrop = cva(
 	[
@@ -124,21 +125,23 @@ export class Backdrop {
 
 	render() {
 		return (
-			<div
-				class={backdrop({
-					blur: asBoolean(this.applyBlur),
-					closing: asBoolean(this.closing),
-				})}
-			>
+			<ThemedHost>
 				<div
-					class={contentContainer({
-						variant: this.variant,
+					class={backdrop({
+						blur: asBoolean(this.applyBlur),
 						closing: asBoolean(this.closing),
 					})}
 				>
-					<slot />
+					<div
+						class={contentContainer({
+							variant: this.variant,
+							closing: asBoolean(this.closing),
+						})}
+					>
+						<slot />
+					</div>
 				</div>
-			</div>
+			</ThemedHost>
 		);
 	}
 
