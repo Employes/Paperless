@@ -7,10 +7,10 @@ import { ThemedHost } from '../../../internal/themed-host.component';
 const indicator = cva('w-[2px] rounded-full h-9 flex-shrink-0', {
 	variants: {
 		variant: {
-			neutral: 'bg-indigo-800',
-			positive: 'bg-positive-green-500',
-			biased: 'bg-amber-500',
-			negative: 'bg-negative-red-500',
+			neutral: 'bg-indigo-800 dark:bg-indigo-400',
+			positive: 'bg-positive-green-500 dark:bg-positive-green-alternative',
+			biased: 'bg-amber-500 dark:bg-amber-alternative',
+			negative: 'bg-negative-red-500 dark:bg-negative-red-alternative',
 		},
 	},
 });
