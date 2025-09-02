@@ -8,7 +8,7 @@ import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
 
 const button = cva(
 	[
-		'group/p-button',
+		'group/button',
 		'font-semibold leading-4',
 		'flex items-center justify-center',
 		'cursor-pointer',
@@ -170,8 +170,10 @@ const button = cva(
 			{
 				variant: ['secondary', 'dropdown'],
 				error: true,
-				class:
+				class: [
 					'border border-negative-red-500 text-negative-red-800 ring ring-2 ring-negative-red-50  active:text-negative-red-800',
+					'dark:ring-0 dark:border-negative-red-700 dark:text-negative-red-alternative',
+				],
 			},
 
 			{
@@ -268,7 +270,7 @@ const icon = cva([], {
 			active: false,
 			error: false,
 			class:
-				'text-indigo-300 group-hover/p-button:text-white group-active/p-button:text-white/60',
+				'text-indigo-300 group-hover/button:text-white group-active/button:text-white/60',
 		},
 		{
 			variant: 'primary',
@@ -282,8 +284,8 @@ const icon = cva([], {
 			active: false,
 			error: false,
 			class: [
-				'text-storm-300 group-hover/p-button:text-storm-500 group-active/p-button:text-storm-500/60',
-				'dark:text-hurricane-200 dark:group-hover/p-button:text-white dark:group-active/p-button:text-white/60',
+				'text-storm-300 group-hover/button:text-storm-500 group-active/button:text-storm-500/60',
+				'dark:text-hurricane-200 dark:group-hover/button:text-white dark:group-active/button:text-white/60',
 			],
 		},
 		{
@@ -298,13 +300,14 @@ const icon = cva([], {
 			disabled: false,
 			active: false,
 			class:
-				'text-indigo-500 group-hover/p-button:text-indigo-700 group-active/p-button:text-indigo-800',
+				'text-indigo-500 group-hover/button:text-indigo-700 group-active/button:text-indigo-800',
 		},
 		{
 			variant: ['secondary', 'dropdown'],
 			active: false,
 			error: true,
-			class: 'text-negative-red-500 group-hover/p-button:text-negative-red-800',
+			class:
+				'text-negative-red-500 group-hover/button:text-negative-red-800 dark:text-negative-red-alternative',
 		},
 		{
 			variant: ['secondary', 'dropdown'],
