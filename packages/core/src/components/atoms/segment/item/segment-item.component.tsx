@@ -4,6 +4,7 @@ import { RotateOptions } from '../../../../types/tailwind';
 import { asBoolean } from '../../../../utils/as-boolean';
 import { IconFlipOptions, IconVariant } from '../../icon/icon.component';
 import { cn } from '../../../../utils';
+import { ThemedHost } from '../../../../internal/themed-host.component';
 
 const segmentItem = cva(
 	['flex items-center justify-center', 'rounded-xl', 'cursor-pointer text-sm'],
@@ -14,8 +15,11 @@ const segmentItem = cva(
 				block: 'flex-col p-2 text-center',
 			},
 			active: {
-				false:
-					'cursor-pointer text-storm-500 text-storm-300 hover:text-storm-500 hover:bg-storm-50',
+				false: [
+					'cursor-pointer',
+					'text-storm-300 hover:text-storm-500 hover:bg-storm-50',
+					'hover:text-white dark:hover:bg-white/15',
+				],
 				true: 'bg-indigo-600 text-white',
 			},
 			iconOnly: {
@@ -23,6 +27,18 @@ const segmentItem = cva(
 				true: 'w-6',
 			},
 		},
+		compoundVariants: [
+			{
+				variant: 'default',
+				active: false,
+				class: 'text-storm-500 dark:text-hurricane-300',
+			},
+			{
+				variant: 'block',
+				active: false,
+				class: 'text-storm-500 dark:text-white',
+			},
+		],
 	}
 );
 
@@ -67,45 +83,51 @@ export class SegmentItem {
 			this.variant === 'block' ? <slot name='description' /> : null;
 
 		return (
-			<div
-				class={segmentItem({
-					variant: this.variant,
-					active: asBoolean(this.active),
-					iconOnly: asBoolean(this.iconOnly),
-				})}
-			>
-				{this.icon && (
-					<p-icon
-						class={cn('mb-1', {
-							'text-storm-300': !asBoolean(this.active),
-							'text-indigo-200': asBoolean(this.active),
-						})}
-						variant={this.icon}
-						flip={this.iconFlip}
-						rotate={this.iconRotate}
-					/>
-				)}
+			<ThemedHost>
+				<div
+					class={segmentItem({
+						variant: this.variant,
+						active: asBoolean(this.active),
+						iconOnly: asBoolean(this.iconOnly),
+					})}
+				>
+					{this.icon && (
+						<p-icon
+							class={cn('mb-1', {
+								'text-storm-300 dark:text-hurricane-200': !asBoolean(
+									this.active
+								),
+								'text-indigo-200': asBoolean(this.active),
+							})}
+							variant={this.icon}
+							flip={this.iconFlip}
+							rotate={this.iconRotate}
+						/>
+					)}
 
-				{this.variant === 'default' ? (
-					<slot />
-				) : (
-					<div class='flex flex-col items-center'>
-						<p class={cn('my-0 font-medium empty:hidden', {})}>
-							<slot name='title' />
-						</p>
-						{descriptionSlot && (
-							<p
-								class={cn('my-0 text-xs font-medium', {
-									'text-storm-300': !asBoolean(this.active),
-									'text-indigo-200': asBoolean(this.active),
-								})}
-							>
-								{descriptionSlot}
+					{this.variant === 'default' ? (
+						<slot />
+					) : (
+						<div class='flex flex-col items-center'>
+							<p class={cn('my-0 font-medium empty:hidden', {})}>
+								<slot name='title' />
 							</p>
-						)}
-					</div>
-				)}
-			</div>
+							{descriptionSlot && (
+								<p
+									class={cn('my-0 text-xs font-medium', {
+										'text-storm-300 dark:text-hurricane-200': !asBoolean(
+											this.active
+										),
+										'text-indigo-200': asBoolean(this.active),
+									})}
+								>
+									{descriptionSlot}
+								</p>
+							)}
+						</div>
+					)}
+				</div>
+			</ThemedHost>
 		);
 	}
 }
