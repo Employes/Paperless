@@ -1,5 +1,6 @@
 import { Component, Element, h, Listen, Prop, State } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+import { ThemedHost } from '../../../internal/themed-host.component';
 
 const profileContent = cva(['flex gap-2 items-center flex-1 min-w-0'], {
 	variants: {
@@ -40,33 +41,37 @@ export class Profile {
 	render() {
 		const content = this._getContent();
 
-		return this._hasDropdownSlot ? (
-			<p-dropdown
-				strategy='absolute'
-				placement={this.dropdownLocation}
-				applyFullWidth={true}
-				applyMaxWidth={false}
-				onIsOpen={ev => (this._dropdownOpen = ev.detail)}
-			>
-				<p-button
-					variant='dropdown'
-					chevron={this._dropdownOpen ? 'up' : 'down'}
-					active={this._dropdownOpen}
-					slot='trigger'
-					size='lg'
-					class='w-full'
-				>
-					{content}
-				</p-button>
-				<div slot='items'>
-					<slot
-						name='dropdown'
-						onSlotchange={() => this._checkDropdownSlot()}
-					/>
-				</div>
-			</p-dropdown>
-		) : (
-			content
+		return (
+			<ThemedHost>
+				{this._hasDropdownSlot ? (
+					<p-dropdown
+						strategy='absolute'
+						placement={this.dropdownLocation}
+						applyFullWidth={true}
+						applyMaxWidth={false}
+						onIsOpen={ev => (this._dropdownOpen = ev.detail)}
+					>
+						<p-button
+							variant='dropdown'
+							chevron={this._dropdownOpen ? 'up' : 'down'}
+							active={this._dropdownOpen}
+							slot='trigger'
+							size='lg'
+							class='w-full'
+						>
+							{content}
+						</p-button>
+						<div slot='items'>
+							<slot
+								name='dropdown'
+								onSlotchange={() => this._checkDropdownSlot()}
+							/>
+						</div>
+					</p-dropdown>
+				) : (
+					content
+				)}
+			</ThemedHost>
 		);
 	}
 
@@ -94,10 +99,10 @@ export class Profile {
 			>
 				<slot name='avatar' />
 				<div class='flex min-w-0 flex-1 flex-col items-start'>
-					<p class='my-0 w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold text-storm-500'>
+					<p class='my-0 w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold text-storm-500 dark:text-white'>
 						<slot name='title' />
 					</p>
-					<p class='my-0 w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-xs font-medium text-storm-400'>
+					<p class='my-0 w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-xs font-medium text-storm-400 dark:text-hurricane-200'>
 						<slot name='subtitle' />
 					</p>
 				</div>
