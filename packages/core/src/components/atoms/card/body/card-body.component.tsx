@@ -1,4 +1,5 @@
 import { Component, h } from '@stencil/core';
+import { ThemedHost } from '../../../../internal/themed-host.component';
 
 @Component({
 	tag: 'p-card-body',
@@ -7,6 +8,10 @@ import { Component, h } from '@stencil/core';
 })
 export class CardBody {
 	render() {
-		return <slot />;
+		return (
+			<ThemedHost>
+				<slot />
+			</ThemedHost>
+		);
 	}
 }
