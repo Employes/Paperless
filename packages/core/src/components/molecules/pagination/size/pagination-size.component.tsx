@@ -4,18 +4,19 @@ import {
 	Event,
 	EventEmitter,
 	h,
-	Host,
 	Listen,
 	Prop,
 	State,
 } from '@stencil/core';
+import { cva } from 'class-variance-authority';
+import { ThemedHost } from '../../../../internal/themed-host.component';
+import { asBoolean } from '../../../../utils/as-boolean';
 import {
 	formatTranslation,
 	getLocaleComponentStrings,
 } from '../../../../utils/localization';
 import { defaultSize, defaultSizeOptions } from './constants';
-import { cva } from 'class-variance-authority';
-import { asBoolean } from '../../../../utils/as-boolean';
+import { cn } from '../../../../utils';
 
 export type templateFunc = (value: number) => string;
 
@@ -30,17 +31,25 @@ const paginationSize = cva('p-pagination-size', {
 
 const trigger = cva(
 	[
+		'group/pagination-size-trigger',
 		'flex items-center gap-2',
 		'px-2 h-6',
 		'text-sm text-storm-500 font-medium ',
+		'dark:text-white',
 		'cursor-pointer rounded-full',
 		'shadow-1 border border-solid',
 	],
 	{
 		variants: {
 			active: {
-				false: 'bg-white hover:bg-white-600 border-transparent',
-				true: 'bg-white-600 border-indigo-600 ring ring-2 ring-indigo-100',
+				false: [
+					'bg-white hover:bg-white-600 border-transparent',
+					'dark:bg-white/15 dark:hover:bg-white/25',
+				],
+				true: [
+					'bg-white-600 border-indigo-600 ring ring-2 ring-indigo-100',
+					'dark:bg-white/25 dark:ring-0',
+				],
 			},
 		},
 	}
@@ -103,7 +112,7 @@ export class PaginationSize {
 
 	render() {
 		return (
-			<Host class={paginationSize({ hidden: asBoolean(this.hidden) })}>
+			<ThemedHost class={paginationSize({ hidden: asBoolean(this.hidden) })}>
 				<p-dropdown
 					applyFullWidth={true}
 					applyMaxWidth={false}
@@ -123,7 +132,18 @@ export class PaginationSize {
 								: this._defaultItemTemplate(this.size)}
 						</p>
 						<p-icon
-							class='flex-shrink-0'
+							class={cn(
+								[
+									'flex-shrink-0',
+									'group-hover/pagination-size-trigger:text-storm-500',
+									'dark:group-hover/pagination-size-trigger:text-white',
+								],
+								{
+									'text-storm-300 dark:text-hurricane-200':
+										!this.dropdownIsOpen,
+									'text-storm-500 dark:text-white': !!this.dropdownIsOpen,
+								}
+							)}
 							variant='double-caret'
 							size='sm'
 						/>
@@ -141,7 +161,7 @@ export class PaginationSize {
 						))}
 					</slot>
 				</p-dropdown>
-			</Host>
+			</ThemedHost>
 		);
 	}
 
