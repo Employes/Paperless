@@ -1,6 +1,7 @@
 import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { asBoolean } from '../../../../utils/as-boolean';
+import { ThemedHost } from '../../../../internal/themed-host.component';
 
 const container = cva(
 	[
@@ -8,7 +9,7 @@ const container = cva(
 
 		'z-drawer flex flex-col',
 
-		'rounded-2xl bg-white',
+		'rounded-2xl bg-white dark:bg-hurricane-600',
 		'w-full tablet:w-[22.5rem]',
 
 		'shadow-modal',
@@ -36,13 +37,15 @@ export class DrawerContainer {
 
 	render() {
 		return (
-			<div
-				class={container({
-					closing: asBoolean(this.closing),
-				})}
-			>
-				<slot />
-			</div>
+			<ThemedHost>
+				<div
+					class={container({
+						closing: asBoolean(this.closing),
+					})}
+				>
+					<slot />
+				</div>
+			</ThemedHost>
 		);
 	}
 }
