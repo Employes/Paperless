@@ -1,7 +1,7 @@
 :host {
 	@apply flex-auto;
 	@apply block;
-	@apply bg-off-white-700;
+	@apply bg-off-white-700 dark:bg-white/15;
 }
 
 :host([direction='horizontal']) {

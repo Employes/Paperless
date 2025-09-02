@@ -1,6 +1,7 @@
 import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { asBoolean } from '../../../../utils/as-boolean';
+import { ThemedHost } from '../../../../internal/themed-host.component';
 
 const item = cva('flex gap-2', {
 	variants: {
@@ -20,7 +21,7 @@ const circle = cva(
 	[
 		'h-6 w-6 flex items-center justify-center',
 		'text-sm text-center font-medium',
-		'border border-solid border-indigo-600',
+		'border border-solid',
 		'rounded-full',
 	],
 	{
@@ -47,17 +48,20 @@ const circle = cva(
 			{
 				finished: false,
 				active: false,
-				class: 'text-indigo-600 bg-indigo-50',
+				class: [
+					'text-indigo-600 bg-indigo-50 border-indigo-600',
+					'dark:text-hurricane-200 dark:bg-white/15 dark:border-white/15',
+				],
 			},
 			{
 				active: true,
 				finished: false,
-				class: 'text-white bg-indigo-600',
+				class: 'text-white bg-indigo-600 border-indigo-600',
 			},
 			{
 				active: false,
 				finished: true,
-				class: 'text-white bg-indigo-600',
+				class: 'text-white bg-indigo-600 border-indigo-600',
 			},
 			{
 				direction: 'vertical',
@@ -92,17 +96,17 @@ const content = cva('text-sm font-medium flex-1 mt-[1px]', {
 		{
 			finished: false,
 			active: false,
-			class: 'text-storm-400',
+			class: 'text-storm-400 dark:text-hurricane-200',
 		},
 		{
 			active: true,
 			finished: false,
-			class: 'text-storm-500',
+			class: 'text-storm-500 dark:text-white',
 		},
 		{
 			active: false,
 			finished: true,
-			class: 'text-storm-500',
+			class: 'text-storm-500 dark:text-white',
 		},
 		{
 			direction: 'horizontal',
@@ -150,32 +154,34 @@ export class StepperItem {
 
 	render() {
 		return (
-			<div
-				class={item({
-					align: this.align,
-					contentPosition: this.contentPosition,
-				})}
-			>
+			<ThemedHost>
 				<div
-					class={circle({
+					class={item({
 						align: this.align,
-						direction: this.direction,
-						active: asBoolean(this.active),
-						finished: asBoolean(this.finished),
+						contentPosition: this.contentPosition,
 					})}
 				>
-					{this.number}
+					<div
+						class={circle({
+							align: this.align,
+							direction: this.direction,
+							active: asBoolean(this.active),
+							finished: asBoolean(this.finished),
+						})}
+					>
+						{this.number}
+					</div>
+					<div
+						class={content({
+							active: asBoolean(this.active),
+							finished: asBoolean(this.finished),
+							direction: this.direction,
+						})}
+					>
+						<slot />
+					</div>
 				</div>
-				<div
-					class={content({
-						active: asBoolean(this.active),
-						finished: asBoolean(this.finished),
-						direction: this.direction,
-					})}
-				>
-					<slot />
-				</div>
-			</div>
+			</ThemedHost>
 		);
 	}
 }

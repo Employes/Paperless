@@ -1,4 +1,5 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
+import { ThemedHost } from '../../../../internal/themed-host.component';
 
 @Component({
 	tag: 'p-stepper-line',
@@ -14,10 +15,9 @@ export class StepperLine {
 	/**
 	 * The direction of the stepper line
 	 */
-	@Prop({ reflect: true }) direction: 'horizontal' | 'vertical' =
-		'horizontal';
+	@Prop({ reflect: true }) direction: 'horizontal' | 'vertical' = 'horizontal';
 
 	render() {
-		return <Host />;
+		return <ThemedHost />;
 	}
 }
