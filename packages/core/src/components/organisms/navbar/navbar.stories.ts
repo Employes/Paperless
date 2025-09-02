@@ -36,7 +36,11 @@ export const Default = {
 			header="title"
 			slot="content"
 		>
-			<p-navigation-item icon="user">Item</p-navigation-item>
+			<p-navigation-item
+				counter="3"
+				icon="user"
+				>Item</p-navigation-item
+			>
 			<p-navigation-item
 				active
 				icon="user"
