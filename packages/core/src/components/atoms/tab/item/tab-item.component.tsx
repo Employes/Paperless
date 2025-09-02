@@ -1,5 +1,6 @@
 import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+import { ThemedHost } from '../../../../internal/themed-host.component';
 
 const item = cva(
 	[
@@ -11,8 +12,10 @@ const item = cva(
 		variants: {
 			active: {
 				true: 'after:bg-indigo-600 text-indigo-600',
-				false:
+				false: [
 					'text-storm-300 after:bg-transparent hover:after:bg-storm-400 hover:text-storm-400',
+					'dark:text-hurricane-200 dark:hover:after:bg-white dark:hover:text-white',
+				],
 			},
 		},
 	}
@@ -31,9 +34,11 @@ export class TabItem {
 
 	render() {
 		return (
-			<div class={item({ active: this.active })}>
-				<slot />
-			</div>
+			<ThemedHost>
+				<div class={item({ active: this.active })}>
+					<slot />
+				</div>
+			</ThemedHost>
 		);
 	}
 }
