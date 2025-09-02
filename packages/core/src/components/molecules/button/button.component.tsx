@@ -328,6 +328,7 @@ export type ButtonVariant =
 @Component({
 	tag: 'p-button',
 	styleUrl: 'button.component.css',
+	scoped: true,
 })
 export class Button {
 	/**
