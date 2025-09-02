@@ -1,5 +1,6 @@
 import { Component, h, Prop } from '@stencil/core';
 import { IconVariant } from '../../icon/icon.component';
+import { ThemedHost } from '../../../../internal/themed-host.component';
 
 @Component({
 	tag: 'p-listing-item',
@@ -14,12 +15,14 @@ export class ListingItem {
 
 	render() {
 		return (
-			<div class='flex items-center gap-2 text-storm-500'>
-				<p-icon variant={this.icon} />
-				<div class='flex min-w-0 flex-1 flex-col text-sm font-medium'>
-					<slot />
+			<ThemedHost>
+				<div class='flex items-center gap-2 text-storm-500 dark:text-white'>
+					<p-icon variant={this.icon} />
+					<div class='flex min-w-0 flex-1 flex-col text-sm font-medium'>
+						<slot />
+					</div>
 				</div>
-			</div>
+			</ThemedHost>
 		);
 	}
 }

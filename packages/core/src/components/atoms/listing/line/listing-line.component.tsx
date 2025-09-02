@@ -1,4 +1,5 @@
-import { Component, h, Host } from '@stencil/core';
+import { Component, h } from '@stencil/core';
+import { ThemedHost } from '../../../../internal/themed-host.component';
 
 @Component({
 	tag: 'p-listing-line',
@@ -7,6 +8,6 @@ import { Component, h, Host } from '@stencil/core';
 })
 export class ListingLine {
 	render() {
-		return <Host />;
+		return <ThemedHost />;
 	}
 }
