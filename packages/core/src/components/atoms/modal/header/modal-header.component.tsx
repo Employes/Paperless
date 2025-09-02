@@ -1,8 +1,9 @@
 import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+import { ThemedHost } from '../../../../internal/themed-host.component';
 
 const header = cva([
-	'w-full flex-col bg-white relative rounded-t-2xl overflow-hidden z-[1]',
+	'w-full flex-col bg-white dark:bg-hurricane-600 relative rounded-t-2xl overflow-hidden z-[1]',
 	'inline-flex aspect-[7/1] max-h-28',
 ]);
 
@@ -12,7 +13,7 @@ const title = cva([
 	'flex-1 text-center',
 	'w-[calc(100%-7rem)]',
 	'absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2',
-	'text-storm-500 text-2xl text-ambit font-bold',
+	'text-storm-500 dark:text-white text-2xl text-ambit font-bold',
 ]);
 
 @Component({
@@ -36,24 +37,26 @@ export class ModalHeader {
 
 	render() {
 		return (
-			<div class={header()}>
-				<div class={content()}>
-					<div class={title()}>
-						<slot />
+			<ThemedHost>
+				<div class={header()}>
+					<div class={content()}>
+						<div class={title()}>
+							<slot />
+						</div>
+
+						{this.showClose && (
+							<p-button
+								variant='secondary'
+								icon='negative'
+								iconOnly={true}
+								onClick={ev => this.close.emit(ev)}
+							></p-button>
+						)}
 					</div>
 
-					{this.showClose && (
-						<p-button
-							variant='secondary'
-							icon='negative'
-							iconOnly={true}
-							onClick={ev => this.close.emit(ev)}
-						></p-button>
-					)}
+					<p-smile class='dark:text-hurricane-400' />
 				</div>
-
-				<p-smile />
-			</div>
+			</ThemedHost>
 		);
 	}
 }
