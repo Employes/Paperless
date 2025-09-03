@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.9.0](https://github.com/employes/paperless/compare/v2.8.14...v2.9.0) (2025-09-03)
+
+
+### Bug Fixes
+
+* **atoms/dropdown-menu/item:** Apply correct negative-red for icon in dark mode ([91d117d](https://github.com/employes/paperless/commit/91d117de424a241859232a8c9f5ddca894e04b26))
+* Make themed host accept properties ([6211676](https://github.com/employes/paperless/commit/6211676d147e9355662ce1030ac11d69b83375c3))
+* **molecules/button:** Error state for dark variant ([f157429](https://github.com/employes/paperless/commit/f1574295381be4e34648bf3102c640bccd03cfd9))
+* **molecules/select:** Error state for dark variant ([b55c478](https://github.com/employes/paperless/commit/b55c47881355311fdbd94406752d2dab68e9844e))
+
+
+### Features
+
+* **molecules/button:** Make scoped ([32d6aa2](https://github.com/employes/paperless/commit/32d6aa2bbe5d3c1a4dc08fb67fc57c9bc89f98d3))
+* **tailwind:** Add new hurricane color and replace temporary dark mode usage of test color ([828b68f](https://github.com/employes/paperless/commit/828b68f839de77890ad617be1fa5b5b3b8859aa2))
+
+
+
+
+
 ## [2.8.14](https://github.com/employes/paperless/compare/v2.8.13...v2.8.14) (2025-09-02)
 
 
