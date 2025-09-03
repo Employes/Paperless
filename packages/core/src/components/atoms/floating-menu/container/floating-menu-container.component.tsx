@@ -1,16 +1,16 @@
 import {
 	Component,
+	Element,
 	Event,
 	EventEmitter,
 	Fragment,
-	Host,
 	Listen,
 	Prop,
-	h,
-	Element,
 	State,
+	h,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+import { ThemedHost } from '../../../../internal/themed-host.component';
 import {
 	formatTranslation,
 	getLocaleComponentStrings,
@@ -19,7 +19,9 @@ import {
 const container = cva(
 	[
 		'floating-menu-container z-floating-menu',
-		'bg-storm-500 shadow-3',
+		'shadow-3',
+		'bg-storm-500',
+		'dark:bg-hurricane-400',
 		'h-10 py-1 w-auto',
 		'rounded-lg',
 		'text-sm',
@@ -103,7 +105,7 @@ export class FloatingMenuContainer {
 
 	render() {
 		return (
-			<Host>
+			<ThemedHost>
 				<div
 					class={container({
 						enableAmountSelected: this.enableAmountSelected,
@@ -133,7 +135,7 @@ export class FloatingMenuContainer {
 						)}
 					</div>
 				</div>
-			</Host>
+			</ThemedHost>
 		);
 	}
 

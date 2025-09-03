@@ -1,8 +1,9 @@
-import { Component, h, Host, Prop } from '@stencil/core';
-import { IconFlipOptions, IconVariant } from '../../icon/icon.component';
-import { RotateOptions } from '../../../../types';
+import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+import { ThemedHost } from '../../../../internal/themed-host.component';
+import { RotateOptions } from '../../../../types';
 import { asBoolean } from '../../../../utils/as-boolean';
+import { IconFlipOptions, IconVariant } from '../../icon/icon.component';
 
 const item = cva(
 	['group', 'flex gap-2 items-center h-8 px-2', 'text-sm', 'rounded-lg'],
@@ -29,8 +30,10 @@ const item = cva(
 			{
 				disabled: false,
 				hover: true,
-				class:
+				class: [
 					'cursor-pointer active:text-storm-100/60 hover:bg-storm-800 active:bg-storm-700',
+					'dark:hover:bg-hurricane-500 dark:active:bg-hurricane-600/50',
+				],
 			},
 		],
 	}
@@ -98,7 +101,7 @@ export class FloatingMenuItem {
 
 	render() {
 		return (
-			<Host
+			<ThemedHost
 				class={item({
 					hover: asBoolean(this.hover) && !asBoolean(this.loading),
 					disabled: asBoolean(this.disabled),
@@ -109,7 +112,7 @@ export class FloatingMenuItem {
 				<p class='min-w-0 overflow-hidden text-ellipsis text-nowrap font-semibold empty:hidden'>
 					<slot />
 				</p>
-			</Host>
+			</ThemedHost>
 		);
 	}
 
