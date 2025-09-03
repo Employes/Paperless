@@ -33,8 +33,9 @@ import {
 import { nl, enUS } from 'date-fns/locale';
 import { cn } from '../../../utils/cn';
 import { state } from '../../../state';
+import { ThemedHost } from '../../../internal/themed-host.component';
 
-const calendar = cva(['bg-white w-[17.5rem] flex flex-col gap-4'], {
+const calendar = cva(['w-[17.5rem] flex flex-col gap-4'], {
 	variants: {
 		variant: {
 			default: ['p-2 rounded-lg drop-shadow-2', 'border border-storm-100'],
@@ -44,7 +45,11 @@ const calendar = cva(['bg-white w-[17.5rem] flex flex-col gap-4'], {
 });
 
 const header = cva(
-	['flex items-center gap-2', 'w-full p-2', 'bg-off-white-300 rounded-lg'],
+	[
+		'flex items-center gap-2',
+		'w-full p-2 rounded-lg',
+		'bg-off-white-300 dark:bg-white/15',
+	],
 	{
 		variants: {
 			type: {
@@ -270,7 +275,9 @@ export class Calendar {
 
 	render() {
 		return (
-			<div class={calendar({ variant: this.variant })}>{this._getView()}</div>
+			<ThemedHost>
+				<div class={calendar({ variant: this.variant })}>{this._getView()}</div>
+			</ThemedHost>
 		);
 	}
 
@@ -340,15 +347,17 @@ export class Calendar {
 							<time
 								class={cn(
 									'normal flex items-center justify-center rounded-lg',
-									'h-8 w-8 text-sm font-semibold text-storm-300',
+									'h-8 w-8 text-sm font-semibold',
+									'text-storm-300 dark:text-hurricane-200',
+									'dark:bg-white/15',
 									{
-										'cursor-pointer hover:bg-white-600 hover:text-storm-500':
+										'cursor-pointer hover:bg-white-600 hover:text-storm-500 dark:hover:bg-hurricane-300 dark:hover:text-white':
 											!day.disabled,
 									},
 									`col-start-${day.offset}`,
 									{ 'cursor-not-allowed opacity-60': day.disabled },
 									{
-										'border border-solid border-off-white-700 bg-off-white-300 text-storm-500':
+										'border border-solid border-off-white-700 bg-off-white-300 text-storm-500 dark:border-none dark:bg-hurricane-200 dark:text-white':
 											!day.disabled && isSameDay(day.date, new Date()),
 									}
 								)}
