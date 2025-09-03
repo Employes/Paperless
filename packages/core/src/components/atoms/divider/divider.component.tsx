@@ -1,5 +1,6 @@
-import { Component, h, Prop, Element, Host } from '@stencil/core';
+import { Component, Element, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+import { ThemedHost } from '../../../internal/themed-host.component';
 
 const content = cva(
 	[
@@ -45,9 +46,10 @@ export class Divider {
 	render() {
 		const hasContent = this._el.innerHTML?.length > 0;
 		return (
-			<Host
+			<ThemedHost
 				class={{
-					'text-off-white-700': !this._el.className.includes('text'),
+					'text-off-white-700 dark:text-hurricane-200':
+						!this._el.className.includes('text'),
 				}}
 			>
 				<div
@@ -56,11 +58,11 @@ export class Divider {
 						alignContent: this.alignContent,
 					})}
 				>
-					<div class='flex items-center px-2 text-sm font-medium text-storm-400 empty:px-0'>
+					<div class='flex items-center px-2 text-sm font-medium text-storm-400 empty:px-0 dark:text-hurricane-200'>
 						{hasContent && <slot />}
 					</div>
 				</div>
-			</Host>
+			</ThemedHost>
 		);
 	}
 }
