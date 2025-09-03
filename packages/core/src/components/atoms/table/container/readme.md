@@ -5,6 +5,13 @@
 <!-- Auto Generated Below -->
 
 
+## Properties
+
+| Property  | Attribute | Description               | Type      | Default |
+| --------- | --------- | ------------------------- | --------- | ------- |
+| `checked` | `checked` | Wether the row is checked | `boolean` | `false` |
+
+
 ## Dependencies
 
 ### Used by

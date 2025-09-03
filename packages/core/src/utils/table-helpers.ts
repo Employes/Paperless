@@ -13,20 +13,17 @@ export const getTableCellColumnClasses = (
 	const sizes = definition ? getTableCellSizes(definition, variant) : {};
 
 	return {
-		flex: true,
-		'flex-shrink-0': true,
-		'items-center': true,
-		'gap-4': true,
+		'flex flex-shrink items-center gap-4': true,
 		'justify-start': !definition?.align || definition?.align === 'start',
 		'justify-center': definition?.align === 'center',
 		'justify-end': definition?.align === 'end',
 		'font-semibold': variant !== 'header' && definition?.variant === 'subject',
-		'text-storm-400': variant === 'header',
-		'text-storm-300':
+		'text-storm-400 dark:text-hurricane-200': variant === 'header',
+		'text-storm-300 dark:text-hurricane-200':
 			variant !== 'header' &&
 			definition?.variant !== 'subject' &&
 			definition?.variant !== 'highlight',
-		'text-storm-500':
+		'text-storm-500 dark:text-white':
 			variant !== 'header' &&
 			(definition?.variant === 'subject' ||
 				definition?.variant === 'highlight'),

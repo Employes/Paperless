@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import { Component, HostBinding, Input, TemplateRef } from '@angular/core';
 import {
+	cn,
 	getTableCellColumnClasses,
 	objectGetByPath,
 	TableDefinitionData,
@@ -9,6 +10,7 @@ import {
 /*
      With this, we shall hack the system in ways no one would ever have thought.
 
+	 text-storm-400 text-storm-300 text-storm-500 dark:text-white dark:text-hurricane-200
 	 justify-start justify-center justify-end items-center gap-4
      font-semibold text-storm-500 text-storm-500 text-storm-400 text-storm-300
      w-1/12 w-2/12 w-3/12 w-4/12 w-5/12 w-6/12 w-7/12 w-8/12 w-9/12 w-10/12 w-11/12 w-12/12
@@ -110,7 +112,7 @@ export class TableCell {
 
 	@HostBinding('class')
 	get class() {
-		return getTableCellColumnClasses(this.definition, this.variant);
+		return cn(getTableCellColumnClasses(this.definition, this.variant));
 	}
 
 	get data(): TableDefinitionData | { value: string } {

@@ -163,7 +163,7 @@ export class Table {
 	/**
 	 * Quick filters to show
 	 */
-	@Prop() quickFilters: QuickFilter[] = [];
+	@Prop() quickFilters: QuickFilter[] | string = [];
 
 	/**
 	 * Active quick filter identifier
@@ -711,19 +711,22 @@ export class Table {
 				isLast={index === this._items.length - 1}
 			>
 				{this._getRowColumns(item, index)}
-				{this._getActions(item)}
+				{this._getActions(item, index)}
 			</p-table-row>
 		));
 	}
 
-	private _getActions(item) {
+	private _getActions(item, index) {
 		const actions = this._rowActionsRow.filter(a =>
 			a.showFunction ? a.showFunction(item) : true
 		);
 
 		if (actions?.length && !isMobile()) {
 			return (
-				<p-table-row-actions-container slot='actions'>
+				<p-table-row-actions-container
+					slot='actions'
+					checked={this._selectionContains(index)}
+				>
 					{actions.map(a => (
 						<p-tooltip
 							strategy='fixed'

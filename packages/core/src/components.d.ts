@@ -1778,7 +1778,7 @@ export namespace Components {
         /**
           * Quick filters to show
          */
-        "quickFilters": QuickFilter[];
+        "quickFilters": QuickFilter[] | string;
         /**
           * A limit to the amount of rows that can be selected
          */
@@ -1976,7 +1976,7 @@ export namespace Components {
         /**
           * Quick filters to show
          */
-        "quickFilters": QuickFilter[];
+        "quickFilters": QuickFilter[] | string;
         /**
           * The amount of filters being selected
          */
@@ -2043,6 +2043,10 @@ export namespace Components {
         "type": 'both' | 'single' | 'multi';
     }
     interface PTableRowActionsContainer {
+        /**
+          * Wether the row is checked
+         */
+        "checked": boolean;
     }
     interface PToast {
         /**
@@ -5157,7 +5161,7 @@ declare namespace LocalJSX {
         /**
           * Quick filters to show
          */
-        "quickFilters"?: QuickFilter[];
+        "quickFilters"?: QuickFilter[] | string;
         /**
           * A limit to the amount of rows that can be selected
          */
@@ -5391,7 +5395,7 @@ declare namespace LocalJSX {
         /**
           * Quick filters to show
          */
-        "quickFilters"?: QuickFilter[];
+        "quickFilters"?: QuickFilter[] | string;
         /**
           * The amount of filters being selected
          */
@@ -5458,6 +5462,10 @@ declare namespace LocalJSX {
         "type"?: 'both' | 'single' | 'multi';
     }
     interface PTableRowActionsContainer {
+        /**
+          * Wether the row is checked
+         */
+        "checked"?: boolean;
     }
     interface PToast {
         /**

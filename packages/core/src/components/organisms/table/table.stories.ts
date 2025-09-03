@@ -56,7 +56,7 @@ const meta = {
 				third: 'Third',
 			},
 		]),
-		'quick-filters': [
+		'quick-filters': JSON.stringify([
 			{
 				identifier: 'first',
 				text: 'First',
@@ -69,7 +69,7 @@ const meta = {
 				identifier: 'third',
 				text: 'Third',
 			},
-		],
+		]),
 		'selection-key': 'id',
 	},
 	parameters: {
@@ -153,9 +153,8 @@ export const Default = {
 				enable-row-click=${enableRowClick ?? nothing}
 				selected-rows=${selectedRows ?? nothing}
 				enable-floating-menu=${enableFloatingMenu ?? nothing}
-				floating-menu-amount-selected-template=${
-					floatingMenuAmountSelectedTemplate ?? nothing
-				}
+				floating-menu-amount-selected-template=${floatingMenuAmountSelectedTemplate ??
+				nothing}
 				selection-key=${selectionKey ?? nothing}
 				can-select-key=${canSelectKey ?? nothing}
 				enable-header=${enableHeader ?? nothing}
@@ -243,10 +242,12 @@ export const Default = {
 					slot="custom-rows"
 				>
 					<p-table-cell definition=${customRowFirstDefinition}>
-						<span class="text-black">Subtotal</span>
+						<span class="text-black dark:text-white">Subtotal</span>
 					</p-table-cell>
 					<p-table-cell definition=${customRowSecondDefinition}>
-						<span class="text-storm-500>&euro; 1.234,50</span>
+						<span class="text-storm-500 dark:text-hurricane-200">
+							&euro; 1.234,50
+						</span>
 					</p-table-cell>
 				</p-table-row>
 			</p-table>
