@@ -26,7 +26,7 @@
 	.loading-screen {
 		@apply fixed left-0 top-0 h-screen-safe w-screen-safe;
 		@apply flex items-center justify-center;
-		@apply bg-off-white-200;
+		@apply bg-off-white-200 dark:bg-hurricane-700;
 
 		z-index: 1001;
 
@@ -58,6 +58,11 @@
 	background-size: 200% 100%;
 	background-position-x: 180%;
 	animation: 1s loading ease-in-out infinite;
+}
+
+:host(.variant-ghost[data-theme='dark']) {
+	--loading-bg: #363c46;
+	--loading-stripe: rgba(70, 75, 84, 1);
 }
 
 @keyframes loading {

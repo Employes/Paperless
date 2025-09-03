@@ -1,5 +1,6 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 import { Observable, Subscription } from 'rxjs';
+import { ThemedHost } from '../../../internal/themed-host.component';
 
 @Component({
 	tag: 'p-loader',
@@ -54,31 +55,33 @@ export class Loader {
 		}
 
 		if (this.variant === 'ghost') {
-			return <Host class='variant-ghost min-h-4 min-w-4 rounded-2xl'></Host>;
+			return (
+				<ThemedHost class='variant-ghost min-h-4 min-w-4 rounded-2xl'></ThemedHost>
+			);
 		}
 
 		const loader = <div class={`loader color-${this.color}`}></div>;
 
 		if (this.variant === 'full-screen') {
 			return (
-				<Host class='variant-full-screen'>
+				<ThemedHost class='variant-full-screen'>
 					<div class='loading-screen'>
 						<div class='content'>
 							<slot />
 						</div>
 					</div>
-				</Host>
+				</ThemedHost>
 			);
 		}
 
 		return (
-			<Host
+			<ThemedHost
 				class={`variant-default flex ${
 					this.variant === 'full-width' && 'flex w-full justify-center text-4xl'
 				}`}
 			>
 				{loader}
-			</Host>
+			</ThemedHost>
 		);
 	}
 
