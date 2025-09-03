@@ -199,7 +199,6 @@ export class TableHeader {
 	}
 
 	render() {
-		console.log(this.quickFilters);
 		const quickFilters =
 			typeof this.quickFilters === 'string'
 				? JSON.parse(this.quickFilters)
