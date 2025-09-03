@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.9.1](https://github.com/Employes/Paperless/compare/v2.9.0...v2.9.1) (2025-09-03)
+
+
+### Bug Fixes
+
+* **angular:** Set dark mode variants ([740b458](https://github.com/Employes/Paperless/commit/740b45882beb599f6c36a670eff505232bc0e85f))
+
+
+
+
+
 # [2.9.0](https://github.com/Employes/Paperless/compare/v2.8.14...v2.9.0) (2025-09-03)
 
 **Note:** Version bump only for package @paperless/angular

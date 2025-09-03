@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.9.1](https://github.com/employes/paperless/compare/v2.9.0...v2.9.1) (2025-09-03)
+
+
+### Bug Fixes
+
+* **angular:** Set dark mode variants ([740b458](https://github.com/employes/paperless/commit/740b45882beb599f6c36a670eff505232bc0e85f))
+* **molecules/table/header:** Remove console.log ([5d0626e](https://github.com/employes/paperless/commit/5d0626e0b623c4f08dcf0c0ca4eb9848c06f5e82))
+
+
+
+
+
 # [2.9.0](https://github.com/employes/paperless/compare/v2.8.14...v2.9.0) (2025-09-03)
 
 

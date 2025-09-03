@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.9.1](https://github.com/ionic-team/stencil-component-starter/compare/v2.9.0...v2.9.1) (2025-09-03)
+
+
+### Bug Fixes
+
+* **molecules/table/header:** Remove console.log ([5d0626e](https://github.com/ionic-team/stencil-component-starter/commit/5d0626e0b623c4f08dcf0c0ca4eb9848c06f5e82))
+
+
+
+
+
 # [2.9.0](https://github.com/ionic-team/stencil-component-starter/compare/v2.8.14...v2.9.0) (2025-09-03)
 
 
