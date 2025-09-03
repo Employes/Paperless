@@ -214,6 +214,7 @@
 
 						<p-table-row-actions-container
 							*ngIf="!!rowActionsRow?.length && !(isMobile$ | async)"
+							[checked]="_selectionContains(item, rowIndex)"
 							slot="actions"
 						>
 							<ng-container *ngFor="let action of rowActionsRow">

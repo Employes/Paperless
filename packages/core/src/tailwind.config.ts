@@ -1,3 +1,4 @@
+import path from 'path';
 import { paperless } from './tailwind';
 
 export default {
@@ -9,7 +10,7 @@ export default {
 			'&:where([data-theme=dark],[data-theme=dark] *)',
 		],
 	],
-	//content: [path.join(__dirname, './utils/table-helpers.ts')],
+	content: [path.join(__dirname, './utils/table-helpers.ts')],
 	plugins: [
 		require('@tailwindcss/aspect-ratio'),
 		require('tailwind-scrollbar-hide'),

@@ -1,17 +1,23 @@
 import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { asBoolean } from '../../../../utils/as-boolean';
+import { ThemedHost } from '../../../../internal/themed-host.component';
 
 const row = cva(
 	['flex min-w-[calc(100%-0.5rem)] flex-col', 'group', 'relative'],
 	{
 		variants: {
 			variant: {
-				default: ['px-3 m-1', 'text-sm text-storm-500'],
-				header: ['px-4', 'text-xs font-normal text-storm-400'],
+				default: ['px-3 m-1', 'text-sm text-storm-500', 'dark:text-white'],
+				header: [
+					'px-4',
+					'text-xs font-normal text-storm-400',
+					'dark:text-hurricane-200',
+				],
 				secondary: [
 					'px-4',
 					'bg-off-white-300 rounded-lg',
+					'dark:bg-hurricane-400',
 					'font-ambit text-lg font-bold',
 				],
 			},
@@ -28,15 +34,21 @@ const row = cva(
 			{
 				variant: 'default',
 				enableHover: true,
-				class: [
-					'rounded-lg transition-colors',
-					'hover:cursor-pointer hover:bg-off-white-300',
-				],
+				class: ['rounded-lg transition-colors', 'hover:cursor-pointer'],
+			},
+			{
+				variant: 'default',
+				enableHover: true,
+				checked: false,
+				class: ['hover:bg-off-white-300', 'dark:hover:bg-hurricane-600'],
 			},
 			{
 				variant: 'default',
 				checked: true,
-				class: ['rounded-lg transition-colors', 'bg-off-white-300'],
+				class: [
+					'rounded-lg transition-colors',
+					'bg-off-white-300 dark:bg-hurricane-400 dark:hover:bg-hurricane-400',
+				],
 			},
 		],
 	}
@@ -96,29 +108,31 @@ export class TableRow {
 
 	render() {
 		return (
-			<div class='flex flex-col'>
-				<div
-					class={row({
-						variant: this.variant,
-						enableHover: this.enableHover,
-						checked: this.checked,
-					})}
-				>
+			<ThemedHost>
+				<div class='flex flex-col'>
 					<div
-						class={content({
+						class={row({
 							variant: this.variant,
+							enableHover: this.enableHover,
+							checked: this.checked,
 						})}
 					>
-						<slot />
-						<div class={actions()}>
-							<slot name='actions' />
+						<div
+							class={content({
+								variant: this.variant,
+							})}
+						>
+							<slot />
+							<div class={actions()}>
+								<slot name='actions' />
+							</div>
 						</div>
 					</div>
+					{!asBoolean(this.isLast) && this.variant !== 'secondary' && (
+						<p-divider />
+					)}
 				</div>
-				{!asBoolean(this.isLast) && this.variant !== 'secondary' && (
-					<p-divider />
-				)}
-			</div>
+			</ThemedHost>
 		);
 	}
 }
