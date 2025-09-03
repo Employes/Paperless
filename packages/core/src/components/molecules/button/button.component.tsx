@@ -262,6 +262,10 @@ const icon = cva([], {
 			true: null,
 			false: null,
 		},
+		iconOnly: {
+			true: null,
+			false: null,
+		},
 	},
 	compoundVariants: [
 		{
@@ -269,6 +273,7 @@ const icon = cva([], {
 			disabled: false,
 			active: false,
 			error: false,
+			iconOnly: false,
 			class:
 				'text-indigo-300 group-hover/button:text-white group-active/button:text-white/60',
 		},
@@ -276,6 +281,7 @@ const icon = cva([], {
 			variant: 'primary',
 			disabled: false,
 			active: true,
+			iconOnly: false,
 			class: 'text-white/60',
 		},
 		{
@@ -283,6 +289,7 @@ const icon = cva([], {
 			disabled: false,
 			active: false,
 			error: false,
+			iconOnly: false,
 			class: [
 				'text-storm-300 group-hover/button:text-storm-500 group-active/button:text-storm-500/60',
 				'dark:text-hurricane-200 dark:group-hover/button:text-white dark:group-active/button:text-white/60',
@@ -293,12 +300,14 @@ const icon = cva([], {
 			disabled: false,
 			active: true,
 			error: false,
+			iconOnly: false,
 			class: 'text-storm-500/60 dark:text-white/60',
 		},
 		{
 			variant: ['transparent', 'text'],
 			disabled: false,
 			active: false,
+			iconOnly: false,
 			class:
 				'text-indigo-500 group-hover/button:text-indigo-700 group-active/button:text-indigo-800',
 		},
@@ -306,6 +315,7 @@ const icon = cva([], {
 			variant: ['secondary', 'dropdown'],
 			active: false,
 			error: true,
+			iconOnly: false,
 			class:
 				'text-negative-red-500 group-hover/button:text-negative-red-800 dark:text-negative-red-alternative',
 		},
@@ -313,6 +323,7 @@ const icon = cva([], {
 			variant: ['secondary', 'dropdown'],
 			active: true,
 			error: true,
+			iconOnly: false,
 			class: 'text-negative-red-800',
 		},
 	],
@@ -543,6 +554,7 @@ export class Button {
 						size: this.size,
 						variant: this.variant,
 						disabled: asBoolean(this.disabled),
+						iconOnly: asBoolean(this.iconOnly),
 						active: asBoolean(this.active),
 						error: asBoolean(this.error),
 					}),
