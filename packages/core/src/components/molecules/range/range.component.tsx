@@ -1,4 +1,5 @@
 import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
+import { ThemedHost } from '../../../internal/themed-host.component';
 
 @Component({
 	tag: 'p-range',
@@ -35,28 +36,32 @@ export class Range {
 		const percentage = Math.round((this.value / (this.max - this.min)) * 100);
 
 		return (
-			<div class='flex w-inherit items-center gap-2 text-storm-300'>
-				<p-icon variant='minus' />
-				<div class='relative h-6 flex-1'>
-					<input
-						type='range'
-						min={this.min}
-						max={this.max}
-						step={this.step}
-						value={this.value}
-						onInput={ev =>
-							this.valueChange.emit((ev.target as HTMLInputElement).value)
-						}
-					/>
-					<div
-						class='z-1 absolute left-0 top-1/2 h-[2px] -translate-y-1/2 transform bg-indigo-600'
-						style={{
-							width: `calc(${percentage}% - (1rem * ${percentage} / 100))`,
-						}}
-					></div>
+			<ThemedHost>
+				<div class='flex w-inherit items-center gap-2 text-storm-300 dark:text-hurricane-200'>
+					<p-icon variant='minus' />
+					<div class='relative h-6 flex-1'>
+						<input
+							type='range'
+							min={this.min}
+							max={this.max}
+							step={this.step}
+							value={this.value}
+							onInput={ev => {
+								const value = (ev.target as HTMLInputElement).value;
+								this.value = parseFloat(value);
+								this.valueChange.emit(value);
+							}}
+						/>
+						<div
+							class='z-1 absolute left-0 top-1/2 h-[2px] -translate-y-1/2 transform bg-indigo-600'
+							style={{
+								width: `calc(${percentage}% - (1rem * ${percentage} / 100))`,
+							}}
+						></div>
+					</div>
+					<p-icon variant='plus' />
 				</div>
-				<p-icon variant='plus' />
-			</div>
+			</ThemedHost>
 		);
 	}
 }
