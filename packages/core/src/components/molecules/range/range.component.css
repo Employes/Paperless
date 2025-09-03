@@ -1,14 +1,14 @@
 :host {
 	input {
-		@apply m-0 h-6 w-full appearance-none;
+		@apply m-0 h-6 w-full appearance-none bg-transparent;
 	}
 
 	input::-webkit-slider-runnable-track {
-		@apply h-[2px] bg-indigo-100;
+		@apply h-[2px] bg-indigo-100 dark:bg-white/15;
 	}
 
 	input::-moz-range-track {
-		@apply h-[2px] bg-indigo-100;
+		@apply h-[2px] bg-indigo-100 dark:bg-white/15;
 	}
 
 	input::-webkit-slider-thumb {
