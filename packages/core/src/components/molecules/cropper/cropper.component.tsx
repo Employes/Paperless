@@ -2,7 +2,6 @@ import {
 	Component,
 	Event,
 	EventEmitter,
-	Host,
 	Listen,
 	Prop,
 	State,
@@ -10,6 +9,8 @@ import {
 } from '@stencil/core';
 import 'cropperjs';
 import { CropperImage, CropperSelection } from 'cropperjs';
+import { ThemedHost } from '../../../internal/themed-host.component';
+import { state } from '../../../state';
 
 @Component({
 	tag: 'p-cropper',
@@ -69,11 +70,16 @@ export class Cropper {
 	}
 
 	render() {
+		const themeColor =
+			state.theme === 'dark'
+				? 'rgba(70, 75, 84, 0.5)'
+				: 'rgba(255, 255, 255, 0.5)';
+
 		return (
-			<Host class='p-cropper'>
+			<ThemedHost>
 				{this._loaded && (
 					<cropper-canvas
-						class='h-[17.5rem] w-full border-0 border-b border-solid border-off-white-700 bg-white'
+						class='h-[17.5rem] w-full border-0 border-b border-solid border-off-white-700 bg-white dark:border-hurricane-200'
 						onAction={() => this._onAction()}
 					>
 						<cropper-image
@@ -86,7 +92,7 @@ export class Cropper {
 						/>
 						<cropper-shade
 							class='aspect-branding rounded-full'
-							theme-color='rgba(255, 255, 255, 0.5)'
+							theme-color={themeColor}
 							hidden
 						/>
 						<cropper-selection
@@ -107,7 +113,7 @@ export class Cropper {
 					value={this._currentScale}
 					onValueChange={ev => this._onInput(ev.detail)}
 				/>
-			</Host>
+			</ThemedHost>
 		);
 	}
 
