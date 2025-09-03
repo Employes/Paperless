@@ -23,11 +23,11 @@ h4 {
 }
 
 body {
-	@apply text-base font-medium #{!important};
+	@apply text-base font-medium;
 }
 
 body[data-theme='dark'] {
-	@apply text-storm-200 #{!important};
+	@apply text-storm-200;
 
 	h1,
 	h2,
@@ -39,7 +39,7 @@ body[data-theme='dark'] {
 }
 
 body:not([data-theme='dark']) {
-	@apply text-storm-300 #{!important};
+	@apply text-storm-300;
 
 	h1,
 	h2,
