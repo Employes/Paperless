@@ -1,5 +1,6 @@
 import { Placement, Strategy } from '@floating-ui/dom';
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
+import { ThemedHost } from '../../../internal/themed-host.component';
 
 @Component({
 	tag: 'p-helper',
@@ -19,7 +20,7 @@ export class Helper {
 
 	render() {
 		return (
-			<Host>
+			<ThemedHost>
 				<p-tooltip
 					class='flex'
 					placement={this.placement}
@@ -27,7 +28,7 @@ export class Helper {
 				>
 					<p-icon
 						size='sm'
-						class='cursor-pointer text-storm-300 hover:text-storm-500'
+						class='cursor-pointer text-storm-300 hover:text-storm-500 dark:text-hurricane-300 dark:hover:text-hurricane-200'
 						variant='question-circle'
 						slot='trigger'
 					/>
@@ -36,7 +37,7 @@ export class Helper {
 						<slot />
 					</div>
 				</p-tooltip>
-			</Host>
+			</ThemedHost>
 		);
 	}
 }
