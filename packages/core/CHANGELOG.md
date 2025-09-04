@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.11.0](https://github.com/ionic-team/stencil-component-starter/compare/v2.10.8...v2.11.0) (2025-09-04)
+
+
+### Features
+
+* **atoms/icon:** Add moon variant ([ffcaa1c](https://github.com/ionic-team/stencil-component-starter/commit/ffcaa1c3c4884f2041013406644dc77553d6b47f))
+
+
+
+
+
 ## [2.10.8](https://github.com/ionic-team/stencil-component-starter/compare/v2.10.7...v2.10.8) (2025-09-04)
 
 **Note:** Version bump only for package @paperless/core
