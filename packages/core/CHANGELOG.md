@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.10.7](https://github.com/ionic-team/stencil-component-starter/compare/v2.10.6...v2.10.7) (2025-09-04)
+
+
+### Bug Fixes
+
+* **atoms/divider:** Set correct default divider color ([96ebfad](https://github.com/ionic-team/stencil-component-starter/commit/96ebfadb77d9a5d69dd59fadc1b4022726281a02))
+
+
+
+
+
 ## [2.10.6](https://github.com/ionic-team/stencil-component-starter/compare/v2.10.5...v2.10.6) (2025-09-04)
 
 
