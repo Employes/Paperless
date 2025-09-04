@@ -31,6 +31,7 @@ const multiItem = cva([
 	'text-sm font-semibold whitespace-nowrap',
 	'rounded-lg',
 	'bg-indigo-100',
+	'dark:bg-white/15',
 ]);
 
 const textContainer = cva('block w-full overflow-hidden text-start', {
@@ -365,7 +366,7 @@ export class Select {
 						>
 							{item[this.selectionDisplayKey ?? this.displayKey]}
 							<p-icon
-								class='text-xs text-indigo-500 group-hover/item:text-indigo-800'
+								class='text-xs text-indigo-500 group-hover/item:text-indigo-800 dark:text-white/15 dark:group-hover/item:text-white'
 								variant='negative'
 							/>
 						</div>
