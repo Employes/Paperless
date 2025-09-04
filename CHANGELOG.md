@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.10.4](https://github.com/employes/paperless/compare/v2.10.3...v2.10.4) (2025-09-04)
+
+
+### Bug Fixes
+
+* **molecules/calendar:** Apply white text to dark variant ([17fa7a5](https://github.com/employes/paperless/commit/17fa7a5fe2c058e71d4819796a84a86d0460cd9c))
+
+
+
+
+
 ## [2.10.3](https://github.com/employes/paperless/compare/v2.10.2...v2.10.3) (2025-09-04)
 
 
