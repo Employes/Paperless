@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.12.0](https://github.com/ionic-team/stencil-component-starter/compare/v2.11.0...v2.12.0) (2025-09-04)
+
+
+### Features
+
+* **molecules/navigation-item:** add ability to apply full width ([77a2c44](https://github.com/ionic-team/stencil-component-starter/commit/77a2c44fa6aa62ae17b9ee3ba83e809a010c3fc5))
+
+
+
+
+
 # [2.11.0](https://github.com/ionic-team/stencil-component-starter/compare/v2.10.8...v2.11.0) (2025-09-04)
 
 
