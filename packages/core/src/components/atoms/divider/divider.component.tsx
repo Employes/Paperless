@@ -1,10 +1,12 @@
 import { Component, Element, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { ThemedHost } from '../../../internal/themed-host.component';
+import { cn } from '../../../utils';
 
 const content = cva(
 	[
 		'flex items-center',
+		'after:content-[""] before:content-[""]',
 		'after:bg-current before:bg-current',
 		'after:flex-1 before:flex-1',
 	],
@@ -26,6 +28,7 @@ const content = cva(
 @Component({
 	tag: 'p-divider',
 	styleUrl: 'divider.component.css',
+	shadow: true,
 })
 export class Divider {
 	/**
@@ -46,17 +49,18 @@ export class Divider {
 	render() {
 		const hasContent = this._el.innerHTML?.length > 0;
 		return (
-			<ThemedHost
-				class={{
-					'text-off-white-700 dark:text-hurricane-400':
-						!this._el.className.includes('text'),
-				}}
-			>
+			<ThemedHost>
 				<div
-					class={content({
-						variant: this.variant,
-						alignContent: this.alignContent,
-					})}
+					class={cn(
+						content({
+							variant: this.variant,
+							alignContent: this.alignContent,
+						}),
+						{
+							'text-off-white-700 dark:text-hurricane-400':
+								!this._el.className.includes('text'),
+						}
+					)}
 				>
 					<div class='flex items-center px-2 text-sm font-medium text-storm-400 empty:px-0 dark:text-hurricane-200'>
 						{hasContent && <slot />}
