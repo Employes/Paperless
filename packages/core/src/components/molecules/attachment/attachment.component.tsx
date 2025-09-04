@@ -13,7 +13,9 @@ const attachment = cva(
 	[
 		'flex flex-1 items-center justify-start gap-2',
 		'h-8 min-w-0 px-2 rounded-lg',
-		'border border-solid bg-white-600',
+		'border border-solid',
+		'bg-white-600 text-storm-200',
+		'dark:bg-white/15 dark:text-hurricane-200',
 	],
 	{
 		variants: {
@@ -22,8 +24,8 @@ const attachment = cva(
 				true: 'cursor-pointer',
 			},
 			error: {
-				false: 'bg-white-600 border-storm-100 text-storm-200',
-				true: 'border-negative-red-500',
+				false: 'border-storm-100 dark:border-white/15',
+				true: 'border-negative-red-500 dark:border-negative-red-alternative',
 			},
 		},
 	}
