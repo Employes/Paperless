@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.10.6](https://github.com/ionic-team/stencil-component-starter/compare/v2.10.5...v2.10.6) (2025-09-04)
+
+
+### Bug Fixes
+
+* **molecules/accordion:** Apply themed host.. ([5959b2c](https://github.com/ionic-team/stencil-component-starter/commit/5959b2c16a09e2a860a1e7cf289b5dc65d827d4d))
+
+
+
+
+
 ## [2.10.5](https://github.com/ionic-team/stencil-component-starter/compare/v2.10.4...v2.10.5) (2025-09-04)
 
 **Note:** Version bump only for package @paperless/core
