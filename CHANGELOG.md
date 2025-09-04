@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.10.0](https://github.com/employes/paperless/compare/v2.9.3...v2.10.0) (2025-09-04)
+
+
+### Features
+
+* **molecules/button:** Apply shadow dom ([fe074c4](https://github.com/employes/paperless/commit/fe074c4a6390185cbe4bf48746dd48db105603e1))
+
+
+
+
+
 ## [2.9.3](https://github.com/employes/paperless/compare/v2.9.2...v2.9.3) (2025-09-04)
 
 
