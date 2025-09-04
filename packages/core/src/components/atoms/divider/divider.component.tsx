@@ -48,7 +48,7 @@ export class Divider {
 		return (
 			<ThemedHost
 				class={{
-					'text-off-white-700 dark:text-hurricane-200':
+					'text-off-white-700 dark:text-hurricane-400':
 						!this._el.className.includes('text'),
 				}}
 			>
