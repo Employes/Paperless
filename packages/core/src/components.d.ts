@@ -1193,6 +1193,10 @@ export namespace Components {
          */
         "active": boolean;
         /**
+          * Wether the span should contain a w-full
+         */
+        "applyFullWidth": boolean;
+        /**
           * The element to use for the navigation item
          */
         "as": string;
@@ -4471,6 +4475,10 @@ declare namespace LocalJSX {
           * Wether the navigation item is active
          */
         "active"?: boolean;
+        /**
+          * Wether the span should contain a w-full
+         */
+        "applyFullWidth"?: boolean;
         /**
           * The element to use for the navigation item
          */

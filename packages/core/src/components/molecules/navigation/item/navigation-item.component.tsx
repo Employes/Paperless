@@ -92,6 +92,11 @@ export class NavigationItem {
 	 */
 	@Prop() class: string;
 
+	/**
+	 * Wether the span should contain a w-full
+	 */
+	@Prop() applyFullWidth: boolean = false;
+
 	render() {
 		const TagType = this.as;
 
@@ -111,7 +116,12 @@ export class NavigationItem {
 						<p-icon variant={this.icon} />
 					</div>
 
-					<span class={this.counter && 'has-counter'}>
+					<span
+						class={cn({
+							'has-counter': !!this.counter,
+							'w-full': this.applyFullWidth,
+						})}
+					>
 						<slot />
 					</span>
 
