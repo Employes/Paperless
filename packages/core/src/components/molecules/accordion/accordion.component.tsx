@@ -1,4 +1,5 @@
-import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
+import { ThemedHost } from '../../../internal/themed-host.component';
 import { cn } from '../../../utils';
 
 @Component({
@@ -42,7 +43,7 @@ export class Accordion {
 
 	render() {
 		return (
-			<Host>
+			<ThemedHost>
 				<div
 					class={cn('flex cursor-pointer items-center gap-2', {
 						'text-storm-500 dark:text-white': this.variant === 'primary',
@@ -66,7 +67,7 @@ export class Accordion {
 						<slot />
 					</div>
 				)}
-			</Host>
+			</ThemedHost>
 		);
 	}
 
