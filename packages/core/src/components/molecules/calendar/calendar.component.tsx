@@ -348,11 +348,12 @@ export class Calendar {
 								class={cn(
 									'normal flex items-center justify-center rounded-lg',
 									'h-8 w-8 text-sm font-semibold',
-									'text-storm-300 dark:text-hurricane-200',
+									'text-storm-300',
 									'dark:bg-white/15',
 									{
-										'cursor-pointer hover:bg-white-600 hover:text-storm-500 dark:hover:bg-hurricane-300 dark:hover:text-white':
+										'cursor-pointer hover:bg-white-600 hover:text-storm-500 dark:text-white dark:hover:bg-hurricane-300 dark:hover:text-white':
 											!day.disabled,
+										'dark:text-hurricane-200': day.disabled,
 									},
 									`col-start-${day.offset}`,
 									{ 'cursor-not-allowed opacity-60': day.disabled },
