@@ -82,14 +82,14 @@ export class Navbar {
 							onClick={() => (this._show = false)}
 						></p-button>
 					</div>
-					<div class='flex w-full flex-col items-stretch'>
+					<div class='flex w-full flex-shrink-0 flex-col items-stretch'>
 						<slot name='company' />
 					</div>
-					<div class='flex w-full flex-col gap-6 overflow-y-auto'>
+					<div class='flex w-full flex-1 flex-col gap-6 overflow-y-auto'>
 						<slot name='content' />
 					</div>
 
-					<div class='mt-auto hidden w-full flex-col layout-1280:flex'>
+					<div class='mt-auto hidden w-full flex-shrink-0 flex-col layout-1280:flex'>
 						<slot name='user' />
 					</div>
 				</div>
