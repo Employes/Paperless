@@ -550,7 +550,7 @@ export class Button {
 		}
 
 		if (this.type === 'submit') {
-			this._host.closest('FORM').dispatchEvent(new Event('submit'));
+			this._host.closest('form').requestSubmit();
 		}
 
 		this.onClick.emit(ev);
