@@ -164,7 +164,7 @@ export class Attachment {
 		const isMobileDevice = isTablet();
 
 		const baseText =
-			'min-w-0 flex-1 overflow-hidden text-ellipsis whitespace-nowrap  text-sm';
+			'min-w-0 flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-sm';
 		return (
 			<Fragment>
 				<p-field-container
@@ -188,7 +188,7 @@ export class Attachment {
 						>
 							{prefix}
 
-							<span class={cn(baseText, 'peer empty:hidden')}>
+							<span class={cn(baseText, 'peer empty:hidden dark:text-white')}>
 								{this.value}
 							</span>
 							<span class={cn(baseText, 'hidden peer-empty:block')}>
