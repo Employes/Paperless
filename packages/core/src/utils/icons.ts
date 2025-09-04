@@ -64,6 +64,7 @@ import medal from '../assets/icons/general/medal.svg';
 import menu from '../assets/icons/general/menu.svg';
 import menuArrow from '../assets/icons/general/menu-arrow.svg';
 import minus from '../assets/icons/general/minus.svg';
+import moon from '../assets/icons/general/moon.svg';
 import more from '../assets/icons/general/more.svg';
 import negative from '../assets/icons/general/negative.svg';
 import other from '../assets/icons/general/other.svg';
@@ -189,6 +190,7 @@ export const categorized = {
 		menu,
 		'menu-arrow': menuArrow,
 		minus,
+		moon,
 		more,
 		negative,
 		other,
@@ -320,6 +322,7 @@ export const icons = {
 	menu,
 	'menu-arrow': menuArrow,
 	minus,
+	moon,
 	more,
 	negative,
 	other,
