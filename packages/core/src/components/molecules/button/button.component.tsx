@@ -339,6 +339,7 @@ export type ButtonVariant =
 @Component({
 	tag: 'p-button',
 	styleUrl: 'button.component.css',
+	shadow: true,
 })
 export class Button {
 	/**
