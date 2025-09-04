@@ -1,4 +1,12 @@
-import { Component, Event, EventEmitter, h, Listen, Prop } from '@stencil/core';
+import {
+	Component,
+	Event as StencilEvent,
+	EventEmitter,
+	h,
+	Listen,
+	Prop,
+	Element,
+} from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { ThemedHost } from '../../../internal/themed-host.component';
 import { RotateOptions } from '../../../types/tailwind';
@@ -455,10 +463,12 @@ export class Button {
 	/**
 	 * Button click event
 	 */
-	@Event({
+	@StencilEvent({
 		bubbles: false,
 	})
 	onClick: EventEmitter<MouseEvent>;
+
+	@Element() private _host: HTMLElement;
 
 	render() {
 		let loaderColor: 'white' | 'off-white' | 'indigo' | 'storm' = 'white';
@@ -537,6 +547,10 @@ export class Button {
 		if (this.loading || this.disabled) {
 			ev.preventDefault();
 			return;
+		}
+
+		if (this.type === 'submit') {
+			this._host.closest('FORM').dispatchEvent(new Event('submit'));
 		}
 
 		this.onClick.emit(ev);
