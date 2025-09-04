@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.10.3](https://github.com/employes/paperless/compare/v2.10.2...v2.10.3) (2025-09-04)
+
+
+### Bug Fixes
+
+* **molecules/button:** Use request submit instead of event to submit form ([58337d8](https://github.com/employes/paperless/commit/58337d81913882aeaba0d58dac06813344ee4ab1))
+
+
+
+
+
 ## [2.10.2](https://github.com/employes/paperless/compare/v2.10.1...v2.10.2) (2025-09-04)
 
 
