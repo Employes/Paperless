@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.9.3](https://github.com/ionic-team/stencil-component-starter/compare/v2.9.2...v2.9.3) (2025-09-04)
+
+
+### Bug Fixes
+
+* **molecules/attachment:** Set correct color for file name ([c41d5a1](https://github.com/ionic-team/stencil-component-starter/commit/c41d5a1980b33c79bd8d8ed4438a1eb57c6d3178))
+* **molecules/button:** Remove scoped ([2484ad4](https://github.com/ionic-team/stencil-component-starter/commit/2484ad4e6f702a226babae0e286fb2de1b89cb5c))
+
+
+
+
+
 ## [2.9.2](https://github.com/ionic-team/stencil-component-starter/compare/v2.9.1...v2.9.2) (2025-09-04)
 
 **Note:** Version bump only for package @paperless/core
