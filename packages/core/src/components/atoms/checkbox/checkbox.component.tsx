@@ -168,7 +168,7 @@ export class Checkbox {
 							/>
 						</div>
 					</div>
-					<div class='flex-1 overflow-hidden text-ellipsis dark:text-white'>
+					<div class='flex-1 overflow-hidden text-ellipsis empty:hidden dark:text-white'>
 						<slot />
 					</div>
 				</label>
