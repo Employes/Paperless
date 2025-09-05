@@ -31,7 +31,7 @@ const segmentItem = cva(
 			{
 				variant: 'default',
 				active: false,
-				class: 'text-storm-500 dark:text-hurricane-300',
+				class: 'text-storm-500 dark:text-hurricane-200',
 			},
 			{
 				variant: 'block',
