@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.3](https://github.com/employes/paperless/compare/v2.12.2...v2.12.3) (2025-09-05)
+
+
+### Bug Fixes
+
+* **atoms/checkbox, radio & toggle:** Add empty check if no label ([1c14779](https://github.com/employes/paperless/commit/1c14779ae43c499c3e372c0bf54647ab4ebfc729))
+
+
+
+
+
 ## [2.12.2](https://github.com/employes/paperless/compare/v2.12.1...v2.12.2) (2025-09-05)
 
 
