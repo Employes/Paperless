@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.2](https://github.com/ionic-team/stencil-component-starter/compare/v2.12.1...v2.12.2) (2025-09-05)
+
+
+### Bug Fixes
+
+* **atoms/segment/item:** Use hurricane-200 instead of 300 on default state ([fe51e1d](https://github.com/ionic-team/stencil-component-starter/commit/fe51e1d9a583a10acffd6be06b612672af46c583))
+
+
+
+
+
 ## [2.12.1](https://github.com/ionic-team/stencil-component-starter/compare/v2.12.0...v2.12.1) (2025-09-04)
 
 **Note:** Version bump only for package @paperless/core
