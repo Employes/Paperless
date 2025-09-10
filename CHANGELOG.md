@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.4](https://github.com/employes/paperless/compare/v2.12.3...v2.12.4) (2025-09-10)
+
+
+### Bug Fixes
+
+* **molecules/field:** Improve readability for longer texts / words ([41c4f03](https://github.com/employes/paperless/commit/41c4f03144d2808a9f5d45b164a940f4a4faa8e9))
+
+
+
+
+
 ## [2.12.3](https://github.com/employes/paperless/compare/v2.12.2...v2.12.3) (2025-09-05)
 
 
