@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.5](https://github.com/ionic-team/stencil-component-starter/compare/v2.12.4...v2.12.5) (2025-09-10)
+
+
+### Bug Fixes
+
+* **atoms/card/header:** Set default color for divider ([5c9475b](https://github.com/ionic-team/stencil-component-starter/commit/5c9475b37c6c74d1be46c2dfc283f55544390400))
+* **molecules/dropdown:** Only remove `menu` if its set to prevent undefined error ([4dbe9e9](https://github.com/ionic-team/stencil-component-starter/commit/4dbe9e9e597144a74a5a90417243fba5263032ec))
+
+
+
+
+
 ## [2.12.4](https://github.com/ionic-team/stencil-component-starter/compare/v2.12.3...v2.12.4) (2025-09-10)
 
 
