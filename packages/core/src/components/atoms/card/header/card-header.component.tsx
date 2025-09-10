@@ -108,7 +108,9 @@ export class CardHeader {
 					</div>
 
 					{this.variant === 'default' ? (
-						asBoolean(this.divider) && <p-divider class='dark:text-white/15' />
+						asBoolean(this.divider) && (
+							<p-divider class='text-off-white-700 dark:text-white/15' />
+						)
 					) : (
 						<div class='pointer-events-none absolute left-0 top-0 z-[-1] h-full w-full overflow-hidden rounded-t-2xl'>
 							<p-smile
