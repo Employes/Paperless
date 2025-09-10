@@ -27,7 +27,7 @@ import { ThemedHost } from '../../../../internal/themed-host.component';
 const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
 	variants: {
 		variant: {
-			read: 'border-0 items-start flex-wrap break-all leading-6',
+			read: 'border-0 items-start flex-wrap hyphens-auto break-normal leading-6',
 			write: 'border px-2',
 		},
 		size: {
