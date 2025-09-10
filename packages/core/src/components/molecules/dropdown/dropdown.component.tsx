@@ -157,7 +157,7 @@ export class Dropdown {
 			this._cleanup = null;
 		}
 
-		this._menu.remove();
+		this._menu?.remove();
 	}
 
 	componentDidRender() {
