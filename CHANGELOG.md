@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.9](https://github.com/employes/paperless/compare/v2.12.8...v2.12.9) (2025-09-11)
+
+
+### Bug Fixes
+
+* **atoms/segment/item:** Fix hover only for dark mode ([708c06f](https://github.com/employes/paperless/commit/708c06f5a14be60c008449ee096f8f44940b076c))
+
+
+
+
+
 ## [2.12.8](https://github.com/employes/paperless/compare/v2.12.7...v2.12.8) (2025-09-11)
 
 
