@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.6](https://github.com/ionic-team/stencil-component-starter/compare/v2.12.5...v2.12.6) (2025-09-11)
+
+
+### Bug Fixes
+
+* **atoms/modal/footer:** Set default color for divider ([cd0a37c](https://github.com/ionic-team/stencil-component-starter/commit/cd0a37cce49d82cacfb98ac12b296e45711ce5d6))
+* **atoms/tab/container:** Set default color for divider ([f47e005](https://github.com/ionic-team/stencil-component-starter/commit/f47e005de2c4a3ffb1445f0a41014df84f64a01a))
+* **molecules/button:** Set font geist & fix icon color ([b0f3df1](https://github.com/ionic-team/stencil-component-starter/commit/b0f3df193edb2ac5f590fae57572bb3af4f2b726))
+
+
+
+
+
 ## [2.12.5](https://github.com/ionic-team/stencil-component-starter/compare/v2.12.4...v2.12.5) (2025-09-10)
 
 
