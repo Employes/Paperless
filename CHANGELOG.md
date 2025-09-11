@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.8](https://github.com/employes/paperless/compare/v2.12.7...v2.12.8) (2025-09-11)
+
+
+### Bug Fixes
+
+* **molecules/button:** Set border to transparent when disabled ([d23f206](https://github.com/employes/paperless/commit/d23f2065d44fb484e3307cc4914dc777bd70f90e))
+
+
+
+
+
 ## [2.12.7](https://github.com/employes/paperless/compare/v2.12.6...v2.12.7) (2025-09-11)
 
 
