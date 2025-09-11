@@ -48,7 +48,7 @@ const button = cva(
 				lg: ['text-base h-10 gap-2'],
 			},
 			disabled: {
-				true: 'cursor-not-allowed',
+				true: 'cursor-not-allowed border-transparent',
 				false: null,
 			},
 			buttonGroupPosition: {
