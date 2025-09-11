@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.7](https://github.com/employes/paperless/compare/v2.12.6...v2.12.7) (2025-09-11)
+
+
+### Bug Fixes
+
+* **molecules/table/footer:** Set correct face color for the table footer ([7af0e3d](https://github.com/employes/paperless/commit/7af0e3d8f1c034da5468bb2fb595b248419b6b7c))
+
+
+
+
+
 ## [2.12.6](https://github.com/employes/paperless/compare/v2.12.5...v2.12.6) (2025-09-11)
 
 
