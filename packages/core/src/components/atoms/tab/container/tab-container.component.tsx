@@ -12,7 +12,7 @@ export class TabContainer {
 				<div class='scrollbar-hide z-10 flex w-full gap-5 overflow-x-auto'>
 					<slot />
 				</div>
-				<p-divider class='absolute bottom-0 left-0 m-0 w-full dark:text-hurricane-400' />
+				<p-divider class='absolute bottom-0 left-0 m-0 w-full text-off-white-700 dark:text-hurricane-400' />
 			</div>
 		);
 	}
