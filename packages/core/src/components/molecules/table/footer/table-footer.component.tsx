@@ -13,6 +13,7 @@ import {
 	defaultSize,
 	defaultSizeOptions,
 } from '../../../molecules/pagination/size/constants';
+import { ThemedHost } from '../../../../internal/themed-host.component';
 
 const footer = cva(
 	[
@@ -143,31 +144,33 @@ export class TableFooter {
 
 	render() {
 		return (
-			<div
-				class={footer({
-					pinned: this._isPinned,
-					hidden: this._hidden,
-				})}
-			>
-				{(this.enablePaginationPages || this.enablePaginationSize) &&
-					this.total > 0 && (
-						<p-pagination
-							class='z-[2]'
-							enablePaginationSize={this.enablePaginationSize}
-							enablePaginationPages={this.enablePaginationPages}
-							pageSize={this.pageSize}
-							pageSizeOptions={this.pageSizeOptions}
-							onPageSizeChange={({ detail }) => this._changePageSize(detail)}
-							page={this.page}
-							hideOnSinglePage={this.hideOnSinglePage}
-							onPageChange={({ detail }) => this.pageChange.emit(detail)}
-							total={this.total}
-							onPagesChange={({ detail }) =>
-								(this._hasPaginationPages = detail > 1)
-							}
-						/>
-					)}
-			</div>
+			<ThemedHost>
+				<div
+					class={footer({
+						pinned: this._isPinned,
+						hidden: this._hidden,
+					})}
+				>
+					{(this.enablePaginationPages || this.enablePaginationSize) &&
+						this.total > 0 && (
+							<p-pagination
+								class='z-[2]'
+								enablePaginationSize={this.enablePaginationSize}
+								enablePaginationPages={this.enablePaginationPages}
+								pageSize={this.pageSize}
+								pageSizeOptions={this.pageSizeOptions}
+								onPageSizeChange={({ detail }) => this._changePageSize(detail)}
+								page={this.page}
+								hideOnSinglePage={this.hideOnSinglePage}
+								onPageChange={({ detail }) => this.pageChange.emit(detail)}
+								total={this.total}
+								onPagesChange={({ detail }) =>
+									(this._hasPaginationPages = detail > 1)
+								}
+							/>
+						)}
+				</div>
+			</ThemedHost>
 		);
 	}
 
