@@ -20,7 +20,7 @@ const footer = cva(
 		'w-full py-8 px-6',
 		'after:absolute after:top-0 after:left-0  after:z-[0]',
 		'after:w-full after:h-full after:transition-opacity',
-		'after:bg-gradient-to-t after:from-white after:via-white/80 after:to-transparent',
+		'after:bg-gradient-to-t after:from-white dark:after:from-hurricane-700 after:via-white/80 dark:after:via-hurricane-700/80 after:to-transparent',
 	],
 	{
 		variants: {
