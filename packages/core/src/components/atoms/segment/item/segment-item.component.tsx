@@ -18,7 +18,7 @@ const segmentItem = cva(
 				false: [
 					'cursor-pointer',
 					'text-storm-300 hover:text-storm-500 hover:bg-storm-50',
-					'hover:text-white dark:hover:bg-white/15',
+					'dark:hover:text-white dark:hover:bg-white/15',
 				],
 				true: 'bg-indigo-600 text-white',
 			},
