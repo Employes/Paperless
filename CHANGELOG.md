@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.10](https://github.com/employes/paperless/compare/v2.12.9...v2.12.10) (2025-09-11)
+
+
+### Bug Fixes
+
+* **molecules/table/footer:** Apply themed host ([13b154c](https://github.com/employes/paperless/commit/13b154cecc8fb0c9a2995b4b38f1fd83851692b9))
+
+
+
+
+
 ## [2.12.9](https://github.com/employes/paperless/compare/v2.12.8...v2.12.9) (2025-09-11)
 
 
