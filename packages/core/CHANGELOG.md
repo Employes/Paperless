@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.11](https://github.com/ionic-team/stencil-component-starter/compare/v2.12.10...v2.12.11) (2025-09-12)
+
+
+### Bug Fixes
+
+* **molecules/select:** Set correct text colors in dark mode ([11fa4f2](https://github.com/ionic-team/stencil-component-starter/commit/11fa4f2df2582feeb9482e7ee47d1be54357de3d))
+
+
+
+
+
 ## [2.12.10](https://github.com/ionic-team/stencil-component-starter/compare/v2.12.9...v2.12.10) (2025-09-11)
 
 
