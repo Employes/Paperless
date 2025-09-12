@@ -739,7 +739,7 @@ export class Select {
 		if (!this._items.length) {
 			items = [
 				<p
-					class='w-full p-2 text-center text-sm text-storm-400'
+					class='w-full p-2 text-center text-sm text-storm-400 dark:text-hurricane-200'
 					slot='items'
 				>
 					{this.emptyStateText}
@@ -946,7 +946,7 @@ export class Select {
 				<span class='flex items-center gap-2'>
 					<p-icon
 						class={cn(
-							'text-storm-300',
+							'text-storm-300 dark:text-hurricane-200',
 							(!isSelection || !!this.applyClassOnSelectedItem) &&
 								(!isSelectedInMenu || !!this.applyClassOnSelectedItemInMenu)
 								? item?.[this.iconClassKey] ?? ''
