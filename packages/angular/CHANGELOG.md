@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.12](https://github.com/Employes/Paperless/compare/v2.12.11...v2.12.12) (2025-09-17)
+
+
+### Reverts
+
+* Revert "refactor(angular/base/form): Remove updateValueAndValidity in marking dirty" ([7319b80](https://github.com/Employes/Paperless/commit/7319b80be5f3f16a68689be8d91ed34c9cdcdb64))
+
+
+
+
+
 ## [2.12.11](https://github.com/Employes/Paperless/compare/v2.12.10...v2.12.11) (2025-09-12)
 
 **Note:** Version bump only for package @paperless/angular
