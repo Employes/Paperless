@@ -46,6 +46,8 @@ export abstract class BaseFormComponent {
 				this.markControlDirty(child);
 			}
 		}
+
+		control.updateValueAndValidity();
 	}
 
 	markAllDirty(formGroup: FormGroup) {
