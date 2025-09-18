@@ -24,99 +24,102 @@ import {
 import { templateFunc } from '../container/field-container.component';
 import { ThemedHost } from '../../../../internal/themed-host.component';
 
-const field = cva(['flex gap-2', 'w-inherit', 'border-solid rounded-lg'], {
-	variants: {
-		variant: {
-			read: 'border-0 items-start flex-wrap hyphens-auto break-normal leading-6',
-			write: 'border px-2',
+const field = cva(
+	['flex gap-2', 'w-inherit', 'border-solid rounded-lg', 'relative'],
+	{
+		variants: {
+			variant: {
+				read: 'border-0 items-start flex-wrap hyphens-auto break-normal leading-6',
+				write: 'border px-2',
+			},
+			size: {
+				sm: null,
+				base: null,
+			},
+			disabled: {
+				false: null,
+				true: null,
+			},
+			focused: {
+				false: null,
+				true: null,
+			},
+			error: {
+				false: null,
+				true: null,
+			},
+			isTextarea: {
+				false: null,
+				true: 'items-start',
+			},
 		},
-		size: {
-			sm: null,
-			base: null,
-		},
-		disabled: {
-			false: null,
-			true: null,
-		},
-		focused: {
-			false: null,
-			true: null,
-		},
-		error: {
-			false: null,
-			true: null,
-		},
-		isTextarea: {
-			false: null,
-			true: 'items-start',
-		},
-	},
-	compoundVariants: [
-		{
-			size: 'sm',
-			variant: 'write',
-			isTextarea: false,
-			class: 'h-6',
-		},
-		{
-			size: 'base',
-			variant: 'write',
-			isTextarea: false,
-			class: 'h-8',
-		},
+		compoundVariants: [
+			{
+				size: 'sm',
+				variant: 'write',
+				isTextarea: false,
+				class: 'h-6',
+			},
+			{
+				size: 'base',
+				variant: 'write',
+				isTextarea: false,
+				class: 'h-8',
+			},
 
-		{
-			size: 'sm',
-			variant: 'read',
-			class: 'min-h-4 text-xs',
-		},
-		{
-			size: 'base',
-			variant: 'read',
-			class: 'min-h-5 text-sm',
-		},
+			{
+				size: 'sm',
+				variant: 'read',
+				class: 'min-h-4 text-xs',
+			},
+			{
+				size: 'base',
+				variant: 'read',
+				class: 'min-h-5 text-sm',
+			},
 
-		{
-			variant: 'write',
-			focused: false,
-			error: false,
-			class: 'border-storm-100 dark:border-hurricane-400',
-		},
-		{
-			variant: 'write',
-			disabled: false,
-			focused: true,
-			error: false,
-			class:
-				'border-indigo-600 ring dark:ring-0 ring-indigo-100 selection:bg-indigo-500',
-		},
+			{
+				variant: 'write',
+				focused: false,
+				error: false,
+				class: 'border-storm-100 dark:border-hurricane-400',
+			},
+			{
+				variant: 'write',
+				disabled: false,
+				focused: true,
+				error: false,
+				class:
+					'border-indigo-600 ring dark:ring-0 ring-indigo-100 selection:bg-indigo-500',
+			},
 
-		{
-			variant: 'write',
-			disabled: false,
-			class: 'bg-white dark:bg-hurricane-500',
-		},
-		{
-			variant: 'write',
-			disabled: true,
-			class:
-				'bg-white-600 dark:bg-hurricane-600 dark:border-hurricane-500 cursor-not-allowed',
-		},
+			{
+				variant: 'write',
+				disabled: false,
+				class: 'bg-white dark:bg-hurricane-500',
+			},
+			{
+				variant: 'write',
+				disabled: true,
+				class:
+					'bg-white-600 dark:bg-hurricane-600 dark:border-hurricane-500 cursor-not-allowed',
+			},
 
-		{
-			disabled: false,
-			error: true,
-			class: 'border-negative-red-500',
-		},
-		{
-			disabled: false,
-			focused: true,
-			error: true,
-			class:
-				'ring ring-negative-red-50 selection:bg-negative-red-50 dark:ring-0',
-		},
-	],
-});
+			{
+				disabled: false,
+				error: true,
+				class: 'border-negative-red-500',
+			},
+			{
+				disabled: false,
+				focused: true,
+				error: true,
+				class:
+					'ring ring-negative-red-50 selection:bg-negative-red-50 dark:ring-0',
+			},
+		],
+	}
+);
 
 const input = cva(
 	[
