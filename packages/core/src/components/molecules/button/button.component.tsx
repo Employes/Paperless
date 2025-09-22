@@ -270,6 +270,10 @@ const icon = cva([], {
 			true: null,
 			false: null,
 		},
+		iconOnly: {
+			true: null,
+			false: null,
+		},
 	},
 	compoundVariants: [
 		{
@@ -293,8 +297,24 @@ const icon = cva([], {
 			error: false,
 			class: [
 				'text-storm-300 group-hover/button:text-storm-500 group-active/button:text-storm-500/60',
-				'dark:text-hurricane-200 dark:group-hover/button:text-white dark:group-active/button:text-white/60',
+				'dark:group-hover/button:text-white dark:group-active/button:text-white/60',
 			],
+		},
+		{
+			variant: ['secondary', 'dropdown'],
+			disabled: false,
+			active: false,
+			iconOnly: false,
+			error: false,
+			class: 'dark:text-hurricane-200',
+		},
+		{
+			variant: ['secondary', 'dropdown'],
+			disabled: false,
+			active: false,
+			iconOnly: true,
+			error: false,
+			class: 'dark:text-white',
 		},
 		{
 			variant: ['secondary', 'dropdown'],
@@ -559,6 +579,7 @@ export class Button {
 						disabled: asBoolean(this.disabled),
 						active: asBoolean(this.active),
 						error: asBoolean(this.error),
+						iconOnly: asBoolean(this.iconOnly),
 					}),
 					this.iconClass ?? ''
 				)}
