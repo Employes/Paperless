@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.16](https://github.com/ionic-team/stencil-component-starter/compare/v2.12.15...v2.12.16) (2025-09-22)
+
+
+### Bug Fixes
+
+* **atoms/drawer/container:** added border to dark mode ([5c0b56c](https://github.com/ionic-team/stencil-component-starter/commit/5c0b56c4149c32c5cd08bc361b3124348df544bb))
+* **atoms/modal/container:** added border to dark mode ([1a9969a](https://github.com/ionic-team/stencil-component-starter/commit/1a9969adc294c516d3a2236965419223c10b682c))
+
+
+
+
+
 ## [2.12.15](https://github.com/ionic-team/stencil-component-starter/compare/v2.12.14...v2.12.15) (2025-09-22)
 
 
