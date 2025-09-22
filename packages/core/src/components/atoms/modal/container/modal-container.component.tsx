@@ -1,6 +1,7 @@
 import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { asBoolean } from '../../../../utils/as-boolean';
+import { ThemedHost } from '../../../../internal/themed-host.component';
 
 const container = cva(
 	[
@@ -12,6 +13,8 @@ const container = cva(
 		'max-h-[calc(100dvh-4rem)]',
 
 		'shadow-modal',
+
+		'dark:border-hurricane-400 dark:border dark:border-solid',
 	],
 	{
 		variants: {
@@ -49,14 +52,16 @@ export class ModalContainer {
 
 	render() {
 		return (
-			<div
-				class={container({
-					size: this.size,
-					closing: asBoolean(this.closing),
-				})}
-			>
-				<slot />
-			</div>
+			<ThemedHost>
+				<div
+					class={container({
+						size: this.size,
+						closing: asBoolean(this.closing),
+					})}
+				>
+					<slot />
+				</div>
+			</ThemedHost>
 		);
 	}
 }
