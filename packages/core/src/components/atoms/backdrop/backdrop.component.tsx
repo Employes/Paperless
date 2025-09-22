@@ -19,6 +19,7 @@ const backdrop = cva(
 		'overflow-hidden',
 		'bg-storm-800/40',
 		'max-h-screen max-w-screen',
+		'dark:bg-storm-500/60',
 	],
 	{
 		variants: {
