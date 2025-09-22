@@ -28,7 +28,7 @@ import {
      desktop:hidden desktop:flex desktop:group-hover:hidden desktop:group-hover:flex
      desktop-lg:hidden desktop-lg:flex desktop-lg:group-hover:hidden desktop-lg:group-hover:flex
      desktop-xl:hidden desktop-xl:flex desktop-xl:group-hover:hidden desktop-xl:group-hover:flex
-     pr-4 pr-0
+     pr-4 pr-0 last-of-type:pr-0
      tablet:pr-4 tablet:pr-0
      desktop-xs:pr-4 desktop-xs:pr-0
      desktop-sm:pr-4 desktop-sm:pr-0

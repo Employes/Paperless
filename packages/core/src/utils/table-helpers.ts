@@ -13,7 +13,7 @@ export const getTableCellColumnClasses = (
 	const sizes = definition ? getTableCellSizes(definition, variant) : {};
 
 	return {
-		'flex flex-shrink items-center gap-4': true,
+		'flex flex-shrink items-center gap-4 pr-4 last-of-type:pr-0': true,
 		'justify-start': !definition?.align || definition?.align === 'start',
 		'justify-center': definition?.align === 'center',
 		'justify-end': definition?.align === 'end',

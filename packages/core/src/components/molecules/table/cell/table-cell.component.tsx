@@ -133,7 +133,7 @@ export class TableCell {
 						<div class='desktop:flex desktop:hidden desktop:group-hover:flex desktop:group-hover:hidden'></div>
 						<div class='desktop-lg:flex desktop-lg:hidden desktop-lg:group-hover:flex desktop-lg:group-hover:hidden'></div>
 						<div class='desktop-xl:flex desktop-xl:hidden desktop-xl:group-hover:flex desktop-xl:group-hover:hidden'></div>
-						<div class='pr-0 pr-4'></div>
+						<div class='pr-0 pr-4 last-of-type:pr-0'></div>
 						<div class='tablet:pr-0 tablet:pr-4'></div>
 						<div class='desktop-xs:pr-0 desktop-xs:pr-4'></div>
 						<div class='desktop-sm:pr-0 desktop-sm:pr-4'></div>
@@ -151,7 +151,7 @@ export class TableCell {
 			return (
 				<p-loader
 					variant='ghost'
-					class='h-6 w-full flex-1 rounded'
+					class='h-6 w-[calc(100%-1rem)] flex-1 rounded'
 				/>
 			);
 		}
