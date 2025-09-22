@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.14](https://github.com/ionic-team/stencil-component-starter/compare/v2.12.13...v2.12.14) (2025-09-22)
+
+
+### Bug Fixes
+
+* **molecules/table/cell:** Improve spacing of cells ([2fb5d41](https://github.com/ionic-team/stencil-component-starter/commit/2fb5d41276f8978dea54d11b9fce579cbbd83abd))
+
+
+
+
+
 ## [2.12.13](https://github.com/ionic-team/stencil-component-starter/compare/v2.12.12...v2.12.13) (2025-09-22)
 
 
