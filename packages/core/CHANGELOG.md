@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.13](https://github.com/ionic-team/stencil-component-starter/compare/v2.12.12...v2.12.13) (2025-09-22)
+
+
+### Bug Fixes
+
+* **molecules/field:** added position relative to container ([670d8d6](https://github.com/ionic-team/stencil-component-starter/commit/670d8d6249c9f528744b214c0e49cdd0032f44a5))
+
+
+
+
+
 ## [2.12.12](https://github.com/ionic-team/stencil-component-starter/compare/v2.12.11...v2.12.12) (2025-09-17)
 
 **Note:** Version bump only for package @paperless/core
