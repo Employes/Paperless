@@ -19,25 +19,10 @@ const options = {
 	eventNameing: 'jsx',
 };
 
-export const parameters = {
+const parameters = {
 	options: {
-		storySort: {
-			order: [
-				'Introduction',
-				['Welcome', 'Changelog', 'Atomic Design'],
-				'Design system',
-				[
-					'Typography',
-					'Grid',
-					'Bosons',
-					'Atoms',
-					'Molecules',
-					'Organisms',
-					'Templates',
-					'Helpers',
-				],
-			],
-		},
+		storySort: (story1, story2) =>
+			globalThis['storybook-multilevel-sort:storySort'](story1, story2),
 	},
 	previewTabs: {
 		'storybook/docs/panel': {
@@ -81,6 +66,7 @@ export const parameters = {
 };
 
 const preview = {
+	parameters,
 	layout: 'centered',
 	render: stencilRender(),
 	decorators: [themeWrapper],

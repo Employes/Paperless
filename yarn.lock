@@ -19412,6 +19412,11 @@ storybook-dark-mode@^4.0.2:
     fast-deep-equal "^3.1.3"
     memoizerific "^1.11.3"
 
+storybook-multilevel-sort@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/storybook-multilevel-sort/-/storybook-multilevel-sort-2.0.1.tgz#4175864e7f468b63782d275b89b11d0fa0a3067a"
+  integrity sha512-UYLewkt9eRoPSlHG2ljhqfcU9VtI2aaQGaowDF/liZvUW+iqbyRIl6yZ7bgrMLg5P4jMhFDMuJnlIiPk59TJTQ==
+
 storybook@^8.6.12:
   version "8.6.12"
   resolved "https://registry.yarnpkg.com/storybook/-/storybook-8.6.12.tgz#dddd11644f0344524577bb600a4dabda9a73af55"

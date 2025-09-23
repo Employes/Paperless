@@ -131,6 +131,7 @@
 		"serverless-s3-sync": "3.4.0",
 		"storybook": "^8.6.12",
 		"storybook-dark-mode": "^4.0.2",
+		"storybook-multilevel-sort": "^2.0.1",
 		"tailwind-merge": "^3.0.1",
 		"tailwindcss": "3.4.17",
 		"vite": "^6.3.0",

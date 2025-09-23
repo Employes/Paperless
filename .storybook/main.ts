@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/web-components-vite';
+import { configureSort } from 'storybook-multilevel-sort';
 
 import { dirname, join } from 'path';
 const { BASE_PATH } = process.env;
@@ -6,6 +7,27 @@ const { BASE_PATH } = process.env;
 function getAbsolutePath(value) {
 	return dirname(require.resolve(join(value, 'package.json')));
 }
+
+configureSort({
+	storyOrder: {
+		introduction: {
+			welcome: null,
+			changelog: null,
+			'atomic design': null,
+		},
+		'design system': {
+			bosons: { default: null },
+			atoms: { default: null },
+			molecules: { default: null },
+			organisms: { default: null },
+			helpers: { default: null },
+			deprecated: { default: null },
+			'*': { default: null },
+		},
+		'**': { default: null },
+	},
+	typeOrder: ['docs', 'story'],
+});
 
 const config: StorybookConfig = {
 	staticDirs: ['../packages/core/dist', './public'],
