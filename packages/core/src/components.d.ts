@@ -617,6 +617,10 @@ export namespace Components {
          */
         "chevronPosition": 'start' | 'end';
         /**
+          * The class of the dropdown container
+         */
+        "containerClass": string;
+        /**
           * Wether to automatically close the dropdown menu after clicking inside
          */
         "disableTriggerClick": boolean;
@@ -3854,6 +3858,10 @@ declare namespace LocalJSX {
           * Chevron position
          */
         "chevronPosition"?: 'start' | 'end';
+        /**
+          * The class of the dropdown container
+         */
+        "containerClass"?: string;
         /**
           * Wether to automatically close the dropdown menu after clicking inside
          */

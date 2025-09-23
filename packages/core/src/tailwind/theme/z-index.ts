@@ -15,5 +15,7 @@ export default {
 
 	tooltip: '601',
 
+	datepicker: '602',
+
 	toast: '700',
 };
