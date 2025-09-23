@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.20](https://github.com/employes/paperless/compare/v2.12.19...v2.12.20) (2025-09-23)
+
+
+### Bug Fixes
+
+* **components/molecules/button:** add dark disabled styling ([f3242fe](https://github.com/employes/paperless/commit/f3242fe70cc24e4bc5f62d9d4d1132789c4acc1f))
+
+
+
+
+
 ## [2.12.19](https://github.com/employes/paperless/compare/v2.12.18...v2.12.19) (2025-09-23)
 
 **Note:** Version bump only for package paperless
