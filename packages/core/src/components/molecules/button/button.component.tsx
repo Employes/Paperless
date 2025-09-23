@@ -101,7 +101,7 @@ const button = cva(
 			{
 				variant: 'primary',
 				disabled: true,
-				class: 'bg-indigo-200 dark:bg-indigo-600/30',
+				class: 'bg-indigo-200 dark:bg-indigo-600/30 dark:text-white/30',
 			},
 			{
 				variant: 'primary',
