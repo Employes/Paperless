@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.17](https://github.com/ionic-team/stencil-component-starter/compare/v2.12.16...v2.12.17) (2025-09-23)
+
+
+### Bug Fixes
+
+* **components/molecules/button:** add dark disabled styling ([050e396](https://github.com/ionic-team/stencil-component-starter/commit/050e3968c68e904a3a2e145f1e98760bb781b326))
+
+
+
+
+
 ## [2.12.16](https://github.com/ionic-team/stencil-component-starter/compare/v2.12.15...v2.12.16) (2025-09-22)
 
 
