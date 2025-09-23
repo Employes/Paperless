@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.18](https://github.com/ionic-team/stencil-component-starter/compare/v2.12.17...v2.12.18) (2025-09-23)
+
+
+### Bug Fixes
+
+* **components/molecules/field:** changed icon color in dark mode ([e92e3e3](https://github.com/ionic-team/stencil-component-starter/commit/e92e3e3179d1a8237f4cf0f855cbea09950d0328))
+
+
+
+
+
 ## [2.12.17](https://github.com/ionic-team/stencil-component-starter/compare/v2.12.16...v2.12.17) (2025-09-23)
 
 
