@@ -180,7 +180,7 @@ const prefixAndSuffix = cva(
 				disabled: false,
 				focused: false,
 				error: false,
-				class: 'text-storm-300 dark:text-hurricane-300',
+				class: 'text-storm-300 dark:text-hurricane-200',
 			},
 
 			{
