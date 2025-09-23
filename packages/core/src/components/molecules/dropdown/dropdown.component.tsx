@@ -20,6 +20,7 @@ import {
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { childOfComposed } from '../../../utils/child-of';
+import { cn } from '../../../utils';
 
 const dropdownContainerClass = cva(['z-dropdown hidden'], {
 	variants: {
@@ -127,6 +128,11 @@ export class Dropdown {
 	@Prop() chevronDirection: 'up' | 'down';
 
 	/**
+	 * The class of the dropdown container
+	 */
+	@Prop() containerClass: string;
+
+	/**
 	 * The host element
 	 */
 	@Element() private _el: HTMLElement;
@@ -181,11 +187,14 @@ export class Dropdown {
 						fullWidth={this.applyFullWidth && !this.applyMaxWidth}
 						allowOverflow={this.allowOverflow}
 						scrollable={this.scrollable}
-						class={dropdownContainerClass({
-							strategy: this.strategy,
-							maxWidth: this.applyMaxWidth,
-							fullWidth: this.applyFullWidth && !this.applyMaxWidth,
-						})}
+						class={cn(
+							dropdownContainerClass({
+								strategy: this.strategy,
+								maxWidth: this.applyMaxWidth,
+								fullWidth: this.applyFullWidth && !this.applyMaxWidth,
+							}),
+							this.containerClass
+						)}
 						ref={el => this._load(el)}
 						onClick={() => this._containerClickHandler()}
 						role='popover'
