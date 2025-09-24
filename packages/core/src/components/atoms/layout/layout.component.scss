@@ -26,7 +26,7 @@
 	.topbar {
 		grid-area: topbar;
 
-		@apply sticky w-full;
+		@apply sticky z-[11] w-full;
 	}
 
 	.sidebar {
