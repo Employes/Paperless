@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.13.0](https://github.com/employes/paperless/compare/v2.12.22...v2.13.0) (2025-09-24)
+
+
+### Bug Fixes
+
+* **atoms/layout:** added z-index on topbar ([0e93ce1](https://github.com/employes/paperless/commit/0e93ce1fc326f69ac2ecf2d344f6843092a066f5))
+* **atoms/tab/container:** deleted z-index ([e0802a8](https://github.com/employes/paperless/commit/e0802a883d929eb8ae16b7f64f042b86f012ac50))
+
+
+### Features
+
+* **components/atoms/dropdown-menu/item:** added autoHeight prop ([fdb5307](https://github.com/employes/paperless/commit/fdb53077ff551f62cda3a60c5657b7cb646e93a2))
+
+
+
+
+
 ## [2.12.22](https://github.com/employes/paperless/compare/v2.12.21...v2.12.22) (2025-09-24)
 
 
