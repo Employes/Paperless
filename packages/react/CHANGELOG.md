@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.22](https://github.com/ionic-team/ionic/compare/v2.12.21...v2.12.22) (2025-09-24)
+
+**Note:** Version bump only for package @paperless/react
+
+
+
+
+
 ## [2.12.21](https://github.com/ionic-team/ionic/compare/v2.12.20...v2.12.21) (2025-09-23)
 
 **Note:** Version bump only for package @paperless/react

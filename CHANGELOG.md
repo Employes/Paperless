@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.22](https://github.com/employes/paperless/compare/v2.12.21...v2.12.22) (2025-09-24)
+
+
+### Bug Fixes
+
+* **components/atoms/modal/body:** decreased margin top to fix gap ([1f04d2c](https://github.com/employes/paperless/commit/1f04d2c6ae7d28c62dba47966ca8bd2826f4a4ea))
+* **components/atoms/modal/body:** decreased margin top to fix gap ([c70a217](https://github.com/employes/paperless/commit/c70a217d334ebe91c7e0a26c339ad8d85550caf8))
+
+
+
+
+
 ## [2.12.21](https://github.com/employes/paperless/compare/v2.12.20...v2.12.21) (2025-09-23)
 
 **Note:** Version bump only for package paperless
