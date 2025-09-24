@@ -2,7 +2,7 @@ import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { ThemedHost } from '../../../../internal/themed-host.component';
 
-const body = cva('bg-white dark:bg-hurricane-600 p-4', {
+const body = cva('bg-white dark:bg-hurricane-600 p-4 -mt-1', {
 	variants: {
 		roundedBottom: {
 			true: 'rounded-b-none desktop-xs:rounded-b-2xl pb-[calc(env(safe-area-inset-bottom)+1rem)]',
