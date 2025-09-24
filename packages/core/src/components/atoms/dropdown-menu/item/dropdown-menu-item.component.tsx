@@ -233,17 +233,25 @@ export class DropdownMenuItem {
 	 */
 	@Prop() useContainer = true;
 
+	/**
+	 *  wether to auto adjust the height
+	 */
+	@Prop() autoHeight = false;
+
 	render() {
 		return (
 			<ThemedHost>
 				<div
-					class={dropdownMenuItem({
-						variant: this.variant,
-						active: asBoolean(this.active),
-						enableHover: asBoolean(this.enableHover ?? true, true),
-						enableTextWrap: this.enableTextWrap,
-						disabled: asBoolean(this.disabled),
-					})}
+					class={cn(
+						dropdownMenuItem({
+							variant: this.variant,
+							active: asBoolean(this.active),
+							enableHover: asBoolean(this.enableHover ?? true),
+							enableTextWrap: this.enableTextWrap,
+							disabled: asBoolean(this.disabled),
+						}),
+						{ 'h-8': !this.autoHeight }
+					)}
 				>
 					{this.icon && (
 						<p-icon
