@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.13.2](https://github.com/ionic-team/stencil-component-starter/compare/v2.13.1...v2.13.2) (2025-09-25)
+
+
+### Bug Fixes
+
+* **molecules/dropdown:** Add prop & styling for datepicker z-index ([73c29d0](https://github.com/ionic-team/stencil-component-starter/commit/73c29d0bd5903adf2fbaa88222ed20e8cdc59b1e))
+
+
+
+
+
 ## [2.13.1](https://github.com/ionic-team/stencil-component-starter/compare/v2.13.0...v2.13.1) (2025-09-24)
 
 
