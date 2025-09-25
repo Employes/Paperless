@@ -629,6 +629,10 @@ export namespace Components {
          */
         "insideClick": boolean;
         /**
+          * Wether the dropdown container is a datepicker dropdown
+         */
+        "isDatepicker": boolean;
+        /**
           * Wether to open the dropdown manually
          */
         "manual": boolean;
@@ -688,6 +692,10 @@ export namespace Components {
           * Wether the dropdown menu item is active
          */
         "active": boolean;
+        /**
+          * wether to auto adjust the height
+         */
+        "autoHeight": boolean;
         /**
           * Wether the dropdown menu item has a checkbox
          */
@@ -3871,6 +3879,10 @@ declare namespace LocalJSX {
          */
         "insideClick"?: boolean;
         /**
+          * Wether the dropdown container is a datepicker dropdown
+         */
+        "isDatepicker"?: boolean;
+        /**
           * Wether to open the dropdown manually
          */
         "manual"?: boolean;
@@ -3934,6 +3946,10 @@ declare namespace LocalJSX {
           * Wether the dropdown menu item is active
          */
         "active"?: boolean;
+        /**
+          * wether to auto adjust the height
+         */
+        "autoHeight"?: boolean;
         /**
           * Wether the dropdown menu item has a checkbox
          */

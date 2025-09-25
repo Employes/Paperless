@@ -22,7 +22,7 @@ import { cva } from 'class-variance-authority';
 import { childOfComposed } from '../../../utils/child-of';
 import { cn } from '../../../utils';
 
-const dropdownContainerClass = cva(['z-dropdown hidden'], {
+const dropdownContainerClass = cva(['hidden'], {
 	variants: {
 		strategy: {
 			absolute: 'absolute',
@@ -35,6 +35,10 @@ const dropdownContainerClass = cva(['z-dropdown hidden'], {
 		maxWidth: {
 			false: null,
 			true: 'max-w-[13.875rem]',
+		},
+		isDatepicker: {
+			false: 'z-dropdown',
+			true: 'z-datepicker',
 		},
 	},
 	compoundVariants: [
@@ -133,6 +137,11 @@ export class Dropdown {
 	@Prop() containerClass: string;
 
 	/**
+	 * Wether the dropdown container is a datepicker dropdown
+	 */
+	@Prop() isDatepicker: boolean = false;
+
+	/**
 	 * The host element
 	 */
 	@Element() private _el: HTMLElement;
@@ -192,6 +201,7 @@ export class Dropdown {
 								strategy: this.strategy,
 								maxWidth: this.applyMaxWidth,
 								fullWidth: this.applyFullWidth && !this.applyMaxWidth,
+								isDatepicker: this.isDatepicker,
 							}),
 							this.containerClass
 						)}

@@ -306,7 +306,7 @@ export class Datepicker {
 				applyFullWidth={false}
 				insideClick={true}
 				show={this._showDropdown}
-				containerClass='z-datepicker'
+				isDatepicker={true}
 			>
 				<p-field
 					slot='trigger'
