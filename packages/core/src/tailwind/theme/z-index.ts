@@ -6,16 +6,16 @@ export default {
 	'navbar-backdrop': '290',
 	navbar: '300',
 
+	tooltip: '400',
+
+	datepicker: '401',
+
 	backdrop: '490',
 
 	drawer: '500',
 	'drawer-header': '501',
 
 	modal: '600',
-
-	tooltip: '601',
-
-	datepicker: '602',
 
 	toast: '700',
 };
