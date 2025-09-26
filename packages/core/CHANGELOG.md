@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.13.3](https://github.com/ionic-team/stencil-component-starter/compare/v2.13.2...v2.13.3) (2025-09-26)
+
+
+### Bug Fixes
+
+* **core/tailwind/theme/z-index:** updated z-index of tooltip and datepicker ([af2c3c3](https://github.com/ionic-team/stencil-component-starter/commit/af2c3c31d655962f8b53f985f314d9eb339e4cbc))
+
+
+
+
+
 ## [2.13.2](https://github.com/ionic-team/stencil-component-starter/compare/v2.13.1...v2.13.2) (2025-09-25)
 
 
