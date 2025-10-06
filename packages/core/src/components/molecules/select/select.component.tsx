@@ -16,6 +16,7 @@ import { IconVariant } from '../../atoms/icon/icon.component';
 
 import { cva } from 'class-variance-authority';
 import { ThemedHost } from '../../../internal/themed-host.component';
+import { SELECT_DEFAULT_MAX_DISPLAYED_ITEMS } from '../../../utils/constants';
 
 const multiContainer = cva([
 	'flex items-center gap-2',
@@ -180,7 +181,7 @@ export class Select {
 	/**
 	 * The maximum amount of items to display
 	 */
-	@Prop() maxDisplayedItems: number = 10;
+	@Prop() maxDisplayedItems: number = SELECT_DEFAULT_MAX_DISPLAYED_ITEMS;
 
 	/**
 	 * Wether to enable autocomplete

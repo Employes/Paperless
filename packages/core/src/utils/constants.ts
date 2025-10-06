@@ -1,0 +1,3 @@
+// Select
+export const SELECT_DEFAULT_MAX_DISPLAYED_ITEMS = 10;
+
