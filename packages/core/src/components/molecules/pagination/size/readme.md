@@ -7,12 +7,12 @@
 
 ## Properties
 
-| Property       | Attribute       | Description                                        | Type                        | Default                     |
-| -------------- | --------------- | -------------------------------------------------- | --------------------------- | --------------------------- |
-| `hidden`       | `hidden`        | Wether to hide when there is only 1 page available | `boolean`                   | `false`                     |
-| `itemTemplate` | `item-template` | The template for the data view                     | `(value: number) => string` | `this._defaultItemTemplate` |
-| `size`         | `size`          | The current page                                   | `number`                    | `defaultSize`               |
-| `sizeOptions`  | `size-options`  | The available sizes                                | `number[]`                  | `defaultSizeOptions`        |
+| Property       | Attribute       | Description                                        | Type                        | Default                                |
+| -------------- | --------------- | -------------------------------------------------- | --------------------------- | -------------------------------------- |
+| `hidden`       | `hidden`        | Wether to hide when there is only 1 page available | `boolean`                   | `false`                                |
+| `itemTemplate` | `item-template` | The template for the data view                     | `(value: number) => string` | `this._defaultItemTemplate`            |
+| `size`         | `size`          | The current page                                   | `number`                    | `PAGINATION_DEFAULT_PAGE_SIZE`         |
+| `sizeOptions`  | `size-options`  | The available sizes                                | `number[]`                  | `PAGINATION_DEFAULT_PAGE_SIZE_OPTIONS` |
 
 
 ## Events

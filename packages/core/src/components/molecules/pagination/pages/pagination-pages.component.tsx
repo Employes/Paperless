@@ -1,6 +1,7 @@
 import { Component, Event, EventEmitter, h, Prop, Watch } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { ThemedHost } from '../../../../internal/themed-host.component';
+import { PAGINATION_DEFAULT_PAGE_SIZE } from '../../../../utils/constants';
 
 type PaginationSetItem = {
 	type: string;
@@ -38,7 +39,7 @@ export class PaginationPages {
 	/**
 	 * The amount of items per page
 	 */
-	@Prop() pageSize: number = 12;
+	@Prop() pageSize: number = PAGINATION_DEFAULT_PAGE_SIZE;
 
 	/**
 	 * Wether to hide when there is only 1 page available

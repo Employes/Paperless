@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { QuickFilter } from '@paperless/core';
+import { PAGINATION_DEFAULT_PAGE_SIZE, QuickFilter } from '@paperless/core';
 import { Observable, timer } from 'rxjs';
 import {
 	debounce,
@@ -45,7 +45,7 @@ export abstract class BaseTableComponent
 	public filterFormQuickFilterKey?: string;
 	public defaultFilterFormValues: any = {};
 
-	public pageSizeDefault = 12;
+	public pageSizeDefault = PAGINATION_DEFAULT_PAGE_SIZE;
 	public tableOptions?: FormControl<TableOptions>;
 
 	private _defaultTableValues: TableOptions = {

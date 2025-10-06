@@ -10,13 +10,16 @@ import {
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { ThemedHost } from '../../../../internal/themed-host.component';
+import { cn } from '../../../../utils';
 import { asBoolean } from '../../../../utils/as-boolean';
+import {
+	PAGINATION_DEFAULT_PAGE_SIZE,
+	PAGINATION_DEFAULT_PAGE_SIZE_OPTIONS,
+} from '../../../../utils/constants';
 import {
 	formatTranslation,
 	getLocaleComponentStrings,
 } from '../../../../utils/localization';
-import { defaultSize, defaultSizeOptions } from './constants';
-import { cn } from '../../../../utils';
 
 export type templateFunc = (value: number) => string;
 
@@ -66,12 +69,13 @@ export class PaginationSize {
 	/**
 	 * The current page
 	 */
-	@Prop({ mutable: true, reflect: true }) size: number = defaultSize;
+	@Prop({ mutable: true, reflect: true }) size: number =
+		PAGINATION_DEFAULT_PAGE_SIZE;
 
 	/**
 	 * The available sizes
 	 */
-	@Prop() sizeOptions: number[] = defaultSizeOptions;
+	@Prop() sizeOptions: number[] = PAGINATION_DEFAULT_PAGE_SIZE_OPTIONS;
 
 	/**
 	 * Event whenever the size changes

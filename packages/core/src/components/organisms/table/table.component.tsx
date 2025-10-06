@@ -23,14 +23,14 @@ import {
 	getLocaleComponentStrings,
 	isMobile,
 } from '../../../utils';
+import { cn } from '../../../utils/cn';
+import {
+	PAGINATION_DEFAULT_PAGE_SIZE,
+	PAGINATION_DEFAULT_PAGE_SIZE_OPTIONS,
+} from '../../../utils/constants';
 import { TableColumn } from '../../helpers/table/column/table-column.component';
 import { TableRowAction } from '../../helpers/table/row-action/table-row-action.component';
-import {
-	defaultSize,
-	defaultSizeOptions,
-} from '../../molecules/pagination/size/constants';
 import { buttonTemplateFunc } from '../../molecules/table/header/table-header.component';
-import { cn } from '../../../utils/cn';
 
 export type templateFunc = () => string;
 export type amountSelectedTemplateFunc = (amount: number) => string;
@@ -305,12 +305,12 @@ export class Table {
 	/**
 	 * The amount of items per page
 	 */
-	@Prop() pageSize: number = defaultSize;
+	@Prop() pageSize: number = PAGINATION_DEFAULT_PAGE_SIZE;
 
 	/**
 	 * The options for the page size
 	 */
-	@Prop() pageSizeOptions: number[] = defaultSizeOptions;
+	@Prop() pageSizeOptions: number[] = PAGINATION_DEFAULT_PAGE_SIZE_OPTIONS;
 
 	/**
 	 * Event whenever the page changes

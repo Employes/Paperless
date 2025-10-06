@@ -8,8 +8,11 @@ import {
 	State,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
-import { defaultSize, defaultSizeOptions } from '../size/constants';
 import { ThemedHost } from '../../../../internal/themed-host.component';
+import {
+	PAGINATION_DEFAULT_PAGE_SIZE,
+	PAGINATION_DEFAULT_PAGE_SIZE_OPTIONS,
+} from '../../../../utils/constants';
 
 const pagination = cva(
 	[
@@ -64,12 +67,12 @@ export class Pagination {
 	/**
 	 * The amount of items per page
 	 */
-	@Prop() pageSize: number = defaultSize;
+	@Prop() pageSize: number = PAGINATION_DEFAULT_PAGE_SIZE;
 
 	/**
 	 * The options for the page size
 	 */
-	@Prop() pageSizeOptions: number[] = defaultSizeOptions;
+	@Prop() pageSizeOptions: number[] = PAGINATION_DEFAULT_PAGE_SIZE_OPTIONS;
 
 	/**
 	 * Event whenever the page changes
