@@ -944,16 +944,18 @@ export class Select {
 		if (this.iconKey && (!isSelection || this.showIconOnSelectedItem)) {
 			content = (
 				<span class='flex items-center gap-2'>
-					<p-icon
-						class={cn(
-							'text-storm-300 dark:text-hurricane-200',
-							(!isSelection || !!this.applyClassOnSelectedItem) &&
-								(!isSelectedInMenu || !!this.applyClassOnSelectedItemInMenu)
-								? item?.[this.iconClassKey] ?? ''
-								: ''
-						)}
-						variant={item[this.iconKey] as IconVariant}
-					/>
+					{item[this.iconKey] && (
+						<p-icon
+							class={cn(
+								'text-storm-300 dark:text-hurricane-200',
+								(!isSelection || !!this.applyClassOnSelectedItem) &&
+									(!isSelectedInMenu || !!this.applyClassOnSelectedItemInMenu)
+									? item?.[this.iconClassKey] ?? ''
+									: ''
+							)}
+							variant={item[this.iconKey] as IconVariant}
+						/>
+					)}
 					<div
 						class={textContainer({
 							variant: 'default',
