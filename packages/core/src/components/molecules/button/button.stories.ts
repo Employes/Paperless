@@ -31,7 +31,6 @@ export const Default = {
 		'icon-position': iconPosition,
 		'icon-flip': iconFlip,
 		'icon-rotate': iconRotate,
-		'icon-class': iconClass,
 		'inherit-text': inheritText,
 		'button-group-position': buttonGroupPosition,
 		class: className,
@@ -55,7 +54,6 @@ export const Default = {
 		icon-position=${iconPosition ?? nothing}
 		icon-flip=${iconFlip ?? nothing}
 		icon-rotate=${iconRotate ?? nothing}
-		icon-class=${iconClass ?? nothing}
 		inherit-text=${inheritText ?? nothing}
 		button-group-position=${buttonGroupPosition ?? nothing}
 		class=${className ?? nothing}
