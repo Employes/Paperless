@@ -616,7 +616,9 @@ export class Button {
 						active: asBoolean(this.active),
 						error: asBoolean(this.error),
 						iconOnly: asBoolean(this.iconOnly),
-						iconColor: !this.iconClass?.match(/[^:]text-/),
+						// We need to prefix the string with a space so it will match if the
+						// string starts with text-
+						iconColor: !` ${this.iconClass}`.match(/[^:]text-/),
 						iconColorHover: !this.iconClass?.includes(
 							'group-hover/button:text-'
 						),
