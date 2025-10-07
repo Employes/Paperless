@@ -606,6 +606,9 @@ export class Button {
 			return;
 		}
 
+		console.log(this.iconClass);
+		console.log(!` ${this.iconClass}`.match(/[^:]text-/));
+		console.log(!this.iconClass?.includes('group-hover/button:text-'));
 		return (
 			<p-icon
 				class={cn(
@@ -619,8 +622,8 @@ export class Button {
 						// We need to prefix the string with a space so it will match if the
 						// string starts with text-
 						iconColor: !` ${this.iconClass}`.match(/[^:]text-/),
-						iconColorHover: !` ${this.iconClass}`.match(
-							/group-hover([\/button]+)?:text-/
+						iconColorHover: !this.iconClass?.includes(
+							'group-hover/button:text-'
 						),
 					}),
 					this.iconClass ?? ''
