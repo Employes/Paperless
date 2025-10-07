@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.13.9](https://github.com/ionic-team/stencil-component-starter/compare/v2.13.8...v2.13.9) (2025-10-07)
+
+
+### Bug Fixes
+
+* Set tailwind-merge to 2.6.0 ([d29abef](https://github.com/ionic-team/stencil-component-starter/commit/d29abef834061ab7ff3404ed83f56e79092ae21a))
+
+
+### Reverts
+
+* Revert "fix(molecules/button): Don't apply icon color classes if passed in iconClass" ([b1dc5da](https://github.com/ionic-team/stencil-component-starter/commit/b1dc5da7f230aa72b68b5de1bf2ca22652b170c7))
+* Revert "fix(molecules/button): Prefix iconColor regex with a space" ([fff2a34](https://github.com/ionic-team/stencil-component-starter/commit/fff2a34e2aaa75bed85ae61edd4f608c52089449))
+* Revert "fix(molecules/button): Add debugging" ([4563936](https://github.com/ionic-team/stencil-component-starter/commit/456393637aa710ec2ed87cbbd329a7e5dcb8abf6))
+* Revert "fix(molecules/button): Improve matching on group hover" ([7a6dfda](https://github.com/ionic-team/stencil-component-starter/commit/7a6dfda135758f65a803f85dd428ca073b31e499))
+
+
+
+
+
 ## [2.13.8](https://github.com/ionic-team/stencil-component-starter/compare/v2.13.7...v2.13.8) (2025-10-07)
 
 
