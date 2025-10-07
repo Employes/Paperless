@@ -14,6 +14,72 @@ import { asBoolean } from '../../../utils/as-boolean';
 import { cn } from '../../../utils/cn';
 import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
 
+/**
+<div class="text-inherit group-hover/button:text-inherit dark:text-inherit dark:group-hover/button:text-inherit"></div>
+<div class="text-transparent group-hover/button:text-transparent dark:text-transparent dark:group-hover/button:text-transparent"></div>
+<div class="text-current group-hover/button:text-current dark:text-current dark:group-hover/button:text-current"></div>
+<div class="text-black group-hover/button:text-black dark:text-black dark:group-hover/button:text-black"></div>
+<div class="text-white-500 group-hover/button:text-white-500 dark:text-white-500 dark:group-hover/button:text-white-500"></div>
+<div class="text-white-600 group-hover/button:text-white-600 dark:text-white-600 dark:group-hover/button:text-white-600"></div>
+<div class="text-white-700 group-hover/button:text-white-700 dark:text-white-700 dark:group-hover/button:text-white-700"></div>
+<div class="text-white-800 group-hover/button:text-white-800 dark:text-white-800 dark:group-hover/button:text-white-800"></div>
+<div class="text-white-DEFAULT group-hover/button:text-white-DEFAULT dark:text-white-DEFAULT dark:group-hover/button:text-white-DEFAULT"></div>
+<div class="text-negative-red-50 group-hover/button:text-negative-red-50 dark:text-negative-red-50 dark:group-hover/button:text-negative-red-50"></div>
+<div class="text-negative-red-100 group-hover/button:text-negative-red-100 dark:text-negative-red-100 dark:group-hover/button:text-negative-red-100"></div>
+<div class="text-negative-red-500 group-hover/button:text-negative-red-500 dark:text-negative-red-500 dark:group-hover/button:text-negative-red-500"></div>
+<div class="text-negative-red-700 group-hover/button:text-negative-red-700 dark:text-negative-red-700 dark:group-hover/button:text-negative-red-700"></div>
+<div class="text-negative-red-800 group-hover/button:text-negative-red-800 dark:text-negative-red-800 dark:group-hover/button:text-negative-red-800"></div>
+<div class="text-negative-red-alternative group-hover/button:text-negative-red-alternative dark:text-negative-red-alternative dark:group-hover/button:text-negative-red-alternative"></div>
+<div class="text-positive-green-50 group-hover/button:text-positive-green-50 dark:text-positive-green-50 dark:group-hover/button:text-positive-green-50"></div>
+<div class="text-positive-green-100 group-hover/button:text-positive-green-100 dark:text-positive-green-100 dark:group-hover/button:text-positive-green-100"></div>
+<div class="text-positive-green-500 group-hover/button:text-positive-green-500 dark:text-positive-green-500 dark:group-hover/button:text-positive-green-500"></div>
+<div class="text-positive-green-800 group-hover/button:text-positive-green-800 dark:text-positive-green-800 dark:group-hover/button:text-positive-green-800"></div>
+<div class="text-positive-green-alternative group-hover/button:text-positive-green-alternative dark:text-positive-green-alternative dark:group-hover/button:text-positive-green-alternative"></div>
+<div class="text-amber-50 group-hover/button:text-amber-50 dark:text-amber-50 dark:group-hover/button:text-amber-50"></div>
+<div class="text-amber-100 group-hover/button:text-amber-100 dark:text-amber-100 dark:group-hover/button:text-amber-100"></div>
+<div class="text-amber-500 group-hover/button:text-amber-500 dark:text-amber-500 dark:group-hover/button:text-amber-500"></div>
+<div class="text-amber-800 group-hover/button:text-amber-800 dark:text-amber-800 dark:group-hover/button:text-amber-800"></div>
+<div class="text-amber-alternative group-hover/button:text-amber-alternative dark:text-amber-alternative dark:group-hover/button:text-amber-alternative"></div>
+<div class="text-indigo-50 group-hover/button:text-indigo-50 dark:text-indigo-50 dark:group-hover/button:text-indigo-50"></div>
+<div class="text-indigo-100 group-hover/button:text-indigo-100 dark:text-indigo-100 dark:group-hover/button:text-indigo-100"></div>
+<div class="text-indigo-200 group-hover/button:text-indigo-200 dark:text-indigo-200 dark:group-hover/button:text-indigo-200"></div>
+<div class="text-indigo-300 group-hover/button:text-indigo-300 dark:text-indigo-300 dark:group-hover/button:text-indigo-300"></div>
+<div class="text-indigo-400 group-hover/button:text-indigo-400 dark:text-indigo-400 dark:group-hover/button:text-indigo-400"></div>
+<div class="text-indigo-500 group-hover/button:text-indigo-500 dark:text-indigo-500 dark:group-hover/button:text-indigo-500"></div>
+<div class="text-indigo-600 group-hover/button:text-indigo-600 dark:text-indigo-600 dark:group-hover/button:text-indigo-600"></div>
+<div class="text-indigo-700 group-hover/button:text-indigo-700 dark:text-indigo-700 dark:group-hover/button:text-indigo-700"></div>
+<div class="text-indigo-800 group-hover/button:text-indigo-800 dark:text-indigo-800 dark:group-hover/button:text-indigo-800"></div>
+<div class="text-indigo-900 group-hover/button:text-indigo-900 dark:text-indigo-900 dark:group-hover/button:text-indigo-900"></div>
+<div class="text-storm-50 group-hover/button:text-storm-50 dark:text-storm-50 dark:group-hover/button:text-storm-50"></div>
+<div class="text-storm-100 group-hover/button:text-storm-100 dark:text-storm-100 dark:group-hover/button:text-storm-100"></div>
+<div class="text-storm-200 group-hover/button:text-storm-200 dark:text-storm-200 dark:group-hover/button:text-storm-200"></div>
+<div class="text-storm-300 group-hover/button:text-storm-300 dark:text-storm-300 dark:group-hover/button:text-storm-300"></div>
+<div class="text-storm-400 group-hover/button:text-storm-400 dark:text-storm-400 dark:group-hover/button:text-storm-400"></div>
+<div class="text-storm-500 group-hover/button:text-storm-500 dark:text-storm-500 dark:group-hover/button:text-storm-500"></div>
+<div class="text-storm-600 group-hover/button:text-storm-600 dark:text-storm-600 dark:group-hover/button:text-storm-600"></div>
+<div class="text-storm-700 group-hover/button:text-storm-700 dark:text-storm-700 dark:group-hover/button:text-storm-700"></div>
+<div class="text-storm-800 group-hover/button:text-storm-800 dark:text-storm-800 dark:group-hover/button:text-storm-800"></div>
+<div class="text-hurricane-50 group-hover/button:text-hurricane-50 dark:text-hurricane-50 dark:group-hover/button:text-hurricane-50"></div>
+<div class="text-hurricane-100 group-hover/button:text-hurricane-100 dark:text-hurricane-100 dark:group-hover/button:text-hurricane-100"></div>
+<div class="text-hurricane-200 group-hover/button:text-hurricane-200 dark:text-hurricane-200 dark:group-hover/button:text-hurricane-200"></div>
+<div class="text-hurricane-300 group-hover/button:text-hurricane-300 dark:text-hurricane-300 dark:group-hover/button:text-hurricane-300"></div>
+<div class="text-hurricane-400 group-hover/button:text-hurricane-400 dark:text-hurricane-400 dark:group-hover/button:text-hurricane-400"></div>
+<div class="text-hurricane-500 group-hover/button:text-hurricane-500 dark:text-hurricane-500 dark:group-hover/button:text-hurricane-500"></div>
+<div class="text-hurricane-600 group-hover/button:text-hurricane-600 dark:text-hurricane-600 dark:group-hover/button:text-hurricane-600"></div>
+<div class="text-hurricane-700 group-hover/button:text-hurricane-700 dark:text-hurricane-700 dark:group-hover/button:text-hurricane-700"></div>
+<div class="text-hurricane-800 group-hover/button:text-hurricane-800 dark:text-hurricane-800 dark:group-hover/button:text-hurricane-800"></div>
+<div class="text-hurricane-900 group-hover/button:text-hurricane-900 dark:text-hurricane-900 dark:group-hover/button:text-hurricane-900"></div>
+<div class="text-off-white-50 group-hover/button:text-off-white-50 dark:text-off-white-50 dark:group-hover/button:text-off-white-50"></div>
+<div class="text-off-white-100 group-hover/button:text-off-white-100 dark:text-off-white-100 dark:group-hover/button:text-off-white-100"></div>
+<div class="text-off-white-200 group-hover/button:text-off-white-200 dark:text-off-white-200 dark:group-hover/button:text-off-white-200"></div>
+<div class="text-off-white-300 group-hover/button:text-off-white-300 dark:text-off-white-300 dark:group-hover/button:text-off-white-300"></div>
+<div class="text-off-white-400 group-hover/button:text-off-white-400 dark:text-off-white-400 dark:group-hover/button:text-off-white-400"></div>
+<div class="text-off-white-500 group-hover/button:text-off-white-500 dark:text-off-white-500 dark:group-hover/button:text-off-white-500"></div>
+<div class="text-off-white-600 group-hover/button:text-off-white-600 dark:text-off-white-600 dark:group-hover/button:text-off-white-600"></div>
+<div class="text-off-white-700 group-hover/button:text-off-white-700 dark:text-off-white-700 dark:group-hover/button:text-off-white-700"></div>
+<div class="text-off-white-800 group-hover/button:text-off-white-800 dark:text-off-white-800 dark:group-hover/button:text-off-white-800"></div>
+**/
+
 const button = cva(
 	[
 		'group/button',
