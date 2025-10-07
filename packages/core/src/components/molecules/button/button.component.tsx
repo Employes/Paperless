@@ -606,6 +606,9 @@ export class Button {
 			return;
 		}
 
+		console.log(this.iconClass);
+		console.log(!` ${this.iconClass}`.match(/[^:]text-/));
+		console.log(!this.iconClass?.includes('group-hover/button:text-'));
 		return (
 			<p-icon
 				class={cn(
