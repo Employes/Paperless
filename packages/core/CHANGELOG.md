@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.13.5](https://github.com/ionic-team/stencil-component-starter/compare/v2.13.4...v2.13.5) (2025-10-07)
+
+
+### Bug Fixes
+
+* **molecules/button:** Don't apply icon color classes if passed in iconClass ([77eb147](https://github.com/ionic-team/stencil-component-starter/commit/77eb14726d94344dd99b6fc2baa8b80bef7045e0))
+
+
+
+
+
 ## [2.13.4](https://github.com/ionic-team/stencil-component-starter/compare/v2.13.3...v2.13.4) (2025-10-06)
 
 
