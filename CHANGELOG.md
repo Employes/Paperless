@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.13.8](https://github.com/employes/paperless/compare/v2.13.7...v2.13.8) (2025-10-07)
+
+
+### Bug Fixes
+
+* **molecules/button:** Improve matching on group hover ([1a3d3f2](https://github.com/employes/paperless/commit/1a3d3f218a1f93a2aeb3d6a135262f3a35a6c872))
+
+
+
+
+
 ## [2.13.7](https://github.com/employes/paperless/compare/v2.13.6...v2.13.7) (2025-10-07)
 
 
