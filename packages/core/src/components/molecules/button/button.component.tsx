@@ -274,6 +274,14 @@ const icon = cva([], {
 			true: null,
 			false: null,
 		},
+		iconColor: {
+			true: null,
+			false: null,
+		},
+		iconColorHover: {
+			true: null,
+			false: null,
+		},
 	},
 	compoundVariants: [
 		{
@@ -281,13 +289,22 @@ const icon = cva([], {
 			disabled: false,
 			active: false,
 			error: false,
-			class:
-				'text-indigo-300 group-hover/button:text-white group-active/button:text-white/60',
+			iconColor: true,
+			class: 'text-indigo-300',
+		},
+		{
+			variant: 'primary',
+			disabled: false,
+			active: false,
+			error: false,
+			iconColorHover: true,
+			class: 'group-hover/button:text-white group-active/button:text-white/60',
 		},
 		{
 			variant: 'primary',
 			disabled: false,
 			active: true,
+			iconColor: true,
 			class: 'text-white/60',
 		},
 		{
@@ -295,8 +312,17 @@ const icon = cva([], {
 			disabled: false,
 			active: false,
 			error: false,
+			iconColor: true,
+			class: 'text-storm-300',
+		},
+		{
+			variant: ['secondary', 'dropdown'],
+			disabled: false,
+			active: false,
+			error: false,
+			iconColorHover: true,
 			class: [
-				'text-storm-300 group-hover/button:text-storm-500 group-active/button:text-storm-500/60',
+				'group-hover/button:text-storm-500 group-active/button:text-storm-500/60',
 				'dark:group-hover/button:text-white dark:group-active/button:text-white/60',
 			],
 		},
@@ -306,6 +332,7 @@ const icon = cva([], {
 			active: false,
 			iconOnly: false,
 			error: false,
+			iconColor: true,
 			class: 'dark:text-hurricane-200',
 		},
 		{
@@ -314,6 +341,7 @@ const icon = cva([], {
 			active: false,
 			iconOnly: true,
 			error: false,
+			iconColor: true,
 			class: 'dark:text-white',
 		},
 		{
@@ -327,8 +355,16 @@ const icon = cva([], {
 			variant: ['transparent', 'text'],
 			disabled: false,
 			active: false,
+			iconColor: true,
+			class: 'text-indigo-500',
+		},
+		{
+			variant: ['transparent', 'text'],
+			disabled: false,
+			active: false,
+			iconColorHover: true,
 			class:
-				'text-indigo-500 group-hover/button:text-indigo-700 group-active/button:text-indigo-800',
+				'group-hover/button:text-indigo-700 group-active/button:text-indigo-800',
 		},
 		{
 			variant: ['secondary', 'dropdown'],
@@ -580,6 +616,10 @@ export class Button {
 						active: asBoolean(this.active),
 						error: asBoolean(this.error),
 						iconOnly: asBoolean(this.iconOnly),
+						iconColor: !this.iconClass?.match(/[^:]text-/),
+						iconColorHover: !this.iconClass?.includes(
+							'group-hover/button:text-'
+						),
 					}),
 					this.iconClass ?? ''
 				)}
