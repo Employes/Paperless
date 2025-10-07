@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.13.7](https://github.com/employes/paperless/compare/v2.13.6...v2.13.7) (2025-10-07)
+
+
+### Bug Fixes
+
+* **molecules/button:** Add debugging ([8bd2770](https://github.com/employes/paperless/commit/8bd2770b54dc4e335a8b108fb813ef946fa99baa))
+
+
+
+
+
 ## [2.13.6](https://github.com/employes/paperless/compare/v2.13.5...v2.13.6) (2025-10-07)
 
 
