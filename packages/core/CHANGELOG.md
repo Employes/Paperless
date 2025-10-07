@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.13.10](https://github.com/ionic-team/stencil-component-starter/compare/v2.13.9...v2.13.10) (2025-10-07)
+
+
+### Bug Fixes
+
+* **molecules/button:** Try adding all the colors ever ([43d3930](https://github.com/ionic-team/stencil-component-starter/commit/43d39309af9255b6bb58250080ece7e2dff75bfb))
+
+
+
+
+
 ## [2.13.9](https://github.com/ionic-team/stencil-component-starter/compare/v2.13.8...v2.13.9) (2025-10-07)
 
 
