@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.14.1](https://github.com/ionic-team/stencil-component-starter/compare/v2.14.0...v2.14.1) (2025-10-09)
+
+
+### Bug Fixes
+
+* **molecules/pagination/pages:** Remove "Pagina {v}" and only rely on the translation & make default position top ([bc11f5b](https://github.com/ionic-team/stencil-component-starter/commit/bc11f5b97080dbb298d89b955559992ee46fc85c))
+
+
+
+
+
 # [2.14.0](https://github.com/ionic-team/stencil-component-starter/compare/v2.13.10...v2.14.0) (2025-10-09)
 
 
