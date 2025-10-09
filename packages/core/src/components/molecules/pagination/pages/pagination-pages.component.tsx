@@ -136,7 +136,7 @@ export class PaginationPages {
 						if (p.type === 'ellipsis') {
 							return (
 								<p-dropdown
-									placement='bottom'
+									placement='top'
 									applyChevron={false}
 									insideClick={true}
 									show={this._showDropdown[p.dropdownIndex]}
@@ -155,7 +155,6 @@ export class PaginationPages {
 												autoHeight={true}
 												onClick={() => this._pageClick(v)}
 											>
-												Pagina {v}
 												{this.dropdownPageTemplate
 													? this.dropdownPageTemplate(v)
 													: this._defaultDropdownPageTemplate(v)}
