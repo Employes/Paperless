@@ -45,6 +45,7 @@ import department from '../assets/icons/general/department.svg';
 import diamond from '../assets/icons/general/diamond.svg';
 import docter from '../assets/icons/general/docter.svg';
 import download from '../assets/icons/general/download.svg';
+import enterKey from '../assets/icons/general/enterkey.svg';
 import envelope from '../assets/icons/general/envelope.svg';
 import euro from '../assets/icons/general/euro.svg';
 import exam from '../assets/icons/general/exam.svg';
@@ -171,6 +172,7 @@ export const categorized = {
 		diamond,
 		docter,
 		download,
+		'enter-key': enterKey,
 		envelope,
 		euro,
 		exam,
@@ -303,6 +305,7 @@ export const icons = {
 	diamond,
 	docter,
 	download,
+	'enter-key': enterKey,
 	envelope,
 	euro,
 	exam,

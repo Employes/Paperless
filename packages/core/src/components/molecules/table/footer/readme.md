@@ -53,7 +53,20 @@ graph TD;
   p-dropdown-menu-item --> p-checkbox
   p-checkbox --> p-icon
   p-pagination-pages --> p-pagination-pages-item
+  p-pagination-pages --> p-dropdown
+  p-pagination-pages --> p-dropdown-menu-item
+  p-pagination-pages --> p-field
   p-pagination-pages --> p-icon
+  p-field --> p-field-container
+  p-field --> p-icon
+  p-field --> p-button
+  p-field-container --> p-loader
+  p-field-container --> p-helper
+  p-field-container --> p-tooltip
+  p-helper --> p-tooltip
+  p-helper --> p-icon
+  p-button --> p-icon
+  p-button --> p-loader
   p-table --> p-table-footer
   style p-table-footer fill:#f9f,stroke:#333,stroke-width:4px
 ```
