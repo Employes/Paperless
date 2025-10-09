@@ -256,6 +256,10 @@ export class Dropdown {
 		);
 
 		for (let item of [...items]) {
+			if (item.variant === 'pagination' || item.variant === 'negative') {
+				continue;
+			}
+
 			item.variant = this.variant;
 		}
 	}

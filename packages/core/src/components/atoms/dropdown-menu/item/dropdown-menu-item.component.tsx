@@ -7,7 +7,7 @@ import { ThemedHost } from '../../../../internal/themed-host.component';
 
 const dropdownMenuItem = cva(
 	[
-		'p-dropdown-menu-item flex px-2 py-1 gap-2 text-sm font-medium group rounded-lg items-center max-w-full',
+		'p-dropdown-menu-item flex gap-2 text-sm group rounded-lg items-center max-w-full',
 	],
 	{
 		variants: {
@@ -15,6 +15,7 @@ const dropdownMenuItem = cva(
 				default: null,
 				storm: null,
 				negative: null,
+				pagination: 'text-xs px-2 text-storm-300 h-6',
 			},
 			active: {
 				false: null,
@@ -29,13 +30,31 @@ const dropdownMenuItem = cva(
 				true: null,
 			},
 			enableTextWrap: {
-				true: 'min-h-8',
-				false: 'h-8',
+				true: null,
+				false: null,
+			},
+			autoHeight: {
+				true: null,
+				false: null,
 			},
 		},
 		compoundVariants: [
 			{
-				variant: 'default',
+				autoHeight: false,
+				enableTextWrap: true,
+				class: 'min-h-8',
+			},
+			{
+				autoHeight: false,
+				enableTextWrap: false,
+				class: 'h-8',
+			},
+			{
+				variant: ['default', 'storm', 'negative'],
+				class: 'px-2 py-1 font-medium',
+			},
+			{
+				variant: ['default', 'pagination'],
 				active: false,
 				enableHover: true,
 				disabled: false,
@@ -131,6 +150,7 @@ const dropdownMenuItemIcon = cva(['text-base'], {
 			default: null,
 			storm: null,
 			negative: null,
+			pagination: null,
 		},
 		active: {
 			false: null,
@@ -201,7 +221,7 @@ export class DropdownMenuItem {
 	/**
 	 * The variant of the item
 	 */
-	@Prop() variant: 'default' | 'storm' | 'negative' = 'default';
+	@Prop() variant: 'default' | 'storm' | 'negative' | 'pagination' = 'default';
 
 	/**
 	 * Wether to enable the hover state
@@ -247,10 +267,10 @@ export class DropdownMenuItem {
 							variant: this.variant,
 							active: asBoolean(this.active),
 							enableHover: asBoolean(this.enableHover ?? true),
+							autoHeight: asBoolean(this.autoHeight ?? false),
 							enableTextWrap: this.enableTextWrap,
 							disabled: asBoolean(this.disabled),
-						}),
-						{ 'h-8': !this.autoHeight }
+						})
 					)}
 				>
 					{this.icon && (

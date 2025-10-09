@@ -727,7 +727,7 @@ export namespace Components {
         /**
           * The variant of the item
          */
-        "variant": 'default' | 'storm' | 'negative';
+        "variant": 'default' | 'storm' | 'negative' | 'pagination';
     }
     interface PEmptyState {
         /**
@@ -3982,7 +3982,7 @@ declare namespace LocalJSX {
         /**
           * The variant of the item
          */
-        "variant"?: 'default' | 'storm' | 'negative';
+        "variant"?: 'default' | 'storm' | 'negative' | 'pagination';
     }
     interface PEmptyState {
         /**

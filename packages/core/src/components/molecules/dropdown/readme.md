@@ -40,6 +40,7 @@
 ### Used by
 
  - [p-datepicker](../datepicker)
+ - [p-pagination-pages](../pagination/pages)
  - [p-pagination-size](../pagination/size)
  - [p-profile](../profile)
  - [p-select](../select)
@@ -53,6 +54,7 @@
 graph TD;
   p-dropdown --> p-dropdown-menu-container
   p-datepicker --> p-dropdown
+  p-pagination-pages --> p-dropdown
   p-pagination-size --> p-dropdown
   p-profile --> p-dropdown
   p-select --> p-dropdown
