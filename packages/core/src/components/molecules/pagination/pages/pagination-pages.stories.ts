@@ -5,10 +5,16 @@ const meta = {
 	title: 'Design System/Molecules/Pagination/Pages',
 	component: 'p-pagination-pages',
 	args: {
-		total: 100,
+		total: 1000,
 	},
 	parameters: {
 		layout: 'centered',
+		docs: {
+			iframeHeight: 200,
+			story: {
+				height: '300px',
+			},
+		},
 	},
 };
 
@@ -21,6 +27,7 @@ export const Default = {
 		'hide-on-single-page': hideOnSinglePage,
 		total,
 	}) => html`<p-pagination-pages
+		class="mt-[250px] block"
 		page=${page ?? nothing}
 		page-size=${pageSize ?? nothing}
 		hide-on-single-page=${hideOnSinglePage ?? nothing}

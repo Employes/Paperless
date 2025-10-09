@@ -19,13 +19,14 @@ import { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant2 } from
 import { IllustrationVariant as IllustrationVariant1 } from "./components/atoms/illustration/illustration.component";
 import { IllustrationDeprecatedVariant } from "./components/deprecated/atoms/illustration-deprecated/illustration-deprecated.component";
 import { Observable } from "rxjs";
-import { templateFunc as templateFunc2 } from "./components/molecules/pagination/size/pagination-size.component";
+import { templateFunc as templateFunc2 } from "./components/molecules/pagination/pages/pagination-pages.component";
+import { templateFunc as templateFunc3 } from "./components/molecules/pagination/size/pagination-size.component";
 import { StepperStepItemObj } from "./components/organisms/stepper/stepper.component";
-import { amountSelectedTemplateFunc as amountSelectedTemplateFunc1, templateFunc as templateFunc3 } from "./components/organisms/table/table.component";
+import { amountSelectedTemplateFunc as amountSelectedTemplateFunc1, templateFunc as templateFunc4 } from "./components/organisms/table/table.component";
 import { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
 import { buttonTemplateFunc } from "./components/molecules/table/header/table-header.component";
 import { TableColumn } from "./components/helpers/table/column/table-column.component";
-import { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc4 } from "./components/molecules/table/header/table-header.component";
+import { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc5 } from "./components/molecules/table/header/table-header.component";
 import { TableRowActionFunc, TableRowActionShowFunc } from "./components/helpers/table/row-action/table-row-action.component";
 export { ButtonVariant } from "./components/molecules/button/button.component";
 export { IconFlipOptions, IconVariant } from "./components/atoms/icon/icon.component";
@@ -41,13 +42,14 @@ export { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant2 } from
 export { IllustrationVariant as IllustrationVariant1 } from "./components/atoms/illustration/illustration.component";
 export { IllustrationDeprecatedVariant } from "./components/deprecated/atoms/illustration-deprecated/illustration-deprecated.component";
 export { Observable } from "rxjs";
-export { templateFunc as templateFunc2 } from "./components/molecules/pagination/size/pagination-size.component";
+export { templateFunc as templateFunc2 } from "./components/molecules/pagination/pages/pagination-pages.component";
+export { templateFunc as templateFunc3 } from "./components/molecules/pagination/size/pagination-size.component";
 export { StepperStepItemObj } from "./components/organisms/stepper/stepper.component";
-export { amountSelectedTemplateFunc as amountSelectedTemplateFunc1, templateFunc as templateFunc3 } from "./components/organisms/table/table.component";
+export { amountSelectedTemplateFunc as amountSelectedTemplateFunc1, templateFunc as templateFunc4 } from "./components/organisms/table/table.component";
 export { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
 export { buttonTemplateFunc } from "./components/molecules/table/header/table-header.component";
 export { TableColumn } from "./components/helpers/table/column/table-column.component";
-export { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc4 } from "./components/molecules/table/header/table-header.component";
+export { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc5 } from "./components/molecules/table/header/table-header.component";
 export { TableRowActionFunc, TableRowActionShowFunc } from "./components/helpers/table/row-action/table-row-action.component";
 export namespace Components {
     interface PAccordion {
@@ -1277,6 +1279,10 @@ export namespace Components {
     }
     interface PPaginationPages {
         /**
+          * The template for the data view
+         */
+        "dropdownPageTemplate": templateFunc2;
+        /**
           * Wether to hide when there is only 1 page available
          */
         "hideOnSinglePage": boolean;
@@ -1319,7 +1325,7 @@ export namespace Components {
         /**
           * The template for the data view
          */
-        "itemTemplate": templateFunc2;
+        "itemTemplate": templateFunc3;
         /**
           * The current page
          */
@@ -1690,11 +1696,11 @@ export namespace Components {
           * A key to determine if a row can be selected
          */
         "canSelectKey": string;
-        "emptyStateAction": templateFunc3;
-        "emptyStateContent": templateFunc3;
-        "emptyStateFilteredContent": templateFunc3;
-        "emptyStateFilteredHeader": templateFunc3;
-        "emptyStateHeader": templateFunc3;
+        "emptyStateAction": templateFunc4;
+        "emptyStateContent": templateFunc4;
+        "emptyStateFilteredContent": templateFunc4;
+        "emptyStateFilteredHeader": templateFunc4;
+        "emptyStateHeader": templateFunc4;
         /**
           * Wether to show the action button
          */
@@ -1750,7 +1756,7 @@ export namespace Components {
         /**
           * The template for the filter button text
          */
-        "filterButtonTemplate": templateFunc3;
+        "filterButtonTemplate": templateFunc4;
         /**
           * The template for amount selected item in the floating menu
          */
@@ -1976,7 +1982,7 @@ export namespace Components {
         /**
           * The template for the filter button text
          */
-        "filterButtonTemplate": templateFunc4;
+        "filterButtonTemplate": templateFunc5;
         /**
           * The amount of items that are selected
          */
@@ -4589,6 +4595,10 @@ declare namespace LocalJSX {
     }
     interface PPaginationPages {
         /**
+          * The template for the data view
+         */
+        "dropdownPageTemplate"?: templateFunc2;
+        /**
           * Wether to hide when there is only 1 page available
          */
         "hideOnSinglePage"?: boolean;
@@ -4639,7 +4649,7 @@ declare namespace LocalJSX {
         /**
           * The template for the data view
          */
-        "itemTemplate"?: templateFunc2;
+        "itemTemplate"?: templateFunc3;
         /**
           * Event whenever the size changes
          */
@@ -5042,11 +5052,11 @@ declare namespace LocalJSX {
           * A key to determine if a row can be selected
          */
         "canSelectKey"?: string;
-        "emptyStateAction"?: templateFunc3;
-        "emptyStateContent"?: templateFunc3;
-        "emptyStateFilteredContent"?: templateFunc3;
-        "emptyStateFilteredHeader"?: templateFunc3;
-        "emptyStateHeader"?: templateFunc3;
+        "emptyStateAction"?: templateFunc4;
+        "emptyStateContent"?: templateFunc4;
+        "emptyStateFilteredContent"?: templateFunc4;
+        "emptyStateFilteredHeader"?: templateFunc4;
+        "emptyStateHeader"?: templateFunc4;
         /**
           * Wether to show the action button
          */
@@ -5102,7 +5112,7 @@ declare namespace LocalJSX {
         /**
           * The template for the filter button text
          */
-        "filterButtonTemplate"?: templateFunc3;
+        "filterButtonTemplate"?: templateFunc4;
         /**
           * The template for amount selected item in the floating menu
          */
@@ -5396,7 +5406,7 @@ declare namespace LocalJSX {
         /**
           * The template for the filter button text
          */
-        "filterButtonTemplate"?: templateFunc4;
+        "filterButtonTemplate"?: templateFunc5;
         /**
           * The amount of items that are selected
          */

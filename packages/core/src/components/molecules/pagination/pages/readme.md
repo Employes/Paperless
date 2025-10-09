@@ -7,12 +7,13 @@
 
 ## Properties
 
-| Property             | Attribute             | Description                                        | Type      | Default                        |
-| -------------------- | --------------------- | -------------------------------------------------- | --------- | ------------------------------ |
-| `hideOnSinglePage`   | `hide-on-single-page` | Wether to hide when there is only 1 page available | `boolean` | `false`                        |
-| `page`               | `page`                | The current page                                   | `number`  | `1`                            |
-| `pageSize`           | `page-size`           | The amount of items per page                       | `number`  | `PAGINATION_DEFAULT_PAGE_SIZE` |
-| `total` _(required)_ | `total`               | The total amount of items                          | `number`  | `undefined`                    |
+| Property               | Attribute                | Description                                        | Type                       | Default                             |
+| ---------------------- | ------------------------ | -------------------------------------------------- | -------------------------- | ----------------------------------- |
+| `dropdownPageTemplate` | `dropdown-page-template` | The template for the data view                     | `(page: number) => string` | `this._defaultDropdownPageTemplate` |
+| `hideOnSinglePage`     | `hide-on-single-page`    | Wether to hide when there is only 1 page available | `boolean`                  | `false`                             |
+| `page`                 | `page`                   | The current page                                   | `number`                   | `1`                                 |
+| `pageSize`             | `page-size`              | The amount of items per page                       | `number`                   | `PAGINATION_DEFAULT_PAGE_SIZE`      |
+| `total` _(required)_   | `total`                  | The total amount of items                          | `number`                   | `undefined`                         |
 
 
 ## Events
@@ -32,13 +33,33 @@
 ### Depends on
 
 - [p-pagination-pages-item](../../../atoms/pagination/pages-item)
+- [p-dropdown](../../dropdown)
+- [p-dropdown-menu-item](../../../atoms/dropdown-menu/item)
+- [p-field](../../field/field)
 - [p-icon](../../../atoms/icon)
 
 ### Graph
 ```mermaid
 graph TD;
   p-pagination-pages --> p-pagination-pages-item
+  p-pagination-pages --> p-dropdown
+  p-pagination-pages --> p-dropdown-menu-item
+  p-pagination-pages --> p-field
   p-pagination-pages --> p-icon
+  p-dropdown --> p-dropdown-menu-container
+  p-dropdown-menu-item --> p-icon
+  p-dropdown-menu-item --> p-checkbox
+  p-checkbox --> p-icon
+  p-field --> p-field-container
+  p-field --> p-icon
+  p-field --> p-button
+  p-field-container --> p-loader
+  p-field-container --> p-helper
+  p-field-container --> p-tooltip
+  p-helper --> p-tooltip
+  p-helper --> p-icon
+  p-button --> p-icon
+  p-button --> p-loader
   p-pagination --> p-pagination-pages
   style p-pagination-pages fill:#f9f,stroke:#333,stroke-width:4px
 ```

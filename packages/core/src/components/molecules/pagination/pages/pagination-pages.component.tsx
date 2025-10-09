@@ -1,11 +1,30 @@
-import { Component, Event, EventEmitter, h, Prop, Watch } from '@stencil/core';
+import {
+	Component,
+	Event,
+	EventEmitter,
+	h,
+	Prop,
+	Watch,
+	State,
+	Listen,
+	Element,
+} from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { ThemedHost } from '../../../../internal/themed-host.component';
+import { childOfComposed } from '../../../../utils/child-of';
 import { PAGINATION_DEFAULT_PAGE_SIZE } from '../../../../utils/constants';
+import {
+	formatTranslation,
+	getLocaleComponentStrings,
+} from '../../../../utils/localization';
+
+export type templateFunc = (page: number) => string;
 
 type PaginationSetItem = {
 	type: string;
 	value?: number | Element | JSX.Element | string;
+	dropdownIndex?: number;
+	options?: number[];
 };
 
 const pagination = cva(['p-pagination', 'flex gap-2 items-center'], {
@@ -23,6 +42,9 @@ const pagination = cva(['p-pagination', 'flex gap-2 items-center'], {
 	shadow: true,
 })
 export class PaginationPages {
+	private _defaultDropdownPageTemplate: templateFunc = page =>
+		formatTranslation(this._locales.page, { page });
+
 	/**
 	 * The current page
 	 */
@@ -35,6 +57,12 @@ export class PaginationPages {
 		bubbles: false,
 	})
 	pageChange: EventEmitter<number>;
+
+	/**
+	 * The template for the data view
+	 */
+	@Prop() dropdownPageTemplate: templateFunc =
+		this._defaultDropdownPageTemplate;
 
 	/**
 	 * The amount of items per page
@@ -56,8 +84,25 @@ export class PaginationPages {
 	 */
 	@Event({ bubbles: false }) pagesChange: EventEmitter<number>;
 
+	@State() private _showDropdown = [false, false];
+	@State() private _dropdowns = [];
+
+	/**
+	 * Locales used for this component
+	 */
+	@State() private _locales: any = {};
+
+	/**
+	 * The host element
+	 */
+	@Element() private _el: HTMLElement;
+
 	private _pages: number[] = [];
 	private _set: PaginationSetItem[] = [];
+
+	componentWillLoad() {
+		this._setLocales();
+	}
 
 	componentWillRender() {
 		this._generate();
@@ -90,9 +135,51 @@ export class PaginationPages {
 
 						if (p.type === 'ellipsis') {
 							return (
-								<p-pagination-pages-item hover={false}>
-									...
-								</p-pagination-pages-item>
+								<p-dropdown
+									placement='bottom'
+									applyChevron={false}
+									insideClick={true}
+									show={this._showDropdown[p.dropdownIndex]}
+									onIsOpen={({ detail }) =>
+										this._onShowDropdown(detail, p.dropdownIndex)
+									}
+									ref={el => (this._dropdowns[p.dropdownIndex] = el)}
+								>
+									<p-pagination-pages-item slot='trigger'>
+										...
+									</p-pagination-pages-item>
+									<slot slot='items'>
+										{p.options?.slice(0, 5).map(v => (
+											<p-dropdown-menu-item
+												variant='pagination'
+												autoHeight={true}
+												onClick={() => this._pageClick(v)}
+											>
+												Pagina {v}
+												{this.dropdownPageTemplate
+													? this.dropdownPageTemplate(v)
+													: this._defaultDropdownPageTemplate(v)}
+											</p-dropdown-menu-item>
+										))}
+										{p.options?.length > 5 &&
+											this._showDropdown[p.dropdownIndex] && (
+												<p-field
+													class='mt-2 w-28'
+													size='sm'
+													icon='enter-key'
+													iconPosition='end'
+													type='number'
+													properties={{
+														min: 1,
+														max: this._pages.length,
+														step: 1,
+													}}
+													autoFocus={true}
+													onEnter={({ detail }) => this._enterPress(detail)}
+												></p-field>
+											)}
+									</slot>
+								</p-dropdown>
 							);
 						}
 
@@ -117,6 +204,25 @@ export class PaginationPages {
 		this._generate();
 	}
 
+	@Listen('localeChanged', { target: 'body' })
+	private async _setLocales(): Promise<void> {
+		this._locales = await getLocaleComponentStrings(this._el);
+	}
+
+	@Listen('click', { target: 'document', capture: true })
+	protected documentClickHandler(event) {
+		const dropdowns = [false, false];
+		if (this._dropdowns[0] && childOfComposed(event, this._dropdowns[0])) {
+			dropdowns[0] = true;
+		}
+
+		if (this._dropdowns[1] && childOfComposed(event, this._dropdowns[1])) {
+			dropdowns[1] = true;
+		}
+
+		this._showDropdown = dropdowns;
+	}
+
 	private _generate() {
 		this._pages = this._generatePages();
 		this._set = this._generateSet();
@@ -131,6 +237,7 @@ export class PaginationPages {
 			return;
 		}
 
+		this._showDropdown = [false, false];
 		this.page = p;
 		this.pageChange.emit(this.page);
 	}
@@ -170,6 +277,32 @@ export class PaginationPages {
 	};
 
 	private _pageClick = (p?: number) => this._changePage(p);
+
+	private _enterPress(p: string | number) {
+		if (typeof p === 'string') {
+			p = parseInt(p);
+		}
+
+		if (isNaN(p)) {
+			return;
+		}
+
+		if (p < 1) {
+			p = 1;
+		}
+
+		if (p > this._pages.length) {
+			p = this._pages.length;
+		}
+
+		this._changePage(p);
+	}
+
+	private _onShowDropdown(show = false, dropdownIndex: number) {
+		const showDropdown = [...this._showDropdown];
+		showDropdown[dropdownIndex] = show;
+		this._showDropdown = showDropdown;
+	}
 
 	private _generatePages() {
 		if (!this.total || !this.pageSize) {
@@ -243,6 +376,8 @@ export class PaginationPages {
 			set.push(previous);
 		}
 
+		let dropdownIndex = 0;
+
 		if (start <= 3) {
 			for (let i = 1; i < start; i++) {
 				set.push({
@@ -258,8 +393,10 @@ export class PaginationPages {
 
 			set.push({
 				type: 'ellipsis',
-				value: 'ellipsis',
+				dropdownIndex,
+				options: Array.from({ length: start - 2 }, (_, i) => i + 2),
 			});
+			dropdownIndex++;
 		}
 
 		for (let i = start; i <= end; i++) {
@@ -279,7 +416,13 @@ export class PaginationPages {
 		} else {
 			set.push({
 				type: 'ellipsis',
+				dropdownIndex,
+				options: Array.from(
+					{ length: totalPages - end - 1 },
+					(_, i) => i + end + 1
+				),
 			});
+			dropdownIndex++;
 
 			set.push({
 				type: 'page',
