@@ -15,7 +15,7 @@ const dropdownMenuItem = cva(
 				default: null,
 				storm: null,
 				negative: null,
-				pagination: 'text-xs px-2 text-storm-300 h-6',
+				pagination: 'text-xs px-2 text-storm-300 h-6 dark:text-hurricane-200',
 			},
 			active: {
 				false: null,
