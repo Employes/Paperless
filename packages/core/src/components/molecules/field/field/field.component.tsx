@@ -13,6 +13,7 @@ import {
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { HTMLInputTypeAttribute } from 'react';
+import { ThemedHost } from '../../../../internal/themed-host.component';
 import { RotateOptions } from '../../../../types/tailwind';
 import { asBoolean } from '../../../../utils/as-boolean';
 import { cn } from '../../../../utils/cn';
@@ -22,7 +23,6 @@ import {
 	IconVariant,
 } from '../../../atoms/icon/icon.component';
 import { templateFunc } from '../container/field-container.component';
-import { ThemedHost } from '../../../../internal/themed-host.component';
 
 const field = cva(
 	['flex gap-2', 'w-inherit', 'border-solid rounded-lg', 'relative'],
@@ -384,6 +384,11 @@ export class Field {
 	@Event({ bubbles: false }) add: EventEmitter<void>;
 
 	/**
+	 * Event whenever the user presses enter and the field is focused
+	 */
+	@Event({ bubbles: false }) enter: EventEmitter<string | number>;
+
+	/**
 	 * The host element
 	 */
 	@Element() private _el: HTMLElement;
@@ -600,6 +605,19 @@ export class Field {
 		}
 
 		this._internals.form.requestSubmit();
+	}
+
+	@Listen('keydown', { capture: true })
+	handleKeydown(ev: KeyboardEvent) {
+		if (this.disabled) {
+			return;
+		}
+
+		if (ev.key !== 'Enter') {
+			return;
+		}
+
+		this.enter.emit(this.value);
 	}
 
 	private _getSlotInfo() {

@@ -2584,6 +2584,7 @@ declare global {
         "valueChange": string | number;
         "inputRefChange": HTMLInputElement | HTMLTextAreaElement;
         "add": void;
+        "enter": string | number;
     }
     interface HTMLPFieldElement extends Components.PField, HTMLStencilElement {
         addEventListener<K extends keyof HTMLPFieldElementEventMap>(type: K, listener: (this: HTMLPFieldElement, ev: PFieldCustomEvent<HTMLPFieldElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -4102,6 +4103,10 @@ declare namespace LocalJSX {
           * Event whenever the value changes
          */
         "onAdd"?: (event: PFieldCustomEvent<void>) => void;
+        /**
+          * Event whenever the user presses enter and the field is focused
+         */
+        "onEnter"?: (event: PFieldCustomEvent<string | number>) => void;
         /**
           * Event whenever the input ref changes
          */
