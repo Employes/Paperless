@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.14.0](https://github.com/employes/paperless/compare/v2.13.10...v2.14.0) (2025-10-09)
+
+
+### Features
+
+* **atoms/dropdown-menu/item:** Add pagination variant ([2c78664](https://github.com/employes/paperless/commit/2c7866464a24fd9a3014d001b040afa336e84939))
+* **atoms/icon:** Add enter-key icon ([7577052](https://github.com/employes/paperless/commit/7577052b9d108f50982f753a5b849f95c583c39f))
+* **molecules/field/field:** Add event when enter is pressed in the current field ([bc6626e](https://github.com/employes/paperless/commit/bc6626e8adea7822976eb9df7749cd56af6f88f0))
+* **molecules/pagination/pages:** Add support for dropdown on ellipsis ([f3dd8f4](https://github.com/employes/paperless/commit/f3dd8f43e4f33cd39cd16b32884ea41b9f85e71c))
+
+
+
+
+
 ## [2.13.10](https://github.com/employes/paperless/compare/v2.13.9...v2.13.10) (2025-10-07)
 
 

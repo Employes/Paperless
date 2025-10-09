@@ -1,7 +1,7 @@
 {
 	"name": "@paperless/react",
 	"sideEffects": false,
-	"version": "2.13.10",
+	"version": "2.14.0",
 	"description": "React specific wrapper for component-library",
 	"repository": {
 		"type": "git",
