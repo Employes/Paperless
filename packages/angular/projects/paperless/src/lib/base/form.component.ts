@@ -50,12 +50,24 @@ export abstract class BaseFormComponent {
 		control.updateValueAndValidity();
 	}
 
-	markAllDirty(formGroup: FormGroup) {
+	markAllDirty(control: FormGroup | FormArray | FormControl) {
 		this.markedDirty = true;
 
-		for (const field of Object.keys(formGroup.controls)) {
-			const control = formGroup.get(field);
-			this.markControlDirty(control as AbstractControl);
+		if (control instanceof FormControl) {
+			this.markControlDirty(control);
+			return;
+		}
+
+		if (control instanceof FormArray) {
+			for (const child of control.controls) {
+				this.markControlDirty(child);
+			}
+			return;
+		}
+
+		for (const field of Object.keys(control.controls)) {
+			const child = control.get(field);
+			this.markControlDirty(child as AbstractControl);
 		}
 	}
 
