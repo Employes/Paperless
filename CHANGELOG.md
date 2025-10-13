@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.14.15](https://github.com/employes/paperless/compare/v2.14.14...v2.14.15) (2025-10-13)
+
+
+### Bug Fixes
+
+* **molecules/select:** Actually fix preselection of an item before data is loaded ([a43b002](https://github.com/employes/paperless/commit/a43b002bf44ad0f2bbab6683b1680d0a9d517327))
+
+
+
+
+
 ## [2.14.14](https://github.com/employes/paperless/compare/v2.14.13...v2.14.14) (2025-10-13)
 
 
