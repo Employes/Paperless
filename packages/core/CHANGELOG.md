@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.14.11](https://github.com/ionic-team/stencil-component-starter/compare/v2.14.10...v2.14.11) (2025-10-13)
+
+
+### Bug Fixes
+
+* **molecules/select:** Don't emit value change when value is the same ([0363afe](https://github.com/ionic-team/stencil-component-starter/commit/0363afe7fba5f3501f982e36a8bae9966d654027))
+
+
+### Reverts
+
+* Revert "fix(molecules/select): Change debug data" ([9684790](https://github.com/ionic-team/stencil-component-starter/commit/968479012b9a41ae8cf514b6ae5443cfe4ba6f9c))
+
+
+
+
+
 ## [2.14.10](https://github.com/ionic-team/stencil-component-starter/compare/v2.14.9...v2.14.10) (2025-10-13)
 
 
