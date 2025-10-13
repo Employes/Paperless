@@ -388,7 +388,6 @@ export class Select {
 	}
 
 	formResetCallback() {
-		console.log('formResetCallback');
 		this._selectValue(null);
 	}
 
@@ -423,7 +422,7 @@ export class Select {
 		}
 
 		if (this.value) {
-			this._valueChange();
+			this._valueChange(this.value, 'onLoad');
 			return;
 		}
 
@@ -532,8 +531,8 @@ export class Select {
 	}
 
 	@Watch('value')
-	private _valueChange() {
-		console.log('valueChange');
+	private _valueChange(v, oldv) {
+		console.log('valueChange', v, oldv);
 		setTimeout(() => {
 			this._preselectItem();
 			this._setCheckSelectedItemsTimeout();
@@ -542,7 +541,6 @@ export class Select {
 
 	@Watch('items')
 	public itemChanges() {
-		console.log('itemChanges');
 		setTimeout(() => this._preselectItem());
 	}
 
@@ -612,7 +610,6 @@ export class Select {
 			return;
 		}
 
-		console.log(value);
 		if (!this._items?.length && value) {
 			this._selectValue(value, false);
 			return;
@@ -667,6 +664,7 @@ export class Select {
 			return;
 		}
 
+		console.log('select value', value);
 		this._selectedItem = item;
 		this.value = value;
 		this.valueChange.emit(value);
