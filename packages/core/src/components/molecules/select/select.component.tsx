@@ -363,7 +363,7 @@ export class Select {
 					{this._selectedItem.map(item => (
 						<div
 							class={multiItem()}
-							onClick={() => this._selectValue(item, true, 'multi onClick')}
+							onClick={() => this._selectValue(item)}
 						>
 							{item[this.selectionDisplayKey ?? this.displayKey]}
 							<p-icon
@@ -388,7 +388,7 @@ export class Select {
 	}
 
 	formResetCallback() {
-		this._selectValue(null, true, 'form reset');
+		this._selectValue(null);
 	}
 
 	// formDisabledCallback(disabled: boolean) {
@@ -607,7 +607,7 @@ export class Select {
 		}
 
 		if (!this._items?.length && value) {
-			this._selectValue(value, false, 'preselect (!items.length)');
+			this._selectValue(value, false);
 			return;
 		}
 
@@ -622,10 +622,10 @@ export class Select {
 			return parsedItemIdentifier === parsedValue;
 		});
 
-		this._selectValue(!!item ? item : value, false, 'preselect');
+		this._selectValue(!!item ? item : value, false);
 	}
 
-	private _selectValue(item, forceBlur = true, source: string) {
+	private _selectValue(item, forceBlur = true) {
 		let value =
 			!!this.valueKey &&
 			this.valueKey !== 'false' &&
@@ -663,7 +663,6 @@ export class Select {
 			return;
 		}
 
-		console.log('Value change', source);
 		this._selectedItem = item;
 		this.value = value;
 		this.valueChange.emit(value);
@@ -728,7 +727,7 @@ export class Select {
 				<p-dropdown-menu-item
 					enableTextWrap={this.enableTextWrap}
 					useContainer={false}
-					onClick={() => this._selectValue(item, true, 'onClick')}
+					onClick={() => this._selectValue(item)}
 					active={isSelected}
 					checkbox={this.multi ? true : false}
 					slot='items'
