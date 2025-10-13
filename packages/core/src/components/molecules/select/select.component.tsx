@@ -388,6 +388,7 @@ export class Select {
 	}
 
 	formResetCallback() {
+		console.log('formResetCallback');
 		this._selectValue(null);
 	}
 
