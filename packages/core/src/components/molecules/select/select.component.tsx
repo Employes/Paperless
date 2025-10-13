@@ -664,10 +664,14 @@ export class Select {
 		}
 
 		this._selectedItem = item;
+		this._onBlur(forceBlur);
+
+		if (value === this.value) {
+			return;
+		}
+
 		this.value = value;
 		this.valueChange.emit(value);
-
-		this._onBlur(forceBlur);
 	}
 
 	private _onClick(event) {
