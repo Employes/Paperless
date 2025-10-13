@@ -533,14 +533,14 @@ export class Select {
 	@Watch('value')
 	private _valueChange(value) {
 		setTimeout(() => {
-			this._preselectItem(value, '_valueChange');
+			this._preselectItem(value);
 			this._setCheckSelectedItemsTimeout();
 		});
 	}
 
 	@Watch('items')
 	public itemChanges() {
-		setTimeout(() => this._preselectItem(this.value, 'itemsChanges'));
+		setTimeout(() => this._preselectItem());
 	}
 
 	@Watch('_showDropdown')
@@ -558,7 +558,7 @@ export class Select {
 		}
 	}
 
-	private _preselectItem(value = this.value, source: string) {
+	private _preselectItem(value = this.value) {
 		value = typeof value === 'string' && this.multi ? JSON.parse(value) : value;
 
 		if (this.multi) {
@@ -622,7 +622,6 @@ export class Select {
 			return parsedItemIdentifier === parsedValue;
 		});
 
-		console.log('preselect', source);
 		this._selectValue(!!item ? item : value, false);
 	}
 
