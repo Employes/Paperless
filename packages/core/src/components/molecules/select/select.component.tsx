@@ -422,7 +422,8 @@ export class Select {
 		}
 
 		if (this.value) {
-			this._valueChange(this.value);
+			console.log('On load', this.value);
+			this._valueChange(this.value, null);
 			return;
 		}
 
@@ -531,8 +532,8 @@ export class Select {
 	}
 
 	@Watch('value')
-	private _valueChange(value) {
-		console.log('value change');
+	private _valueChange(value, oldVal) {
+		console.log('value change', value, oldVal);
 		setTimeout(() => {
 			this._preselectItem(value);
 			this._setCheckSelectedItemsTimeout();
@@ -671,6 +672,7 @@ export class Select {
 			return;
 		}
 
+		console.log('Setting value', value);
 		this.value = value;
 		this.valueChange.emit(value);
 	}
