@@ -422,7 +422,7 @@ export class Select {
 		}
 
 		if (this.value) {
-			this._valueChange(this.value, 'onLoad');
+			this._valueChange(this.value);
 			return;
 		}
 
@@ -531,10 +531,10 @@ export class Select {
 	}
 
 	@Watch('value')
-	private _valueChange(v, oldv) {
-		console.log('valueChange', v, oldv);
+	private _valueChange(value) {
+		console.log('valueChange', value);
 		setTimeout(() => {
-			this._preselectItem();
+			this._preselectItem(value);
 			this._setCheckSelectedItemsTimeout();
 		});
 	}
@@ -559,11 +559,8 @@ export class Select {
 		}
 	}
 
-	private _preselectItem() {
-		let value =
-			typeof this.value === 'string' && this.multi
-				? JSON.parse(this.value)
-				: this.value;
+	private _preselectItem(value = this.value) {
+		value = typeof value === 'string' && this.multi ? JSON.parse(value) : value;
 
 		if (this.multi) {
 			if (!Array.isArray(value)) {
@@ -611,6 +608,7 @@ export class Select {
 		}
 
 		if (!this._items?.length && value) {
+			console.log('a', value);
 			this._selectValue(value, false);
 			return;
 		}
@@ -626,12 +624,16 @@ export class Select {
 			return parsedItemIdentifier === parsedValue;
 		});
 
+		console.log('b', item, value);
 		this._selectValue(!!item ? item : value, false);
 	}
 
 	private _selectValue(item, forceBlur = true) {
 		let value =
-			!!this.valueKey && this.valueKey !== 'false' && item !== null
+			!!this.valueKey &&
+			this.valueKey !== 'false' &&
+			item !== null &&
+			!this.loading
 				? item?.[this.valueKey]
 				: item;
 
