@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.14.5](https://github.com/ionic-team/stencil-component-starter/compare/v2.14.4...v2.14.5) (2025-10-13)
+
+
+### Bug Fixes
+
+* **molecules/select:** More debugging ([2a3b81b](https://github.com/ionic-team/stencil-component-starter/commit/2a3b81b37a65d9081d55b5d9564cfccfec9086a5))
+
+
+
+
+
 ## [2.14.4](https://github.com/ionic-team/stencil-component-starter/compare/v2.14.3...v2.14.4) (2025-10-13)
 
 
