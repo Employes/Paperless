@@ -532,7 +532,6 @@ export class Select {
 
 	@Watch('value')
 	private _valueChange(value) {
-		console.log('valueChange', value);
 		setTimeout(() => {
 			this._preselectItem(value);
 			this._setCheckSelectedItemsTimeout();
@@ -608,7 +607,6 @@ export class Select {
 		}
 
 		if (!this._items?.length && value) {
-			console.log('a', value);
 			this._selectValue(value, false);
 			return;
 		}
@@ -624,7 +622,6 @@ export class Select {
 			return parsedItemIdentifier === parsedValue;
 		});
 
-		console.log('b', item, value);
 		this._selectValue(!!item ? item : value, false);
 	}
 
@@ -666,7 +663,6 @@ export class Select {
 			return;
 		}
 
-		console.log('select value', value);
 		this._selectedItem = item;
 		this.value = value;
 		this.valueChange.emit(value);
