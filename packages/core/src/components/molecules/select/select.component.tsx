@@ -532,6 +532,7 @@ export class Select {
 
 	@Watch('value')
 	private _valueChange(value) {
+		console.log('value change');
 		setTimeout(() => {
 			this._preselectItem(value);
 			this._setCheckSelectedItemsTimeout();
