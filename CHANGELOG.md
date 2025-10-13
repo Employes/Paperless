@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.14.9](https://github.com/employes/paperless/compare/v2.14.8...v2.14.9) (2025-10-13)
+
+
+### Bug Fixes
+
+* **molecules/select:** Add more logs ([8a387e5](https://github.com/employes/paperless/commit/8a387e5cf42c81ea12f2ea7d538238e57eefd2d4))
+
+
+
+
+
 ## [2.14.8](https://github.com/employes/paperless/compare/v2.14.7...v2.14.8) (2025-10-13)
 
 
