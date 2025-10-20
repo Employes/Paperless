@@ -148,36 +148,36 @@ export class PaginationPages {
 									<p-pagination-pages-item slot='trigger'>
 										...
 									</p-pagination-pages-item>
-									<slot slot='items'>
-										{p.options?.slice(0, 5).map(v => (
-											<p-dropdown-menu-item
-												variant='pagination'
-												autoHeight={true}
-												onClick={() => this._pageClick(v)}
-											>
-												{this.dropdownPageTemplate
-													? this.dropdownPageTemplate(v)
-													: this._defaultDropdownPageTemplate(v)}
-											</p-dropdown-menu-item>
-										))}
-										{p.options?.length > 5 &&
-											this._showDropdown[p.dropdownIndex] && (
-												<p-field
-													class='mt-2 w-28'
-													size='sm'
-													icon='enter-key'
-													iconPosition='end'
-													type='number'
-													properties={{
-														min: 1,
-														max: this._pages.length,
-														step: 1,
-													}}
-													autoFocus={true}
-													onEnter={({ detail }) => this._enterPress(detail)}
-												></p-field>
-											)}
-									</slot>
+									{p.options?.slice(0, 5).map(v => (
+										<p-dropdown-menu-item
+											variant='pagination'
+											autoHeight={true}
+											onClick={() => this._pageClick(v)}
+											slot='items'
+										>
+											{this.dropdownPageTemplate
+												? this.dropdownPageTemplate(v)
+												: this._defaultDropdownPageTemplate(v)}
+										</p-dropdown-menu-item>
+									))}
+									{p.options?.length > 5 &&
+										this._showDropdown[p.dropdownIndex] && (
+											<p-field
+												class='mt-2 w-28'
+												size='sm'
+												icon='enter-key'
+												iconPosition='end'
+												type='number'
+												properties={{
+													min: 1,
+													max: this._pages.length,
+													step: 1,
+												}}
+												autoFocus={true}
+												onEnter={({ detail }) => this._enterPress(detail)}
+												slot='items'
+											></p-field>
+										)}
 								</p-dropdown>
 							);
 						}
