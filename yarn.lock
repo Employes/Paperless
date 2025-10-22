@@ -5565,10 +5565,10 @@
   dependencies:
     postcss "~8.4.27"
 
-"@stencil/angular-output-target@0.10.2":
-  version "0.10.2"
-  resolved "https://registry.yarnpkg.com/@stencil/angular-output-target/-/angular-output-target-0.10.2.tgz#a885058e0991df6a8040f2fa841683ea63e75059"
-  integrity sha512-jPRa2NMAPtm/iMY+mUaWATbIhgY5zPJfUNQyF8nwC0rMrfXifPoRCf6BbH2S4Gy7SX0X4hlP+jAbVUjQNg/P+Q==
+"@stencil/angular-output-target@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@stencil/angular-output-target/-/angular-output-target-1.1.1.tgz#8b0eea00d938c28b4f1cc224fed5a48dd890bf55"
+  integrity sha512-NMZjnbNi+gfUjlLRAWPLzwUuX1dGzkaIi/OqoVbElmZfxNI+kihZTW2EvDsA3SJx6bSJBsFNrIMx3tW9TQ3v6Q==
 
 "@stencil/core@4.29.3":
   version "4.29.3"
