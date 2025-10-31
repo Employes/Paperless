@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.14.18](https://github.com/employes/paperless/compare/v2.14.17...v2.14.18) (2025-10-31)
+
+
+### Bug Fixes
+
+* **atoms/avatar:** Remove 1px padding ([c70ae59](https://github.com/employes/paperless/commit/c70ae5966468f9321b441bfc3aee353caca1f9ba))
+
+
+
+
+
 ## [2.14.17](https://github.com/employes/paperless/compare/v2.14.16...v2.14.17) (2025-10-20)
 
 
