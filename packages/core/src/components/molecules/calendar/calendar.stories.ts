@@ -4,6 +4,14 @@ import { action } from '@storybook/addon-actions';
 const meta = {
 	title: 'Design System/Molecules/Calendar',
 	component: 'p-calendar',
+	argTypes: {
+		'min-date': {
+			type: 'date',
+		},
+		'max-date': {
+			type: 'date',
+		},
+	},
 };
 
 export default meta;

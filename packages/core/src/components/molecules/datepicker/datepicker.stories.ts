@@ -7,11 +7,19 @@ const meta = {
 	args: {
 		label: 'Label',
 	},
+	argTypes: {
+		'min-date': {
+			type: 'date',
+		},
+		'max-date': {
+			type: 'date',
+		},
+	},
 	parameters: {
 		docs: {
-			iframeHeight: 300,
+			iframeHeight: 600,
 			story: {
-				height: '350px',
+				height: '700px',
 			},
 		},
 	},
