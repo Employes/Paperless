@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.15.0](https://github.com/ionic-team/stencil-component-starter/compare/v2.14.19...v2.15.0) (2025-11-04)
+
+
+### Bug Fixes
+
+* **molecules/table/footer:** Adjust pagination for table header action on mobile ([f7453b3](https://github.com/ionic-team/stencil-component-starter/commit/f7453b36d44063a1dd299984f06fc39d7a73f0c2))
+* **molecules/table/header:** Add dark mode for mobile action ([8cac1d6](https://github.com/ionic-team/stencil-component-starter/commit/8cac1d648f91a086a346b38a1b481433b99f7e8d))
+
+
+### Features
+
+* **molecules/table/cell:** Add flex property to allow flex content ([82a6472](https://github.com/ionic-team/stencil-component-starter/commit/82a647299ba9d1bc07a214504eb95bb0fca66693))
+
+
+
+
+
 ## [2.14.19](https://github.com/ionic-team/stencil-component-starter/compare/v2.14.18...v2.14.19) (2025-11-03)
 
 **Note:** Version bump only for package @paperless/core
