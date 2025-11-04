@@ -312,7 +312,7 @@ export class TableHeader {
 					</div>
 
 					{this.enableAction && this.canUseAction && (
-						<div class='border-t-mystic-dark fixed bottom-0 left-0 block w-full border border-solid border-transparent bg-white p-4 desktop-xs:hidden'>
+						<div class='fixed bottom-0 left-0 z-[2] block w-full border border-solid border-transparent bg-white p-4 desktop-xs:hidden dark:border-t-hurricane-400 dark:bg-hurricane-500'>
 							{this._buttonTemplate(true)}
 						</div>
 					)}
