@@ -1863,6 +1863,10 @@ export namespace Components {
          */
         "align": 'start' | 'center' | 'end';
         /**
+          * Wether the column should be flex
+         */
+        "flex": boolean;
+        /**
           * Wether the column should have a checkbox
          */
         "hasCheckbox": boolean;
@@ -1929,6 +1933,10 @@ export namespace Components {
           * The options for the page size
          */
         "pageSizeOptions": number[];
+        /**
+          * Wether the table header has an action to adjust for on mobile
+         */
+        "tableHeaderHasAction": boolean;
         /**
           * The total amount of items
          */
@@ -5271,6 +5279,10 @@ declare namespace LocalJSX {
          */
         "align"?: 'start' | 'center' | 'end';
         /**
+          * Wether the column should be flex
+         */
+        "flex"?: boolean;
+        /**
           * Wether the column should have a checkbox
          */
         "hasCheckbox"?: boolean;
@@ -5353,6 +5365,10 @@ declare namespace LocalJSX {
           * The options for the page size
          */
         "pageSizeOptions"?: number[];
+        /**
+          * Wether the table header has an action to adjust for on mobile
+         */
+        "tableHeaderHasAction"?: boolean;
         /**
           * The total amount of items
          */

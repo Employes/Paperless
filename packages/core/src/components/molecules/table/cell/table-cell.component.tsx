@@ -159,11 +159,22 @@ export class TableCell {
 		return (
 			<div
 				class={cn('overflow-hidden text-ellipsis', {
+					flex: this.definition.flex,
+					'justify-start':
+						this.definition.flex &&
+						(this.definition.align === undefined ||
+							this.definition.align === 'start'),
+					'justify-end':
+						this.definition.flex && this.definition.align === 'end',
+					'justify-center':
+						this.definition.flex && this.definition.align === 'end',
 					'text-start':
-						this.definition.align === 'start' ||
-						this.definition.align === undefined,
-					'text-center': this.definition.align === 'center',
-					'text-end': this.definition.align === 'end',
+						!this.definition.flex &&
+						(this.definition.align === undefined ||
+							this.definition.align === 'start'),
+					'text-center':
+						!this.definition.flex && this.definition.align === 'center',
+					'text-end': !this.definition.flex && this.definition.align === 'end',
 				})}
 			>
 				{this.variant === 'header' ? (

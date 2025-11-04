@@ -24,6 +24,11 @@ export class TableColumn {
 	@Prop({ reflect: true, mutable: true }) name: string;
 
 	/**
+	 * Wether the column should be flex
+	 */
+	@Prop({ reflect: true, mutable: true }) flex: boolean = false;
+
+	/**
 	 * Wether the column should use the slot
 	 */
 	@Prop({ reflect: true, mutable: true }) useSlot: boolean = false;

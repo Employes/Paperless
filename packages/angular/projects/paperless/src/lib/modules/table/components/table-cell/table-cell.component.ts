@@ -110,6 +110,8 @@ export class TableCell {
 	 */
 	@Input() template: TemplateRef<any> | undefined;
 
+	public cn = cn;
+
 	@HostBinding('class')
 	get class() {
 		return cn(getTableCellColumnClasses(this.definition, this.variant));
