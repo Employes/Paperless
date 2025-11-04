@@ -18,8 +18,8 @@ import {
 const footer = cva(
 	[
 		'justify-center relative',
-		'w-full py-8 px-6',
-		'after:absolute after:top-0 after:left-0  after:z-[0]',
+		'w-full px-6',
+		'after:absolute after:top-0 after:left-0 after:z-[0]',
 		'after:w-full after:h-full after:transition-opacity',
 		'after:bg-gradient-to-t after:from-white dark:after:from-hurricane-700 after:via-white/80 dark:after:via-hurricane-700/80 after:to-transparent',
 	],
@@ -32,6 +32,10 @@ const footer = cva(
 			hidden: {
 				false: 'flex',
 				true: 'hidden',
+			},
+			tableHeaderHasAction: {
+				true: 'pt-8 pb-20 desktop-xs:py-8',
+				false: 'py-8',
 			},
 		},
 	}
@@ -87,6 +91,11 @@ export class TableFooter {
 	@Prop() pageSizeOptions: number[] = PAGINATION_DEFAULT_PAGE_SIZE_OPTIONS;
 
 	/**
+	 * Wether the table header has an action to adjust for on mobile
+	 */
+	@Prop() tableHeaderHasAction: boolean = false;
+
+	/**
 	 * Event whenever the page changes
 	 */
 	@Event({
@@ -139,7 +148,7 @@ export class TableFooter {
 			this._renderCheckTimeout = null;
 		}
 
-		this._renderCheckTimeout = setTimeout(() => this._checkStuck(), 100);
+		this._renderCheckTimeout = setTimeout(() => this._checkStuck(), 200);
 	}
 
 	render() {
@@ -149,6 +158,7 @@ export class TableFooter {
 					class={footer({
 						pinned: this._isPinned,
 						hidden: this._hidden,
+						tableHeaderHasAction: this.tableHeaderHasAction,
 					})}
 				>
 					{(this.enablePaginationPages || this.enablePaginationSize) &&

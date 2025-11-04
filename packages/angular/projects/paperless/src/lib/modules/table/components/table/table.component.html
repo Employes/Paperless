@@ -112,6 +112,7 @@
 		(pageChange)="onPageChange($event)"
 		[loading]="footerLoading"
 		(hiddenChange)="footerHidden$.next($event.detail)"
+		[tableHeaderHasAction]="enableHeader && enableAction && actionButtonEnabled"
 	></p-table-footer>
 </p-table-container>
 

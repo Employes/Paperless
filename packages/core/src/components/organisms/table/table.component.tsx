@@ -529,6 +529,12 @@ export class Table {
 							//loading
 							loading={this.footerLoading}
 							onHiddenChange={({ detail }) => (this._footerHidden = detail)}
+							// header adjustment
+							tableHeaderHasAction={
+								this.enableHeader &&
+								this.enableAction &&
+								this.actionButtonEnabled
+							}
 						></p-table-footer>
 					)}
 				</p-table-container>
