@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.15.1](https://github.com/ionic-team/stencil-component-starter/compare/v2.15.0...v2.15.1) (2025-11-05)
+
+
+### Bug Fixes
+
+* **molecules/datepicker:** Add debugging ([eef32ae](https://github.com/ionic-team/stencil-component-starter/commit/eef32aec4c299c1ea5d52782f44f67c3c81b2bda))
+
+
+
+
+
 # [2.15.0](https://github.com/ionic-team/stencil-component-starter/compare/v2.14.19...v2.15.0) (2025-11-04)
 
 
