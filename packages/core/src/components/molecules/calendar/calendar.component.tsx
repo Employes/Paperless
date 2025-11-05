@@ -100,12 +100,12 @@ export class Calendar {
 	/**
 	 * Min date
 	 */
-	@Prop() minDate: Date | string = new Date(1970, 0, 1);
+	@Prop() minDate: Date | string | null = null;
 
 	/**
 	 * Max date
 	 */
-	@Prop() maxDate: Date | string = this._getAutomaticMax();
+	@Prop() maxDate: Date | string | null = null;
 
 	/**
 	 * Wether to disable the weekends
@@ -154,13 +154,8 @@ export class Calendar {
 			this._parseDisabledDates(this.disabledDates);
 		}
 
-		if (this.minDate) {
-			this._parseMinDate(this.minDate);
-		}
-
-		if (this.maxDate) {
-			this._parseMaxDate(this.maxDate);
-		}
+		this._parseMinDate(this.minDate);
+		this._parseMaxDate(this.maxDate);
 
 		this._parseValue(this.value);
 
@@ -207,8 +202,12 @@ export class Calendar {
 	}
 
 	@Watch('minDate')
-	private _parseMinDate(minDate: string | Date) {
-		console.log('calendar minDate', minDate);
+	private _parseMinDate(minDate: string | Date | null) {
+		if (minDate === null || minDate === '') {
+			this.minDate = new Date(1970, 0, 1);
+			return;
+		}
+
 		if (typeof minDate === 'string') {
 			minDate = new Date(minDate);
 		}
@@ -225,7 +224,12 @@ export class Calendar {
 	}
 
 	@Watch('maxDate')
-	private _parseMaxDate(maxDate: string | Date) {
+	private _parseMaxDate(maxDate: string | Date | null) {
+		if (maxDate === null || maxDate === '') {
+			this.maxDate = this._getAutomaticMax();
+			return;
+		}
+
 		if (typeof maxDate === 'string') {
 			maxDate = new Date(maxDate);
 		}

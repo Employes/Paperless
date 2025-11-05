@@ -307,11 +307,11 @@ export namespace Components {
         /**
           * Max date
          */
-        "maxDate": Date | string;
+        "maxDate": Date | string | null;
         /**
           * Min date
          */
-        "minDate": Date | string;
+        "minDate": Date | string | null;
         /**
           * The mode of the datepicker
          */
@@ -489,11 +489,11 @@ export namespace Components {
         /**
           * Max date
          */
-        "maxDate"?: Date | string;
+        "maxDate"?: Date | string | null;
         /**
           * Min date
          */
-        "minDate"?: Date | string;
+        "minDate"?: Date | string | null;
         /**
           * The mode of the datepicker
          */
@@ -3534,11 +3534,11 @@ declare namespace LocalJSX {
         /**
           * Max date
          */
-        "maxDate"?: Date | string;
+        "maxDate"?: Date | string | null;
         /**
           * Min date
          */
-        "minDate"?: Date | string;
+        "minDate"?: Date | string | null;
         /**
           * The mode of the datepicker
          */
@@ -3732,11 +3732,11 @@ declare namespace LocalJSX {
         /**
           * Max date
          */
-        "maxDate"?: Date | string;
+        "maxDate"?: Date | string | null;
         /**
           * Min date
          */
-        "minDate"?: Date | string;
+        "minDate"?: Date | string | null;
         /**
           * The mode of the datepicker
          */

@@ -27,6 +27,9 @@ import { childOf, isMobileBrowser } from '../../../utils';
 import { asBoolean } from '../../../utils/as-boolean';
 import { state } from '../../../state';
 import { enUS, nl } from 'date-fns/locale';
+import { addYears } from 'date-fns';
+import { getYear } from 'date-fns';
+import { setYear } from 'date-fns';
 
 @Component({
 	tag: 'p-datepicker',
@@ -63,12 +66,12 @@ export class Datepicker {
 	/**
 	 * Min date
 	 */
-	@Prop() minDate?: Date | string;
+	@Prop() minDate?: Date | string | null = null;
 
 	/**
 	 * Max date
 	 */
-	@Prop() maxDate?: Date | string;
+	@Prop() maxDate?: Date | string | null = null;
 
 	/**
 	 * Wether to disable the weekends
@@ -202,8 +205,12 @@ export class Datepicker {
 	}
 
 	@Watch('minDate')
-	protected parseMinDate(minDate: string | Date) {
-		console.log('picker minDate', minDate);
+	protected parseMinDate(minDate: string | Date | null) {
+		if (minDate === null || minDate === '') {
+			this.minDate = new Date(1970, 0, 1);
+			return;
+		}
+
 		if (typeof minDate === 'string') {
 			minDate = new Date(minDate);
 		}
@@ -220,7 +227,12 @@ export class Datepicker {
 	}
 
 	@Watch('maxDate')
-	protected parseMaxDate(maxDate: string | Date) {
+	protected parseMaxDate(maxDate: string | Date | null) {
+		if (maxDate === null || maxDate === '') {
+			this.maxDate = this._getAutomaticMax();
+			return;
+		}
+
 		if (typeof maxDate === 'string') {
 			maxDate = new Date(maxDate);
 		}
@@ -279,13 +291,8 @@ export class Datepicker {
 			this.parseDisabledDates(this.disabledDates);
 		}
 
-		if (this.minDate) {
-			this.parseMinDate(this.minDate);
-		}
-
-		if (this.maxDate) {
-			this.parseMaxDate(this.maxDate);
-		}
+		this.parseMinDate(this.minDate);
+		this.parseMaxDate(this.maxDate);
 
 		if (this.mode !== 'day' && this.format === this._defaultFormats['day']) {
 			this.format = this._defaultFormats[this.mode];
@@ -349,8 +356,8 @@ export class Datepicker {
 							})
 						}
 						min={
-							this.minDate &&
-							format(new Date(this.minDate), 'yyyy-MM-dd', {
+							this._minDate &&
+							format(new Date(this._minDate), 'yyyy-MM-dd', {
 								locale: state.locale === 'nl' ? nl : enUS,
 							})
 						}
@@ -544,5 +551,14 @@ export class Datepicker {
 		return format(this._value, this.format, {
 			locale: state.locale === 'nl' ? nl : enUS,
 		});
+	}
+
+	private _getAutomaticMax() {
+		const date = addYears(new Date(), 50);
+
+		let year = getYear(date);
+		year = Math.ceil(year / 10) * 10;
+
+		return setYear(date, year);
 	}
 }
