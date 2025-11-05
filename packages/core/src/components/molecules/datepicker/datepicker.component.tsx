@@ -203,6 +203,7 @@ export class Datepicker {
 
 	@Watch('minDate')
 	protected parseMinDate(minDate: string | Date) {
+		console.log('picker minDate', minDate);
 		if (typeof minDate === 'string') {
 			minDate = new Date(minDate);
 		}

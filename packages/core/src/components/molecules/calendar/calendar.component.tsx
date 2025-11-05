@@ -208,6 +208,7 @@ export class Calendar {
 
 	@Watch('minDate')
 	private _parseMinDate(minDate: string | Date) {
+		console.log('calendar minDate', minDate);
 		if (typeof minDate === 'string') {
 			minDate = new Date(minDate);
 		}
