@@ -86,7 +86,7 @@
 		"@storybook/addon-a11y": "^8.6.12",
 		"@storybook/addon-essentials": "^8.6.12",
 		"@storybook/addon-links": "^8.6.12",
-		"@storybook/addon-styling-webpack": "^1.0.1",
+		"@storybook/addon-styling-webpack": "^2.0.0",
 		"@storybook/blocks": "^8.6.12",
 		"@storybook/test": "^8.6.12",
 		"@storybook/web-components": "^8.6.12",
