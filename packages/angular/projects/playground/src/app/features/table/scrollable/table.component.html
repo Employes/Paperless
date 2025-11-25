@@ -23,18 +23,20 @@
 				text: 'Third',
 			}
 	]"
-	(selectedRowsChange)="rowsChange($event)"
 	[floatingMenuAmountSelectedText]="floatingMenuAmountSelectedText"
+	[enableRowSelection]="false"
+	[enableRowClick]="false"
 >
 	<p-table-column
 		variant="subject"
 		name="Employee"
 		path="employee"
 		[sizes]="{
-			default: 8,
-			tablet: 7
+			default: 3,
+			tablet: 4
 		}"
 		[hasCheckbox]="true"
+		[sticky]="true"
 	>
 		<ng-template
 			let-value="value"
@@ -58,8 +60,8 @@
 		name="Employee"
 		path="employee"
 		[sizes]="{
-			default: 8,
-			tablet: 7
+			default: 3,
+			tablet: 4
 		}"
 	>
 		<ng-template
@@ -78,6 +80,26 @@
 		</ng-template>
 	</p-table-column>
 
+	<p-table-column
+		name="Dagen"
+		path="hours"
+		align="end"
+		[sizes]="{
+			default: 'hidden',
+			tablet: 3,
+			'desktop-xs': 2
+		}"
+	></p-table-column>
+	<p-table-column
+		name="Dagen"
+		path="hours"
+		align="end"
+		[sizes]="{
+			default: 'hidden',
+			tablet: 3,
+			'desktop-xs': 2
+		}"
+	></p-table-column>
 	<p-table-column
 		name="Dagen"
 		path="hours"

@@ -48,11 +48,11 @@
 			[class]="
 				cn(
 					'before:absolute before:top-0 before:left-0 before:z-[1] before:pointer-events-none',
-					'before:w-[10%] before:h-full before:transition-opacity',
-					'before:bg-gradient-to-r before:from-white before:via-white/80 before:to-transparent',
+					'before:w-24 before:h-full before:transition-opacity',
+					'before:bg-gradient-to-r before:from-white dark:before:from-hurricane-700 before:via-white/80 dark:before:via-hurricane-700/90 before:to-transparent',
 					'after:absolute after:top-0 after:right-0 after:z-[0] before:pointer-events-none',
-					'after:w-[10%] after:h-full after:transition-opacity',
-					'after:bg-gradient-to-l after:from-white after:via-white/80 after:to-transparent',
+					'after:w-24 after:h-full after:transition-opacity',
+					'after:bg-gradient-to-l after:from-white after:dark:from-hurricane-700 after:via-white/80 dark:after:via-hurricane-700/90 after:to-transparent',
 					{
 						'before:opacity-0': reachedScrollStart$ | async,
 						'after:opacity-0': reachedScrollEnd$ | async,
@@ -129,6 +129,7 @@
 						? checkboxTemplate
 						: undefined
 				"
+				[scrollable]="this.enableScroll"
 			></p-table-cell-ngx>
 			<ng-template #checkboxTemplate>
 				<p-checkbox
@@ -146,6 +147,7 @@
 		<ng-container *ngIf="loading; else contentTemplate">
 			<p-table-row
 				*ngFor="let r of loadingRows; let rowIndex = index"
+				class="group"
 				[enableHover]="enableRowSelection || enableRowClick"
 				[isLast]="rowIndex === loadingRows.length - 1"
 			>
@@ -160,6 +162,7 @@
 						"
 						[index]="index"
 						[rowIndex]="rowIndex"
+						[scrollable]="this.enableScroll"
 					></p-table-cell-ngx>
 					<ng-template #checkboxTemplate>
 						<p-loader
@@ -175,6 +178,7 @@
 			<ng-container *ngIf="parsedItems?.length; else emptyStateTemplate">
 				<p-table-row
 					*ngFor="let item of parsedItems; let rowIndex = index"
+					class="group"
 					[enableHover]="enableRowSelection || enableRowClick"
 					[checked]="_selectionContains(item, rowIndex)"
 					[isLast]="rowIndex === parsedItems.length - 1"
@@ -202,6 +206,7 @@
 								[index]="index"
 								[rowIndex]="rowIndex"
 								[template]="col.template"
+								[scrollable]="this.enableScroll"
 							></p-table-cell-ngx>
 
 							<ng-template #checkboxTemplate>

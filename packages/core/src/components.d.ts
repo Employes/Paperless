@@ -1892,6 +1892,10 @@ export namespace Components {
 		| number
 		| TableColumnSizes;
         /**
+          * Wether the column should be sticky (Only works on angular variant of table)
+         */
+        "sticky": boolean;
+        /**
           * Wether the column should use the slot
          */
         "useSlot": boolean;
@@ -5311,6 +5315,10 @@ declare namespace LocalJSX {
 		| 'full'
 		| number
 		| TableColumnSizes;
+        /**
+          * Wether the column should be sticky (Only works on angular variant of table)
+         */
+        "sticky"?: boolean;
         /**
           * Wether the column should use the slot
          */

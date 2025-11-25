@@ -45,6 +45,11 @@ export class TableColumn {
 		'start';
 
 	/**
+	 * Wether the column should be sticky (Only works on angular variant of table)
+	 */
+	@Prop({ reflect: true, mutable: true }) sticky: boolean = false;
+
+	/**
 	 * Parsed sizes based on the complete set of columns
 	 */
 	@Prop({ reflect: true, mutable: true }) parsedSizes:

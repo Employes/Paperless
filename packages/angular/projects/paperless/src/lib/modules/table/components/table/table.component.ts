@@ -1184,9 +1184,9 @@ export class Table implements OnInit, OnChanges {
 	}
 
 	private _calculateScrollPosition({ target }: { target: HTMLDivElement }) {
-		this.reachedScrollStart$.next(target.scrollLeft < 100);
+		this.reachedScrollStart$.next(target.scrollLeft < 50);
 
 		const right = target.scrollLeft + target.getBoundingClientRect().width;
-		this.reachedScrollEnd$.next(right > this._totalWidth - 100);
+		this.reachedScrollEnd$.next(right > this._totalWidth - 50);
 	}
 }

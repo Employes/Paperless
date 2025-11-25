@@ -32,6 +32,7 @@ export declare interface TableColumn extends Components.PTableColumn {
 		'variant',
 		'useSlot',
 		'hasCheckbox',
+		'sticky',
 	],
 })
 @Component({
@@ -47,6 +48,7 @@ export declare interface TableColumn extends Components.PTableColumn {
 		'variant',
 		'useSlot',
 		'hasCheckbox',
+		'sticky',
 	],
 })
 export class TableColumn {

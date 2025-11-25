@@ -10,6 +10,7 @@ import {
 /*
      With this, we shall hack the system in ways no one would ever have thought.
 
+     bg-white sticky dark:bg-hurricane-700 z-[2] flex-shrink-0 flex-shrink from-80%
 	 text-storm-400 text-storm-300 text-storm-500 dark:text-white dark:text-hurricane-200
 	 justify-start justify-center justify-end items-center gap-4
      font-semibold text-storm-500 text-storm-500 text-storm-400 text-storm-300
@@ -110,11 +111,22 @@ export class TableCell {
 	 */
 	@Input() template: TemplateRef<any> | undefined;
 
+	/**
+	 * Wether the table is scrollable
+	 */
+	@Input() scrollable: boolean = false;
+
 	public cn = cn;
 
 	@HostBinding('class')
 	get class() {
-		return cn(getTableCellColumnClasses(this.definition, this.variant));
+		return cn(getTableCellColumnClasses(this.definition, this.variant), {
+			'sticky left-4 z-[2]': this.definition?.sticky,
+			'bg-gradient-to-r from-white to-transparent dark:from-hurricane-700 from-80%':
+				this.definition?.sticky,
+			'flex-shrink': !this.scrollable,
+			'flex-shrink-0': this.scrollable,
+		});
 	}
 
 	get data(): TableDefinitionData | { value: string } {
