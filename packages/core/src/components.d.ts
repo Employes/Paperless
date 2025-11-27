@@ -1908,7 +1908,8 @@ export namespace Components {
          */
         "variant": | 'subject'
 		| 'default'
-		| 'highlight';
+		| 'highlight'
+		| 'header-secondary';
     }
     interface PTableContainer {
     }
@@ -5336,7 +5337,8 @@ declare namespace LocalJSX {
          */
         "variant"?: | 'subject'
 		| 'default'
-		| 'highlight';
+		| 'highlight'
+		| 'header-secondary';
     }
     interface PTableContainer {
     }

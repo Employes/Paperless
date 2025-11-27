@@ -16,7 +16,8 @@ export class TableColumn {
 	@Prop({ reflect: true, mutable: true }) variant:
 		| 'subject'
 		| 'default'
-		| 'highlight' = 'default';
+		| 'highlight'
+		| 'header-secondary' = 'default';
 
 	/**
 	 * The name of the column
