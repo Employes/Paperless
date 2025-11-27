@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.16.0](https://github.com/Employes/Paperless/compare/v2.15.3...v2.16.0) (2025-11-27)
+
+
+### Bug Fixes
+
+* **angular/table:** Add data-theme hostbinding ([408c8bd](https://github.com/Employes/Paperless/commit/408c8bd73d330b653a87871f33043462228a6347))
+
+
+### Features
+
+* **angular/table:** Add support for extra headers ([6df63d3](https://github.com/Employes/Paperless/commit/6df63d31993cab48521cb4137dd64aa22edb618a))
+
+
+
+
+
 ## [2.15.3](https://github.com/Employes/Paperless/compare/v2.15.2...v2.15.3) (2025-11-26)
 
 **Note:** Version bump only for package @paperless/angular

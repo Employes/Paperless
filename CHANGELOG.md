@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.16.0](https://github.com/employes/paperless/compare/v2.15.3...v2.16.0) (2025-11-27)
+
+
+### Bug Fixes
+
+* **angular/table:** Add data-theme hostbinding ([408c8bd](https://github.com/employes/paperless/commit/408c8bd73d330b653a87871f33043462228a6347))
+* **molecules/table/header:** Use correct onClick event for the buttons ([3d1cc2c](https://github.com/employes/paperless/commit/3d1cc2c4b4de90975720ff56098e3e75701836dd))
+
+
+### Features
+
+* **angular/table:** Add support for extra headers ([6df63d3](https://github.com/employes/paperless/commit/6df63d31993cab48521cb4137dd64aa22edb618a))
+* **helpers/table/column:** Add definition for header-secondary ([709f072](https://github.com/employes/paperless/commit/709f072ef7d4f44abc2743a0203591d34451ccde))
+* **helpers/table:** Add extra-header helper ([50f0769](https://github.com/employes/paperless/commit/50f076909ba899274d861db5816feec08241b57d))
+* **molecules/table/cell:** Add header-secondary variant ([d5aa2f4](https://github.com/employes/paperless/commit/d5aa2f47d0cd6b5f4280fe6df40b73d6ce0466e4))
+* **molecules/table/row:** Add header-secondary variant ([1337d3e](https://github.com/employes/paperless/commit/1337d3e0547a944a2a988406e56abbd300a57603))
+* **organisms/table:** Add support for extra headers ([53e9453](https://github.com/employes/paperless/commit/53e9453272acacb197d20dcf5df629d3d80fe816))
+
+
+
+
+
 ## [2.15.3](https://github.com/employes/paperless/compare/v2.15.2...v2.15.3) (2025-11-26)
 
 **Note:** Version bump only for package paperless
