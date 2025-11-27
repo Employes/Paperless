@@ -49,6 +49,7 @@ import {
 	TableFilterModalDirective,
 } from '../../directives';
 import { TableColumn } from '../table-column/table-column.component';
+import { TableExtraHeader } from '../table-extra-header/table-extra-header.component';
 import {
 	AsyncItem,
 	TableRowAction,
@@ -371,6 +372,7 @@ export class Table implements OnInit, OnChanges {
 	 */
 	@Input() shadow: boolean = true;
 
+	public extraHeaders$ = new BehaviorSubject<any[]>([]);
 	public columns$ = new BehaviorSubject<any[]>([]);
 	public parsedItems: any[] = [];
 	public loadingRows = Array.from({
@@ -395,6 +397,8 @@ export class Table implements OnInit, OnChanges {
 
 	// column templates
 	@ContentChildren(TableColumn) columnDefinitions!: QueryList<TableColumn>;
+	@ContentChildren(TableExtraHeader)
+	extraHeaderDefinitions!: QueryList<TableExtraHeader>;
 
 	// filter modal
 	@ContentChild(TableFilterModalDirective, {
@@ -516,6 +520,13 @@ export class Table implements OnInit, OnChanges {
 				.subscribe(() => this._generateColumns());
 			this._generateColumns();
 		}
+
+		if (this.extraHeaderDefinitions) {
+			this.extraHeaderDefinitions.changes
+				.pipe(untilDestroyed(this), debounceTime(100))
+				.subscribe(() => this._generateExtraHeaders());
+			this._generateExtraHeaders();
+		}
 	}
 
 	@HostListener('window:resize', ['$event'])
@@ -625,11 +636,23 @@ export class Table implements OnInit, OnChanges {
 	}
 
 	private _generateColumns() {
-		let definitionsArray = Array.from(this.columnDefinitions) as TableColumn[];
+		let definitionsArray = Array.from(this.columnDefinitions);
 
-		definitionsArray = this._parseDefinitions(definitionsArray);
+		definitionsArray = this._parseDefinitions(
+			definitionsArray
+		) as unknown as TableColumn[];
 
 		this.columns$.next(definitionsArray);
+	}
+
+	private _generateExtraHeaders() {
+		let definitionsArray = Array.from(this.extraHeaderDefinitions);
+
+		definitionsArray = this._parseDefinitions(
+			definitionsArray
+		) as unknown as TableExtraHeader[];
+
+		this.extraHeaders$.next(definitionsArray);
 	}
 
 	public _checkboxDisabled(item: any, rowIndex: number) {
@@ -1047,14 +1070,15 @@ export class Table implements OnInit, OnChanges {
 		});
 	}
 
-	private _parseDefinitions(definitionsArray: TableColumn[]) {
-		return definitionsArray.map(definition => {
-			definition = this._parseDefinitionSizes(definition);
-			return definition;
-		});
+	private _parseDefinitions(
+		definitionsArray: TableColumn[] | TableExtraHeader[]
+	) {
+		return definitionsArray.map(definition =>
+			this._parseDefinitionSizes(definition)
+		);
 	}
 
-	private _parseDefinitionSizes(definition: TableColumn) {
+	private _parseDefinitionSizes(definition: TableColumn | TableExtraHeader) {
 		const definitionAny = definition as any;
 		let parsedSizes: TableColumnSizes = { default: 'full' };
 

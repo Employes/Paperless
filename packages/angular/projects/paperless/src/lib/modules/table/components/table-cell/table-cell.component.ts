@@ -18,7 +18,7 @@ import {
 /*
      With this, we shall hack the system in ways no one would ever have thought.
 
-     bg-white sticky dark:bg-hurricane-700 z-[2] flex-shrink-0 flex-shrink from-80%
+     bg-white sticky dark:bg-hurricane-700 z-[2] flex-shrink-0 flex-shrink from-80% pl-8
 	 text-storm-400 text-storm-300 text-storm-500 dark:text-white dark:text-hurricane-200
 	 justify-start justify-center justify-end items-center gap-4
      font-semibold text-storm-500 text-storm-500 text-storm-400 text-storm-300
@@ -84,7 +84,8 @@ export class TableCell implements OnInit {
 	/**
 	 * The variant of the column
 	 */
-	@Input() variant: 'default' | 'loading' | 'header' = 'default';
+	@Input() variant: 'default' | 'loading' | 'header' | 'header-secondary' =
+		'default';
 
 	/**
 	 * The index of the column
@@ -117,6 +118,11 @@ export class TableCell implements OnInit {
 	@Input() checkbox: TemplateRef<any> | undefined;
 
 	/**
+	 * Wether the cell needs checkbox offset instead of a checkbox
+	 */
+	@Input() checkboxOffset: boolean = false;
+
+	/**
 	 * The template ref for the content
 	 */
 	@Input() template: TemplateRef<any> | undefined;
@@ -130,17 +136,24 @@ export class TableCell implements OnInit {
 
 	@HostBinding('class')
 	get class() {
-		return cn(getTableCellColumnClasses(this.definition, this.variant), {
-			'sticky left-4 z-[2]': this.definition?.sticky,
-			'bg-gradient-to-r from-white to-transparent dark:from-hurricane-700 from-80%':
-				this.definition?.sticky,
-			'flex-shrink': !this.scrollable,
-			'flex-shrink-0': this.scrollable,
-		});
+		return cn(
+			getTableCellColumnClasses(
+				this.definition,
+				this.variant,
+				this.checkboxOffset
+			),
+			{
+				'sticky left-4 z-[2]': this.definition?.sticky,
+				'bg-gradient-to-r from-white to-transparent dark:from-hurricane-700 from-80%':
+					this.definition?.sticky,
+				'flex-shrink': !this.scrollable,
+				'flex-shrink-0': this.scrollable,
+			}
+		);
 	}
 
 	get data(): TableDefinitionData | { value: string } {
-		if (this.variant === 'header') {
+		if (this.variant === 'header' || this.variant === 'header-secondary') {
 			return {
 				value: this.value,
 			};

@@ -16,7 +16,7 @@
 	</ng-container>
 
 	<div
-		*ngSwitchCase="'header'"
+		*ngIf="variant === 'header' || variant === 'header-secondary'"
 		[class]="
 			cn('overflow-hidden text-ellipsis', {
 				'text-start':

@@ -117,6 +117,24 @@
 </p-table-container>
 
 <ng-template #rowsTemplate>
+	<p-table-row
+		*ngIf="(extraHeaders$ | async)?.length"
+		variant="header-secondary"
+		[isLast]="true"
+	>
+		<ng-container *ngFor="let col of columns$ | async; let index = index">
+			<p-table-cell-ngx
+				[definition]="col"
+				variant="header-secondary"
+				[index]="index"
+				[checkboxOffset]="index === 0 && enableRowSelection"
+				[scrollable]="this.enableScroll"
+			>
+				<b>{{ col.name }}</b>
+			</p-table-cell-ngx>
+		</ng-container>
+	</p-table-row>
+
 	<p-table-row variant="header">
 		<ng-container *ngFor="let col of columns$ | async; let index = index">
 			<p-table-cell-ngx

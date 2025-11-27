@@ -21,6 +21,20 @@
 	(selectedRowsChange)="rowsChange($event)"
 	[floatingMenuAmountSelectedText]="floatingMenuAmountSelectedText"
 >
+	<p-table-extra-header
+		name="extra first"
+		sizes="3"
+	></p-table-extra-header>
+	<p-table-extra-header
+		name="extra long"
+		sizes="6"
+	></p-table-extra-header>
+	<p-table-extra-header
+		name="extra last"
+		align="end"
+		sizes="3"
+	></p-table-extra-header>
+
 	<p-table-column
 		variant="subject"
 		name="Employee"
