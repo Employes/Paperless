@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.16.1](https://github.com/Employes/Paperless/compare/v2.16.0...v2.16.1) (2025-11-27)
+
+**Note:** Version bump only for package @paperless/conventions
+
+
+
+
+
 # [2.16.0](https://github.com/Employes/Paperless/compare/v2.15.3...v2.16.0) (2025-11-27)
 
 **Note:** Version bump only for package @paperless/conventions

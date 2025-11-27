@@ -1,7 +1,7 @@
 {
 	"name": "@paperless/conventions",
 	"description": "Paperless eslint, typescript & prettier recommended configuration",
-	"version": "2.16.0",
+	"version": "2.16.1",
 	"license": "ISC",
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org"

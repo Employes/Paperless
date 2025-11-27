@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.16.1](https://github.com/Employes/Paperless/compare/v2.16.0...v2.16.1) (2025-11-27)
+
+
+### Bug Fixes
+
+* **angular/table:** Improve reliability & support footer columns ([f7979ff](https://github.com/Employes/Paperless/commit/f7979ff85c05850437408feee395109af95ffd40))
+
+
+
+
+
 # [2.16.0](https://github.com/Employes/Paperless/compare/v2.15.3...v2.16.0) (2025-11-27)
 
 
