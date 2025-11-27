@@ -29,6 +29,7 @@ import {
 	PAGINATION_DEFAULT_PAGE_SIZE_OPTIONS,
 } from '../../../utils/constants';
 import { TableColumn } from '../../helpers/table/column/table-column.component';
+import { TableExtraHeader } from '../../helpers/table/extra-header/table-extra-header.component';
 import { TableRowAction } from '../../helpers/table/row-action/table-row-action.component';
 import { buttonTemplateFunc } from '../../molecules/table/header/table-header.component';
 
@@ -375,6 +376,7 @@ export class Table {
 	 */
 	@State() private _locales: any = {};
 
+	@State() private _extraHeaders: any[] = [];
 	@State() private _columns: any[] = [];
 	@State() private _items: any[] = [];
 
@@ -406,6 +408,7 @@ export class Table {
 
 		this._setLocales();
 		this._parseItems(this.items);
+		this._generateExtraHeaders();
 		this._generateColumns();
 	}
 
@@ -465,6 +468,7 @@ export class Table {
 						</p-table-header>
 					)}
 
+					{this._getExtraHeader()}
 					{this._getHeader()}
 					<div class='flex flex-1 flex-col'>
 						{this._getRows()}
@@ -659,6 +663,15 @@ export class Table {
 		}, 200);
 	}
 
+	private _generateExtraHeaders() {
+		const definitions = this._el.querySelectorAll('p-table-extra-header');
+		let definitionsArray = Array.from(definitions);
+
+		definitionsArray = this._parseDefinitions(definitionsArray);
+
+		this._extraHeaders = definitionsArray;
+	}
+
 	private _generateColumns() {
 		const definitions = this._el.querySelectorAll('p-table-column');
 		let definitionsArray = Array.from(definitions);
@@ -666,6 +679,32 @@ export class Table {
 		definitionsArray = this._parseDefinitions(definitionsArray);
 
 		this._columns = definitionsArray;
+	}
+
+	private _getExtraHeader() {
+		if (!this._extraHeaders?.length) {
+			return null;
+		}
+
+		return (
+			<p-table-row
+				variant='header-secondary'
+				isLast={true}
+			>
+				{this._extraHeaders.map((col: TableExtraHeader, index) => {
+					return (
+						<p-table-cell
+							definition={col}
+							variant='header-secondary'
+							checkboxOffset={index === 0 && this._enableRowSelection}
+							index={index}
+						>
+							<b>{col.name}</b>
+						</p-table-cell>
+					);
+				})}
+			</p-table-row>
+		);
 	}
 
 	private _getHeader() {
@@ -1135,14 +1174,18 @@ export class Table {
 		this._floatingMenuShown = true;
 	}
 
-	private _parseDefinitions(definitionsArray: HTMLPTableColumnElement[]) {
+	private _parseDefinitions(
+		definitionsArray: HTMLPTableColumnElement[] | HTMLPTableExtraHeaderElement[]
+	) {
 		return definitionsArray.map(definition => {
 			definition = this._parseDefinitionSizes(definition);
 			return definition;
 		});
 	}
 
-	private _parseDefinitionSizes(definition: HTMLPTableColumnElement) {
+	private _parseDefinitionSizes(
+		definition: HTMLPTableColumnElement | HTMLPTableExtraHeaderElement
+	) {
 		const definitionAny = definition as any;
 		let parsedSizes: TableColumnSizes = { default: 'full' };
 

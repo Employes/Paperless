@@ -202,20 +202,39 @@ export const Default = {
 				@export=${action('export')}
 				@emptyStateActionClick=${action('emptyStateActionClick')}
 			>
+				<p-table-extra-header
+					name="extra first"
+					sizes="3"
+				></p-table-extra-header>
+				<p-table-extra-header
+					name="extra long"
+					sizes="6"
+				></p-table-extra-header>
+				<p-table-extra-header
+					name="extra last"
+					align="end"
+					sizes="3"
+				></p-table-extra-header>
+
 				<p-table-column
 					name="first"
 					path="first"
-					sizes="4"
+					sizes="3"
 				></p-table-column>
 				<p-table-column
 					name="second"
 					path="second"
-					sizes="4"
+					sizes="3"
 				></p-table-column>
 				<p-table-column
 					name="third"
 					path="third"
-					sizes="4"
+					sizes="3"
+				></p-table-column>
+				<p-table-column
+					name="fourth"
+					path="third"
+					sizes="3"
 				></p-table-column>
 
 				<p-table-row-action
