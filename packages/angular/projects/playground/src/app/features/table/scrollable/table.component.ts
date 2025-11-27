@@ -57,66 +57,12 @@ export class ScrollableTableComponent {
 		},
 	];
 
-	public items$ =  new BehaviorSubject<any[]>(this._items);
-	public showExtraColumn$=  new BehaviorSubject(false);
+	public items$ = new BehaviorSubject<any[]>(this._items);
+	public showExtraColumn$ = new BehaviorSubject(false);
 
 	public floatingMenuAmountSelectedText = '0 items selected';
 
-	public downloading$ = new BehaviorSubject(false);
-	private _downloadTimeout: any;
-
-	public showNavigateButton = (item: any) => {
-		return item.hide === undefined ? true : !item.hide;
-	};
-
-	constructor(private _overlay: OverlayService) {}
-
-	showDrawer() {
-		this._overlay.open<TestDrawerComponent>(TestDrawerComponent);
-	}
-
-	actionClick(name: string, event: TableRowActionClickEvent) {
-		if (name === 'download') {
-			if (this._downloadTimeout) {
-				clearTimeout(this._downloadTimeout);
-				this._downloadTimeout = undefined;
-			}
-
-			this.downloading$.next(true);
-			console.log('Started downloading');
-			this._downloadTimeout = setTimeout(() => {
-				console.log('Stopped downloading');
-				this.downloading$.next(false);
-			}, 3000);
-		}
-
-		if (event.multi) {
-			const { items } = event;
-			console.log('Multi', name, items);
-			return;
-		}
-
-		const { item } = event;
-		console.log('Single', name, item);
-	}
-
-	rowsChange(rows: any[]) {
-		if (!rows?.length) {
-			this.floatingMenuAmountSelectedText = '0 items selected';
-			return;
-		}
-
-		if (rows.length === 1) {
-			this.floatingMenuAmountSelectedText = '1 item selected';
-			return;
-		}
-
-		this.floatingMenuAmountSelectedText = `${rows.length} items selected`;
-
-		console.log(JSON.stringify(this.items$.value, null, 2));
-	}
-
 	doubleRows() {
-		this.items$.next([...this._items, ...this._items])
+		this.items$.next([...this._items, ...this._items]);
 	}
 }

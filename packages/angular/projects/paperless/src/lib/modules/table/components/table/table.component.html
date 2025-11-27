@@ -120,9 +120,10 @@
 	<p-table-row
 		*ngIf="(extraHeaders$ | async)?.length"
 		variant="header-secondary"
+		className="z-[2]"
 		[isLast]="true"
 	>
-		<ng-container *ngFor="let col of columns$ | async; let index = index">
+		<ng-container *ngFor="let col of extraHeaders$ | async; let index = index">
 			<p-table-cell-ngx
 				[definition]="col"
 				variant="header-secondary"
@@ -284,7 +285,12 @@
 		</ng-template>
 
 		<ng-container *ngFor="let customRow of customRows">
-			<p-table-row [variant]="customRow.variant">
+			<p-table-row
+				[variant]="customRow.variant"
+				[class]="{
+					'z-[2]': customRow.variant === 'secondary'
+				}"
+			>
 				<ng-container *ngTemplateOutlet="customRow.templateRef"></ng-container>
 			</p-table-row>
 		</ng-container>

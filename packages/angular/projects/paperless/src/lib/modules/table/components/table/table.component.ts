@@ -15,20 +15,20 @@ import {
 	QueryList,
 	SimpleChanges,
 	TemplateRef,
-	ViewChildren,
 	ViewChild,
+	ViewChildren,
 } from '@angular/core';
 import { Params } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import {
+	cn,
+	floatingMenuContainerClass,
 	isMobile,
+	onStateChange,
 	QuickFilter,
 	RowClickEvent,
-	tableColumSizesOptions,
-	floatingMenuContainerClass,
-	cn,
 	state,
-	onStateChange,
+	tableColumSizesOptions,
 } from '@paperless/core';
 import {
 	IconVariant,
@@ -43,11 +43,14 @@ import {
 	Subscription,
 	take,
 } from 'rxjs';
+import { PTableRow } from '../../../../stencil/components';
 import {
 	TableCustomActionsDirective,
 	TableCustomFilterDirective,
 	TableFilterModalDirective,
 } from '../../directives';
+import { TableCustomRowDirective } from '../../directives/p-table-custom-row.directive';
+import { TableCell } from '../table-cell/table-cell.component';
 import { TableColumn } from '../table-column/table-column.component';
 import { TableExtraHeader } from '../table-extra-header/table-extra-header.component';
 import {
@@ -57,9 +60,6 @@ import {
 	TableRowActionRouterLink,
 } from '../table-row-action/table-row-action.component';
 import { defaultSize, defaultSizeOptions } from './constants';
-import { TableCell } from '../table-cell/table-cell.component';
-import { PTableRow } from '../../../../stencil/components';
-import { TableCustomRowDirective } from '../../directives/p-table-custom-row.directive';
 
 @UntilDestroy({ checkProperties: true })
 @Component({
@@ -457,16 +457,18 @@ export class Table implements OnInit, OnChanges {
 	private _inputEnableRowSelection: boolean = this.enableRowSelection;
 	private _inputRowSelectionLimit: number | undefined = this.rowSelectionLimit;
 
+	private _themeDebounce?: ReturnType<typeof setTimeout>;
+
 	public footerHidden$ = new BehaviorSubject(false);
 
 	public cn = cn;
 
-	constructor(private _changeDetection: ChangeDetectorRef) {}
+	constructor(private _cd: ChangeDetectorRef) {}
 
 	ngOnInit() {
 		this._parseItems(this.items);
 
-		onStateChange('theme', value => (this.theme = value));
+		onStateChange('theme', value => this._checkTheme(value));
 
 		this.loadingRows = Array.from({
 			length: this.amountOfLoadingRows,
@@ -1001,7 +1003,7 @@ export class Table implements OnInit, OnChanges {
 			this._rowActionsSubscriptions = actions.map(action =>
 				action._loadingChanged
 					.pipe(untilDestroyed(this))
-					.subscribe(() => this._changeDetection.detectChanges())
+					.subscribe(() => this._cd.detectChanges())
 			);
 
 			// we hack this to any[] to make it work..
@@ -1134,8 +1136,9 @@ export class Table implements OnInit, OnChanges {
 		const rows = this.tableRows.map(
 			c => c.nativeElement as unknown as HTMLElement
 		);
-		const cells = this.tableCells.map(
-			c => c.nativeElement as unknown as HTMLElement
+		const cells = rows.flatMap(
+			row =>
+				Array.from(row.querySelectorAll('p-table-cell-ngx')) as HTMLElement[]
 		);
 
 		this._calculateColumnWidthsTimeout = setTimeout(async () => {
@@ -1144,7 +1147,7 @@ export class Table implements OnInit, OnChanges {
 			const promises: Promise<void>[] = [];
 			for (const cell of cells) {
 				if (cell.style.width?.length) {
-					cell.style.width = '';
+					cell.style.width = 'unset';
 				}
 
 				promises.push(
@@ -1213,9 +1216,21 @@ export class Table implements OnInit, OnChanges {
 	}
 
 	private _calculateScrollPosition({ target }: { target: HTMLDivElement }) {
-		this.reachedScrollStart$.next(target.scrollLeft < 50);
+		this.reachedScrollStart$.next(target.scrollLeft < 10);
 
 		const right = target.scrollLeft + target.getBoundingClientRect().width;
-		this.reachedScrollEnd$.next(right > this._totalWidth - 50);
+		this.reachedScrollEnd$.next(right > this._totalWidth - 10);
+	}
+
+	private _checkTheme(value: 'dark' | 'light') {
+		if (this._themeDebounce) {
+			clearTimeout(this._themeDebounce);
+			this._themeDebounce = undefined;
+		}
+
+		this._themeDebounce = setTimeout(() => {
+			this.theme = value;
+			this._cd.detectChanges();
+		}, 100);
 	}
 }

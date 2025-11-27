@@ -1,17 +1,9 @@
 /* eslint-disable max-len */
-import {
-	Component,
-	HostBinding,
-	Input,
-	OnInit,
-	TemplateRef,
-} from '@angular/core';
+import { Component, HostBinding, Input, TemplateRef } from '@angular/core';
 import {
 	cn,
 	getTableCellColumnClasses,
 	objectGetByPath,
-	onStateChange,
-	state,
 	TableDefinitionData,
 } from '@paperless/core';
 
@@ -78,9 +70,7 @@ import {
 	selector: 'p-table-cell-ngx',
 	templateUrl: './table-cell.component.html',
 })
-export class TableCell implements OnInit {
-	@HostBinding('attr.data-theme') theme = state.theme;
-
+export class TableCell {
 	/**
 	 * The variant of the column
 	 */
@@ -143,9 +133,11 @@ export class TableCell implements OnInit {
 				this.checkboxOffset
 			),
 			{
-				'sticky left-4 z-[2]': this.definition?.sticky,
+				'sticky left-4 z-[2]': !!this.definition?.sticky,
 				'bg-gradient-to-r from-white to-transparent dark:from-hurricane-700 from-80%':
-					this.definition?.sticky,
+					this.definition?.sticky && this.definition?.sticky !== 'footer',
+				'bg-gradient-to-r from-off-white-300 to-transparent dark:from-hurricane-400 from-80%':
+					this.definition?.sticky && this.definition?.sticky === 'footer',
 				'flex-shrink': !this.scrollable,
 				'flex-shrink-0': this.scrollable,
 			}
@@ -168,9 +160,5 @@ export class TableCell implements OnInit {
 			index: this.index,
 			rowIndex: this.rowIndex,
 		};
-	}
-
-	ngOnInit() {
-		onStateChange('theme', value => (this.theme = value));
 	}
 }

@@ -10,14 +10,8 @@ const row = cva(
 			variant: {
 				default: ['px-3 m-1', 'text-sm text-storm-500', 'dark:text-white'],
 				header: null,
-				'header-secondary':
-					'bg-off-white-300 dark:bg-hurricane-400 rounded-lg mb-4',
-				secondary: [
-					'px-4',
-					'bg-off-white-300 rounded-lg',
-					'dark:bg-hurricane-400',
-					'font-ambit text-lg font-bold',
-				],
+				'header-secondary': 'mb-4',
+				secondary: ['px-4', 'font-ambit text-lg font-bold'],
 			},
 			enableHover: {
 				true: null,
@@ -47,6 +41,10 @@ const row = cva(
 					'rounded-lg transition-colors',
 					'bg-off-white-300 dark:bg-hurricane-400 dark:hover:bg-hurricane-400',
 				],
+			},
+			{
+				variant: ['secondary', 'header-secondary'],
+				class: ['bg-off-white-300 rounded-lg', 'dark:bg-hurricane-400'],
 			},
 			{
 				variant: ['header', 'header-secondary'],
