@@ -27,6 +27,8 @@ import {
 	tableColumSizesOptions,
 	floatingMenuContainerClass,
 	cn,
+	state,
+	onStateChange,
 } from '@paperless/core';
 import {
 	IconVariant,
@@ -66,6 +68,7 @@ import { TableCustomRowDirective } from '../../directives/p-table-custom-row.dir
 })
 export class Table implements OnInit, OnChanges {
 	@HostBinding('class') className = 'flex flex-col z-0';
+	@HostBinding('attr.data-theme') theme = state.theme;
 
 	/**
 	 * The items to be fed to the table
@@ -458,6 +461,8 @@ export class Table implements OnInit, OnChanges {
 
 	ngOnInit() {
 		this._parseItems(this.items);
+
+		onStateChange('theme', value => (this.theme = value));
 
 		this.loadingRows = Array.from({
 			length: this.amountOfLoadingRows,

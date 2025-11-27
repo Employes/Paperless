@@ -1,9 +1,17 @@
 /* eslint-disable max-len */
-import { Component, HostBinding, Input, TemplateRef } from '@angular/core';
+import {
+	Component,
+	HostBinding,
+	Input,
+	OnInit,
+	TemplateRef,
+} from '@angular/core';
 import {
 	cn,
 	getTableCellColumnClasses,
 	objectGetByPath,
+	onStateChange,
+	state,
 	TableDefinitionData,
 } from '@paperless/core';
 
@@ -70,7 +78,9 @@ import {
 	selector: 'p-table-cell-ngx',
 	templateUrl: './table-cell.component.html',
 })
-export class TableCell {
+export class TableCell implements OnInit {
+	@HostBinding('attr.data-theme') theme = state.theme;
+
 	/**
 	 * The variant of the column
 	 */
@@ -145,5 +155,9 @@ export class TableCell {
 			index: this.index,
 			rowIndex: this.rowIndex,
 		};
+	}
+
+	ngOnInit() {
+		onStateChange('theme', value => (this.theme = value));
 	}
 }
