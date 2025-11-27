@@ -9,11 +9,9 @@ const row = cva(
 		variants: {
 			variant: {
 				default: ['px-3 m-1', 'text-sm text-storm-500', 'dark:text-white'],
-				header: [
-					'px-4',
-					'text-xs font-normal text-storm-400',
-					'dark:text-hurricane-200',
-				],
+				header: null,
+				'header-secondary':
+					'bg-off-white-300 dark:bg-hurricane-400 rounded-lg mb-4',
 				secondary: [
 					'px-4',
 					'bg-off-white-300 rounded-lg',
@@ -50,6 +48,14 @@ const row = cva(
 					'bg-off-white-300 dark:bg-hurricane-400 dark:hover:bg-hurricane-400',
 				],
 			},
+			{
+				variant: ['header', 'header-secondary'],
+				class: [
+					'px-4',
+					'text-xs font-normal text-storm-400',
+					'dark:text-hurricane-200',
+				],
+			},
 		],
 	}
 );
@@ -61,13 +67,18 @@ const content = cva(
 			variant: {
 				default: null,
 				secondary: null,
-				header: 'min-h-0 pb-4',
+				header: 'pb-4',
+				'header-secondary': 'py-2',
 			},
 		},
 		compoundVariants: [
 			{
 				variant: ['default', 'secondary'],
 				class: 'min-h-14 py-2 tablet:py-4',
+			},
+			{
+				variant: ['header', 'header-secondary'],
+				class: 'min-h-0',
 			},
 		],
 	}
@@ -89,7 +100,8 @@ export class TableRow {
 	/**
 	 * Variant of the header
 	 */
-	@Prop() variant: 'default' | 'secondary' | 'header' = 'default';
+	@Prop() variant: 'default' | 'secondary' | 'header' | 'header-secondary' =
+		'default';
 
 	/**
 	 * Enable hover

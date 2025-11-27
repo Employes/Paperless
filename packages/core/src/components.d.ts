@@ -2032,7 +2032,7 @@ export namespace Components {
         /**
           * Variant of the header
          */
-        "variant": 'default' | 'secondary' | 'header';
+        "variant": 'default' | 'secondary' | 'header' | 'header-secondary';
     }
     interface PTableRowAction {
         /**
@@ -5488,7 +5488,7 @@ declare namespace LocalJSX {
         /**
           * Variant of the header
          */
-        "variant"?: 'default' | 'secondary' | 'header';
+        "variant"?: 'default' | 'secondary' | 'header' | 'header-secondary';
     }
     interface PTableRowAction {
         /**
