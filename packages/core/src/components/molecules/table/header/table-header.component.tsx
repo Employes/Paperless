@@ -276,7 +276,7 @@ export class TableHeader {
 											? 'desktop-xs:w-auto'
 											: 'desktop-xs:hidden'
 									}`}
-									onClick={() => this.filter.emit()}
+									onOnClick={() => this.filter.emit()}
 								>
 									{this.filterButtonTemplate
 										? this.filterButtonTemplate()
@@ -299,7 +299,7 @@ export class TableHeader {
 									variant='secondary'
 									icon='upload'
 									class='desktop-xs:auto w-full'
-									onClick={() => this.export.emit()}
+									onOnClick={() => this.export.emit()}
 								>
 									{formatTranslation(this._locales.export)}
 								</p-button>
@@ -332,7 +332,7 @@ export class TableHeader {
 				class={mobile ? 'w-full' : 'hidden desktop-xs:flex'}
 				icon={this.actionIcon}
 				disabled={!this.canUseAction}
-				onClick={() => this.action.emit()}
+				onOnClick={() => this.action.emit()}
 				loading={this.actionLoading}
 			>
 				{this.actionButtonTemplate
