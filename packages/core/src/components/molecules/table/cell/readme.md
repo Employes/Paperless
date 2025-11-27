@@ -7,16 +7,17 @@
 
 ## Properties
 
-| Property     | Attribute    | Description                        | Type                                 | Default                                         |
-| ------------ | ------------ | ---------------------------------- | ------------------------------------ | ----------------------------------------------- |
-| `checkbox`   | `checkbox`   | The checkbox to show               | `any`                                | `undefined`                                     |
-| `definition` | `definition` | The definition of the table column | `any`                                | `undefined`                                     |
-| `index`      | `index`      | The index of the column            | `number`                             | `undefined`                                     |
-| `item`       | `item`       | The item in question               | `any`                                | `undefined`                                     |
-| `rowIndex`   | `row-index`  | The index of the row               | `number`                             | `undefined`                                     |
-| `template`   | `template`   | The template to show               | `(data: TableDefinitionData) => any` | `({ 		value, 	}: TableDefinitionData) => value` |
-| `value`      | `value`      | The value of the column            | `any`                                | `undefined`                                     |
-| `variant`    | `variant`    | The variant of the column          | `"default" \| "header" \| "loading"` | `'default'`                                     |
+| Property         | Attribute         | Description                                                 | Type                                                       | Default                                         |
+| ---------------- | ----------------- | ----------------------------------------------------------- | ---------------------------------------------------------- | ----------------------------------------------- |
+| `checkbox`       | `checkbox`        | The checkbox to show                                        | `any`                                                      | `undefined`                                     |
+| `checkboxOffset` | `checkbox-offset` | Wether the cell needs checkbox offset instead of a checkbox | `boolean`                                                  | `false`                                         |
+| `definition`     | `definition`      | The definition of the table column                          | `any`                                                      | `undefined`                                     |
+| `index`          | `index`           | The index of the column                                     | `number`                                                   | `undefined`                                     |
+| `item`           | `item`            | The item in question                                        | `any`                                                      | `undefined`                                     |
+| `rowIndex`       | `row-index`       | The index of the row                                        | `number`                                                   | `undefined`                                     |
+| `template`       | `template`        | The template to show                                        | `(data: TableDefinitionData) => any`                       | `({ 		value, 	}: TableDefinitionData) => value` |
+| `value`          | `value`           | The value of the column                                     | `any`                                                      | `undefined`                                     |
+| `variant`        | `variant`         | The variant of the column                                   | `"default" \| "header" \| "header-secondary" \| "loading"` | `'default'`                                     |
 
 
 ## Dependencies

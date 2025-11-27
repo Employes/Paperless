@@ -8,23 +8,28 @@ import {
 
 export const getTableCellColumnClasses = (
 	definition: any | TableColumn,
-	variant: 'default' | 'header' | 'loading'
+	variant: 'default' | 'header' | 'loading' | 'header-secondary',
+	checkboxOffset = false
 ) => {
 	const sizes = definition ? getTableCellSizes(definition, variant) : {};
 
 	return {
 		'flex flex-shrink items-center gap-4 pr-4 last-of-type:pr-0': true,
+		'pl-8': checkboxOffset,
 		'justify-start': !definition?.align || definition?.align === 'start',
 		'justify-center': definition?.align === 'center',
 		'justify-end': definition?.align === 'end',
 		'font-semibold': variant !== 'header' && definition?.variant === 'subject',
-		'text-storm-400 dark:text-hurricane-200': variant === 'header',
+		'text-storm-400 dark:text-hurricane-200':
+			variant === 'header' || variant === 'header-secondary',
 		'text-storm-300 dark:text-hurricane-200':
 			variant !== 'header' &&
+			variant !== 'header-secondary' &&
 			definition?.variant !== 'subject' &&
 			definition?.variant !== 'highlight',
 		'text-storm-500 dark:text-white':
 			variant !== 'header' &&
+			variant !== 'header-secondary' &&
 			(definition?.variant === 'subject' ||
 				definition?.variant === 'highlight'),
 		...sizes,
@@ -37,7 +42,7 @@ export const getTableCellSizes = (
 	}: {
 		sizes: 'auto' | 'hidden' | 'full' | number | TableColumnSizes;
 	} /* Table Definition */,
-	variant: 'default' | 'header' | 'loading' | 'actions'
+	variant: 'default' | 'header' | 'loading' | 'actions' | 'header-secondary'
 ) => {
 	if (sizes === 'auto' || !sizes) {
 		return {

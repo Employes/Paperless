@@ -1829,6 +1829,10 @@ export namespace Components {
          */
         "checkbox": any;
         /**
+          * Wether the cell needs checkbox offset instead of a checkbox
+         */
+        "checkboxOffset": boolean;
+        /**
           * The definition of the table column
          */
         "definition"?: TableColumn | any;
@@ -1855,7 +1859,7 @@ export namespace Components {
         /**
           * The variant of the column
          */
-        "variant": 'default' | 'loading' | 'header';
+        "variant": 'default' | 'loading' | 'header' | 'header-secondary';
     }
     interface PTableColumn {
         /**
@@ -5249,6 +5253,10 @@ declare namespace LocalJSX {
          */
         "checkbox"?: any;
         /**
+          * Wether the cell needs checkbox offset instead of a checkbox
+         */
+        "checkboxOffset"?: boolean;
+        /**
           * The definition of the table column
          */
         "definition"?: TableColumn | any;
@@ -5275,7 +5283,7 @@ declare namespace LocalJSX {
         /**
           * The variant of the column
          */
-        "variant"?: 'default' | 'loading' | 'header';
+        "variant"?: 'default' | 'loading' | 'header' | 'header-secondary';
     }
     interface PTableColumn {
         /**

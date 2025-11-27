@@ -49,7 +49,8 @@ export class TableCell {
 	/**
 	 * The variant of the column
 	 */
-	@Prop() variant: 'default' | 'loading' | 'header' = 'default';
+	@Prop() variant: 'default' | 'loading' | 'header' | 'header-secondary' =
+		'default';
 
 	/**
 	 * The index of the column
@@ -80,6 +81,11 @@ export class TableCell {
 	 * The checkbox to show
 	 */
 	@Prop() checkbox: any;
+
+	/**
+	 * Wether the cell needs checkbox offset instead of a checkbox
+	 */
+	@Prop() checkboxOffset: boolean = false;
 
 	/**
 	 * The template to show
@@ -115,6 +121,7 @@ export class TableCell {
 
 				{false && (
 					<Fragment>
+						<div class='pl-8'></div>
 						<div class='text-storm-300 text-storm-400 text-storm-500 dark:text-hurricane-200 dark:text-white'></div>
 						<div class='justify-start justify-end justify-center'></div>
 						<div class='font-semibold text-storm-300 text-storm-400 text-storm-500'></div>
@@ -177,7 +184,7 @@ export class TableCell {
 					'text-end': !this.definition.flex && this.definition.align === 'end',
 				})}
 			>
-				{this.variant === 'header' ? (
+				{this.variant === 'header' || this.variant === 'header-secondary' ? (
 					this.data.value
 				) : this.definition.useSlot ? (
 					<slot />
@@ -189,6 +196,12 @@ export class TableCell {
 	}
 
 	private _getColumnClasses() {
-		return cn(getTableCellColumnClasses(this.definition, this.variant));
+		return cn(
+			getTableCellColumnClasses(
+				this.definition,
+				this.variant,
+				this.checkboxOffset
+			)
+		);
 	}
 }
