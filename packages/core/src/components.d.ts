@@ -1913,6 +1913,37 @@ export namespace Components {
     }
     interface PTableContainer {
     }
+    interface PTableExtraHeader {
+        /**
+          * The alignment of the column
+         */
+        "align": 'start' | 'center' | 'end';
+        /**
+          * The name of the column
+         */
+        "name": string;
+        /**
+          * Parsed sizes based on the complete set of columns
+         */
+        "parsedSizes": | TableColumnSizes
+		| undefined;
+        /**
+          * The sizes of the column
+         */
+        "sizes": | 'auto'
+		| 'hidden'
+		| 'full'
+		| number
+		| TableColumnSizes;
+        /**
+          * Wether the column should be sticky (Only works on angular variant of table)
+         */
+        "sticky": boolean;
+        /**
+          * Wether the column should use the slot
+         */
+        "useSlot": boolean;
+    }
     interface PTableFooter {
         /**
           * Wether to enable pagination pages
@@ -2287,6 +2318,10 @@ export interface PTableCustomEvent<T> extends CustomEvent<T> {
 export interface PTableColumnCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPTableColumnElement;
+}
+export interface PTableExtraHeaderCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPTableExtraHeaderElement;
 }
 export interface PTableFooterCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -3061,6 +3096,23 @@ declare global {
         prototype: HTMLPTableContainerElement;
         new (): HTMLPTableContainerElement;
     };
+    interface HTMLPTableExtraHeaderElementEventMap {
+        "tableDefinitionChanged": boolean;
+    }
+    interface HTMLPTableExtraHeaderElement extends Components.PTableExtraHeader, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPTableExtraHeaderElementEventMap>(type: K, listener: (this: HTMLPTableExtraHeaderElement, ev: PTableExtraHeaderCustomEvent<HTMLPTableExtraHeaderElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPTableExtraHeaderElementEventMap>(type: K, listener: (this: HTMLPTableExtraHeaderElement, ev: PTableExtraHeaderCustomEvent<HTMLPTableExtraHeaderElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPTableExtraHeaderElement: {
+        prototype: HTMLPTableExtraHeaderElement;
+        new (): HTMLPTableExtraHeaderElement;
+    };
     interface HTMLPTableFooterElementEventMap {
         "pageChange": number;
         "pageSizeChange": number;
@@ -3248,6 +3300,7 @@ declare global {
         "p-table-cell": HTMLPTableCellElement;
         "p-table-column": HTMLPTableColumnElement;
         "p-table-container": HTMLPTableContainerElement;
+        "p-table-extra-header": HTMLPTableExtraHeaderElement;
         "p-table-footer": HTMLPTableFooterElement;
         "p-table-header": HTMLPTableHeaderElement;
         "p-table-row": HTMLPTableRowElement;
@@ -5342,6 +5395,41 @@ declare namespace LocalJSX {
     }
     interface PTableContainer {
     }
+    interface PTableExtraHeader {
+        /**
+          * The alignment of the column
+         */
+        "align"?: 'start' | 'center' | 'end';
+        /**
+          * The name of the column
+         */
+        "name"?: string;
+        /**
+          * Event to let the table know it has to re render
+         */
+        "onTableDefinitionChanged"?: (event: PTableExtraHeaderCustomEvent<boolean>) => void;
+        /**
+          * Parsed sizes based on the complete set of columns
+         */
+        "parsedSizes"?: | TableColumnSizes
+		| undefined;
+        /**
+          * The sizes of the column
+         */
+        "sizes"?: | 'auto'
+		| 'hidden'
+		| 'full'
+		| number
+		| TableColumnSizes;
+        /**
+          * Wether the column should be sticky (Only works on angular variant of table)
+         */
+        "sticky"?: boolean;
+        /**
+          * Wether the column should use the slot
+         */
+        "useSlot"?: boolean;
+    }
     interface PTableFooter {
         /**
           * Wether to enable pagination pages
@@ -5727,6 +5815,7 @@ declare namespace LocalJSX {
         "p-table-cell": PTableCell;
         "p-table-column": PTableColumn;
         "p-table-container": PTableContainer;
+        "p-table-extra-header": PTableExtraHeader;
         "p-table-footer": PTableFooter;
         "p-table-header": PTableHeader;
         "p-table-row": PTableRow;
@@ -5812,6 +5901,7 @@ declare module "@stencil/core" {
             "p-table-cell": LocalJSX.PTableCell & JSXBase.HTMLAttributes<HTMLPTableCellElement>;
             "p-table-column": LocalJSX.PTableColumn & JSXBase.HTMLAttributes<HTMLPTableColumnElement>;
             "p-table-container": LocalJSX.PTableContainer & JSXBase.HTMLAttributes<HTMLPTableContainerElement>;
+            "p-table-extra-header": LocalJSX.PTableExtraHeader & JSXBase.HTMLAttributes<HTMLPTableExtraHeaderElement>;
             "p-table-footer": LocalJSX.PTableFooter & JSXBase.HTMLAttributes<HTMLPTableFooterElement>;
             "p-table-header": LocalJSX.PTableHeader & JSXBase.HTMLAttributes<HTMLPTableHeaderElement>;
             "p-table-row": LocalJSX.PTableRow & JSXBase.HTMLAttributes<HTMLPTableRowElement>;
