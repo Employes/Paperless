@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.16.2](https://github.com/ionic-team/stencil-component-starter/compare/v2.16.1...v2.16.2) (2025-12-02)
+
+
+### Bug Fixes
+
+* **molecules/calendar:** set date to startOfDay ([fbb80f5](https://github.com/ionic-team/stencil-component-starter/commit/fbb80f5f2e75ce1171107d3f096648218016dd9c))
+
+
+
+
+
 ## [2.16.1](https://github.com/ionic-team/stencil-component-starter/compare/v2.16.0...v2.16.1) (2025-11-27)
 
 
