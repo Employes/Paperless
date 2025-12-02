@@ -30,6 +30,7 @@ import { enUS, nl } from 'date-fns/locale';
 import { addYears } from 'date-fns';
 import { getYear } from 'date-fns';
 import { setYear } from 'date-fns';
+import { subYears } from 'date-fns';
 
 @Component({
 	tag: 'p-datepicker',
@@ -207,7 +208,7 @@ export class Datepicker {
 	@Watch('minDate')
 	protected parseMinDate(minDate: string | Date | null) {
 		if (minDate === null || minDate === '') {
-			this.minDate = new Date(1970, 0, 1);
+			this.minDate = new Date(getYear(subYears(new Date(), 100)), 0, 1);
 			return;
 		}
 

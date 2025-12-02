@@ -34,6 +34,7 @@ import { nl, enUS } from 'date-fns/locale';
 import { cn } from '../../../utils/cn';
 import { state } from '../../../state';
 import { ThemedHost } from '../../../internal/themed-host.component';
+import { subYears } from 'date-fns';
 
 const calendar = cva(['w-[17.5rem] flex flex-col gap-4'], {
 	variants: {
@@ -204,7 +205,7 @@ export class Calendar {
 	@Watch('minDate')
 	private _parseMinDate(minDate: string | Date | null) {
 		if (minDate === null || minDate === '') {
-			this.minDate = new Date(1970, 0, 1);
+			this.minDate = new Date(getYear(subYears(new Date(), 100)), 0, 1);
 			return;
 		}
 
