@@ -593,7 +593,7 @@ export class Calendar {
 
 		return days.map(day => {
 			day = day + 1;
-			const date = setDate(this._viewDate, day);
+			const date = startOfDay(setDate(this._viewDate, day));
 
 			const dayOfWeek = getDay(date);
 			return {
