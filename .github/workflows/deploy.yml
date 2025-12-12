@@ -10,9 +10,6 @@ permissions:
   id-token: write # Required for OIDC
   contents: write
 
-# env:
-# GIT_SSH_COMMAND: ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
-
 # List of jobs
 jobs:
   # lint:
