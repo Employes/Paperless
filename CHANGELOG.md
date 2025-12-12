@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.17.4](https://github.com/employes/paperless/compare/v2.17.3...v2.17.4) (2025-12-12)
+
+
+### Bug Fixes
+
+* **ci:** Run without NPM_TOKEN variable ([f791acf](https://github.com/employes/paperless/commit/f791acf83c8ae49df4ea15f090302a4b168944d3))
+
+
+
+
+
 ## [2.17.3](https://github.com/employes/paperless/compare/v2.17.2...v2.17.3) (2025-12-12)
 
 
