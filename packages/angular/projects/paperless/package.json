@@ -5,6 +5,10 @@
 		"type": "git",
 		"url": "git+https://github.com/Employes/Paperless.git"
 	},
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org"
+	},
 	"peerDependencies": {
 		"@angular/cdk": "^13.3.0 || ^14.0.0 || ^15.0.0 || ^17.0.0",
 		"@angular/common": "^13.3.0 || ^14.0.0 || ^15.0.0",

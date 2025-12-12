@@ -26,7 +26,7 @@
 		"watch": "ng build --watch --configuration development",
 		"test": "ng test",
 		"prenpm:publish": "cp ../../README.md ./dist/",
-		"npm:publish": "npm publish ./dist  --access=public",
+		"npm:publish": "npm publish ./dist",
 		"pb:serve": "ng serve --project=playground --host=0.0.0.0 --disable-host-check",
 		"prettier:check": "yarn prettier \"./projects/**/src/**/*.{ts,tsx,html,scss,json}\"",
 		"prettier:write": "yarn prettier:check -w"
