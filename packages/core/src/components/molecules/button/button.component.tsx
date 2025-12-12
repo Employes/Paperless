@@ -127,6 +127,10 @@ const button = cva(
 				true: 'justify-center',
 				false: 'w-inherit py-1',
 			},
+			underline: {
+				true: 'underline',
+				false: 'no-underline',
+			},
 		},
 		compoundVariants: [
 			// variants
@@ -436,6 +440,11 @@ export class Button {
 	@Prop() as?: 'a' | 'button' = 'button';
 
 	/**
+	 * Wether to apply an underline
+	 */
+	@Prop() underline?: boolean = true;
+
+	/**
 	 * The variant of the button
 	 */
 	@Prop() variant?: ButtonVariant = 'primary';
@@ -582,6 +591,7 @@ export class Button {
 						iconOnly: asBoolean(this.iconOnly),
 						active,
 						error: asBoolean(this.error),
+						underline: asBoolean(this.underline) && VariableTag === 'a',
 					})}
 				>
 					{this.chevron && this.chevronPosition === 'start' && (
