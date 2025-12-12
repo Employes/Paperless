@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.17.9](https://github.com/Employes/Paperless/compare/v2.17.8...v2.17.9) (2025-12-12)
+
+
+### Bug Fixes
+
+* **ci:** Set publish config ([82ac8a7](https://github.com/Employes/Paperless/commit/82ac8a7dcb726559b7c23a386c975d1f0acfabc9))
+
+
+
+
+
 ## [2.17.8](https://github.com/Employes/Paperless/compare/v2.17.7...v2.17.8) (2025-12-12)
 
 
