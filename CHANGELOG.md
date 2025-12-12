@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.17.10](https://github.com/Employes/Paperless/compare/v2.17.9...v2.17.10) (2025-12-12)
+
+
+### Bug Fixes
+
+* **ci:** Set publish config for angular package itself too ([3c89b5c](https://github.com/Employes/Paperless/commit/3c89b5c4792ab792a13b5d4d151242df18d8334f))
+
+
+
+
+
 ## [2.17.9](https://github.com/Employes/Paperless/compare/v2.17.8...v2.17.9) (2025-12-12)
 
 
