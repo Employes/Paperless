@@ -10,7 +10,7 @@
 		"build": "echo 'skipped conventions'",
 		"build:prod": "yarn build",
 		"preyarn:publish": "cp ../../README.md .",
-		"yarn:publish": "yarn publish",
+		"npm:publish": "npm publish",
 		"prettier:check": "yarn prettier \"./**/*.{ts,tsx,html,scss,json}\"",
 		"prettier:write": "yarn prettier:check -w"
 	},
