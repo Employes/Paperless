@@ -4,6 +4,10 @@
 	"resolutions": {
 		"jasmine-core": "5.0.0"
 	},
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/Employes/Paperless.git"
@@ -21,7 +25,7 @@
 		"tailwind:process": "tailwindcss -c ./projects/paperless/tailwind.config.js -i projects/paperless/src/paperless.scss -o dist/paperless.css",
 		"watch": "ng build --watch --configuration development",
 		"test": "ng test",
-		"preyarn:publish": "cp ../../README.md ./dist/",
+		"prenpm:publish": "cp ../../README.md ./dist/",
 		"npm:publish": "npm publish ./dist  --access=public",
 		"pb:serve": "ng serve --project=playground --host=0.0.0.0 --disable-host-check",
 		"prettier:check": "yarn prettier \"./projects/**/src/**/*.{ts,tsx,html,scss,json}\"",
