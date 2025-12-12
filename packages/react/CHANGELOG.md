@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.17.7](https://github.com/Employes/Paperless/compare/v2.17.6...v2.17.7) (2025-12-12)
+
+
+### Bug Fixes
+
+* **ci:** set correct repository urls ([00786f0](https://github.com/Employes/Paperless/commit/00786f0cdd0b104053da2bc29a59dafbb5e6dfb9))
+
+
+
+
+
 ## [2.17.6](https://github.com/ionic-team/ionic/compare/v2.17.5...v2.17.6) (2025-12-12)
 
 **Note:** Version bump only for package @paperless/react
