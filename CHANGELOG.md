@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.17.8](https://github.com/Employes/Paperless/compare/v2.17.7...v2.17.8) (2025-12-12)
+
+
+### Bug Fixes
+
+* **angular:** Set correct repository url ([eb2a1a7](https://github.com/Employes/Paperless/commit/eb2a1a73e5b633f4f810ffccbeb2c46ae8ffc9bd))
+
+
+
+
+
 ## [2.17.7](https://github.com/Employes/Paperless/compare/v2.17.6...v2.17.7) (2025-12-12)
 
 
