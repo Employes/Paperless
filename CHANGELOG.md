@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.17.3](https://github.com/employes/paperless/compare/v2.17.2...v2.17.3) (2025-12-12)
+
+
+### Bug Fixes
+
+* **ci:** Update npm before release ([b242803](https://github.com/employes/paperless/commit/b2428034a8bbef56690c936ac1c9fde5bc2e7210))
+
+
+
+
+
 ## [2.17.2](https://github.com/employes/paperless/compare/v2.17.1...v2.17.2) (2025-12-12)
 
 
