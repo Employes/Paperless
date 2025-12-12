@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.17.0](https://github.com/ionic-team/stencil-component-starter/compare/v2.16.3...v2.17.0) (2025-12-12)
+
+
+### Features
+
+* **molecules/button:** Add option to remove underline from links ([c28186e](https://github.com/ionic-team/stencil-component-starter/commit/c28186e109bf2bd43e00cdc541cea80b8e2b4230))
+
+
+
+
+
 ## [2.16.3](https://github.com/ionic-team/stencil-component-starter/compare/v2.16.2...v2.16.3) (2025-12-02)
 
 
