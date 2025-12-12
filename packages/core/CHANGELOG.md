@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.17.2](https://github.com/ionic-team/stencil-component-starter/compare/v2.17.1...v2.17.2) (2025-12-12)
+
+
+### Bug Fixes
+
+* **ci:** Use npm publish instead of yarn ([fd3644d](https://github.com/ionic-team/stencil-component-starter/commit/fd3644d6f0553610199e0e9b0dabe2c777d38e42))
+
+
+
+
+
 ## [2.17.1](https://github.com/ionic-team/stencil-component-starter/compare/v2.17.0...v2.17.1) (2025-12-12)
 
 **Note:** Version bump only for package @paperless/core
