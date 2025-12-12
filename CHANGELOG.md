@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.17.5](https://github.com/employes/paperless/compare/v2.17.4...v2.17.5) (2025-12-12)
+
+
+### Bug Fixes
+
+* **ci:** Add npm token ([59c2fff](https://github.com/employes/paperless/commit/59c2fffe201d084bb80fd39afe398848ab0e0454))
+
+
+
+
+
 ## [2.17.4](https://github.com/employes/paperless/compare/v2.17.3...v2.17.4) (2025-12-12)
 
 
