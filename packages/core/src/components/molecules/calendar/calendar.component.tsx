@@ -344,6 +344,7 @@ export class Calendar {
 						return day.active ? (
 							<p-button
 								variant='primary'
+								tabIndex={-1}
 								class={cn('w-8', `col-start-${day.offset}`)}
 								onClick={() => this._setValue(day.date)}
 							>
@@ -389,6 +390,7 @@ export class Calendar {
 					{months.map(month => (
 						<p-button
 							variant={month.active ? 'primary' : 'secondary'}
+							tabIndex={-1}
 							disabled={month.disabled}
 							onClick={() => this._setMonth(month.month)}
 						>
@@ -415,6 +417,7 @@ export class Calendar {
 						<p-button
 							class='w-full'
 							variant={year.active ? 'primary' : 'secondary'}
+							tabIndex={-1}
 							onClick={() => this._setYear(year.year)}
 							data-active={year.active}
 							data-current={year.current}
@@ -444,6 +447,7 @@ export class Calendar {
 						iconOnly
 						icon='caret'
 						iconRotate={90}
+						tabIndex={-1}
 						size='sm'
 						onClick={() => nextFn(-1)}
 						disabled={
@@ -461,6 +465,7 @@ export class Calendar {
 						<p-button
 							variant='secondary'
 							size='sm'
+							tabIndex={-1}
 							onClick={() => this._changeView('month')}
 							disabled={!this._canChangeView('month')}
 							active={this._view === 'month' && this.mode !== 'month'}
@@ -474,6 +479,7 @@ export class Calendar {
 					<p-button
 						variant='secondary'
 						size='sm'
+						tabIndex={-1}
 						onClick={() => this._changeView('year')}
 						disabled={!this._canChangeView('year')}
 						active={this._view === 'year' && this.mode !== 'year'}
@@ -491,6 +497,7 @@ export class Calendar {
 								size='sm'
 								icon='calendar'
 								slot='trigger'
+								tabIndex={-1}
 								iconOnly={true}
 								onClick={() => this._setToday()}
 							></p-button>
@@ -504,6 +511,7 @@ export class Calendar {
 						iconOnly
 						icon='caret'
 						iconRotate={-90}
+						tabIndex={-1}
 						size='sm'
 						onClick={() => nextFn(1)}
 						disabled={!this._canSetAmount(nextType, 1) || this._view == 'year'}
