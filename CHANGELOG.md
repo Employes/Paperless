@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.18.0](https://github.com/Employes/Paperless/compare/v2.17.10...v2.18.0) (2025-12-15)
+
+
+### Features
+
+* **molecules/button:** Add `tabIndex` property ([d6bd457](https://github.com/Employes/Paperless/commit/d6bd4578ecd40d30b0c0e748eaedf965f1511f0f))
+* **molecules/datepicker:** Hide calendar when tabbing out of the datepicker context ([ac4d1a8](https://github.com/Employes/Paperless/commit/ac4d1a837c312bf81d1ba4e1eb83933d006fd748))
+
+
+
+
+
 ## [2.17.10](https://github.com/Employes/Paperless/compare/v2.17.9...v2.17.10) (2025-12-12)
 
 
