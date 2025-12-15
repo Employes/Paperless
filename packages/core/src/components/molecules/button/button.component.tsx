@@ -445,6 +445,11 @@ export class Button {
 	@Prop() underline?: boolean = true;
 
 	/**
+	 * The tab index to apply to the button
+	 */
+	@Prop() tabIndex?: number;
+
+	/**
 	 * The variant of the button
 	 */
 	@Prop() variant?: ButtonVariant = 'primary';
@@ -582,6 +587,7 @@ export class Button {
 					href={this.href}
 					type={this.variant !== 'text' ? this.type : undefined}
 					target={this.target}
+					tabIndex={this.tabIndex}
 					class={button({
 						variant: this.variant,
 						size: this.size,
