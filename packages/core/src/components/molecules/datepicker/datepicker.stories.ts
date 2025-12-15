@@ -53,31 +53,40 @@ export const Default = {
 		disabled,
 		strategy,
 		placement,
-	}) => html`<p-datepicker
-		placeholder=${placeholder ?? nothing}
-		value=${value ?? nothing}
-		preselect-today=${preselectToday ?? nothing}
-		enable-native-picker=${enableNativePicker ?? nothing}
-		disabled-dates=${disabledDates ?? nothing}
-		min-date=${minDate ?? nothing}
-		max-date=${maxDate ?? nothing}
-		disable-weekends=${disableWeekends ?? nothing}
-		enable-today=${enableToday ?? nothing}
-		today-text=${todayText ?? nothing}
-		mode=${mode ?? nothing}
-		format=${format ?? nothing}
-		hide-icon-when-filled=${hideIconWhenFilled ?? nothing}
-		size=${size ?? nothing}
-		prefix=${prefix ?? nothing}
-		label=${label ?? nothing}
-		loading=${loading ?? nothing}
-		helper=${helper ?? nothing}
-		required=${required ?? nothing}
-		show-optional=${showOptional ?? nothing}
-		error=${error ?? nothing}
-		disabled=${disabled ?? nothing}
-		strategy=${strategy ?? nothing}
-		placement=${placement ?? nothing}
-		@valueChange=${action('valueChange')}
-	/>`,
+	}) => html`<div class="flex flex-col gap-4">
+		<p-datepicker
+			placeholder=${placeholder ?? nothing}
+			value=${value ?? nothing}
+			preselect-today=${preselectToday ?? nothing}
+			enable-native-picker=${enableNativePicker ?? nothing}
+			disabled-dates=${disabledDates ?? nothing}
+			min-date=${minDate ?? nothing}
+			max-date=${maxDate ?? nothing}
+			disable-weekends=${disableWeekends ?? nothing}
+			enable-today=${enableToday ?? nothing}
+			today-text=${todayText ?? nothing}
+			mode=${mode ?? nothing}
+			format=${format ?? nothing}
+			hide-icon-when-filled=${hideIconWhenFilled ?? nothing}
+			size=${size ?? nothing}
+			prefix=${prefix ?? nothing}
+			label=${label ?? nothing}
+			loading=${loading ?? nothing}
+			helper=${helper ?? nothing}
+			required=${required ?? nothing}
+			show-optional=${showOptional ?? nothing}
+			error=${error ?? nothing}
+			disabled=${disabled ?? nothing}
+			strategy=${strategy ?? nothing}
+			placement=${placement ?? nothing}
+			@valueChange=${action('valueChange')}
+		></p-datepicker>
+		<br />
+		aaa
+		<br />
+		<input
+			class="border border-solid border-r-negative-red-500"
+			type="text"
+		/>
+	</div>`,
 };

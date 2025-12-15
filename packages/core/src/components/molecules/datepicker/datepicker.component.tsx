@@ -338,7 +338,7 @@ export class Datepicker {
 					value={this._getFormattedDate()}
 					placeholder={this.placeholder}
 					onFocus={() => this._onFocus()}
-					onBlur={() => this._onBlur()}
+					onBlur={(ev: FocusEvent) => this._onBlur(ev)}
 					onValueChange={ev => this._onValueChange(ev.detail as string)}
 					onInputRefChange={ev => (this._inputRef = ev.detail)}
 				></p-field>
@@ -370,7 +370,10 @@ export class Datepicker {
 						}
 					/>
 				)}
-				<div slot='items'>
+				<div
+					tabIndex={-1}
+					slot='items'
+				>
 					<p-calendar
 						variant='embedded'
 						value={this._value}
@@ -409,9 +412,13 @@ export class Datepicker {
 		this._showDropdown = true;
 	}
 
-	private _onBlur(parseFormat = this.format) {
+	private _onBlur(ev: FocusEvent, parseFormat = this.format) {
 		if (this._isMobileBrowser && this._dateInputRef) {
 			return;
+		}
+
+		if (ev.relatedTarget && !childOf(ev.relatedTarget, this._el)) {
+			this._showDropdown = false;
 		}
 
 		const target = this._inputRef;
@@ -428,7 +435,7 @@ export class Datepicker {
 
 		const valid = isValid(value);
 		if (!valid && parseFormat === this.format && this.mode === 'day') {
-			return this._onBlur(this._defaultFormats['dayNoDashes']);
+			return this._onBlur(ev, this._defaultFormats['dayNoDashes']);
 		}
 
 		if (!valid || this._isDisabledDay(value)) {
