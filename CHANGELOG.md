@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.18.1](https://github.com/Employes/Paperless/compare/v2.18.0...v2.18.1) (2025-12-19)
+
+
+### Bug Fixes
+
+* **molecules/button:** Set underline default to false ([5e0e4a6](https://github.com/Employes/Paperless/commit/5e0e4a6265dae6dd8b608c841278c8d9a21837c8))
+
+
+
+
+
 # [2.18.0](https://github.com/Employes/Paperless/compare/v2.17.10...v2.18.0) (2025-12-15)
 
 
