@@ -442,7 +442,7 @@ export class Button {
 	/**
 	 * Wether to apply an underline
 	 */
-	@Prop() underline?: boolean = true;
+	@Prop() underline?: boolean = false;
 
 	/**
 	 * The tab index to apply to the button
