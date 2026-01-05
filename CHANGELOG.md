@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.18.4](https://github.com/Employes/Paperless/compare/v2.18.3...v2.18.4) (2026-01-05)
+
+
+### Bug Fixes
+
+* **angular/table/cell:** Add sticky for extra header ([10dcab6](https://github.com/Employes/Paperless/commit/10dcab6ecb4a1db7fd996d2d5e149931d6ffab2d))
+
+
+
+
+
 ## [2.18.3](https://github.com/Employes/Paperless/compare/v2.18.2...v2.18.3) (2026-01-05)
 
 
