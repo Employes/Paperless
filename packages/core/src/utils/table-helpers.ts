@@ -1,37 +1,37 @@
-import { cva } from 'class-variance-authority';
-import { TableColumn } from '../components/helpers/table/column/table-column.component';
+import { cva } from "class-variance-authority";
+import { TableColumn } from "../components/helpers/table/column/table-column.component";
 import {
 	isTableColumnSizesKey,
 	TableColumnSizes,
 	TableColumnSizesKey,
-} from '../types';
+} from "../types";
 
 export const getTableCellColumnClasses = (
 	definition: any | TableColumn,
-	variant: 'default' | 'header' | 'loading' | 'header-secondary',
-	checkboxOffset = false
+	variant: "default" | "header" | "loading" | "header-secondary",
+	checkboxOffset = false,
 ) => {
 	const sizes = definition ? getTableCellSizes(definition, variant) : {};
 
 	return {
-		'flex flex-shrink items-center gap-4 pr-4 last-of-type:pr-0': true,
-		'pl-8': checkboxOffset,
-		'justify-start': !definition?.align || definition?.align === 'start',
-		'justify-center': definition?.align === 'center',
-		'justify-end': definition?.align === 'end',
-		'font-semibold': variant !== 'header' && definition?.variant === 'subject',
-		'text-storm-400 dark:text-hurricane-200':
-			variant === 'header' || variant === 'header-secondary',
-		'text-storm-300 dark:text-hurricane-200':
-			variant !== 'header' &&
-			variant !== 'header-secondary' &&
-			definition?.variant !== 'subject' &&
-			definition?.variant !== 'highlight',
-		'text-storm-500 dark:text-white':
-			variant !== 'header' &&
-			variant !== 'header-secondary' &&
-			(definition?.variant === 'subject' ||
-				definition?.variant === 'highlight'),
+		"flex flex-shrink items-center gap-4 pr-4 last-of-type:pr-0": true,
+		"pl-8": checkboxOffset,
+		"justify-start": !definition?.align || definition?.align === "start",
+		"justify-center": definition?.align === "center",
+		"justify-end": definition?.align === "end",
+		"font-semibold": variant !== "header" && definition?.variant === "subject",
+		"text-storm-400 dark:text-hurricane-200":
+			variant === "header" || variant === "header-secondary",
+		"text-storm-300 dark:text-hurricane-200":
+			variant !== "header" &&
+			variant !== "header-secondary" &&
+			definition?.variant !== "subject" &&
+			definition?.variant !== "highlight",
+		"text-storm-500 dark:text-white":
+			variant !== "header" &&
+			variant !== "header-secondary" &&
+			(definition?.variant === "subject" ||
+				definition?.variant === "highlight"),
 		...sizes,
 	};
 };
@@ -40,23 +40,23 @@ export const getTableCellSizes = (
 	{
 		sizes,
 	}: {
-		sizes: 'auto' | 'hidden' | 'full' | number | TableColumnSizes;
+		sizes: "auto" | "hidden" | "full" | number | TableColumnSizes;
 	} /* Table Definition */,
-	variant: 'default' | 'header' | 'loading' | 'actions' | 'header-secondary'
+	variant: "default" | "header" | "loading" | "actions" | "header-secondary",
 ) => {
-	if (sizes === 'auto' || !sizes) {
+	if (sizes === "auto" || !sizes) {
 		return {
-			'w-auto': true,
+			"w-auto": true,
 		};
 	}
 
-	if (sizes === 'hidden') {
+	if (sizes === "hidden") {
 		return {
 			hidden: true,
 		};
 	}
 
-	if (typeof sizes === 'object') {
+	if (typeof sizes === "object") {
 		sizes = sizes as TableColumnSizes;
 		const classes: any = {};
 		let previousSize: TableColumnSizesKey | undefined;
@@ -66,36 +66,43 @@ export const getTableCellSizes = (
 				continue;
 			}
 
-			if (size === 'default') {
-				if (sizes.default === 'hidden') {
-					classes['hidden'] = true;
+			const currentValue = sizes[size];
+
+			if (size === "default") {
+				if (sizes.default === "hidden") {
+					classes["hidden"] = true;
 					previousSize = size;
 					continue;
 				}
 
-				classes[`w-${sizes.default}/12`] = true;
 				previousSize = size;
+
+				if (currentValue === 12 || currentValue === "full") {
+					classes[`w-full`] = true;
+					continue;
+				}
+
+				classes[`w-${sizes.default}/12`] = true;
 				continue;
 			}
 
-			const currentValue = sizes[size];
 			const previousValue = previousSize ? sizes[previousSize] : null;
 			if (
-				currentValue !== 'hidden' &&
+				currentValue !== "hidden" &&
 				previousValue &&
-				previousValue === 'hidden' &&
-				variant !== 'actions'
+				previousValue === "hidden" &&
+				variant !== "actions"
 			) {
 				classes[`${size}:flex`] = true;
 			}
 
-			if (currentValue === 'hidden' && variant !== 'actions') {
+			if (currentValue === "hidden" && variant !== "actions") {
 				classes[`${size}:hidden`] = true;
 				previousSize = size;
 				continue;
 			}
 
-			if (currentValue === 12 || currentValue === 'full') {
+			if (currentValue === 12 || currentValue === "full") {
 				classes[`${size}:w-full`] = true;
 			}
 
@@ -106,9 +113,9 @@ export const getTableCellSizes = (
 		return classes;
 	}
 
-	if (sizes === 12 || sizes === 'full') {
+	if (sizes === 12 || sizes === "full") {
 		return {
-			'w-full': true,
+			"w-full": true,
 		};
 	}
 
@@ -118,19 +125,19 @@ export const getTableCellSizes = (
 	};
 };
 
-export const floatingMenuContainerClass = cva(['sticky self-center'], {
+export const floatingMenuContainerClass = cva(["sticky self-center"], {
 	variants: {
 		hasFooter: {
-			true: 'mt-4 -mb-5 bottom-11 z-[3]',
-			false: 'my-4 bottom-0',
+			true: "mt-4 -mb-5 bottom-11 z-[3]",
+			false: "my-4 bottom-0",
 		},
 		active: {
-			false: 'pointer-events-none animate-floating-menu-container-out',
-			true: 'animate-floating-menu-container-in',
+			false: "pointer-events-none animate-floating-menu-container-out",
+			true: "animate-floating-menu-container-in",
 		},
 		shown: {
-			false: 'hidden',
-			true: 'inline-block',
+			false: "hidden",
+			true: "inline-block",
 		},
 	},
 });
