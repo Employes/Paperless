@@ -654,6 +654,10 @@ export class Table implements OnInit, OnChanges {
 			definitionsArray,
 		) as unknown as TableExtraHeader[];
 
+		for (const col of definitionsArray) {
+			col.sticky = col.sticky === true ? "secondary" : false;
+		}
+
 		this.extraHeaders$.next(definitionsArray);
 	}
 

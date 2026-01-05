@@ -1,8 +1,8 @@
-import { Component, Event, EventEmitter, Prop } from '@stencil/core';
-import { TableColumnSizes } from '../../../../types/table';
+import { Component, Event, EventEmitter, Prop } from "@stencil/core";
+import { TableColumnSizes } from "../../../../types/table";
 
 @Component({
-	tag: 'p-table-column',
+	tag: "p-table-column",
 })
 export class TableColumn {
 	/**
@@ -14,10 +14,10 @@ export class TableColumn {
 	 * The variant of the column
 	 */
 	@Prop({ reflect: true, mutable: true }) variant:
-		| 'subject'
-		| 'default'
-		| 'highlight'
-		| 'header-secondary' = 'default';
+		| "subject"
+		| "default"
+		| "highlight"
+		| "header-secondary" = "default";
 
 	/**
 	 * The name of the column
@@ -42,13 +42,13 @@ export class TableColumn {
 	/**
 	 * The alignment of the column
 	 */
-	@Prop({ reflect: true, mutable: true }) align: 'start' | 'center' | 'end' =
-		'start';
+	@Prop({ reflect: true, mutable: true }) align: "start" | "center" | "end" =
+		"start";
 
 	/**
 	 * Wether the column should be sticky (Only works on angular variant of table)
 	 */
-	@Prop({ reflect: true, mutable: true }) sticky: boolean = false;
+	@Prop({ reflect: true, mutable: true }) sticky: boolean | "secondary" = false;
 
 	/**
 	 * Parsed sizes based on the complete set of columns
@@ -61,11 +61,11 @@ export class TableColumn {
 	 * The sizes of the column
 	 */
 	@Prop({ mutable: true }) sizes:
-		| 'auto'
-		| 'hidden'
-		| 'full'
+		| "auto"
+		| "hidden"
+		| "full"
 		| number
-		| TableColumnSizes = 'auto';
+		| TableColumnSizes = "auto";
 
 	/**
 	 * Event to let the table know it has to re render

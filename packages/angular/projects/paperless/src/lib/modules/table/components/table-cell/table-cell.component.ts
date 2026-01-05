@@ -135,13 +135,9 @@ export class TableCell {
 			{
 				"sticky left-4 z-[2]": !!this.definition?.sticky,
 				"bg-gradient-to-r from-white to-transparent dark:from-hurricane-700 from-80%":
-					this.definition?.sticky &&
-					this.definition?.sticky !== "footer" &&
-					this.definition?.sticky !== "extra-header",
+					this.definition?.sticky && this.definition?.sticky !== "secondary",
 				"bg-gradient-to-r from-off-white-300 to-transparent dark:from-hurricane-400 from-80%":
-					this.definition?.sticky &&
-					(this.definition?.sticky === "footer" ||
-						this.definition?.sticky === "extra-header"),
+					this.definition?.sticky && this.definition?.sticky === "secondary",
 				"flex-shrink": !this.scrollable,
 				"flex-shrink-0": this.scrollable,
 			},

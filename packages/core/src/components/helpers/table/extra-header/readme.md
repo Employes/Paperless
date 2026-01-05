@@ -9,11 +9,11 @@
 
 | Property      | Attribute      | Description                                                                 | Type                                                         | Default     |
 | ------------- | -------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------ | ----------- |
-| `align`       | `align`        | The alignment of the column                                                 | `"center" \| "end" \| "start"`                               | `'start'`   |
+| `align`       | `align`        | The alignment of the column                                                 | `"center" \| "end" \| "start"`                               | `"start"`   |
 | `name`        | `name`         | The name of the column                                                      | `string`                                                     | `undefined` |
 | `parsedSizes` | `parsed-sizes` | Parsed sizes based on the complete set of columns                           | `TableColumnSizes`                                           | `undefined` |
-| `sizes`       | `sizes`        | The sizes of the column                                                     | `"auto" \| "full" \| "hidden" \| TableColumnSizes \| number` | `'auto'`    |
-| `sticky`      | `sticky`       | Wether the column should be sticky (Only works on angular variant of table) | `boolean`                                                    | `false`     |
+| `sizes`       | `sizes`        | The sizes of the column                                                     | `"auto" \| "full" \| "hidden" \| TableColumnSizes \| number` | `"auto"`    |
+| `sticky`      | `sticky`       | Wether the column should be sticky (Only works on angular variant of table) | `"secondary" \| boolean`                                     | `false`     |
 | `useSlot`     | `use-slot`     | Wether the column should use the slot                                       | `boolean`                                                    | `true`      |
 
 
