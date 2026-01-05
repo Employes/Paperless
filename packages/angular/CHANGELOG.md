@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.18.6](https://github.com/Employes/Paperless/compare/v2.18.5...v2.18.6) (2026-01-05)
+
+
+### Bug Fixes
+
+* **angular/table:** Use class instead of className ([7fe921d](https://github.com/Employes/Paperless/commit/7fe921d9b540c39ffd7cc4a2d1620de038cd50cb))
+
+
+
+
+
 ## [2.18.5](https://github.com/Employes/Paperless/compare/v2.18.4...v2.18.5) (2026-01-05)
 
 
