@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.18.2](https://github.com/Employes/Paperless/compare/v2.18.1...v2.18.2) (2026-01-05)
+
+
+### Bug Fixes
+
+* **util/table-helpers:** Catch default size of 12 or full ([e2f91af](https://github.com/Employes/Paperless/commit/e2f91af5257f09c576d34e36319236e4aa191090))
+
+
+
+
+
 ## [2.18.1](https://github.com/Employes/Paperless/compare/v2.18.0...v2.18.1) (2025-12-19)
 
 
