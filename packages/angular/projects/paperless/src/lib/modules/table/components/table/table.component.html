@@ -120,7 +120,7 @@
 	<p-table-row
 		*ngIf="(extraHeaders$ | async)?.length"
 		variant="header-secondary"
-		className="z-[2]"
+		class="z-[2]"
 		[isLast]="true"
 	>
 		<ng-container *ngFor="let col of extraHeaders$ | async; let index = index">
