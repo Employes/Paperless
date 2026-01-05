@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.18.3](https://github.com/Employes/Paperless/compare/v2.18.2...v2.18.3) (2026-01-05)
+
+
+### Bug Fixes
+
+* **angular/table:** Calculate width on load once too ([de49f82](https://github.com/Employes/Paperless/commit/de49f82c28617e498c7cd4185f910434d9545eb0))
+
+
+
+
+
 ## [2.18.2](https://github.com/Employes/Paperless/compare/v2.18.1...v2.18.2) (2026-01-05)
 
 **Note:** Version bump only for package @paperless/angular
