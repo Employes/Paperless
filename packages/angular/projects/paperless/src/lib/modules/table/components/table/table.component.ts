@@ -17,9 +17,9 @@ import {
 	TemplateRef,
 	ViewChild,
 	ViewChildren,
-} from '@angular/core';
-import { Params } from '@angular/router';
-import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+} from "@angular/core";
+import { Params } from "@angular/router";
+import { UntilDestroy, untilDestroyed } from "@ngneat/until-destroy";
 import {
 	cn,
 	floatingMenuContainerClass,
@@ -29,12 +29,12 @@ import {
 	RowClickEvent,
 	state,
 	tableColumSizesOptions,
-} from '@paperless/core';
+} from "@paperless/core";
 import {
 	IconVariant,
 	IllustrationVariant,
 	TableColumnSizes,
-} from '@paperless/core/dist/types/components';
+} from "@paperless/core/dist/types/components";
 import {
 	BehaviorSubject,
 	debounceTime,
@@ -42,34 +42,34 @@ import {
 	filter,
 	Subscription,
 	take,
-} from 'rxjs';
-import { PTableRow } from '../../../../stencil/components';
+} from "rxjs";
+import { PTableRow } from "../../../../stencil/components";
 import {
 	TableCustomActionsDirective,
 	TableCustomFilterDirective,
 	TableFilterModalDirective,
-} from '../../directives';
-import { TableCustomRowDirective } from '../../directives/p-table-custom-row.directive';
-import { TableCell } from '../table-cell/table-cell.component';
-import { TableColumn } from '../table-column/table-column.component';
-import { TableExtraHeader } from '../table-extra-header/table-extra-header.component';
+} from "../../directives";
+import { TableCustomRowDirective } from "../../directives/p-table-custom-row.directive";
+import { TableCell } from "../table-cell/table-cell.component";
+import { TableColumn } from "../table-column/table-column.component";
+import { TableExtraHeader } from "../table-extra-header/table-extra-header.component";
 import {
 	AsyncItem,
 	TableRowAction,
 	TableRowActionQueryParams,
 	TableRowActionRouterLink,
-} from '../table-row-action/table-row-action.component';
-import { defaultSize, defaultSizeOptions } from './constants';
+} from "../table-row-action/table-row-action.component";
+import { defaultSize, defaultSizeOptions } from "./constants";
 
 @UntilDestroy({ checkProperties: true })
 @Component({
-	selector: 'p-table-ngx',
-	templateUrl: 'table.component.html',
+	selector: "p-table-ngx",
+	templateUrl: "table.component.html",
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Table implements OnInit, OnChanges {
-	@HostBinding('class') className = 'flex flex-col z-0';
-	@HostBinding('attr.data-theme') theme = state.theme;
+	@HostBinding("class") className = "flex flex-col z-0";
+	@HostBinding("attr.data-theme") theme = state.theme;
 
 	/**
 	 * The items to be fed to the table
@@ -139,7 +139,7 @@ export class Table implements OnInit, OnChanges {
 	/**
 	 * The floating menu amount item text
 	 */
-	@Input() floatingMenuAmountSelectedText: string = '0 items selected';
+	@Input() floatingMenuAmountSelectedText: string = "0 items selected";
 
 	/**
 	 * The template for amount selected item in the floating menu
@@ -226,7 +226,7 @@ export class Table implements OnInit, OnChanges {
 	/**
 	 * The action button icon
 	 */
-	@Input() actionButtonIcon: IconVariant = 'pencil';
+	@Input() actionButtonIcon: IconVariant = "pencil";
 
 	/**
 	 * Wether the action button is enabled
@@ -326,17 +326,17 @@ export class Table implements OnInit, OnChanges {
 	@Input() hideOnSinglePage: boolean = true;
 
 	/* Empty state start */
-	@Input() emptyStateType: 'no_filter' | 'filtered' = 'no_filter';
+	@Input() emptyStateType: "no_filter" | "filtered" = "no_filter";
 
-	@Input() emptyStateIllustration: IllustrationVariant = 'table';
+	@Input() emptyStateIllustration: IllustrationVariant = "table";
 	@Input() emptyStateHeader!: string;
 	@Input() emptyStateContent!: string;
 	@Input() emptyStateAction!: string;
-	@Input() emptyStateActionIcon: IconVariant = 'plus';
+	@Input() emptyStateActionIcon: IconVariant = "plus";
 
 	@Input() enableEmptyStateAction: boolean = true;
 
-	@Input() emptyStateFilteredIllustration: IllustrationVariant = 'search';
+	@Input() emptyStateFilteredIllustration: IllustrationVariant = "search";
 	@Input() emptyStateFilteredHeader!: string;
 	@Input() emptyStateFilteredContent!: string;
 
@@ -350,7 +350,7 @@ export class Table implements OnInit, OnChanges {
 	@ViewChildren(TableCell, { read: ElementRef }) tableCells!: QueryList<
 		ElementRef<TableCell>
 	>;
-	@ViewChild('scrollContainer') scrollContainer!: ElementRef<HTMLDivElement>;
+	@ViewChild("scrollContainer") scrollContainer!: ElementRef<HTMLDivElement>;
 
 	public reachedScrollStart$ = new BehaviorSubject(true);
 	public reachedScrollEnd$ = new BehaviorSubject(false);
@@ -426,10 +426,10 @@ export class Table implements OnInit, OnChanges {
 	@ContentChildren(TableCustomRowDirective)
 	customRows!: QueryList<TableCustomRowDirective>;
 
-	@Input() filterModalHeaderText: string = 'Filters';
-	@Input() filterModalSaveText: string = 'Save';
-	@Input() filterModalCancelText: string = 'Cancel';
-	@Input() filterModalResetText: string = 'Reset filters';
+	@Input() filterModalHeaderText: string = "Filters";
+	@Input() filterModalSaveText: string = "Save";
+	@Input() filterModalCancelText: string = "Cancel";
+	@Input() filterModalResetText: string = "Reset filters";
 
 	@Input() filterModalShowReset: boolean = false;
 	@Input() filterModalShowResetMobile: boolean = false;
@@ -468,7 +468,7 @@ export class Table implements OnInit, OnChanges {
 	ngOnInit() {
 		this._parseItems(this.items);
 
-		onStateChange('theme', value => this._checkTheme(value));
+		onStateChange("theme", (value) => this._checkTheme(value));
 
 		this.loadingRows = Array.from({
 			length: this.amountOfLoadingRows,
@@ -476,37 +476,37 @@ export class Table implements OnInit, OnChanges {
 
 		this.filterModalShow$
 			.pipe(untilDestroyed(this), distinctUntilChanged())
-			.subscribe(value => this.filterModalShow.next(value));
+			.subscribe((value) => this.filterModalShow.next(value));
 	}
 
 	ngOnChanges(changes: SimpleChanges) {
-		if (changes['items']) {
-			this._parseItems(changes['items'].currentValue);
+		if (changes["items"]) {
+			this._parseItems(changes["items"].currentValue);
 		}
 
-		if (changes['amountOfLoadingRows']) {
+		if (changes["amountOfLoadingRows"]) {
 			this.loadingRows = Array.from({
-				length: changes['amountOfLoadingRows'].currentValue,
+				length: changes["amountOfLoadingRows"].currentValue,
 			});
 		}
 
 		let calculateRowSelectionData = false;
-		if (changes['enableRowSelection']) {
+		if (changes["enableRowSelection"]) {
 			this._inputEnableRowSelection =
-				changes['enableRowSelection'].currentValue;
+				changes["enableRowSelection"].currentValue;
 			calculateRowSelectionData = true;
 		}
 
-		if (changes['rowSelectionLimit']) {
-			this._inputRowSelectionLimit = changes['rowSelectionLimit'].currentValue;
+		if (changes["rowSelectionLimit"]) {
+			this._inputRowSelectionLimit = changes["rowSelectionLimit"].currentValue;
 			calculateRowSelectionData = true;
 		}
 
-		if (calculateRowSelectionData || changes['selectedRows']) {
+		if (calculateRowSelectionData || changes["selectedRows"]) {
 			this._setRowSelectionData();
 		}
 
-		if (changes['enableScroll']?.currentValue) {
+		if (changes["enableScroll"]?.currentValue) {
 			this._checkChangesSubscriptions();
 		}
 	}
@@ -531,33 +531,33 @@ export class Table implements OnInit, OnChanges {
 		}
 	}
 
-	@HostListener('window:resize', ['$event'])
+	@HostListener("window:resize", ["$event"])
 	onResize() {
 		this._setRowSelectionData();
 		this._calculateColumnWidths();
 	}
 
-	@HostListener('document:keydown', ['$event'])
+	@HostListener("document:keydown", ["$event"])
 	keyDown({ key }: { key: string }) {
-		if (key !== 'Control' || this._ctrlDown === true) {
+		if (key !== "Control" || this._ctrlDown === true) {
 			return;
 		}
 
 		this._ctrlDown = true;
 	}
 
-	@HostListener('document:keyup', ['$event'])
+	@HostListener("document:keyup", ["$event"])
 	keyUp({ key }: { key: string }) {
-		if (key !== 'Control' || this._ctrlDown === false) {
+		if (key !== "Control" || this._ctrlDown === false) {
 			return;
 		}
 
 		this._ctrlDown = false;
 	}
 
-	@HostListener('document:visibilitychange', ['$event'])
+	@HostListener("document:visibilitychange", ["$event"])
 	visibilityChange() {
-		if (document.visibilityState !== 'hidden' || this._ctrlDown === false) {
+		if (document.visibilityState !== "hidden" || this._ctrlDown === false) {
 			return;
 		}
 
@@ -611,7 +611,7 @@ export class Table implements OnInit, OnChanges {
 		}
 
 		return actions.filter(
-			a => !a.showFunction || a.showFunction(this.parsedItems[rowIndex])
+			(a) => !a.showFunction || a.showFunction(this.parsedItems[rowIndex]),
 		);
 	}
 
@@ -641,7 +641,7 @@ export class Table implements OnInit, OnChanges {
 		let definitionsArray = Array.from(this.columnDefinitions);
 
 		definitionsArray = this._parseDefinitions(
-			definitionsArray
+			definitionsArray,
 		) as unknown as TableColumn[];
 
 		this.columns$.next(definitionsArray);
@@ -651,7 +651,7 @@ export class Table implements OnInit, OnChanges {
 		let definitionsArray = Array.from(this.extraHeaderDefinitions);
 
 		definitionsArray = this._parseDefinitions(
-			definitionsArray
+			definitionsArray,
 		) as unknown as TableExtraHeader[];
 
 		this.extraHeaders$.next(definitionsArray);
@@ -710,7 +710,8 @@ export class Table implements OnInit, OnChanges {
 		for (let i = 0; i < this.selectedRows.length; i++) {
 			const value = this.selectedRows[i];
 			const row = this.parsedItems.find(
-				d => this._getSelectionValue(d, i) === this._getSelectionValue(value, i)
+				(d) =>
+					this._getSelectionValue(d, i) === this._getSelectionValue(value, i),
 			);
 
 			if (!row) {
@@ -777,9 +778,9 @@ export class Table implements OnInit, OnChanges {
 
 	public _selectionContains(row: any, index: number, returnIndex = false): any {
 		const returnValue = this.selectedRows.findIndex(
-			item =>
+			(item) =>
 				this._getSelectionValue(row, index) ===
-				this._getSelectionValue(item, index)
+				this._getSelectionValue(item, index),
 		);
 		return !returnIndex ? returnValue >= 0 : returnValue;
 	}
@@ -839,8 +840,8 @@ export class Table implements OnInit, OnChanges {
 		const target = $event.target as HTMLElement;
 
 		if (
-			target.tagName.toLowerCase() === 'input' ||
-			(target as HTMLInputElement).type === 'checkbox'
+			target.tagName.toLowerCase() === "input" ||
+			(target as HTMLInputElement).type === "checkbox"
 		) {
 			return;
 		}
@@ -877,14 +878,14 @@ export class Table implements OnInit, OnChanges {
 
 	public _getActionRouterLink(
 		routerLink: TableRowActionRouterLink,
-		rowIndex: number
+		rowIndex: number,
 	): BehaviorSubject<string | any[]> | AsyncItem<string | any[]> {
-		if (typeof routerLink === 'function') {
+		if (typeof routerLink === "function") {
 			const item = this.parsedItems[rowIndex];
 			return this._getActionRouterLink(routerLink(item), rowIndex);
 		}
 
-		if (typeof routerLink === 'string' || Array.isArray(routerLink)) {
+		if (typeof routerLink === "string" || Array.isArray(routerLink)) {
 			return new BehaviorSubject(routerLink);
 		}
 
@@ -893,9 +894,9 @@ export class Table implements OnInit, OnChanges {
 
 	public _getActionQueryParams(
 		queryParams: TableRowActionQueryParams,
-		rowIndex: number
+		rowIndex: number,
 	): BehaviorSubject<Params> | AsyncItem<Params> {
-		if (typeof queryParams === 'function') {
+		if (typeof queryParams === "function") {
 			const item = this.parsedItems[rowIndex];
 			return this._getActionQueryParams(queryParams(item), rowIndex);
 		}
@@ -921,8 +922,8 @@ export class Table implements OnInit, OnChanges {
 		}
 
 		if (
-			action.type === 'multi' ||
-			(action.type === 'both' && rowIndex === undefined)
+			action.type === "multi" ||
+			(action.type === "both" && rowIndex === undefined)
 		) {
 			action.action.emit({
 				items: this.selectedRows,
@@ -955,7 +956,7 @@ export class Table implements OnInit, OnChanges {
 			return el;
 		}
 
-		if (el?.tagName?.toLowerCase() === 'p-table-row') {
+		if (el?.tagName?.toLowerCase() === "p-table-row") {
 			return el;
 		}
 
@@ -968,13 +969,13 @@ export class Table implements OnInit, OnChanges {
 		}
 
 		if (
-			el.getAttribute('data-is-action') !== null &&
-			el.getAttribute('data-is-action') !== 'false'
+			el.getAttribute("data-is-action") !== null &&
+			el.getAttribute("data-is-action") !== "false"
 		) {
 			return el;
 		}
 
-		if (el?.tagName?.toLowerCase() === 'p-table-row') {
+		if (el?.tagName?.toLowerCase() === "p-table-row") {
 			return null;
 		}
 
@@ -1000,21 +1001,21 @@ export class Table implements OnInit, OnChanges {
 				}
 			}
 
-			this._rowActionsSubscriptions = actions.map(action =>
+			this._rowActionsSubscriptions = actions.map((action) =>
 				action._loadingChanged
 					.pipe(untilDestroyed(this))
-					.subscribe(() => this._cd.detectChanges())
+					.subscribe(() => this._cd.detectChanges()),
 			);
 
 			// we hack this to any[] to make it work..
 			const rowActionsRow = actions.filter(
-				a => a.type === 'both' || a.type === 'single'
+				(a) => a.type === "both" || a.type === "single",
 			);
 			const rowActionsFloating = actions.filter(
-				a =>
+				(a) =>
 					(this._inputEnableRowSelection &&
-						(a.type === 'both' || a.type === 'multi')) ||
-					(mobile && a.type === 'single' && !a.routerLink)
+						(a.type === "both" || a.type === "multi")) ||
+					(mobile && a.type === "single" && !a.routerLink),
 			);
 
 			let rowSelectionLimit = this._inputRowSelectionLimit;
@@ -1045,25 +1046,25 @@ export class Table implements OnInit, OnChanges {
 			this.floatingMenuShown$
 				.pipe(
 					take(1),
-					filter(v => !!v)
+					filter((v) => !!v),
 				)
 				.subscribe(() => this._showFloatingMenu());
 		}, 200);
 	}
 
 	private _showFloatingMenu() {
-		this.rowActionsFloatingAll$.pipe(take(1)).subscribe(actions => {
+		this.rowActionsFloatingAll$.pipe(take(1)).subscribe((actions) => {
 			if (
 				this.rowSelectionLimit === 1 &&
 				actions.findIndex(
-					a => (a.type === 'single' || a.type === 'both') && a.showFunction
+					(a) => (a.type === "single" || a.type === "both") && a.showFunction,
 				) >= 0
 			) {
 				actions = actions.filter(
-					a =>
-						a.type === 'multi' ||
+					(a) =>
+						a.type === "multi" ||
 						!a.showFunction ||
-						a.showFunction(this.selectedRows[0])
+						a.showFunction(this.selectedRows[0]),
 				);
 			}
 
@@ -1073,26 +1074,26 @@ export class Table implements OnInit, OnChanges {
 	}
 
 	private _parseDefinitions(
-		definitionsArray: TableColumn[] | TableExtraHeader[]
+		definitionsArray: TableColumn[] | TableExtraHeader[],
 	) {
-		return definitionsArray.map(definition =>
-			this._parseDefinitionSizes(definition)
+		return definitionsArray.map((definition) =>
+			this._parseDefinitionSizes(definition),
 		);
 	}
 
 	private _parseDefinitionSizes(definition: TableColumn | TableExtraHeader) {
 		const definitionAny = definition as any;
-		let parsedSizes: TableColumnSizes = { default: 'full' };
+		let parsedSizes: TableColumnSizes = { default: "full" };
 
 		for (const [index, size] of tableColumSizesOptions.entries()) {
 			if (
-				definitionAny.sizes === 'auto' ||
-				definitionAny.sizes === 'hidden' ||
-				definitionAny.sizes === 'full' ||
-				typeof definitionAny.sizes === 'number'
+				definitionAny.sizes === "auto" ||
+				definitionAny.sizes === "hidden" ||
+				definitionAny.sizes === "full" ||
+				typeof definitionAny.sizes === "number"
 			) {
 				parsedSizes[size] =
-					definitionAny.sizes === 'auto' ? 'full' : definitionAny.sizes;
+					definitionAny.sizes === "auto" ? "full" : definitionAny.sizes;
 				continue;
 			}
 
@@ -1134,11 +1135,11 @@ export class Table implements OnInit, OnChanges {
 		}
 
 		const rows = this.tableRows.map(
-			c => c.nativeElement as unknown as HTMLElement
+			(c) => c.nativeElement as unknown as HTMLElement,
 		);
 		const cells = rows.flatMap(
-			row =>
-				Array.from(row.querySelectorAll('p-table-cell-ngx')) as HTMLElement[]
+			(row) =>
+				Array.from(row.querySelectorAll("p-table-cell-ngx")) as HTMLElement[],
 		);
 
 		this._calculateColumnWidthsTimeout = setTimeout(async () => {
@@ -1147,23 +1148,23 @@ export class Table implements OnInit, OnChanges {
 			const promises: Promise<void>[] = [];
 			for (const cell of cells) {
 				if (cell.style.width?.length) {
-					cell.style.width = 'unset';
+					cell.style.width = "unset";
 				}
 
 				promises.push(
-					new Promise(resolve =>
+					new Promise((resolve) =>
 						setTimeout(() => {
 							const rect = cell.getBoundingClientRect();
-							cell.setAttribute('style', `width: ${rect.width}px !important`);
+							cell.setAttribute("style", `width: ${rect.width}px !important`);
 							resolve();
-						}, 100)
-					)
+						}, 100),
+					),
 				);
 			}
 
 			await Promise.all(promises);
 
-			this._setRowsWidth(rows, 'min-content');
+			this._setRowsWidth(rows, "min-content");
 
 			this._resetScrollPosition();
 		}, 200) as unknown as number;
@@ -1171,7 +1172,7 @@ export class Table implements OnInit, OnChanges {
 
 	private _setRowsWidth(
 		rows: HTMLElement[],
-		value: 'min-content' | null = null
+		value: "min-content" | null = null,
 	) {
 		for (let i = 0; i < rows.length; i++) {
 			const row = rows[i];
@@ -1181,24 +1182,24 @@ export class Table implements OnInit, OnChanges {
 				continue;
 			}
 
-			const firstDiv = shadow.querySelector('*:nth-child(1)');
+			const firstDiv = shadow.querySelector("*:nth-child(1)");
 			if (!firstDiv) {
 				continue;
 			}
 
-			const secondDiv = firstDiv.querySelector('*:nth-child(1)');
+			const secondDiv = firstDiv.querySelector("*:nth-child(1)");
 			if (!secondDiv) {
 				continue;
 			}
 
 			if (value === null) {
-				firstDiv.setAttribute('style', '');
-				secondDiv.setAttribute('style', '');
+				firstDiv.setAttribute("style", "");
+				secondDiv.setAttribute("style", "");
 				continue;
 			}
 
-			firstDiv.setAttribute('style', 'width: min-content;');
-			secondDiv.setAttribute('style', 'width: min-content;');
+			firstDiv.setAttribute("style", "width: min-content;");
+			secondDiv.setAttribute("style", "width: min-content;");
 
 			if (i === 0) {
 				this._totalWidth = firstDiv.getBoundingClientRect().width;
@@ -1213,6 +1214,10 @@ export class Table implements OnInit, OnChanges {
 
 		this.reachedScrollStart$.next(true);
 		this.reachedScrollEnd$.next(false);
+
+		this._calculateScrollPosition({
+			target: this.scrollContainer.nativeElement,
+		});
 	}
 
 	private _calculateScrollPosition({ target }: { target: HTMLDivElement }) {
@@ -1222,7 +1227,7 @@ export class Table implements OnInit, OnChanges {
 		this.reachedScrollEnd$.next(right > this._totalWidth - 10);
 	}
 
-	private _checkTheme(value: 'dark' | 'light') {
+	private _checkTheme(value: "dark" | "light") {
 		if (this._themeDebounce) {
 			clearTimeout(this._themeDebounce);
 			this._themeDebounce = undefined;
