@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.18.5](https://github.com/Employes/Paperless/compare/v2.18.4...v2.18.5) (2026-01-05)
+
+
+### Bug Fixes
+
+* **angular/table:** Automatically apply secondary style ([603aa98](https://github.com/Employes/Paperless/commit/603aa987fc7b0530e7796474c61cb8423371566b))
+
+
+
+
+
 ## [2.18.4](https://github.com/Employes/Paperless/compare/v2.18.3...v2.18.4) (2026-01-05)
 
 **Note:** Version bump only for package @paperless/core
