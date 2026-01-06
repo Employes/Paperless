@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.19.0](https://github.com/Employes/Paperless/compare/v2.18.6...v2.19.0) (2026-01-06)
+
+
+### Bug Fixes
+
+* **molecules/table/row:** Set items stretch ([8cee81d](https://github.com/Employes/Paperless/commit/8cee81d097ddc3ec8f35d5cdebbf570b94aca570))
+
+
+### Features
+
+* **helpers/table-column:** Add ability to differentiate header alignment ([9c15e14](https://github.com/Employes/Paperless/commit/9c15e146f4c8ae600f0cbe9be033d5180dd9d2af))
+
+
+
+
+
 ## [2.18.6](https://github.com/Employes/Paperless/compare/v2.18.5...v2.18.6) (2026-01-05)
 
 **Note:** Version bump only for package @paperless/core
