@@ -162,23 +162,13 @@ export class TableCell {
 		};
 	}
 
-	get contentClass() {
-		const align =
-			this.variant === 'header'
-				? this.definition?.headerAlign ?? this.definition?.align
-				: this.definition?.align;
+	get headerClass() {
+		const align = this.definition?.headerAlign ?? this.definition?.align;
 
 		return cn('overflow-hidden text-ellipsis', {
-			flex: this.definition?.flex,
-			'flex-1': this.definition?.flex,
-			'justify-start':
-				this.definition?.flex && (align === undefined || align === 'start'),
-			'justify-end': this.definition?.flex && align === 'end',
-			'justify-center': this.definition?.flex && align === 'end',
-			'text-start':
-				!this.definition?.flex && (align === undefined || align === 'start'),
-			'text-center': !this.definition?.flex && align === 'center',
-			'text-end': !this.definition?.flex && align === 'end',
+			'text-start': align === undefined || align === 'start',
+			'text-center': align === 'center',
+			'text-end': align === 'end',
 		});
 	}
 }
