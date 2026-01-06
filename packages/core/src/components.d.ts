@@ -1873,7 +1873,7 @@ export namespace Components {
         /**
           * The alignment of the column
          */
-        "align": "start" | "center" | "end";
+        "align": 'start' | 'center' | 'end';
         /**
           * Wether the column should be flex
          */
@@ -1882,6 +1882,13 @@ export namespace Components {
           * Wether the column should have a checkbox
          */
         "hasCheckbox": boolean;
+        /**
+          * The alignment of the header
+         */
+        "header": | null
+		| 'start'
+		| 'center'
+		| 'end';
         /**
           * The name of the column
          */
@@ -1898,15 +1905,15 @@ export namespace Components {
         /**
           * The sizes of the column
          */
-        "sizes": | "auto"
-		| "hidden"
-		| "full"
+        "sizes": | 'auto'
+		| 'hidden'
+		| 'full'
 		| number
 		| TableColumnSizes;
         /**
           * Wether the column should be sticky (Only works on angular variant of table)
          */
-        "sticky": boolean | "secondary";
+        "sticky": boolean | 'secondary';
         /**
           * Wether the column should use the slot
          */
@@ -1914,10 +1921,10 @@ export namespace Components {
         /**
           * The variant of the column
          */
-        "variant": | "subject"
-		| "default"
-		| "highlight"
-		| "header-secondary";
+        "variant": | 'subject'
+		| 'default'
+		| 'highlight'
+		| 'header-secondary';
     }
     interface PTableContainer {
     }
@@ -2076,7 +2083,7 @@ export namespace Components {
         /**
           * Variant of the header
          */
-        "variant": 'default' | 'secondary' | 'header' | 'header-secondary';
+        "variant": "default" | "secondary" | "header" | "header-secondary";
     }
     interface PTableRowAction {
         /**
@@ -5359,7 +5366,7 @@ declare namespace LocalJSX {
         /**
           * The alignment of the column
          */
-        "align"?: "start" | "center" | "end";
+        "align"?: 'start' | 'center' | 'end';
         /**
           * Wether the column should be flex
          */
@@ -5368,6 +5375,13 @@ declare namespace LocalJSX {
           * Wether the column should have a checkbox
          */
         "hasCheckbox"?: boolean;
+        /**
+          * The alignment of the header
+         */
+        "header"?: | null
+		| 'start'
+		| 'center'
+		| 'end';
         /**
           * The name of the column
          */
@@ -5388,15 +5402,15 @@ declare namespace LocalJSX {
         /**
           * The sizes of the column
          */
-        "sizes"?: | "auto"
-		| "hidden"
-		| "full"
+        "sizes"?: | 'auto'
+		| 'hidden'
+		| 'full'
 		| number
 		| TableColumnSizes;
         /**
           * Wether the column should be sticky (Only works on angular variant of table)
          */
-        "sticky"?: boolean | "secondary";
+        "sticky"?: boolean | 'secondary';
         /**
           * Wether the column should use the slot
          */
@@ -5404,10 +5418,10 @@ declare namespace LocalJSX {
         /**
           * The variant of the column
          */
-        "variant"?: | "subject"
-		| "default"
-		| "highlight"
-		| "header-secondary";
+        "variant"?: | 'subject'
+		| 'default'
+		| 'highlight'
+		| 'header-secondary';
     }
     interface PTableContainer {
     }
@@ -5602,7 +5616,7 @@ declare namespace LocalJSX {
         /**
           * Variant of the header
          */
-        "variant"?: 'default' | 'secondary' | 'header' | 'header-secondary';
+        "variant"?: "default" | "secondary" | "header" | "header-secondary";
     }
     interface PTableRowAction {
         /**

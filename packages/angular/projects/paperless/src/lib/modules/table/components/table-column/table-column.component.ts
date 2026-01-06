@@ -25,6 +25,7 @@ export declare interface TableColumn extends Components.PTableColumn {
 	defineCustomElementFn: undefined,
 	inputs: [
 		'align',
+		'headerAlign',
 		'flex',
 		'name',
 		'path',
@@ -41,6 +42,7 @@ export declare interface TableColumn extends Components.PTableColumn {
 	template: '<ng-content></ng-content>',
 	inputs: [
 		'align',
+		'headerAlign',
 		'flex',
 		'name',
 		'path',
