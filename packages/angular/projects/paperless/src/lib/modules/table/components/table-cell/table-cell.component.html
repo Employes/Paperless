@@ -31,22 +31,7 @@
 
 	<div
 		*ngSwitchCase="'default'"
-		[class]="
-			cn('overflow-hidden text-ellipsis', {
-				flex: definition?.flex,
-				'flex-1': definition?.flex,
-				'justify-start':
-					definition?.flex &&
-					(definition?.align === undefined || definition.align === 'start'),
-				'justify-end': definition?.flex && definition.align === 'end',
-				'justify-center': definition?.flex && definition.align === 'end',
-				'text-start':
-					!definition?.flex &&
-					(definition?.align === undefined || definition.align === 'start'),
-				'text-center': !definition?.flex && definition.align === 'center',
-				'text-end': !definition?.flex && definition.align === 'end'
-			})
-		"
+		[class]="contentClass"
 	>
 		<ng-container *ngIf="template; else valueTemplate">
 			<ng-container *ngTemplateOutlet="template; context: data"></ng-container>
