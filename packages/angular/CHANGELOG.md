@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.19.6](https://github.com/Employes/Paperless/compare/v2.19.5...v2.19.6) (2026-01-06)
+
+
+### Bug Fixes
+
+* **angular/table/cell:** Add  debugging ([5a0bafc](https://github.com/Employes/Paperless/commit/5a0bafcb5b9e562997a1d0fb590196d94e2e0977))
+
+
+
+
+
 ## [2.19.5](https://github.com/Employes/Paperless/compare/v2.19.4...v2.19.5) (2026-01-06)
 
 
