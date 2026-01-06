@@ -48,7 +48,7 @@ export class TableColumn {
 	/**
 	 * The alignment of the header
 	 */
-	@Prop({ reflect: true, mutable: true }) header:
+	@Prop({ reflect: true, mutable: true }) headerAlign:
 		| null
 		| 'start'
 		| 'center'
