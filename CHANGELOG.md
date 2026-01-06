@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.19.1](https://github.com/Employes/Paperless/compare/v2.19.0...v2.19.1) (2026-01-06)
+
+
+### Bug Fixes
+
+* **angular/table/cell:** Also apply header alignment to ngx table-cell ([91b50d3](https://github.com/Employes/Paperless/commit/91b50d395acd9d7664de57f23824dc8132643e53))
+
+
+
+
+
 # [2.19.0](https://github.com/Employes/Paperless/compare/v2.18.6...v2.19.0) (2026-01-06)
 
 
