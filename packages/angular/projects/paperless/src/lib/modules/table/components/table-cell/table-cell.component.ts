@@ -1,11 +1,11 @@
 /* eslint-disable max-len */
-import { Component, HostBinding, Input, TemplateRef } from "@angular/core";
+import { Component, HostBinding, Input, TemplateRef } from '@angular/core';
 import {
 	cn,
 	getTableCellColumnClasses,
 	objectGetByPath,
 	TableDefinitionData,
-} from "@paperless/core";
+} from '@paperless/core';
 
 /*
      With this, we shall hack the system in ways no one would ever have thought.
@@ -67,15 +67,15 @@ import {
         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
     */
 @Component({
-	selector: "p-table-cell-ngx",
-	templateUrl: "./table-cell.component.html",
+	selector: 'p-table-cell-ngx',
+	templateUrl: './table-cell.component.html',
 })
 export class TableCell {
 	/**
 	 * The variant of the column
 	 */
-	@Input() variant: "default" | "loading" | "header" | "header-secondary" =
-		"default";
+	@Input() variant: 'default' | 'loading' | 'header' | 'header-secondary' =
+		'default';
 
 	/**
 	 * The index of the column
@@ -124,28 +124,28 @@ export class TableCell {
 
 	public cn = cn;
 
-	@HostBinding("class")
+	@HostBinding('class')
 	get class() {
 		return cn(
 			getTableCellColumnClasses(
 				this.definition,
 				this.variant,
-				this.checkboxOffset,
+				this.checkboxOffset
 			),
 			{
-				"sticky left-4 z-[2]": !!this.definition?.sticky,
-				"bg-gradient-to-r from-white to-transparent dark:from-hurricane-700 from-80%":
-					this.definition?.sticky && this.definition?.sticky !== "secondary",
-				"bg-gradient-to-r from-off-white-300 to-transparent dark:from-hurricane-400 from-80%":
-					this.definition?.sticky && this.definition?.sticky === "secondary",
-				"flex-shrink": !this.scrollable,
-				"flex-shrink-0": this.scrollable,
-			},
+				'sticky left-4 z-[2]': !!this.definition?.sticky,
+				'bg-gradient-to-r from-white to-transparent dark:from-hurricane-700 from-80%':
+					this.definition?.sticky && this.definition?.sticky !== 'secondary',
+				'bg-gradient-to-r from-off-white-300 to-transparent dark:from-hurricane-400 from-80%':
+					this.definition?.sticky && this.definition?.sticky === 'secondary',
+				'flex-shrink': !this.scrollable,
+				'flex-shrink-0': this.scrollable,
+			}
 		);
 	}
 
 	get data(): TableDefinitionData | { value: string } {
-		if (this.variant === "header" || this.variant === "header-secondary") {
+		if (this.variant === 'header' || this.variant === 'header-secondary') {
 			return {
 				value: this.value,
 			};
@@ -153,12 +153,32 @@ export class TableCell {
 
 		return {
 			value:
-				(this.value ?? this.definition?.path)
+				this.value ?? this.definition?.path
 					? objectGetByPath(this.item, this.definition.path)
 					: null,
 			item: this.item,
 			index: this.index,
 			rowIndex: this.rowIndex,
 		};
+	}
+
+	get contentClass() {
+		const align =
+			this.variant === 'header'
+				? this.definition?.headerAlign ?? this.definition?.align
+				: this.definition?.align;
+
+		return cn('overflow-hidden text-ellipsis', {
+			flex: this.definition?.flex,
+			'flex-1': this.definition?.flex,
+			'justify-start':
+				this.definition?.flex && (align === undefined || align === 'start'),
+			'justify-end': this.definition?.flex && align === 'end',
+			'justify-center': this.definition?.flex && align === 'end',
+			'text-start':
+				!this.definition?.flex && (align === undefined || align === 'start'),
+			'text-center': !this.definition?.flex && align === 'center',
+			'text-end': !this.definition?.flex && align === 'end',
+		});
 	}
 }
