@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.19.4](https://github.com/Employes/Paperless/compare/v2.19.3...v2.19.4) (2026-01-06)
+
+
+### Bug Fixes
+
+* **helpers/table/column:** Fix property name ([599561e](https://github.com/Employes/Paperless/commit/599561edc6e1ba2a1e94e1876258744c754e77ac))
+
+
+
+
+
 ## [2.19.3](https://github.com/Employes/Paperless/compare/v2.19.2...v2.19.3) (2026-01-06)
 
 **Note:** Version bump only for package @paperless/core
