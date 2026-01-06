@@ -164,6 +164,7 @@ export class TableCell {
 
 	get headerClass() {
 		const align = this.definition?.headerAlign ?? this.definition?.align;
+		console.log(this.definition);
 
 		return cn('overflow-hidden text-ellipsis', {
 			'text-start': align === undefined || align === 'start',
