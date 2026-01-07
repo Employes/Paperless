@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.20.0](https://github.com/Employes/Paperless/compare/v2.19.7...v2.20.0) (2026-01-07)
+
+
+### Features
+
+* **angular/pipes:** Add select pipes ([5a2f439](https://github.com/Employes/Paperless/commit/5a2f439dfe7e1e8b2ac59fd519bc0def014c1eb4))
+
+
+
+
+
 ## [2.19.7](https://github.com/Employes/Paperless/compare/v2.19.6...v2.19.7) (2026-01-06)
 
 
