@@ -1151,7 +1151,7 @@ export class Table implements OnInit, OnChanges {
 			const promises: Promise<void>[] = [];
 			for (const cell of cells) {
 				if (cell.style.width?.length) {
-					cell.style.width = 'unset';
+					cell.setAttribute('style', '');
 				}
 
 				promises.push(

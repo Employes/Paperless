@@ -12,7 +12,7 @@
 | `align`       | `align`        | The alignment of the column                                                 | `"center" \| "end" \| "start"`                                | `'start'`   |
 | `flex`        | `flex`         | Wether the column should be flex                                            | `boolean`                                                     | `false`     |
 | `hasCheckbox` | `has-checkbox` | Wether the column should have a checkbox                                    | `boolean`                                                     | `false`     |
-| `header`      | `header`       | The alignment of the header                                                 | `"center" \| "end" \| "start"`                                | `null`      |
+| `headerAlign` | `header-align` | The alignment of the header                                                 | `"center" \| "end" \| "start"`                                | `null`      |
 | `name`        | `name`         | The name of the column                                                      | `string`                                                      | `undefined` |
 | `parsedSizes` | `parsed-sizes` | Parsed sizes based on the complete set of columns                           | `TableColumnSizes`                                            | `undefined` |
 | `path`        | `path`         | The path of the value of the item you want to display                       | `string`                                                      | `undefined` |

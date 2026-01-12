@@ -1885,7 +1885,7 @@ export namespace Components {
         /**
           * The alignment of the header
          */
-        "header": | null
+        "headerAlign": | null
 		| 'start'
 		| 'center'
 		| 'end';
@@ -5378,7 +5378,7 @@ declare namespace LocalJSX {
         /**
           * The alignment of the header
          */
-        "header"?: | null
+        "headerAlign"?: | null
 		| 'start'
 		| 'center'
 		| 'end';
