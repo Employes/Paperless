@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.21.0](https://github.com/Employes/Paperless/compare/v2.20.1...v2.21.0) (2026-01-12)
+
+
+### Features
+
+* **atoms/icon:** Add new icons ([2448359](https://github.com/Employes/Paperless/commit/2448359b8f44feac68c96ebdbbed67d384a08bc5))
+
+
+
+
+
 ## [2.20.1](https://github.com/Employes/Paperless/compare/v2.20.0...v2.20.1) (2026-01-12)
 
 
