@@ -22,6 +22,8 @@ import ideal from '../assets/icons/external/ideal.svg';
 import attachment from '../assets/icons/files/attachment.svg';
 import description from '../assets/icons/files/description.svg';
 import documentIcon from '../assets/icons/files/document.svg';
+import fileExport from '../assets/icons/files/file-export.svg';
+import fileImport from '../assets/icons/files/file-import.svg';
 import folder from '../assets/icons/files/folder.svg';
 import pdf from '../assets/icons/files/pdf.svg';
 import xls from '../assets/icons/files/xls.svg';
@@ -50,6 +52,7 @@ import envelope from '../assets/icons/general/envelope.svg';
 import euro from '../assets/icons/general/euro.svg';
 import exam from '../assets/icons/general/exam.svg';
 import filter from '../assets/icons/general/filter.svg';
+import flag from '../assets/icons/general/flag.svg';
 import flower from '../assets/icons/general/flower.svg';
 import globe from '../assets/icons/general/globe.svg';
 import globeTwo from '../assets/icons/general/globe-2.svg';
@@ -73,11 +76,13 @@ import pay from '../assets/icons/general/pay.svg';
 import pencil from '../assets/icons/general/pencil.svg';
 import percent from '../assets/icons/general/percent.svg';
 import pieChart from '../assets/icons/general/pie-chart.svg';
+import piggyBank from '../assets/icons/general/piggy-bank.svg';
 import placeholder from '../assets/icons/general/placeholder.svg';
 import plus from '../assets/icons/general/plus.svg';
 import power from '../assets/icons/general/power.svg';
 import receipt from '../assets/icons/general/receipt.svg';
 import reset from '../assets/icons/general/reset.svg';
+import running from '../assets/icons/general/running.svg';
 import search from '../assets/icons/general/search.svg';
 import send from '../assets/icons/general/send.svg';
 import settings from '../assets/icons/general/settings.svg';
@@ -85,6 +90,8 @@ import shuffle from '../assets/icons/general/shuffle.svg';
 import sick from '../assets/icons/general/sick.svg';
 import signature from '../assets/icons/general/signature.svg';
 import sparkle from '../assets/icons/general/sparkle.svg';
+import spinner from '../assets/icons/general/spinner.svg';
+import spinning from '../assets/icons/general/spinning.svg';
 import star from '../assets/icons/general/star.svg';
 import stroller from '../assets/icons/general/stroller.svg';
 import tag from '../assets/icons/general/tag.svg';
@@ -110,6 +117,7 @@ import calendarFree from '../assets/icons/time/calendar-free.svg';
 import calendarNotFree from '../assets/icons/time/calendar-not-free.svg';
 import clock from '../assets/icons/time/clock.svg';
 
+import addressBook from '../assets/icons/users/address-book.svg';
 import female from '../assets/icons/users/female.svg';
 import id from '../assets/icons/users/id.svg';
 import idTwo from '../assets/icons/users/id-two.svg';
@@ -148,6 +156,8 @@ export const categorized = {
 		attachment,
 		description,
 		document: documentIcon,
+		'file-export': fileExport,
+		'file-import': fileImport,
 		folder,
 		pdf,
 		xls,
@@ -177,6 +187,7 @@ export const categorized = {
 		euro,
 		exam,
 		filter,
+		flag,
 		flower,
 		globe,
 		'globe-2': globeTwo,
@@ -200,11 +211,13 @@ export const categorized = {
 		pencil,
 		percent,
 		'pie-chart': pieChart,
+		'piggy-bank': piggyBank,
 		placeholder,
 		plus,
 		power,
 		receipt,
 		reset,
+		running,
 		search,
 		send,
 		settings,
@@ -212,6 +225,8 @@ export const categorized = {
 		sick,
 		signature,
 		sparkle,
+		spinner,
+		spinning,
 		star,
 		stroller,
 		tag,
@@ -240,6 +255,7 @@ export const categorized = {
 		clock,
 	},
 	users: {
+		'address-book': addressBook,
 		female,
 		id,
 		'id-two': idTwo,
@@ -281,6 +297,8 @@ export const icons = {
 	attachment,
 	description,
 	document: documentIcon,
+	'file-export': fileExport,
+	'file-import': fileImport,
 	folder,
 	pdf,
 	xls,
@@ -310,6 +328,7 @@ export const icons = {
 	euro,
 	exam,
 	filter,
+	flag,
 	flower,
 	globe,
 	'globe-2': globeTwo,
@@ -333,11 +352,13 @@ export const icons = {
 	pencil,
 	percent,
 	'pie-chart': pieChart,
+	'piggy-bank': piggyBank,
 	placeholder,
 	plus,
 	power,
 	receipt,
 	reset,
+	running,
 	search,
 	send,
 	settings,
@@ -345,6 +366,8 @@ export const icons = {
 	sick,
 	signature,
 	sparkle,
+	spinner,
+	spinning,
 	star,
 	stroller,
 	tag,
@@ -373,6 +396,7 @@ export const icons = {
 	clock,
 
 	//users
+	'address-book': addressBook,
 	female,
 	id,
 	'id-two': idTwo,
