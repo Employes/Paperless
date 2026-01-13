@@ -133,7 +133,6 @@
             }
         }
     },
-    "defaultProject": "paperless",
     "cli": {
         "analytics": false
     }

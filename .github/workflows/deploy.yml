@@ -64,7 +64,7 @@ jobs:
       - name: Version Preview
         if: |
           github.ref == 'refs/heads/preview'
-        run: yarn lerna:version:prelease:nopush
+        run: yarn lerna:version:prerelease:nopush
 
       - name: Install dependencies
         run: yarn
