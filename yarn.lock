@@ -4649,7 +4649,7 @@
   dependencies:
     nx "15.9.7"
 
-"@nrwl/devkit@>=15.5.2 < 16":
+"@nrwl/devkit@15.9.7", "@nrwl/devkit@>=15.5.2 < 16":
   version "15.9.7"
   resolved "https://registry.npmjs.org/@nrwl/devkit/-/devkit-15.9.7.tgz"
   integrity sha512-Sb7Am2TMT8AVq8e+vxOlk3AtOA2M0qCmhBzoM1OJbdHaPKc0g0UgSnWRml1kPGg5qfPk72tWclLoZJ5/ut0vTg==
@@ -4659,6 +4659,17 @@
     semver "7.5.4"
     tmp "~0.2.1"
     tslib "^2.3.0"
+
+"@nrwl/eslint-plugin-nx@15.9.7":
+  version "15.9.7"
+  resolved "https://registry.npmjs.org/@nrwl/eslint-plugin-nx/-/eslint-plugin-nx-15.9.7.tgz"
+  integrity sha512-vbWayEFtTqIrpv32dc1cQeNpGeUATkQJc7It6SZDaJlp2JzNVe8kgFfSx4wbxfvzpRMIUmM/3s+J70/mABGsHw==
+  dependencies:
+    "@nrwl/devkit" "15.9.7"
+    "@typescript-eslint/utils" "^5.36.1"
+    chalk "^4.1.0"
+    confusing-browser-globals "^1.0.9"
+    semver "7.5.4"
 
 "@nrwl/nx-darwin-arm64@15.9.7":
   version "15.9.7"
@@ -6788,7 +6799,7 @@
     eslint-scope "^5.1.1"
     eslint-utils "^3.0.0"
 
-"@typescript-eslint/utils@5.62.0":
+"@typescript-eslint/utils@5.62.0", "@typescript-eslint/utils@^5.36.1":
   version "5.62.0"
   resolved "https://registry.npmjs.org/@typescript-eslint/utils/-/utils-5.62.0.tgz"
   integrity sha512-n8oxjeb5aIbPFEtmQxQYOLI0i9n5ySBEY/ZEHHZqKQSFnxio1rv6dthascc9dLuwrL0RC5mPCxB7vnAVGAYWAQ==
@@ -9127,6 +9138,11 @@ configstore@^6.0.0:
     unique-string "^3.0.0"
     write-file-atomic "^3.0.3"
     xdg-basedir "^5.0.1"
+
+confusing-browser-globals@^1.0.9:
+  version "1.0.11"
+  resolved "https://registry.npmjs.org/confusing-browser-globals/-/confusing-browser-globals-1.0.11.tgz"
+  integrity sha512-JsPKdmh8ZkmnHxDk55FZ1TqVLvEQTvoByJZRN9jzI0UjxK/QgAmsphz7PGtqgPieQZ/CQcHWXCR7ATDNhGe+YA==
 
 connect-history-api-fallback@^2.0.0:
   version "2.0.0"
