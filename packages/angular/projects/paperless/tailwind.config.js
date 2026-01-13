@@ -2,7 +2,6 @@ const { paperless } = require('@paperless/core');
 const path = require('path');
 
 module.exports = {
-	important: true,
 	darkMode: [
 		'variant',
 		[

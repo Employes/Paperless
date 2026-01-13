@@ -2,7 +2,6 @@ import path from 'path';
 import { paperless } from './tailwind';
 
 export default {
-	important: true,
 	darkMode: [
 		'variant',
 		[

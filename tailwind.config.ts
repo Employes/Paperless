@@ -2,7 +2,6 @@ import path from 'path';
 import { paperless } from '@paperless/core/src/tailwind';
 
 export default {
-	important: false,
 	content: [
 		path.join(__dirname, './stories/**/*.{mdx,tsx,ts}'),
 		path.join(__dirname, './packages/core/src/components/**/*.mdx'),
