@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.6](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.5...v2.22.0-alpha.6) (2026-01-13)
+
+
+### Bug Fixes
+
+* **angular:** Move some files around and start using inject ([0602708](https://github.com/Employes/Paperless/commit/0602708f638d250783e764f2d886e0084eb53ce0))
+
+
+
+
+
 # [2.22.0-alpha.5](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.4...v2.22.0-alpha.5) (2026-01-13)
 
 **Note:** Version bump only for package @paperless/conventions
