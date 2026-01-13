@@ -15,6 +15,7 @@
 		"build:prod": "yarn build",
 		"prenpm:publish": "cp ../../README.md .",
 		"npm:publish": "npm publish",
+		"npm:publish:prerelease": "yarn npm:publish --tag alpha",
 		"prettier:check": "yarn prettier \"./**/*.{ts,tsx,html,scss,json}\"",
 		"prettier:write": "yarn prettier:check -w"
 	},

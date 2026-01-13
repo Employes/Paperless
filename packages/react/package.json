@@ -18,8 +18,9 @@
 		"compile": "yarn tsc",
 		"tsc": "tsc -p . --outDir ./dist",
 		"rollup": "rollup -c",
-		"preyarn:publish": "cp ../../README.md .",
+		"prenpm:publish": "cp ../../README.md .",
 		"npm:publish": "npm publish",
+		"npm:publish:prerelease": "yarn npm:publish --tag alpha",
 		"prettier:check": "yarn prettier \"./src/**/*.{ts,tsx,html,scss,json}\"",
 		"prettier:write": "yarn prettier:check -w"
 	},

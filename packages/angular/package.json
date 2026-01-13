@@ -27,6 +27,7 @@
 		"test": "ng test",
 		"prenpm:publish": "cp ../../README.md ./dist/",
 		"npm:publish": "npm publish ./dist",
+		"npm:publish:prerelease": "yarn npm:publish --tag alpha",
 		"pb:serve": "ng serve --project=playground --host=0.0.0.0 --disable-host-check",
 		"prettier:check": "yarn prettier \"./projects/**/src/**/*.{ts,tsx,html,scss,json}\"",
 		"prettier:write": "yarn prettier:check -w"

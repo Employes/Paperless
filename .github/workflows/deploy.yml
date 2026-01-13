@@ -148,9 +148,18 @@ jobs:
         run: npm install -g npm@latest
 
       - name: Release
+        if: |
+          github.ref == 'refs/heads/main'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: yarn lerna:publish
+
+      - name: Release Preview
+        if: |
+          github.ref == 'refs/heads/preview'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: yarn lerna:publish:prerelease
 
   deploy-storybook:
     needs: [build]
