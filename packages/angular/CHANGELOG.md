@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.2](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.1...v2.22.0-alpha.2) (2026-01-13)
+
+
+### Bug Fixes
+
+* Set alpha tag for npm publish ([1e2738d](https://github.com/Employes/Paperless/commit/1e2738d044d6153c5b1521548fed41288471d217))
+
+
+
+
+
 # [2.22.0-alpha.1](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.0...v2.22.0-alpha.1) (2026-01-13)
 
 **Note:** Version bump only for package @paperless/angular
