@@ -120,8 +120,8 @@ jobs:
     needs: [build]
     runs-on: ubuntu-latest
     if: |
-      github.ref == 'refs/heads/main' &&
-      github.ref == 'refs/heads/preview' &&
+      (github.ref == 'refs/heads/main' ||
+      github.ref == 'refs/heads/preview') &&
       !contains(github.event.head_commit.message, 'no-release') &&
       !contains(github.event.head_commit.message, 'Lerna publish') &&
       !contains(github.event.head_commit.message , 'docs:') &&
