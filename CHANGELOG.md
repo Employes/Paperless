@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.11](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.10...v2.22.0-alpha.11) (2026-01-13)
+
+
+### Bug Fixes
+
+* **conventions:** Update typescript eslint plugins ([acc2401](https://github.com/Employes/Paperless/commit/acc240179caaeff0f4e27c557e1eee44b48c1a2b))
+
+
+
+
+
 # [2.22.0-alpha.10](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.9...v2.22.0-alpha.10) (2026-01-13)
 
 
