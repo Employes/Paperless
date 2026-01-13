@@ -64,6 +64,7 @@
 		"lerna:version": "lerna version --conventional-commits --yes --force-publish",
 		"lerna:version:prerelease": "yarn lerna:version prerelease",
 		"lerna:version:nopush": "yarn lerna:version --no-push",
+		"lerna:version:prerelease:nopush": "yarn lerna:version --conventional-prerelease --no-push",
 		"lerna:lint": "lerna run lint",
 		"lerna:lint:fix": "lerna run lint:fix",
 		"lerna:publish": "lerna run npm:publish --stream --ignore=@paperless/react",

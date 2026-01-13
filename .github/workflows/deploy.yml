@@ -61,6 +61,11 @@ jobs:
           github.ref == 'refs/heads/main'
         run: yarn lerna:version:nopush
 
+      - name: Version Preview
+        if: |
+          github.ref == 'refs/heads/preview'
+        run: yarn lerna:version:prelease:nopush
+
       - name: Install dependencies
         run: yarn
 
@@ -70,6 +75,16 @@ jobs:
       - name: Push changes
         if: |
           github.ref == 'refs/heads/main' &&
+          !contains(github.event.head_commit.message, 'chore')
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+          tags: true
+
+      - name: Push changes Preview
+        if: |
+          github.ref == 'refs/heads/preview' &&
           !contains(github.event.head_commit.message, 'chore')
         uses: ad-m/github-push-action@master
         with:
@@ -106,6 +121,7 @@ jobs:
     runs-on: ubuntu-latest
     if: |
       github.ref == 'refs/heads/main' &&
+      github.ref == 'refs/heads/preview' &&
       !contains(github.event.head_commit.message, 'no-release') &&
       !contains(github.event.head_commit.message, 'Lerna publish') &&
       !contains(github.event.head_commit.message , 'docs:') &&
