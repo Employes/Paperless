@@ -1,7 +1,7 @@
 {
 	"name": "@paperless/conventions",
 	"description": "Paperless eslint, typescript & prettier recommended configuration",
-	"version": "2.22.0-alpha.8",
+	"version": "2.22.0-alpha.9",
 	"license": "ISC",
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org"
@@ -28,14 +28,14 @@
 		"@nrwl/eslint-plugin-nx": "15.9.7",
 		"@typescript-eslint/eslint-plugin": "5.36.1",
 		"@typescript-eslint/parser": "5.36.1",
-		"nx": "19.8.14",
 		"eslint-config-prettier": "9.1.0",
 		"eslint-import-resolver-typescript": "3.1.5",
 		"eslint-plugin-ava": "14.0.0",
 		"eslint-plugin-import": "2.29.1",
 		"eslint-plugin-jsonc": "2.16.0",
 		"eslint-plugin-only-error": "1.0.2",
-		"eslint-plugin-unicorn": "55.0.0"
+		"eslint-plugin-unicorn": "55.0.0",
+		"nx": "19.8.14"
 	},
 	"peerDependencies": {
 		"eslint": "~8.57.0",

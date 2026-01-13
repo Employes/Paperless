@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.9](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.8...v2.22.0-alpha.9) (2026-01-13)
+
+**Note:** Version bump only for package @paperless/core
+
+
+
+
+
 # [2.22.0-alpha.8](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.7...v2.22.0-alpha.8) (2026-01-13)
 
 **Note:** Version bump only for package @paperless/core
