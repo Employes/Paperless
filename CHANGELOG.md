@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.0](https://github.com/Employes/Paperless/compare/v2.21.0...v2.22.0-alpha.0) (2026-01-13)
+
+
+### Features
+
+* prepare preview releases ([2ca69f6](https://github.com/Employes/Paperless/commit/2ca69f63792433b6150b216aea51621eaecb4f09))
+* update angular to version 16 ([7e2cec4](https://github.com/Employes/Paperless/commit/7e2cec4d46b0c2b749af815e5044a9dd01d0280a))
+
+
+
+
+
 # [2.21.0](https://github.com/Employes/Paperless/compare/v2.20.1...v2.21.0) (2026-01-12)
 
 
