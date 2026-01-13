@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.10](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.9...v2.22.0-alpha.10) (2026-01-13)
+
+
+### Bug Fixes
+
+* **conventions:** Set correct nx version ([6ce137e](https://github.com/Employes/Paperless/commit/6ce137e1860289a2cf95f365b740c8dace97b33a))
+
+
+
+
+
 # [2.22.0-alpha.9](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.8...v2.22.0-alpha.9) (2026-01-13)
 
 **Note:** Version bump only for package @paperless/conventions
