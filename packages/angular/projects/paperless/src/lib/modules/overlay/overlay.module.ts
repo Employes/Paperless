@@ -6,7 +6,7 @@ import { ObserversModule } from '@angular/cdk/observers';
 import { OverlayModule as CDKOverlayModule } from '@angular/cdk/overlay';
 import { PlatformModule } from '@angular/cdk/platform';
 import { PortalModule } from '@angular/cdk/portal';
-import { OverlayService } from './services';
+import { OverlayService } from './overlay.service';
 
 @NgModule({
 	imports: [

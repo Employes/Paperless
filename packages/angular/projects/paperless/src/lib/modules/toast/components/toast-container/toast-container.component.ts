@@ -2,13 +2,14 @@ import {
 	ChangeDetectionStrategy,
 	Component,
 	ElementRef,
+	inject,
 	NgZone,
 } from '@angular/core';
 import { Components } from '@paperless/core';
 import { map } from 'rxjs';
 import { SLIDE_IN_TOP_OUT_BOTTOM } from '../../../../animations';
 import { ProxyCmp } from '../../../../stencil/angular-component-lib/utils';
-import { ToastService } from '../../services/toast.service';
+import { ToastService } from '../../toast.service';
 
 export declare interface PToastContainer extends Components.PToastContainer {
 	placement: 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end';
@@ -27,14 +28,11 @@ export declare interface PToastContainer extends Components.PToastContainer {
 	animations: [SLIDE_IN_TOP_OUT_BOTTOM],
 })
 export class ToastContainer {
+	private _toastService: ToastService = inject(ToastService);
 	public toasts$ = this._toastService.toasts$.pipe(map(arr => arr.reverse()));
 
 	protected el: HTMLElement;
-	constructor(
-		r: ElementRef,
-		protected z: NgZone,
-		private _toastService: ToastService
-	) {
+	constructor(r: ElementRef, protected z: NgZone) {
 		this.el = r.nativeElement;
 	}
 

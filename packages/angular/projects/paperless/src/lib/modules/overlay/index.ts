@@ -1,3 +1,3 @@
 export * from './overlay.module';
 export * from './overlay.ref';
-export * from './services';
+export * from './overlay.service';

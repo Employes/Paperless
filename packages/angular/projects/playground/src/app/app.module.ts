@@ -15,6 +15,7 @@ import { DatepickerComponent } from './features/datepicker/datepicker.component'
 import { DrawerComponent } from './features/drawer/drawer.component';
 import { TestDrawerComponent } from './features/drawer/test-drawer.component';
 import { HomeComponent } from './features/home/home.component';
+import { InputsComponent } from './features/inputs/inputs.component';
 import { TestCropperModalComponent } from './features/modal/cropper-modal.component';
 import { ModalComponent } from './features/modal/modal.component';
 import { TestModalComponent } from './features/modal/test-modal.component';
@@ -23,10 +24,9 @@ import { StepperComponent } from './features/stepper/stepper.component';
 import { TableComponent } from './features/table/default/table.component';
 import { ScrollableTableComponent } from './features/table/scrollable/table.component';
 import { ToastComponent } from './features/toast/toast.component';
-import { InputsComponent } from './features/inputs/inputs.component';
 
-import { defineCustomElements } from '@paperless/core/loader';
 import { initTheme } from '@paperless/core';
+import { defineCustomElements } from '@paperless/core/loader';
 
 @NgModule({
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -53,7 +53,7 @@ import { initTheme } from '@paperless/core';
 		FormsModule,
 		ReactiveFormsModule,
 		AppRoutingModule,
-		PaperlessModule.forRoot(),
+		PaperlessModule,
 	],
 	providers: [
 		{

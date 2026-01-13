@@ -10,7 +10,7 @@ import {
 	Injector,
 	StaticProvider,
 } from '@angular/core';
-import { OverlayRef } from '../overlay.ref';
+import { OverlayRef } from './overlay.ref';
 
 interface ModalOptions {
 	data?: any;

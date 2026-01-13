@@ -1,5 +1,5 @@
 export * from './components';
 export * from './directives';
-export * from './services';
 export * from './toast.module';
+export * from './toast.service';
 export * from './types';
