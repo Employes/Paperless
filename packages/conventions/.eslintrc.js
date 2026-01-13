@@ -1,7 +1,7 @@
 module.exports = {
 	root: true,
 	ignorePatterns: ['**/*'],
-	plugins: ['@nrwl/nx', 'only-error', 'import', 'unicorn', 'ava'],
+	plugins: ['only-error', 'import', 'unicorn', 'ava'],
 	settings: {
 		'import/parsers': {
 			'@typescript-eslint/parser': ['.ts', '.tsx'],
@@ -39,7 +39,6 @@ module.exports = {
 			},
 			extends: [
 				'plugin:@angular-eslint/all',
-				'plugin:@nrwl/nx/angular',
 				'plugin:@angular-eslint/template/process-inline-templates',
 				'prettier',
 			],
@@ -47,10 +46,7 @@ module.exports = {
 		{
 			files: ['*.html'],
 			plugins: ['@angular-eslint/template'],
-			extends: [
-				'plugin:@nrwl/nx/angular-template',
-				'plugin:@angular-eslint/all',
-			],
+			extends: ['plugin:@angular-eslint/all'],
 			rules: {
 				'@angular-eslint/template/attributes-order': [
 					'error',
@@ -70,11 +66,7 @@ module.exports = {
 		},
 		{
 			files: ['*.ts', '*.tsx'],
-			extends: [
-				'plugin:@nrwl/nx/typescript',
-				'plugin:unicorn/all',
-				'plugin:import/recommended',
-			],
+			extends: ['plugin:unicorn/all', 'plugin:import/recommended'],
 			rules: {
 				'unicorn/no-null': 'off',
 				'import/no-unresolved': 'off',
@@ -87,11 +79,6 @@ module.exports = {
 					},
 				],
 			},
-		},
-		{
-			files: ['*.js', '*.jsx'],
-			extends: ['plugin:@nrwl/nx/javascript'],
-			rules: {},
 		},
 		{
 			files: ['*.spec.ts', '*.spec.tsx', '*.spec.js', '*.spec.jsx'],
