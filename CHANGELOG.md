@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.5](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.4...v2.22.0-alpha.5) (2026-01-13)
+
+
+### Bug Fixes
+
+* **angular:** Provide services on forRoot ([f1f38dd](https://github.com/Employes/Paperless/commit/f1f38dd4d3dc59036b468364c2c04e5abd772ea6))
+
+
+
+
+
 # [2.22.0-alpha.4](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.3...v2.22.0-alpha.4) (2026-01-13)
 
 **Note:** Version bump only for package paperless
