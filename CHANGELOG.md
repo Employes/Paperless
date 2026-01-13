@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.8](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.7...v2.22.0-alpha.8) (2026-01-13)
+
+
+### Reverts
+
+* Revert "refactor(conventions): Remove nx" ([2c1e00f](https://github.com/Employes/Paperless/commit/2c1e00fdbc0fb7ba784ac463827175520a7cfc56))
+
+
+
+
+
 # [2.22.0-alpha.7](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.6...v2.22.0-alpha.7) (2026-01-13)
 
 **Note:** Version bump only for package paperless
