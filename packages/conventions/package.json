@@ -1,7 +1,7 @@
 {
 	"name": "@paperless/conventions",
 	"description": "Paperless eslint, typescript & prettier recommended configuration",
-	"version": "2.22.0-alpha.13",
+	"version": "2.22.0-alpha.14",
 	"license": "ISC",
 	"type": "module",
 	"publishConfig": {
@@ -31,16 +31,16 @@
 		"@angular-eslint/builder": "~19.0.0",
 		"@eslint/js": "~9.39.1",
 		"@nx/eslint-plugin": "~22.3.3",
-		"nx": "~22.3.3",
 		"angular-eslint": "~19.0.0",
-		"eslint-plugin-import": "~2.32.0",
-		"eslint-plugin-unicorn": "~62.0.0",
-		"eslint-plugin-prettier": "~5.5.4",
 		"eslint-config-prettier": "~10.1.8",
+		"eslint-plugin-import": "~2.32.0",
+		"eslint-plugin-jsonc": "~2.21.0",
 		"eslint-plugin-jsx-a11y": "~6.10.2",
+		"eslint-plugin-prettier": "~5.5.4",
 		"eslint-plugin-react": "~7.37.5",
 		"eslint-plugin-react-hooks": "~7.0.1",
-		"eslint-plugin-jsonc": "~2.21.0",
+		"eslint-plugin-unicorn": "~62.0.0",
+		"nx": "~22.3.3",
 		"typescript-eslint": "~8.46.4"
 	},
 	"peerDependencies": {

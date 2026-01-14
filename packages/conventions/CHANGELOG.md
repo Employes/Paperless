@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.14](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.13...v2.22.0-alpha.14) (2026-01-14)
+
+
+### Features
+
+* **conventions:** Add eslint ([5dcbf7c](https://github.com/Employes/Paperless/commit/5dcbf7c7782302eeca621f33b2f7dcef1cda2334))
+
+
+
+
+
 # [2.22.0-alpha.13](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.12...v2.22.0-alpha.13) (2026-01-14)
 
 **Note:** Version bump only for package @paperless/conventions
