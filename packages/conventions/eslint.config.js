@@ -17,6 +17,7 @@ export default defineConfig([
 	...jsoncPlugin.configs['flat/recommended-with-json'],
 	...jsoncPlugin.configs['flat/recommended-with-jsonc'],
 	unicornPlugin.configs.all,
+	importPlugin.flatConfigs.recommended,
 	{
 		languageOptions: {
 			globals: globals.builtin,
@@ -33,33 +34,18 @@ export default defineConfig([
 				node: true,
 			},
 		},
-	},
-	{
-		files: ['*.js', '*.jsx'],
-		plugins: {
-			'@nx': nxPlugin,
-		},
-		extends: ['@nx/react', '@nx/javascript'],
-	},
-	{
-		files: ['*.tsx', '*.jsx'],
-		extends: [importPlugin.flatConfigs.recommended],
-	},
-	{
-		files: ['*.ts', '*.tsx'],
-		extends: [importPlugin.flatConfigs.recommended],
-		rules: {
-			'import/no-unresolved': 'off',
-		},
-	},
-	{
-		files: ['*.ts', '*.tsx', '*.js', '*.jsx'],
-		languageOptions: {
-			ecmaVersion: 'latest',
-			sourceType: 'module',
-		},
 		rules: {
 			'arrow-body-style': ['error', 'as-needed'],
+			'unicorn/no-null': 'off',
+			'unicorn/prevent-abbreviations': 'off',
+			'unicorn/no-nested-ternary': 'off',
+			'unicorn/consistent-function-scoping': [
+				'error',
+				{
+					checkArrowFunctions: false,
+				},
+			],
+			'import/no-unresolved': 'off',
 			'import/order': [
 				'error',
 				{
@@ -79,16 +65,21 @@ export default defineConfig([
 					},
 				},
 			],
-			'unicorn/no-null': 'off',
-			'unicorn/prevent-abbreviations': 'off',
-			'unicorn/no-nested-ternary': 'off',
-			'unicorn/consistent-function-scoping': [
-				'error',
-				{
-					checkArrowFunctions: false,
-				},
-			],
 		},
+	},
+	{
+		files: ['*.js'],
+		plugins: {
+			'@nx': nxPlugin,
+		},
+		extends: ['@nx/javascript'],
+	},
+	{
+		files: ['*.tsx', '*.jsx'],
+		plugins: {
+			'@nx': nxPlugin,
+		},
+		extends: ['@nx/react', '@nx/javascript'],
 	},
 	{
 		files: ['**/*.ts'],
