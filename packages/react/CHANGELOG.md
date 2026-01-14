@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.19](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.18...v2.22.0-alpha.19) (2026-01-14)
+
+**Note:** Version bump only for package @paperless/react
+
+
+
+
+
 # [2.22.0-alpha.18](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.17...v2.22.0-alpha.18) (2026-01-14)
 
 **Note:** Version bump only for package @paperless/react
