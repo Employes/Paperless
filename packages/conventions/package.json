@@ -1,7 +1,7 @@
 {
 	"name": "@paperless/conventions",
 	"description": "Paperless eslint, typescript & prettier recommended configuration",
-	"version": "2.22.0-alpha.12",
+	"version": "2.22.0-alpha.13",
 	"license": "ISC",
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org"
@@ -25,7 +25,6 @@
 		"prettier:check": "yarn prettier \"./**/*.{ts,tsx,html,scss,json}\"",
 		"prettier:write": "yarn prettier:check -w"
 	},
-	"dependencies": {},
 	"peerDependencies": {
 		"prettier": "2.8.8",
 		"typescript": "5.1.6"
