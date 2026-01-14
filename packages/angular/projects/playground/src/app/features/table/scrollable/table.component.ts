@@ -1,14 +1,14 @@
+import { AsyncPipe, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import {
-	OverlayService,
-	TableRowActionClickEvent,
-} from 'projects/paperless/src/public-api';
-import { TestDrawerComponent } from '../../drawer/test-drawer.component';
 import { BehaviorSubject } from 'rxjs';
+
+import { PaperlessModule } from 'projects/paperless/src/public-api';
 
 @Component({
 	templateUrl: 'table.component.html',
 	changeDetection: ChangeDetectionStrategy.OnPush,
+	standalone: true,
+	imports: [PaperlessModule, AsyncPipe, NgIf],
 })
 export class ScrollableTableComponent {
 	private _items = [
@@ -57,6 +57,7 @@ export class ScrollableTableComponent {
 		},
 	];
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	public items$ = new BehaviorSubject<any[]>(this._items);
 	public showExtraColumn$ = new BehaviorSubject(false);
 

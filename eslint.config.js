@@ -1,3 +1,1 @@
-import paperless from '@paperless/conventions/eslint';
-
-export default paperless;
+export { default } from '@paperless/conventions/eslint';

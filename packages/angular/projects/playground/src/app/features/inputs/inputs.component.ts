@@ -1,8 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { JsonPipe } from '@angular/common';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+
+import { PaperlessModule } from 'projects/paperless/src/public-api';
 
 @Component({
 	templateUrl: 'inputs.component.html',
+	standalone: true,
+	imports: [PaperlessModule, ReactiveFormsModule, JsonPipe],
 })
 export class InputsComponent {
 	public form = new FormGroup({

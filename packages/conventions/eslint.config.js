@@ -101,6 +101,7 @@ export default defineConfig([
 		],
 		processor: angularPlugin.processInlineTemplates,
 		rules: {
+			'@angular-eslint/prefer-standalone': 'off',
 			'@angular-eslint/directive-selector': [
 				'error',
 				{

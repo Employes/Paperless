@@ -6,10 +6,11 @@ import { filter, Subscription } from 'rxjs';
 import { BaseValueAccessor } from '../base';
 
 @Directive({
-	selector: 'p-radio',
-	host: {
-		'(checkedChange)': 'handleChangeEvent($event.detail)',
-	},
+    selector: 'p-radio',
+    host: {
+        '(checkedChange)': 'handleChangeEvent($event.detail)',
+    },
+    standalone: false
 })
 export class RadioDirective
 	extends BaseValueAccessor

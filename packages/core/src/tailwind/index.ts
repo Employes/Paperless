@@ -1,1 +1,1 @@
-export * from './paperless';
+export { paperless } from './paperless';

@@ -4,18 +4,19 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { BaseValueAccessor } from '../base';
 
 @Directive({
-	/* tslint:disable-next-line:directive-selector */
-	selector: 'p-pagination-pages',
-	host: {
-		'(pageChange)': 'handleChangeEvent($event.detail)',
-	},
-	providers: [
-		{
-			provide: NG_VALUE_ACCESSOR,
-			useExisting: PaginationPagesDirective,
-			multi: true,
-		},
-	],
+    /* tslint:disable-next-line:directive-selector */
+    selector: 'p-pagination-pages',
+    host: {
+        '(pageChange)': 'handleChangeEvent($event.detail)',
+    },
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: PaginationPagesDirective,
+            multi: true,
+        },
+    ],
+    standalone: false
 })
 export class PaginationPagesDirective extends BaseValueAccessor {
 	constructor(el: ElementRef) {

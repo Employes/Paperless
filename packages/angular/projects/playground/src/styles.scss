@@ -1,5 +1,5 @@
-@import '@paperless/core/dist/paperless/paperless';
-@import '../../paperless//src/paperless.scss';
+@use '@paperless/core/dist/paperless/paperless';
+@use '../../paperless/src/paperless.scss' as internal;
 
 @tailwind base;
 @tailwind components;

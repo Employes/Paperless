@@ -67,8 +67,9 @@ import {
         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
     */
 @Component({
-	selector: 'p-table-cell-ngx',
-	templateUrl: './table-cell.component.html',
+    selector: 'p-table-cell-ngx',
+    templateUrl: './table-cell.component.html',
+    standalone: false
 })
 export class TableCell {
 	/**

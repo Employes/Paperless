@@ -15,7 +15,7 @@
 | `loading`               | `loading`                 | Wether we want to show loading state                          | `boolean`  | `false`                                |
 | `page`                  | `page`                    | The current page                                              | `number`   | `1`                                    |
 | `pageSize`              | `page-size`               | The amount of items per page                                  | `number`   | `PAGINATION_DEFAULT_PAGE_SIZE`         |
-| `pageSizeOptions`       | `page-size-options`       | The options for the page size                                 | `number[]` | `PAGINATION_DEFAULT_PAGE_SIZE_OPTIONS` |
+| `pageSizeOptions`       | --                        | The options for the page size                                 | `number[]` | `PAGINATION_DEFAULT_PAGE_SIZE_OPTIONS` |
 | `tableHeaderHasAction`  | `table-header-has-action` | Wether the table header has an action to adjust for on mobile | `boolean`  | `false`                                |
 | `total` _(required)_    | `total`                   | The total amount of items                                     | `number`   | `undefined`                            |
 

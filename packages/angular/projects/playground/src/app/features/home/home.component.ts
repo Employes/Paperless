@@ -1,14 +1,8 @@
-import {
-	AfterViewInit,
-	Component,
-	ContentChild,
-	TemplateRef,
-	ViewChild,
-	ViewContainerRef,
-} from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 
 @Component({
 	templateUrl: 'home.component.html',
+	standalone: true,
 })
 export class HomeComponent implements AfterViewInit {
 	public text = 'content';

@@ -7,7 +7,8 @@ import {
 } from '@angular/forms';
 
 @Component({
-	template: ``,
+    template: ``,
+    standalone: false
 })
 export abstract class BaseFormComponent {
 	public markedDirty = false;

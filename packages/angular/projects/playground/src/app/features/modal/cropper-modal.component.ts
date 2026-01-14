@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { OverlayRef } from 'projects/paperless/src/public-api';
+import { OverlayRef, PaperlessModule } from 'projects/paperless/src/public-api';
 
 @Component({
 	template: `
 		<p-modal
 			[show]="true"
-			[padding]="false"
 			header="Cropper modal"
 			(closed)="close()"
 		>
@@ -21,6 +20,8 @@ import { OverlayRef } from 'projects/paperless/src/public-api';
 			</div>
 		</p-modal>
 	`,
+	standalone: true,
+	imports: [PaperlessModule],
 })
 export class TestCropperModalComponent {
 	constructor(public _overlayRef: OverlayRef<TestCropperModalComponent>) {}

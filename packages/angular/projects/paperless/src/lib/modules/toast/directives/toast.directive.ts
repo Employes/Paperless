@@ -2,10 +2,11 @@ import { Directive, EventEmitter, Input, Output } from '@angular/core';
 import { ToastActionFunction } from '../types';
 
 @Directive({
-	selector: 'p-toast',
-	host: {
-		'(action)': 'onAction()',
-	},
+    selector: 'p-toast',
+    host: {
+        '(action)': 'onAction()',
+    },
+    standalone: false
 })
 export class ToastDirective {
 	@Input() delay: number | 'infinite' = 5000;

@@ -1,15 +1,10 @@
-<h1 class="text-4xl font-semibold">Home</h1>
-
 <div class="mt-6 h-96 w-full">
 	<p-stepper
 		direction="vertical"
 		[activeStep]="activeStep$ | async"
 	>
 		<p-stepper-item *ngFor="let step of steps$ | async; let i = index">
-			<div
-				class="flex items-center gap-4"
-				slot="content"
-			>
+			<div class="flex items-center gap-4">
 				<span class="font-semibold">step {{ step }}</span>
 				<p-button
 					icon="trash"

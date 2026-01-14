@@ -55,20 +55,21 @@ export type TableRowActionQueryParams =
 	],
 })
 @Component({
-	selector: 'p-table-row-action',
-	changeDetection: ChangeDetectionStrategy.OnPush,
-	template: '<ng-content></ng-content>',
-	// eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-	inputs: [
-		'disabled',
-		'icon',
-		'iconFlip',
-		'iconOnly',
-		'iconRotate',
-		'label',
-		'type',
-		'loading',
-	],
+    selector: 'p-table-row-action',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: '<ng-content></ng-content>',
+    // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+    inputs: [
+        'disabled',
+        'icon',
+        'iconFlip',
+        'iconOnly',
+        'iconRotate',
+        'label',
+        'type',
+        'loading',
+    ],
+    standalone: false
 })
 export class TableRowAction implements OnChanges {
 	protected el: HTMLElement;

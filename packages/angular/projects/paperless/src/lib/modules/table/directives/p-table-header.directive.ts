@@ -10,19 +10,20 @@ export interface TableHeaderDirectiveValue {
 }
 
 @Directive({
-	/* tslint:disable-next-line:directive-selector */
-	selector: 'p-table-header',
-	host: {
-		'(queryChange)': 'handleChange($event.detail, "query")',
-		'(quickFilter)': 'handleChange($event.detail, "quickFilter")',
-	},
-	providers: [
-		{
-			provide: NG_VALUE_ACCESSOR,
-			useExisting: TableHeaderDirective,
-			multi: true,
-		},
-	],
+    /* tslint:disable-next-line:directive-selector */
+    selector: 'p-table-header',
+    host: {
+        '(queryChange)': 'handleChange($event.detail, "query")',
+        '(quickFilter)': 'handleChange($event.detail, "quickFilter")',
+    },
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: TableHeaderDirective,
+            multi: true,
+        },
+    ],
+    standalone: false
 })
 export class TableHeaderDirective extends BaseValueAccessor {
 	protected override lastValue: TableHeaderDirectiveValue = {

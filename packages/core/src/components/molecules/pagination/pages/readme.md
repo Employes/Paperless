@@ -7,13 +7,13 @@
 
 ## Properties
 
-| Property               | Attribute                | Description                                        | Type                       | Default                             |
-| ---------------------- | ------------------------ | -------------------------------------------------- | -------------------------- | ----------------------------------- |
-| `dropdownPageTemplate` | `dropdown-page-template` | The template for the data view                     | `(page: number) => string` | `this._defaultDropdownPageTemplate` |
-| `hideOnSinglePage`     | `hide-on-single-page`    | Wether to hide when there is only 1 page available | `boolean`                  | `false`                             |
-| `page`                 | `page`                   | The current page                                   | `number`                   | `1`                                 |
-| `pageSize`             | `page-size`              | The amount of items per page                       | `number`                   | `PAGINATION_DEFAULT_PAGE_SIZE`      |
-| `total` _(required)_   | `total`                  | The total amount of items                          | `number`                   | `undefined`                         |
+| Property               | Attribute             | Description                                        | Type                       | Default                             |
+| ---------------------- | --------------------- | -------------------------------------------------- | -------------------------- | ----------------------------------- |
+| `dropdownPageTemplate` | --                    | The template for the data view                     | `(page: number) => string` | `this._defaultDropdownPageTemplate` |
+| `hideOnSinglePage`     | `hide-on-single-page` | Wether to hide when there is only 1 page available | `boolean`                  | `false`                             |
+| `page`                 | `page`                | The current page                                   | `number`                   | `1`                                 |
+| `pageSize`             | `page-size`           | The amount of items per page                       | `number`                   | `PAGINATION_DEFAULT_PAGE_SIZE`      |
+| `total` _(required)_   | `total`               | The total amount of items                          | `number`                   | `undefined`                         |
 
 
 ## Events

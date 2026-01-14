@@ -4,19 +4,20 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { BaseValueAccessor } from '../../../base';
 
 @Directive({
-	/* tslint:disable-next-line:directive-selector */
-	selector: 'p-table-footer',
-	host: {
-		'(pageChange)': 'handleChange($event.detail, "page")',
-		'(pageSizeChange)': 'handleChange($event.detail, "pageSize")',
-	},
-	providers: [
-		{
-			provide: NG_VALUE_ACCESSOR,
-			useExisting: TableFooterDirective,
-			multi: true,
-		},
-	],
+    /* tslint:disable-next-line:directive-selector */
+    selector: 'p-table-footer',
+    host: {
+        '(pageChange)': 'handleChange($event.detail, "page")',
+        '(pageSizeChange)': 'handleChange($event.detail, "pageSize")',
+    },
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: TableFooterDirective,
+            multi: true,
+        },
+    ],
+    standalone: false
 })
 export class TableFooterDirective extends BaseValueAccessor {
 	protected override lastValue: any = {

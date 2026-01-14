@@ -4,17 +4,18 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { BaseValueAccessor } from '../base';
 
 @Directive({
-	selector: 'p-field:not([type=number])',
-	host: {
-		'(valueChange)': 'handleChangeEvent($event.detail)',
-	},
-	providers: [
-		{
-			provide: NG_VALUE_ACCESSOR,
-			useExisting: FieldDirective,
-			multi: true,
-		},
-	],
+    selector: 'p-field:not([type=number])',
+    host: {
+        '(valueChange)': 'handleChangeEvent($event.detail)',
+    },
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: FieldDirective,
+            multi: true,
+        },
+    ],
+    standalone: false
 })
 export class FieldDirective extends BaseValueAccessor {
 	constructor(el: ElementRef) {

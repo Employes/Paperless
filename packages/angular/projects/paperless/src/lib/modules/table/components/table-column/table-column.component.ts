@@ -37,21 +37,22 @@ export declare interface TableColumn extends Components.PTableColumn {
 	],
 })
 @Component({
-	selector: 'p-table-column',
-	changeDetection: ChangeDetectionStrategy.OnPush,
-	template: '<ng-content></ng-content>',
-	inputs: [
-		'align',
-		'headerAlign',
-		'flex',
-		'name',
-		'path',
-		'sizes',
-		'variant',
-		'useSlot',
-		'hasCheckbox',
-		'sticky',
-	],
+    selector: 'p-table-column',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: '<ng-content></ng-content>',
+    inputs: [
+        'align',
+        'headerAlign',
+        'flex',
+        'name',
+        'path',
+        'sizes',
+        'variant',
+        'useSlot',
+        'hasCheckbox',
+        'sticky',
+    ],
+    standalone: false
 })
 export class TableColumn {
 	protected el: HTMLElement;

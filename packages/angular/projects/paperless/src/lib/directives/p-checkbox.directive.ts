@@ -4,17 +4,18 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { BaseValueAccessor } from '../base';
 
 @Directive({
-	selector: 'p-checkbox',
-	host: {
-		'(checkedChange)': 'handleChangeEvent($event.detail)',
-	},
-	providers: [
-		{
-			provide: NG_VALUE_ACCESSOR,
-			useExisting: CheckboxDirective,
-			multi: true,
-		},
-	],
+    selector: 'p-checkbox',
+    host: {
+        '(checkedChange)': 'handleChangeEvent($event.detail)',
+    },
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: CheckboxDirective,
+            multi: true,
+        },
+    ],
+    standalone: false
 })
 export class CheckboxDirective extends BaseValueAccessor {
 	constructor(el: ElementRef) {

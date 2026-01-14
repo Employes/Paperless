@@ -8,114 +8,118 @@
 			<span slot="title">Paperless NGX</span>
 		</p-profile>
 
-		<div
-			class="flex flex-col"
+		<p-button
+			slot="content"
+			(onClick)="state.theme = state.theme === 'dark' ? 'light' : 'dark'"
+		>
+			Toggle theme: {{ state.theme }}
+		</p-button>
+
+		<p-navigation-section
+			header="overview"
 			slot="content"
 		>
-			<p-button
-				class="mb-10"
-				(onClick)="state.theme = state.theme === 'dark' ? 'light' : 'dark'"
+			<p-navigation-item
+				icon="home"
+				routerLink="./"
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ exact: true }"
 			>
-				Toggle theme: {{ state.theme }}
-			</p-button>
+				Home
+			</p-navigation-item>
+		</p-navigation-section>
 
-			<p-navigation-section header="overview">
-				<p-navigation-item
-					icon="home"
-					routerLink="./"
-					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact: true }"
-				>
-					Home
-				</p-navigation-item>
-			</p-navigation-section>
+		<p-navigation-section
+			header="Overlays"
+			slot="content"
+		>
+			<p-navigation-item
+				icon="envelope"
+				routerLink="./modal"
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ exact: true }"
+			>
+				Modal
+			</p-navigation-item>
+			<p-navigation-item
+				icon="menu"
+				routerLink="./drawer"
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ exact: true }"
+			>
+				Drawer
+			</p-navigation-item>
+			<p-navigation-item
+				icon="tasks"
+				routerLink="./toast"
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ exact: true }"
+			>
+				Toast
+			</p-navigation-item>
+		</p-navigation-section>
 
-			<p-navigation-section header="Overlays">
-				<p-navigation-item
-					icon="envelope"
-					routerLink="./modal"
-					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact: true }"
-				>
-					Modal
-				</p-navigation-item>
-				<p-navigation-item
-					icon="menu"
-					routerLink="./drawer"
-					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact: true }"
-				>
-					Drawer
-				</p-navigation-item>
-				<p-navigation-item
-					icon="tasks"
-					routerLink="./toast"
-					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact: true }"
-				>
-					Toast
-				</p-navigation-item>
-			</p-navigation-section>
-
-			<p-navigation-section header="Components">
-				<p-navigation-item
-					icon="filter"
-					routerLink="./table"
-					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact: true }"
-				>
-					Table
-				</p-navigation-item>
-				<p-navigation-item
-					icon="filter"
-					routerLink="./scrollable-table"
-					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact: true }"
-				>
-					Scrollable Table
-				</p-navigation-item>
-				<p-navigation-item
-					icon="calendar"
-					routerLink="./datepicker"
-					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact: true }"
-				>
-					Datepicker
-				</p-navigation-item>
-				<p-navigation-item
-					icon="settings"
-					routerLink="./cropper"
-					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact: true }"
-				>
-					Cropper
-				</p-navigation-item>
-				<p-navigation-item
-					icon="menu"
-					routerLink="./select"
-					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact: true }"
-				>
-					Select
-				</p-navigation-item>
-				<p-navigation-item
-					icon="pencil"
-					routerLink="./inputs"
-					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact: true }"
-				>
-					Inputs
-				</p-navigation-item>
-				<p-navigation-item
-					icon="checkmark"
-					routerLink="./stepper"
-					routerLinkActive="active"
-					[routerLinkActiveOptions]="{ exact: true }"
-				>
-					Stepper
-				</p-navigation-item>
-			</p-navigation-section>
-		</div>
+		<p-navigation-section
+			header="Components"
+			slot="content"
+		>
+			<p-navigation-item
+				icon="filter"
+				routerLink="./table"
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ exact: true }"
+			>
+				Table
+			</p-navigation-item>
+			<p-navigation-item
+				icon="filter"
+				routerLink="./scrollable-table"
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ exact: true }"
+			>
+				Scrollable Table
+			</p-navigation-item>
+			<p-navigation-item
+				icon="calendar"
+				routerLink="./datepicker"
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ exact: true }"
+			>
+				Datepicker
+			</p-navigation-item>
+			<p-navigation-item
+				icon="settings"
+				routerLink="./cropper"
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ exact: true }"
+			>
+				Cropper
+			</p-navigation-item>
+			<p-navigation-item
+				icon="menu"
+				routerLink="./select"
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ exact: true }"
+			>
+				Select
+			</p-navigation-item>
+			<p-navigation-item
+				icon="pencil"
+				routerLink="./inputs"
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ exact: true }"
+			>
+				Inputs
+			</p-navigation-item>
+			<p-navigation-item
+				icon="checkmark"
+				routerLink="./stepper"
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ exact: true }"
+			>
+				Stepper
+			</p-navigation-item>
+		</p-navigation-section>
 	</p-navbar>
 
 	<slot slot="content">

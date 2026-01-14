@@ -1,25 +1,25 @@
 <p-table-ngx
 	selectionKey="date"
-	[items]="items"
-	[total]="512"
-	[quickFilters]="[
-			{
-				identifier: 'first',
-				text: 'First',
-			},
-			{
-				identifier: 'second',
-				text: 'Second',
-			},
-			{
-				identifier: 'third',
-				text: 'Third',
-			}
-	]"
 	[enableAction]="true"
+	[floatingMenuAmountSelectedText]="floatingMenuAmountSelectedText"
+	[items]="items"
+	[quickFilters]="[
+		{
+			identifier: 'first',
+			text: 'First',
+		},
+		{
+			identifier: 'second',
+			text: 'Second',
+		},
+		{
+			identifier: 'third',
+			text: 'Third',
+		},
+	]"
+	[total]="512"
 	(action)="headerActionClick($event)"
 	(selectedRowsChange)="rowsChange($event)"
-	[floatingMenuAmountSelectedText]="floatingMenuAmountSelectedText"
 >
 	<p-table-extra-header
 		name="extra first"
@@ -30,25 +30,25 @@
 		sizes="6"
 	></p-table-extra-header>
 	<p-table-extra-header
-		name="extra last"
 		align="end"
+		name="extra last"
 		sizes="3"
 	></p-table-extra-header>
 
 	<p-table-column
-		variant="subject"
 		name="Employee"
 		path="employee"
+		variant="subject"
 		[flex]="true"
+		[hasCheckbox]="true"
 		[sizes]="{
 			default: 8,
-			tablet: 7
+			tablet: 7,
 		}"
-		[hasCheckbox]="true"
 	>
 		<ng-template
-			let-value="value"
 			let-item="item"
+			let-value="value"
 		>
 			<p-profile>
 				<p-avatar
@@ -62,32 +62,32 @@
 		</ng-template>
 	</p-table-column>
 	<p-table-column
+		align="end"
 		name="Dagen"
 		path="hours"
-		align="end"
 		[sizes]="{
 			default: 'hidden',
 			tablet: 3,
-			'desktop-xs': 2
+			'desktop-xs': 2,
 		}"
 	></p-table-column>
 	<p-table-column
-		variant="highlight"
+		align="end"
 		name="Uren"
 		path="status"
-		align="end"
+		variant="highlight"
 		[sizes]="{
 			default: 'hidden',
-			'desktop-xs': 1
+			'desktop-xs': 1,
 		}"
 	></p-table-column>
 	<p-table-column
+		align="end"
 		name="Status"
 		path="status"
-		align="end"
 		[sizes]="{
 			default: 'hidden',
-			'desktop-xs': 2
+			'desktop-xs': 2,
 		}"
 	>
 		<ng-template let-value="value">
@@ -96,15 +96,15 @@
 					value === 'Goedgekeurd'
 						? 'checkmark'
 						: value === 'Afgekeurd'
-						? 'negative'
-						: 'clock'
+							? 'negative'
+							: 'clock'
 				"
 				[variant]="
 					value === 'Goedgekeurd'
 						? 'positive'
 						: value === 'Afgekeurd'
-						? 'negative'
-						: 'biased'
+							? 'negative'
+							: 'biased'
 				"
 			>
 				{{ value }}
@@ -112,50 +112,50 @@
 		</ng-template>
 	</p-table-column>
 	<p-table-column
+		align="end"
 		name="Uren"
 		path="status"
-		align="end"
 		[sizes]="{
 			default: 4,
 			tablet: 2,
-			'desktop-xs': 'hidden'
+			'desktop-xs': 'hidden',
 		}"
 	></p-table-column>
 
 	<p-table-row-action
-		type="both"
 		icon="arrow"
 		label="Navigate"
 		routerLink="../"
-		(action)="actionClick('navigate', $event)"
+		type="both"
 		[showFunction]="showNavigateButton"
+		(action)="actionClick('navigate', $event)"
 	></p-table-row-action>
 	<p-table-row-action
-		type="single"
 		icon="arrow"
-		[iconRotate]="-90"
 		label="Navigate 2"
 		routerLink="../"
-		(action)="actionClick('navigate', $event)"
+		type="single"
+		[iconRotate]="-90"
 		[showFunction]="showNavigateButton"
+		(action)="actionClick('navigate', $event)"
 	></p-table-row-action>
 	<p-table-row-action
-		type="both"
 		icon="download"
 		label="Download"
+		type="both"
 		[loading]="downloading$ | async"
 		(action)="actionClick('download', $event)"
 	></p-table-row-action>
 	<p-table-row-action
-		type="single"
 		icon="eye"
 		label="View"
+		type="single"
 		(action)="actionClick('view', $event)"
 	></p-table-row-action>
 	<p-table-row-action
-		type="multi"
 		icon="upload"
 		label="Upload"
+		type="multi"
 		(action)="actionClick('upload', $event)"
 	></p-table-row-action>
 
@@ -163,25 +163,25 @@
 		p-table-custom-row
 		variant="secondary"
 	>
-		<p-table-cell
+		<p-table-cell-ngx
 			[definition]="{
 				variant: 'default',
 				align: 'start',
-				sizes: 6
+				sizes: 6,
 			}"
 		>
 			<span class="text-black dark:text-white">Subtotal</span>
-		</p-table-cell>
-		<p-table-cell
+		</p-table-cell-ngx>
+		<p-table-cell-ngx
 			[definition]="{
 				variant: 'default',
 				align: 'end',
-				sizes: 6
+				sizes: 6,
 			}"
 		>
 			<span class="text-storm-500 dark:text-hurricane-200"
 				>&euro; 1.234,50</span
 			>
-		</p-table-cell>
+		</p-table-cell-ngx>
 	</ng-template>
 </p-table-ngx>

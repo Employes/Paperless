@@ -9,7 +9,7 @@ import { ButtonVariant } from "./components/molecules/button/button.component";
 import { IconFlipOptions, IconVariant } from "./components/atoms/icon/icon.component";
 import { RotateOptions, TextSizeOptions } from "./types/tailwind";
 import { Placement, Strategy } from "@floating-ui/dom";
-import { ButtonVariant as ButtonVariant1, IconFlipOptions as IconFlipOptions2, IconVariant as IconVariant1, unknown as IllustrationVariant, RotateOptions as RotateOptions2 } from "./components";
+import { ButtonVariant as ButtonVariant1, IconFlipOptions as IconFlipOptions2, IconVariant as IconVariant1, IllustrationVariant, RotateOptions as RotateOptions2 } from "./components";
 import { HTMLInputTypeAttribute } from "react";
 import { templateFunc } from "./components/molecules/field/container/field-container.component";
 import { templateFunc as templateFunc1 } from "./components/molecules/field/container/field-container.component";
@@ -32,7 +32,7 @@ export { ButtonVariant } from "./components/molecules/button/button.component";
 export { IconFlipOptions, IconVariant } from "./components/atoms/icon/icon.component";
 export { RotateOptions, TextSizeOptions } from "./types/tailwind";
 export { Placement, Strategy } from "@floating-ui/dom";
-export { ButtonVariant as ButtonVariant1, IconFlipOptions as IconFlipOptions2, IconVariant as IconVariant1, unknown as IllustrationVariant, RotateOptions as RotateOptions2 } from "./components";
+export { ButtonVariant as ButtonVariant1, IconFlipOptions as IconFlipOptions2, IconVariant as IconVariant1, IllustrationVariant, RotateOptions as RotateOptions2 } from "./components";
 export { HTMLInputTypeAttribute } from "react";
 export { templateFunc } from "./components/molecules/field/container/field-container.component";
 export { templateFunc as templateFunc1 } from "./components/molecules/field/container/field-container.component";
@@ -55,6 +55,7 @@ export namespace Components {
     interface PAccordion {
         /**
           * Wether the accordion can be closed
+          * @default true
          */
         "closeable": boolean;
         /**
@@ -63,36 +64,44 @@ export namespace Components {
         "header": string;
         /**
           * Wether the accordion is open
+          * @default false
          */
         "open": boolean;
         /**
           * Wether the accordion can be opened
+          * @default true
          */
         "openable": boolean;
         /**
           * The variant of the accordion
+          * @default 'primary'
          */
         "variant": 'primary' | 'secondary';
     }
     interface PAttachment {
         /**
           * The type of files to accept
+          * @default null
          */
         "accept": string[] | string;
         /**
           * The text for the camera tooltip
+          * @default 'Camera'
          */
         "cameraTooltip": string;
         /**
           * The text for the delete tooltip
+          * @default 'Delete'
          */
         "deleteTooltip": string;
         /**
           * The text for the download tooltip
+          * @default 'Download'
          */
         "downloadTooltip": string;
         /**
           * Wether to enable the camera button on mobile
+          * @default false
          */
         "enableCameraOnMobile": boolean;
         /**
@@ -113,22 +122,27 @@ export namespace Components {
         "label": string | HTMLSlotElement;
         /**
           * Wether the attachment is loading
+          * @default false
          */
         "loading": boolean;
         /**
           * The variant of the attachment
+          * @default 'read'
          */
         "mode": 'read' | 'write';
         /**
           * The placeholder of the attachment
+          * @default 'Upload a file...'
          */
         "placeholder": string;
         /**
           * Wether the attachment is required
+          * @default true
          */
         "required": boolean;
         /**
           * The text for the upload tooltip
+          * @default 'Upload'
          */
         "uploadTooltip": string;
         /**
@@ -147,6 +161,7 @@ export namespace Components {
         "letters": string;
         /**
           * The size of the avatar
+          * @default 'base'
          */
         "size": | 'xs'
 		| 'sm'
@@ -162,6 +177,7 @@ export namespace Components {
         "src": string;
         /**
           * The variant of the avatar in case of "letters"
+          * @default 'secondary'
          */
         "variant": 'secondary' | 'primary';
     }
@@ -174,6 +190,7 @@ export namespace Components {
     interface PBackdrop {
         /**
           * Wether to apply blur on the background of the backdrop
+          * @default false
          */
         "applyBlur": boolean;
         /**
@@ -182,14 +199,17 @@ export namespace Components {
         "class": string;
         /**
           * Wether the backdrop is closing
+          * @default false
          */
         "closing": boolean;
         /**
           * Wether we should scroll lock the body
+          * @default true
          */
         "scrollLock": boolean;
         /**
           * The variant of the backdrop
+          * @default 'modal'
          */
         "variant": 'modal' | 'drawer';
     }
@@ -198,22 +218,27 @@ export namespace Components {
     interface PButton {
         /**
           * Wether to force an active state
+          * @default false
          */
         "active"?: boolean;
         /**
           * The type of the button
+          * @default 'button'
          */
         "as"?: 'a' | 'button';
         /**
           * Position of the button in the button group, mostly un-used if not in a group
+          * @default 'none'
          */
         "buttonGroupPosition"?: 'start' | 'center' | 'end' | 'none';
         /**
           * Wether to show a chevron or not
+          * @default false
          */
         "chevron"?: boolean | 'up' | 'down';
         /**
           * Chevron position
+          * @default 'end'
          */
         "chevronPosition"?: 'start' | 'end';
         /**
@@ -222,10 +247,12 @@ export namespace Components {
         "class"?: string;
         /**
           * Wether the button is disabled
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * Wether to show a error state
+          * @default false
          */
         "error"?: boolean;
         /**
@@ -246,10 +273,12 @@ export namespace Components {
         "iconFlip"?: IconFlipOptions;
         /**
           * Wether the button is icon only
+          * @default false
          */
         "iconOnly"?: boolean;
         /**
           * Icon position
+          * @default 'start'
          */
         "iconPosition"?: 'start' | 'end';
         /**
@@ -258,6 +287,7 @@ export namespace Components {
         "iconRotate"?: RotateOptions;
         /**
           * Wether the button should inherit text styles
+          * @default false
          */
         "inheritText"?: boolean;
         /**
@@ -266,10 +296,12 @@ export namespace Components {
         "label"?: string;
         /**
           * Wether to show a loader or not
+          * @default false
          */
         "loading"?: boolean;
         /**
           * The size of the button
+          * @default 'base'
          */
         "size"?: 'sm' | 'base' | 'lg';
         /**
@@ -282,26 +314,31 @@ export namespace Components {
         "target"?: string;
         /**
           * The type of the button
+          * @default 'button'
          */
         "type"?: 'button' | 'submit';
         /**
           * Wether to apply an underline
+          * @default false
          */
         "underline"?: boolean;
         /**
           * The variant of the button
+          * @default 'primary'
          */
         "variant"?: ButtonVariant;
     }
     interface PButtonGroup {
         /**
           * The size of the child buttons
+          * @default 'base'
          */
         "size": 'sm' | 'base' | 'lg';
     }
     interface PCalendar {
         /**
           * Wether to disable the weekends
+          * @default false
          */
         "disableWeekends": boolean;
         /**
@@ -310,26 +347,32 @@ export namespace Components {
         "disabledDates"?: Array<Date | string> | string;
         /**
           * Wether to enable the today button
+          * @default true
          */
         "enableToday": boolean;
         /**
           * Max date
+          * @default null
          */
         "maxDate": Date | string | null;
         /**
           * Min date
+          * @default null
          */
         "minDate": Date | string | null;
         /**
           * The mode of the datepicker
+          * @default 'day'
          */
         "mode": 'year' | 'month' | 'day';
         /**
           * Wether to automatically preselect today
+          * @default false
          */
         "preselectToday": boolean;
         /**
           * The text to display on the today tooltip
+          * @default 'today'
          */
         "todayText": string;
         /**
@@ -338,6 +381,7 @@ export namespace Components {
         "value"?: Date | string;
         /**
           * The variant of the button
+          * @default 'default'
          */
         "variant": 'default' | 'embedded';
     }
@@ -346,32 +390,39 @@ export namespace Components {
     interface PCardContainer {
         /**
           * Wether the card should be hoverable
+          * @default false
          */
         "active": boolean;
         /**
           * A bg class to apply to the container
+          * @default 'bg-white dark:bg-hurricane-600'
          */
         "bgClass": string;
         /**
           * Wether the card should have a border
+          * @default true
          */
         "border": boolean;
         /**
           * Wether the card should be hoverable
+          * @default false
          */
         "hoverable": boolean;
         /**
           * Wether the card should have shadow
+          * @default true
          */
         "shadow": boolean;
         /**
           * The variant of the container
+          * @default 'default'
          */
         "variant": 'default' | 'error';
     }
     interface PCardHeader {
         /**
           * Wether to show the divider
+          * @default true
          */
         "divider": boolean;
         /**
@@ -392,6 +443,7 @@ export namespace Components {
         "iconRotate"?: RotateOptions;
         /**
           * The variant of the card header
+          * @default 'default'
          */
         "variant": 'default' | 'curve';
     }
@@ -402,6 +454,7 @@ export namespace Components {
         "checked": boolean;
         /**
           * Wether the checkbox is disabled
+          * @default false
          */
         "disabled": boolean;
         /**
@@ -418,30 +471,36 @@ export namespace Components {
         "name": string;
         /**
           * Wether the checkbox is required
+          * @default true
          */
         "required": boolean;
     }
     interface PContentSlider {
         /**
           * Wether to disable auto centering the content
+          * @default false
          */
         "disableAutoCenter": boolean;
         /**
           * Wether to disable dragging the content
+          * @default false
          */
         "disableDrag": boolean;
         /**
           * Wether to disable clicking the indicator scrolls content
+          * @default false
          */
         "disableIndicatorClick": boolean;
         /**
           * Wether to hide the indicator on mobile
+          * @default false
          */
         "hideMobileIndicator": boolean;
     }
     interface PCropper {
         /**
           * The return type of the onchange
+          * @default 'base64'
          */
         "returnType": 'canvas' | 'base64';
         /**
@@ -452,10 +511,12 @@ export namespace Components {
     interface PDatepicker {
         /**
           * Wether to disable the weekends
+          * @default false
          */
         "disableWeekends": boolean;
         /**
           * Wether the input group is disabled used by the datepicker
+          * @default false
          */
         "disabled": boolean;
         /**
@@ -464,10 +525,12 @@ export namespace Components {
         "disabledDates"?: Array<Date | string> | string;
         /**
           * Enable native picker for mobile devices
+          * @default true
          */
         "enableNativePicker": boolean;
         /**
           * Wether to enable the today button
+          * @default true
          */
         "enableToday": boolean;
         /**
@@ -476,6 +539,7 @@ export namespace Components {
         "error": string;
         /**
           * The display & parse format to use
+          * @default 'dd-MM-yyyy'
          */
         "format": string;
         /**
@@ -484,6 +548,7 @@ export namespace Components {
         "helper": string;
         /**
           * Hides the icon when filled
+          * @default false
          */
         "hideIconWhenFilled": boolean;
         /**
@@ -492,18 +557,22 @@ export namespace Components {
         "label": string;
         /**
           * Wether the field is loading
+          * @default false
          */
         "loading": boolean;
         /**
           * Max date
+          * @default null
          */
         "maxDate"?: Date | string | null;
         /**
           * Min date
+          * @default null
          */
         "minDate"?: Date | string | null;
         /**
           * The mode of the datepicker
+          * @default 'day'
          */
         "mode": 'year' | 'month' | 'day';
         /**
@@ -512,6 +581,7 @@ export namespace Components {
         "placeholder": string;
         /**
           * The placement of the dropdown
+          * @default 'bottom-start'
          */
         "placement": Placement;
         /**
@@ -520,6 +590,7 @@ export namespace Components {
         "prefix": string;
         /**
           * Wethter to automatically preselect today
+          * @default false
          */
         "preselectToday": boolean;
         /**
@@ -528,18 +599,22 @@ export namespace Components {
         "required": boolean;
         /**
           * Wether to show optional when not required
+          * @default true
          */
         "showOptional": boolean;
         /**
           * The size of the input group used by the datepicker
+          * @default 'base'
          */
         "size": 'sm' | 'base';
         /**
           * The strategy of the dropdown placement
+          * @default 'absolute'
          */
         "strategy": Strategy;
         /**
           * The text to display on the today tooltip
+          * @default 'today'
          */
         "todayText": string;
         /**
@@ -550,24 +625,29 @@ export namespace Components {
     interface PDivider {
         /**
           * Where to align the content
+          * @default 'center'
          */
         "alignContent": 'start' | 'center' | 'end';
         /**
           * The variant of the modal body
+          * @default 'horizontal'
          */
         "variant": 'horizontal' | 'vertical';
     }
     interface PDrawer {
         /**
           * Wether to apply blur to the backdrop
+          * @default false
          */
         "applyBlur": boolean;
         /**
           * Wether to hide the drawer when the backdrop is clicked
+          * @default true
          */
         "backdropClickClose": boolean;
         /**
           * Wether the drawer can be closed
+          * @default true
          */
         "canClose": boolean;
         /**
@@ -576,14 +656,17 @@ export namespace Components {
         "header"?: string;
         /**
           * Wether we should scroll lock the body
+          * @default true
          */
         "scrollLock": boolean;
         /**
           * Wether to show the drawer or not
+          * @default false
          */
         "show": boolean;
         /**
           * Wether to show the close on mobile in the header
+          * @default true
          */
         "showClose": boolean;
     }
@@ -592,30 +675,36 @@ export namespace Components {
     interface PDrawerContainer {
         /**
           * Wether the container is closing
+          * @default false
          */
         "closing": boolean;
     }
     interface PDrawerHeader {
         /**
           * Wether to show the close button on mobile
+          * @default true
          */
         "showClose": boolean;
     }
     interface PDropdown {
         /**
           * Wether to allow overflow in the container
+          * @default false
          */
         "allowOverflow": boolean;
         /**
           * Wether to apply chevron automatically
+          * @default true
          */
         "applyChevron": boolean;
         /**
           * Wether to apply the full width
+          * @default true
          */
         "applyFullWidth": boolean;
         /**
           * Wether to apply the max width
+          * @default true
          */
         "applyMaxWidth": boolean;
         /**
@@ -624,6 +713,7 @@ export namespace Components {
         "chevronDirection": 'up' | 'down';
         /**
           * Chevron position
+          * @default 'end'
          */
         "chevronPosition": 'start' | 'end';
         /**
@@ -632,48 +722,59 @@ export namespace Components {
         "containerClass": string;
         /**
           * Wether to automatically close the dropdown menu after clicking inside
+          * @default false
          */
         "disableTriggerClick": boolean;
         /**
           * Wether to automatically close the dropdown menu after clicking inside
+          * @default false
          */
         "insideClick": boolean;
         /**
           * Wether the dropdown container is a datepicker dropdown
+          * @default false
          */
         "isDatepicker": boolean;
         /**
           * Wether to open the dropdown manually
+          * @default false
          */
         "manual": boolean;
         /**
           * The offset of the dropdown menu
+          * @default 8
          */
         "offset": number;
         /**
           * The content of the dropdown menu
+          * @default 'bottom-start'
          */
         "placement": Placement;
         /**
           * Wether the dropdown container should be scrollable when the threshold is met.
+          * @default false
          */
         "scrollable": boolean | 'default' | 'large';
         /**
           * Wether to show the dropdown menu
+          * @default false
          */
         "show": boolean;
         /**
           * The strategy of the dropdown placement
+          * @default 'absolute'
          */
         "strategy": Strategy;
         /**
           * The variant of the dropdown
+          * @default 'default'
          */
         "variant": 'default' | 'storm';
     }
     interface PDropdownMenuContainer {
         /**
           * Wether to allow overflow
+          * @default false
          */
         "allowOverflow": boolean;
         /**
@@ -682,44 +783,54 @@ export namespace Components {
         "class": string;
         /**
           * Wether the container should all available space
+          * @default true
          */
         "fullWidth": boolean;
         /**
           * Wether the container applies it's max width
+          * @default true
          */
         "maxWidth": boolean;
         /**
           * Wether the container should be scrollable when the threshold is met.
+          * @default false
          */
         "scrollable": boolean | 'default' | 'large' | 'xlarge';
         /**
           * The variant of the container
+          * @default 'default'
          */
         "variant": 'default' | 'storm';
     }
     interface PDropdownMenuItem {
         /**
           * Wether the dropdown menu item is active
+          * @default false
          */
         "active": boolean;
         /**
           * wether to auto adjust the height
+          * @default false
          */
         "autoHeight": boolean;
         /**
           * Wether the dropdown menu item has a checkbox
+          * @default false
          */
         "checkbox": boolean;
         /**
           * Wether the item is disabled
+          * @default false
          */
         "disabled": boolean;
         /**
           * Wether to enable the hover state
+          * @default true
          */
         "enableHover"?: boolean;
         /**
           * Wether to enable wrapping the text to a new line
+          * @default false
          */
         "enableTextWrap"?: boolean;
         /**
@@ -728,14 +839,17 @@ export namespace Components {
         "icon": IconVariant;
         /**
           * Wether to apply wave animation to icon
+          * @default false
          */
         "iconWave": boolean;
         /**
           * wether to use the container for text
+          * @default true
          */
         "useContainer": boolean;
         /**
           * The variant of the item
+          * @default 'default'
          */
         "variant": 'default' | 'storm' | 'negative' | 'pagination';
     }
@@ -746,10 +860,12 @@ export namespace Components {
         "actionIcon": IconVariant1;
         /**
           * The position of the action icon
+          * @default 'start'
          */
         "actionIconPosition": 'start' | 'end';
         /**
           * Wether the action is loading
+          * @default false
          */
         "actionLoading": boolean;
         /**
@@ -758,6 +874,7 @@ export namespace Components {
         "actionText": string;
         /**
           * The variant of the action
+          * @default 'secondary'
          */
         "actionVariant": ButtonVariant1;
         /**
@@ -766,6 +883,7 @@ export namespace Components {
         "content": string;
         /**
           * Wether to enable the action button
+          * @default true
          */
         "enableAction": boolean;
         /**
@@ -780,22 +898,27 @@ export namespace Components {
     interface PField {
         /**
           * The text to show on the add button
+          * @default 'Add'
          */
         "addText": string;
         /**
           * The alignment of the container
+          * @default 'start'
          */
         "align": 'start' | 'end';
         /**
           * Wether this component handles showing the error tooltip
+          * @default true
          */
         "autoShowError": boolean;
         /**
           * Wether to autofocus the field
+          * @default false
          */
         "autofocus": boolean;
         /**
           * Wether the field is disabled
+          * @default false
          */
         "disabled": boolean;
         /**
@@ -808,14 +931,17 @@ export namespace Components {
         "errorPlacement": Placement;
         /**
           * The method to use when focusing the input
+          * @default 'focus'
          */
         "focusMethod": 'focus' | 'click';
         /**
           * Wether the field is focused
+          * @default false
          */
         "focused": boolean;
         /**
           * Force show the error tooltip
+          * @default false
          */
         "forceShowTooltip": boolean;
         /**
@@ -832,6 +958,7 @@ export namespace Components {
         "iconFlip": IconFlipOptions;
         /**
           * Icon position
+          * @default 'start'
          */
         "iconPosition": 'start' | 'end';
         /**
@@ -848,6 +975,7 @@ export namespace Components {
         "label": string;
         /**
           * Wether the field is in loading state
+          * @default false
          */
         "loading": boolean;
         /**
@@ -864,26 +992,32 @@ export namespace Components {
         "prefix": string;
         /**
           * The size of the field
+          * @default {}
          */
         "properties": any | string;
         /**
           * Wether the field is required
+          * @default true
          */
         "required": boolean;
         /**
           * Wether to select all text on focus
+          * @default true
          */
         "selectAllOnFocus": boolean;
         /**
           * Wether to show an add button when empty
+          * @default false
          */
         "showAddOnEmpty": boolean;
         /**
           * Wether to show optional when not required
+          * @default true
          */
         "showOptional": boolean;
         /**
           * The size of the field
+          * @default 'base'
          */
         "size": 'sm' | 'base';
         /**
@@ -892,6 +1026,7 @@ export namespace Components {
         "suffix": string;
         /**
           * The type of the field
+          * @default 'text'
          */
         "type": HTMLInputTypeAttribute | 'textarea' | 'slot';
         /**
@@ -900,12 +1035,14 @@ export namespace Components {
         "value": string | number;
         /**
           * The variant of the field
+          * @default 'write'
          */
         "variant": 'read' | 'write';
     }
     interface PFieldContainer {
         /**
           * Align content to the start or end
+          * @default 'start'
          */
         "align": 'start' | 'end';
         /**
@@ -918,6 +1055,7 @@ export namespace Components {
         "errorPlacement": Placement;
         /**
           * Force show the error tooltip
+          * @default false
          */
         "forceShowTooltip": boolean;
         /**
@@ -934,14 +1072,17 @@ export namespace Components {
         "label": string | HTMLSlotElement;
         /**
           * Wether the field container is in loading state
+          * @default false
          */
         "loading": boolean;
         /**
           * The size of the loader
+          * @default 'base'
          */
         "loadingSize": 'base' | 'sm';
         /**
           * The template for the optional text
+          * @default this._defaultOptionalTemplate
          */
         "optionalTemplate": templateFunc1;
         /**
@@ -950,6 +1091,7 @@ export namespace Components {
         "required": boolean;
         /**
           * Wether to show optional when not required
+          * @default true
          */
         "showOptional": boolean;
         /**
@@ -960,32 +1102,39 @@ export namespace Components {
     interface PFloatingMenuContainer {
         /**
           * The amount selected
+          * @default 0
          */
         "amount": number;
         /**
           * The template for amount selected
+          * @default ( 		amount: number 	) => 		formatTranslation( 			(amount === 1 				? this._locales.amount_selected 				: this._locales.amount_selected_plural 			)?.replace('{{amount}}', amount) 		)
          */
         "amountSelectedTemplate": amountSelectedTemplateFunc;
         /**
           * Wether to show the amount selected
+          * @default true
          */
         "enableAmountSelected": boolean;
         /**
           * Wether to enablethe close button
+          * @default true
          */
         "enableClose": boolean;
         /**
           * Wether the container is used in the table
+          * @default false
          */
         "usedInTable": boolean;
     }
     interface PFloatingMenuItem {
         /**
           * Wether the item is disabled
+          * @default false
          */
         "disabled": boolean;
         /**
           * Wether it should have a hover effect
+          * @default true
          */
         "hover": boolean;
         /**
@@ -998,6 +1147,7 @@ export namespace Components {
         "iconFlip": IconFlipOptions;
         /**
           * Icon position
+          * @default 'end'
          */
         "iconPosition": 'start' | 'end';
         /**
@@ -1006,16 +1156,19 @@ export namespace Components {
         "iconRotate": RotateOptions1;
         /**
           * Wether loading is applied
+          * @default false
          */
         "loading": boolean;
     }
     interface PHelper {
         /**
           * The placement of the helper popover
+          * @default 'top'
          */
         "placement": Placement;
         /**
           * The strategy of the popover placement
+          * @default 'absolute'
          */
         "strategy": Strategy;
     }
@@ -1032,14 +1185,17 @@ export namespace Components {
     interface PIcon {
         /**
           * Wether to flip the icon horizontally or vertically
+          * @default 'none'
          */
         "flip": IconFlipOptions1;
         /**
           * Wether to rotate the icon x degrees
+          * @default 0
          */
         "rotate": number;
         /**
           * The size of the icon, using tailwind sizes
+          * @default 'base'
          */
         "size": TextSizeOptions;
         /**
@@ -1062,6 +1218,7 @@ export namespace Components {
     interface PInfoPanel {
         /**
           * Wether the panel can be closed
+          * @default false
          */
         "closeable": boolean;
         /**
@@ -1074,6 +1231,7 @@ export namespace Components {
         "header": string;
         /**
           * The variant of the info panel
+          * @default 'feedback'
          */
         "variant": 'neutral' | 'positive' | 'biased' | 'negative' | 'feedback';
     }
@@ -1088,6 +1246,7 @@ export namespace Components {
         "iconFlip": IconFlipOptions;
         /**
           * Wether to only show the icon
+          * @default false
          */
         "iconOnly": boolean;
         /**
@@ -1096,10 +1255,12 @@ export namespace Components {
         "iconRotate": RotateOptions1;
         /**
           * Wether to keep the content on mobile
+          * @default false
          */
         "keepMobileContent": boolean;
         /**
           * Variant of the label
+          * @default 'neutral'
          */
         "variant": | 'positive'
 		| 'biased'
@@ -1110,6 +1271,7 @@ export namespace Components {
     interface PLayout {
         /**
           * Variant of the layout
+          * @default 'default'
          */
         "variant": 'default' | 'login' | 'office';
     }
@@ -1118,6 +1280,7 @@ export namespace Components {
     interface PListingItem {
         /**
           * The icon of the step
+          * @default 'placeholder'
          */
         "icon": IconVariant;
     }
@@ -1126,6 +1289,7 @@ export namespace Components {
     interface PLoader {
         /**
           * Color of the loader
+          * @default 'indigo'
          */
         "color": 'indigo' | 'white' | 'off-white' | 'storm';
         /**
@@ -1138,20 +1302,24 @@ export namespace Components {
         "modalTitle": string;
         /**
           * Wether to show or hide the loader
+          * @default true
          */
         "show": boolean | Observable<boolean>;
         /**
           * Variant of loader
+          * @default 'inline'
          */
         "variant": 'inline' | 'full-width' | 'full-screen' | 'modal' | 'ghost';
     }
     interface PModal {
         /**
           * Wether to apply blur to the backdrop
+          * @default false
          */
         "applyBlur": boolean;
         /**
           * Wether to hide the modal when the backdrop is clicked
+          * @default true
          */
         "backdropClickClose": boolean;
         /**
@@ -1160,42 +1328,51 @@ export namespace Components {
         "header"?: string;
         /**
           * Wether we should scroll lock the body
+          * @default true
          */
         "scrollLock": boolean;
         /**
           * Wether to show the modal or not
+          * @default false
          */
         "show": boolean;
         /**
           * Wether to show the close button in the header
+          * @default true
          */
         "showClose": boolean;
         /**
           * Wether to show the footer on mobile
+          * @default false
          */
         "showMobileFooter": boolean;
         /**
           * The size of the modal container
+          * @default 'base'
          */
         "size": 'xs' | 'base' | 'lg' | 'xl' | '2xl';
     }
     interface PModalBody {
         /**
           * Wether the modal body should be rounded at the bottom
+          * @default false
          */
         "roundedBottom": boolean;
         /**
           * Wether the modal body should be rounded at the top
+          * @default false
          */
         "roundedTop": boolean;
     }
     interface PModalContainer {
         /**
           * Wether the container is closing
+          * @default false
          */
         "closing": boolean;
         /**
           * The size of the modal container
+          * @default 'base'
          */
         "size": 'xs' | 'base' | 'lg' | 'xl' | '2xl';
     }
@@ -1204,6 +1381,7 @@ export namespace Components {
     interface PModalHeader {
         /**
           * Wether to show the close button on mobile
+          * @default true
          */
         "showClose": boolean;
     }
@@ -1212,14 +1390,17 @@ export namespace Components {
     interface PNavigationItem {
         /**
           * Wether the navigation item is active
+          * @default false
          */
         "active": boolean;
         /**
           * Wether the span should contain a w-full
+          * @default false
          */
         "applyFullWidth": boolean;
         /**
           * The element to use for the navigation item
+          * @default 'a'
          */
         "as": string;
         /**
@@ -1240,6 +1421,7 @@ export namespace Components {
         "icon": IconVariant;
         /**
           * Wether the navigation item is loading
+          * @default false
          */
         "loading": boolean;
         /**
@@ -1258,26 +1440,32 @@ export namespace Components {
     interface PPagination {
         /**
           * Wether to enable pagination pages
+          * @default true
          */
         "enablePaginationPages": boolean;
         /**
           * Wether to enable pagination size select
+          * @default true
          */
         "enablePaginationSize": boolean;
         /**
           * Wether to hide when there is only 1 page available
+          * @default true
          */
         "hideOnSinglePage": boolean;
         /**
           * The current page
+          * @default 1
          */
         "page": number;
         /**
           * The amount of items per page
+          * @default PAGINATION_DEFAULT_PAGE_SIZE
          */
         "pageSize": number;
         /**
           * The options for the page size
+          * @default PAGINATION_DEFAULT_PAGE_SIZE_OPTIONS
          */
         "pageSizeOptions": number[];
         /**
@@ -1288,18 +1476,22 @@ export namespace Components {
     interface PPaginationPages {
         /**
           * The template for the data view
+          * @default this._defaultDropdownPageTemplate
          */
         "dropdownPageTemplate": templateFunc2;
         /**
           * Wether to hide when there is only 1 page available
+          * @default false
          */
         "hideOnSinglePage": boolean;
         /**
           * The current page
+          * @default 1
          */
         "page": number;
         /**
           * The amount of items per page
+          * @default PAGINATION_DEFAULT_PAGE_SIZE
          */
         "pageSize": number;
         /**
@@ -1310,52 +1502,63 @@ export namespace Components {
     interface PPaginationPagesItem {
         /**
           * Wether the pagination item is active
+          * @default false
          */
         "active": boolean;
         /**
           * Wether the pagination item is disabled
+          * @default false
          */
         "disabled": boolean;
         /**
           * Wether the pagination item has hover
+          * @default true
          */
         "hover": boolean;
         /**
           * The variant of the item
+          * @default 'default'
          */
         "variant": 'default' | 'carousel';
     }
     interface PPaginationSize {
         /**
           * Wether to hide when there is only 1 page available
+          * @default false
          */
         "hidden": boolean;
         /**
           * The template for the data view
+          * @default this._defaultItemTemplate
          */
         "itemTemplate": templateFunc3;
         /**
           * The current page
+          * @default PAGINATION_DEFAULT_PAGE_SIZE
          */
         "size": number;
         /**
           * The available sizes
+          * @default PAGINATION_DEFAULT_PAGE_SIZE_OPTIONS
          */
         "sizeOptions": number[];
     }
     interface PProfile {
         /**
           * The position of the dropdown
+          * @default 'bottom-end'
          */
         "dropdownLocation": 'top-end' | 'bottom-end';
     }
     interface PRadio {
         /**
           * Wether the radio is checked
+          * @default false
          */
         "checked": boolean;
         /**
           * Wether the radio is disabled
+          * @default false
          */
         "disabled": boolean;
         /**
@@ -1368,6 +1571,7 @@ export namespace Components {
         "name": string;
         /**
           * Wether the radio is required
+          * @default true
          */
         "required": boolean;
         /**
@@ -1378,18 +1582,22 @@ export namespace Components {
     interface PRange {
         /**
           * The max value of the range
+          * @default 100
          */
         "max": number;
         /**
           * The min value of the range
+          * @default 0
          */
         "min": number;
         /**
           * The steps to go by
+          * @default 0.5
          */
         "step": number;
         /**
           * The current value of the range
+          * @default 0
          */
         "value": number;
     }
@@ -1398,6 +1606,7 @@ export namespace Components {
     interface PSegmentItem {
         /**
           * Wether the segment item is active
+          * @default false
          */
         "active": boolean;
         /**
@@ -1410,6 +1619,7 @@ export namespace Components {
         "iconFlip": IconFlipOptions;
         /**
           * Wether the segment item is icon only
+          * @default false
          */
         "iconOnly": boolean;
         /**
@@ -1418,12 +1628,14 @@ export namespace Components {
         "iconRotate": RotateOptions;
         /**
           * The size of the
+          * @default 'default'
          */
         "variant": 'default' | 'block';
     }
     interface PSelect {
         /**
           * The text to show when add item is being shown
+          * @default 'Add item'
          */
         "addItemText": string;
         /**
@@ -1436,14 +1648,17 @@ export namespace Components {
         "applyClassOnSelectedItemInMenu": boolean;
         /**
           * Wether the input uses async filtering
+          * @default false
          */
         "asyncFilter": boolean;
         /**
           * Wether to automatically select the first item
+          * @default true
          */
         "autoSelectFirst": boolean;
         /**
           * The placeholder of the input used for auto complete
+          * @default 'Search...'
          */
         "autocompletePlaceholder": string;
         /**
@@ -1456,14 +1671,17 @@ export namespace Components {
         "avatarLettersKey": string;
         /**
           * The key of a class in an item to apply
+          * @default 'class'
          */
         "classKey": string;
         /**
           * Wether the input group is disabled used by the select
+          * @default false
          */
         "disabled": boolean;
         /**
           * The key of the object to display
+          * @default 'text'
          */
         "displayKey": string;
         /**
@@ -1472,18 +1690,22 @@ export namespace Components {
         "dropdownDisplayKey": string | undefined;
         /**
           * The text to show when items is empty
+          * @default 'No items available'
          */
         "emptyStateText": string;
         /**
           * Wether to enable autocomplete
+          * @default true
          */
         "enableAutocomplete": boolean;
         /**
           * Wether to show the select all item with multi select
+          * @default false
          */
         "enableSelectAll": boolean;
         /**
           * Wether to enable wrapping the text to a new line in the dropdown menu
+          * @default false
          */
         "enableTextWrap"?: boolean;
         /**
@@ -1500,10 +1722,12 @@ export namespace Components {
         "icon": IconVariant;
         /**
           * The key of the class we can apploy to the icon
+          * @default 'iconClass'
          */
         "iconClassKey": string;
         /**
           * The key of icon variant within an item to show
+          * @default 'icon'
          */
         "iconKey": string;
         /**
@@ -1520,10 +1744,12 @@ export namespace Components {
         "label": string;
         /**
           * Wether to show loading items
+          * @default false
          */
         "loading": boolean;
         /**
           * The maximum amount of items to display
+          * @default SELECT_DEFAULT_MAX_DISPLAYED_ITEMS
          */
         "maxDisplayedItems": number;
         /**
@@ -1548,6 +1774,7 @@ export namespace Components {
         "queryKey"?: string;
         /**
           * Wether the field is required
+          * @default true
          */
         "required": boolean;
         /**
@@ -1556,6 +1783,7 @@ export namespace Components {
         "selectAllIcon": IconVariant | undefined;
         /**
           * The text of the select all item
+          * @default 'Select all'
          */
         "selectAllText": string;
         /**
@@ -1564,10 +1792,12 @@ export namespace Components {
         "selectionDisplayKey": string | undefined;
         /**
           * Wether to show a "add" item
+          * @default false
          */
         "showAddItem": boolean;
         /**
           * Wether to show the chevron or not
+          * @default true
          */
         "showChevron": boolean;
         /**
@@ -1576,14 +1806,17 @@ export namespace Components {
         "showIconOnSelectedItem": string;
         /**
           * Wether to show optional when not required
+          * @default true
          */
         "showOptional": boolean;
         /**
           * The size of the input group used by the select
+          * @default 'base'
          */
         "size": 'sm' | 'base';
         /**
           * The strategy to use for the dropdown placement
+          * @default 'absolute'
          */
         "strategy": Strategy;
         /**
@@ -1598,28 +1831,34 @@ export namespace Components {
     interface PSmile {
         /**
           * The variant of the smile footer
+          * @default 'modal'
          */
         "variant": 'modal' | 'card' | 'full';
     }
     interface PStepper {
         /**
           * The currently active step
+          * @default 1
          */
         "activeStep": number;
         /**
           * The alignment of the content in case of vertical direction
+          * @default 'center'
          */
         "align": 'start' | 'center' | 'end';
         /**
           * The position of the content in case of vertical direction
+          * @default 'end'
          */
         "contentPosition": 'start' | 'end';
         /**
           * The direction of the stepper
+          * @default 'horizontal'
          */
         "direction": 'horizontal' | 'vertical';
         /**
           * Wether to automatically apply active & finished to items
+          * @default true
          */
         "enableAutoStatus": boolean;
         /**
@@ -1630,36 +1869,44 @@ export namespace Components {
     interface PStepperItem {
         /**
           * Wether the step is active
+          * @default false
          */
         "active": boolean;
         /**
           * The alignment of the content in case of vertical direction
+          * @default 'center'
          */
         "align": 'start' | 'center' | 'end';
         /**
           * The position of the content in case of vertical direction
+          * @default 'end'
          */
         "contentPosition": 'start' | 'end';
         /**
           * The direction of the item
+          * @default 'horizontal'
          */
         "direction": 'horizontal' | 'vertical';
         /**
           * Wether the step is finished
+          * @default false
          */
         "finished": boolean;
         /**
           * The number of the step
+          * @default 1
          */
         "number": number;
     }
     interface PStepperLine {
         /**
           * Wether the line is active
+          * @default false
          */
         "active": boolean;
         /**
           * The direction of the stepper line
+          * @default 'horizontal'
          */
         "direction": 'horizontal' | 'vertical';
     }
@@ -1668,20 +1915,24 @@ export namespace Components {
     interface PTabItem {
         /**
           * Wether the tab item is active
+          * @default false
          */
         "active": boolean;
     }
     interface PTable {
         /**
           * Wether the action button is enabled
+          * @default false
          */
         "actionButtonEnabled": boolean;
         /**
           * The action button icon
+          * @default 'pencil'
          */
         "actionButtonIcon": IconVariant1;
         /**
           * Wether the action button is loading
+          * @default false
          */
         "actionButtonLoading": boolean;
         /**
@@ -1698,67 +1949,96 @@ export namespace Components {
         "activeQuickFilterIdentifier": string;
         /**
           * The amount of loading rows to show
+          * @default 6
          */
         "amountOfLoadingRows": number;
         /**
           * A key to determine if a row can be selected
          */
         "canSelectKey": string;
+        /**
+          * @default () => 		formatTranslation(this._locales.empty_state?.no_filter.action)
+         */
         "emptyStateAction": templateFunc4;
+        /**
+          * @default () => 		formatTranslation(this._locales.empty_state?.no_filter.content)
+         */
         "emptyStateContent": templateFunc4;
+        /**
+          * @default () => 		formatTranslation(this._locales.empty_state.filtered.content)
+         */
         "emptyStateFilteredContent": templateFunc4;
+        /**
+          * @default () => 		formatTranslation(this._locales.empty_state.filtered.header)
+         */
         "emptyStateFilteredHeader": templateFunc4;
+        /**
+          * @default () => 		formatTranslation(this._locales.empty_state?.no_filter.header)
+         */
         "emptyStateHeader": templateFunc4;
         /**
           * Wether to show the action button
+          * @default false
          */
         "enableAction": boolean;
         /**
           * Wether to enable empty state action
+          * @default true
          */
         "enableEmptyStateAction": boolean;
         /**
           * Wether to enable export
+          * @default true
          */
         "enableExport": boolean;
         /**
           * Wether to show the filter button
+          * @default true
          */
         "enableFilter": boolean;
         /**
           * Wether to show the filter button on desktop
+          * @default true
          */
         "enableFilterDesktop": boolean;
         /**
           * Wether to enable the floating menu
+          * @default true
          */
         "enableFloatingMenu": boolean;
         /**
           * Wether to show the header
+          * @default true
          */
         "enableFooter": boolean;
         /**
           * Wether to show the header
+          * @default true
          */
         "enableHeader": boolean;
         /**
           * Wether to enable pagination pages
+          * @default true
          */
         "enablePaginationPages": boolean;
         /**
           * Wether to enable pagination size select
+          * @default true
          */
         "enablePaginationSize": boolean;
         /**
           * Wether to enable row clicking
+          * @default true
          */
         "enableRowClick": boolean;
         /**
           * Wether to enable selection
+          * @default true
          */
         "enableRowSelection": boolean;
         /**
           * Wether to show the search input
+          * @default true
          */
         "enableSearch": boolean;
         /**
@@ -1767,18 +2047,22 @@ export namespace Components {
         "filterButtonTemplate": templateFunc4;
         /**
           * The template for amount selected item in the floating menu
+          * @default ( 		amount: number 	) => 		formatTranslation( 			(amount === 1 				? this._locales.floating_menu?.amount_selected 				: this._locales.floating_menu?.amount_selected_plural 			)?.replace('{{amount}}', amount) 		)
          */
         "floatingMenuAmountSelectedTemplate": amountSelectedTemplateFunc1;
         /**
           * Wether the footer should show loading state
+          * @default false
          */
         "footerLoading": boolean;
         /**
           * Wether the header should show loading state
+          * @default false
          */
         "headerLoading": boolean;
         /**
           * Wether to hide when there is only 1 page available
+          * @default true
          */
         "hideOnSinglePage": boolean;
         /**
@@ -1787,18 +2071,22 @@ export namespace Components {
         "items": string;
         /**
           * Wether data is loading
+          * @default false
          */
         "loading": boolean;
         /**
           * The current page
+          * @default 1
          */
         "page": number;
         /**
           * The amount of items per page
+          * @default PAGINATION_DEFAULT_PAGE_SIZE
          */
         "pageSize": number;
         /**
           * The options for the page size
+          * @default PAGINATION_DEFAULT_PAGE_SIZE_OPTIONS
          */
         "pageSizeOptions": number[];
         /**
@@ -1807,6 +2095,7 @@ export namespace Components {
         "query": string;
         /**
           * Quick filters to show
+          * @default []
          */
         "quickFilters": QuickFilter[] | string;
         /**
@@ -1819,12 +2108,16 @@ export namespace Components {
         "selectedFiltersAmount": number;
         /**
           * The current selection of items
+          * @default []
          */
         "selectedRows": any[];
         /**
           * The key to determine if a row is selected
          */
         "selectionKey": string;
+        /**
+          * @default true
+         */
         "shadow": boolean;
         /**
           * The total amount of items
@@ -1838,6 +2131,7 @@ export namespace Components {
         "checkbox": any;
         /**
           * Wether the cell needs checkbox offset instead of a checkbox
+          * @default false
          */
         "checkboxOffset": boolean;
         /**
@@ -1858,6 +2152,7 @@ export namespace Components {
         "rowIndex": number;
         /**
           * The template to show
+          * @default ({ 		value, 	}: TableDefinitionData) => value
          */
         "template": TableDefinitionTemplateFunc;
         /**
@@ -1866,24 +2161,29 @@ export namespace Components {
         "value": any;
         /**
           * The variant of the column
+          * @default 'default'
          */
         "variant": 'default' | 'loading' | 'header' | 'header-secondary';
     }
     interface PTableColumn {
         /**
           * The alignment of the column
+          * @default 'start'
          */
         "align": 'start' | 'center' | 'end';
         /**
           * Wether the column should be flex
+          * @default false
          */
         "flex": boolean;
         /**
           * Wether the column should have a checkbox
+          * @default false
          */
         "hasCheckbox": boolean;
         /**
           * The alignment of the header
+          * @default null
          */
         "headerAlign": | null
 		| 'start'
@@ -1904,6 +2204,7 @@ export namespace Components {
         "path": string;
         /**
           * The sizes of the column
+          * @default 'auto'
          */
         "sizes": | 'auto'
 		| 'hidden'
@@ -1912,14 +2213,17 @@ export namespace Components {
 		| TableColumnSizes;
         /**
           * Wether the column should be sticky (Only works on angular variant of table)
+          * @default false
          */
         "sticky": boolean | 'secondary';
         /**
           * Wether the column should use the slot
+          * @default false
          */
         "useSlot": boolean;
         /**
           * The variant of the column
+          * @default 'default'
          */
         "variant": | 'subject'
 		| 'default'
@@ -1931,6 +2235,7 @@ export namespace Components {
     interface PTableExtraHeader {
         /**
           * The alignment of the column
+          * @default "start"
          */
         "align": "start" | "center" | "end";
         /**
@@ -1944,6 +2249,7 @@ export namespace Components {
 		| undefined;
         /**
           * The sizes of the column
+          * @default "auto"
          */
         "sizes": | "auto"
 		| "hidden"
@@ -1952,44 +2258,54 @@ export namespace Components {
 		| TableColumnSizes;
         /**
           * Wether the column should be sticky (Only works on angular variant of table)
+          * @default false
          */
         "sticky": boolean | "secondary";
         /**
           * Wether the column should use the slot
+          * @default true
          */
         "useSlot": boolean;
     }
     interface PTableFooter {
         /**
           * Wether to enable pagination pages
+          * @default true
          */
         "enablePaginationPages": boolean;
         /**
           * Wether to enable pagination size select
+          * @default true
          */
         "enablePaginationSize": boolean;
         /**
           * Wether to hide when there is only 1 page available
+          * @default true
          */
         "hideOnSinglePage": boolean;
         /**
           * Wether we want to show loading state
+          * @default false
          */
         "loading": boolean;
         /**
           * The current page
+          * @default 1
          */
         "page": number;
         /**
           * The amount of items per page
+          * @default PAGINATION_DEFAULT_PAGE_SIZE
          */
         "pageSize": number;
         /**
           * The options for the page size
+          * @default PAGINATION_DEFAULT_PAGE_SIZE_OPTIONS
          */
         "pageSizeOptions": number[];
         /**
           * Wether the table header has an action to adjust for on mobile
+          * @default false
          */
         "tableHeaderHasAction": boolean;
         /**
@@ -2000,14 +2316,17 @@ export namespace Components {
     interface PTableHeader {
         /**
           * The template for the action button text
+          * @default this._defaultActionButtonTemplate
          */
         "actionButtonTemplate": buttonTemplateFunc1;
         /**
           * The action button icon
+          * @default 'pencil'
          */
         "actionIcon": IconVariant;
         /**
           * Wether the action button is loading
+          * @default false
          */
         "actionLoading": boolean;
         /**
@@ -2020,38 +2339,47 @@ export namespace Components {
         "activeQuickFilterIdentifier": string;
         /**
           * Wether to enable the action button
+          * @default false
          */
         "canUseAction": boolean;
         /**
           * Wether to show the action button
+          * @default true
          */
         "enableAction": boolean;
         /**
           * Wether to show the export button
+          * @default true
          */
         "enableExport": boolean;
         /**
           * Wether to show the filter button
+          * @default true
          */
         "enableFilter": boolean;
         /**
           * Wether to show the filter button on desktop
+          * @default true
          */
         "enableFilterDesktop": boolean;
         /**
           * Wether to show the search input
+          * @default true
          */
         "enableSearch": boolean;
         /**
           * The template for the filter button text
+          * @default this._defaultFilterButtonTemplate
          */
         "filterButtonTemplate": templateFunc5;
         /**
           * The amount of items that are selected
+          * @default 0
          */
         "itemsSelectedAmount": number;
         /**
           * Wether we want to show loading state
+          * @default false
          */
         "loading": boolean;
         /**
@@ -2060,6 +2388,7 @@ export namespace Components {
         "query": string;
         /**
           * Quick filters to show
+          * @default []
          */
         "quickFilters": QuickFilter[] | string;
         /**
@@ -2070,18 +2399,22 @@ export namespace Components {
     interface PTableRow {
         /**
           * Wether the row is checked
+          * @default false
          */
         "checked": boolean;
         /**
           * Enable hover
+          * @default true
          */
         "enableHover": boolean;
         /**
           * Wether the row is the last one
+          * @default false
          */
         "isLast": boolean;
         /**
           * Variant of the header
+          * @default "default"
          */
         "variant": "default" | "secondary" | "header" | "header-secondary";
     }
@@ -2092,6 +2425,7 @@ export namespace Components {
         "action": TableRowActionFunc;
         /**
           * Wether the action is disabled
+          * @default false
          */
         "disabled": boolean;
         /**
@@ -2104,6 +2438,7 @@ export namespace Components {
         "iconFlip": IconFlipOptions2;
         /**
           * Wether the button is icon only
+          * @default false
          */
         "iconOnly": boolean;
         /**
@@ -2116,6 +2451,7 @@ export namespace Components {
         "label": string;
         /**
           * Wether the action is loading
+          * @default false
          */
         "loading": boolean;
         /**
@@ -2124,18 +2460,21 @@ export namespace Components {
         "showFunction": TableRowActionShowFunc;
         /**
           * The type of action mutli = Only multi select action single = Only an action on the row both = Action on both locations
+          * @default 'both'
          */
         "type": 'both' | 'single' | 'multi';
     }
     interface PTableRowActionsContainer {
         /**
           * Wether the row is checked
+          * @default false
          */
         "checked": boolean;
     }
     interface PToast {
         /**
           * Icon to show on the button
+          * @default 'negative'
          */
         "actionIcon": IconVariant;
         /**
@@ -2152,6 +2491,7 @@ export namespace Components {
         "content"?: string;
         /**
           * Wether to enable the close button
+          * @default true
          */
         "enableAction": boolean;
         /**
@@ -2160,12 +2500,14 @@ export namespace Components {
         "header"?: string;
         /**
           * The variant of the toast
+          * @default 'positive'
          */
         "variant": 'neutral' | 'positive' | 'biased' | 'negative';
     }
     interface PToastContainer {
         /**
           * The placement of the container
+          * @default 'top-end'
          */
         "placement": 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end';
     }
@@ -2176,6 +2518,7 @@ export namespace Components {
         "checked": boolean;
         /**
           * Wether the checkbox is disabled
+          * @default false
          */
         "disabled": boolean;
         /**
@@ -2188,12 +2531,14 @@ export namespace Components {
         "name": string;
         /**
           * Wether the checkbox is required
+          * @default true
          */
         "required": boolean;
     }
     interface PTooltip {
         /**
           * Wether to someone can manually close the popover
+          * @default true
          */
         "canManuallyClose": boolean;
         /**
@@ -2202,10 +2547,12 @@ export namespace Components {
         "content": string;
         /**
           * Wether the tooltip can be shown by user input
+          * @default true
          */
         "enableUserInput": boolean;
         /**
           * The offset of the popover
+          * @default 8
          */
         "offset": number;
         /**
@@ -2214,14 +2561,17 @@ export namespace Components {
         "placement": Placement;
         /**
           * Wether to show the popover
+          * @default false
          */
         "show": boolean;
         /**
           * The strategy of the popover placement
+          * @default 'absolute'
          */
         "strategy": Strategy;
         /**
           * The variant of the popover
+          * @default 'hover'
          */
         "variant": 'hover' | 'click' | 'error';
     }
@@ -3331,6 +3681,7 @@ declare namespace LocalJSX {
     interface PAccordion {
         /**
           * Wether the accordion can be closed
+          * @default true
          */
         "closeable"?: boolean;
         /**
@@ -3343,36 +3694,44 @@ declare namespace LocalJSX {
         "onIsOpen"?: (event: PAccordionCustomEvent<boolean>) => void;
         /**
           * Wether the accordion is open
+          * @default false
          */
         "open"?: boolean;
         /**
           * Wether the accordion can be opened
+          * @default true
          */
         "openable"?: boolean;
         /**
           * The variant of the accordion
+          * @default 'primary'
          */
         "variant"?: 'primary' | 'secondary';
     }
     interface PAttachment {
         /**
           * The type of files to accept
+          * @default null
          */
         "accept"?: string[] | string;
         /**
           * The text for the camera tooltip
+          * @default 'Camera'
          */
         "cameraTooltip"?: string;
         /**
           * The text for the delete tooltip
+          * @default 'Delete'
          */
         "deleteTooltip"?: string;
         /**
           * The text for the download tooltip
+          * @default 'Download'
          */
         "downloadTooltip"?: string;
         /**
           * Wether to enable the camera button on mobile
+          * @default false
          */
         "enableCameraOnMobile"?: boolean;
         /**
@@ -3393,10 +3752,12 @@ declare namespace LocalJSX {
         "label"?: string | HTMLSlotElement;
         /**
           * Wether the attachment is loading
+          * @default false
          */
         "loading"?: boolean;
         /**
           * The variant of the attachment
+          * @default 'read'
          */
         "mode"?: 'read' | 'write';
         /**
@@ -3417,14 +3778,17 @@ declare namespace LocalJSX {
 	}>) => void;
         /**
           * The placeholder of the attachment
+          * @default 'Upload a file...'
          */
         "placeholder"?: string;
         /**
           * Wether the attachment is required
+          * @default true
          */
         "required"?: boolean;
         /**
           * The text for the upload tooltip
+          * @default 'Upload'
          */
         "uploadTooltip"?: string;
         /**
@@ -3443,6 +3807,7 @@ declare namespace LocalJSX {
         "letters"?: string;
         /**
           * The size of the avatar
+          * @default 'base'
          */
         "size"?: | 'xs'
 		| 'sm'
@@ -3458,6 +3823,7 @@ declare namespace LocalJSX {
         "src": string;
         /**
           * The variant of the avatar in case of "letters"
+          * @default 'secondary'
          */
         "variant"?: 'secondary' | 'primary';
     }
@@ -3470,6 +3836,7 @@ declare namespace LocalJSX {
     interface PBackdrop {
         /**
           * Wether to apply blur on the background of the backdrop
+          * @default false
          */
         "applyBlur"?: boolean;
         /**
@@ -3478,6 +3845,7 @@ declare namespace LocalJSX {
         "class"?: string;
         /**
           * Wether the backdrop is closing
+          * @default false
          */
         "closing"?: boolean;
         /**
@@ -3486,10 +3854,12 @@ declare namespace LocalJSX {
         "onClicked"?: (event: PBackdropCustomEvent<MouseEvent>) => void;
         /**
           * Wether we should scroll lock the body
+          * @default true
          */
         "scrollLock"?: boolean;
         /**
           * The variant of the backdrop
+          * @default 'modal'
          */
         "variant"?: 'modal' | 'drawer';
     }
@@ -3498,22 +3868,27 @@ declare namespace LocalJSX {
     interface PButton {
         /**
           * Wether to force an active state
+          * @default false
          */
         "active"?: boolean;
         /**
           * The type of the button
+          * @default 'button'
          */
         "as"?: 'a' | 'button';
         /**
           * Position of the button in the button group, mostly un-used if not in a group
+          * @default 'none'
          */
         "buttonGroupPosition"?: 'start' | 'center' | 'end' | 'none';
         /**
           * Wether to show a chevron or not
+          * @default false
          */
         "chevron"?: boolean | 'up' | 'down';
         /**
           * Chevron position
+          * @default 'end'
          */
         "chevronPosition"?: 'start' | 'end';
         /**
@@ -3522,10 +3897,12 @@ declare namespace LocalJSX {
         "class"?: string;
         /**
           * Wether the button is disabled
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * Wether to show a error state
+          * @default false
          */
         "error"?: boolean;
         /**
@@ -3546,10 +3923,12 @@ declare namespace LocalJSX {
         "iconFlip"?: IconFlipOptions;
         /**
           * Wether the button is icon only
+          * @default false
          */
         "iconOnly"?: boolean;
         /**
           * Icon position
+          * @default 'start'
          */
         "iconPosition"?: 'start' | 'end';
         /**
@@ -3558,6 +3937,7 @@ declare namespace LocalJSX {
         "iconRotate"?: RotateOptions;
         /**
           * Wether the button should inherit text styles
+          * @default false
          */
         "inheritText"?: boolean;
         /**
@@ -3566,6 +3946,7 @@ declare namespace LocalJSX {
         "label"?: string;
         /**
           * Wether to show a loader or not
+          * @default false
          */
         "loading"?: boolean;
         /**
@@ -3574,6 +3955,7 @@ declare namespace LocalJSX {
         "onOnClick"?: (event: PButtonCustomEvent<MouseEvent>) => void;
         /**
           * The size of the button
+          * @default 'base'
          */
         "size"?: 'sm' | 'base' | 'lg';
         /**
@@ -3586,26 +3968,31 @@ declare namespace LocalJSX {
         "target"?: string;
         /**
           * The type of the button
+          * @default 'button'
          */
         "type"?: 'button' | 'submit';
         /**
           * Wether to apply an underline
+          * @default false
          */
         "underline"?: boolean;
         /**
           * The variant of the button
+          * @default 'primary'
          */
         "variant"?: ButtonVariant;
     }
     interface PButtonGroup {
         /**
           * The size of the child buttons
+          * @default 'base'
          */
         "size"?: 'sm' | 'base' | 'lg';
     }
     interface PCalendar {
         /**
           * Wether to disable the weekends
+          * @default false
          */
         "disableWeekends"?: boolean;
         /**
@@ -3614,18 +4001,22 @@ declare namespace LocalJSX {
         "disabledDates"?: Array<Date | string> | string;
         /**
           * Wether to enable the today button
+          * @default true
          */
         "enableToday"?: boolean;
         /**
           * Max date
+          * @default null
          */
         "maxDate"?: Date | string | null;
         /**
           * Min date
+          * @default null
          */
         "minDate"?: Date | string | null;
         /**
           * The mode of the datepicker
+          * @default 'day'
          */
         "mode"?: 'year' | 'month' | 'day';
         /**
@@ -3634,10 +4025,12 @@ declare namespace LocalJSX {
         "onValueChange"?: (event: PCalendarCustomEvent<any>) => void;
         /**
           * Wether to automatically preselect today
+          * @default false
          */
         "preselectToday"?: boolean;
         /**
           * The text to display on the today tooltip
+          * @default 'today'
          */
         "todayText"?: string;
         /**
@@ -3646,6 +4039,7 @@ declare namespace LocalJSX {
         "value"?: Date | string;
         /**
           * The variant of the button
+          * @default 'default'
          */
         "variant"?: 'default' | 'embedded';
     }
@@ -3654,32 +4048,39 @@ declare namespace LocalJSX {
     interface PCardContainer {
         /**
           * Wether the card should be hoverable
+          * @default false
          */
         "active"?: boolean;
         /**
           * A bg class to apply to the container
+          * @default 'bg-white dark:bg-hurricane-600'
          */
         "bgClass"?: string;
         /**
           * Wether the card should have a border
+          * @default true
          */
         "border"?: boolean;
         /**
           * Wether the card should be hoverable
+          * @default false
          */
         "hoverable"?: boolean;
         /**
           * Wether the card should have shadow
+          * @default true
          */
         "shadow"?: boolean;
         /**
           * The variant of the container
+          * @default 'default'
          */
         "variant"?: 'default' | 'error';
     }
     interface PCardHeader {
         /**
           * Wether to show the divider
+          * @default true
          */
         "divider"?: boolean;
         /**
@@ -3700,6 +4101,7 @@ declare namespace LocalJSX {
         "iconRotate"?: RotateOptions;
         /**
           * The variant of the card header
+          * @default 'default'
          */
         "variant"?: 'default' | 'curve';
     }
@@ -3710,6 +4112,7 @@ declare namespace LocalJSX {
         "checked"?: boolean;
         /**
           * Wether the checkbox is disabled
+          * @default false
          */
         "disabled"?: boolean;
         /**
@@ -3734,24 +4137,29 @@ declare namespace LocalJSX {
         "onIndeterminateChange"?: (event: PCheckboxCustomEvent<boolean>) => void;
         /**
           * Wether the checkbox is required
+          * @default true
          */
         "required"?: boolean;
     }
     interface PContentSlider {
         /**
           * Wether to disable auto centering the content
+          * @default false
          */
         "disableAutoCenter"?: boolean;
         /**
           * Wether to disable dragging the content
+          * @default false
          */
         "disableDrag"?: boolean;
         /**
           * Wether to disable clicking the indicator scrolls content
+          * @default false
          */
         "disableIndicatorClick"?: boolean;
         /**
           * Wether to hide the indicator on mobile
+          * @default false
          */
         "hideMobileIndicator"?: boolean;
     }
@@ -3762,6 +4170,7 @@ declare namespace LocalJSX {
         "onValueChange"?: (event: PCropperCustomEvent<any>) => void;
         /**
           * The return type of the onchange
+          * @default 'base64'
          */
         "returnType"?: 'canvas' | 'base64';
         /**
@@ -3772,10 +4181,12 @@ declare namespace LocalJSX {
     interface PDatepicker {
         /**
           * Wether to disable the weekends
+          * @default false
          */
         "disableWeekends"?: boolean;
         /**
           * Wether the input group is disabled used by the datepicker
+          * @default false
          */
         "disabled"?: boolean;
         /**
@@ -3784,10 +4195,12 @@ declare namespace LocalJSX {
         "disabledDates"?: Array<Date | string> | string;
         /**
           * Enable native picker for mobile devices
+          * @default true
          */
         "enableNativePicker"?: boolean;
         /**
           * Wether to enable the today button
+          * @default true
          */
         "enableToday"?: boolean;
         /**
@@ -3796,6 +4209,7 @@ declare namespace LocalJSX {
         "error"?: string;
         /**
           * The display & parse format to use
+          * @default 'dd-MM-yyyy'
          */
         "format"?: string;
         /**
@@ -3804,6 +4218,7 @@ declare namespace LocalJSX {
         "helper"?: string;
         /**
           * Hides the icon when filled
+          * @default false
          */
         "hideIconWhenFilled"?: boolean;
         /**
@@ -3812,18 +4227,22 @@ declare namespace LocalJSX {
         "label"?: string;
         /**
           * Wether the field is loading
+          * @default false
          */
         "loading"?: boolean;
         /**
           * Max date
+          * @default null
          */
         "maxDate"?: Date | string | null;
         /**
           * Min date
+          * @default null
          */
         "minDate"?: Date | string | null;
         /**
           * The mode of the datepicker
+          * @default 'day'
          */
         "mode"?: 'year' | 'month' | 'day';
         /**
@@ -3836,6 +4255,7 @@ declare namespace LocalJSX {
         "placeholder"?: string;
         /**
           * The placement of the dropdown
+          * @default 'bottom-start'
          */
         "placement"?: Placement;
         /**
@@ -3844,6 +4264,7 @@ declare namespace LocalJSX {
         "prefix"?: string;
         /**
           * Wethter to automatically preselect today
+          * @default false
          */
         "preselectToday"?: boolean;
         /**
@@ -3852,18 +4273,22 @@ declare namespace LocalJSX {
         "required"?: boolean;
         /**
           * Wether to show optional when not required
+          * @default true
          */
         "showOptional"?: boolean;
         /**
           * The size of the input group used by the datepicker
+          * @default 'base'
          */
         "size"?: 'sm' | 'base';
         /**
           * The strategy of the dropdown placement
+          * @default 'absolute'
          */
         "strategy"?: Strategy;
         /**
           * The text to display on the today tooltip
+          * @default 'today'
          */
         "todayText"?: string;
         /**
@@ -3874,24 +4299,29 @@ declare namespace LocalJSX {
     interface PDivider {
         /**
           * Where to align the content
+          * @default 'center'
          */
         "alignContent"?: 'start' | 'center' | 'end';
         /**
           * The variant of the modal body
+          * @default 'horizontal'
          */
         "variant"?: 'horizontal' | 'vertical';
     }
     interface PDrawer {
         /**
           * Wether to apply blur to the backdrop
+          * @default false
          */
         "applyBlur"?: boolean;
         /**
           * Wether to hide the drawer when the backdrop is clicked
+          * @default true
          */
         "backdropClickClose"?: boolean;
         /**
           * Wether the drawer can be closed
+          * @default true
          */
         "canClose"?: boolean;
         /**
@@ -3912,14 +4342,17 @@ declare namespace LocalJSX {
         "onClosed"?: (event: PDrawerCustomEvent<null>) => void;
         /**
           * Wether we should scroll lock the body
+          * @default true
          */
         "scrollLock"?: boolean;
         /**
           * Wether to show the drawer or not
+          * @default false
          */
         "show"?: boolean;
         /**
           * Wether to show the close on mobile in the header
+          * @default true
          */
         "showClose"?: boolean;
     }
@@ -3928,6 +4361,7 @@ declare namespace LocalJSX {
     interface PDrawerContainer {
         /**
           * Wether the container is closing
+          * @default false
          */
         "closing"?: boolean;
     }
@@ -3938,24 +4372,29 @@ declare namespace LocalJSX {
         "onClose"?: (event: PDrawerHeaderCustomEvent<MouseEvent>) => void;
         /**
           * Wether to show the close button on mobile
+          * @default true
          */
         "showClose"?: boolean;
     }
     interface PDropdown {
         /**
           * Wether to allow overflow in the container
+          * @default false
          */
         "allowOverflow"?: boolean;
         /**
           * Wether to apply chevron automatically
+          * @default true
          */
         "applyChevron"?: boolean;
         /**
           * Wether to apply the full width
+          * @default true
          */
         "applyFullWidth"?: boolean;
         /**
           * Wether to apply the max width
+          * @default true
          */
         "applyMaxWidth"?: boolean;
         /**
@@ -3964,6 +4403,7 @@ declare namespace LocalJSX {
         "chevronDirection"?: 'up' | 'down';
         /**
           * Chevron position
+          * @default 'end'
          */
         "chevronPosition"?: 'start' | 'end';
         /**
@@ -3972,22 +4412,27 @@ declare namespace LocalJSX {
         "containerClass"?: string;
         /**
           * Wether to automatically close the dropdown menu after clicking inside
+          * @default false
          */
         "disableTriggerClick"?: boolean;
         /**
           * Wether to automatically close the dropdown menu after clicking inside
+          * @default false
          */
         "insideClick"?: boolean;
         /**
           * Wether the dropdown container is a datepicker dropdown
+          * @default false
          */
         "isDatepicker"?: boolean;
         /**
           * Wether to open the dropdown manually
+          * @default false
          */
         "manual"?: boolean;
         /**
           * The offset of the dropdown menu
+          * @default 8
          */
         "offset"?: number;
         /**
@@ -3996,28 +4441,34 @@ declare namespace LocalJSX {
         "onIsOpen"?: (event: PDropdownCustomEvent<boolean>) => void;
         /**
           * The content of the dropdown menu
+          * @default 'bottom-start'
          */
         "placement"?: Placement;
         /**
           * Wether the dropdown container should be scrollable when the threshold is met.
+          * @default false
          */
         "scrollable"?: boolean | 'default' | 'large';
         /**
           * Wether to show the dropdown menu
+          * @default false
          */
         "show"?: boolean;
         /**
           * The strategy of the dropdown placement
+          * @default 'absolute'
          */
         "strategy"?: Strategy;
         /**
           * The variant of the dropdown
+          * @default 'default'
          */
         "variant"?: 'default' | 'storm';
     }
     interface PDropdownMenuContainer {
         /**
           * Wether to allow overflow
+          * @default false
          */
         "allowOverflow"?: boolean;
         /**
@@ -4026,44 +4477,54 @@ declare namespace LocalJSX {
         "class"?: string;
         /**
           * Wether the container should all available space
+          * @default true
          */
         "fullWidth"?: boolean;
         /**
           * Wether the container applies it's max width
+          * @default true
          */
         "maxWidth"?: boolean;
         /**
           * Wether the container should be scrollable when the threshold is met.
+          * @default false
          */
         "scrollable"?: boolean | 'default' | 'large' | 'xlarge';
         /**
           * The variant of the container
+          * @default 'default'
          */
         "variant"?: 'default' | 'storm';
     }
     interface PDropdownMenuItem {
         /**
           * Wether the dropdown menu item is active
+          * @default false
          */
         "active"?: boolean;
         /**
           * wether to auto adjust the height
+          * @default false
          */
         "autoHeight"?: boolean;
         /**
           * Wether the dropdown menu item has a checkbox
+          * @default false
          */
         "checkbox"?: boolean;
         /**
           * Wether the item is disabled
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * Wether to enable the hover state
+          * @default true
          */
         "enableHover"?: boolean;
         /**
           * Wether to enable wrapping the text to a new line
+          * @default false
          */
         "enableTextWrap"?: boolean;
         /**
@@ -4072,14 +4533,17 @@ declare namespace LocalJSX {
         "icon"?: IconVariant;
         /**
           * Wether to apply wave animation to icon
+          * @default false
          */
         "iconWave"?: boolean;
         /**
           * wether to use the container for text
+          * @default true
          */
         "useContainer"?: boolean;
         /**
           * The variant of the item
+          * @default 'default'
          */
         "variant"?: 'default' | 'storm' | 'negative' | 'pagination';
     }
@@ -4090,10 +4554,12 @@ declare namespace LocalJSX {
         "actionIcon"?: IconVariant1;
         /**
           * The position of the action icon
+          * @default 'start'
          */
         "actionIconPosition"?: 'start' | 'end';
         /**
           * Wether the action is loading
+          * @default false
          */
         "actionLoading"?: boolean;
         /**
@@ -4102,6 +4568,7 @@ declare namespace LocalJSX {
         "actionText"?: string;
         /**
           * The variant of the action
+          * @default 'secondary'
          */
         "actionVariant"?: ButtonVariant1;
         /**
@@ -4110,6 +4577,7 @@ declare namespace LocalJSX {
         "content"?: string;
         /**
           * Wether to enable the action button
+          * @default true
          */
         "enableAction"?: boolean;
         /**
@@ -4128,22 +4596,27 @@ declare namespace LocalJSX {
     interface PField {
         /**
           * The text to show on the add button
+          * @default 'Add'
          */
         "addText"?: string;
         /**
           * The alignment of the container
+          * @default 'start'
          */
         "align"?: 'start' | 'end';
         /**
           * Wether this component handles showing the error tooltip
+          * @default true
          */
         "autoShowError"?: boolean;
         /**
           * Wether to autofocus the field
+          * @default false
          */
         "autofocus"?: boolean;
         /**
           * Wether the field is disabled
+          * @default false
          */
         "disabled"?: boolean;
         /**
@@ -4156,14 +4629,17 @@ declare namespace LocalJSX {
         "errorPlacement"?: Placement;
         /**
           * The method to use when focusing the input
+          * @default 'focus'
          */
         "focusMethod"?: 'focus' | 'click';
         /**
           * Wether the field is focused
+          * @default false
          */
         "focused"?: boolean;
         /**
           * Force show the error tooltip
+          * @default false
          */
         "forceShowTooltip"?: boolean;
         /**
@@ -4180,6 +4656,7 @@ declare namespace LocalJSX {
         "iconFlip"?: IconFlipOptions;
         /**
           * Icon position
+          * @default 'start'
          */
         "iconPosition"?: 'start' | 'end';
         /**
@@ -4196,6 +4673,7 @@ declare namespace LocalJSX {
         "label"?: string;
         /**
           * Wether the field is in loading state
+          * @default false
          */
         "loading"?: boolean;
         /**
@@ -4228,26 +4706,32 @@ declare namespace LocalJSX {
         "prefix"?: string;
         /**
           * The size of the field
+          * @default {}
          */
         "properties"?: any | string;
         /**
           * Wether the field is required
+          * @default true
          */
         "required"?: boolean;
         /**
           * Wether to select all text on focus
+          * @default true
          */
         "selectAllOnFocus"?: boolean;
         /**
           * Wether to show an add button when empty
+          * @default false
          */
         "showAddOnEmpty"?: boolean;
         /**
           * Wether to show optional when not required
+          * @default true
          */
         "showOptional"?: boolean;
         /**
           * The size of the field
+          * @default 'base'
          */
         "size"?: 'sm' | 'base';
         /**
@@ -4256,6 +4740,7 @@ declare namespace LocalJSX {
         "suffix"?: string;
         /**
           * The type of the field
+          * @default 'text'
          */
         "type"?: HTMLInputTypeAttribute | 'textarea' | 'slot';
         /**
@@ -4264,12 +4749,14 @@ declare namespace LocalJSX {
         "value"?: string | number;
         /**
           * The variant of the field
+          * @default 'write'
          */
         "variant"?: 'read' | 'write';
     }
     interface PFieldContainer {
         /**
           * Align content to the start or end
+          * @default 'start'
          */
         "align"?: 'start' | 'end';
         /**
@@ -4282,6 +4769,7 @@ declare namespace LocalJSX {
         "errorPlacement"?: Placement;
         /**
           * Force show the error tooltip
+          * @default false
          */
         "forceShowTooltip"?: boolean;
         /**
@@ -4298,15 +4786,18 @@ declare namespace LocalJSX {
         "label"?: string | HTMLSlotElement;
         /**
           * Wether the field container is in loading state
+          * @default false
          */
         "loading"?: boolean;
         /**
           * The size of the loader
+          * @default 'base'
          */
         "loadingSize"?: 'base' | 'sm';
         "onFocus"?: (event: PFieldContainerCustomEvent<void>) => void;
         /**
           * The template for the optional text
+          * @default this._defaultOptionalTemplate
          */
         "optionalTemplate"?: templateFunc1;
         /**
@@ -4315,6 +4806,7 @@ declare namespace LocalJSX {
         "required"?: boolean;
         /**
           * Wether to show optional when not required
+          * @default true
          */
         "showOptional"?: boolean;
         /**
@@ -4325,18 +4817,22 @@ declare namespace LocalJSX {
     interface PFloatingMenuContainer {
         /**
           * The amount selected
+          * @default 0
          */
         "amount"?: number;
         /**
           * The template for amount selected
+          * @default ( 		amount: number 	) => 		formatTranslation( 			(amount === 1 				? this._locales.amount_selected 				: this._locales.amount_selected_plural 			)?.replace('{{amount}}', amount) 		)
          */
         "amountSelectedTemplate"?: amountSelectedTemplateFunc;
         /**
           * Wether to show the amount selected
+          * @default true
          */
         "enableAmountSelected"?: boolean;
         /**
           * Wether to enablethe close button
+          * @default true
          */
         "enableClose"?: boolean;
         /**
@@ -4345,16 +4841,19 @@ declare namespace LocalJSX {
         "onClose"?: (event: PFloatingMenuContainerCustomEvent<MouseEvent>) => void;
         /**
           * Wether the container is used in the table
+          * @default false
          */
         "usedInTable"?: boolean;
     }
     interface PFloatingMenuItem {
         /**
           * Wether the item is disabled
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * Wether it should have a hover effect
+          * @default true
          */
         "hover"?: boolean;
         /**
@@ -4367,6 +4866,7 @@ declare namespace LocalJSX {
         "iconFlip"?: IconFlipOptions;
         /**
           * Icon position
+          * @default 'end'
          */
         "iconPosition"?: 'start' | 'end';
         /**
@@ -4375,16 +4875,19 @@ declare namespace LocalJSX {
         "iconRotate"?: RotateOptions1;
         /**
           * Wether loading is applied
+          * @default false
          */
         "loading"?: boolean;
     }
     interface PHelper {
         /**
           * The placement of the helper popover
+          * @default 'top'
          */
         "placement"?: Placement;
         /**
           * The strategy of the popover placement
+          * @default 'absolute'
          */
         "strategy"?: Strategy;
     }
@@ -4401,14 +4904,17 @@ declare namespace LocalJSX {
     interface PIcon {
         /**
           * Wether to flip the icon horizontally or vertically
+          * @default 'none'
          */
         "flip"?: IconFlipOptions1;
         /**
           * Wether to rotate the icon x degrees
+          * @default 0
          */
         "rotate"?: number;
         /**
           * The size of the icon, using tailwind sizes
+          * @default 'base'
          */
         "size"?: TextSizeOptions;
         /**
@@ -4431,6 +4937,7 @@ declare namespace LocalJSX {
     interface PInfoPanel {
         /**
           * Wether the panel can be closed
+          * @default false
          */
         "closeable"?: boolean;
         /**
@@ -4447,6 +4954,7 @@ declare namespace LocalJSX {
         "onClosed"?: (event: PInfoPanelCustomEvent<void>) => void;
         /**
           * The variant of the info panel
+          * @default 'feedback'
          */
         "variant"?: 'neutral' | 'positive' | 'biased' | 'negative' | 'feedback';
     }
@@ -4461,6 +4969,7 @@ declare namespace LocalJSX {
         "iconFlip"?: IconFlipOptions;
         /**
           * Wether to only show the icon
+          * @default false
          */
         "iconOnly"?: boolean;
         /**
@@ -4469,10 +4978,12 @@ declare namespace LocalJSX {
         "iconRotate"?: RotateOptions1;
         /**
           * Wether to keep the content on mobile
+          * @default false
          */
         "keepMobileContent"?: boolean;
         /**
           * Variant of the label
+          * @default 'neutral'
          */
         "variant"?: | 'positive'
 		| 'biased'
@@ -4487,6 +4998,7 @@ declare namespace LocalJSX {
         "onScroll"?: (event: PLayoutCustomEvent<any>) => void;
         /**
           * Variant of the layout
+          * @default 'default'
          */
         "variant"?: 'default' | 'login' | 'office';
     }
@@ -4495,6 +5007,7 @@ declare namespace LocalJSX {
     interface PListingItem {
         /**
           * The icon of the step
+          * @default 'placeholder'
          */
         "icon"?: IconVariant;
     }
@@ -4503,6 +5016,7 @@ declare namespace LocalJSX {
     interface PLoader {
         /**
           * Color of the loader
+          * @default 'indigo'
          */
         "color"?: 'indigo' | 'white' | 'off-white' | 'storm';
         /**
@@ -4515,20 +5029,24 @@ declare namespace LocalJSX {
         "modalTitle"?: string;
         /**
           * Wether to show or hide the loader
+          * @default true
          */
         "show"?: boolean | Observable<boolean>;
         /**
           * Variant of loader
+          * @default 'inline'
          */
         "variant"?: 'inline' | 'full-width' | 'full-screen' | 'modal' | 'ghost';
     }
     interface PModal {
         /**
           * Wether to apply blur to the backdrop
+          * @default false
          */
         "applyBlur"?: boolean;
         /**
           * Wether to hide the modal when the backdrop is clicked
+          * @default true
          */
         "backdropClickClose"?: boolean;
         /**
@@ -4545,42 +5063,51 @@ declare namespace LocalJSX {
         "onClosed"?: (event: PModalCustomEvent<string>) => void;
         /**
           * Wether we should scroll lock the body
+          * @default true
          */
         "scrollLock"?: boolean;
         /**
           * Wether to show the modal or not
+          * @default false
          */
         "show"?: boolean;
         /**
           * Wether to show the close button in the header
+          * @default true
          */
         "showClose"?: boolean;
         /**
           * Wether to show the footer on mobile
+          * @default false
          */
         "showMobileFooter"?: boolean;
         /**
           * The size of the modal container
+          * @default 'base'
          */
         "size"?: 'xs' | 'base' | 'lg' | 'xl' | '2xl';
     }
     interface PModalBody {
         /**
           * Wether the modal body should be rounded at the bottom
+          * @default false
          */
         "roundedBottom"?: boolean;
         /**
           * Wether the modal body should be rounded at the top
+          * @default false
          */
         "roundedTop"?: boolean;
     }
     interface PModalContainer {
         /**
           * Wether the container is closing
+          * @default false
          */
         "closing"?: boolean;
         /**
           * The size of the modal container
+          * @default 'base'
          */
         "size"?: 'xs' | 'base' | 'lg' | 'xl' | '2xl';
     }
@@ -4593,6 +5120,7 @@ declare namespace LocalJSX {
         "onClose"?: (event: PModalHeaderCustomEvent<MouseEvent>) => void;
         /**
           * Wether to show the close button on mobile
+          * @default true
          */
         "showClose"?: boolean;
     }
@@ -4601,14 +5129,17 @@ declare namespace LocalJSX {
     interface PNavigationItem {
         /**
           * Wether the navigation item is active
+          * @default false
          */
         "active"?: boolean;
         /**
           * Wether the span should contain a w-full
+          * @default false
          */
         "applyFullWidth"?: boolean;
         /**
           * The element to use for the navigation item
+          * @default 'a'
          */
         "as"?: string;
         /**
@@ -4629,6 +5160,7 @@ declare namespace LocalJSX {
         "icon": IconVariant;
         /**
           * Wether the navigation item is loading
+          * @default false
          */
         "loading"?: boolean;
         /**
@@ -4647,14 +5179,17 @@ declare namespace LocalJSX {
     interface PPagination {
         /**
           * Wether to enable pagination pages
+          * @default true
          */
         "enablePaginationPages"?: boolean;
         /**
           * Wether to enable pagination size select
+          * @default true
          */
         "enablePaginationSize"?: boolean;
         /**
           * Wether to hide when there is only 1 page available
+          * @default true
          */
         "hideOnSinglePage"?: boolean;
         /**
@@ -4671,14 +5206,17 @@ declare namespace LocalJSX {
         "onPagesChange"?: (event: PPaginationCustomEvent<number>) => void;
         /**
           * The current page
+          * @default 1
          */
         "page"?: number;
         /**
           * The amount of items per page
+          * @default PAGINATION_DEFAULT_PAGE_SIZE
          */
         "pageSize"?: number;
         /**
           * The options for the page size
+          * @default PAGINATION_DEFAULT_PAGE_SIZE_OPTIONS
          */
         "pageSizeOptions"?: number[];
         /**
@@ -4689,10 +5227,12 @@ declare namespace LocalJSX {
     interface PPaginationPages {
         /**
           * The template for the data view
+          * @default this._defaultDropdownPageTemplate
          */
         "dropdownPageTemplate"?: templateFunc2;
         /**
           * Wether to hide when there is only 1 page available
+          * @default false
          */
         "hideOnSinglePage"?: boolean;
         /**
@@ -4705,10 +5245,12 @@ declare namespace LocalJSX {
         "onPagesChange"?: (event: PPaginationPagesCustomEvent<number>) => void;
         /**
           * The current page
+          * @default 1
          */
         "page"?: number;
         /**
           * The amount of items per page
+          * @default PAGINATION_DEFAULT_PAGE_SIZE
          */
         "pageSize"?: number;
         /**
@@ -4719,28 +5261,34 @@ declare namespace LocalJSX {
     interface PPaginationPagesItem {
         /**
           * Wether the pagination item is active
+          * @default false
          */
         "active"?: boolean;
         /**
           * Wether the pagination item is disabled
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * Wether the pagination item has hover
+          * @default true
          */
         "hover"?: boolean;
         /**
           * The variant of the item
+          * @default 'default'
          */
         "variant"?: 'default' | 'carousel';
     }
     interface PPaginationSize {
         /**
           * Wether to hide when there is only 1 page available
+          * @default false
          */
         "hidden"?: boolean;
         /**
           * The template for the data view
+          * @default this._defaultItemTemplate
          */
         "itemTemplate"?: templateFunc3;
         /**
@@ -4749,26 +5297,31 @@ declare namespace LocalJSX {
         "onSizeChange"?: (event: PPaginationSizeCustomEvent<number>) => void;
         /**
           * The current page
+          * @default PAGINATION_DEFAULT_PAGE_SIZE
          */
         "size"?: number;
         /**
           * The available sizes
+          * @default PAGINATION_DEFAULT_PAGE_SIZE_OPTIONS
          */
         "sizeOptions"?: number[];
     }
     interface PProfile {
         /**
           * The position of the dropdown
+          * @default 'bottom-end'
          */
         "dropdownLocation"?: 'top-end' | 'bottom-end';
     }
     interface PRadio {
         /**
           * Wether the radio is checked
+          * @default false
          */
         "checked"?: boolean;
         /**
           * Wether the radio is disabled
+          * @default false
          */
         "disabled"?: boolean;
         /**
@@ -4785,6 +5338,7 @@ declare namespace LocalJSX {
         "onCheckedChange"?: (event: PRadioCustomEvent<boolean>) => void;
         /**
           * Wether the radio is required
+          * @default true
          */
         "required"?: boolean;
         /**
@@ -4795,10 +5349,12 @@ declare namespace LocalJSX {
     interface PRange {
         /**
           * The max value of the range
+          * @default 100
          */
         "max"?: number;
         /**
           * The min value of the range
+          * @default 0
          */
         "min"?: number;
         /**
@@ -4807,10 +5363,12 @@ declare namespace LocalJSX {
         "onValueChange"?: (event: PRangeCustomEvent<string>) => void;
         /**
           * The steps to go by
+          * @default 0.5
          */
         "step"?: number;
         /**
           * The current value of the range
+          * @default 0
          */
         "value"?: number;
     }
@@ -4819,6 +5377,7 @@ declare namespace LocalJSX {
     interface PSegmentItem {
         /**
           * Wether the segment item is active
+          * @default false
          */
         "active"?: boolean;
         /**
@@ -4831,6 +5390,7 @@ declare namespace LocalJSX {
         "iconFlip"?: IconFlipOptions;
         /**
           * Wether the segment item is icon only
+          * @default false
          */
         "iconOnly"?: boolean;
         /**
@@ -4839,12 +5399,14 @@ declare namespace LocalJSX {
         "iconRotate"?: RotateOptions;
         /**
           * The size of the
+          * @default 'default'
          */
         "variant"?: 'default' | 'block';
     }
     interface PSelect {
         /**
           * The text to show when add item is being shown
+          * @default 'Add item'
          */
         "addItemText"?: string;
         /**
@@ -4857,14 +5419,17 @@ declare namespace LocalJSX {
         "applyClassOnSelectedItemInMenu"?: boolean;
         /**
           * Wether the input uses async filtering
+          * @default false
          */
         "asyncFilter"?: boolean;
         /**
           * Wether to automatically select the first item
+          * @default true
          */
         "autoSelectFirst"?: boolean;
         /**
           * The placeholder of the input used for auto complete
+          * @default 'Search...'
          */
         "autocompletePlaceholder"?: string;
         /**
@@ -4877,14 +5442,17 @@ declare namespace LocalJSX {
         "avatarLettersKey"?: string;
         /**
           * The key of a class in an item to apply
+          * @default 'class'
          */
         "classKey"?: string;
         /**
           * Wether the input group is disabled used by the select
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * The key of the object to display
+          * @default 'text'
          */
         "displayKey"?: string;
         /**
@@ -4893,18 +5461,22 @@ declare namespace LocalJSX {
         "dropdownDisplayKey"?: string | undefined;
         /**
           * The text to show when items is empty
+          * @default 'No items available'
          */
         "emptyStateText"?: string;
         /**
           * Wether to enable autocomplete
+          * @default true
          */
         "enableAutocomplete"?: boolean;
         /**
           * Wether to show the select all item with multi select
+          * @default false
          */
         "enableSelectAll"?: boolean;
         /**
           * Wether to enable wrapping the text to a new line in the dropdown menu
+          * @default false
          */
         "enableTextWrap"?: boolean;
         /**
@@ -4921,10 +5493,12 @@ declare namespace LocalJSX {
         "icon"?: IconVariant;
         /**
           * The key of the class we can apploy to the icon
+          * @default 'iconClass'
          */
         "iconClassKey"?: string;
         /**
           * The key of icon variant within an item to show
+          * @default 'icon'
          */
         "iconKey"?: string;
         /**
@@ -4941,10 +5515,12 @@ declare namespace LocalJSX {
         "label"?: string;
         /**
           * Wether to show loading items
+          * @default false
          */
         "loading"?: boolean;
         /**
           * The maximum amount of items to display
+          * @default SELECT_DEFAULT_MAX_DISPLAYED_ITEMS
          */
         "maxDisplayedItems"?: number;
         /**
@@ -4989,6 +5565,7 @@ declare namespace LocalJSX {
         "queryKey"?: string;
         /**
           * Wether the field is required
+          * @default true
          */
         "required"?: boolean;
         /**
@@ -4997,6 +5574,7 @@ declare namespace LocalJSX {
         "selectAllIcon"?: IconVariant | undefined;
         /**
           * The text of the select all item
+          * @default 'Select all'
          */
         "selectAllText"?: string;
         /**
@@ -5005,10 +5583,12 @@ declare namespace LocalJSX {
         "selectionDisplayKey"?: string | undefined;
         /**
           * Wether to show a "add" item
+          * @default false
          */
         "showAddItem"?: boolean;
         /**
           * Wether to show the chevron or not
+          * @default true
          */
         "showChevron"?: boolean;
         /**
@@ -5017,14 +5597,17 @@ declare namespace LocalJSX {
         "showIconOnSelectedItem"?: string;
         /**
           * Wether to show optional when not required
+          * @default true
          */
         "showOptional"?: boolean;
         /**
           * The size of the input group used by the select
+          * @default 'base'
          */
         "size"?: 'sm' | 'base';
         /**
           * The strategy to use for the dropdown placement
+          * @default 'absolute'
          */
         "strategy"?: Strategy;
         /**
@@ -5039,28 +5622,34 @@ declare namespace LocalJSX {
     interface PSmile {
         /**
           * The variant of the smile footer
+          * @default 'modal'
          */
         "variant"?: 'modal' | 'card' | 'full';
     }
     interface PStepper {
         /**
           * The currently active step
+          * @default 1
          */
         "activeStep"?: number;
         /**
           * The alignment of the content in case of vertical direction
+          * @default 'center'
          */
         "align"?: 'start' | 'center' | 'end';
         /**
           * The position of the content in case of vertical direction
+          * @default 'end'
          */
         "contentPosition"?: 'start' | 'end';
         /**
           * The direction of the stepper
+          * @default 'horizontal'
          */
         "direction"?: 'horizontal' | 'vertical';
         /**
           * Wether to automatically apply active & finished to items
+          * @default true
          */
         "enableAutoStatus"?: boolean;
         /**
@@ -5071,36 +5660,44 @@ declare namespace LocalJSX {
     interface PStepperItem {
         /**
           * Wether the step is active
+          * @default false
          */
         "active"?: boolean;
         /**
           * The alignment of the content in case of vertical direction
+          * @default 'center'
          */
         "align"?: 'start' | 'center' | 'end';
         /**
           * The position of the content in case of vertical direction
+          * @default 'end'
          */
         "contentPosition"?: 'start' | 'end';
         /**
           * The direction of the item
+          * @default 'horizontal'
          */
         "direction"?: 'horizontal' | 'vertical';
         /**
           * Wether the step is finished
+          * @default false
          */
         "finished"?: boolean;
         /**
           * The number of the step
+          * @default 1
          */
         "number"?: number;
     }
     interface PStepperLine {
         /**
           * Wether the line is active
+          * @default false
          */
         "active"?: boolean;
         /**
           * The direction of the stepper line
+          * @default 'horizontal'
          */
         "direction"?: 'horizontal' | 'vertical';
     }
@@ -5109,20 +5706,24 @@ declare namespace LocalJSX {
     interface PTabItem {
         /**
           * Wether the tab item is active
+          * @default false
          */
         "active"?: boolean;
     }
     interface PTable {
         /**
           * Wether the action button is enabled
+          * @default false
          */
         "actionButtonEnabled"?: boolean;
         /**
           * The action button icon
+          * @default 'pencil'
          */
         "actionButtonIcon"?: IconVariant1;
         /**
           * Wether the action button is loading
+          * @default false
          */
         "actionButtonLoading"?: boolean;
         /**
@@ -5139,67 +5740,96 @@ declare namespace LocalJSX {
         "activeQuickFilterIdentifier"?: string;
         /**
           * The amount of loading rows to show
+          * @default 6
          */
         "amountOfLoadingRows"?: number;
         /**
           * A key to determine if a row can be selected
          */
         "canSelectKey"?: string;
+        /**
+          * @default () => 		formatTranslation(this._locales.empty_state?.no_filter.action)
+         */
         "emptyStateAction"?: templateFunc4;
+        /**
+          * @default () => 		formatTranslation(this._locales.empty_state?.no_filter.content)
+         */
         "emptyStateContent"?: templateFunc4;
+        /**
+          * @default () => 		formatTranslation(this._locales.empty_state.filtered.content)
+         */
         "emptyStateFilteredContent"?: templateFunc4;
+        /**
+          * @default () => 		formatTranslation(this._locales.empty_state.filtered.header)
+         */
         "emptyStateFilteredHeader"?: templateFunc4;
+        /**
+          * @default () => 		formatTranslation(this._locales.empty_state?.no_filter.header)
+         */
         "emptyStateHeader"?: templateFunc4;
         /**
           * Wether to show the action button
+          * @default false
          */
         "enableAction"?: boolean;
         /**
           * Wether to enable empty state action
+          * @default true
          */
         "enableEmptyStateAction"?: boolean;
         /**
           * Wether to enable export
+          * @default true
          */
         "enableExport"?: boolean;
         /**
           * Wether to show the filter button
+          * @default true
          */
         "enableFilter"?: boolean;
         /**
           * Wether to show the filter button on desktop
+          * @default true
          */
         "enableFilterDesktop"?: boolean;
         /**
           * Wether to enable the floating menu
+          * @default true
          */
         "enableFloatingMenu"?: boolean;
         /**
           * Wether to show the header
+          * @default true
          */
         "enableFooter"?: boolean;
         /**
           * Wether to show the header
+          * @default true
          */
         "enableHeader"?: boolean;
         /**
           * Wether to enable pagination pages
+          * @default true
          */
         "enablePaginationPages"?: boolean;
         /**
           * Wether to enable pagination size select
+          * @default true
          */
         "enablePaginationSize"?: boolean;
         /**
           * Wether to enable row clicking
+          * @default true
          */
         "enableRowClick"?: boolean;
         /**
           * Wether to enable selection
+          * @default true
          */
         "enableRowSelection"?: boolean;
         /**
           * Wether to show the search input
+          * @default true
          */
         "enableSearch"?: boolean;
         /**
@@ -5208,18 +5838,22 @@ declare namespace LocalJSX {
         "filterButtonTemplate"?: templateFunc4;
         /**
           * The template for amount selected item in the floating menu
+          * @default ( 		amount: number 	) => 		formatTranslation( 			(amount === 1 				? this._locales.floating_menu?.amount_selected 				: this._locales.floating_menu?.amount_selected_plural 			)?.replace('{{amount}}', amount) 		)
          */
         "floatingMenuAmountSelectedTemplate"?: amountSelectedTemplateFunc1;
         /**
           * Wether the footer should show loading state
+          * @default false
          */
         "footerLoading"?: boolean;
         /**
           * Wether the header should show loading state
+          * @default false
          */
         "headerLoading"?: boolean;
         /**
           * Wether to hide when there is only 1 page available
+          * @default true
          */
         "hideOnSinglePage"?: boolean;
         /**
@@ -5228,6 +5862,7 @@ declare namespace LocalJSX {
         "items"?: string;
         /**
           * Wether data is loading
+          * @default false
          */
         "loading"?: boolean;
         /**
@@ -5284,14 +5919,17 @@ declare namespace LocalJSX {
         "onSelectedRowsChange"?: (event: PTableCustomEvent<any>) => void;
         /**
           * The current page
+          * @default 1
          */
         "page"?: number;
         /**
           * The amount of items per page
+          * @default PAGINATION_DEFAULT_PAGE_SIZE
          */
         "pageSize"?: number;
         /**
           * The options for the page size
+          * @default PAGINATION_DEFAULT_PAGE_SIZE_OPTIONS
          */
         "pageSizeOptions"?: number[];
         /**
@@ -5300,6 +5938,7 @@ declare namespace LocalJSX {
         "query"?: string;
         /**
           * Quick filters to show
+          * @default []
          */
         "quickFilters"?: QuickFilter[] | string;
         /**
@@ -5312,12 +5951,16 @@ declare namespace LocalJSX {
         "selectedFiltersAmount"?: number;
         /**
           * The current selection of items
+          * @default []
          */
         "selectedRows"?: any[];
         /**
           * The key to determine if a row is selected
          */
         "selectionKey"?: string;
+        /**
+          * @default true
+         */
         "shadow"?: boolean;
         /**
           * The total amount of items
@@ -5331,6 +5974,7 @@ declare namespace LocalJSX {
         "checkbox"?: any;
         /**
           * Wether the cell needs checkbox offset instead of a checkbox
+          * @default false
          */
         "checkboxOffset"?: boolean;
         /**
@@ -5351,6 +5995,7 @@ declare namespace LocalJSX {
         "rowIndex"?: number;
         /**
           * The template to show
+          * @default ({ 		value, 	}: TableDefinitionData) => value
          */
         "template"?: TableDefinitionTemplateFunc;
         /**
@@ -5359,24 +6004,29 @@ declare namespace LocalJSX {
         "value"?: any;
         /**
           * The variant of the column
+          * @default 'default'
          */
         "variant"?: 'default' | 'loading' | 'header' | 'header-secondary';
     }
     interface PTableColumn {
         /**
           * The alignment of the column
+          * @default 'start'
          */
         "align"?: 'start' | 'center' | 'end';
         /**
           * Wether the column should be flex
+          * @default false
          */
         "flex"?: boolean;
         /**
           * Wether the column should have a checkbox
+          * @default false
          */
         "hasCheckbox"?: boolean;
         /**
           * The alignment of the header
+          * @default null
          */
         "headerAlign"?: | null
 		| 'start'
@@ -5401,6 +6051,7 @@ declare namespace LocalJSX {
         "path"?: string;
         /**
           * The sizes of the column
+          * @default 'auto'
          */
         "sizes"?: | 'auto'
 		| 'hidden'
@@ -5409,14 +6060,17 @@ declare namespace LocalJSX {
 		| TableColumnSizes;
         /**
           * Wether the column should be sticky (Only works on angular variant of table)
+          * @default false
          */
         "sticky"?: boolean | 'secondary';
         /**
           * Wether the column should use the slot
+          * @default false
          */
         "useSlot"?: boolean;
         /**
           * The variant of the column
+          * @default 'default'
          */
         "variant"?: | 'subject'
 		| 'default'
@@ -5428,6 +6082,7 @@ declare namespace LocalJSX {
     interface PTableExtraHeader {
         /**
           * The alignment of the column
+          * @default "start"
          */
         "align"?: "start" | "center" | "end";
         /**
@@ -5445,6 +6100,7 @@ declare namespace LocalJSX {
 		| undefined;
         /**
           * The sizes of the column
+          * @default "auto"
          */
         "sizes"?: | "auto"
 		| "hidden"
@@ -5453,28 +6109,34 @@ declare namespace LocalJSX {
 		| TableColumnSizes;
         /**
           * Wether the column should be sticky (Only works on angular variant of table)
+          * @default false
          */
         "sticky"?: boolean | "secondary";
         /**
           * Wether the column should use the slot
+          * @default true
          */
         "useSlot"?: boolean;
     }
     interface PTableFooter {
         /**
           * Wether to enable pagination pages
+          * @default true
          */
         "enablePaginationPages"?: boolean;
         /**
           * Wether to enable pagination size select
+          * @default true
          */
         "enablePaginationSize"?: boolean;
         /**
           * Wether to hide when there is only 1 page available
+          * @default true
          */
         "hideOnSinglePage"?: boolean;
         /**
           * Wether we want to show loading state
+          * @default false
          */
         "loading"?: boolean;
         /**
@@ -5491,18 +6153,22 @@ declare namespace LocalJSX {
         "onPageSizeChange"?: (event: PTableFooterCustomEvent<number>) => void;
         /**
           * The current page
+          * @default 1
          */
         "page"?: number;
         /**
           * The amount of items per page
+          * @default PAGINATION_DEFAULT_PAGE_SIZE
          */
         "pageSize"?: number;
         /**
           * The options for the page size
+          * @default PAGINATION_DEFAULT_PAGE_SIZE_OPTIONS
          */
         "pageSizeOptions"?: number[];
         /**
           * Wether the table header has an action to adjust for on mobile
+          * @default false
          */
         "tableHeaderHasAction"?: boolean;
         /**
@@ -5513,14 +6179,17 @@ declare namespace LocalJSX {
     interface PTableHeader {
         /**
           * The template for the action button text
+          * @default this._defaultActionButtonTemplate
          */
         "actionButtonTemplate"?: buttonTemplateFunc1;
         /**
           * The action button icon
+          * @default 'pencil'
          */
         "actionIcon"?: IconVariant;
         /**
           * Wether the action button is loading
+          * @default false
          */
         "actionLoading"?: boolean;
         /**
@@ -5533,38 +6202,47 @@ declare namespace LocalJSX {
         "activeQuickFilterIdentifier"?: string;
         /**
           * Wether to enable the action button
+          * @default false
          */
         "canUseAction"?: boolean;
         /**
           * Wether to show the action button
+          * @default true
          */
         "enableAction"?: boolean;
         /**
           * Wether to show the export button
+          * @default true
          */
         "enableExport"?: boolean;
         /**
           * Wether to show the filter button
+          * @default true
          */
         "enableFilter"?: boolean;
         /**
           * Wether to show the filter button on desktop
+          * @default true
          */
         "enableFilterDesktop"?: boolean;
         /**
           * Wether to show the search input
+          * @default true
          */
         "enableSearch"?: boolean;
         /**
           * The template for the filter button text
+          * @default this._defaultFilterButtonTemplate
          */
         "filterButtonTemplate"?: templateFunc5;
         /**
           * The amount of items that are selected
+          * @default 0
          */
         "itemsSelectedAmount"?: number;
         /**
           * Wether we want to show loading state
+          * @default false
          */
         "loading"?: boolean;
         /**
@@ -5593,6 +6271,7 @@ declare namespace LocalJSX {
         "query"?: string;
         /**
           * Quick filters to show
+          * @default []
          */
         "quickFilters"?: QuickFilter[] | string;
         /**
@@ -5603,18 +6282,22 @@ declare namespace LocalJSX {
     interface PTableRow {
         /**
           * Wether the row is checked
+          * @default false
          */
         "checked"?: boolean;
         /**
           * Enable hover
+          * @default true
          */
         "enableHover"?: boolean;
         /**
           * Wether the row is the last one
+          * @default false
          */
         "isLast"?: boolean;
         /**
           * Variant of the header
+          * @default "default"
          */
         "variant"?: "default" | "secondary" | "header" | "header-secondary";
     }
@@ -5625,6 +6308,7 @@ declare namespace LocalJSX {
         "action"?: TableRowActionFunc;
         /**
           * Wether the action is disabled
+          * @default false
          */
         "disabled"?: boolean;
         /**
@@ -5637,6 +6321,7 @@ declare namespace LocalJSX {
         "iconFlip"?: IconFlipOptions2;
         /**
           * Wether the button is icon only
+          * @default false
          */
         "iconOnly"?: boolean;
         /**
@@ -5649,6 +6334,7 @@ declare namespace LocalJSX {
         "label"?: string;
         /**
           * Wether the action is loading
+          * @default false
          */
         "loading"?: boolean;
         /**
@@ -5657,18 +6343,21 @@ declare namespace LocalJSX {
         "showFunction"?: TableRowActionShowFunc;
         /**
           * The type of action mutli = Only multi select action single = Only an action on the row both = Action on both locations
+          * @default 'both'
          */
         "type"?: 'both' | 'single' | 'multi';
     }
     interface PTableRowActionsContainer {
         /**
           * Wether the row is checked
+          * @default false
          */
         "checked"?: boolean;
     }
     interface PToast {
         /**
           * Icon to show on the button
+          * @default 'negative'
          */
         "actionIcon"?: IconVariant;
         /**
@@ -5685,6 +6374,7 @@ declare namespace LocalJSX {
         "content"?: string;
         /**
           * Wether to enable the close button
+          * @default true
          */
         "enableAction"?: boolean;
         /**
@@ -5697,12 +6387,14 @@ declare namespace LocalJSX {
         "onAction"?: (event: PToastCustomEvent<MouseEvent>) => void;
         /**
           * The variant of the toast
+          * @default 'positive'
          */
         "variant"?: 'neutral' | 'positive' | 'biased' | 'negative';
     }
     interface PToastContainer {
         /**
           * The placement of the container
+          * @default 'top-end'
          */
         "placement"?: 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end';
     }
@@ -5713,6 +6405,7 @@ declare namespace LocalJSX {
         "checked"?: boolean;
         /**
           * Wether the checkbox is disabled
+          * @default false
          */
         "disabled"?: boolean;
         /**
@@ -5733,12 +6426,14 @@ declare namespace LocalJSX {
         "onIndeterminateChange"?: (event: PToggleCustomEvent<boolean>) => void;
         /**
           * Wether the checkbox is required
+          * @default true
          */
         "required"?: boolean;
     }
     interface PTooltip {
         /**
           * Wether to someone can manually close the popover
+          * @default true
          */
         "canManuallyClose"?: boolean;
         /**
@@ -5747,10 +6442,12 @@ declare namespace LocalJSX {
         "content"?: string;
         /**
           * Wether the tooltip can be shown by user input
+          * @default true
          */
         "enableUserInput"?: boolean;
         /**
           * The offset of the popover
+          * @default 8
          */
         "offset"?: number;
         /**
@@ -5763,14 +6460,17 @@ declare namespace LocalJSX {
         "placement"?: Placement;
         /**
           * Wether to show the popover
+          * @default false
          */
         "show"?: boolean;
         /**
           * The strategy of the popover placement
+          * @default 'absolute'
          */
         "strategy"?: Strategy;
         /**
           * The variant of the popover
+          * @default 'hover'
          */
         "variant"?: 'hover' | 'click' | 'error';
     }

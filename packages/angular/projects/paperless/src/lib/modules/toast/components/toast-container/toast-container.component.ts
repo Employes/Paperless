@@ -21,11 +21,12 @@ export declare interface PToastContainer extends Components.PToastContainer {
 	inputs: ['placement'],
 })
 @Component({
-	selector: 'p-toast-container',
-	changeDetection: ChangeDetectionStrategy.OnPush,
-	templateUrl: './toast-container.component.html',
-	inputs: ['placement'],
-	animations: [SLIDE_IN_TOP_OUT_BOTTOM],
+    selector: 'p-toast-container',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    templateUrl: './toast-container.component.html',
+    inputs: ['placement'],
+    animations: [SLIDE_IN_TOP_OUT_BOTTOM],
+    standalone: false
 })
 export class ToastContainer {
 	private _toastService: ToastService = inject(ToastService);

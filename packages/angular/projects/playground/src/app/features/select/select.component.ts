@@ -1,9 +1,14 @@
+import { AsyncPipe, JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
+
+import { PaperlessModule } from 'projects/paperless/src/public-api';
 
 @Component({
 	templateUrl: 'select.component.html',
+	standalone: true,
+	imports: [PaperlessModule, AsyncPipe, JsonPipe, ReactiveFormsModule],
 })
 export class SelectComponent implements OnInit {
 	public items$ = new BehaviorSubject<any[]>([]);

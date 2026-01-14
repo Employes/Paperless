@@ -1,14 +1,20 @@
+import { AsyncPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+
+import { TestDrawerComponent } from '../../drawer/test-drawer.component';
+
 import {
 	OverlayService,
+	PaperlessModule,
 	TableRowActionClickEvent,
 } from 'projects/paperless/src/public-api';
-import { TestDrawerComponent } from '../../drawer/test-drawer.component';
-import { BehaviorSubject } from 'rxjs';
 
 @Component({
 	templateUrl: 'table.component.html',
 	changeDetection: ChangeDetectionStrategy.OnPush,
+	standalone: true,
+	imports: [PaperlessModule, AsyncPipe],
 })
 export class TableComponent {
 	private _items = [
@@ -71,9 +77,8 @@ export class TableComponent {
 	public downloading$ = new BehaviorSubject(false);
 	private _downloadTimeout: any;
 
-	public showNavigateButton = (item: any) => {
-		return item.hide === undefined ? true : !item.hide;
-	};
+	public showNavigateButton = (item: any) =>
+		item.hide === undefined ? true : !item.hide;
 
 	constructor(private _overlay: OverlayService) {}
 

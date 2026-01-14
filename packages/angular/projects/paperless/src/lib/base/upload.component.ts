@@ -10,8 +10,9 @@ import {
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
-	template: ``,
-	changeDetection: ChangeDetectionStrategy.OnPush,
+    template: ``,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export abstract class BaseUploadComponent {
 	@Input() fileId?: string;

@@ -26,10 +26,11 @@ export declare interface TableExtraHeader extends Components.PTableExtraHeader {
 	inputs: ['align', 'name', 'sizes', 'parsedSizes', 'useSlot', 'sticky'],
 })
 @Component({
-	selector: 'p-table-extra-header',
-	changeDetection: ChangeDetectionStrategy.OnPush,
-	template: '<ng-content></ng-content>',
-	inputs: ['align', 'name', 'sizes', 'parsedSizes', 'useSlot', 'sticky'],
+    selector: 'p-table-extra-header',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: '<ng-content></ng-content>',
+    inputs: ['align', 'name', 'sizes', 'parsedSizes', 'useSlot', 'sticky'],
+    standalone: false
 })
 export class TableExtraHeader {
 	protected el: HTMLElement;

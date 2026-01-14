@@ -1,8 +1,15 @@
 import { Component } from '@angular/core';
-import { ToastService, ToastVariants } from 'projects/paperless/src/public-api';
+
+import {
+	ToastService,
+	ToastVariants,
+	PaperlessModule,
+} from 'projects/paperless/src/public-api';
 
 @Component({
 	templateUrl: 'toast.component.html',
+	standalone: true,
+	imports: [PaperlessModule],
 })
 export class ToastComponent {
 	public variants = {

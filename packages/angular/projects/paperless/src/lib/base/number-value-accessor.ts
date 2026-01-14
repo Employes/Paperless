@@ -1,7 +1,9 @@
 import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 import { ControlValueAccessor, NumberValueAccessor } from '@angular/forms';
 
-@Directive({})
+@Directive({
+    standalone: false
+})
 export class BaseNumberValueAccessor
 	extends NumberValueAccessor
 	implements ControlValueAccessor

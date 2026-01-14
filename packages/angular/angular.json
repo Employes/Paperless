@@ -5,7 +5,7 @@
 	"projects": {
 		"paperless": {
 			"projectType": "library",
-			"root": "",
+			"root": "projects/paperless",
 			"sourceRoot": "projects/paperless/src",
 			"prefix": "lib",
 			"architect": {
@@ -41,16 +41,17 @@
 					"style": "scss"
 				}
 			},
-			"root": "",
+			"root": "projects/playground",
 			"sourceRoot": "projects/playground/src",
 			"prefix": "app",
 			"architect": {
 				"build": {
-					"builder": "@angular-devkit/build-angular:browser",
+					"builder": "@angular-devkit/build-angular:application",
 					"options": {
-						"outputPath": "dist/playground",
+						"outputPath": {
+							"base": "dist/playground"
+						},
 						"index": "projects/playground/src/index.html",
-						"main": "projects/playground/src/main.ts",
 						"polyfills": ["zone.js"],
 						"tsConfig": "projects/playground/tsconfig.app.json",
 						"inlineStyleLanguage": "scss",
@@ -64,7 +65,8 @@
 							}
 						],
 						"styles": ["projects/playground/src/styles.scss"],
-						"scripts": []
+						"scripts": [],
+						"browser": "projects/playground/src/main.ts"
 					},
 					"configurations": {
 						"production": {
@@ -83,9 +85,7 @@
 							"outputHashing": "all"
 						},
 						"development": {
-							"buildOptimizer": false,
 							"optimization": false,
-							"vendorChunk": true,
 							"extractLicenses": false,
 							"sourceMap": true,
 							"namedChunks": true

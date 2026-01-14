@@ -1,7 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { PAGINATION_DEFAULT_PAGE_SIZE, QuickFilter } from '@paperless/core';
 import { Observable, timer } from 'rxjs';
 import {
 	debounce,
@@ -11,6 +10,9 @@ import {
 	startWith,
 	tap,
 } from 'rxjs/operators';
+
+import { PAGINATION_DEFAULT_PAGE_SIZE, QuickFilter } from '@paperless/core';
+
 import { BaseFormComponent } from '../../../base/form.component';
 import { createFormFilters } from '../utils';
 
@@ -24,25 +26,31 @@ export interface TableOptions {
 	page: number;
 	quickFilter: TableQuickFilter | string | null;
 	query: string;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	filters: any[];
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	selectedRows: any[];
 }
 
 @UntilDestroy({ checkProperties: true })
 @Component({
 	template: ``,
+	standalone: false,
 })
 export abstract class BaseTableComponent
 	extends BaseFormComponent
 	implements OnInit
 {
-	@Output() tableOptionsChange: EventEmitter<Partial<TableOptions> | null> =
-		new EventEmitter();
+	@Output() tableOptionsChange =
+		new EventEmitter<Partial<TableOptions> | null>();
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	protected quickFilters: any[] = [];
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	public filterForm: FormGroup<any> = new FormGroup<any>({});
 	public filterFormQuickFilterKey?: string;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	public defaultFilterFormValues: any = {};
 
 	public pageSizeDefault = PAGINATION_DEFAULT_PAGE_SIZE;
@@ -119,6 +127,7 @@ export abstract class BaseTableComponent
 
 		return this.tableOptions.value.filters;
 	}
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	set filters(filters: any[]) {
 		this.tableValues = {
 			filters,
@@ -132,6 +141,7 @@ export abstract class BaseTableComponent
 
 		return this.tableOptions.value.selectedRows;
 	}
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	set selectedRows(selectedRows: any[]) {
 		this.tableValues = {
 			selectedRows,
@@ -208,6 +218,7 @@ export abstract class BaseTableComponent
 		}
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	applyFormFilters(values: any = null) {
 		values = values ?? this.filterForm.value;
 
@@ -233,7 +244,8 @@ export abstract class BaseTableComponent
 		}
 	}
 
-	resetFormFilters(resetQuickFilter: boolean = false) {
+	resetFormFilters(resetQuickFilter = false) {
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		const values: any = this.filterForm.value;
 		const defaultQuickFilter = this.quickFilters.find(f => f.default);
 
@@ -288,12 +300,13 @@ export abstract class BaseTableComponent
 			}
 
 			if (JSON.stringify(previous[key]) !== JSON.stringify(next[key])) {
-				// @ts-ignore
+				// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+				// @ts-expect-error
 				changes[key] = next[key];
 			}
 		}
 
-		return Object.keys(changes).length ? changes : null;
+		return Object.keys(changes).length > 0 ? changes : null;
 	}
 
 	protected _watchProperty<T>(
@@ -310,6 +323,7 @@ export abstract class BaseTableComponent
 					this.resetTable(false, true);
 				}
 			}),
+			// eslint-disable-next-line @typescript-eslint/no-unused-vars
 			map(([_, current]) => current)
 		);
 	}

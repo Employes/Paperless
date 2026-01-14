@@ -13,22 +13,23 @@ export interface NGXTableDirectiveValue {
 }
 
 @Directive({
-	/* tslint:disable-next-line:directive-selector */
-	selector: 'p-table',
-	host: {
-		'(queryChange)': 'handleChange($event.detail, "query")',
-		'(quickFilter)': 'handleChange($event.detail, "quickFilter")',
-		'(pageChange)': 'handleChange($event.detail, "page")',
-		'(pageSizeChange)': 'handleChange($event.detail, "pageSize")',
-		'(selectedRowsChange)': 'handleChange($event.detail, "selectedRows")',
-	},
-	providers: [
-		{
-			provide: NG_VALUE_ACCESSOR,
-			useExisting: TableDirective,
-			multi: true,
-		},
-	],
+    /* tslint:disable-next-line:directive-selector */
+    selector: 'p-table',
+    host: {
+        '(queryChange)': 'handleChange($event.detail, "query")',
+        '(quickFilter)': 'handleChange($event.detail, "quickFilter")',
+        '(pageChange)': 'handleChange($event.detail, "page")',
+        '(pageSizeChange)': 'handleChange($event.detail, "pageSize")',
+        '(selectedRowsChange)': 'handleChange($event.detail, "selectedRows")',
+    },
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: TableDirective,
+            multi: true,
+        },
+    ],
+    standalone: false
 })
 export class TableDirective extends BaseValueAccessor {
 	protected override lastValue: NGXTableDirectiveValue = {

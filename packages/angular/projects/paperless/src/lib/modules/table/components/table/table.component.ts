@@ -17,9 +17,19 @@ import {
 	TemplateRef,
 	ViewChild,
 	ViewChildren,
+	AfterViewInit,
 } from '@angular/core';
 import { Params } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import {
+	BehaviorSubject,
+	debounceTime,
+	distinctUntilChanged,
+	filter,
+	Subscription,
+	take,
+} from 'rxjs';
+
 import {
 	cn,
 	floatingMenuContainerClass,
@@ -35,14 +45,7 @@ import {
 	IllustrationVariant,
 	TableColumnSizes,
 } from '@paperless/core/dist/types/components';
-import {
-	BehaviorSubject,
-	debounceTime,
-	distinctUntilChanged,
-	filter,
-	Subscription,
-	take,
-} from 'rxjs';
+
 import { PTableRow } from '../../../../stencil/components';
 import {
 	TableCustomActionsDirective,
@@ -59,6 +62,7 @@ import {
 	TableRowActionQueryParams,
 	TableRowActionRouterLink,
 } from '../table-row-action/table-row-action.component';
+
 import { defaultSize, defaultSizeOptions } from './constants';
 
 @UntilDestroy({ checkProperties: true })
@@ -66,40 +70,42 @@ import { defaultSize, defaultSizeOptions } from './constants';
 	selector: 'p-table-ngx',
 	templateUrl: 'table.component.html',
 	changeDetection: ChangeDetectionStrategy.OnPush,
+	standalone: false,
 })
-export class Table implements OnInit, OnChanges {
+export class Table implements OnInit, OnChanges, AfterViewInit {
 	@HostBinding('class') className = 'flex flex-col z-0';
 	@HostBinding('attr.data-theme') theme = state.theme;
 
 	/**
 	 * The items to be fed to the table
 	 */
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	@Input() items!: string | any[];
 
 	/**
 	 * Wether data is loading
 	 */
-	@Input() loading: boolean = false;
+	@Input() loading = false;
 
 	/**
 	 * Wether the header should show loading state
 	 */
-	@Input() headerLoading: boolean = false;
+	@Input() headerLoading = false;
 
 	/**
 	 * Wether the footer should show loading state
 	 */
-	@Input() footerLoading: boolean = false;
+	@Input() footerLoading = false;
 
 	/**
 	 * The amount of loading rows to show
 	 */
-	@Input() amountOfLoadingRows: number = 6;
+	@Input() amountOfLoadingRows = 6;
 
 	/**
 	 * Wether to enable selection
 	 */
-	@Input() enableRowSelection: boolean = true;
+	@Input() enableRowSelection = true;
 
 	/**
 	 * A limit to the amount of rows that can be selected
@@ -109,17 +115,19 @@ export class Table implements OnInit, OnChanges {
 	/**
 	 * Wether to enable row clicking
 	 */
-	@Input() enableRowClick: boolean = true;
+	@Input() enableRowClick = true;
 
 	/**
 	 * The current selection of items
 	 */
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	@Input() selectedRows: any[] = [];
 
 	/**
 	 * Event whenever the current selection changes
 	 */
-	@Output() selectedRowsChange: EventEmitter<any> = new EventEmitter();
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	@Output() selectedRowsChange = new EventEmitter<any>();
 
 	/**
 	 * The key to determine if a row is selected
@@ -134,16 +142,17 @@ export class Table implements OnInit, OnChanges {
 	/**
 	 * Wether to enable the floating menu
 	 */
-	@Input() enableFloatingMenu: boolean = true;
+	@Input() enableFloatingMenu = true;
 
 	/**
 	 * The floating menu amount item text
 	 */
-	@Input() floatingMenuAmountSelectedText: string = '0 items selected';
+	@Input() floatingMenuAmountSelectedText = '0 items selected';
 
 	/**
 	 * The template for amount selected item in the floating menu
 	 */
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	@Input() floatingMenuAmountSelectedTemplate: any;
 
 	/**
@@ -154,24 +163,26 @@ export class Table implements OnInit, OnChanges {
 	/**
 	 * Event whenever a row is clicked
 	 */
-	@Output() rowClick: EventEmitter<RowClickEvent> = new EventEmitter();
+	@Output() rowClick = new EventEmitter<RowClickEvent>();
 
 	/**
 	 * Event whenever a row is selected
 	 */
-	@Output() rowSelected: EventEmitter<any> = new EventEmitter();
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	@Output() rowSelected = new EventEmitter<any>();
 
 	/**
 	 * Event whenever a row is deselected
 	 */
-	@Output() rowDeselected: EventEmitter<any> = new EventEmitter();
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	@Output() rowDeselected = new EventEmitter<any>();
 
 	/** START HEADER */
 
 	/**
 	 * Wether to show the header
 	 */
-	@Input() enableHeader: boolean = true;
+	@Input() enableHeader = true;
 
 	/**
 	 * Quick filters to show
@@ -186,7 +197,7 @@ export class Table implements OnInit, OnChanges {
 	/**
 	 * Wether to show the search input
 	 */
-	@Input() enableSearch: boolean = true;
+	@Input() enableSearch = true;
 
 	/**
 	 * The query to show in the search bar
@@ -196,12 +207,12 @@ export class Table implements OnInit, OnChanges {
 	/**
 	 * Wether to show the filter button
 	 */
-	@Input() enableFilter: boolean = true;
+	@Input() enableFilter = true;
 
 	/**
 	 * Wether to show the filter button on desktop
 	 */
-	@Input() enableFilterDesktop: boolean = true;
+	@Input() enableFilterDesktop = true;
 
 	/**
 	 * The amount of filters being selected
@@ -211,17 +222,18 @@ export class Table implements OnInit, OnChanges {
 	/**
 	 * The template for the filter button text
 	 */
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	@Input() filterButtonTemplate: any;
 
 	/**
 	 * Wether to show the action button
 	 */
-	@Input() enableAction: boolean = false;
+	@Input() enableAction = false;
 
 	/**
 	 * Wether the action button is loading
 	 */
-	@Input() actionButtonLoading: boolean = false;
+	@Input() actionButtonLoading = false;
 
 	/**
 	 * The action button icon
@@ -231,7 +243,7 @@ export class Table implements OnInit, OnChanges {
 	/**
 	 * Wether the action button is enabled
 	 */
-	@Input() actionButtonEnabled: boolean = true;
+	@Input() actionButtonEnabled = true;
 
 	/**
 	 * The action button text if changed
@@ -241,54 +253,55 @@ export class Table implements OnInit, OnChanges {
 	/**
 	 * The template for the action button text
 	 */
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	@Input() actionButtonTemplate: any;
 
 	/**
 	 * Event when one of the quick filters is clicked
 	 */
-	@Output() quickFilter: EventEmitter<QuickFilter> = new EventEmitter();
+	@Output() quickFilter = new EventEmitter<QuickFilter>();
 
 	/**
 	 * Event when the query changes
 	 */
-	@Output() queryChange: EventEmitter<string> = new EventEmitter();
+	@Output() queryChange = new EventEmitter<string>();
 
 	/**
 	 * Event when the filter button is clicked
 	 */
-	@Output() filter: EventEmitter<null> = new EventEmitter();
+	@Output() filter = new EventEmitter<null>();
 
 	/**
 	 * Event when the action button is clicked
 	 */
-	@Output() action: EventEmitter<null> = new EventEmitter();
+	@Output() action = new EventEmitter<null>();
 
 	/** START FOOTER */
 
 	/**
 	 * Wether to show the footer
 	 */
-	@Input() enableFooter: boolean = true;
+	@Input() enableFooter = true;
 
 	/**
 	 * Wether to enable pagination size select
 	 */
-	@Input() enablePaginationSize: boolean = true;
+	@Input() enablePaginationSize = true;
 
 	/**
 	 * Wether to enable pagination pages
 	 */
-	@Input() enablePaginationPages: boolean = true;
+	@Input() enablePaginationPages = true;
 
 	/**
 	 * Wether to enable export
 	 */
-	@Input() enableExport: boolean = true;
+	@Input() enableExport = true;
 
 	/**
 	 * The current page
 	 */
-	@Input() page: number = 1;
+	@Input() page = 1;
 
 	/**
 	 * The total amount of items
@@ -298,7 +311,7 @@ export class Table implements OnInit, OnChanges {
 	/**
 	 * Event whenever the page changes
 	 */
-	@Output() pageChange: EventEmitter<number> = new EventEmitter();
+	@Output() pageChange = new EventEmitter<number>();
 
 	/**
 	 * The amount of items per page
@@ -313,17 +326,17 @@ export class Table implements OnInit, OnChanges {
 	/**
 	 * Event whenever the page changes
 	 */
-	@Output() pageSizeChange: EventEmitter<number> = new EventEmitter();
+	@Output() pageSizeChange = new EventEmitter<number>();
 
 	/**
 	 * Event whenever the page changes
 	 */
-	@Output() export: EventEmitter<number> = new EventEmitter();
+	@Output() export = new EventEmitter<number>();
 
 	/**
 	 * Wether to hide when there is only 1 page available
 	 */
-	@Input() hideOnSinglePage: boolean = true;
+	@Input() hideOnSinglePage = true;
 
 	/* Empty state start */
 	@Input() emptyStateType: 'no_filter' | 'filtered' = 'no_filter';
@@ -334,7 +347,7 @@ export class Table implements OnInit, OnChanges {
 	@Input() emptyStateAction!: string;
 	@Input() emptyStateActionIcon: IconVariant = 'plus';
 
-	@Input() enableEmptyStateAction: boolean = true;
+	@Input() enableEmptyStateAction = true;
 
 	@Input() emptyStateFilteredIllustration: IllustrationVariant = 'search';
 	@Input() emptyStateFilteredHeader!: string;
@@ -343,7 +356,7 @@ export class Table implements OnInit, OnChanges {
 	/**
 	 * Wether to enable scrolling
 	 */
-	@Input() enableScroll: boolean = false;
+	@Input() enableScroll = false;
 	@ViewChildren(PTableRow, { read: ElementRef }) tableRows!: QueryList<
 		ElementRef<PTableRow>
 	>;
@@ -363,17 +376,20 @@ export class Table implements OnInit, OnChanges {
 	/**
 	 * Event whenever the empty state is clicked
 	 */
-	@Output() emptyStateActionClick: EventEmitter<null> = new EventEmitter();
+	@Output() emptyStateActionClick = new EventEmitter<null>();
 
 	/* Empty state end */
 
 	/*
 	 * Wether to show the shadow or not
 	 */
-	@Input() shadow: boolean = true;
+	@Input() shadow = true;
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	public extraHeaders$ = new BehaviorSubject<any[]>([]);
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	public columns$ = new BehaviorSubject<any[]>([]);
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	public parsedItems: any[] = [];
 	public loadingRows = Array.from({
 		length: this.amountOfLoadingRows,
@@ -386,6 +402,7 @@ export class Table implements OnInit, OnChanges {
 		read: TemplateRef,
 		static: true,
 	})
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	public headerCustomFilterTemplate: TemplateRef<any> | undefined;
 
 	// custom actions template
@@ -426,17 +443,17 @@ export class Table implements OnInit, OnChanges {
 	@ContentChildren(TableCustomRowDirective)
 	customRows!: QueryList<TableCustomRowDirective>;
 
-	@Input() filterModalHeaderText: string = 'Filters';
-	@Input() filterModalSaveText: string = 'Save';
-	@Input() filterModalCancelText: string = 'Cancel';
-	@Input() filterModalResetText: string = 'Reset filters';
+	@Input() filterModalHeaderText = 'Filters';
+	@Input() filterModalSaveText = 'Save';
+	@Input() filterModalCancelText = 'Cancel';
+	@Input() filterModalResetText = 'Reset filters';
 
-	@Input() filterModalShowReset: boolean = false;
-	@Input() filterModalShowResetMobile: boolean = false;
+	@Input() filterModalShowReset = false;
+	@Input() filterModalShowResetMobile = false;
 
-	@Output() filterModalShow: EventEmitter<boolean> = new EventEmitter();
-	@Output() filterModalSave: EventEmitter<void> = new EventEmitter();
-	@Output() filterModalReset: EventEmitter<boolean> = new EventEmitter();
+	@Output() filterModalShow = new EventEmitter<boolean>();
+	@Output() filterModalSave = new EventEmitter<void>();
+	@Output() filterModalReset = new EventEmitter<boolean>();
 
 	public rowActionsRow$ = new BehaviorSubject<TableRowAction[]>([]);
 	public rowActionsFloatingAll$ = new BehaviorSubject<TableRowAction[]>([]);
@@ -468,7 +485,9 @@ export class Table implements OnInit, OnChanges {
 	ngOnInit() {
 		this._parseItems(this.items);
 
-		onStateChange('theme', value => this._checkTheme(value));
+		onStateChange('theme', (value: 'dark' | 'light') =>
+			this._checkTheme(value)
+		);
 
 		this.loadingRows = Array.from({
 			length: this.amountOfLoadingRows,
@@ -638,7 +657,7 @@ export class Table implements OnInit, OnChanges {
 	}
 
 	private _generateColumns() {
-		let definitionsArray = Array.from(this.columnDefinitions);
+		let definitionsArray = [...this.columnDefinitions];
 
 		definitionsArray = this._parseDefinitions(
 			definitionsArray
@@ -648,7 +667,7 @@ export class Table implements OnInit, OnChanges {
 	}
 
 	private _generateExtraHeaders() {
-		let definitionsArray = Array.from(this.extraHeaderDefinitions);
+		let definitionsArray = [...this.extraHeaderDefinitions];
 
 		definitionsArray = this._parseDefinitions(
 			definitionsArray
@@ -785,7 +804,7 @@ export class Table implements OnInit, OnChanges {
 				this._getSelectionValue(row, index) ===
 				this._getSelectionValue(item, index)
 		);
-		return !returnIndex ? returnValue >= 0 : returnValue;
+		return returnIndex ? returnValue : returnValue !== -1;
 	}
 
 	public _selectionContainsAll() {
@@ -938,15 +957,15 @@ export class Table implements OnInit, OnChanges {
 
 		if (
 			action.routerLink ||
-			(Array.isArray(action.routerLink) && action.routerLink.length)
+			(Array.isArray(action.routerLink) && action.routerLink.length > 0)
 		) {
 			return;
 		}
 
 		const item =
-			rowIndex !== undefined
-				? this.parsedItems[rowIndex]
-				: this.selectedRows[0];
+			rowIndex === undefined
+				? this.selectedRows[0]
+				: this.parsedItems[rowIndex];
 		action.action.emit({
 			item,
 			multi: false,
@@ -966,15 +985,13 @@ export class Table implements OnInit, OnChanges {
 		return this._findRow(el?.parentElement);
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	private _findRowAction(el: HTMLElement | null): any {
 		if (!el) {
 			return null;
 		}
 
-		if (
-			el.getAttribute('data-is-action') !== null &&
-			el.getAttribute('data-is-action') !== 'false'
-		) {
+		if (el.dataset['isAction'] !== null && el.dataset['isAction'] !== 'false') {
 			return el;
 		}
 
@@ -996,10 +1013,10 @@ export class Table implements OnInit, OnChanges {
 			const mobile = isMobile();
 			this.isMobile$.next(mobile);
 
-			const actions = Array.from(this._rowActions) as TableRowAction[];
+			const actions = [...this._rowActions] as TableRowAction[];
 
-			if (this._rowActionsSubscriptions.length) {
-				for (let subscription of this._rowActionsSubscriptions) {
+			if (this._rowActionsSubscriptions.length > 0) {
+				for (const subscription of this._rowActionsSubscriptions) {
 					subscription.unsubscribe();
 				}
 			}
@@ -1059,9 +1076,9 @@ export class Table implements OnInit, OnChanges {
 		this.rowActionsFloatingAll$.pipe(take(1)).subscribe(actions => {
 			if (
 				this.rowSelectionLimit === 1 &&
-				actions.findIndex(
+				actions.some(
 					a => (a.type === 'single' || a.type === 'both') && a.showFunction
-				) >= 0
+				)
 			) {
 				actions = actions.filter(
 					a =>
@@ -1086,7 +1103,7 @@ export class Table implements OnInit, OnChanges {
 
 	private _parseDefinitionSizes(definition: TableColumn | TableExtraHeader) {
 		const definitionAny = definition as any;
-		let parsedSizes: TableColumnSizes = { default: 'full' };
+		const parsedSizes: TableColumnSizes = { default: 'full' };
 
 		for (const [index, size] of tableColumSizesOptions.entries()) {
 			if (
@@ -1141,8 +1158,7 @@ export class Table implements OnInit, OnChanges {
 			c => c.nativeElement as unknown as HTMLElement
 		);
 		const cells = rows.flatMap(
-			row =>
-				Array.from(row.querySelectorAll('p-table-cell-ngx')) as HTMLElement[]
+			row => [...row.querySelectorAll('p-table-cell-ngx')] as HTMLElement[]
 		);
 
 		this._calculateColumnWidthsTimeout = setTimeout(async () => {
@@ -1177,9 +1193,7 @@ export class Table implements OnInit, OnChanges {
 		rows: HTMLElement[],
 		value: 'min-content' | null = null
 	) {
-		for (let i = 0; i < rows.length; i++) {
-			const row = rows[i];
-
+		for (const [i, row] of rows.entries()) {
 			const shadow = row.shadowRoot;
 			if (!shadow) {
 				continue;

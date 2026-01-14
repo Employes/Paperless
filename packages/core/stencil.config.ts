@@ -8,15 +8,15 @@ import tailwind, {
 	tailwindGlobal,
 	tailwindHMR,
 } from 'stencil-tailwind-plugin';
-import tailwindConf from './src/tailwind.config';
 
+import tailwindConfig from './src/tailwind.config';
 import { storiesOutputTarget } from './stencil-storybook-stories-output/';
 
 setPluginConfigurationDefaults({
 	enableDebug: false,
 	tailwindCssContents:
 		'@tailwind utilities;@tailwind components; * { @apply box-border; }',
-	tailwindConf: tailwindConf as any,
+	tailwindConf: tailwindConfig as any,
 });
 
 export const config: Config = {
@@ -74,7 +74,7 @@ export const config: Config = {
 		},
 		{
 			type: 'www',
-			serviceWorker: null, // disable service workers
+			serviceWorker: undefined, // disable service workers
 		},
 		{
 			type: 'www',
@@ -89,6 +89,10 @@ export const config: Config = {
 					dest: 'assets/i18n',
 				},
 			],
+		},
+		{
+			type: 'dist-hydrate-script',
+			dir: './hydrate',
 		},
 	],
 };

@@ -1,9 +1,13 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { AsyncPipe, NgFor } from '@angular/common';
+import { Component } from '@angular/core';
 import { BehaviorSubject, firstValueFrom } from 'rxjs';
+
+import { PaperlessModule } from 'projects/paperless/src/public-api';
 
 @Component({
 	templateUrl: 'stepper.component.html',
-	changeDetection: ChangeDetectionStrategy.OnPush,
+	standalone: true,
+	imports: [PaperlessModule, AsyncPipe, NgFor],
 })
 export class StepperComponent {
 	public steps$ = new BehaviorSubject([0, 1, 2]);
