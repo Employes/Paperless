@@ -1,15 +1,13 @@
-// @ts-check
 import eslint from '@eslint/js';
-import { defineConfig } from 'eslint/config';
-
-import typescriptPlugin from 'typescript-eslint';
-import angularPlugin from 'angular-eslint';
-import importPlugin from 'eslint-plugin-import';
-import globals from 'globals';
-import unicornPlugin from 'eslint-plugin-unicorn';
-import prettierPlugin from 'eslint-plugin-prettier/recommended';
 import nxPlugin from '@nx/eslint-plugin';
+import angularPlugin from 'angular-eslint';
+import { defineConfig } from 'eslint/config';
+import importPlugin from 'eslint-plugin-import';
 import jsoncPlugin from 'eslint-plugin-jsonc';
+import prettierPlugin from 'eslint-plugin-prettier/recommended';
+import unicornPlugin from 'eslint-plugin-unicorn';
+import globals from 'globals';
+import typescriptPlugin from 'typescript-eslint';
 
 export default defineConfig([
 	eslint.configs.recommended,
@@ -17,12 +15,12 @@ export default defineConfig([
 	...jsoncPlugin.configs['flat/recommended-with-json'],
 	...jsoncPlugin.configs['flat/recommended-with-jsonc'],
 	unicornPlugin.configs.all,
+	nxPlugin.configs['flat/javascript'],
+	nxPlugin.configs['flat/react-typescript'],
+	nxPlugin.configs['flat/angular'],
 	{
 		languageOptions: {
 			globals: globals.builtin,
-		},
-		plugins: {
-			'@nx': nxPlugin,
 		},
 		settings: {
 			'import/parsers': {
@@ -71,30 +69,8 @@ export default defineConfig([
 		},
 	},
 	{
-		files: ['**/*.{ts,tsx}'],
-		extends: [importPlugin.flatConfigs.typescript],
-	},
-	{
-		files: ['**/*.js'],
-		plugins: {
-			'@nx': nxPlugin,
-		},
-		extends: ['@nx/javascript'],
-	},
-	{
-		files: ['**/*.{tsx,jsx}'],
-		plugins: {
-			'@nx': nxPlugin,
-		},
-		extends: ['@nx/react', '@nx/javascript'],
-	},
-	{
 		files: ['**/*.ts'],
-		plugins: {
-			'@nx': nxPlugin,
-		},
 		extends: [
-			'@nx/angular',
 			typescriptPlugin.configs.recommended,
 			typescriptPlugin.configs.stylistic,
 			angularPlugin.configs.tsRecommended,
@@ -124,6 +100,7 @@ export default defineConfig([
 		files: ['**/*.html'],
 		extends: [angularPlugin.configs.templateRecommended],
 		rules: {
+			'@angular-eslint/template/prefer-self-closing-tags': ['error'],
 			'@angular-eslint/template/attributes-order': [
 				'error',
 				{

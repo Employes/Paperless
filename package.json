@@ -5,7 +5,6 @@
 	"license": "MIT",
 	"root": true,
 	"private": true,
-	"type": "module",
 	"workspaces": {
 		"packages": [
 			"packages/*"
