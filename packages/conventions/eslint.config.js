@@ -28,9 +28,8 @@ export default defineConfig([
 				'@typescript-eslint/parser': ['.ts', '.tsx'],
 			},
 			'import/resolver': {
-				typescript: {
-					alwaysTryTypes: true,
-				},
+				typescript: true,
+				node: true,
 			},
 		},
 	},
