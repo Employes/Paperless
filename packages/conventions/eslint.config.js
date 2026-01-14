@@ -123,10 +123,7 @@ export default defineConfig([
 	},
 	{
 		files: ['**/*.html'],
-		extends: [
-			angularPlugin.configs.templateRecommended,
-			angularPlugin.configs.templateAccessibility,
-		],
+		extends: [angularPlugin.configs.templateRecommended],
 		rules: {
 			'@angular-eslint/template/attributes-order': [
 				'error',
