@@ -16,6 +16,7 @@ export default defineConfig([
 	prettierPlugin,
 	...jsoncPlugin.configs['flat/recommended-with-json'],
 	...jsoncPlugin.configs['flat/recommended-with-jsonc'],
+	unicornPlugin.configs.all,
 	{
 		languageOptions: {
 			globals: globals.builtin,
@@ -48,16 +49,7 @@ export default defineConfig([
 		files: ['*.ts', '*.tsx'],
 		extends: [importPlugin.flatConfigs.recommended],
 		rules: {
-			'unicorn/no-null': 'off',
 			'import/no-unresolved': 'off',
-			'unicorn/prevent-abbreviations': 'off',
-			'unicorn/no-nested-ternary': 'off',
-			'unicorn/consistent-function-scoping': [
-				'error',
-				{
-					checkArrowFunctions: false,
-				},
-			],
 		},
 	},
 	{
@@ -66,7 +58,6 @@ export default defineConfig([
 			ecmaVersion: 'latest',
 			sourceType: 'module',
 		},
-		extends: [unicornPlugin.configs.all],
 		rules: {
 			'arrow-body-style': ['error', 'as-needed'],
 			'import/order': [
@@ -86,6 +77,15 @@ export default defineConfig([
 						order: 'asc',
 						caseInsensitive: true,
 					},
+				},
+			],
+			'unicorn/no-null': 'off',
+			'unicorn/prevent-abbreviations': 'off',
+			'unicorn/no-nested-ternary': 'off',
+			'unicorn/consistent-function-scoping': [
+				'error',
+				{
+					checkArrowFunctions: false,
 				},
 			],
 		},
