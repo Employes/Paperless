@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.23](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.22...v2.22.0-alpha.23) (2026-01-14)
+
+
+### Bug Fixes
+
+* **state:** Export more information ([beb4bd2](https://github.com/Employes/Paperless/commit/beb4bd283e3d1cf0455863bd5f7d668795594fef))
+
+
+
+
+
 # [2.22.0-alpha.22](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.21...v2.22.0-alpha.22) (2026-01-14)
 
 
