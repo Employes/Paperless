@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.20](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.19...v2.22.0-alpha.20) (2026-01-14)
+
+
+### Features
+
+* **conventions:** update typescript ([67a7382](https://github.com/Employes/Paperless/commit/67a738271a065da88a987cf467686713cb5cc9c0))
+
+
+
+
+
 # [2.22.0-alpha.19](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.18...v2.22.0-alpha.19) (2026-01-14)
 
 
