@@ -47,6 +47,6 @@
 	"peerDependencies": {
 		"eslint": "~9.39.1",
 		"prettier": "~3.7.4",
-		"typescript": "5.4.5"
+		"typescript": "5.8.3"
 	}
 }
