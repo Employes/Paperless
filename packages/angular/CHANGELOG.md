@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.21](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.20...v2.22.0-alpha.21) (2026-01-14)
+
+
+### Features
+
+* **angular:** Update to ng 17 ([8ec4a30](https://github.com/Employes/Paperless/commit/8ec4a303b2ce4e60fee13ab6444023ab417be7ee))
+* **angular:** Update to ng 18 ([9f471af](https://github.com/Employes/Paperless/commit/9f471afdfab07d783c4471777fbf6833c9f0f76c))
+
+
+
+
+
 # [2.22.0-alpha.20](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.19...v2.22.0-alpha.20) (2026-01-14)
 
 **Note:** Version bump only for package @paperless/angular
