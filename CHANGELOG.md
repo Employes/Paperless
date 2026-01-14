@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.17](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.16...v2.22.0-alpha.17) (2026-01-14)
+
+
+### Bug Fixes
+
+* **conventions:** Correctly import unicorn plugin ([f530459](https://github.com/Employes/Paperless/commit/f530459a9c7f7749ad40e3d236904245b4c7b5c1))
+
+
+
+
+
 # [2.22.0-alpha.16](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.15...v2.22.0-alpha.16) (2026-01-14)
 
 **Note:** Version bump only for package paperless
