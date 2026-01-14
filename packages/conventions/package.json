@@ -25,26 +25,8 @@
 		"prettier:check": "yarn prettier \"./**/*.{ts,tsx,html,scss,json}\"",
 		"prettier:write": "yarn prettier:check -w"
 	},
-	"dependencies": {
-		"@angular-eslint/builder": "~19.0.0",
-		"@angular-eslint/eslint-plugin": "~19.0.0",
-		"@angular-eslint/eslint-plugin-template": "~19.0.0",
-		"@angular-eslint/schematics": "~19.0.0",
-		"@angular-eslint/template-parser": "~19.0.0",
-		"@nrwl/eslint-plugin-nx": "15.9.7",
-		"@typescript-eslint/eslint-plugin": "8.39.1",
-		"@typescript-eslint/parser": "8.39.1",
-		"eslint-config-prettier": "9.1.0",
-		"eslint-import-resolver-typescript": "3.1.5",
-		"eslint-plugin-ava": "14.0.0",
-		"eslint-plugin-import": "2.29.1",
-		"eslint-plugin-jsonc": "2.16.0",
-		"eslint-plugin-only-error": "1.0.2",
-		"eslint-plugin-unicorn": "55.0.0",
-		"nx": "15.9.7"
-	},
+	"dependencies": {},
 	"peerDependencies": {
-		"eslint": "~8.57.0",
 		"prettier": "2.8.8",
 		"typescript": "5.1.6"
 	}
