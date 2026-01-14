@@ -70,7 +70,6 @@ const icon = cva(['drop-shadow-2 text-xs'], {
 	tag: 'p-checkbox',
 	styleUrl: 'checkbox.component.css',
 	formAssociated: true,
-	scoped: true,
 })
 export class Checkbox {
 	/**

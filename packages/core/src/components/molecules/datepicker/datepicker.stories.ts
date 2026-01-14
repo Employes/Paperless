@@ -1,5 +1,5 @@
-import { html, nothing } from 'lit';
 import { action } from '@storybook/addon-actions';
+import { html, nothing } from 'lit';
 
 const meta = {
 	title: 'Design System/Molecules/Datepicker',
@@ -53,7 +53,7 @@ export const Default = {
 		disabled,
 		strategy,
 		placement,
-	}) => html`<div class="flex flex-col gap-4">
+	}) => html`
 		<p-datepicker
 			placeholder=${placeholder ?? nothing}
 			value=${value ?? nothing}
@@ -81,12 +81,5 @@ export const Default = {
 			placement=${placement ?? nothing}
 			@valueChange=${action('valueChange')}
 		></p-datepicker>
-		<br />
-		aaa
-		<br />
-		<input
-			class="border border-solid border-r-negative-red-500"
-			type="text"
-		/>
-	</div>`,
+	`,
 };

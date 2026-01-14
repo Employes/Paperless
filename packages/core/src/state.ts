@@ -29,8 +29,10 @@ export const initTheme = (
 		themeKey
 	) as StateThemeOption;
 
-	if (window.matchMedia && !theme && usePreferColorScheme) {
-		theme = window.matchMedia('prefers-color-scheme: dark') ? 'dark' : 'light';
+	if (globalThis.matchMedia && !theme && usePreferColorScheme) {
+		theme = globalThis.matchMedia('prefers-color-scheme: dark')
+			? 'dark'
+			: 'light';
 	}
 
 	if (!theme) {
@@ -40,7 +42,7 @@ export const initTheme = (
 	if (theme !== localState.theme) {
 		localState.theme = theme;
 
-		if (!!localStorageKey) {
+		if (localStorageKey) {
 			localStorage.setItem(themeKey, theme);
 		}
 	}
@@ -49,7 +51,7 @@ export const initTheme = (
 	onChange('theme', newValue => {
 		document.body.dataset.theme = newValue;
 
-		if (!!localStorageKey) {
+		if (localStorageKey) {
 			localStorage.setItem(themeKey, newValue);
 		}
 	});

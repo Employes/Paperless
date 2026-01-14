@@ -8,9 +8,10 @@ import {
 	h,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+
+import { ThemedHost } from '../../../internal/themed-host.component';
 import { asBoolean } from '../../../utils/as-boolean';
 import { nonce } from '../../../utils/nonce';
-import { ThemedHost } from '../../../internal/themed-host.component';
 
 const toggle = cva(
 	[
@@ -49,7 +50,7 @@ const circle = cva(
 				false: [
 					'bg-white ring-1 ring-storm-500/10',
 					'left-[1px] peer-checked:-translate-x-[calc(100%+1px)]',
-					"after:content-[] peer-checked:after:content-['']  after:bg-indigo-800 after:rounded-full after:transition-all",
+					"after:content-[unset] peer-checked:after:content-['']  after:bg-indigo-800 after:rounded-full after:transition-all",
 					'w-[14px] h-[14px] group-hover/p-toggle:w-[18px] group-hover/toggle-label:w-[18px]',
 					'after:w-1 after:h-1 group-hover/p-toggle:after:w-2 group-hover/toggle-label:after:w-2',
 				],
@@ -67,7 +68,6 @@ const circle = cva(
 	tag: 'p-toggle',
 	styleUrl: 'toggle.component.css',
 	formAssociated: true,
-	scoped: true,
 })
 export class Toggle {
 	/**
