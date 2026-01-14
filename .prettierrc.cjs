@@ -4,7 +4,7 @@
  * @see https://prettier.io/docs/en/configuration.html
  * @type {import("prettier").Config}
  */
-var conventions = require('./packages/conventions/.prettierrc');
+const conventions = require('@paperless/conventions/prettier');
 
 module.exports = Object.assign(conventions, {
 	tailwindConfig: './tailwind.config.ts',

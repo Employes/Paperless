@@ -1,5 +1,0 @@
-{
-	"extends": "./packages/conventions/.eslintrc.js",
-	"root": true
-}
-

@@ -3,14 +3,16 @@
 	"description": "Paperless eslint, typescript & prettier recommended configuration",
 	"version": "2.22.0-alpha.13",
 	"license": "ISC",
+	"type": "module",
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org"
 	},
 	"exports": {
-		"prettier": "./.prettierrc.js",
-		"eslint": "./.eslintrc.js",
-		"editorconfig": "./.editorconfig",
-		"tsconfig": "./tsconfig.json"
+		".": "./index.js",
+		"./prettier": "./.prettierrc.cjs",
+		"./eslint": "./eslint.config.js",
+		"./editorconfig": "./.editorconfig",
+		"./tsconfig": "./tsconfig.json"
 	},
 	"repository": {
 		"type": "git",
@@ -25,7 +27,24 @@
 		"prettier:check": "yarn prettier \"./**/*.{ts,tsx,html,scss,json}\"",
 		"prettier:write": "yarn prettier:check -w"
 	},
+	"dependencies": {
+		"@angular-eslint/builder": "~19.0.0",
+		"@eslint/js": "~9.39.1",
+		"@nx/eslint-plugin": "~22.3.3",
+		"nx": "~22.3.3",
+		"angular-eslint": "~19.0.0",
+		"eslint-plugin-import": "~2.32.0",
+		"eslint-plugin-unicorn": "~62.0.0",
+		"eslint-plugin-prettier": "~5.5.4",
+		"eslint-config-prettier": "~10.1.8",
+		"eslint-plugin-jsx-a11y": "~6.10.2",
+		"eslint-plugin-react": "~7.37.5",
+		"eslint-plugin-react-hooks": "~7.0.1",
+		"eslint-plugin-jsonc": "~2.21.0",
+		"typescript-eslint": "~8.46.4"
+	},
 	"peerDependencies": {
+		"eslint": "~9.39.1",
 		"prettier": "~3.7.4",
 		"typescript": "5.1.6"
 	}
