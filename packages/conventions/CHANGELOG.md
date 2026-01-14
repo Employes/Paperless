@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.15](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.14...v2.22.0-alpha.15) (2026-01-14)
+
+
+### Bug Fixes
+
+* **conventions:** Add typescript resolver ([1c3d7bd](https://github.com/Employes/Paperless/commit/1c3d7bdeab2c561f941046347c5d1f76e53d9783))
+
+
+
+
+
 # [2.22.0-alpha.14](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.13...v2.22.0-alpha.14) (2026-01-14)
 
 
