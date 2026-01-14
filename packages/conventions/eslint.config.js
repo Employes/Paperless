@@ -17,7 +17,6 @@ export default defineConfig([
 	...jsoncPlugin.configs['flat/recommended-with-json'],
 	...jsoncPlugin.configs['flat/recommended-with-jsonc'],
 	unicornPlugin.configs.all,
-	importPlugin.flatConfigs.recommended,
 	{
 		languageOptions: {
 			globals: globals.builtin,
@@ -34,6 +33,10 @@ export default defineConfig([
 				node: true,
 			},
 		},
+	},
+	{
+		files: ['**/*.{ts,tsx,js,jsx}'],
+		extends: [importPlugin.flatConfigs.recommended],
 		rules: {
 			'arrow-body-style': ['error', 'as-needed'],
 			'unicorn/no-null': 'off',
@@ -68,14 +71,18 @@ export default defineConfig([
 		},
 	},
 	{
-		files: ['*.js'],
+		files: ['**/*.{ts,tsx}'],
+		extends: [importPlugin.flatConfigs.typescript],
+	},
+	{
+		files: ['**/*.js'],
 		plugins: {
 			'@nx': nxPlugin,
 		},
 		extends: ['@nx/javascript'],
 	},
 	{
-		files: ['*.tsx', '*.jsx'],
+		files: ['**/*.{tsx,jsx}'],
 		plugins: {
 			'@nx': nxPlugin,
 		},
