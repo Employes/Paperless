@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.22](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.21...v2.22.0-alpha.22) (2026-01-14)
+
+
+### Features
+
+* **angular:** Update to ng 19 ([5d807b7](https://github.com/Employes/Paperless/commit/5d807b785deac88492fdc098fe0a8d5948738f59))
+
+
+
+
+
 # [2.22.0-alpha.21](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.20...v2.22.0-alpha.21) (2026-01-14)
 
 
