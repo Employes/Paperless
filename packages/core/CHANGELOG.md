@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.24](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.23...v2.22.0-alpha.24) (2026-01-14)
+
+
+### Bug Fixes
+
+* **atoms/checkbox & radio & toggle:** Remove scoped ([d6cf789](https://github.com/Employes/Paperless/commit/d6cf7890449a40b0c24110d83bc28f6a48c49de2))
+
+
+
+
+
 # [2.22.0-alpha.23](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.22...v2.22.0-alpha.23) (2026-01-14)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.24](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.23...v2.22.0-alpha.24) (2026-01-14)
+
+
+### Bug Fixes
+
+* **conventions:** Correctly parse eslint for react files ([7ad6da2](https://github.com/Employes/Paperless/commit/7ad6da29fe7916f35e0ecb47117344e8af1980e9))
+
+
+
+
+
 # [2.22.0-alpha.23](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.22...v2.22.0-alpha.23) (2026-01-14)
 
 **Note:** Version bump only for package @paperless/angular
