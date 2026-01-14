@@ -6,6 +6,13 @@
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org"
 	},
+	"exports": {
+		"prettier": "./.prettierrc.js",
+		"eslint": "./.eslintrc.js",
+		"commitlint": "./commitlint.config.js",
+		"editorconfig": "./.editorconfig",
+		"tsconfig": "./tsconfig.json"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/Employes/Paperless.git"
