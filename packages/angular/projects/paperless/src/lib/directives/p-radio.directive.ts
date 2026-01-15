@@ -7,7 +7,7 @@ import { BaseValueAccessor } from '../base';
 @Directive({
 	selector: 'p-radio',
 	host: {
-		'(checkedChange)': 'handleChangeEvent($event.detail)',
+		'(checkedChange)': 'handleChangeEvent()',
 	},
 })
 export class RadioDirective

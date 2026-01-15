@@ -2,6 +2,7 @@ import {
 	ApplicationConfig,
 	importProvidersFrom,
 	provideEnvironmentInitializer,
+	provideZoneChangeDetection,
 } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import {
@@ -20,6 +21,7 @@ import { PaperlessModule } from 'projects/paperless/src/public-api';
 
 export const appConfig: ApplicationConfig = {
 	providers: [
+		provideZoneChangeDetection(),
 		importProvidersFrom(ReactiveFormsModule, PaperlessModule),
 		provideRouter(
 			routes,
