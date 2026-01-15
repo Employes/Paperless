@@ -10,7 +10,7 @@ import {
 
 export const getTableCellColumnClasses = (
 	definition: any | TableColumn,
-	variant: 'default' | 'header' | 'loading' | 'header-secondary',
+	variant: 'default' | 'header' | 'loading' | 'header-secondary' | 'actions',
 	checkboxOffset = false
 ) => {
 	const sizes = definition ? getTableCellSizes(definition, variant) : {};

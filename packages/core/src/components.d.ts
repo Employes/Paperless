@@ -16,7 +16,6 @@ import { IbanIconVariant, IconFlipOptions as IconFlipOptions1, IconVariant as Ic
 import { templateFunc } from "./components/molecules/field/container/field-container.component";
 import { templateFunc as templateFunc1 } from "./components/molecules/field/container/field-container.component";
 import { amountSelectedTemplateFunc } from "./components/atoms/floating-menu/container/floating-menu-container.component";
-import { IllustrationDeprecatedVariant } from "./components/deprecated/atoms/illustration-deprecated/illustration-deprecated.component";
 import { Observable } from "rxjs";
 import { templateFunc as templateFunc2 } from "./components/molecules/pagination/pages/pagination-pages.component";
 import { templateFunc as templateFunc3 } from "./components/molecules/pagination/size/pagination-size.component";
@@ -38,7 +37,6 @@ export { IbanIconVariant, IconFlipOptions as IconFlipOptions1, IconVariant as Ic
 export { templateFunc } from "./components/molecules/field/container/field-container.component";
 export { templateFunc as templateFunc1 } from "./components/molecules/field/container/field-container.component";
 export { amountSelectedTemplateFunc } from "./components/atoms/floating-menu/container/floating-menu-container.component";
-export { IllustrationDeprecatedVariant } from "./components/deprecated/atoms/illustration-deprecated/illustration-deprecated.component";
 export { Observable } from "rxjs";
 export { templateFunc as templateFunc2 } from "./components/molecules/pagination/pages/pagination-pages.component";
 export { templateFunc as templateFunc3 } from "./components/molecules/pagination/size/pagination-size.component";
@@ -1206,12 +1204,6 @@ export namespace Components {
           * The icon the be displayed
          */
         "variant": IllustrationVariant;
-    }
-    interface PIllustrationDeprecated {
-        /**
-          * The icon the be displayed
-         */
-        "variant": IllustrationDeprecatedVariant;
     }
     interface PInfoPanel {
         /**
@@ -3085,12 +3077,6 @@ declare global {
         prototype: HTMLPIllustrationElement;
         new (): HTMLPIllustrationElement;
     };
-    interface HTMLPIllustrationDeprecatedElement extends Components.PIllustrationDeprecated, HTMLStencilElement {
-    }
-    var HTMLPIllustrationDeprecatedElement: {
-        prototype: HTMLPIllustrationDeprecatedElement;
-        new (): HTMLPIllustrationDeprecatedElement;
-    };
     interface HTMLPInfoPanelElementEventMap {
         "closed": void;
     }
@@ -3626,7 +3612,6 @@ declare global {
         "p-iban-icon": HTMLPIbanIconElement;
         "p-icon": HTMLPIconElement;
         "p-illustration": HTMLPIllustrationElement;
-        "p-illustration-deprecated": HTMLPIllustrationDeprecatedElement;
         "p-info-panel": HTMLPInfoPanelElement;
         "p-label": HTMLPLabelElement;
         "p-layout": HTMLPLayoutElement;
@@ -4925,12 +4910,6 @@ declare namespace LocalJSX {
           * The icon the be displayed
          */
         "variant": IllustrationVariant;
-    }
-    interface PIllustrationDeprecated {
-        /**
-          * The icon the be displayed
-         */
-        "variant": IllustrationDeprecatedVariant;
     }
     interface PInfoPanel {
         /**
@@ -6506,7 +6485,6 @@ declare namespace LocalJSX {
         "p-iban-icon": PIbanIcon;
         "p-icon": PIcon;
         "p-illustration": PIllustration;
-        "p-illustration-deprecated": PIllustrationDeprecated;
         "p-info-panel": PInfoPanel;
         "p-label": PLabel;
         "p-layout": PLayout;
@@ -6592,7 +6570,6 @@ declare module "@stencil/core" {
             "p-iban-icon": LocalJSX.PIbanIcon & JSXBase.HTMLAttributes<HTMLPIbanIconElement>;
             "p-icon": LocalJSX.PIcon & JSXBase.HTMLAttributes<HTMLPIconElement>;
             "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;
-            "p-illustration-deprecated": LocalJSX.PIllustrationDeprecated & JSXBase.HTMLAttributes<HTMLPIllustrationDeprecatedElement>;
             "p-info-panel": LocalJSX.PInfoPanel & JSXBase.HTMLAttributes<HTMLPInfoPanelElement>;
             "p-label": LocalJSX.PLabel & JSXBase.HTMLAttributes<HTMLPLabelElement>;
             "p-layout": LocalJSX.PLayout & JSXBase.HTMLAttributes<HTMLPLayoutElement>;
