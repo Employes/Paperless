@@ -989,7 +989,10 @@ export class TableComponent implements OnInit, OnChanges, AfterViewInit {
 			return null;
 		}
 
-		if (el.dataset['isAction'] !== null && el.dataset['isAction'] !== 'false') {
+		if (
+			el.dataset['isAction'] !== undefined &&
+			el.dataset['isAction'] !== 'false'
+		) {
 			return el;
 		}
 
