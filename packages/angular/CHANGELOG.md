@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.26](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.25...v2.22.0-alpha.26) (2026-01-15)
+
+
+### Bug Fixes
+
+* **angular/table:** Check on undefined instead of null for action check ([be09a3a](https://github.com/Employes/Paperless/commit/be09a3a8dcee37003d37d2832329829e9dd44668))
+
+
+
+
+
 # [2.22.0-alpha.25](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.24...v2.22.0-alpha.25) (2026-01-15)
 
 
