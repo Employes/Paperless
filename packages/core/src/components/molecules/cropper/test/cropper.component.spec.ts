@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { Cropper } from '../cropper.component';
 
 describe('p-cropper', () => {

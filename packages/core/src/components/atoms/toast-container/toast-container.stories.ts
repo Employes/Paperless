@@ -16,9 +16,9 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({ content, placement }) => html`<p-toast-container
-		placement=${placement ?? nothing}
-	>
-		${content}
-	</p-toast-container>`,
+	render: ({ content, placement }) => html`
+		<p-toast-container placement=${placement ?? nothing}>
+			${content}
+		</p-toast-container>
+	`,
 };

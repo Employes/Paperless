@@ -1,4 +1,7 @@
-import path from 'path';
+/* eslint-disable @typescript-eslint/no-require-imports */
+/* eslint-disable unicorn/prefer-module */
+import path from 'node:path';
+
 import { paperless } from './tailwind';
 
 export default {

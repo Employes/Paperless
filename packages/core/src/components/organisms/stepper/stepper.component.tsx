@@ -108,7 +108,7 @@ export class Stepper {
 								active: false,
 								finished: false,
 								content: step,
-						  }
+							}
 						: step,
 					index
 				);

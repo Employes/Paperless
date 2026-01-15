@@ -7,18 +7,16 @@ import {
 } from '@angular/forms';
 
 @Component({
-    template: ``,
-    standalone: false
+	template: ``,
+	standalone: false,
 })
 export abstract class BaseFormComponent {
 	public markedDirty = false;
 
 	scrollToFirstError() {
-		const invalidInputs = Array.from(
-			document.getElementsByClassName('ng-invalid')
-		)
+		const invalidInputs = [...document.querySelectorAll('.ng-invalid')]
 			.filter(e => e?.nodeName?.toLowerCase() !== 'form')
-			.sort((a, b) => a.scrollTop - b.scrollTop);
+			.toSorted((a, b) => a.scrollTop - b.scrollTop);
 		const first = invalidInputs[0];
 
 		if (first) {
@@ -43,7 +41,7 @@ export abstract class BaseFormComponent {
 		} else if (control instanceof FormArray) {
 			control.markAsDirty();
 			control.markAsTouched();
-			for (const child of control?.controls) {
+			for (const child of control.controls) {
 				this.markControlDirty(child);
 			}
 		}
@@ -92,13 +90,15 @@ export abstract class BaseFormComponent {
 	firstControlError(
 		control: FormControl | AbstractControl | FormGroup | FormArray,
 		showChildErrors = true
-	): string | undefined {
+	): (string | undefined)[] | (undefined | string) {
 		if (control instanceof FormGroup && showChildErrors) {
-			const errors: Array<string | undefined> = Object.keys(control.controls)
+			const error: (string | undefined)[] | (undefined | string) = Object.keys(
+				control.controls
+			)
 				.map(key => this.firstControlError(control.controls[key]))
-				.filter(val => !!val);
+				.find(val => !!val);
 
-			return errors[0];
+			return error;
 		}
 
 		if (!control?.errors) {
@@ -126,7 +126,7 @@ export abstract class BaseFormComponent {
 		if (control instanceof FormGroup) {
 			this.resetForm(control);
 		} else if (control instanceof FormArray) {
-			for (const child of control?.controls) {
+			for (const child of control.controls) {
 				this.resetControl(child);
 			}
 		}

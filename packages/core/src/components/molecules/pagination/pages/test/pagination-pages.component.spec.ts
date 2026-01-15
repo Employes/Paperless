@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { PaginationPages } from '../pagination-pages.component';
 
 describe('p-pagination-pages', () => {

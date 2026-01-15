@@ -101,5 +101,4 @@ const safeArea = ({ addUtilities }) => {
 	addUtilities(utilities);
 };
 
-// eslint-disable-next-line unicorn/prefer-module
 export default safeArea;

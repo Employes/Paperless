@@ -16,12 +16,9 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({
-		content,
-		header,
-	}) => html`<p-navigation-section
-		header=${header ?? nothing}
-	>
-		${content}
-	</p-navigation-section>`,
+	render: ({ content, header }) => html`
+		<p-navigation-section header=${header ?? nothing}>
+			${content}
+		</p-navigation-section>
+	`,
 };

@@ -1,17 +1,17 @@
 <p-toast
 	*ngFor="let toast of toasts$ | async; let index = index"
-	[variant]="toast.variant"
-	[header]="toast.header"
-	[content]="toast.content"
-	[identifier]="toast.identifier"
-	[delay]="toast.options.delay ?? 5000"
-	[dismissOnAction]="toast.options.dismissOnAction ?? true"
-	[enableAction]="toast.options.enableAction"
-	[actionFunc]="toast.options.action"
+	[@pSlideInBottomOutTop]
 	[actionData]="toast.options.actionData"
+	[actionFunc]="toast.options.action"
 	[actionIcon]="toast.options.icon?.variant"
 	[actionIconFlip]="toast.options.icon?.flip"
 	[actionIconRotate]="toast.options.icon?.rotate"
+	[content]="toast.content"
+	[delay]="toast.options.delay ?? 5000"
+	[dismissOnAction]="toast.options.dismissOnAction ?? true"
+	[enableAction]="toast.options.enableAction"
+	[header]="toast.header"
+	[identifier]="toast.identifier"
+	[variant]="toast.variant"
 	(dismiss)="dismiss($event)"
-	[@pSlideInBottomOutTop]
-></p-toast>
+/>

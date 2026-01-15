@@ -24,14 +24,16 @@ export const Horizontal = {
 		'enable-auto-status': enableAutoStatus,
 		'content-position': contentPosition,
 		steps,
-	}) => html`<p-stepper
-		active-step=${activeStep ?? nothing}
-		enable-auto-status=${enableAutoStatus ?? nothing}
-		direction="horizontal"
-		content-position=${contentPosition ?? nothing}
-		steps=${steps ?? nothing}
-	>
-	</p-stepper>`,
+	}) => html`
+		<p-stepper
+			active-step=${activeStep ?? nothing}
+			enable-auto-status=${enableAutoStatus ?? nothing}
+			direction="horizontal"
+			content-position=${contentPosition ?? nothing}
+			steps=${steps ?? nothing}
+		>
+		</p-stepper>
+	`,
 };
 
 export const Vertical = {
@@ -40,35 +42,37 @@ export const Vertical = {
 		'enable-auto-status': enableAutoStatus,
 		'content-position': contentPosition,
 		align,
-	}) => html`<p-stepper
-		direction="vertical"
-		active-step=${activeStep ?? nothing}
-		enable-auto-status=${enableAutoStatus ?? nothing}
-		align=${align ?? nothing}
-		content-position=${contentPosition ?? nothing}
-	>
-		<p-stepper-item>
-			<p-card-container>
-				<p-card-body>
-					Some content but longer <br />
-					loooong <br />
-					Even longuuuuur
-				</p-card-body>
-			</p-card-container>
-		</p-stepper-item>
-		<p-stepper-item>
-			<p-card-container>
-				<p-card-body>
-					Some content but longer <br />
-					loooong <br />
-					Even longuuuuur
-				</p-card-body>
-			</p-card-container>
-		</p-stepper-item>
-		<p-stepper-item>
-			<p-card-container>
-				<p-card-body>Some content</p-card-body>
-			</p-card-container>
-		</p-stepper-item>
-	</p-stepper>`,
+	}) => html`
+		<p-stepper
+			direction="vertical"
+			active-step=${activeStep ?? nothing}
+			enable-auto-status=${enableAutoStatus ?? nothing}
+			align=${align ?? nothing}
+			content-position=${contentPosition ?? nothing}
+		>
+			<p-stepper-item>
+				<p-card-container>
+					<p-card-body>
+						Some content but longer <br />
+						loooong <br />
+						Even longuuuuur
+					</p-card-body>
+				</p-card-container>
+			</p-stepper-item>
+			<p-stepper-item>
+				<p-card-container>
+					<p-card-body>
+						Some content but longer <br />
+						loooong <br />
+						Even longuuuuur
+					</p-card-body>
+				</p-card-container>
+			</p-stepper-item>
+			<p-stepper-item>
+				<p-card-container>
+					<p-card-body>Some content</p-card-body>
+				</p-card-container>
+			</p-stepper-item>
+		</p-stepper>
+	`,
 };

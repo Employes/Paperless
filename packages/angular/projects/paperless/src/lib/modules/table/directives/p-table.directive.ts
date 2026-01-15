@@ -1,5 +1,7 @@
-import { Directive, ElementRef } from '@angular/core';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Directive } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
+
 import { QuickFilter } from '@paperless/core';
 
 import { BaseValueAccessor } from '../../../base';
@@ -13,23 +15,22 @@ export interface NGXTableDirectiveValue {
 }
 
 @Directive({
-    /* tslint:disable-next-line:directive-selector */
-    selector: 'p-table',
-    host: {
-        '(queryChange)': 'handleChange($event.detail, "query")',
-        '(quickFilter)': 'handleChange($event.detail, "quickFilter")',
-        '(pageChange)': 'handleChange($event.detail, "page")',
-        '(pageSizeChange)': 'handleChange($event.detail, "pageSize")',
-        '(selectedRowsChange)': 'handleChange($event.detail, "selectedRows")',
-    },
-    providers: [
-        {
-            provide: NG_VALUE_ACCESSOR,
-            useExisting: TableDirective,
-            multi: true,
-        },
-    ],
-    standalone: false
+	selector: 'p-table',
+	host: {
+		'(queryChange)': 'handleChange($event.detail, "query")',
+		'(quickFilter)': 'handleChange($event.detail, "quickFilter")',
+		'(pageChange)': 'handleChange($event.detail, "page")',
+		'(pageSizeChange)': 'handleChange($event.detail, "pageSize")',
+		'(selectedRowsChange)': 'handleChange($event.detail, "selectedRows")',
+	},
+	providers: [
+		{
+			provide: NG_VALUE_ACCESSOR,
+			useExisting: TableDirective,
+			multi: true,
+		},
+	],
+	standalone: false,
 })
 export class TableDirective extends BaseValueAccessor {
 	protected override lastValue: NGXTableDirectiveValue = {
@@ -39,10 +40,6 @@ export class TableDirective extends BaseValueAccessor {
 		pageSize: 12,
 		selectedRows: [],
 	};
-
-	constructor(el: ElementRef) {
-		super(el);
-	}
 
 	public override writeValue(value: NGXTableDirectiveValue) {
 		this.el.nativeElement.query = this.lastValue.query = value?.query;

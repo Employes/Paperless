@@ -1,17 +1,5 @@
 import { Routes } from '@angular/router';
 
-import { CropperComponent } from './features/cropper/cropper.component';
-import { DatepickerComponent } from './features/datepicker/datepicker.component';
-import { DrawerComponent } from './features/drawer/drawer.component';
-import { HomeComponent } from './features/home/home.component';
-import { InputsComponent } from './features/inputs/inputs.component';
-import { ModalComponent } from './features/modal/modal.component';
-import { SelectComponent } from './features/select/select.component';
-import { StepperComponent } from './features/stepper/stepper.component';
-import { TableComponent } from './features/table/default/table.component';
-import { ScrollableTableComponent } from './features/table/scrollable/table.component';
-import { ToastComponent } from './features/toast/toast.component';
-
 export const routes: Routes = [
 	{
 		path: '',

@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { Divider } from '../divider.component';
 
 describe('p-divider', () => {

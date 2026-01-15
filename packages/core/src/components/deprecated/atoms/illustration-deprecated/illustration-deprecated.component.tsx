@@ -1,4 +1,5 @@
 import { Component, h, Host, Prop } from '@stencil/core';
+
 import illustrations from '../../../../utils/illustrations-deprecated';
 
 export type IllustrationDeprecatedVariant = keyof typeof illustrations;

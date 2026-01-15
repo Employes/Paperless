@@ -10,13 +10,14 @@ import {
 	State,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+
+import { ThemedHost } from '../../../../internal/themed-host.component';
 import {
 	cn,
 	formatTranslation,
 	getLocaleComponentStrings,
 } from '../../../../utils';
 import { asBoolean } from '../../../../utils/as-boolean';
-import { ThemedHost } from '../../../../internal/themed-host.component';
 
 const loader = cva(['rounded-lg w-full'], {
 	variants: {

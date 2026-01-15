@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { Accordion } from '../accordion.component';
 
 describe('p-accordion', () => {

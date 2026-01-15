@@ -9,6 +9,7 @@ import {
 	Listen,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+
 import { ThemedHost } from '../../../../internal/themed-host.component';
 import {
 	PAGINATION_DEFAULT_PAGE_SIZE,
@@ -204,7 +205,7 @@ export class TableFooter {
 
 			const innerContentComputed = getComputedStyle(innerContent);
 
-			const modalPaddingBottom = parseInt(
+			const modalPaddingBottom = Number.parseInt(
 				innerContentComputed.paddingBottom,
 				10
 			);
@@ -216,7 +217,7 @@ export class TableFooter {
 			const innerContent = layout.shadowRoot.querySelector('.content');
 			const innerContentComputed = getComputedStyle(innerContent);
 
-			const layoutPaddingBottom = parseInt(
+			const layoutPaddingBottom = Number.parseInt(
 				innerContentComputed.paddingBottom,
 				10
 			);

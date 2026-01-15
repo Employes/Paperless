@@ -16,9 +16,9 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({ content, 'inherit-text': inheritText }) => html`<p-card-body
-		inherit-text=${inheritText ?? nothing}
-	>
-		${content}
-	</p-card-body>`,
+	render: ({ content, 'inherit-text': inheritText }) => html`
+		<p-card-body inherit-text=${inheritText ?? nothing}>
+			${content}
+		</p-card-body>
+	`,
 };

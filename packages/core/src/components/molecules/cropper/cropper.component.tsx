@@ -7,8 +7,8 @@ import {
 	State,
 	h,
 } from '@stencil/core';
-import 'cropperjs';
 import { CropperImage, CropperSelection } from 'cropperjs';
+
 import { ThemedHost } from '../../../internal/themed-host.component';
 import { state } from '../../../state';
 

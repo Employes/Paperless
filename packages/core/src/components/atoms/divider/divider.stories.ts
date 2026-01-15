@@ -17,12 +17,14 @@ export default meta;
 
 export const Default = {
 	render: ({ content, variant, 'align-content': alignContent }) =>
-		!!content.length
-			? html`<p-divider
+		content.length > 0
+			? html`
+				<p-divider
 					variant=${variant ?? nothing}
 					align-content=${alignContent ?? nothing}
-			  >
+				>
 					${content}
-			  </p-divider>`
+				</p-divider>
+			`
 			: html`<p-divider variant=${variant ?? nothing} />`,
 };

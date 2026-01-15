@@ -1,5 +1,5 @@
-import { html, nothing } from 'lit';
 import { action } from '@storybook/addon-actions';
+import { html, nothing } from 'lit';
 
 const meta = {
 	title: 'Design System/Organisms/Modal',
@@ -40,33 +40,35 @@ export const Default = {
 		'backdrop-click-close': backdropClickClose,
 		'scroll-lock': scrollLock,
 		padding,
-	}) => html`<p-modal
-		size=${size ?? nothing}
-		variant=${variant ?? nothing}
-		header=${header ?? nothing}
-		show=${show ?? nothing}
-		apply-blur=${applyBlur ?? nothing}
-		show-close=${showClose ?? nothing}
-		show-mobile-footer=${showMobileFooter ?? nothing}
-		backdrop-click-close=${backdropClickClose ?? nothing}
-		scroll-lock=${scrollLock ?? nothing}
-		padding=${padding ?? nothing}
-		@closeClicked=${action('closeClicked')}
-		@closed=${action('closed')}
-	>
-		<slot slot="content">${content}</slot>
-		<p-button
-			slot="footer"
-			class="hidden tablet:inline-block"
-			variant="secondary"
+	}) => html`
+		<p-modal
+			size=${size ?? nothing}
+			variant=${variant ?? nothing}
+			header=${header ?? nothing}
+			show=${show ?? nothing}
+			apply-blur=${applyBlur ?? nothing}
+			show-close=${showClose ?? nothing}
+			show-mobile-footer=${showMobileFooter ?? nothing}
+			backdrop-click-close=${backdropClickClose ?? nothing}
+			scroll-lock=${scrollLock ?? nothing}
+			padding=${padding ?? nothing}
+			@closeClicked=${action('closeClicked')}
+			@closed=${action('closed')}
 		>
-			Cancel
-		</p-button>
-		<p-button
-			slot="footer"
-			class="w-full tablet:ml-auto tablet:w-auto"
-		>
-			Submit
-		</p-button>
-	</p-modal>`,
+			<slot slot="content">${content}</slot>
+			<p-button
+				slot="footer"
+				class="hidden tablet:inline-block"
+				variant="secondary"
+			>
+				Cancel
+			</p-button>
+			<p-button
+				slot="footer"
+				class="w-full tablet:ml-auto tablet:w-auto"
+			>
+				Submit
+			</p-button>
+		</p-modal>
+	`,
 };

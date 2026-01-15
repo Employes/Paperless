@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { ModalFooter } from '../modal-footer.component';
 
 describe('p-modal-footer', () => {

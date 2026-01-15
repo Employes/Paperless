@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
 	Overlay,
 	OverlayConfig,
@@ -10,6 +11,7 @@ import {
 	Injector,
 	StaticProvider,
 } from '@angular/core';
+
 import { OverlayRef } from './overlay.ref';
 
 interface ModalOptions {
@@ -20,7 +22,10 @@ interface ModalOptions {
 @Injectable()
 export class OverlayService {
 	public overlayRef!: OverlayRef<any>;
-	constructor(private injector: Injector, private overlay: Overlay) {}
+	constructor(
+		private injector: Injector,
+		private overlay: Overlay
+	) {}
 
 	open<T>(component: ComponentType<T> | CdkPortal, options: ModalOptions = {}) {
 		const overlay = this._createOverlay();
@@ -39,7 +44,6 @@ export class OverlayService {
 		return overlayRef;
 	}
 
-	// tslint:disable-next-line:max-line-length
 	private _attachModalContainer<T>(
 		overlay: CDKOverlayRef,
 		overlayRef: OverlayRef<T>,

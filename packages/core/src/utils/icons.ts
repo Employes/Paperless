@@ -1,24 +1,22 @@
-import caret from '../assets/icons/arrows/caret.svg';
-import doubleCaret from '../assets/icons/arrows/double-caret.svg';
 import arrow from '../assets/icons/arrows/arrow.svg';
+import caret from '../assets/icons/arrows/caret.svg';
 import doubleArrow from '../assets/icons/arrows/double-arrow.svg';
+import doubleCaret from '../assets/icons/arrows/double-caret.svg';
 import turn from '../assets/icons/arrows/turn.svg';
-
 import bell from '../assets/icons/communication/bell.svg';
 import chat from '../assets/icons/communication/chat.svg';
 import checkCircle from '../assets/icons/communication/check-circle.svg';
 import crossCircle from '../assets/icons/communication/cross-circle.svg';
 import errorCircle from '../assets/icons/communication/error-circle.svg';
+import headset from '../assets/icons/communication/headset.svg';
 import infoCircle from '../assets/icons/communication/info-circle.svg';
 import phone from '../assets/icons/communication/phone.svg';
 import questionCircle from '../assets/icons/communication/question-circle.svg';
-import headset from '../assets/icons/communication/headset.svg';
 import warning from '../assets/icons/communication/warning.svg';
-
 import apple from '../assets/icons/external/apple.svg';
 import google from '../assets/icons/external/google.svg';
 import ideal from '../assets/icons/external/ideal.svg';
-
+import checkmarkThick from '../assets/icons/extra/checkmark-thick.svg';
 import attachment from '../assets/icons/files/attachment.svg';
 import description from '../assets/icons/files/description.svg';
 import documentIcon from '../assets/icons/files/document.svg';
@@ -27,7 +25,6 @@ import fileImport from '../assets/icons/files/file-import.svg';
 import folder from '../assets/icons/files/folder.svg';
 import pdf from '../assets/icons/files/pdf.svg';
 import xls from '../assets/icons/files/xls.svg';
-
 import bank from '../assets/icons/general/bank.svg';
 import bread from '../assets/icons/general/bread.svg';
 import cake from '../assets/icons/general/cake.svg';
@@ -54,8 +51,8 @@ import exam from '../assets/icons/general/exam.svg';
 import filter from '../assets/icons/general/filter.svg';
 import flag from '../assets/icons/general/flag.svg';
 import flower from '../assets/icons/general/flower.svg';
-import globe from '../assets/icons/general/globe.svg';
 import globeTwo from '../assets/icons/general/globe-2.svg';
+import globe from '../assets/icons/general/globe.svg';
 import hash from '../assets/icons/general/hash.svg';
 import hat from '../assets/icons/general/hat.svg';
 import home from '../assets/icons/general/home.svg';
@@ -65,8 +62,8 @@ import laptop from '../assets/icons/general/laptop.svg';
 import location from '../assets/icons/general/location.svg';
 import mail from '../assets/icons/general/mail.svg';
 import medal from '../assets/icons/general/medal.svg';
-import menu from '../assets/icons/general/menu.svg';
 import menuArrow from '../assets/icons/general/menu-arrow.svg';
+import menu from '../assets/icons/general/menu.svg';
 import minus from '../assets/icons/general/minus.svg';
 import moon from '../assets/icons/general/moon.svg';
 import more from '../assets/icons/general/more.svg';
@@ -103,29 +100,24 @@ import trash from '../assets/icons/general/trash.svg';
 import upload from '../assets/icons/general/upload.svg';
 import wave from '../assets/icons/general/wave.svg';
 import zipcode from '../assets/icons/general/zipcode.svg';
-
-import eye from '../assets/icons/security/eye.svg';
 import eyeClosed from '../assets/icons/security/eye-closed.svg';
+import eye from '../assets/icons/security/eye.svg';
 import key from '../assets/icons/security/key.svg';
 import lock from '../assets/icons/security/lock.svg';
 import unlocked from '../assets/icons/security/unlocked.svg';
-
 import alarm from '../assets/icons/time/alarm.svg';
-import calendar from '../assets/icons/time/calendar.svg';
-import calendarMulti from '../assets/icons/time/calendar-multi.svg';
 import calendarFree from '../assets/icons/time/calendar-free.svg';
+import calendarMulti from '../assets/icons/time/calendar-multi.svg';
 import calendarNotFree from '../assets/icons/time/calendar-not-free.svg';
+import calendar from '../assets/icons/time/calendar.svg';
 import clock from '../assets/icons/time/clock.svg';
-
 import addressBook from '../assets/icons/users/address-book.svg';
 import female from '../assets/icons/users/female.svg';
-import id from '../assets/icons/users/id.svg';
 import idTwo from '../assets/icons/users/id-two.svg';
+import id from '../assets/icons/users/id.svg';
 import male from '../assets/icons/users/male.svg';
 import user from '../assets/icons/users/user.svg';
 import users from '../assets/icons/users/users.svg';
-
-import checkmarkThick from '../assets/icons/extra/checkmark-thick.svg';
 
 export const categorized = {
 	arrows: {

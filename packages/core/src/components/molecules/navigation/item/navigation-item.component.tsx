@@ -1,9 +1,10 @@
 import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+
 import { ThemedHost } from '../../../../internal/themed-host.component';
+import { IconVariant } from '../../../../types/icon';
 import { asBoolean } from '../../../../utils/as-boolean';
 import { cn } from '../../../../utils/cn';
-import { IconVariant } from '../../../atoms/icon/icon.component';
 
 const navigationItem = cva(
 	[

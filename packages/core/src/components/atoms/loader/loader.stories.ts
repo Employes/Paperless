@@ -23,13 +23,15 @@ export const Default = {
 		color,
 		'modal-title': modalTitle,
 		'modal-description': modalDescription,
-	}) => html`<p-loader
-		show=${show ?? nothing}
-		variant=${variant ?? nothing}
-		color=${color ?? nothing}
-		modal-title=${modalTitle ?? nothing}
-		modal-description=${modalDescription ?? nothing}
-	>
-		${content}
-	</p-loader>`,
+	}) => html`
+		<p-loader
+			show=${show ?? nothing}
+			variant=${variant ?? nothing}
+			color=${color ?? nothing}
+			modal-title=${modalTitle ?? nothing}
+			modal-description=${modalDescription ?? nothing}
+		>
+			${content}
+		</p-loader>
+	`,
 };

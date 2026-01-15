@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { DropdownMenuItem } from '../dropdown-menu-item.component';
 
 describe('p-dropdown-menu-item', () => {

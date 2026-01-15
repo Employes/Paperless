@@ -1,5 +1,5 @@
-import { html, nothing } from 'lit';
 import { action } from '@storybook/addon-actions';
+import { html, nothing } from 'lit';
 
 const meta = {
 	title: 'Design System/Molecules/Pagination/Pagination',
@@ -29,15 +29,17 @@ export const Default = {
 		total,
 		'page-size': pageSize,
 		'page-size-options': pageSizeOptions,
-	}) => html`<p-pagination
-		hide-on-single-page=${hideOnSinglePage ?? nothing}
-		enable-pagination-size=${enablePaginationSize ?? nothing}
-		enable-pagination-pages=${enablePaginationPages ?? nothing}
-		page=${page ?? nothing}
-		total=${total ?? nothing}
-		page-size=${pageSize ?? nothing}
-		page-size-options=${pageSizeOptions ?? nothing}
-		@pageChange=${action('pageChange')}
-		@pageSizeChange=${action('pageSizeChange')}
-	/>`,
+	}) => html`
+		<p-pagination
+			hide-on-single-page=${hideOnSinglePage ?? nothing}
+			enable-pagination-size=${enablePaginationSize ?? nothing}
+			enable-pagination-pages=${enablePaginationPages ?? nothing}
+			page=${page ?? nothing}
+			total=${total ?? nothing}
+			page-size=${pageSize ?? nothing}
+			page-size-options=${pageSizeOptions ?? nothing}
+			@pageChange=${action('pageChange')}
+			@pageSizeChange=${action('pageSizeChange')}
+		/>
+	`,
 };

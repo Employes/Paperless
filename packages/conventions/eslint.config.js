@@ -14,7 +14,7 @@ export default defineConfig([
 	prettierPlugin,
 	...jsoncPlugin.configs['flat/recommended-with-json'],
 	...jsoncPlugin.configs['flat/recommended-with-jsonc'],
-	unicornPlugin.configs.all,
+
 	nxPlugin.configs['flat/javascript'],
 	nxPlugin.configs['flat/react-typescript'],
 	nxPlugin.configs['flat/angular'],
@@ -34,7 +34,7 @@ export default defineConfig([
 	},
 	{
 		files: ['**/*.{ts,tsx,js,jsx}'],
-		extends: [importPlugin.flatConfigs.recommended],
+		extends: [importPlugin.flatConfigs.recommended, unicornPlugin.configs.all],
 		rules: {
 			'arrow-body-style': ['error', 'as-needed'],
 			'unicorn/no-null': 'off',
@@ -44,6 +44,14 @@ export default defineConfig([
 				'error',
 				{
 					checkArrowFunctions: false,
+				},
+			],
+			'@typescript-eslint/no-unused-vars': [
+				'error',
+				{
+					argsIgnorePattern: '^h|_$',
+					caughtErrorsIgnorePattern: '^h|_$',
+					varsIgnorePattern: '^h|_$',
 				},
 			],
 			'import/no-unresolved': 'off',

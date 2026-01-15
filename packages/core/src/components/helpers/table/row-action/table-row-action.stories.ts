@@ -19,16 +19,18 @@ export const Default = {
 		disabled,
 		loading,
 		'show-function': showFunction,
-	}) => html`<p-table-row-action
-		type=${type ?? nothing}
-		icon=${icon ?? nothing}
-		icon-only=${iconOnly ?? nothing}
-		icon-flip=${iconFlip ?? nothing}
-		icon-rotate=${iconRotate ?? nothing}
-		label=${label ?? nothing}
-		action=${action ?? nothing}
-		disabled=${disabled ?? nothing}
-		loading=${loading ?? nothing}
-		show-function=${showFunction ?? nothing}
-	/>`,
+	}) => html`
+		<p-table-row-action
+			type=${type ?? nothing}
+			icon=${icon ?? nothing}
+			icon-only=${iconOnly ?? nothing}
+			icon-flip=${iconFlip ?? nothing}
+			icon-rotate=${iconRotate ?? nothing}
+			label=${label ?? nothing}
+			action=${action ?? nothing}
+			disabled=${disabled ?? nothing}
+			loading=${loading ?? nothing}
+			show-function=${showFunction ?? nothing}
+		/>
+	`,
 };

@@ -1,5 +1,5 @@
-import { html, nothing } from 'lit';
 import { action } from '@storybook/addon-actions';
+import { html, nothing } from 'lit';
 
 const meta = {
 	title: 'Design System/Atoms/Backdrop',
@@ -23,15 +23,17 @@ export const Default = {
 		'apply-blur': applyBlur,
 		closing,
 		'scroll-lock': scrollLock,
-		'class': className,
-	}) => html`<p-backdrop
-		variant=${variant ?? nothing}
-		apply-blur=${applyBlur ?? nothing}
-		closing=${closing ?? nothing}
-		scroll-lock=${scrollLock ?? nothing}
-		class=${className ?? nothing}
-		@clicked=${action('clicked')}
-	>
-		${content}
-	</p-backdrop>`,
+		class: className,
+	}) => html`
+		<p-backdrop
+			variant=${variant ?? nothing}
+			apply-blur=${applyBlur ?? nothing}
+			closing=${closing ?? nothing}
+			scroll-lock=${scrollLock ?? nothing}
+			class=${className ?? nothing}
+			@clicked=${action('clicked')}
+		>
+			${content}
+		</p-backdrop>
+	`,
 };

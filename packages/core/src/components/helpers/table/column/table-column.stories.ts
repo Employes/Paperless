@@ -1,5 +1,5 @@
-import { html, nothing } from 'lit';
 import { action } from '@storybook/addon-actions';
+import { html, nothing } from 'lit';
 
 const meta = {
 	title: 'Design System/Helpers/Table/Column',
@@ -19,16 +19,18 @@ export const Default = {
 		'is-last': isLast,
 		'parsed-sizes': parsedSizes,
 		sizes,
-	}) => html`<p-table-column
-		path=${path ?? nothing}
-		type=${type ?? nothing}
-		name=${name ?? nothing}
-		use-slot=${useSlot ?? nothing}
-		has-checkbox=${hasCheckbox ?? nothing}
-		align=${align ?? nothing}
-		is-last=${isLast ?? nothing}
-		parsed-sizes=${parsedSizes ?? nothing}
-		sizes=${sizes ?? nothing}
-		@tableDefinitionChanged=${action('tableDefinitionChanged')}
-	/>`,
+	}) => html`
+		<p-table-column
+			path=${path ?? nothing}
+			type=${type ?? nothing}
+			name=${name ?? nothing}
+			use-slot=${useSlot ?? nothing}
+			has-checkbox=${hasCheckbox ?? nothing}
+			align=${align ?? nothing}
+			is-last=${isLast ?? nothing}
+			parsed-sizes=${parsedSizes ?? nothing}
+			sizes=${sizes ?? nothing}
+			@tableDefinitionChanged=${action('tableDefinitionChanged')}
+		/>
+	`,
 };

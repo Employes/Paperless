@@ -1,4 +1,5 @@
 import { Component, Element, h, Host, Listen, Prop } from '@stencil/core';
+
 import { Button } from '../button/button.component';
 
 @Component({
@@ -35,9 +36,9 @@ export class ButtonGroup {
 	}
 
 	private _checkButtons() {
-		const buttons = Array.from(
-			this._el.querySelectorAll(':scope > p-button')
-		) as any as Button[];
+		const buttons = [
+			...this._el.querySelectorAll(':scope > p-button'),
+		] as any as Button[];
 
 		for (let i = 0; i < buttons.length; i++) {
 			const button = buttons[i];

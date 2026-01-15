@@ -16,14 +16,12 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({
-		content,
-		variant,
-		'enable-hover': enableHover,
-	}) => html`<p-table-row
-		variant=${variant ?? nothing}
-		enable-hover=${enableHover ?? nothing}
-	>
-		${content}
-	</p-table-row>`,
+	render: ({ content, variant, 'enable-hover': enableHover }) => html`
+		<p-table-row
+			variant=${variant ?? nothing}
+			enable-hover=${enableHover ?? nothing}
+		>
+			${content}
+		</p-table-row>
+	`,
 };

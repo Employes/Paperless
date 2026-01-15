@@ -1,16 +1,15 @@
-import { OnDestroy } from '@angular/core';
-import { Directive, ElementRef, OnInit, Self } from '@angular/core';
+import { OnDestroy, Directive, ElementRef, OnInit, Self } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
 import { filter, Subscription } from 'rxjs';
 
 import { BaseValueAccessor } from '../base';
 
 @Directive({
-    selector: 'p-radio',
-    host: {
-        '(checkedChange)': 'handleChangeEvent($event.detail)',
-    },
-    standalone: false
+	selector: 'p-radio',
+	host: {
+		'(checkedChange)': 'handleChangeEvent($event.detail)',
+	},
+	standalone: false,
 })
 export class RadioDirective
 	extends BaseValueAccessor
@@ -19,7 +18,10 @@ export class RadioDirective
 	private _modelValue: string | boolean | undefined;
 	private _valueChanges: Subscription | undefined;
 
-	constructor(@Self() private _control: NgControl, el: ElementRef) {
+	constructor(
+		@Self() private _control: NgControl,
+		el: ElementRef
+	) {
 		super(el);
 		_control.valueAccessor = this;
 	}
@@ -27,23 +29,19 @@ export class RadioDirective
 	ngOnInit() {
 		this._valueChanges = this._control
 			.control!.valueChanges.pipe(filter(value => this._modelValue !== value))
-			.subscribe((value: any) => this.writeValue(value));
+			.subscribe((value: string) => this.writeValue(value));
 	}
 
 	override writeValue(value: string) {
 		const elValue = this._getValue();
 		this._modelValue = value;
-		this.el.nativeElement.checked =
-			this._modelValue === elValue;
+		this.el.nativeElement.checked = this._modelValue === elValue;
 	}
 
 	override handleChangeEvent() {
 		const elValue = this._getValue();
 
-		this._modelValue =
-			this._modelValue === elValue
-				? undefined
-				: elValue;
+		this._modelValue = this._modelValue === elValue ? undefined : elValue;
 		this.onChange(this._modelValue);
 	}
 
@@ -55,11 +53,11 @@ export class RadioDirective
 
 	private _getValue() {
 		let value = this.el.nativeElement.value;
-		if(value === 'true') {
+		if (value === 'true') {
 			value = true;
 		}
 
-		if(value === 'false') {
+		if (value === 'false') {
 			value = false;
 		}
 

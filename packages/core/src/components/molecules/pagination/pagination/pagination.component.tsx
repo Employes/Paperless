@@ -8,6 +8,7 @@ import {
 	State,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+
 import { ThemedHost } from '../../../../internal/themed-host.component';
 import {
 	PAGINATION_DEFAULT_PAGE_SIZE,

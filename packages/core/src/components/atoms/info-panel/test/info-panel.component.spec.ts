@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { InfoPanel } from '../info-panel.component';
 
 describe('p-counter', () => {

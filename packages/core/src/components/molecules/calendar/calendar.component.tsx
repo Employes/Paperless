@@ -1,3 +1,4 @@
+/* eslint-disable import/no-duplicates */
 import {
 	Component,
 	Event,
@@ -29,12 +30,13 @@ import {
 	setYear,
 	startOfDay,
 	startOfMonth,
+	subYears,
 } from 'date-fns';
-import { nl, enUS } from 'date-fns/locale';
-import { cn } from '../../../utils/cn';
-import { state } from '../../../state';
+import { enUS, nl } from 'date-fns/locale';
+
 import { ThemedHost } from '../../../internal/themed-host.component';
-import { subYears } from 'date-fns';
+import { state } from '../../../state';
+import { cn } from '../../../utils/cn';
 
 const calendar = cva(['w-[17.5rem] flex flex-col gap-4'], {
 	variants: {
@@ -147,7 +149,7 @@ export class Calendar {
 
 	@State() private _enableToday = true;
 
-	private _weekDays = Array.from(Array(7).keys());
+	private _weekDays = [...Array.from({ length: 7 }).keys()];
 	private _yearItemsRef: HTMLDivElement;
 
 	componentWillLoad() {
@@ -340,8 +342,8 @@ export class Calendar {
 							)}
 						</span>
 					))}
-					{daysInMonth.map(day => {
-						return day.active ? (
+					{daysInMonth.map(day =>
+						day.active ? (
 							<p-button
 								variant='primary'
 								tabIndex={-1}
@@ -373,8 +375,8 @@ export class Calendar {
 							>
 								{day.day}
 							</time>
-						);
-					})}
+						)
+					)}
 				</div>
 			</div>
 		);
@@ -598,7 +600,8 @@ export class Calendar {
 	}
 
 	private _generateDaysInMonth() {
-		const days = Array.from(Array(getDaysInMonth(this._viewDate)).keys());
+		// eslint-disable-next-line unicorn/no-new-array
+		const days = [...new Array(getDaysInMonth(this._viewDate)).keys()];
 
 		return days.map(day => {
 			day = day + 1;
@@ -621,13 +624,13 @@ export class Calendar {
 			(isBefore(day, this._minDate) && !isSameDay(day, this._maxDate)) ||
 			(isAfter(day, this._maxDate) && !isSameDay(day, this._maxDate)) ||
 			((getDay(day) === 0 || getDay(day) === 6) && this.disableWeekends) ||
-			this._disabledDates.findIndex(date => isSameDay(date, day)) >= 0
+			this._disabledDates.some(date => isSameDay(date, day))
 		);
 	}
 
 	private _generateMonths() {
 		const year = getYear(this._viewDate);
-		const months = Array.from(Array(12).keys());
+		const months = [...Array.from({ length: 12 }).keys()];
 
 		return months.map(month => {
 			const date = new Date(year, month, 1);
@@ -646,7 +649,8 @@ export class Calendar {
 		const maxYear = getYear(this._maxDate) + 1;
 		const minYear = getYear(this._minDate);
 
-		return Array.from(Array(maxYear - minYear).keys()).map(index => {
+		// eslint-disable-next-line unicorn/no-new-array
+		return [...new Array(maxYear - minYear).keys()].map(index => {
 			const year = minYear + index;
 			return {
 				year,

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export type QuickFilterTextFunction = () => string;
 
 export interface QuickFilter {

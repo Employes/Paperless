@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { Toggle } from '../toggle.component';
 
 describe('p-toggle', () => {

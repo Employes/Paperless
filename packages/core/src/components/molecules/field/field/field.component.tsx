@@ -13,15 +13,13 @@ import {
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { HTMLInputTypeAttribute } from 'react';
+
 import { ThemedHost } from '../../../../internal/themed-host.component';
+import { IconFlipOptions, IconVariant } from '../../../../types';
 import { RotateOptions } from '../../../../types/tailwind';
 import { asBoolean } from '../../../../utils/as-boolean';
 import { cn } from '../../../../utils/cn';
 import { nonce } from '../../../../utils/nonce';
-import {
-	IconFlipOptions,
-	IconVariant,
-} from '../../../atoms/icon/icon.component';
 import { templateFunc } from '../container/field-container.component';
 
 const field = cva(

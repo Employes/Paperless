@@ -1,5 +1,5 @@
-import { html, nothing } from 'lit';
 import { action } from '@storybook/addon-actions';
+import { html, nothing } from 'lit';
 
 const meta = {
 	title: 'Design System/Molecules/Table/Header',
@@ -26,26 +26,28 @@ export const Default = {
 		'action-text': actionText,
 		'can-use-action': canUseAction,
 		'action-button-template': actionButtonTemplate,
-	}) => html`<p-table-header
-		quick-filters=${quickFilters ?? nothing}
-		active-quick-filter-identifier=${activeQuickFilterIdentifier ?? nothing}
-		loading=${loading ?? nothing}
-		enable-search=${enableSearch ?? nothing}
-		items-selected-amount=${itemsSelectedAmount ?? nothing}
-		query=${query ?? nothing}
-		enable-filter=${enableFilter ?? nothing}
-		enable-filter-desktop=${enableFilterDesktop ?? nothing}
-		selected-filters-amount=${selectedFiltersAmount ?? nothing}
-		filter-button-template=${filterButtonTemplate ?? nothing}
-		enable-action=${enableAction ?? nothing}
-		action-loading=${actionLoading ?? nothing}
-		action-icon=${actionIcon ?? nothing}
-		action-text=${actionText ?? nothing}
-		can-use-action=${canUseAction ?? nothing}
-		action-button-template=${actionButtonTemplate ?? nothing}
-		@quickFilter=${action('quickFilter')}
-		@queryChange=${action('queryChange')}
-		@filter=${action('filter')}
-		@action=${action('action')}
-	/>`,
+	}) => html`
+		<p-table-header
+			quick-filters=${quickFilters ?? nothing}
+			active-quick-filter-identifier=${activeQuickFilterIdentifier ?? nothing}
+			loading=${loading ?? nothing}
+			enable-search=${enableSearch ?? nothing}
+			items-selected-amount=${itemsSelectedAmount ?? nothing}
+			query=${query ?? nothing}
+			enable-filter=${enableFilter ?? nothing}
+			enable-filter-desktop=${enableFilterDesktop ?? nothing}
+			selected-filters-amount=${selectedFiltersAmount ?? nothing}
+			filter-button-template=${filterButtonTemplate ?? nothing}
+			enable-action=${enableAction ?? nothing}
+			action-loading=${actionLoading ?? nothing}
+			action-icon=${actionIcon ?? nothing}
+			action-text=${actionText ?? nothing}
+			can-use-action=${canUseAction ?? nothing}
+			action-button-template=${actionButtonTemplate ?? nothing}
+			@quickFilter=${action('quickFilter')}
+			@queryChange=${action('queryChange')}
+			@filter=${action('filter')}
+			@action=${action('action')}
+		/>
+	`,
 };

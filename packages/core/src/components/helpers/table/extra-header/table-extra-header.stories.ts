@@ -1,5 +1,5 @@
-import { html, nothing } from 'lit';
 import { action } from '@storybook/addon-actions';
+import { html, nothing } from 'lit';
 
 const meta = {
 	title: 'Design System/Helpers/Table/Extra Header',
@@ -9,16 +9,13 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({
-		name,
-		align,
-		'parsed-sizes': parsedSizes,
-		sizes,
-	}) => html`<p-table-column
-		name=${name ?? nothing}
-		align=${align ?? nothing}
-		parsed-sizes=${parsedSizes ?? nothing}
-		sizes=${sizes ?? nothing}
-		@tableDefinitionChanged=${action('tableDefinitionChanged')}
-	/>`,
+	render: ({ name, align, 'parsed-sizes': parsedSizes, sizes }) => html`
+		<p-table-column
+			name=${name ?? nothing}
+			align=${align ?? nothing}
+			parsed-sizes=${parsedSizes ?? nothing}
+			sizes=${sizes ?? nothing}
+			@tableDefinitionChanged=${action('tableDefinitionChanged')}
+		/>
+	`,
 };

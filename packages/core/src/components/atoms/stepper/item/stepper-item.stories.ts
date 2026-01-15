@@ -22,12 +22,15 @@ export const Default = {
 		'content-position': contentPosition,
 		finished,
 		active,
-		content
-	}) => html`<p-stepper-item
-		align=${align ?? nothing}
-		direction=${direction ?? nothing}
-		content-position=${contentPosition ?? nothing}
-		finished=${finished ?? nothing}
-		active=${active ?? nothing}
-	>${content}</p-stepper-item>`,
+		content,
+	}) => html`
+		<p-stepper-item
+			align=${align ?? nothing}
+			direction=${direction ?? nothing}
+			content-position=${contentPosition ?? nothing}
+			finished=${finished ?? nothing}
+			active=${active ?? nothing}
+			>${content}</p-stepper-item
+		>
+	`,
 };

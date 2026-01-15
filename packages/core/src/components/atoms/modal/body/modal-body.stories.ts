@@ -22,12 +22,14 @@ export const Default = {
 		'rounded-bottom': roundedBottom,
 		'rounded-top': roundedTop,
 		padding,
-	}) => html`<p-modal-body
-		variant=${variant ?? nothing}
-		rounded-bottom=${roundedBottom ?? nothing}
-		rounded-top=${roundedTop ?? nothing}
-		padding=${padding ?? nothing}
-	>
-		${content}
-	</p-modal-body>`,
+	}) => html`
+		<p-modal-body
+			variant=${variant ?? nothing}
+			rounded-bottom=${roundedBottom ?? nothing}
+			rounded-top=${roundedTop ?? nothing}
+			padding=${padding ?? nothing}
+		>
+			${content}
+		</p-modal-body>
+	`,
 };

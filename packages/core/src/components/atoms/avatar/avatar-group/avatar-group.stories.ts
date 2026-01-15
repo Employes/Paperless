@@ -16,12 +16,7 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({
-		content,
-		extra,
-	}) => html`<p-avatar-group
-		extra=${extra ?? nothing}
-	>
-		${content}
-	</p-avatar-group>`,
+	render: ({ content, extra }) => html`
+		<p-avatar-group extra=${extra ?? nothing}> ${content} </p-avatar-group>
+	`,
 };

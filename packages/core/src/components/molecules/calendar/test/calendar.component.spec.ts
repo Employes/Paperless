@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { Calendar } from '../calendar.component';
 
 describe('p-calendar', () => {

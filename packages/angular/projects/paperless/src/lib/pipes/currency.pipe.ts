@@ -8,18 +8,18 @@ import { CurrencyPipe } from '@angular/common';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-    name: 'pcurrency',
-    standalone: false
+	name: 'pcurrency',
+	standalone: false,
 })
 export class CustomCurrencyPipe implements PipeTransform {
 	constructor(private _currencyPipe: CurrencyPipe) {}
 
 	transform(
 		value: number | string | null | undefined,
-		currencyCode: string = 'EUR',
+		currencyCode = 'EUR',
 		display: 'code' | 'symbol' | 'symbol-narrow' | string | boolean = 'symbol',
-		digitsInfo: string = '1.2-2',
-		locale: string = 'nl'
+		digitsInfo = '1.2-2',
+		locale = 'nl'
 	): string | null {
 		return this._currencyPipe.transform(
 			value,

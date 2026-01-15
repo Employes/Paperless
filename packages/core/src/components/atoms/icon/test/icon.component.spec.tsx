@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { Icon } from '../icon.component';
 
 describe('p-icon', () => {

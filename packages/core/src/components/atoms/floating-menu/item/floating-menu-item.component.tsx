@@ -1,9 +1,9 @@
 import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+
 import { ThemedHost } from '../../../../internal/themed-host.component';
-import { RotateOptions } from '../../../../types';
+import { IconFlipOptions, IconVariant, RotateOptions } from '../../../../types';
 import { asBoolean } from '../../../../utils/as-boolean';
-import { IconFlipOptions, IconVariant } from '../../icon/icon.component';
 
 const item = cva(
 	['group', 'flex gap-2 items-center h-8 px-2', 'text-sm', 'rounded-lg'],

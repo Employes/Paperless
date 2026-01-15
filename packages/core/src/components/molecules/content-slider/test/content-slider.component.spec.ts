@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { ContentSlider } from '../content-slider.component';
 
 describe('p-content-slider', () => {

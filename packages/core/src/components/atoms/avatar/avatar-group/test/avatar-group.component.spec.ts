@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { AvatarGroup } from '../avatar-group.component';
 
 describe('p-avatar-group', () => {

@@ -11,9 +11,7 @@ describe('p-icon', () => {
 
 	it('size', async () => {
 		const page = await newE2EPage();
-		await page.setContent(
-			'<p-icon variant="document" size="5xl"></p-icon>'
-		);
+		await page.setContent('<p-icon variant="document" size="5xl"></p-icon>');
 
 		const element = await page.find('p-icon');
 		expect(element).toHaveClass('text-5xl');
@@ -21,9 +19,7 @@ describe('p-icon', () => {
 
 	it('rotate 45 degrees', async () => {
 		const page = await newE2EPage();
-		await page.setContent(
-			'<p-icon variant="document" rotate="45"></p-icon>'
-		);
+		await page.setContent('<p-icon variant="document" rotate="45"></p-icon>');
 
 		const element = await page.find('p-icon');
 		expect(element).toHaveClass('transform');

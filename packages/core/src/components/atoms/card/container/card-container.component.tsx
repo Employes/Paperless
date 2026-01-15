@@ -1,8 +1,9 @@
 import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+
+import { ThemedHost } from '../../../../internal/themed-host.component';
 import { cn } from '../../../../utils';
 import { asBoolean } from '../../../../utils/as-boolean';
-import { ThemedHost } from '../../../../internal/themed-host.component';
 
 // bg-inherit bg-transparent bg-current bg-black
 // bg-white-500 bg-white-600 bg-white-700 bg-white-800 bg-white

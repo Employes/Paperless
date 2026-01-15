@@ -1,9 +1,10 @@
 import { Component, Prop, h } from '@stencil/core';
 import { cva } from 'class-variance-authority';
-import { asBoolean } from '../../../../utils/as-boolean';
-import { IconVariant } from '../../icon/icon.component';
-import { cn } from '../../../../utils';
+
 import { ThemedHost } from '../../../../internal/themed-host.component';
+import { IconVariant } from '../../../../types/icon';
+import { cn } from '../../../../utils';
+import { asBoolean } from '../../../../utils/as-boolean';
 
 const dropdownMenuItem = cva(
 	[

@@ -6,8 +6,9 @@ import {
 	h,
 	Prop,
 } from '@stencil/core';
-import { cn, isMobile, isTablet } from '../../../utils';
 import { cva } from 'class-variance-authority';
+
+import { cn, isMobile, isTablet } from '../../../utils';
 
 const attachment = cva(
 	[
@@ -202,8 +203,8 @@ export class Attachment {
 								this.mode === 'read'
 									? this.downloadTooltip
 									: this.value?.length
-									? this.deleteTooltip
-									: this.uploadTooltip
+										? this.deleteTooltip
+										: this.uploadTooltip
 							}
 						>
 							<p-button
@@ -214,8 +215,8 @@ export class Attachment {
 									this.mode === 'read'
 										? 'download'
 										: this.value?.length
-										? 'trash'
-										: 'upload'
+											? 'trash'
+											: 'upload'
 								}
 								disabled={this.loading}
 								loading={this.loading}
@@ -225,7 +226,7 @@ export class Attachment {
 										: (this.mode === 'read'
 												? this.download
 												: this.delete
-										  ).emit()
+											).emit()
 								}
 							/>
 						</p-tooltip>
@@ -300,7 +301,9 @@ export class Attachment {
 			this.loading = true;
 
 			const reader = new FileReader();
-			reader.onload = (e: any) => this._onLoad(file, e?.currentTarget?.result);
+			reader.addEventListener('load', (e: any) =>
+				this._onLoad(file, e?.currentTarget?.result)
+			);
 			reader.readAsDataURL(file);
 		}
 	}

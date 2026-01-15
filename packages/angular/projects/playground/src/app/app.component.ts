@@ -6,7 +6,7 @@ import { state } from '@paperless/core';
 import { PaperlessModule } from 'projects/paperless/src/public-api';
 
 @Component({
-	selector: 'app-root',
+	selector: 'p-app-root',
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss'],
 	standalone: true,

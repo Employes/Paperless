@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { TableQuickFilter } from './base';
 
 export const createFormFilters = (
-	values: { [key: string]: any },
+	values: Record<string, any>,
 	quickFilters: TableQuickFilter[],
 	quickFilterKey?: string
 ) => {
@@ -14,7 +15,7 @@ export const createFormFilters = (
 			(key !== quickFilterKey &&
 				!(value instanceof Date) &&
 				typeof value !== 'object' &&
-				isNaN(value) &&
+				Number.isNaN(value) &&
 				!value?.length) ||
 			value === null ||
 			value === undefined

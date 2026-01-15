@@ -1,4 +1,5 @@
 import { Component, h } from '@stencil/core';
+
 import { ThemedHost } from '../../../../internal/themed-host.component';
 
 @Component({

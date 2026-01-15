@@ -10,9 +10,9 @@ import {
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
-    template: ``,
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+	template: ``,
+	changeDetection: ChangeDetectionStrategy.OnPush,
+	standalone: false,
 })
 export abstract class BaseUploadComponent {
 	@Input() fileId?: string;
@@ -22,6 +22,7 @@ export abstract class BaseUploadComponent {
 		this.loading$.next(value);
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	@Output() fileChange = new EventEmitter<any>();
 
 	@ViewChild('uploaderInput') uploaderInput?: ElementRef;
@@ -37,12 +38,12 @@ export abstract class BaseUploadComponent {
 			this.loading$.next(true);
 
 			const reader = new FileReader();
-			reader.onload = (e: any) => this.onLoad(file, e?.currentTarget?.result);
+			reader.addEventListener('load', _ => this.onLoad(file, reader.result));
 			reader.readAsDataURL(file);
 		}
 	}
 
-	onLoad(file: File, result: string) {
+	onLoad(file: File, result: string | ArrayBuffer | null) {
 		this.fileChange.next({
 			fileId: this.fileId,
 			result,

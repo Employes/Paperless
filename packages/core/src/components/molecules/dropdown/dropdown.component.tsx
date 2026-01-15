@@ -19,8 +19,9 @@ import {
 	Watch,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
-import { childOfComposed } from '../../../utils/child-of';
+
 import { cn } from '../../../utils';
+import { childOfComposed } from '../../../utils/child-of';
 
 const dropdownContainerClass = cva(['hidden'], {
 	variants: {
@@ -225,9 +226,9 @@ export class Dropdown {
 			'p-button[slot="trigger"]'
 		);
 
-		const isOpen = this._menu.getAttribute('data-show') !== null;
+		const isOpen = this._menu.dataset.show !== null;
 
-		for (let button of [...buttons]) {
+		for (let button of buttons) {
 			button.disabled = this.disableTriggerClick;
 			button.active = active;
 
@@ -236,15 +237,15 @@ export class Dropdown {
 			}
 
 			button.chevronPosition = this.chevronPosition;
-			button.chevron = this.chevronDirection
-				? this.chevronDirection
-				: this.placement.indexOf('top') >= 0
-				? isOpen
-					? 'down'
-					: 'up'
-				: isOpen
-				? 'up'
-				: 'down';
+			button.chevron =
+				this.chevronDirection ??
+				(this.placement.includes('top')
+					? isOpen
+						? 'down'
+						: 'up'
+					: isOpen
+						? 'up'
+						: 'down');
 		}
 	}
 
@@ -253,7 +254,7 @@ export class Dropdown {
 			'p-dropdown-menu-item'
 		);
 
-		for (let item of [...items]) {
+		for (let item of items) {
 			if (item.variant === 'pagination' || item.variant === 'negative') {
 				continue;
 			}
@@ -279,7 +280,7 @@ export class Dropdown {
 	@Listen('click', { target: 'document', capture: true })
 	protected documentClickHandler(event) {
 		if (
-			!this._menu.hasAttribute('data-show') ||
+			!Object.hasOwn(this._menu.dataset, 'show') ||
 			childOfComposed(event, this._menu)
 		) {
 			return;
@@ -293,7 +294,7 @@ export class Dropdown {
 			return;
 		}
 
-		if (this._menu.hasAttribute('data-show')) {
+		if (Object.hasOwn(this._menu.dataset, 'show')) {
 			this._hide();
 		}
 	}
@@ -307,7 +308,7 @@ export class Dropdown {
 			return;
 		}
 
-		if (this._menu.hasAttribute('data-show')) {
+		if (Object.hasOwn(this._menu.dataset, 'show')) {
 			this._hide();
 			return;
 		}
@@ -334,7 +335,7 @@ export class Dropdown {
 
 		this._cleanup = autoUpdate(this._el, this._menu, () => this._update());
 
-		this._menu.setAttribute('data-show', '');
+		this._menu.dataset.show = '';
 		this._menu.classList.remove('hidden');
 		this._menu.classList.add('block');
 
@@ -353,7 +354,7 @@ export class Dropdown {
 		}
 
 		// Hide the popover
-		this._menu.removeAttribute('data-show');
+		delete this._menu.dataset.show;
 		this._menu.classList.remove('block');
 		this._menu.classList.add('hidden');
 

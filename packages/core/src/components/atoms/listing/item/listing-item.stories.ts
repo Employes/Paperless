@@ -16,8 +16,6 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({
-		icon,
-		content
-	}) => html`<p-listing-item icon=${icon ?? nothing}>${content}</p-listing-item>`,
+	render: ({ icon, content }) =>
+		html`<p-listing-item icon=${icon ?? nothing}>${content}</p-listing-item>`,
 };

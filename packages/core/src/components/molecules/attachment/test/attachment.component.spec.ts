@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { Attachment } from '../attachment.component';
 
 describe('p-attachment', () => {

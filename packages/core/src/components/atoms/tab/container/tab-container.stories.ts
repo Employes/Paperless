@@ -11,11 +11,13 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: () => html`<p-tab-container>
-		<p-tab-item>Item 1</p-tab-item>
-		<p-tab-item>Item 2</p-tab-item>
-		<p-tab-item active>Item 3</p-tab-item>
-		<p-tab-item>Item 4</p-tab-item>
-		<p-tab-item>Item 5</p-tab-item>
-	</p-tab-container>`,
+	render: () => html`
+		<p-tab-container>
+			<p-tab-item>Item 1</p-tab-item>
+			<p-tab-item>Item 2</p-tab-item>
+			<p-tab-item active>Item 3</p-tab-item>
+			<p-tab-item>Item 4</p-tab-item>
+			<p-tab-item>Item 5</p-tab-item>
+		</p-tab-container>
+	`,
 };

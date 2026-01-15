@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { TabItem } from '../tab-item.component';
 
 describe('p-tab-item', () => {

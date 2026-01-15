@@ -168,10 +168,6 @@ export abstract class BaseTableComponent
 		});
 	}
 
-	constructor() {
-		super();
-	}
-
 	ngOnInit() {
 		this.tableOptions = new FormControl<TableOptions>({
 			pageSize: this.parsedDefaultTableValues.pageSize,
@@ -323,7 +319,7 @@ export abstract class BaseTableComponent
 					this.resetTable(false, true);
 				}
 			}),
-			// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 			map(([_, current]) => current)
 		);
 	}

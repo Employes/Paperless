@@ -1,5 +1,6 @@
 import { Component, h, Listen, State } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+
 import { ThemedHost } from '../../../internal/themed-host.component';
 
 const sidebarAndTopbar = cva([

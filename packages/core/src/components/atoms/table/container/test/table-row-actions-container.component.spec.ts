@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { TableRowActionsContainer } from '../table-row-actions-container.component';
 
 describe('p-table-row-actions-container', () => {

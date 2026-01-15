@@ -24,16 +24,16 @@
 
 	<div class="flex gap-2">
 		<p-radio
+			formControlName="radio"
 			name="test"
 			value="a"
-			formControlName="radio"
 		>
 			A
 		</p-radio>
 		<p-radio
+			formControlName="radio"
 			name="test"
 			value="b"
-			formControlName="radio"
 		>
 			B
 		</p-radio>
@@ -42,23 +42,23 @@
 	<p-button (click)="form.get('radio')?.setValue('b')"> Set to B </p-button>
 
 	<p-field
+		formControlName="text"
+		icon="user"
 		label="Text"
 		type="text"
-		icon="user"
-		formControlName="text"
-	></p-field>
+	/>
 
 	<p-field
+		formControlName="text"
 		label="Textarea"
 		type="textarea"
-		formControlName="text"
-	></p-field>
+	/>
 
 	<p-field
+		formControlName="number"
 		label="Number"
 		type="number"
-		formControlName="number"
-	></p-field>
+	/>
 
 	<p-button (click)="form.get('text')?.setValue('abc')"> Set to abc </p-button>
 

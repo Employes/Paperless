@@ -27,17 +27,19 @@ export const Default = {
 		icon,
 		'icon-wave': iconWave,
 		'use-container': useContainer,
-	}) => html`<p-dropdown-menu-item
-		active=${active ?? nothing}
-		checkbox=${checkbox ?? nothing}
-		variant=${variant ?? nothing}
-		enable-hover=${enableHover ?? nothing}
-		enable-text-wrap=${enableTextWrap ?? nothing}
-		disabled=${disabled ?? nothing}
-		icon=${icon ?? nothing}
-		icon-wave=${iconWave ?? nothing}
-		use-container=${useContainer ?? nothing}
-	>
-		${content}
-	</p-dropdown-menu-item>`,
+	}) => html`
+		<p-dropdown-menu-item
+			active=${active ?? nothing}
+			checkbox=${checkbox ?? nothing}
+			variant=${variant ?? nothing}
+			enable-hover=${enableHover ?? nothing}
+			enable-text-wrap=${enableTextWrap ?? nothing}
+			disabled=${disabled ?? nothing}
+			icon=${icon ?? nothing}
+			icon-wave=${iconWave ?? nothing}
+			use-container=${useContainer ?? nothing}
+		>
+			${content}
+		</p-dropdown-menu-item>
+	`,
 };

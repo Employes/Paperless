@@ -1,21 +1,23 @@
-import { Directive, EventEmitter, Input, Output } from '@angular/core';
+import { Directive, EventEmitter, Input, Output, OnInit } from '@angular/core';
+
 import { ToastActionFunction } from '../types';
 
 @Directive({
-    selector: 'p-toast',
-    host: {
-        '(action)': 'onAction()',
-    },
-    standalone: false
+	selector: 'p-toast',
+	host: {
+		'(action)': 'onAction()',
+	},
+	standalone: false,
 })
-export class ToastDirective {
+export class ToastDirective implements OnInit {
 	@Input() delay: number | 'infinite' = 5000;
 	@Input() identifier!: string;
-	@Input() dismissOnAction: boolean = true;
+	@Input() dismissOnAction = true;
 	@Input() actionFunc?: ToastActionFunction;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	@Input() actionData: any = {};
 
-	@Output() dismiss: EventEmitter<string> = new EventEmitter();
+	@Output() dismiss = new EventEmitter<string>();
 
 	ngOnInit(): void {
 		if (this.delay === 'infinite' || this.delay === 0) {

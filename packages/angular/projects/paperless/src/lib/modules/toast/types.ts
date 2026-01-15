@@ -1,8 +1,7 @@
-import { RotateOptions } from '@paperless/core';
-import {
-	IconFlipOptions,
-	IconVariant,
-} from '@paperless/core/dist/types/components/atoms/icon/icon.component';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-duplicate-enum-values */
+import { IconFlipOptions, IconVariant, RotateOptions } from '@paperless/core';
+
 import { ToastDirective } from './directives';
 
 export enum ToastVariants {

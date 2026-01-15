@@ -16,24 +16,26 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: () => html`<p-listing>
-		<p-listing-item icon="user">
-			<p>Item number 1</p>
-			<p class="text-xs text-storm-300 dark:text-hurricane-200">
-				Sub text of item 1
-			</p>
-		</p-listing-item>
-		<p-listing-item icon="calendar">
-			<p>Item number 2</p>
-			<p class="text-xs text-storm-300 dark:text-hurricane-200">
-				Sub text of item 2
-			</p>
-		</p-listing-item>
-		<p-listing-item icon="pay">
-			<p>Item number 3</p>
-			<p class="text-xs text-storm-300 dark:text-hurricane-200">
-				Sub text of item 3
-			</p>
-		</p-listing-item>
-	</p-listing>`,
+	render: () => html`
+		<p-listing>
+			<p-listing-item icon="user">
+				<p>Item number 1</p>
+				<p class="text-xs text-storm-300 dark:text-hurricane-200">
+					Sub text of item 1
+				</p>
+			</p-listing-item>
+			<p-listing-item icon="calendar">
+				<p>Item number 2</p>
+				<p class="text-xs text-storm-300 dark:text-hurricane-200">
+					Sub text of item 2
+				</p>
+			</p-listing-item>
+			<p-listing-item icon="pay">
+				<p>Item number 3</p>
+				<p class="text-xs text-storm-300 dark:text-hurricane-200">
+					Sub text of item 3
+				</p>
+			</p-listing-item>
+		</p-listing>
+	`,
 };

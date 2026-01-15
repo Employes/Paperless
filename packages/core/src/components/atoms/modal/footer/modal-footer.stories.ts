@@ -1,4 +1,4 @@
-import { html, nothing } from 'lit';
+import { html } from 'lit';
 
 const meta = {
 	title: 'Design System/Atoms/Modal/Footer',

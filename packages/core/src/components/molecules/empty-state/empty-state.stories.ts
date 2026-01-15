@@ -1,5 +1,5 @@
-import { html, nothing } from 'lit';
 import { action } from '@storybook/addon-actions';
+import { html, nothing } from 'lit';
 
 const meta = {
 	title: 'Design System/Molecules/Empty state',
@@ -26,14 +26,16 @@ export const Default = {
 		'action-text': actionText,
 		'action-icon': actionIcon,
 		'action-loading': actionLoading,
-	}) => html`<p-empty-state
-		illustration=${illustration ?? nothing}
-		header=${header ?? nothing}
-		content=${content ?? nothing}
-		enable-action=${enableAction ?? nothing}
-		action-text=${actionText ?? nothing}
-		action-icon=${actionIcon ?? nothing}
-		action-loading=${actionLoading ?? nothing}
-		@action=${action('action')}
-	/>`,
+	}) => html`
+		<p-empty-state
+			illustration=${illustration ?? nothing}
+			header=${header ?? nothing}
+			content=${content ?? nothing}
+			enable-action=${enableAction ?? nothing}
+			action-text=${actionText ?? nothing}
+			action-icon=${actionIcon ?? nothing}
+			action-loading=${actionLoading ?? nothing}
+			@action=${action('action')}
+		/>
+	`,
 };

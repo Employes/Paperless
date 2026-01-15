@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { FloatingMenuItem } from '../floating-menu-item.component';
 
 describe('p-floating-menu-item', () => {

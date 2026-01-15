@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { TableFooter } from '../table-footer.component';
 
 describe('p-table-footer', () => {

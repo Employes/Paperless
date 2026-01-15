@@ -8,9 +8,10 @@ import {
 	h,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+
+import { ThemedHost } from '../../../internal/themed-host.component';
 import { asBoolean } from '../../../utils/as-boolean';
 import { nonce } from '../../../utils/nonce';
-import { ThemedHost } from '../../../internal/themed-host.component';
 
 const checkbox = cva(
 	[

@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { ToastContainer } from '../toast-container.component';
 
 describe('p-toast-container', () => {

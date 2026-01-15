@@ -1,5 +1,5 @@
-import { html, nothing } from 'lit';
 import { action } from '@storybook/addon-actions';
+import { html, nothing } from 'lit';
 
 const meta = {
 	title: 'Design System/Molecules/Accordion',
@@ -18,21 +18,16 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({
-		content,
-		variant,
-		header,
-		open,
-		closeable,
-		openable,
-	}) => html`<p-accordion
-		header=${header ?? nothing}
-		variant=${variant ?? nothing}
-		open=${open ?? nothing}
-		closeable=${closeable ?? nothing}
-		openable=${openable ?? nothing}
-		@isOpen=${action('isOpen')}
-	>
-		${content}
-	</p-accordion>`,
+	render: ({ content, variant, header, open, closeable, openable }) => html`
+		<p-accordion
+			header=${header ?? nothing}
+			variant=${variant ?? nothing}
+			open=${open ?? nothing}
+			closeable=${closeable ?? nothing}
+			openable=${openable ?? nothing}
+			@isOpen=${action('isOpen')}
+		>
+			${content}
+		</p-accordion>
+	`,
 };

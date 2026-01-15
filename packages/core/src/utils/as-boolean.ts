@@ -1,6 +1,6 @@
 export const asBoolean = (
 	value: undefined | null | boolean | string,
-	defaultValue: boolean = false
+	defaultValue = false
 ) => {
 	if (value === undefined || value === null) {
 		return defaultValue ?? false;

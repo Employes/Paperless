@@ -1,5 +1,6 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
+
 import { QuickFilter } from '@paperless/core';
 
 import { BaseValueAccessor } from '../../../base';
@@ -10,30 +11,25 @@ export interface TableHeaderDirectiveValue {
 }
 
 @Directive({
-    /* tslint:disable-next-line:directive-selector */
-    selector: 'p-table-header',
-    host: {
-        '(queryChange)': 'handleChange($event.detail, "query")',
-        '(quickFilter)': 'handleChange($event.detail, "quickFilter")',
-    },
-    providers: [
-        {
-            provide: NG_VALUE_ACCESSOR,
-            useExisting: TableHeaderDirective,
-            multi: true,
-        },
-    ],
-    standalone: false
+	selector: 'p-table-header',
+	host: {
+		'(queryChange)': 'handleChange($event.detail, "query")',
+		'(quickFilter)': 'handleChange($event.detail, "quickFilter")',
+	},
+	providers: [
+		{
+			provide: NG_VALUE_ACCESSOR,
+			useExisting: TableHeaderDirective,
+			multi: true,
+		},
+	],
+	standalone: false,
 })
 export class TableHeaderDirective extends BaseValueAccessor {
 	protected override lastValue: TableHeaderDirectiveValue = {
 		query: '',
 		quickFilter: undefined,
 	};
-
-	constructor(el: ElementRef) {
-		super(el);
-	}
 
 	public override writeValue(value: TableHeaderDirectiveValue) {
 		this.el.nativeElement.query = this.lastValue.query = value?.query;

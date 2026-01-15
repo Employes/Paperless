@@ -1,9 +1,7 @@
 import { Component, Prop } from '@stencil/core';
-import {
-	IconFlipOptions,
-	IconVariant,
-	RotateOptions,
-} from '../../../../components';
+
+import { RotateOptions } from '../../../../components';
+import { IconFlipOptions, IconVariant } from '../../../../types/icon';
 
 export type TableRowActionFunc = {
 	(item: any, multi: false): void;

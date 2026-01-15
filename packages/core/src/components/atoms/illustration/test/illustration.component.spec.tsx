@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { Illustration } from '../illustration.component';
 
 describe('p-illustration', () => {

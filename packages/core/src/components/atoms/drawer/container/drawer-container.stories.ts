@@ -16,12 +16,9 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({
-		content,
-		closing,
-	}) => html`<p-drawer-container
-		closing=${closing ?? nothing}
-	>
-		${content}
-	</p-drawer-container>`,
+	render: ({ content, closing }) => html`
+		<p-drawer-container closing=${closing ?? nothing}>
+			${content}
+		</p-drawer-container>
+	`,
 };

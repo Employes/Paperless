@@ -1,5 +1,5 @@
-import { html, nothing } from 'lit';
 import { action } from '@storybook/addon-actions';
+import { html, nothing } from 'lit';
 
 const meta = {
 	title: 'Design System/Atoms/Floating menu/Container',
@@ -24,14 +24,16 @@ export const Default = {
 		amount,
 		'enable-close': enableClose,
 		'amount-selected-template': amountSelectedTemplate,
-	}) => html`<p-floating-menu-container
-		used-in-table=${usedInTable ?? nothing}
-		enable-amount-selected=${enableAmountSelected ?? nothing}
-		amount=${amount ?? nothing}
-		enable-close=${enableClose ?? nothing}
-		amount-selected-template=${amountSelectedTemplate ?? nothing}
-		@close=${action('close')}
-	>
-		${content}
-	</p-floating-menu-container>`,
+	}) => html`
+		<p-floating-menu-container
+			used-in-table=${usedInTable ?? nothing}
+			enable-amount-selected=${enableAmountSelected ?? nothing}
+			amount=${amount ?? nothing}
+			enable-close=${enableClose ?? nothing}
+			amount-selected-template=${amountSelectedTemplate ?? nothing}
+			@close=${action('close')}
+		>
+			${content}
+		</p-floating-menu-container>
+	`,
 };

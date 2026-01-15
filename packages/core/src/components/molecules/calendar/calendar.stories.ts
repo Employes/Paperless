@@ -1,5 +1,5 @@
-import { html, nothing } from 'lit';
 import { action } from '@storybook/addon-actions';
+import { html, nothing } from 'lit';
 
 const meta = {
 	title: 'Design System/Molecules/Calendar',
@@ -28,17 +28,19 @@ export const Default = {
 		'enable-today': enableToday,
 		'today-text': todayText,
 		mode,
-	}) => html`<p-calendar
-		variant=${variant ?? nothing}
-		value=${value ?? nothing}
-		preselect-today=${preselectToday ?? nothing}
-		disabled-dates=${disabledDates ?? nothing}
-		min-date=${minDate ?? nothing}
-		max-date=${maxDate ?? nothing}
-		disable-weekends=${disableWeekends ?? nothing}
-		enable-today=${enableToday ?? nothing}
-		today-text=${todayText ?? nothing}
-		mode=${mode ?? nothing}
-		@valueChange=${action('valueChange')}
-	/>`,
+	}) => html`
+		<p-calendar
+			variant=${variant ?? nothing}
+			value=${value ?? nothing}
+			preselect-today=${preselectToday ?? nothing}
+			disabled-dates=${disabledDates ?? nothing}
+			min-date=${minDate ?? nothing}
+			max-date=${maxDate ?? nothing}
+			disable-weekends=${disableWeekends ?? nothing}
+			enable-today=${enableToday ?? nothing}
+			today-text=${todayText ?? nothing}
+			mode=${mode ?? nothing}
+			@valueChange=${action('valueChange')}
+		/>
+	`,
 };

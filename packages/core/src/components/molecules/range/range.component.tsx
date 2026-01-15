@@ -1,4 +1,5 @@
 import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
+
 import { ThemedHost } from '../../../internal/themed-host.component';
 
 @Component({
@@ -48,7 +49,7 @@ export class Range {
 							value={this.value}
 							onInput={ev => {
 								const value = (ev.target as HTMLInputElement).value;
-								this.value = parseFloat(value);
+								this.value = Number.parseFloat(value);
 								this.valueChange.emit(value);
 							}}
 						/>

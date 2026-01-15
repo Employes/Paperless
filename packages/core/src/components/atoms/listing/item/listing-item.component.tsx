@@ -1,6 +1,7 @@
 import { Component, h, Prop } from '@stencil/core';
-import { IconVariant } from '../../icon/icon.component';
+
 import { ThemedHost } from '../../../../internal/themed-host.component';
+import { IconVariant } from '../../../../types/icon';
 
 @Component({
 	tag: 'p-listing-item',

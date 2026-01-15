@@ -16,6 +16,20 @@ const config = {
 	arrowParens: 'avoid',
 	singleAttributePerLine: true,
 	plugins: ['prettier-plugin-tailwindcss'],
+	overrides: [
+		{
+			files: '*.html',
+			options: {
+				parser: 'html',
+			},
+		},
+		{
+			files: '*.component.html',
+			options: {
+				parser: 'angular',
+			},
+		},
+	],
 };
 
 module.exports = config;

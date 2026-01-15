@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { OverlayRef, PaperlessModule } from 'projects/paperless/src/public-api';
 
 @Component({
@@ -12,14 +13,14 @@ import { OverlayRef, PaperlessModule } from 'projects/paperless/src/public-api';
 				<p-card-container>
 					<p-card-header header="Header">
 						<p-button
-							icon-only
-							icon="pencil"
 							chevron
-							variant="secondary"
+							class="ml-auto"
+							icon="pencil"
+							icon-only
 							size="sm"
 							slot="suffix"
-							class="ml-auto"
-						></p-button>
+							variant="secondary"
+						/>
 					</p-card-header>
 					<p-card-body>
 						Bereken het netto-loon en de werkgeverskosten, simpel in maar 3

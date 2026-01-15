@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { NavigationItem } from '../navigation-item.component';
 
 describe('p-navigation-item', () => {

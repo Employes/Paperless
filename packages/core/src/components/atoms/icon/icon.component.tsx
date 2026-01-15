@@ -1,10 +1,9 @@
 import { Component, h, Prop, Element } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+
+import { IconFlipOptions, IconVariant } from '../../../types/icon';
 import { TextSizeOptions } from '../../../types/tailwind';
 import { icons } from '../../../utils/icons';
-
-export type IconVariant = keyof typeof icons;
-export type IconFlipOptions = 'none' | 'horizontal' | 'vertical';
 
 const icon = cva(['p-icon inline-flex', 'transform-gpu transition-transform'], {
 	variants: {

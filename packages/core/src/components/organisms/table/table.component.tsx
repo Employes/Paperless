@@ -10,8 +10,10 @@ import {
 	State,
 	Watch,
 } from '@stencil/core';
-import { IconVariant, PCheckboxCustomEvent } from '../../../components';
+
+import { PCheckboxCustomEvent } from '../../../components';
 import { tableColumSizesOptions } from '../../../types/constants';
+import { IconVariant } from '../../../types/icon';
 import {
 	QuickFilter,
 	RowClickEvent,
@@ -613,9 +615,9 @@ export class Table {
 			const mobile = isMobile();
 
 			// we hack this to any[] to make it work..
-			const actions = Array.from(
-				this._el.querySelectorAll(':scope > p-table-row-action')
-			) as any[] as TableRowAction[];
+			const actions = [
+				...this._el.querySelectorAll(':scope > p-table-row-action'),
+			] as any[] as TableRowAction[];
 			this._rowActionsRow = actions.filter(
 				a => a.type === 'both' || a.type === 'single'
 			);
@@ -665,7 +667,7 @@ export class Table {
 
 	private _generateExtraHeaders() {
 		const definitions = this._el.querySelectorAll('p-table-extra-header');
-		let definitionsArray = Array.from(definitions);
+		let definitionsArray = [...definitions];
 
 		definitionsArray = this._parseDefinitions(definitionsArray);
 
@@ -674,7 +676,7 @@ export class Table {
 
 	private _generateColumns() {
 		const definitions = this._el.querySelectorAll('p-table-column');
-		let definitionsArray = Array.from(definitions);
+		let definitionsArray = [...definitions];
 
 		definitionsArray = this._parseDefinitions(definitionsArray);
 
@@ -691,18 +693,16 @@ export class Table {
 				variant='header-secondary'
 				isLast={true}
 			>
-				{this._extraHeaders.map((col: TableExtraHeader, index) => {
-					return (
-						<p-table-cell
-							definition={col}
-							variant='header-secondary'
-							checkboxOffset={index === 0 && this._enableRowSelection}
-							index={index}
-						>
-							<b>{col.name}</b>
-						</p-table-cell>
-					);
-				})}
+				{this._extraHeaders.map((col: TableExtraHeader, index) => (
+					<p-table-cell
+						definition={col}
+						variant='header-secondary'
+						checkboxOffset={index === 0 && this._enableRowSelection}
+						index={index}
+					>
+						<b>{col.name}</b>
+					</p-table-cell>
+				))}
 			</p-table-row>
 		);
 	}
@@ -744,7 +744,7 @@ export class Table {
 			);
 		}
 
-		if (!this._items.length) {
+		if (this._items.length === 0) {
 			return this._getEmptyState();
 		}
 
@@ -799,37 +799,33 @@ export class Table {
 		return null;
 	}
 	private _getRowColumns(item, index) {
-		return this._columns.map((col: TableColumn, colIndex) => {
-			return (
-				<p-table-cell
-					definition={col}
-					item={item}
-					checkbox={
-						colIndex === 0 || col.hasCheckbox ? this._getCheckbox(index) : null
-					}
-					index={colIndex}
-					rowIndex={index}
-				></p-table-cell>
-			);
-		});
+		return this._columns.map((col: TableColumn, colIndex) => (
+			<p-table-cell
+				definition={col}
+				item={item}
+				checkbox={
+					colIndex === 0 || col.hasCheckbox ? this._getCheckbox(index) : null
+				}
+				index={colIndex}
+				rowIndex={index}
+			></p-table-cell>
+		));
 	}
 
 	private _getLoadingColumns(index) {
-		return this._columns.map((col: TableColumn, colIndex) => {
-			return (
-				<p-table-cell
-					definition={col}
-					variant='loading'
-					checkbox={
-						colIndex === 0 || col.hasCheckbox
-							? this._getCheckbox(index, 'loading')
-							: null
-					}
-					index={colIndex}
-					rowIndex={index}
-				></p-table-cell>
-			);
-		});
+		return this._columns.map((col: TableColumn, colIndex) => (
+			<p-table-cell
+				definition={col}
+				variant='loading'
+				checkbox={
+					colIndex === 0 || col.hasCheckbox
+						? this._getCheckbox(index, 'loading')
+						: null
+				}
+				index={colIndex}
+				rowIndex={index}
+			></p-table-cell>
+		));
 	}
 
 	private _getCheckbox(
@@ -1031,7 +1027,7 @@ export class Table {
 		const returnValue = this.selectedRows.findIndex(
 			item => item.index === index
 		);
-		return !returnIndex ? returnValue >= 0 : returnValue;
+		return returnIndex ? returnValue : returnValue !== -1;
 	}
 
 	private _selectionContainsAll() {
@@ -1140,10 +1136,7 @@ export class Table {
 			return null;
 		}
 
-		if (
-			el.getAttribute('data-is-action') !== null &&
-			el.getAttribute('data-is-action') !== 'false'
-		) {
+		if (el.dataset.isAction !== null && el.dataset.isAction !== 'false') {
 			return el;
 		}
 
@@ -1158,9 +1151,9 @@ export class Table {
 		let actions = this._rowActionsFloatingAll;
 		if (
 			this.rowSelectionLimit === 1 &&
-			actions.findIndex(
+			actions.some(
 				a => (a.type === 'single' || a.type === 'both') && a.showFunction
-			) >= 0
+			)
 		) {
 			actions = actions.filter(
 				a =>

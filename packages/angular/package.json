@@ -1,68 +1,69 @@
 {
-  "name": "@paperless/angular",
-  "version": "2.22.0-alpha.24",
-  "resolutions": {
-    "jasmine-core": "5.0.0"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Employes/Paperless.git"
-  },
-  "scripts": {
-    "ng": "ng",
-    "set-version": "cd projects/paperless && yarn version --new-version=$(node -p \"require('../../package.json').version\") --no-git-tag-version",
-    "start": "ng serve --project playground",
-    "prebuild": "yarn",
-    "build": "ng build --project paperless",
-    "postbuild": "yarn tailwind:process",
-    "prebuild:prod": "yarn set-version",
-    "build:prod": "ng build --configuration production --project paperless",
-    "postbuild:prod": "yarn tailwind:process",
-    "tailwind:process": "tailwindcss -c ./projects/paperless/tailwind.config.js -i projects/paperless/src/paperless.scss -o dist/paperless.css",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "prenpm:publish": "cp ../../README.md ./dist/",
-    "npm:publish": "npm publish ./dist",
-    "npm:publish:prerelease": "yarn npm:publish --tag alpha",
-    "pb:serve": "ng serve --project=playground --host=0.0.0.0 --disable-host-check",
-    "prettier:check": "yarn prettier \"./projects/**/src/**/*.{ts,tsx,html,scss,json}\"",
-    "prettier:write": "yarn prettier:check -w",
-    "lint": "eslint ./projects/"
-  },
-  "dependencies": {
-    "@angular/animations": "19.2.18",
-    "@angular/cdk": "19.2.19",
-    "@angular/common": "19.2.18",
-    "@angular/compiler": "19.2.18",
-    "@angular/core": "19.2.18",
-    "@angular/forms": "19.2.18",
-    "@angular/platform-browser": "19.2.18",
-    "@angular/platform-browser-dynamic": "19.2.18",
-    "@angular/router": "19.2.18",
-    "@ngneat/until-destroy": "10.0.0",
-    "rxjs": "7.8.1",
-    "tslib": "2.5.0",
-    "zone.js": "0.15.1"
-  },
-  "devDependencies": {
-    "@angular-devkit/build-angular": "19.2.19",
-    "@angular/cli": "19.2.19",
-    "@angular/compiler-cli": "19.2.18",
-    "@types/node": "^22.13.5",
-    "autoprefixer": "10.4.14",
-    "jasmine-core": "5.0.0",
-    "karma": "6.4.2",
-    "karma-chrome-launcher": "3.2.0",
-    "karma-coverage": "2.2.0",
-    "karma-jasmine": "5.1.0",
-    "karma-jasmine-html-reporter": "2.0.0",
-    "ng-packagr": "19.2.2",
-    "postcss": "8.4.23",
-    "tailwindcss": "3.4.17",
-    "typescript": "5.8.3"
-  }
+	"name": "@paperless/angular",
+	"version": "2.22.0-alpha.24",
+	"resolutions": {
+		"jasmine-core": "5.0.0"
+	},
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Employes/Paperless.git"
+	},
+	"scripts": {
+		"ng": "ng",
+		"set-version": "cd projects/paperless && yarn version --new-version=$(node -p \"require('../../package.json').version\") --no-git-tag-version",
+		"start": "ng serve --project playground",
+		"prebuild": "yarn",
+		"build": "ng build --project paperless",
+		"postbuild": "yarn tailwind:process",
+		"prebuild:prod": "yarn set-version",
+		"build:prod": "ng build --configuration production --project paperless",
+		"postbuild:prod": "yarn tailwind:process",
+		"tailwind:process": "tailwindcss -c ./projects/paperless/tailwind.config.js -i projects/paperless/src/paperless.scss -o dist/paperless.css",
+		"watch": "ng build --watch --configuration development",
+		"test": "ng test",
+		"prenpm:publish": "cp ../../README.md ./dist/",
+		"npm:publish": "npm publish ./dist",
+		"npm:publish:prerelease": "yarn npm:publish --tag alpha",
+		"pb:serve": "ng serve --project=playground --host=0.0.0.0 --disable-host-check",
+		"prettier:check": "yarn prettier \"./projects/**/src/**/*.{ts,tsx,html,scss,json}\"",
+		"prettier:write": "yarn prettier:check -w",
+		"lint": "eslint ./projects/",
+		"lint:fix": "yarn lint --fix"
+	},
+	"dependencies": {
+		"@angular/animations": "19.2.18",
+		"@angular/cdk": "19.2.19",
+		"@angular/common": "19.2.18",
+		"@angular/compiler": "19.2.18",
+		"@angular/core": "19.2.18",
+		"@angular/forms": "19.2.18",
+		"@angular/platform-browser": "19.2.18",
+		"@angular/platform-browser-dynamic": "19.2.18",
+		"@angular/router": "19.2.18",
+		"@ngneat/until-destroy": "10.0.0",
+		"rxjs": "7.8.1",
+		"tslib": "2.5.0",
+		"zone.js": "0.15.1"
+	},
+	"devDependencies": {
+		"@angular-devkit/build-angular": "19.2.19",
+		"@angular/cli": "19.2.19",
+		"@angular/compiler-cli": "19.2.18",
+		"@types/node": "^22.13.5",
+		"autoprefixer": "10.4.14",
+		"jasmine-core": "5.0.0",
+		"karma": "6.4.2",
+		"karma-chrome-launcher": "3.2.0",
+		"karma-coverage": "2.2.0",
+		"karma-jasmine": "5.1.0",
+		"karma-jasmine-html-reporter": "2.0.0",
+		"ng-packagr": "19.2.2",
+		"postcss": "8.4.23",
+		"tailwindcss": "3.4.17",
+		"typescript": "5.8.3"
+	}
 }

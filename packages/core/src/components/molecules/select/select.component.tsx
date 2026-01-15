@@ -11,11 +11,11 @@ import {
 	State,
 	Watch,
 } from '@stencil/core';
-import { childOfComposed, cn } from '../../../utils';
-import { IconVariant } from '../../atoms/icon/icon.component';
-
 import { cva } from 'class-variance-authority';
+
 import { ThemedHost } from '../../../internal/themed-host.component';
+import { IconVariant } from '../../../types/icon';
+import { childOfComposed, cn } from '../../../utils';
 import { SELECT_DEFAULT_MAX_DISPLAYED_ITEMS } from '../../../utils/constants';
 
 const multiContainer = cva([
@@ -572,7 +572,7 @@ export class Select {
 			}
 
 			this.value = value;
-			if (!value.length) {
+			if (value.length === 0) {
 				this._selectedItem = [];
 				return;
 			}
@@ -625,7 +625,7 @@ export class Select {
 			return parsedItemIdentifier === parsedValue;
 		});
 
-		this._selectValue(!!item ? item : value, false);
+		this._selectValue(item ?? value, false);
 	}
 
 	private _selectValue(item, forceBlur = true) {
@@ -725,11 +725,11 @@ export class Select {
 		let items = this._items.map(item => {
 			const isSelected =
 				this.multi && !!this._selectedItem && Array.isArray(this._selectedItem)
-					? this._selectedItem.findIndex(
+					? this._selectedItem.some(
 							i => i[this._identifierKey] === item[this._identifierKey]
-					  ) >= 0
+						)
 					: item[this._identifierKey] ===
-					  this._selectedItem?.[this._identifierKey];
+						this._selectedItem?.[this._identifierKey];
 			return (
 				<p-dropdown-menu-item
 					enableTextWrap={this.enableTextWrap}
@@ -744,7 +744,7 @@ export class Select {
 			);
 		});
 
-		if (!this._items.length) {
+		if (this._items.length === 0) {
 			items = [
 				<p
 					class='w-full p-2 text-center text-sm text-storm-400 dark:text-hurricane-200'
@@ -755,7 +755,7 @@ export class Select {
 			];
 		}
 
-		if (this.enableSelectAll && this._items.length) {
+		if (this.enableSelectAll && this._items.length > 0) {
 			items.unshift(
 				<p-dropdown-menu-item
 					slot='items'
@@ -843,7 +843,7 @@ export class Select {
 		}
 
 		const calced = this._inputRef.clientWidth - 16;
-		this._multiContainerRef.style.maxWidth = `${calced >= 16 ? calced : 16}px`;
+		this._multiContainerRef.style.maxWidth = `${Math.max(calced, 16)}px`;
 	}
 
 	private _setCheckSelectedItemsTimeout() {
@@ -921,7 +921,7 @@ export class Select {
 				{
 					item[
 						isSelection
-							? this.selectionDisplayKey ?? this.displayKey
+							? (this.selectionDisplayKey ?? this.displayKey)
 							: this.displayKey
 					]
 				}
@@ -958,7 +958,7 @@ export class Select {
 								'text-storm-300 dark:text-hurricane-200',
 								(!isSelection || !!this.applyClassOnSelectedItem) &&
 									(!isSelectedInMenu || !!this.applyClassOnSelectedItemInMenu)
-									? item?.[this.iconClassKey] ?? ''
+									? (item?.[this.iconClassKey] ?? '')
 									: ''
 							)}
 							variant={item[this.iconKey] as IconVariant}

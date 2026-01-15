@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { Loader } from '../loader.component';
 
 describe('p-loader', () => {

@@ -1,5 +1,6 @@
 import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+
 import { ThemedHost } from '../../../../internal/themed-host.component';
 
 const header = cva([

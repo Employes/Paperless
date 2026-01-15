@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { Radio } from '../radio.component';
 
 describe('p-radio', () => {

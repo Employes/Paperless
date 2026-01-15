@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { TableRow } from '../table-row.component';
 
 describe('p-table-row', () => {

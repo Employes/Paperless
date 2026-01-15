@@ -7,6 +7,7 @@ import {
 	Prop,
 	State,
 } from '@stencil/core';
+
 import { cn } from '../../../utils';
 
 @Component({
@@ -173,7 +174,7 @@ export class ContentSlider {
 
 	private _slotChange() {
 		const items = this._el.querySelectorAll(':scope > *');
-		this._items = Array.from(items) as HTMLElement[];
+		this._items = [...items] as HTMLElement[];
 
 		setTimeout(() => {
 			this._innerSliderRef.style.setProperty('--tw-translate-x', '0px');
@@ -240,7 +241,7 @@ export class ContentSlider {
 	private _checkBoundary() {
 		let outer = this._sliderRef.getBoundingClientRect();
 
-		const left = parseInt(
+		const left = Number.parseInt(
 			this._innerSliderRef.style.getPropertyValue('--tw-translate-x')
 		);
 		if (left > 0) {
@@ -325,11 +326,11 @@ export class ContentSlider {
 		}
 
 		const sliderStyle = getComputedStyle(this._sliderRef);
-		const padding = parseInt(sliderStyle.padding) * 2;
+		const padding = Number.parseInt(sliderStyle.padding) * 2;
 
 		const innerSliderStyle = getComputedStyle(this._innerSliderRef);
 		const gap =
-			parseInt(innerSliderStyle.gap) * (this._filteredItems.length - 1);
+			Number.parseInt(innerSliderStyle.gap) * (this._filteredItems.length - 1);
 
 		totalWidth += padding + gap;
 
@@ -338,7 +339,7 @@ export class ContentSlider {
 
 	private _calculateHeight() {
 		const items = this._filteredItems;
-		if (!items.length) {
+		if (items.length === 0) {
 			return;
 		}
 

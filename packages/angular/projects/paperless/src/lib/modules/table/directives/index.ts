@@ -8,8 +8,8 @@ export * from './p-table-custom-actions.directive';
 export * from './p-table-custom-row.directive';
 
 import { TableCustomActionsDirective } from './p-table-custom-actions.directive';
-import { TableCustomRowDirective } from './p-table-custom-row.directive';
 import { TableCustomFilterDirective } from './p-table-custom-filter.directive';
+import { TableCustomRowDirective } from './p-table-custom-row.directive';
 import { TableFilterModalDirective } from './p-table-filter-modal.directive';
 import { TableFooterDirective } from './p-table-footer.directive';
 import { TableHeaderDirective } from './p-table-header.directive';

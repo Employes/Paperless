@@ -1,6 +1,5 @@
 export * from './child-of';
 export * from './icons';
-export * from './illustrations-deprecated';
 export * from './localization';
 export * from './table-helpers';
 export * from './object-get-by-path';

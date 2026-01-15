@@ -19,7 +19,6 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({ content, active }) => html`<p-tab-item active=${active ?? nothing}>
-		${content}
-	</p-tab-item>`,
+	render: ({ content, active }) =>
+		html`<p-tab-item active=${active ?? nothing}> ${content} </p-tab-item>`,
 };

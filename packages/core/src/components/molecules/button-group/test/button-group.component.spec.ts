@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { ButtonGroup } from '../button-group.component';
 
 describe('p-button-group', () => {

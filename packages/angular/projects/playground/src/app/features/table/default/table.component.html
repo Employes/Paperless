@@ -24,16 +24,16 @@
 	<p-table-extra-header
 		name="extra first"
 		sizes="3"
-	></p-table-extra-header>
+	/>
 	<p-table-extra-header
 		name="extra long"
 		sizes="6"
-	></p-table-extra-header>
+	/>
 	<p-table-extra-header
 		align="end"
 		name="extra last"
 		sizes="3"
-	></p-table-extra-header>
+	/>
 
 	<p-table-column
 		name="Employee"
@@ -54,8 +54,7 @@
 				<p-avatar
 					slot="avatar"
 					[letters]="value"
-				>
-				</p-avatar>
+				/>
 				<p slot="title">{{ value }}</p>
 				<p slot="subtitle">{{ item.date | pdate }}</p>
 			</p-profile>
@@ -70,7 +69,7 @@
 			tablet: 3,
 			'desktop-xs': 2,
 		}"
-	></p-table-column>
+	/>
 	<p-table-column
 		align="end"
 		name="Uren"
@@ -80,7 +79,7 @@
 			default: 'hidden',
 			'desktop-xs': 1,
 		}"
-	></p-table-column>
+	/>
 	<p-table-column
 		align="end"
 		name="Status"
@@ -120,7 +119,7 @@
 			tablet: 2,
 			'desktop-xs': 'hidden',
 		}"
-	></p-table-column>
+	/>
 
 	<p-table-row-action
 		icon="arrow"
@@ -129,7 +128,7 @@
 		type="both"
 		[showFunction]="showNavigateButton"
 		(action)="actionClick('navigate', $event)"
-	></p-table-row-action>
+	/>
 	<p-table-row-action
 		icon="arrow"
 		label="Navigate 2"
@@ -138,26 +137,26 @@
 		[iconRotate]="-90"
 		[showFunction]="showNavigateButton"
 		(action)="actionClick('navigate', $event)"
-	></p-table-row-action>
+	/>
 	<p-table-row-action
 		icon="download"
 		label="Download"
 		type="both"
 		[loading]="downloading$ | async"
 		(action)="actionClick('download', $event)"
-	></p-table-row-action>
+	/>
 	<p-table-row-action
 		icon="eye"
 		label="View"
 		type="single"
 		(action)="actionClick('view', $event)"
-	></p-table-row-action>
+	/>
 	<p-table-row-action
 		icon="upload"
 		label="Upload"
 		type="multi"
 		(action)="actionClick('upload', $event)"
-	></p-table-row-action>
+	/>
 
 	<ng-template
 		p-table-custom-row

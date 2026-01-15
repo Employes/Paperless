@@ -27,17 +27,19 @@ export const Default = {
 		'table-has-actions': tableHasActions,
 		checkbox,
 		template,
-	}) => html`<p-table-cell
-		variant=${variant ?? nothing}
-		index=${index ?? nothing}
-		row-index=${rowIndex ?? nothing}
-		definition=${definition ?? nothing}
-		item=${item ?? nothing}
-		value=${value ?? nothing}
-		table-has-actions=${tableHasActions ?? nothing}
-		checkbox=${checkbox ?? nothing}
-		template=${template ?? nothing}
-	>
-		${content}
-	</p-table-cell>`,
+	}) => html`
+		<p-table-cell
+			variant=${variant ?? nothing}
+			index=${index ?? nothing}
+			row-index=${rowIndex ?? nothing}
+			definition=${definition ?? nothing}
+			item=${item ?? nothing}
+			value=${value ?? nothing}
+			table-has-actions=${tableHasActions ?? nothing}
+			checkbox=${checkbox ?? nothing}
+			template=${template ?? nothing}
+		>
+			${content}
+		</p-table-cell>
+	`,
 };

@@ -1,5 +1,6 @@
 import { Component, Element, h, Listen, Prop, State } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+
 import { ThemedHost } from '../../../internal/themed-host.component';
 
 const profileContent = cva(['flex gap-2 items-center flex-1 min-w-0'], {

@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { Select } from '../select.component';
 
 describe('p-select', () => {

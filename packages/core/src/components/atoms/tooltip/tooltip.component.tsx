@@ -18,6 +18,7 @@ import {
 	Watch,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+
 import { ThemedHost } from '../../../internal/themed-host.component';
 
 const popover = cva(
@@ -158,7 +159,7 @@ export class Tooltip {
 						{this.variant === 'error' && (
 							<div class='w-[2px] bg-negative-red-500 dark:bg-negative-red-alternative'></div>
 						)}
-						{this.content ? this.content : <slot name='content' />}
+						{this.content ?? <slot name='content' />}
 					</div>
 				</div>
 			</ThemedHost>
@@ -175,7 +176,7 @@ export class Tooltip {
 			return;
 		}
 
-		if (this._popover.hasAttribute('data-show')) {
+		if (Object.hasOwn(this._popover.dataset, 'show')) {
 			return;
 		}
 
@@ -192,7 +193,7 @@ export class Tooltip {
 			return;
 		}
 
-		if (!this._popover.hasAttribute('data-show')) {
+		if (!Object.hasOwn(this._popover.dataset, 'show')) {
 			return;
 		}
 
@@ -225,7 +226,7 @@ export class Tooltip {
 			return;
 		}
 
-		if (show && !this._popover.hasAttribute('data-show')) {
+		if (show && !Object.hasOwn(this._popover.dataset, 'show')) {
 			return this._show();
 		}
 
@@ -247,7 +248,7 @@ export class Tooltip {
 		}
 
 		if (!this.content?.length && !this._hasContentSlot) {
-			if (this._popover.hasAttribute('data-show')) {
+			if (Object.hasOwn(this._popover.dataset, 'show')) {
 				this._hide();
 			}
 
@@ -257,7 +258,7 @@ export class Tooltip {
 		this._cleanup = autoUpdate(this._el, this._popover, () => this._update());
 
 		// Make the popover visible
-		this._popover.setAttribute('data-show', '');
+		this._popover.dataset.show = '';
 
 		this._popover.classList.remove('opacity-0', 'pointer-events-none');
 		this._popover.classList.add('opacity-100', 'pointer-events-auto');
@@ -277,7 +278,7 @@ export class Tooltip {
 		}
 
 		// Hide the popover
-		this._popover.removeAttribute('data-show');
+		delete this._popover.dataset.show;
 
 		this._popover.classList.remove('opacity-100', 'pointer-events-auto');
 		this._popover.classList.add('opacity-0', 'pointer-events-none');
@@ -307,7 +308,7 @@ export class Tooltip {
 			placement:
 				this.variant === 'error' && !this.placement
 					? 'bottom-start'
-					: this.placement ?? 'top',
+					: (this.placement ?? 'top'),
 			strategy: this.strategy,
 
 			middleware: [offset(this.offset), flip(), shift()],

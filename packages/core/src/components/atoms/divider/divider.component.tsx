@@ -1,5 +1,6 @@
 import { Component, Element, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+
 import { ThemedHost } from '../../../internal/themed-host.component';
 import { cn } from '../../../utils';
 

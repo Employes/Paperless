@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { PaginationSize } from '../pagination-size.component';
 
 describe('p-pagination-size', () => {

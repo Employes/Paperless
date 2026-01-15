@@ -6,48 +6,47 @@
 
 <p-table-ngx
 	selectionKey="date"
-	[items]="$any(items$ | async)"
-	[total]="512"
-	[enableScroll]="true"
-	[quickFilters]="[
-			{
-				identifier: 'first',
-				text: 'First',
-			},
-			{
-				identifier: 'second',
-				text: 'Second',
-			},
-			{
-				identifier: 'third',
-				text: 'Third',
-			}
-	]"
-	[floatingMenuAmountSelectedText]="floatingMenuAmountSelectedText"
-	[enableRowSelection]="false"
 	[enableRowClick]="false"
+	[enableRowSelection]="false"
+	[enableScroll]="true"
+	[floatingMenuAmountSelectedText]="floatingMenuAmountSelectedText"
+	[items]="$any(items$ | async)"
+	[quickFilters]="[
+		{
+			identifier: 'first',
+			text: 'First',
+		},
+		{
+			identifier: 'second',
+			text: 'Second',
+		},
+		{
+			identifier: 'third',
+			text: 'Third',
+		},
+	]"
+	[total]="512"
 >
 	<p-table-column
-		variant="subject"
 		name="Employee"
 		path="employee"
+		variant="subject"
+		[hasCheckbox]="true"
 		[sizes]="{
 			default: 3,
-			tablet: 4
+			tablet: 4,
 		}"
-		[hasCheckbox]="true"
 		[sticky]="true"
 	>
 		<ng-template
-			let-value="value"
 			let-item="item"
+			let-value="value"
 		>
 			<p-profile>
 				<p-avatar
 					slot="avatar"
 					[letters]="value"
-				>
-				</p-avatar>
+				/>
 				<p slot="title">{{ value }}</p>
 				<p slot="subtitle">{{ item.date | pdate }}</p>
 			</p-profile>
@@ -56,24 +55,23 @@
 
 	<p-table-column
 		*ngIf="showExtraColumn$ | async"
-		variant="subject"
 		name="Employee"
 		path="employee"
+		variant="subject"
 		[sizes]="{
 			default: 3,
-			tablet: 4
+			tablet: 4,
 		}"
 	>
 		<ng-template
-			let-value="value"
 			let-item="item"
+			let-value="value"
 		>
 			<p-profile>
 				<p-avatar
 					slot="avatar"
 					[letters]="value"
-				>
-				</p-avatar>
+				/>
 				<p slot="title">{{ value }}</p>
 				<p slot="subtitle">{{ item.date | pdate }}</p>
 			</p-profile>
@@ -81,72 +79,72 @@
 	</p-table-column>
 
 	<p-table-column
+		align="end"
 		name="Dagen"
 		path="hours"
-		align="end"
 		[sizes]="{
 			default: 'hidden',
 			tablet: 3,
-			'desktop-xs': 2
+			'desktop-xs': 2,
 		}"
-	></p-table-column>
+	/>
 	<p-table-column
+		align="end"
 		name="Dagen"
 		path="hours"
-		align="end"
 		[sizes]="{
 			default: 'hidden',
 			tablet: 3,
-			'desktop-xs': 2
+			'desktop-xs': 2,
 		}"
-	></p-table-column>
+	/>
 	<p-table-column
+		align="end"
 		name="Dagen"
 		path="hours"
-		align="end"
 		[sizes]="{
 			default: 'hidden',
 			tablet: 3,
-			'desktop-xs': 2
+			'desktop-xs': 2,
 		}"
-	></p-table-column>
+	/>
 	<p-table-column
+		align="end"
 		name="Dagen"
 		path="hours"
-		align="end"
 		[sizes]="{
 			default: 'hidden',
 			tablet: 3,
-			'desktop-xs': 2
+			'desktop-xs': 2,
 		}"
-	></p-table-column>
+	/>
 	<p-table-column
+		align="end"
 		name="Dagen"
 		path="hours"
-		align="end"
 		[sizes]="{
 			default: 'hidden',
 			tablet: 3,
-			'desktop-xs': 2
+			'desktop-xs': 2,
 		}"
-	></p-table-column>
+	/>
 	<p-table-column
-		variant="highlight"
+		align="end"
 		name="Uren"
 		path="status"
-		align="end"
+		variant="highlight"
 		[sizes]="{
 			default: 'hidden',
-			'desktop-xs': 1
+			'desktop-xs': 1,
 		}"
-	></p-table-column>
+	/>
 	<p-table-column
+		align="end"
 		name="Status"
 		path="status"
-		align="end"
 		[sizes]="{
 			default: 'hidden',
-			'desktop-xs': 2
+			'desktop-xs': 2,
 		}"
 	>
 		<ng-template let-value="value">
@@ -155,15 +153,15 @@
 					value === 'Goedgekeurd'
 						? 'checkmark'
 						: value === 'Afgekeurd'
-						? 'negative'
-						: 'clock'
+							? 'negative'
+							: 'clock'
 				"
 				[variant]="
 					value === 'Goedgekeurd'
 						? 'positive'
 						: value === 'Afgekeurd'
-						? 'negative'
-						: 'biased'
+							? 'negative'
+							: 'biased'
 				"
 			>
 				{{ value }}
@@ -171,15 +169,15 @@
 		</ng-template>
 	</p-table-column>
 	<p-table-column
+		align="end"
 		name="Uren"
 		path="status"
-		align="end"
 		[sizes]="{
 			default: 4,
 			tablet: 2,
-			'desktop-xs': 'hidden'
+			'desktop-xs': 'hidden',
 		}"
-	></p-table-column>
+	/>
 
 	<ng-template
 		p-table-custom-row
@@ -191,9 +189,9 @@
 				align: 'start',
 				sizes: {
 					default: 3,
-					tablet: 4
+					tablet: 4,
 				},
-				sticky: 'footer'
+				sticky: 'footer',
 			}"
 			[scrollable]="true"
 		>
@@ -206,8 +204,8 @@
 				sizes: {
 					default: 'hidden',
 					tablet: 3,
-					'desktop-xs': 2
-				}
+					'desktop-xs': 2,
+				},
 			}"
 			[scrollable]="true"
 		>
@@ -220,8 +218,8 @@
 				sizes: {
 					default: 'hidden',
 					tablet: 3,
-					'desktop-xs': 2
-				}
+					'desktop-xs': 2,
+				},
 			}"
 			[scrollable]="true"
 		>
@@ -234,8 +232,8 @@
 				sizes: {
 					default: 'hidden',
 					tablet: 3,
-					'desktop-xs': 2
-				}
+					'desktop-xs': 2,
+				},
 			}"
 			[scrollable]="true"
 		>
@@ -248,8 +246,8 @@
 				sizes: {
 					default: 'hidden',
 					tablet: 3,
-					'desktop-xs': 2
-				}
+					'desktop-xs': 2,
+				},
 			}"
 			[scrollable]="true"
 		>
@@ -262,8 +260,8 @@
 				sizes: {
 					default: 'hidden',
 					tablet: 3,
-					'desktop-xs': 2
-				}
+					'desktop-xs': 2,
+				},
 			}"
 			[scrollable]="true"
 		>
@@ -275,8 +273,8 @@
 				align: 'end',
 				sizes: {
 					default: 'hidden',
-					'desktop-xs': 1
-				}
+					'desktop-xs': 1,
+				},
 			}"
 			[scrollable]="true"
 		>
@@ -288,8 +286,8 @@
 				align: 'end',
 				sizes: {
 					default: 'hidden',
-					'desktop-xs': 2
-				}
+					'desktop-xs': 2,
+				},
 			}"
 			[scrollable]="true"
 		>
@@ -302,8 +300,8 @@
 				sizes: {
 					default: 4,
 					tablet: 2,
-					'desktop-xs': 'hidden'
-				}
+					'desktop-xs': 'hidden',
+				},
 			}"
 			[scrollable]="true"
 		>

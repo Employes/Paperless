@@ -7,18 +7,18 @@
 </div>
 
 <ng-template
-	cdkPortal
 	#modalTemplate="cdkPortal"
+	cdkPortal
 >
 	<p-modal
-		[show]="true"
 		header="Template world"
+		[show]="true"
 		(closed)="closeTemplateModal()"
 	>
 		<div slot="content">Content</div>
 		<div
-			slot="footer"
 			class="flex w-full justify-between gap-4"
+			slot="footer"
 		>
 			<p-button class="ml-auto w-full desktop-xs:w-auto"> Confirm </p-button>
 		</div>

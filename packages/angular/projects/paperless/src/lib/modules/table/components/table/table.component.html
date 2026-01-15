@@ -2,49 +2,45 @@
 	<p-table-header
 		*ngIf="enableHeader"
 		class="mb-8"
-		[quickFilters]="quickFilters"
-		[activeQuickFilterIdentifier]="activeQuickFilterIdentifier"
-		(quickFilter)="onQuickFilter($event)"
-		[enableSearch]="enableSearch"
-		[query]="query"
-		(queryChange)="onQueryChange($event)"
-		[enableFilter]="enableFilter"
-		[enableFilterDesktop]="enableFilterDesktop"
-		[selectedFiltersAmount]="selectedFiltersAmount"
-		[filterButtonTemplate]="filterButtonTemplate"
-		(filter)="filterModalShow$.next(true)"
-		[enableAction]="enableAction"
-		[canUseAction]="actionButtonEnabled"
 		[actionButtonTemplate]="actionButtonTemplate"
+		[actionIcon]="actionButtonIcon"
 		[actionLoading]="actionButtonLoading"
 		[actionText]="actionButtonText"
-		[actionIcon]="actionButtonIcon"
-		(action)="action.emit()"
-		[itemsSelectedAmount]="selectedRows.length"
+		[activeQuickFilterIdentifier]="activeQuickFilterIdentifier"
+		[canUseAction]="actionButtonEnabled"
+		[enableAction]="enableAction"
 		[enableExport]="enableExport"
-		(export)="export.emit()"
+		[enableFilter]="enableFilter"
+		[enableFilterDesktop]="enableFilterDesktop"
+		[enableSearch]="enableSearch"
+		[filterButtonTemplate]="filterButtonTemplate"
+		[itemsSelectedAmount]="selectedRows.length"
 		[loading]="headerLoading"
+		[query]="query"
+		[quickFilters]="quickFilters"
+		[selectedFiltersAmount]="selectedFiltersAmount"
+		(action)="action.emit()"
+		(export)="export.emit()"
+		(filter)="filterModalShow$.next(true)"
+		(queryChange)="onQueryChange($event)"
+		(quickFilter)="onQuickFilter($event)"
 	>
 		<ng-container *ngIf="headerCustomFilterTemplate">
-			<ng-container
-				*ngTemplateOutlet="headerCustomFilterTemplate"
-			></ng-container>
+			<ng-container *ngTemplateOutlet="headerCustomFilterTemplate" />
 		</ng-container>
 
 		<ng-container *ngIf="headerCustomActionsTemplate">
-			<ng-container
-				*ngTemplateOutlet="headerCustomActionsTemplate"
-			></ng-container>
+			<ng-container *ngTemplateOutlet="headerCustomActionsTemplate" />
 		</ng-container>
 	</p-table-header>
 
 	<div
-		class="relative flex-1"
 		*ngIf="enableScroll; else rowsTemplate"
+		class="relative flex-1"
 	>
 		<div
-			class="flex flex-col overflow-x-auto"
 			#scrollContainer
+			class="flex flex-col overflow-x-auto"
 			[class]="
 				cn(
 					'before:absolute before:top-0 before:left-0 before:z-[1] before:pointer-events-none',
@@ -57,28 +53,28 @@
 						'before:opacity-0': reachedScrollStart$ | async,
 						'after:opacity-0': reachedScrollEnd$ | async,
 						'before:opacity-100': (reachedScrollStart$ | async) === false,
-						'after:opacity-100': (reachedScrollEnd$ | async) === false
+						'after:opacity-100': (reachedScrollEnd$ | async) === false,
 					}
 				)
 			"
 			(scroll)="onContainerXScroll($event)"
 		>
-			<ng-container *ngTemplateOutlet="rowsTemplate"></ng-container>
+			<ng-container *ngTemplateOutlet="rowsTemplate" />
 		</div>
 	</div>
 
 	<ng-container *ngIf="enableFloatingMenu && enableRowSelection">
 		<p-floating-menu-container
-			[usedInTable]="true"
+			[amount]="floatingMenuAmountSelectedText"
 			[class]="
 				floatingMenuContainerClass({
 					hasFooter: enableFooter && (footerHidden$ | async) === false,
 					active: selectedRows.length > 0,
-					shown: $any(floatingMenuShown$ | async)
+					shown: $any(floatingMenuShown$ | async),
 				})
 			"
-			[amount]="floatingMenuAmountSelectedText"
 			[enableAmountSelected]="!!(rowActionsFloating$ | async)?.length"
+			[usedInTable]="true"
 			(close)="_selectAllChange(null, false)"
 		>
 			<p-floating-menu-item
@@ -88,10 +84,10 @@
 					(action['type'] === 'single' && selectedRows.length > 1) ||
 					action['disabled']
 				"
-				[loading]="action['loading']"
 				[icon]="action['icon']"
-				[iconRotate]="action['iconRotate']"
 				[iconFlip]="action['iconFlip']"
+				[iconRotate]="action['iconRotate']"
+				[loading]="action['loading']"
 				(click)="_rowActionClick(action)"
 			>
 				{{ action['label'] }}
@@ -101,34 +97,34 @@
 
 	<p-table-footer
 		*ngIf="enableFooter"
-		[hideOnSinglePage]="hideOnSinglePage"
+		[enablePaginationPages]="enablePaginationPages"
 		[enablePaginationSize]="enablePaginationSize"
+		[hideOnSinglePage]="hideOnSinglePage"
+		[loading]="footerLoading"
+		[page]="page"
 		[pageSize]="pageSize"
 		[pageSizeOptions]="pageSizeOptions"
-		(pageSizeChange)="onPageSizeChange($event)"
-		[enablePaginationPages]="enablePaginationPages"
-		[page]="page"
-		[total]="total"
-		(pageChange)="onPageChange($event)"
-		[loading]="footerLoading"
-		(hiddenChange)="footerHidden$.next($event.detail)"
 		[tableHeaderHasAction]="enableHeader && enableAction && actionButtonEnabled"
-	></p-table-footer>
+		[total]="total"
+		(hiddenChange)="footerHidden$.next($event.detail)"
+		(pageChange)="onPageChange($event)"
+		(pageSizeChange)="onPageSizeChange($event)"
+	/>
 </p-table-container>
 
 <ng-template #rowsTemplate>
 	<p-table-row
 		*ngIf="(extraHeaders$ | async)?.length"
-		variant="header-secondary"
 		class="z-[2]"
+		variant="header-secondary"
 		[isLast]="true"
 	>
 		<ng-container *ngFor="let col of extraHeaders$ | async; let index = index">
 			<p-table-cell-ngx
-				[definition]="col"
 				variant="header-secondary"
-				[index]="index"
 				[checkboxOffset]="index === 0 && enableRowSelection"
+				[definition]="col"
+				[index]="index"
 				[scrollable]="this.enableScroll"
 			>
 				<b>{{ col.name }}</b>
@@ -139,25 +135,25 @@
 	<p-table-row variant="header">
 		<ng-container *ngFor="let col of columns$ | async; let index = index">
 			<p-table-cell-ngx
-				[definition]="col"
-				[value]="col.name"
 				variant="header"
-				[index]="index"
 				[checkbox]="
 					(index === 0 || col.hasCheckbox) && enableRowSelection
 						? checkboxTemplate
 						: undefined
 				"
+				[definition]="col"
+				[index]="index"
 				[scrollable]="this.enableScroll"
-			></p-table-cell-ngx>
+				[value]="col.name"
+			/>
 			<ng-template #checkboxTemplate>
 				<p-checkbox
-					(checkedChange)="_selectAllChange($event)"
 					[checked]="_selectionContainsAll()"
-					[indeterminate]="_selectionIndeterminate()"
 					[class.opacity-0]="rowSelectionLimit !== undefined"
 					[disabled]="rowSelectionLimit !== undefined"
-				></p-checkbox>
+					[indeterminate]="_selectionIndeterminate()"
+					(checkedChange)="_selectAllChange($event)"
+				/>
 			</ng-template>
 		</ng-container>
 	</p-table-row>
@@ -172,22 +168,22 @@
 			>
 				<ng-container *ngFor="let col of columns$ | async; let index = index">
 					<p-table-cell-ngx
-						[definition]="col"
 						variant="loading"
 						[checkbox]="
 							(index === 0 || col.hasCheckbox) && enableRowSelection
 								? checkboxTemplate
 								: undefined
 						"
+						[definition]="col"
 						[index]="index"
 						[rowIndex]="rowIndex"
 						[scrollable]="this.enableScroll"
-					></p-table-cell-ngx>
+					/>
 					<ng-template #checkboxTemplate>
 						<p-loader
-							variant="ghost"
 							class="h-6 w-6 rounded"
-						></p-loader>
+							variant="ghost"
+						/>
 					</ng-template>
 				</ng-container>
 			</p-table-row>
@@ -198,8 +194,8 @@
 				<p-table-row
 					*ngFor="let item of parsedItems; let rowIndex = index"
 					class="group"
-					[enableHover]="enableRowSelection || enableRowClick"
 					[checked]="_selectionContains(item, rowIndex)"
+					[enableHover]="enableRowSelection || enableRowClick"
 					[isLast]="rowIndex === parsedItems.length - 1"
 					(click)="_rowClick($event, rowIndex)"
 				>
@@ -215,32 +211,32 @@
 							*ngFor="let col of columns$ | async; let index = index"
 						>
 							<p-table-cell-ngx
-								[definition]="col"
-								[item]="item"
 								[checkbox]="
 									(index === 0 || col.hasCheckbox) && enableRowSelection
 										? checkboxTemplate
 										: undefined
 								"
+								[definition]="col"
 								[index]="index"
+								[item]="item"
 								[rowIndex]="rowIndex"
-								[template]="col.template"
 								[scrollable]="this.enableScroll"
-							></p-table-cell-ngx>
+								[template]="col.template"
+							/>
 
 							<ng-template #checkboxTemplate>
 								<p-checkbox
-									(checkedChange)="_checkboxChange($event.target, rowIndex)"
-									[disabled]="_checkboxDisabled(item, rowIndex)"
 									[checked]="_selectionContains(item, rowIndex)"
-								></p-checkbox>
+									[disabled]="_checkboxDisabled(item, rowIndex)"
+									(checkedChange)="_checkboxChange($event.target, rowIndex)"
+								/>
 							</ng-template>
 						</ng-container>
 
 						<p-table-row-actions-container
-							*ngIf="!!rowActionsRow?.length && !(isMobile$ | async)"
-							[checked]="_selectionContains(item, rowIndex)"
+							*ngIf="!!rowActionsRow?.length && (isMobile$ | async) === false"
 							slot="actions"
+							[checked]="_selectionContains(item, rowIndex)"
 						>
 							<ng-container *ngFor="let action of rowActionsRow">
 								<p-tooltip
@@ -253,29 +249,29 @@
 								>
 									<p-button
 										data-is-action
-										variant="secondary"
-										slot="trigger"
-										[icon]="action['icon']"
-										[iconRotate]="action['iconRotate']"
 										iconFlip="action.iconFlip"
 										iconOnly="true"
 										size="sm"
-										[loading]="action['loading']"
+										slot="trigger"
+										variant="secondary"
 										[disabled]="action['disabled']"
-										[routerLink]="
-											action.routerLink
-												? (_getActionRouterLink(action.routerLink, rowIndex)
-												  | async)
-												: null
-										"
+										[icon]="action['icon']"
+										[iconRotate]="action['iconRotate']"
+										[loading]="action['loading']"
 										[queryParams]="
 											action.queryParams
 												? (_getActionQueryParams(action.queryParams, rowIndex)
-												  | async)
+													| async)
+												: null
+										"
+										[routerLink]="
+											action.routerLink
+												? (_getActionRouterLink(action.routerLink, rowIndex)
+													| async)
 												: null
 										"
 										(onClick)="_rowActionClick(action, rowIndex)"
-									></p-button>
+									/>
 								</p-tooltip>
 							</ng-container>
 						</p-table-row-actions-container>
@@ -286,12 +282,12 @@
 
 		<ng-container *ngFor="let customRow of customRows">
 			<p-table-row
-				[variant]="customRow.variant"
 				[class]="{
-					'z-[2]': customRow.variant === 'secondary'
+					'z-[2]': customRow.variant === 'secondary',
 				}"
+				[variant]="customRow.variant"
 			>
-				<ng-container *ngTemplateOutlet="customRow.templateRef"></ng-container>
+				<ng-container *ngTemplateOutlet="customRow.templateRef" />
 			</p-table-row>
 		</ng-container>
 	</div>
@@ -304,14 +300,14 @@
 		(closed)="filterModalShow$.next(false)"
 	>
 		<div
-			slot="content"
 			class="flex flex-col gap-6"
+			slot="content"
 		>
-			<ng-container *ngTemplateOutlet="filterModalTemplate"></ng-container>
+			<ng-container *ngTemplateOutlet="filterModalTemplate" />
 		</div>
 		<div
-			slot="footer"
 			class="flex w-full justify-between gap-4"
+			slot="footer"
 		>
 			<p-button
 				*ngIf="filterModalShowResetMobile"
@@ -344,22 +340,22 @@
 	<p-empty-state
 		*ngIf="emptyStateType === 'filtered'; else emptyStateNonFilterTemplate"
 		class="my-16 self-center"
-		[illustration]="emptyStateFilteredIllustration"
-		[header]="emptyStateFilteredHeader"
 		[content]="emptyStateFilteredContent"
 		[enableAction]="false"
-	></p-empty-state>
+		[header]="emptyStateFilteredHeader"
+		[illustration]="emptyStateFilteredIllustration"
+	/>
 </ng-template>
 
 <ng-template #emptyStateNonFilterTemplate>
 	<p-empty-state
 		class="my-16 self-center"
-		[illustration]="emptyStateIllustration"
-		[header]="emptyStateHeader"
+		[actionIcon]="emptyStateActionIcon"
+		[actionText]="emptyStateAction"
 		[content]="emptyStateContent"
 		[enableAction]="enableEmptyStateAction"
-		[actionText]="emptyStateAction"
-		[actionIcon]="emptyStateActionIcon"
+		[header]="emptyStateHeader"
+		[illustration]="emptyStateIllustration"
 		(action)="emptyStateClicked()"
-	></p-empty-state>
+	/>
 </ng-template>

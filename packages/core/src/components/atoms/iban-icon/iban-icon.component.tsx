@@ -1,4 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
+
 import { IBAN_ICON_VARIANTS_ARRAY, IbanIconVariant } from '../../../types';
 
 @Component({
@@ -32,22 +33,30 @@ export class IbanIcon {
 
 	private _getIcon(variant: IbanIconVariant) {
 		switch (variant) {
-			case 'abna':
+			case 'abna': {
 				return <img src='./assets/iban-icons/icon-abn.svg' />;
-			case 'rabo':
+			}
+			case 'rabo': {
 				return <img src='./assets/iban-icons/icon-rabo.svg' />;
-			case 'ingb':
+			}
+			case 'ingb': {
 				return <img src='./assets/iban-icons/icon-ing.png' />;
-			case 'bunq':
+			}
+			case 'bunq': {
 				return <img src='./assets/iban-icons/icon-bunq.svg' />;
-			case 'asnb':
+			}
+			case 'asnb': {
 				return <img src='./assets/iban-icons/icon-asn.svg' />;
-			case 'trio':
+			}
+			case 'trio': {
 				return <img src='./assets/iban-icons/icon-triodos.svg' />;
-			case 'knab':
+			}
+			case 'knab': {
 				return <img src='./assets/iban-icons/icon-knab.svg' />;
-			case 'snsb':
+			}
+			case 'snsb': {
 				return <img src='./assets/iban-icons/icon-sns.svg' />;
+			}
 		}
 	}
 }

@@ -8,9 +8,11 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({ size }) => html`<p-button-group size=${size ?? nothing}>
-		<p-button>One</p-button>
-		<p-button>Two</p-button>
-		<p-button>Three</p-button>
-	</p-button-group>`,
+	render: ({ size }) => html`
+		<p-button-group size=${size ?? nothing}>
+			<p-button>One</p-button>
+			<p-button>Two</p-button>
+			<p-button>Three</p-button>
+		</p-button-group>
+	`,
 };

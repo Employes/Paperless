@@ -8,9 +8,5 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({
-		variant,
-	}) => html`<p-layout
-		variant=${variant ?? nothing}
-	/>`,
+	render: ({ variant }) => html`<p-layout variant=${variant ?? nothing} />`,
 };

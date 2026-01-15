@@ -1,5 +1,6 @@
 import { Placement, Strategy } from '@floating-ui/dom';
 import { Component, h, Prop } from '@stencil/core';
+
 import { ThemedHost } from '../../../internal/themed-host.component';
 
 @Component({

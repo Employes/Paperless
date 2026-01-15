@@ -11,7 +11,6 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({ variant }) => html`<p-illustration
-		variant=${variant ?? nothing}
-	/>`,
+	render: ({ variant }) =>
+		html`<p-illustration variant=${variant ?? nothing} />`,
 };

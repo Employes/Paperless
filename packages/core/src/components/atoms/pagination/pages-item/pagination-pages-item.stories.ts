@@ -16,18 +16,14 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({
-		content,
-		variant,
-		active,
-		hover,
-		disabled,
-	}) => html`<p-pagination-pages-item
-		variant=${variant ?? nothing}
-		active=${active ?? nothing}
-		hover=${hover ?? nothing}
-		disabled=${disabled ?? nothing}
-	>
-		${content}
-	</p-pagination-pages-item>`,
+	render: ({ content, variant, active, hover, disabled }) => html`
+		<p-pagination-pages-item
+			variant=${variant ?? nothing}
+			active=${active ?? nothing}
+			hover=${hover ?? nothing}
+			disabled=${disabled ?? nothing}
+		>
+			${content}
+		</p-pagination-pages-item>
+	`,
 };

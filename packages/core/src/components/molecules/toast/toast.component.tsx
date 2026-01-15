@@ -1,8 +1,8 @@
 import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
-import { RotateOptions } from '../../../types';
-import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
 import { cva } from 'class-variance-authority';
+
 import { ThemedHost } from '../../../internal/themed-host.component';
+import { IconFlipOptions, IconVariant, RotateOptions } from '../../../types';
 
 const indicator = cva('w-[2px] rounded-full h-9 flex-shrink-0', {
 	variants: {

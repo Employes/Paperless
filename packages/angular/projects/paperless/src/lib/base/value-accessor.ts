@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Directive, ElementRef, HostListener } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 
 @Directive({
-    standalone: false
+	standalone: false,
 })
 export class BaseValueAccessor implements ControlValueAccessor {
 	protected onChange: (value: any) => void = () => {

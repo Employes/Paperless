@@ -25,15 +25,17 @@ export const Default = {
 		'icon-position': iconPosition,
 		'icon-flip': iconFlip,
 		'icon-rotate': iconRotate,
-	}) => html`<p-floating-menu-item
-		hover=${hover ?? nothing}
-		disabled=${disabled ?? nothing}
-		loading=${loading ?? nothing}
-		icon=${icon ?? nothing}
-		icon-position=${iconPosition ?? nothing}
-		icon-flip=${iconFlip ?? nothing}
-		icon-rotate=${iconRotate ?? nothing}
-	>
-		${content}
-	</p-floating-menu-item>`,
+	}) => html`
+		<p-floating-menu-item
+			hover=${hover ?? nothing}
+			disabled=${disabled ?? nothing}
+			loading=${loading ?? nothing}
+			icon=${icon ?? nothing}
+			icon-position=${iconPosition ?? nothing}
+			icon-flip=${iconFlip ?? nothing}
+			icon-rotate=${iconRotate ?? nothing}
+		>
+			${content}
+		</p-floating-menu-item>
+	`,
 };

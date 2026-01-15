@@ -16,14 +16,12 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({
-		content,
-		strategy,
-		placement,
-	}) => html`<p-helper
-		strategy=${strategy ?? nothing}
-		placement=${placement ?? nothing}
-	>
-		${content}
-	</p-helper>`,
+	render: ({ content, strategy, placement }) => html`
+		<p-helper
+			strategy=${strategy ?? nothing}
+			placement=${placement ?? nothing}
+		>
+			${content}
+		</p-helper>
+	`,
 };

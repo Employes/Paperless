@@ -9,10 +9,7 @@ import {
 	State,
 } from '@stencil/core';
 
-@Component({ tag: 'p-drawer',
-	styleUrl: 'drawer.component.scss',
-	shadow: true,
-})
+@Component({ tag: 'p-drawer', styleUrl: 'drawer.component.scss', shadow: true })
 export class Drawer {
 	/**
 	 * The Header of the drawer
@@ -58,7 +55,7 @@ export class Drawer {
 	closeClicked: EventEmitter<{
 		event: MouseEvent;
 		canClose: boolean;
-    source: 'unknown' | 'backdrop' | 'close' | 'event'
+		source: 'unknown' | 'backdrop' | 'close' | 'event';
 	}>;
 
 	/**
@@ -79,9 +76,7 @@ export class Drawer {
 	@State() private _closing = false;
 
 	componentWillLoad() {
-		this._hasHeaderSlot = !!this._el.querySelector(
-			':scope > [slot="header"]'
-		);
+		this._hasHeaderSlot = !!this._el.querySelector(':scope > [slot="header"]');
 	}
 
 	render() {
@@ -89,31 +84,29 @@ export class Drawer {
 			return;
 		}
 
-		const headerContent = <slot name="header" />;
-		const bodyContent = <slot name="content" />;
+		const headerContent = <slot name='header' />;
+		const bodyContent = <slot name='content' />;
 
 		return (
-				<p-backdrop
-					variant="drawer"
-					applyBlur={this.applyBlur}
-					onClicked={(ev) => this._backdropClick(ev.detail)}
-					closing={this._closing}
-					scrollLock={this.scrollLock}
-				>
-					<p-drawer-container closing={this._closing}>
-						{(this.header?.length || this._hasHeaderSlot) && (
-							<p-drawer-header
-								show-close={this.showClose}
-								onClose={(ev) => this.close(ev.detail, 'close')}
-							>
-								{this._hasHeaderSlot
-									? headerContent
-									: this.header}
-							</p-drawer-header>
-						)}
-						<p-drawer-body>{bodyContent}</p-drawer-body>
-					</p-drawer-container>
-				</p-backdrop>
+			<p-backdrop
+				variant='drawer'
+				applyBlur={this.applyBlur}
+				onClicked={ev => this._backdropClick(ev.detail)}
+				closing={this._closing}
+				scrollLock={this.scrollLock}
+			>
+				<p-drawer-container closing={this._closing}>
+					{(this.header?.length || this._hasHeaderSlot) && (
+						<p-drawer-header
+							show-close={this.showClose}
+							onClose={ev => this.close(ev.detail, 'close')}
+						>
+							{this._hasHeaderSlot ? headerContent : this.header}
+						</p-drawer-header>
+					)}
+					<p-drawer-body>{bodyContent}</p-drawer-body>
+				</p-drawer-container>
+			</p-backdrop>
 		);
 	}
 
@@ -146,12 +139,16 @@ export class Drawer {
 		return this._findDrawer(el?.parentElement);
 	}
 
-	public close(ev?: MouseEvent, source: 'unknown' | 'backdrop' | 'close' | 'event' = 'unknown', force = false) {
+	public close(
+		ev?: MouseEvent,
+		source: 'unknown' | 'backdrop' | 'close' | 'event' = 'unknown',
+		force = false
+	) {
 		if (!force) {
 			this.closeClicked.emit({
 				event: ev,
 				canClose: this.canClose,
-        		source
+				source,
 			});
 
 			if (!this.canClose) {

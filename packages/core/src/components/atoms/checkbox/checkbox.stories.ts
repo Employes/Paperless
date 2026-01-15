@@ -1,5 +1,5 @@
-import { html, nothing } from 'lit';
 import { action } from '@storybook/addon-actions';
+import { html, nothing } from 'lit';
 
 const meta = {
 	title: 'Design System/Atoms/Checkbox',
@@ -25,16 +25,18 @@ export const Default = {
 		required,
 		id,
 		name,
-	}) => html`<p-checkbox
-		checked=${checked ?? nothing}
-		indeterminate=${indeterminate ?? nothing}
-		disabled=${disabled ?? nothing}
-		required=${required ?? nothing}
-		id=${id ?? nothing}
-		name=${name ?? nothing}
-		@checkedChange=${action('checkedChange')}
-		@indeterminateChange=${action('indeterminateChange')}
-	>
-		${content}
-	</p-checkbox>`,
+	}) => html`
+		<p-checkbox
+			checked=${checked ?? nothing}
+			indeterminate=${indeterminate ?? nothing}
+			disabled=${disabled ?? nothing}
+			required=${required ?? nothing}
+			id=${id ?? nothing}
+			name=${name ?? nothing}
+			@checkedChange=${action('checkedChange')}
+			@indeterminateChange=${action('indeterminateChange')}
+		>
+			${content}
+		</p-checkbox>
+	`,
 };

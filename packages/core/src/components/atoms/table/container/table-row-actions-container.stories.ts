@@ -16,9 +16,9 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({ content, shadow }) => html`<p-table-row-actions-container
-		shadow=${shadow ?? nothing}
-	>
-		${content}
-	</p-table-row-actions-container>`,
+	render: ({ content, shadow }) => html`
+		<p-table-row-actions-container shadow=${shadow ?? nothing}>
+			${content}
+		</p-table-row-actions-container>
+	`,
 };

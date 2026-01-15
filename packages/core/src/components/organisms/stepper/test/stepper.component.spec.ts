@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { Stepper } from '../stepper.component';
 
 describe('p-stepper', () => {

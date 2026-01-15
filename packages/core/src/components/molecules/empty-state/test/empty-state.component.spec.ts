@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { EmptyState } from '../empty-state.component';
 
 describe('p-empty-state', () => {

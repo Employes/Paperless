@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { Avatar } from '../avatar.component';
 
 describe('p-avatar', () => {

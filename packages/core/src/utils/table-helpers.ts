@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { cva } from 'class-variance-authority';
+
 import { TableColumn } from '../components/helpers/table/column/table-column.component';
 import {
 	isTableColumnSizesKey,
@@ -14,7 +16,7 @@ export const getTableCellColumnClasses = (
 	const sizes = definition ? getTableCellSizes(definition, variant) : {};
 	const align =
 		variant == 'header'
-			? definition?.headerAlign ?? definition?.align
+			? (definition?.headerAlign ?? definition?.align)
 			: definition?.align;
 
 	return {
@@ -65,7 +67,7 @@ export const getTableCellSizes = (
 		const classes: any = {};
 		let previousSize: TableColumnSizesKey | undefined;
 
-		for (let size in sizes) {
+		for (const size in sizes) {
 			if (!isTableColumnSizesKey(sizes, size)) {
 				continue;
 			}

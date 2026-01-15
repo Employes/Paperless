@@ -23,13 +23,15 @@ export const Default = {
 		variant,
 		'bg-class': bgClass,
 		border,
-	}) => html`<p-card-container
-		hoverable=${hoverable ?? nothing}
-		shadow=${shadow ?? nothing}
-		border=${border ?? nothing}
-		bg-class=${bgClass ?? nothing}
-		variant=${variant ?? nothing}
-	>
-		${content}
-	</p-card-container>`,
+	}) => html`
+		<p-card-container
+			hoverable=${hoverable ?? nothing}
+			shadow=${shadow ?? nothing}
+			border=${border ?? nothing}
+			bg-class=${bgClass ?? nothing}
+			variant=${variant ?? nothing}
+		>
+			${content}
+		</p-card-container>
+	`,
 };

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
 	ChangeDetectionStrategy,
 	ChangeDetectorRef,
@@ -11,9 +12,11 @@ import {
 	SimpleChanges,
 } from '@angular/core';
 import { Params } from '@angular/router';
+import { Observable, Subscribable } from 'rxjs';
+
 import { Components } from '@paperless/core';
 import { TableRowActionShowFunc } from '@paperless/core/dist/types/components';
-import { Observable, Subscribable } from 'rxjs';
+
 import { ProxyCmp } from '../../../../stencil/angular-component-lib/utils';
 
 export interface TableRowActionClickEvent {
@@ -22,8 +25,10 @@ export interface TableRowActionClickEvent {
 	multi: boolean;
 	ctrlDown: boolean;
 }
-export declare interface TableRowAction
-	extends Omit<Components.PTableRowAction, 'action' | 'showFunction'> {
+export declare interface TableRowActionComponent extends Omit<
+	Components.PTableRowAction,
+	'action' | 'showFunction'
+> {
 	action: EventEmitter<TableRowActionClickEvent>;
 	showFunction?: TableRowActionShowFunc;
 }
@@ -55,23 +60,23 @@ export type TableRowActionQueryParams =
 	],
 })
 @Component({
-    selector: 'p-table-row-action',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    template: '<ng-content></ng-content>',
-    // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-    inputs: [
-        'disabled',
-        'icon',
-        'iconFlip',
-        'iconOnly',
-        'iconRotate',
-        'label',
-        'type',
-        'loading',
-    ],
-    standalone: false
+	selector: 'p-table-row-action',
+	changeDetection: ChangeDetectionStrategy.OnPush,
+	template: '<ng-content />',
+
+	inputs: [
+		'disabled',
+		'icon',
+		'iconFlip',
+		'iconOnly',
+		'iconRotate',
+		'label',
+		'type',
+		'loading',
+	],
+	standalone: false,
 })
-export class TableRowAction implements OnChanges {
+export class TableRowActionComponent implements OnChanges {
 	protected el: HTMLElement;
 
 	/**
@@ -87,12 +92,12 @@ export class TableRowAction implements OnChanges {
 	/**
 	 * Event whenever a row is clicked
 	 */
-	@Output() action: EventEmitter<TableRowActionClickEvent> = new EventEmitter();
+	@Output() action = new EventEmitter<TableRowActionClickEvent>();
 
 	/**
 	 * Event whenever loading has changed
 	 */
-	@Output() _loadingChanged: EventEmitter<boolean> = new EventEmitter();
+	@Output() _loadingChanged = new EventEmitter<boolean>();
 
 	/**
 	 * A function for row actions of type "single" or "both" that determines if the action is shown on the row

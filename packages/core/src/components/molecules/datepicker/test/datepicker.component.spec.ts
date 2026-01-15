@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { Datepicker } from '../datepicker.component';
 
 describe('p-datepicker', () => {

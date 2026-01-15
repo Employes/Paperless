@@ -16,10 +16,12 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({ content, size, closing }) => html`<p-modal-container
-		size=${size ?? nothing}
-		closing=${closing ?? nothing}
-	>
-		${content}
-	</p-modal-container>`,
+	render: ({ content, size, closing }) => html`
+		<p-modal-container
+			size=${size ?? nothing}
+			closing=${closing ?? nothing}
+		>
+			${content}
+		</p-modal-container>
+	`,
 };

@@ -1,5 +1,5 @@
-import { html, nothing } from 'lit';
 import { action } from '@storybook/addon-actions';
+import { html, nothing } from 'lit';
 
 const meta = {
 	title: 'Design System/Molecules/Attachment',
@@ -23,20 +23,22 @@ export const Default = {
 		accept,
 		'enable-camera-on-mobile': enableCameraOnMobile,
 		'file-id': fileId,
-	}) => html`<p-attachment
-		mode=${mode ?? nothing}
-		error=${error ?? nothing}
-		value=${value ?? nothing}
-		label=${label ?? nothing}
-		helper=${helper ?? nothing}
-		required=${required ?? nothing}
-		file-id=${fileId ?? nothing}
-		enable-camera-on-mobile=${enableCameraOnMobile ?? nothing}
-		accept=${accept ?? nothing}
-		loading=${loading ?? nothing}
-		@download=${action('download')}
-		@delete=${action('delete')}
-		@upload=${action('upload')}
-	>
-	</p-attachment>`,
+	}) => html`
+		<p-attachment
+			mode=${mode ?? nothing}
+			error=${error ?? nothing}
+			value=${value ?? nothing}
+			label=${label ?? nothing}
+			helper=${helper ?? nothing}
+			required=${required ?? nothing}
+			file-id=${fileId ?? nothing}
+			enable-camera-on-mobile=${enableCameraOnMobile ?? nothing}
+			accept=${accept ?? nothing}
+			loading=${loading ?? nothing}
+			@download=${action('download')}
+			@delete=${action('delete')}
+			@upload=${action('upload')}
+		>
+		</p-attachment>
+	`,
 };

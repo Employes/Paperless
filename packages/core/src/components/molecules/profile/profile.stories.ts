@@ -32,20 +32,21 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({ title, subTitle, 'dropdown-location': dropdownLocation }) =>
-		html`<p-profile dropdown-location=${dropdownLocation ?? nothing}>
+	render: ({ title, subTitle, 'dropdown-location': dropdownLocation }) => html`
+		<p-profile dropdown-location=${dropdownLocation ?? nothing}>
 			<span slot="title">${title}</span>
 			<span slot="subtitle">${subTitle}</span>
 			<p-avatar
 				slot="avatar"
 				letters="A"
 			/>
-		</p-profile>`,
+		</p-profile>
+	`,
 };
 
 export const Dropdown = {
-	render: ({ title, subTitle, 'dropdown-location': dropdownLocation }) =>
-		html`<div class="flex w-full flex-col items-stretch">
+	render: ({ title, subTitle, 'dropdown-location': dropdownLocation }) => html`
+		<div class="flex w-full flex-col items-stretch">
 			<p-profile dropdown-location=${dropdownLocation}>
 				<span slot="title">${title}</span>
 				<span slot="subtitle">${subTitle}</span>
@@ -59,5 +60,6 @@ export const Dropdown = {
 					letters="A"
 				/>
 			</p-profile>
-		</div>`,
+		</div>
+	`,
 };

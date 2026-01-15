@@ -15,25 +15,27 @@ export const Default = {
 		'full-width': fullWidth,
 		'allow-overflow': allowOverflow,
 		scrollable,
-	}) => html`<p-dropdown-menu-container
-		variant=${variant ?? nothing}
-		max-width=${maxWidth ?? nothing}
-		class=${className ?? nothing}
-		full-width=${fullWidth ?? nothing}
-		allow-overflow=${allowOverflow ?? nothing}
-		scrollable=${scrollable ?? nothing}
-	>
-		<p-dropdown-menu-item variant=${variant ?? nothing}>
-			Item 1
-		</p-dropdown-menu-item>
-		<p-dropdown-menu-item variant=${variant ?? nothing}>
-			Item 2
-		</p-dropdown-menu-item>
-		<p-dropdown-menu-item
-			active
+	}) => html`
+		<p-dropdown-menu-container
 			variant=${variant ?? nothing}
+			max-width=${maxWidth ?? nothing}
+			class=${className ?? nothing}
+			full-width=${fullWidth ?? nothing}
+			allow-overflow=${allowOverflow ?? nothing}
+			scrollable=${scrollable ?? nothing}
 		>
-			Item 3
-		</p-dropdown-menu-item>
-	</p-dropdown-menu-container>`,
+			<p-dropdown-menu-item variant=${variant ?? nothing}>
+				Item 1
+			</p-dropdown-menu-item>
+			<p-dropdown-menu-item variant=${variant ?? nothing}>
+				Item 2
+			</p-dropdown-menu-item>
+			<p-dropdown-menu-item
+				active
+				variant=${variant ?? nothing}
+			>
+				Item 3
+			</p-dropdown-menu-item>
+		</p-dropdown-menu-container>
+	`,
 };

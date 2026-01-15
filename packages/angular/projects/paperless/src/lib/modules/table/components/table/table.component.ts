@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
 	ChangeDetectionStrategy,
 	ChangeDetectorRef,
@@ -39,12 +40,10 @@ import {
 	RowClickEvent,
 	state,
 	tableColumSizesOptions,
-} from '@paperless/core';
-import {
 	IconVariant,
 	IllustrationVariant,
 	TableColumnSizes,
-} from '@paperless/core/dist/types/components';
+} from '@paperless/core';
 
 import { PTableRow } from '../../../../stencil/components';
 import {
@@ -53,12 +52,12 @@ import {
 	TableFilterModalDirective,
 } from '../../directives';
 import { TableCustomRowDirective } from '../../directives/p-table-custom-row.directive';
-import { TableCell } from '../table-cell/table-cell.component';
-import { TableColumn } from '../table-column/table-column.component';
-import { TableExtraHeader } from '../table-extra-header/table-extra-header.component';
+import { TableCellComponent } from '../table-cell/table-cell.component';
+import { TableColumnComponent } from '../table-column/table-column.component';
+import { TableExtraHeaderComponent } from '../table-extra-header/table-extra-header.component';
 import {
 	AsyncItem,
-	TableRowAction,
+	TableRowActionComponent,
 	TableRowActionQueryParams,
 	TableRowActionRouterLink,
 } from '../table-row-action/table-row-action.component';
@@ -72,14 +71,13 @@ import { defaultSize, defaultSizeOptions } from './constants';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 	standalone: false,
 })
-export class Table implements OnInit, OnChanges, AfterViewInit {
-	@HostBinding('class') className = 'flex flex-col z-0';
+export class TableComponent implements OnInit, OnChanges, AfterViewInit {
+	@HostBinding('class') hostClass = 'flex flex-col z-0';
 	@HostBinding('attr.data-theme') theme = state.theme;
 
 	/**
 	 * The items to be fed to the table
 	 */
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	@Input() items!: string | any[];
 
 	/**
@@ -120,13 +118,11 @@ export class Table implements OnInit, OnChanges, AfterViewInit {
 	/**
 	 * The current selection of items
 	 */
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	@Input() selectedRows: any[] = [];
 
 	/**
 	 * Event whenever the current selection changes
 	 */
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	@Output() selectedRowsChange = new EventEmitter<any>();
 
 	/**
@@ -152,7 +148,6 @@ export class Table implements OnInit, OnChanges, AfterViewInit {
 	/**
 	 * The template for amount selected item in the floating menu
 	 */
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	@Input() floatingMenuAmountSelectedTemplate: any;
 
 	/**
@@ -168,13 +163,12 @@ export class Table implements OnInit, OnChanges, AfterViewInit {
 	/**
 	 * Event whenever a row is selected
 	 */
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	@Output() rowSelected = new EventEmitter<any>();
 
 	/**
 	 * Event whenever a row is deselected
 	 */
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 	@Output() rowDeselected = new EventEmitter<any>();
 
 	/** START HEADER */
@@ -222,7 +216,7 @@ export class Table implements OnInit, OnChanges, AfterViewInit {
 	/**
 	 * The template for the filter button text
 	 */
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 	@Input() filterButtonTemplate: any;
 
 	/**
@@ -253,7 +247,7 @@ export class Table implements OnInit, OnChanges, AfterViewInit {
 	/**
 	 * The template for the action button text
 	 */
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 	@Input() actionButtonTemplate: any;
 
 	/**
@@ -360,9 +354,8 @@ export class Table implements OnInit, OnChanges, AfterViewInit {
 	@ViewChildren(PTableRow, { read: ElementRef }) tableRows!: QueryList<
 		ElementRef<PTableRow>
 	>;
-	@ViewChildren(TableCell, { read: ElementRef }) tableCells!: QueryList<
-		ElementRef<TableCell>
-	>;
+	@ViewChildren(TableCellComponent, { read: ElementRef })
+	tableCells!: QueryList<ElementRef<TableCellComponent>>;
 	@ViewChild('scrollContainer') scrollContainer!: ElementRef<HTMLDivElement>;
 
 	public reachedScrollStart$ = new BehaviorSubject(true);
@@ -385,11 +378,10 @@ export class Table implements OnInit, OnChanges, AfterViewInit {
 	 */
 	@Input() shadow = true;
 
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	public extraHeaders$ = new BehaviorSubject<any[]>([]);
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 	public columns$ = new BehaviorSubject<any[]>([]);
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 	public parsedItems: any[] = [];
 	public loadingRows = Array.from({
 		length: this.amountOfLoadingRows,
@@ -402,7 +394,6 @@ export class Table implements OnInit, OnChanges, AfterViewInit {
 		read: TemplateRef,
 		static: true,
 	})
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	public headerCustomFilterTemplate: TemplateRef<any> | undefined;
 
 	// custom actions template
@@ -413,9 +404,10 @@ export class Table implements OnInit, OnChanges, AfterViewInit {
 	public headerCustomActionsTemplate: TemplateRef<any> | undefined;
 
 	// column templates
-	@ContentChildren(TableColumn) columnDefinitions!: QueryList<TableColumn>;
-	@ContentChildren(TableExtraHeader)
-	extraHeaderDefinitions!: QueryList<TableExtraHeader>;
+	@ContentChildren(TableColumnComponent)
+	columnDefinitions!: QueryList<TableColumnComponent>;
+	@ContentChildren(TableExtraHeaderComponent)
+	extraHeaderDefinitions!: QueryList<TableExtraHeaderComponent>;
 
 	// filter modal
 	@ContentChild(TableFilterModalDirective, {
@@ -427,15 +419,15 @@ export class Table implements OnInit, OnChanges, AfterViewInit {
 	public filterModalShow$ = new BehaviorSubject(false);
 
 	// row actions templates
-	private _rowActions!: QueryList<TableRowAction>;
+	private _rowActions!: QueryList<TableRowActionComponent>;
 	private _rowActionsSubscriptions: Subscription[] = [];
 
-	@ContentChildren(TableRowAction)
-	set rowActions(v: QueryList<TableRowAction>) {
+	@ContentChildren(TableRowActionComponent)
+	set rowActions(v: QueryList<TableRowActionComponent>) {
 		this._rowActions = v;
 		this._setRowSelectionData();
 	}
-	get rowActions(): QueryList<TableRowAction> {
+	get rowActions(): QueryList<TableRowActionComponent> {
 		return this._rowActions;
 	}
 
@@ -455,9 +447,13 @@ export class Table implements OnInit, OnChanges, AfterViewInit {
 	@Output() filterModalSave = new EventEmitter<void>();
 	@Output() filterModalReset = new EventEmitter<boolean>();
 
-	public rowActionsRow$ = new BehaviorSubject<TableRowAction[]>([]);
-	public rowActionsFloatingAll$ = new BehaviorSubject<TableRowAction[]>([]);
-	public rowActionsFloating$ = new BehaviorSubject<TableRowAction[]>([]);
+	public rowActionsRow$ = new BehaviorSubject<TableRowActionComponent[]>([]);
+	public rowActionsFloatingAll$ = new BehaviorSubject<
+		TableRowActionComponent[]
+	>([]);
+	public rowActionsFloating$ = new BehaviorSubject<TableRowActionComponent[]>(
+		[]
+	);
 
 	public isMobile$ = new BehaviorSubject(isMobile());
 
@@ -624,7 +620,10 @@ export class Table implements OnInit, OnChanges, AfterViewInit {
 		this.emptyStateActionClick.emit();
 	}
 
-	parseRowActionsRow(actions: TableRowAction[] | null, rowIndex: number) {
+	parseRowActionsRow(
+		actions: TableRowActionComponent[] | null,
+		rowIndex: number
+	) {
 		if (!actions?.length) {
 			return [];
 		}
@@ -661,7 +660,7 @@ export class Table implements OnInit, OnChanges, AfterViewInit {
 
 		definitionsArray = this._parseDefinitions(
 			definitionsArray
-		) as unknown as TableColumn[];
+		) as unknown as TableColumnComponent[];
 
 		this.columns$.next(definitionsArray);
 	}
@@ -671,7 +670,7 @@ export class Table implements OnInit, OnChanges, AfterViewInit {
 
 		definitionsArray = this._parseDefinitions(
 			definitionsArray
-		) as unknown as TableExtraHeader[];
+		) as unknown as TableExtraHeaderComponent[];
 
 		for (const col of definitionsArray) {
 			col.sticky = col.sticky === true ? 'secondary' : false;
@@ -930,7 +929,7 @@ export class Table implements OnInit, OnChanges, AfterViewInit {
 		return queryParams as AsyncItem<Params>;
 	}
 
-	public _rowActionClick(action: TableRowAction, rowIndex?: number) {
+	public _rowActionClick(action: TableRowActionComponent, rowIndex?: number) {
 		if (action.disabled) {
 			return;
 		}
@@ -985,7 +984,6 @@ export class Table implements OnInit, OnChanges, AfterViewInit {
 		return this._findRow(el?.parentElement);
 	}
 
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	private _findRowAction(el: HTMLElement | null): any {
 		if (!el) {
 			return null;
@@ -1013,7 +1011,7 @@ export class Table implements OnInit, OnChanges, AfterViewInit {
 			const mobile = isMobile();
 			this.isMobile$.next(mobile);
 
-			const actions = [...this._rowActions] as TableRowAction[];
+			const actions = [...this._rowActions] as TableRowActionComponent[];
 
 			if (this._rowActionsSubscriptions.length > 0) {
 				for (const subscription of this._rowActionsSubscriptions) {
@@ -1094,14 +1092,16 @@ export class Table implements OnInit, OnChanges, AfterViewInit {
 	}
 
 	private _parseDefinitions(
-		definitionsArray: TableColumn[] | TableExtraHeader[]
+		definitionsArray: TableColumnComponent[] | TableExtraHeaderComponent[]
 	) {
 		return definitionsArray.map(definition =>
 			this._parseDefinitionSizes(definition)
 		);
 	}
 
-	private _parseDefinitionSizes(definition: TableColumn | TableExtraHeader) {
+	private _parseDefinitionSizes(
+		definition: TableColumnComponent | TableExtraHeaderComponent
+	) {
 		const definitionAny = definition as any;
 		const parsedSizes: TableColumnSizes = { default: 'full' };
 

@@ -1,17 +1,17 @@
 <ng-container *ngIf="checkbox">
-	<ng-container *ngTemplateOutlet="checkbox"></ng-container>
+	<ng-container *ngTemplateOutlet="checkbox" />
 </ng-container>
 
 <ng-container [ngSwitch]="variant">
 	<p-loader
 		*ngSwitchCase="'loading'"
-		variant="ghost"
 		class="h-6 w-full flex-1 rounded"
-	></p-loader>
+		variant="ghost"
+	/>
 
 	<ng-container *ngSwitchCase="'actions'">
 		<ng-container *ngIf="template">
-			<ng-container *ngTemplateOutlet="template; context: data"></ng-container>
+			<ng-container *ngTemplateOutlet="template; context: data" />
 		</ng-container>
 	</ng-container>
 
@@ -19,7 +19,7 @@
 		*ngIf="variant === 'header' || variant === 'header-secondary'"
 		[class]="headerClass"
 	>
-		<ng-container *ngTemplateOutlet="valueTemplate"></ng-container>
+		<ng-container *ngTemplateOutlet="valueTemplate" />
 	</div>
 
 	<div
@@ -37,12 +37,12 @@
 					!definition?.flex &&
 					(definition?.align === undefined || definition.align === 'start'),
 				'text-center': !definition?.flex && definition.align === 'center',
-				'text-end': !definition?.flex && definition.align === 'end'
+				'text-end': !definition?.flex && definition.align === 'end',
 			})
 		"
 	>
 		<ng-container *ngIf="template; else valueTemplate">
-			<ng-container *ngTemplateOutlet="template; context: data"></ng-container>
+			<ng-container *ngTemplateOutlet="template; context: data" />
 		</ng-container>
 	</div>
 </ng-container>
@@ -52,5 +52,5 @@
 		{{ data.value }}
 	</ng-container>
 
-	<ng-content *ngIf="!data.value"></ng-content>
+	<ng-content *ngIf="!data.value" />
 </ng-template>

@@ -1,4 +1,5 @@
 import { html, nothing } from 'lit';
+
 import { icons } from '../../../../packages/core/src/utils/icons';
 
 const meta = {
@@ -66,37 +67,41 @@ export const Default = {
 		containerShadow,
 		containerBorder,
 		containerBgClass,
-	}) => html`<p-card-container
-		bg-class=${containerBgClass ?? nothing}
-		variant=${containerVariant}
-		hoverable=${containerHoverable}
-		shadow=${containerShadow}
-		border=${containerBorder}
-	>
-		<p-card-header
-			variant=${headerVariant}
-			icon=${headerIcon !== 'none' ? headerIcon : nothing}
-			enable-divider=${false}
-			border=${false}
+	}) => html`
+		<p-card-container
+			bg-class=${containerBgClass ?? nothing}
+			variant=${containerVariant}
+			hoverable=${containerHoverable}
+			shadow=${containerShadow}
+			border=${containerBorder}
 		>
-			${header}
-			${showHeaderButton
-				? html`<p-dropdown slot="suffix">
-						<p-button
-							icon="pencil"
-							variant="secondary"
-							slot="trigger"
-						>
-							Edit
-						</p-button>
-						<slot slot="items">
-							<p-dropdown-menu-item>Item 1</p-dropdown-menu-item>
-							<p-dropdown-menu-item>Item 2</p-dropdown-menu-item>
-							<p-dropdown-menu-item>Item 3</p-dropdown-menu-item>
-						</slot>
-				  </p-dropdown>`
-				: ''}
-		</p-card-header>
-		<p-card-body>${body}</p-card-body>
-	</p-card-container>`,
+			<p-card-header
+				variant=${headerVariant}
+				icon=${headerIcon === 'none' ? nothing : headerIcon}
+				enable-divider=${false}
+				border=${false}
+			>
+				${header}
+				${showHeaderButton
+					? html`
+							<p-dropdown slot="suffix">
+								<p-button
+									icon="pencil"
+									variant="secondary"
+									slot="trigger"
+								>
+									Edit
+								</p-button>
+								<slot slot="items">
+									<p-dropdown-menu-item>Item 1</p-dropdown-menu-item>
+									<p-dropdown-menu-item>Item 2</p-dropdown-menu-item>
+									<p-dropdown-menu-item>Item 3</p-dropdown-menu-item>
+								</slot>
+							</p-dropdown>
+						`
+					: ''}
+			</p-card-header>
+			<p-card-body>${body}</p-card-body>
+		</p-card-container>
+	`,
 };

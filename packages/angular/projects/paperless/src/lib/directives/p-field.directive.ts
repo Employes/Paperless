@@ -1,28 +1,24 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { BaseValueAccessor } from '../base';
 
 @Directive({
-    selector: 'p-field:not([type=number])',
-    host: {
-        '(valueChange)': 'handleChangeEvent($event.detail)',
-    },
-    providers: [
-        {
-            provide: NG_VALUE_ACCESSOR,
-            useExisting: FieldDirective,
-            multi: true,
-        },
-    ],
-    standalone: false
+	selector: 'p-field:not([type=number])',
+	host: {
+		'(valueChange)': 'handleChangeEvent($event.detail)',
+	},
+	providers: [
+		{
+			provide: NG_VALUE_ACCESSOR,
+			useExisting: FieldDirective,
+			multi: true,
+		},
+	],
+	standalone: false,
 })
 export class FieldDirective extends BaseValueAccessor {
-	constructor(el: ElementRef) {
-		super(el);
-	}
-
-	override writeValue(value: any) {
+	override writeValue(value: number) {
 		this.el.nativeElement.value = this.lastValue =
 			value === null ? JSON.parse(value) : value;
 	}

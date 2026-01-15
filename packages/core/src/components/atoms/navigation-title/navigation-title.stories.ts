@@ -1,4 +1,4 @@
-import { html, nothing } from 'lit';
+import { html } from 'lit';
 
 const meta = {
 	title: 'Design System/Atoms/Navigation title',
@@ -16,7 +16,6 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({
-		content,
-	}) => html`<p-navigation-title>${content}</p-navigation-title>`,
+	render: ({ content }) =>
+		html`<p-navigation-title>${content}</p-navigation-title>`,
 };

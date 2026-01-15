@@ -28,9 +28,7 @@ describe('p-popover', () => {
 
 	it('flip vertical', async () => {
 		const page = await newE2EPage();
-		await page.setContent(
-			'<p-icon icon="document" flip="vertical"></p-icon>'
-		);
+		await page.setContent('<p-icon icon="document" flip="vertical"></p-icon>');
 
 		const element = await page.find('p-icon');
 		expect(element).toHaveClass('transform');

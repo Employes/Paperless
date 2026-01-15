@@ -1,5 +1,5 @@
-import { html, nothing } from 'lit';
 import { action } from '@storybook/addon-actions';
+import { html, nothing } from 'lit';
 
 const meta = {
 	title: 'Design System/Atoms/Info panel',
@@ -15,29 +15,33 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({ variant, header, content, closeable }) => html`<p-info-panel
-		variant=${variant ?? nothing}
-		header=${header ?? nothing}
-		content=${content ?? nothing}
-		closeable=${closeable ?? nothing}
-		@closed=${action('closed')}
-	/>`,
+	render: ({ variant, header, content, closeable }) => html`
+		<p-info-panel
+			variant=${variant ?? nothing}
+			header=${header ?? nothing}
+			content=${content ?? nothing}
+			closeable=${closeable ?? nothing}
+			@closed=${action('closed')}
+		/>
+	`,
 };
 
 export const WithIcons = {
-	render: ({ variant, header, content, closeable }) => html`<p-info-panel
-		variant=${variant ?? nothing}
-		content=${content ?? nothing}
-		closeable=${closeable ?? nothing}
-		@closed=${action('closed')}
-	>
-		<div
-			class="flex items-center gap-2"
-			slot="header"
+	render: ({ variant, header, content, closeable }) => html`
+		<p-info-panel
+			variant=${variant ?? nothing}
+			content=${content ?? nothing}
+			closeable=${closeable ?? nothing}
+			@closed=${action('closed')}
 		>
-			<p-icon variant="placeholder"></p-icon>
-			${header ?? nothing}
-			<p-icon variant="placeholder"></p-icon>
-		</div>
-	</p-info-panel>`,
+			<div
+				class="flex items-center gap-2"
+				slot="header"
+			>
+				<p-icon variant="placeholder"></p-icon>
+				${header ?? nothing}
+				<p-icon variant="placeholder"></p-icon>
+			</div>
+		</p-info-panel>
+	`,
 };

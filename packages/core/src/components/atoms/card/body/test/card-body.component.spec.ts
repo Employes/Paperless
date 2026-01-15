@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { CardBody } from '../card-body.component';
 
 describe('p-card-body', () => {

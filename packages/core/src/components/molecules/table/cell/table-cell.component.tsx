@@ -1,11 +1,11 @@
 import { Component, Fragment, h, Prop } from '@stencil/core';
+
+import { ThemedHost } from '../../../../internal/themed-host.component';
 import {
 	TableDefinitionData,
 	TableDefinitionTemplateFunc,
 } from '../../../../types';
 import { getTableCellColumnClasses, objectGetByPath } from '../../../../utils';
-
-import { ThemedHost } from '../../../../internal/themed-host.component';
 import { cn } from '../../../../utils/cn';
 import { TableColumn } from '../../../helpers/table/column/table-column.component';
 
@@ -103,7 +103,7 @@ export class TableCell {
 
 		return {
 			value:
-				this.value ?? this.definition?.path
+				(this.value ?? this.definition?.path)
 					? objectGetByPath(this.item, this.definition.path)
 					: null,
 			item: this.item,
@@ -119,6 +119,7 @@ export class TableCell {
 
 				{this._getContent()}
 
+				{/* eslint-disable-next-line no-constant-binary-expression */}
 				{false && (
 					<Fragment>
 						<div class='pl-8'></div>
@@ -165,7 +166,7 @@ export class TableCell {
 
 		const align =
 			this.variant === 'header'
-				? this.definition.headerAlign ?? this.definition.align
+				? (this.definition.headerAlign ?? this.definition.align)
 				: this.definition.align;
 		return (
 			<div

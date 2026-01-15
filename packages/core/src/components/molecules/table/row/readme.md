@@ -12,7 +12,7 @@
 | `checked`     | `checked`      | Wether the row is checked      | `boolean`                                                    | `false`     |
 | `enableHover` | `enable-hover` | Enable hover                   | `boolean`                                                    | `true`      |
 | `isLast`      | `is-last`      | Wether the row is the last one | `boolean`                                                    | `false`     |
-| `variant`     | `variant`      | Variant of the header          | `"default" \| "header" \| "header-secondary" \| "secondary"` | `"default"` |
+| `variant`     | `variant`      | Variant of the header          | `"default" \| "header" \| "header-secondary" \| "secondary"` | `'default'` |
 
 
 ## Dependencies

@@ -4,9 +4,7 @@ describe('p-dropdown-menu-item', () => {
 	it('renders', async () => {
 		const page = await newE2EPage();
 
-		await page.setContent(
-			'<p-dropdown-menu-item>Test</p-dropdown-menu-item>'
-		);
+		await page.setContent('<p-dropdown-menu-item>Test</p-dropdown-menu-item>');
 		const element = await page.find('p-dropdown-menu-item');
 		expect(element).toHaveClass('hydrated');
 	});
@@ -14,9 +12,7 @@ describe('p-dropdown-menu-item', () => {
 	it('renders changes to the content', async () => {
 		const page = await newE2EPage();
 
-		await page.setContent(
-			'<p-dropdown-menu-item>Test</p-dropdown-menu-item>'
-		);
+		await page.setContent('<p-dropdown-menu-item>Test</p-dropdown-menu-item>');
 		// const component = await page.find('p-button');
 		const element = await page.find('p-dropdown-menu-item');
 		expect(element.textContent).toEqual(`Test`);

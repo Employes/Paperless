@@ -1,17 +1,18 @@
-import { Component, h, Prop } from "@stencil/core";
-import { cva } from "class-variance-authority";
-import { asBoolean } from "../../../../utils/as-boolean";
-import { ThemedHost } from "../../../../internal/themed-host.component";
+import { Component, h, Prop } from '@stencil/core';
+import { cva } from 'class-variance-authority';
+
+import { ThemedHost } from '../../../../internal/themed-host.component';
+import { asBoolean } from '../../../../utils/as-boolean';
 
 const row = cva(
-	["flex min-w-[calc(100%-0.5rem)] flex-col", "group", "relative"],
+	['flex min-w-[calc(100%-0.5rem)] flex-col', 'group', 'relative'],
 	{
 		variants: {
 			variant: {
-				default: ["px-3 m-1", "text-sm text-storm-500", "dark:text-white"],
+				default: ['px-3 m-1', 'text-sm text-storm-500', 'dark:text-white'],
 				header: null,
-				"header-secondary": "mb-4",
-				secondary: ["px-4", "font-ambit text-lg font-bold"],
+				'header-secondary': 'mb-4',
+				secondary: ['px-4', 'font-ambit text-lg font-bold'],
 			},
 			enableHover: {
 				true: null,
@@ -24,82 +25,82 @@ const row = cva(
 		},
 		compoundVariants: [
 			{
-				variant: "default",
+				variant: 'default',
 				enableHover: true,
-				class: ["rounded-lg transition-colors", "hover:cursor-pointer"],
+				class: ['rounded-lg transition-colors', 'hover:cursor-pointer'],
 			},
 			{
-				variant: "default",
+				variant: 'default',
 				enableHover: true,
 				checked: false,
-				class: ["hover:bg-off-white-300", "dark:hover:bg-hurricane-600"],
+				class: ['hover:bg-off-white-300', 'dark:hover:bg-hurricane-600'],
 			},
 			{
-				variant: "default",
+				variant: 'default',
 				checked: true,
 				class: [
-					"rounded-lg transition-colors",
-					"bg-off-white-300 dark:bg-hurricane-400 dark:hover:bg-hurricane-400",
+					'rounded-lg transition-colors',
+					'bg-off-white-300 dark:bg-hurricane-400 dark:hover:bg-hurricane-400',
 				],
 			},
 			{
-				variant: ["secondary", "header-secondary"],
-				class: ["bg-off-white-300 rounded-lg", "dark:bg-hurricane-400"],
+				variant: ['secondary', 'header-secondary'],
+				class: ['bg-off-white-300 rounded-lg', 'dark:bg-hurricane-400'],
 			},
 			{
-				variant: ["header", "header-secondary"],
+				variant: ['header', 'header-secondary'],
 				class: [
-					"px-4",
-					"text-xs font-normal text-storm-400",
-					"dark:text-hurricane-200",
+					'px-4',
+					'text-xs font-normal text-storm-400',
+					'dark:text-hurricane-200',
 				],
 			},
 		],
-	},
+	}
 );
 
 const content = cva(
-	"relative flex min-w-full flex-nowrap items-stretch justify-between",
+	'relative flex min-w-full flex-nowrap items-stretch justify-between',
 	{
 		variants: {
 			variant: {
 				default: null,
 				secondary: null,
-				header: "pb-4",
-				"header-secondary": "py-2",
+				header: 'pb-4',
+				'header-secondary': 'py-2',
 			},
 		},
 		compoundVariants: [
 			{
-				variant: ["default", "secondary"],
-				class: "min-h-14 py-2 tablet:py-4",
+				variant: ['default', 'secondary'],
+				class: 'min-h-14 py-2 tablet:py-4',
 			},
 			{
-				variant: ["header", "header-secondary"],
-				class: "min-h-0",
+				variant: ['header', 'header-secondary'],
+				class: 'min-h-0',
 			},
 		],
-	},
+	}
 );
 
 const actions = cva([
-	"absolute -right-4 top-1 z-[2]",
-	"h-[calc(100%-0.5rem)]",
-	"opacity-0 transition-opacity group-hover:opacity-100",
-	"empty:hidden",
+	'absolute -right-4 top-1 z-[2]',
+	'h-[calc(100%-0.5rem)]',
+	'opacity-0 transition-opacity group-hover:opacity-100',
+	'empty:hidden',
 ]);
 
 @Component({
-	tag: "p-table-row",
-	styleUrl: "table-row.component.css",
+	tag: 'p-table-row',
+	styleUrl: 'table-row.component.css',
 	shadow: true,
 })
 export class TableRow {
 	/**
 	 * Variant of the header
 	 */
-	@Prop() variant: "default" | "secondary" | "header" | "header-secondary" =
-		"default";
+	@Prop() variant: 'default' | 'secondary' | 'header' | 'header-secondary' =
+		'default';
 
 	/**
 	 * Enable hover
@@ -119,7 +120,7 @@ export class TableRow {
 	render() {
 		return (
 			<ThemedHost>
-				<div class="flex flex-col">
+				<div class='flex flex-col'>
 					<div
 						class={row({
 							variant: this.variant,
@@ -134,11 +135,11 @@ export class TableRow {
 						>
 							<slot />
 							<div class={actions()}>
-								<slot name="actions" />
+								<slot name='actions' />
 							</div>
 						</div>
 					</div>
-					{!asBoolean(this.isLast) && this.variant !== "secondary" && (
+					{!asBoolean(this.isLast) && this.variant !== 'secondary' && (
 						<p-divider />
 					)}
 				</div>

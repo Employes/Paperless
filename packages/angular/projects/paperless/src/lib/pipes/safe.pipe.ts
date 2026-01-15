@@ -9,29 +9,35 @@ import {
 } from '@angular/platform-browser';
 
 @Pipe({
-    name: 'psafe',
-    standalone: false
+	name: 'psafe',
+	standalone: false,
 })
 export class SafePipe implements PipeTransform {
 	constructor(protected sanitizer: DomSanitizer) {}
 
 	public transform(
-		value: any,
+		value: string,
 		type: string
 	): SafeHtml | SafeStyle | SafeScript | SafeUrl | SafeResourceUrl {
 		switch (type) {
-			case 'html':
+			case 'html': {
 				return this.sanitizer.bypassSecurityTrustHtml(value);
-			case 'style':
+			}
+			case 'style': {
 				return this.sanitizer.bypassSecurityTrustStyle(value);
-			case 'script':
+			}
+			case 'script': {
 				return this.sanitizer.bypassSecurityTrustScript(value);
-			case 'url':
+			}
+			case 'url': {
 				return this.sanitizer.bypassSecurityTrustUrl(value);
-			case 'resourceUrl':
+			}
+			case 'resourceUrl': {
 				return this.sanitizer.bypassSecurityTrustResourceUrl(value);
-			default:
+			}
+			default: {
 				throw new Error(`Invalid safe type specified: ${type}`);
+			}
 		}
 	}
 }

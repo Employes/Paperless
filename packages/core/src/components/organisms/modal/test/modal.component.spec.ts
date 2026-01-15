@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { Modal } from '../modal.component';
 
 describe('p-modal', () => {

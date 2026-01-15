@@ -1,10 +1,11 @@
 import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
-import { RotateOptions } from '../../../../types/tailwind';
-import { asBoolean } from '../../../../utils/as-boolean';
-import { IconFlipOptions, IconVariant } from '../../icon/icon.component';
-import { cn } from '../../../../utils';
+
 import { ThemedHost } from '../../../../internal/themed-host.component';
+import { IconFlipOptions, IconVariant } from '../../../../types/icon';
+import { RotateOptions } from '../../../../types/tailwind';
+import { cn } from '../../../../utils';
+import { asBoolean } from '../../../../utils/as-boolean';
 
 const segmentItem = cva(
 	['flex items-center justify-center', 'rounded-xl', 'cursor-pointer text-sm'],

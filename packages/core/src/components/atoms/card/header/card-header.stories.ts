@@ -15,12 +15,14 @@ export const Default = {
 		icon,
 		'icon-rotate': iconRotate,
 		'icon-flip': iconFlip,
-	}) => html`<p-card-header
-		header=${header ?? nothing}
-		variant=${variant ?? nothing}
-		divider=${divider ?? nothing}
-		icon=${icon ?? nothing}
-		icon-rotate=${iconRotate ?? nothing}
-		icon-flip=${iconFlip ?? nothing}
-	/>`,
+	}) => html`
+		<p-card-header
+			header=${header ?? nothing}
+			variant=${variant ?? nothing}
+			divider=${divider ?? nothing}
+			icon=${icon ?? nothing}
+			icon-rotate=${iconRotate ?? nothing}
+			icon-flip=${iconFlip ?? nothing}
+		/>
+	`,
 };

@@ -10,6 +10,7 @@ import {
 	h,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+
 import { ThemedHost } from '../../../../internal/themed-host.component';
 import {
 	formatTranslation,

@@ -8,8 +8,9 @@ import {
 	Prop,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
-import { asBoolean } from '../../../utils/as-boolean';
+
 import { ThemedHost } from '../../../internal/themed-host.component';
+import { asBoolean } from '../../../utils/as-boolean';
 
 const backdrop = cva(
 	[

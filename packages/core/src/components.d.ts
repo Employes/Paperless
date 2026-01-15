@@ -6,17 +6,16 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonVariant } from "./components/molecules/button/button.component";
-import { IconFlipOptions, IconVariant } from "./components/atoms/icon/icon.component";
+import { IconFlipOptions, IconVariant } from "./types/icon";
 import { RotateOptions, TextSizeOptions } from "./types/tailwind";
 import { Placement, Strategy } from "@floating-ui/dom";
-import { ButtonVariant as ButtonVariant1, IconFlipOptions as IconFlipOptions2, IconVariant as IconVariant1, IllustrationVariant, RotateOptions as RotateOptions2 } from "./components";
+import { IllustrationVariant } from "./types/illustration";
+import { ButtonVariant as ButtonVariant1, RotateOptions as RotateOptions2 } from "./components";
 import { HTMLInputTypeAttribute } from "react";
+import { IbanIconVariant, IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1, RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
 import { templateFunc } from "./components/molecules/field/container/field-container.component";
 import { templateFunc as templateFunc1 } from "./components/molecules/field/container/field-container.component";
 import { amountSelectedTemplateFunc } from "./components/atoms/floating-menu/container/floating-menu-container.component";
-import { IbanIconVariant, RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
-import { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant2 } from "./components/atoms/icon/icon.component";
-import { IllustrationVariant as IllustrationVariant1 } from "./components/atoms/illustration/illustration.component";
 import { IllustrationDeprecatedVariant } from "./components/deprecated/atoms/illustration-deprecated/illustration-deprecated.component";
 import { Observable } from "rxjs";
 import { templateFunc as templateFunc2 } from "./components/molecules/pagination/pages/pagination-pages.component";
@@ -29,17 +28,16 @@ import { TableColumn } from "./components/helpers/table/column/table-column.comp
 import { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc5 } from "./components/molecules/table/header/table-header.component";
 import { TableRowActionFunc, TableRowActionShowFunc } from "./components/helpers/table/row-action/table-row-action.component";
 export { ButtonVariant } from "./components/molecules/button/button.component";
-export { IconFlipOptions, IconVariant } from "./components/atoms/icon/icon.component";
+export { IconFlipOptions, IconVariant } from "./types/icon";
 export { RotateOptions, TextSizeOptions } from "./types/tailwind";
 export { Placement, Strategy } from "@floating-ui/dom";
-export { ButtonVariant as ButtonVariant1, IconFlipOptions as IconFlipOptions2, IconVariant as IconVariant1, IllustrationVariant, RotateOptions as RotateOptions2 } from "./components";
+export { IllustrationVariant } from "./types/illustration";
+export { ButtonVariant as ButtonVariant1, RotateOptions as RotateOptions2 } from "./components";
 export { HTMLInputTypeAttribute } from "react";
+export { IbanIconVariant, IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1, RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
 export { templateFunc } from "./components/molecules/field/container/field-container.component";
 export { templateFunc as templateFunc1 } from "./components/molecules/field/container/field-container.component";
 export { amountSelectedTemplateFunc } from "./components/atoms/floating-menu/container/floating-menu-container.component";
-export { IbanIconVariant, RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
-export { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant2 } from "./components/atoms/icon/icon.component";
-export { IllustrationVariant as IllustrationVariant1 } from "./components/atoms/illustration/illustration.component";
 export { IllustrationDeprecatedVariant } from "./components/deprecated/atoms/illustration-deprecated/illustration-deprecated.component";
 export { Observable } from "rxjs";
 export { templateFunc as templateFunc2 } from "./components/molecules/pagination/pages/pagination-pages.component";
@@ -857,7 +855,7 @@ export namespace Components {
         /**
           * The icon for the action button
          */
-        "actionIcon": IconVariant1;
+        "actionIcon": IconVariant;
         /**
           * The position of the action icon
           * @default 'start'
@@ -951,11 +949,11 @@ export namespace Components {
         /**
           * Icon of the field
          */
-        "icon": IconVariant;
+        "icon": IconVariant1;
         /**
           * Icon flip
          */
-        "iconFlip": IconFlipOptions;
+        "iconFlip": IconFlipOptions1;
         /**
           * Icon position
           * @default 'start'
@@ -1140,11 +1138,11 @@ export namespace Components {
         /**
           * Icon to show on the item
          */
-        "icon": IconVariant;
+        "icon": IconVariant1;
         /**
           * Icon flip
          */
-        "iconFlip": IconFlipOptions;
+        "iconFlip": IconFlipOptions1;
         /**
           * Icon position
           * @default 'end'
@@ -1187,7 +1185,7 @@ export namespace Components {
           * Wether to flip the icon horizontally or vertically
           * @default 'none'
          */
-        "flip": IconFlipOptions1;
+        "flip": IconFlipOptions;
         /**
           * Wether to rotate the icon x degrees
           * @default 0
@@ -1201,13 +1199,13 @@ export namespace Components {
         /**
           * The icon the be displayed
          */
-        "variant": IconVariant2;
+        "variant": IconVariant;
     }
     interface PIllustration {
         /**
           * The icon the be displayed
          */
-        "variant": IllustrationVariant1;
+        "variant": IllustrationVariant;
     }
     interface PIllustrationDeprecated {
         /**
@@ -1239,11 +1237,11 @@ export namespace Components {
         /**
           * Icon to show on the label
          */
-        "icon": IconVariant;
+        "icon": IconVariant1;
         /**
           * Icon flip
          */
-        "iconFlip": IconFlipOptions;
+        "iconFlip": IconFlipOptions1;
         /**
           * Wether to only show the icon
           * @default false
@@ -1929,7 +1927,7 @@ export namespace Components {
           * The action button icon
           * @default 'pencil'
          */
-        "actionButtonIcon": IconVariant1;
+        "actionButtonIcon": IconVariant;
         /**
           * Wether the action button is loading
           * @default false
@@ -2235,9 +2233,9 @@ export namespace Components {
     interface PTableExtraHeader {
         /**
           * The alignment of the column
-          * @default "start"
+          * @default 'start'
          */
-        "align": "start" | "center" | "end";
+        "align": 'start' | 'center' | 'end';
         /**
           * The name of the column
          */
@@ -2249,18 +2247,18 @@ export namespace Components {
 		| undefined;
         /**
           * The sizes of the column
-          * @default "auto"
+          * @default 'auto'
          */
-        "sizes": | "auto"
-		| "hidden"
-		| "full"
+        "sizes": | 'auto'
+		| 'hidden'
+		| 'full'
 		| number
 		| TableColumnSizes;
         /**
           * Wether the column should be sticky (Only works on angular variant of table)
           * @default false
          */
-        "sticky": boolean | "secondary";
+        "sticky": boolean | 'secondary';
         /**
           * Wether the column should use the slot
           * @default true
@@ -2414,9 +2412,9 @@ export namespace Components {
         "isLast": boolean;
         /**
           * Variant of the header
-          * @default "default"
+          * @default 'default'
          */
-        "variant": "default" | "secondary" | "header" | "header-secondary";
+        "variant": 'default' | 'secondary' | 'header' | 'header-secondary';
     }
     interface PTableRowAction {
         /**
@@ -2431,11 +2429,11 @@ export namespace Components {
         /**
           * Icon to show on the button
          */
-        "icon": IconVariant1;
+        "icon": IconVariant;
         /**
           * Icon flip
          */
-        "iconFlip": IconFlipOptions2;
+        "iconFlip": IconFlipOptions;
         /**
           * Wether the button is icon only
           * @default false
@@ -2476,11 +2474,11 @@ export namespace Components {
           * Icon to show on the button
           * @default 'negative'
          */
-        "actionIcon": IconVariant;
+        "actionIcon": IconVariant1;
         /**
           * Icon flip
          */
-        "actionIconFlip": IconFlipOptions;
+        "actionIconFlip": IconFlipOptions1;
         /**
           * Icon rotate
          */
@@ -2910,7 +2908,7 @@ declare global {
         "closeClicked": {
 		event: MouseEvent;
 		canClose: boolean;
-    source: 'unknown' | 'backdrop' | 'close' | 'event'
+		source: 'unknown' | 'backdrop' | 'close' | 'event';
 	};
         "closed": null;
     }
@@ -4334,7 +4332,7 @@ declare namespace LocalJSX {
         "onCloseClicked"?: (event: PDrawerCustomEvent<{
 		event: MouseEvent;
 		canClose: boolean;
-    source: 'unknown' | 'backdrop' | 'close' | 'event'
+		source: 'unknown' | 'backdrop' | 'close' | 'event';
 	}>) => void;
         /**
           * Closed event
@@ -4551,7 +4549,7 @@ declare namespace LocalJSX {
         /**
           * The icon for the action button
          */
-        "actionIcon"?: IconVariant1;
+        "actionIcon"?: IconVariant;
         /**
           * The position of the action icon
           * @default 'start'
@@ -4649,11 +4647,11 @@ declare namespace LocalJSX {
         /**
           * Icon of the field
          */
-        "icon"?: IconVariant;
+        "icon"?: IconVariant1;
         /**
           * Icon flip
          */
-        "iconFlip"?: IconFlipOptions;
+        "iconFlip"?: IconFlipOptions1;
         /**
           * Icon position
           * @default 'start'
@@ -4859,11 +4857,11 @@ declare namespace LocalJSX {
         /**
           * Icon to show on the item
          */
-        "icon"?: IconVariant;
+        "icon"?: IconVariant1;
         /**
           * Icon flip
          */
-        "iconFlip"?: IconFlipOptions;
+        "iconFlip"?: IconFlipOptions1;
         /**
           * Icon position
           * @default 'end'
@@ -4906,7 +4904,7 @@ declare namespace LocalJSX {
           * Wether to flip the icon horizontally or vertically
           * @default 'none'
          */
-        "flip"?: IconFlipOptions1;
+        "flip"?: IconFlipOptions;
         /**
           * Wether to rotate the icon x degrees
           * @default 0
@@ -4920,13 +4918,13 @@ declare namespace LocalJSX {
         /**
           * The icon the be displayed
          */
-        "variant": IconVariant2;
+        "variant": IconVariant;
     }
     interface PIllustration {
         /**
           * The icon the be displayed
          */
-        "variant": IllustrationVariant1;
+        "variant": IllustrationVariant;
     }
     interface PIllustrationDeprecated {
         /**
@@ -4962,11 +4960,11 @@ declare namespace LocalJSX {
         /**
           * Icon to show on the label
          */
-        "icon"?: IconVariant;
+        "icon"?: IconVariant1;
         /**
           * Icon flip
          */
-        "iconFlip"?: IconFlipOptions;
+        "iconFlip"?: IconFlipOptions1;
         /**
           * Wether to only show the icon
           * @default false
@@ -5720,7 +5718,7 @@ declare namespace LocalJSX {
           * The action button icon
           * @default 'pencil'
          */
-        "actionButtonIcon"?: IconVariant1;
+        "actionButtonIcon"?: IconVariant;
         /**
           * Wether the action button is loading
           * @default false
@@ -6082,9 +6080,9 @@ declare namespace LocalJSX {
     interface PTableExtraHeader {
         /**
           * The alignment of the column
-          * @default "start"
+          * @default 'start'
          */
-        "align"?: "start" | "center" | "end";
+        "align"?: 'start' | 'center' | 'end';
         /**
           * The name of the column
          */
@@ -6100,18 +6098,18 @@ declare namespace LocalJSX {
 		| undefined;
         /**
           * The sizes of the column
-          * @default "auto"
+          * @default 'auto'
          */
-        "sizes"?: | "auto"
-		| "hidden"
-		| "full"
+        "sizes"?: | 'auto'
+		| 'hidden'
+		| 'full'
 		| number
 		| TableColumnSizes;
         /**
           * Wether the column should be sticky (Only works on angular variant of table)
           * @default false
          */
-        "sticky"?: boolean | "secondary";
+        "sticky"?: boolean | 'secondary';
         /**
           * Wether the column should use the slot
           * @default true
@@ -6297,9 +6295,9 @@ declare namespace LocalJSX {
         "isLast"?: boolean;
         /**
           * Variant of the header
-          * @default "default"
+          * @default 'default'
          */
-        "variant"?: "default" | "secondary" | "header" | "header-secondary";
+        "variant"?: 'default' | 'secondary' | 'header' | 'header-secondary';
     }
     interface PTableRowAction {
         /**
@@ -6314,11 +6312,11 @@ declare namespace LocalJSX {
         /**
           * Icon to show on the button
          */
-        "icon"?: IconVariant1;
+        "icon"?: IconVariant;
         /**
           * Icon flip
          */
-        "iconFlip"?: IconFlipOptions2;
+        "iconFlip"?: IconFlipOptions;
         /**
           * Wether the button is icon only
           * @default false
@@ -6359,11 +6357,11 @@ declare namespace LocalJSX {
           * Icon to show on the button
           * @default 'negative'
          */
-        "actionIcon"?: IconVariant;
+        "actionIcon"?: IconVariant1;
         /**
           * Icon flip
          */
-        "actionIconFlip"?: IconFlipOptions;
+        "actionIconFlip"?: IconFlipOptions1;
         /**
           * Icon rotate
          */

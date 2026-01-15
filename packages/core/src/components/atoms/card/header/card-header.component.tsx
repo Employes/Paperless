@@ -1,13 +1,10 @@
 import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
-import { RotateOptions } from '../../../../types/tailwind';
-import {
-	IconFlipOptions,
-	IconVariant,
-} from '../../../atoms/icon/icon.component';
-import { asBoolean } from '../../../../utils/as-boolean';
 import { ThemedHost } from '../../../../internal/themed-host.component';
+import { IconFlipOptions, IconVariant } from '../../../../types/icon';
+import { RotateOptions } from '../../../../types/tailwind';
+import { asBoolean } from '../../../../utils/as-boolean';
 
 const header = cva(
 	'inline-flex w-full relative flex-col justify-start z-[1] rounded-t-2xl relative',

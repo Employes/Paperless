@@ -1,4 +1,5 @@
 import { Component, Event, EventEmitter, Prop } from '@stencil/core';
+
 import { TableColumnSizes } from '../../../../types/table';
 
 @Component({

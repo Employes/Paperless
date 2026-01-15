@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { Tooltip } from '../tooltip.component';
 
 describe('p-tooltip', () => {

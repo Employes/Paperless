@@ -1,5 +1,9 @@
+import aspectRatioPlugin from '@tailwindcss/aspect-ratio';
+import scrollbarHidePlugin from 'tailwind-scrollbar-hide';
 import plugin from 'tailwindcss/plugin';
 
+import hover from './plugins/hover';
+import safeArea from './plugins/safe-area';
 import animation from './theme/animation';
 import colors from './theme/colors';
 import height from './theme/height';
@@ -11,12 +15,6 @@ import spacing from './theme/spacing';
 import typeograhpy from './theme/typography';
 import width from './theme/width';
 import zIndex from './theme/z-index';
-
-import hover from './plugins/hover';
-import safeArea from './plugins/safe-area';
-
-import aspectRatioPlugin from '@tailwindcss/aspect-ratio';
-import scrollbarHidePlugin from 'tailwind-scrollbar-hide';
 
 export const paperless = plugin(
 	pluginAPI => {
@@ -49,11 +47,6 @@ export const paperless = plugin(
 				},
 			},
 		},
-		plugins: [
-			aspectRatioPlugin,
-			scrollbarHidePlugin,
-			safeArea,
-			hover,
-		],
+		plugins: [aspectRatioPlugin, scrollbarHidePlugin, safeArea, hover],
 	}
 );

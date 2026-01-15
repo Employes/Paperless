@@ -1,9 +1,9 @@
 import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
-import { RotateOptions } from '../../../types';
-import { cn } from '../../../utils/cn';
-import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
+
 import { ThemedHost } from '../../../internal/themed-host.component';
+import { IconFlipOptions, IconVariant, RotateOptions } from '../../../types';
+import { cn } from '../../../utils/cn';
 
 const label = cva(
 	['flex items-center justify-center gap-2', 'h-6 rounded-full'],

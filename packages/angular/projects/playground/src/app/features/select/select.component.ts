@@ -11,6 +11,7 @@ import { PaperlessModule } from 'projects/paperless/src/public-api';
 	imports: [PaperlessModule, AsyncPipe, JsonPipe, ReactiveFormsModule],
 })
 export class SelectComponent implements OnInit {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	public items$ = new BehaviorSubject<any[]>([]);
 	public loading$ = new BehaviorSubject(true);
 

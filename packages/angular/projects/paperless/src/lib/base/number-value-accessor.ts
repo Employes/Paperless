@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 import { ControlValueAccessor, NumberValueAccessor } from '@angular/forms';
 
 @Directive({
-    standalone: false
+	standalone: false,
 })
 export class BaseNumberValueAccessor
 	extends NumberValueAccessor
@@ -10,7 +11,10 @@ export class BaseNumberValueAccessor
 {
 	protected lastValue: any;
 
-	constructor(protected el: ElementRef, protected renderer: Renderer2) {
+	constructor(
+		protected el: ElementRef,
+		protected renderer: Renderer2
+	) {
 		super(renderer, el);
 	}
 

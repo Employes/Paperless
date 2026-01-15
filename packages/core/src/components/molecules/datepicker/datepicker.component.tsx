@@ -1,3 +1,4 @@
+/* eslint-disable import/no-duplicates */
 import { Placement, Strategy } from '@floating-ui/dom';
 import {
 	AttachInternals,
@@ -22,15 +23,16 @@ import {
 	startOfDay,
 	startOfMonth,
 	startOfYear,
+	addYears,
+	getYear,
+	setYear,
+	subYears,
 } from 'date-fns';
+import { enUS, nl } from 'date-fns/locale';
+
+import { state } from '../../../state';
 import { childOf, isMobileBrowser } from '../../../utils';
 import { asBoolean } from '../../../utils/as-boolean';
-import { state } from '../../../state';
-import { enUS, nl } from 'date-fns/locale';
-import { addYears } from 'date-fns';
-import { getYear } from 'date-fns';
-import { setYear } from 'date-fns';
-import { subYears } from 'date-fns';
 
 @Component({
 	tag: 'p-datepicker',
@@ -511,11 +513,11 @@ export class Datepicker {
 		}
 
 		if (this._isDisabledDay(value)) {
-			if (!!this._dateInputRef?.value) {
+			if (this._dateInputRef?.value) {
 				this._dateInputRef.value = this._value
 					? format(this._value, 'yyyy-MM-dd', {
 							locale: state.locale === 'nl' ? nl : enUS,
-					  })
+						})
 					: null;
 			}
 
@@ -526,8 +528,8 @@ export class Datepicker {
 			this.mode === 'day'
 				? startOfDay(value)
 				: this.mode === 'month'
-				? startOfMonth(value)
-				: startOfYear(value);
+					? startOfMonth(value)
+					: startOfYear(value);
 		const isSameValue = isSameDay(value, this._value);
 
 		if (isSameValue) {
@@ -547,7 +549,7 @@ export class Datepicker {
 			(this.disableWeekends && isWeekend(day)) ||
 			(isBefore(day, this._minDate) && !isSameDay(day, this._minDate)) ||
 			(isAfter(day, this._maxDate) && !isSameDay(day, this._maxDate)) ||
-			this._disabledDates.findIndex(date => isSameDay(date, day)) >= 0
+			this._disabledDates.some(date => isSameDay(date, day))
 		);
 	}
 

@@ -3,23 +3,23 @@
 	[formGroup]="form"
 >
 	<p-select
-		valueKey="value"
+		formControlName="single"
 		identifierKey="value"
 		placeholder="I am a single select"
+		valueKey="value"
 		[items]="items$ | async"
-		formControlName="single"
 		[loading]="loading$ | async"
-	></p-select>
+	/>
 	<p-select
-		multi
-		identifierKey="value"
-		placeholder="I include avatars & have multi select"
 		avatarKey="avatar"
 		avatarLettersKey="letters"
-		[items]="items$ | async"
 		formControlName="multi"
+		identifierKey="value"
+		multi
+		placeholder="I include avatars & have multi select"
+		[items]="items$ | async"
 		[loading]="loading$ | async"
-	></p-select>
+	/>
 
 	<p>Values:</p>
 	<pre>

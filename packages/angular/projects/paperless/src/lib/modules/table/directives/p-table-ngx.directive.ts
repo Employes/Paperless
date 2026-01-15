@@ -1,9 +1,11 @@
-/* eslint-disable @angular-eslint/no-host-metadata-property */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Directive, ElementRef, Host } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
+
 import { QuickFilter } from '@paperless/core';
+
 import { BaseValueAccessor } from '../../../base';
-import { Table } from '../components/table/table.component';
+import { TableComponent } from '../components/table/table.component';
 
 export interface TableDirectiveValue {
 	query?: string;
@@ -15,22 +17,22 @@ export interface TableDirectiveValue {
 }
 
 @Directive({
-    selector: 'p-table-ngx',
-    host: {
-        '(queryChange)': 'handleChange($event, "query")',
-        '(quickFilter)': 'handleChange($event, "quickFilter")',
-        '(pageChange)': 'handleChange($event, "page")',
-        '(pageSizeChange)': 'handleChange($event, "pageSize")',
-        '(selectedRowsChange)': 'handleChange($event, "selectedRows")',
-    },
-    providers: [
-        {
-            provide: NG_VALUE_ACCESSOR,
-            useExisting: TableNgxDirective,
-            multi: true,
-        },
-    ],
-    standalone: false
+	selector: 'p-table-ngx',
+	host: {
+		'(queryChange)': 'handleChange($event, "query")',
+		'(quickFilter)': 'handleChange($event, "quickFilter")',
+		'(pageChange)': 'handleChange($event, "page")',
+		'(pageSizeChange)': 'handleChange($event, "pageSize")',
+		'(selectedRowsChange)': 'handleChange($event, "selectedRows")',
+	},
+	providers: [
+		{
+			provide: NG_VALUE_ACCESSOR,
+			useExisting: TableNgxDirective,
+			multi: true,
+		},
+	],
+	standalone: false,
 })
 export class TableNgxDirective extends BaseValueAccessor {
 	protected override lastValue: TableDirectiveValue = {
@@ -42,7 +44,10 @@ export class TableNgxDirective extends BaseValueAccessor {
 		selectedRows: [],
 	};
 
-	constructor(el: ElementRef, @Host() private _base: Table) {
+	constructor(
+		el: ElementRef,
+		@Host() private _base: TableComponent
+	) {
 		super(el);
 	}
 
@@ -129,20 +134,14 @@ export class TableNgxDirective extends BaseValueAccessor {
 		const selectedFiltersAmount = this._base.selectedFiltersAmount;
 
 		if (activeQuickFilter || selectedFiltersAmount) {
-			if (selectedFiltersAmount && selectedFiltersAmount > 0) {
-				this._base.filterModalShowReset = true;
-			} else {
-				this._base.filterModalShowReset = false;
-			}
+			this._base.filterModalShowReset =
+				selectedFiltersAmount && selectedFiltersAmount > 0 ? true : false;
 
-			if (
+			this._base.filterModalShowResetMobile =
 				(selectedFiltersAmount && selectedFiltersAmount > 0) ||
 				!activeQuickFilter?.default
-			) {
-				this._base.filterModalShowResetMobile = true;
-			} else {
-				this._base.filterModalShowResetMobile = false;
-			}
+					? true
+					: false;
 		}
 	}
 }

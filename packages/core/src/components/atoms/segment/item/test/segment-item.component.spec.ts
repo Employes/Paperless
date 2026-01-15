@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { SegmentItem } from '../segment-item.component';
 
 describe('p-segment-item', () => {

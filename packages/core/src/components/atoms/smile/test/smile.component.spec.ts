@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { Smile } from '../smile.component';
 
 describe('p-smile', () => {

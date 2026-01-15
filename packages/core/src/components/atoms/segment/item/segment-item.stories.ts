@@ -34,20 +34,22 @@ export const Default = {
 		'icon-rotate': iconRotate,
 		blockTitle,
 		blockDescription,
-	}) => html`<p-segment-item
-		variant=${variant ?? nothing}
-		active=${active ?? nothing}
-		icon-only=${iconOnly ?? nothing}
-		icon=${icon ?? nothing}
-		icon-flip=${iconFlip ?? nothing}
-		icon-rotate=${iconRotate ?? nothing}
-	>
-		${content}
-		${variant === 'block'
-			? html`
+	}) => html`
+		<p-segment-item
+			variant=${variant ?? nothing}
+			active=${active ?? nothing}
+			icon-only=${iconOnly ?? nothing}
+			icon=${icon ?? nothing}
+			icon-flip=${iconFlip ?? nothing}
+			icon-rotate=${iconRotate ?? nothing}
+		>
+			${content}
+			${variant === 'block'
+				? html`
 					<span slot="title">${blockTitle}</span>
 					<span slot="description">${blockDescription}</span>
-			  `
-			: nothing}
-	</p-segment-item>`,
+				`
+				: nothing}
+		</p-segment-item>
+	`,
 };

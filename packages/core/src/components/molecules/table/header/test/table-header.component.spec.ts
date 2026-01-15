@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { TableHeader } from '../table-header.component';
 
 describe('p-table-header', () => {

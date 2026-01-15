@@ -1,7 +1,8 @@
 import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
-import { asBoolean } from '../../../../utils/as-boolean';
+
 import { ThemedHost } from '../../../../internal/themed-host.component';
+import { asBoolean } from '../../../../utils/as-boolean';
 
 const dropdownMenuContainer = cva(
 	[
@@ -98,8 +99,8 @@ export class DropdownMenuContainer {
 			this.scrollable === false
 				? 'none'
 				: this.scrollable === true
-				? 'default'
-				: this.scrollable;
+					? 'default'
+					: this.scrollable;
 
 		return (
 			<ThemedHost>

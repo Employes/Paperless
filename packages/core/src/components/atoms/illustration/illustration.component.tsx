@@ -1,8 +1,8 @@
 import { Component, h, Host, Prop, Element } from '@stencil/core';
-import illustrations from '../../../utils/illustrations';
-import { cn } from '../../../utils';
 
-export type IllustrationVariant = keyof typeof illustrations;
+import { IllustrationVariant } from '../../../types/illustration';
+import { cn } from '../../../utils';
+import illustrations from '../../../utils/illustrations';
 
 @Component({
 	tag: 'p-illustration',
@@ -31,7 +31,7 @@ export class Illustration {
 	render() {
 		const illustration = illustrations[this.variant];
 		const hasSize = [...this._el.classList.values()].some(val =>
-			val.match(/text-(xs|sm|base|lg|[2-7|9]?xl)/)
+			val.match(/text-(xs|sm|base|lg|[2-79|]?xl)/)
 		);
 
 		return (

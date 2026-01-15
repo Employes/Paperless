@@ -1,5 +1,6 @@
 import { Component, h, Prop } from '@stencil/core';
 import { Observable, Subscription } from 'rxjs';
+
 import { ThemedHost } from '../../../internal/themed-host.component';
 
 @Component({

@@ -7,13 +7,12 @@ import {
 	Element,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
-import {
-	ButtonVariant,
-	IconVariant,
-	IllustrationVariant,
-} from '../../../components';
-import { asBoolean } from '../../../utils/as-boolean';
+
+import { ButtonVariant } from '../../../components';
 import { ThemedHost } from '../../../internal/themed-host.component';
+import { IconVariant } from '../../../types/icon';
+import { IllustrationVariant } from '../../../types/illustration';
+import { asBoolean } from '../../../utils/as-boolean';
 
 const emptyState = cva(
 	['flex flex-col w-full items-center justify-start max-w-[20rem]'],

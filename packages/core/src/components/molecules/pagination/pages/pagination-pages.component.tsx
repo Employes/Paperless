@@ -10,6 +10,7 @@ import {
 	Element,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+
 import { ThemedHost } from '../../../../internal/themed-host.component';
 import { childOfComposed } from '../../../../utils/child-of';
 import { PAGINATION_DEFAULT_PAGE_SIZE } from '../../../../utils/constants';
@@ -260,7 +261,7 @@ export class PaginationPages {
 	private _carouselDisabled = (type: 'previous' | 'next') => {
 		if (type === 'next') {
 			const nextPage = this.page + 1;
-			if (nextPage > this._pages[this._pages.length - 1]) {
+			if (nextPage > this._pages.at(-1)) {
 				return true;
 			}
 		}
@@ -279,10 +280,10 @@ export class PaginationPages {
 
 	private _enterPress(p: string | number) {
 		if (typeof p === 'string') {
-			p = parseInt(p);
+			p = Number.parseInt(p);
 		}
 
-		if (isNaN(p)) {
+		if (Number.isNaN(p)) {
 			return;
 		}
 
@@ -310,7 +311,9 @@ export class PaginationPages {
 
 		const pages = Math.ceil(this.total / this.pageSize);
 		this.pagesChange.emit(pages);
-		return new Array(pages).fill(undefined).map((_, i) => i + 1);
+		return Array.from({ length: pages })
+			.fill('')
+			.map((_, i) => i + 1);
 	}
 
 	private _generateSet = (
@@ -329,7 +332,7 @@ export class PaginationPages {
 		if (end > totalPages) {
 			end = totalPages;
 			start = totalPages - range * 2;
-			start = start < 1 ? 1 : start;
+			start = Math.max(start, 1);
 		}
 
 		if (start <= 1) {
@@ -385,16 +388,18 @@ export class PaginationPages {
 				});
 			}
 		} else {
-			set.push({
-				type: 'page',
-				value: 1,
-			});
+			set.push(
+				{
+					type: 'page',
+					value: 1,
+				},
+				{
+					type: 'ellipsis',
+					dropdownIndex,
+					options: Array.from({ length: start - 2 }, (_, i) => i + 2),
+				}
+			);
 
-			set.push({
-				type: 'ellipsis',
-				dropdownIndex,
-				options: Array.from({ length: start - 2 }, (_, i) => i + 2),
-			});
 			dropdownIndex++;
 		}
 
@@ -413,20 +418,21 @@ export class PaginationPages {
 				});
 			}
 		} else {
-			set.push({
-				type: 'ellipsis',
-				dropdownIndex,
-				options: Array.from(
-					{ length: totalPages - end - 1 },
-					(_, i) => i + end + 1
-				),
-			});
+			set.push(
+				{
+					type: 'ellipsis',
+					dropdownIndex,
+					options: Array.from(
+						{ length: totalPages - end - 1 },
+						(_, i) => i + end + 1
+					),
+				},
+				{
+					type: 'page',
+					value: this._pages.at(-1),
+				}
+			);
 			dropdownIndex++;
-
-			set.push({
-				type: 'page',
-				value: this._pages[this._pages.length - 1],
-			});
 		}
 
 		if (enableBoundaries) {

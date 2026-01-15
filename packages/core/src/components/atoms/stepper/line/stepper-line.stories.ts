@@ -8,11 +8,10 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({
-		active,
-		direction,
-	}) => html`<p-stepper-line
-		active=${active ?? nothing}
-		direction=${direction ?? nothing}
-	/>`,
+	render: ({ active, direction }) => html`
+		<p-stepper-line
+			active=${active ?? nothing}
+			direction=${direction ?? nothing}
+		/>
+	`,
 };

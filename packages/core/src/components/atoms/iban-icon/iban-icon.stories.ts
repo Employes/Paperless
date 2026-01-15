@@ -8,11 +8,10 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({
-		iban,
-		variant,
-	}) => html`<p-iban-icon
-		iban=${iban ?? nothing}
-		variant=${variant ?? nothing}
-	/>`,
+	render: ({ iban, variant }) => html`
+		<p-iban-icon
+			iban=${iban ?? nothing}
+			variant=${variant ?? nothing}
+		/>
+	`,
 };

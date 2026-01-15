@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { Checkbox } from '../checkbox.component';
 
 describe('p-checkbox', () => {

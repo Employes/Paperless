@@ -1,5 +1,6 @@
 import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
+
 import { DIRECTIVES } from './directives';
 import { MODULES } from './modules';
 import { PIPES } from './pipes';

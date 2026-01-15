@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { IbanIcon } from '../iban-icon.component';
 
 describe('p-iban-icon', () => {

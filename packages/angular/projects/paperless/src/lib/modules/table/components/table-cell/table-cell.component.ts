@@ -1,5 +1,6 @@
-/* eslint-disable max-len */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, HostBinding, Input, TemplateRef } from '@angular/core';
+
 import {
 	cn,
 	getTableCellColumnClasses,
@@ -67,11 +68,11 @@ import {
         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
     */
 @Component({
-    selector: 'p-table-cell-ngx',
-    templateUrl: './table-cell.component.html',
-    standalone: false
+	selector: 'p-table-cell-ngx',
+	templateUrl: './table-cell.component.html',
+	standalone: false,
 })
-export class TableCell {
+export class TableCellComponent {
 	/**
 	 * The variant of the column
 	 */
@@ -81,12 +82,12 @@ export class TableCell {
 	/**
 	 * The index of the column
 	 */
-	@Input() index: number = 0;
+	@Input() index = 0;
 
 	/**
 	 * The index of the row
 	 */
-	@Input() rowIndex: number = 0;
+	@Input() rowIndex = 0;
 
 	/**
 	 * The definition of the table column
@@ -111,7 +112,7 @@ export class TableCell {
 	/**
 	 * Wether the cell needs checkbox offset instead of a checkbox
 	 */
-	@Input() checkboxOffset: boolean = false;
+	@Input() checkboxOffset = false;
 
 	/**
 	 * The template ref for the content
@@ -121,7 +122,7 @@ export class TableCell {
 	/**
 	 * Wether the table is scrollable
 	 */
-	@Input() scrollable: boolean = false;
+	@Input() scrollable = false;
 
 	public cn = cn;
 
@@ -154,7 +155,7 @@ export class TableCell {
 
 		return {
 			value:
-				this.value ?? this.definition?.path
+				(this.value ?? this.definition?.path)
 					? objectGetByPath(this.item, this.definition.path)
 					: null,
 			item: this.item,

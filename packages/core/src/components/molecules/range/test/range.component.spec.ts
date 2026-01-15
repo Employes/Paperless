@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { Range } from '../range.component';
 
 describe('p-range', () => {

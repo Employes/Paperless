@@ -1,5 +1,5 @@
-import { html, nothing } from 'lit';
 import { action } from '@storybook/addon-actions';
+import { html, nothing } from 'lit';
 
 const meta = {
 	title: 'Design System/Molecules/Field/Field',
@@ -46,39 +46,41 @@ export const Default = {
 		'optional-template': optionalTemplate,
 		'show-add-on-empty': showAddOnEmpty,
 		'add-text': addText,
-	}) => html`<p-field
-		variant=${variant ?? nothing}
-		size=${size ?? nothing}
-		type=${type ?? nothing}
-		properties=${properties ?? nothing}
-		prefix=${prefix ?? nothing}
-		suffix=${suffix ?? nothing}
-		icon=${icon ?? nothing}
-		icon-flip=${iconFlip ?? nothing}
-		icon-rotate=${iconRotate ?? nothing}
-		icon-position=${iconPosition ?? nothing}
-		value=${value ?? nothing}
-		label=${label ?? nothing}
-		loading=${loading ?? nothing}
-		placeholder=${placeholder ?? nothing}
-		helper=${helper ?? nothing}
-		required=${required ?? nothing}
-		show-optional=${showOptional ?? nothing}
-		autofocus=${autofocus ?? nothing}
-		error=${error ?? nothing}
-		error-placement=${errorPlacement ?? nothing}
-		disabled=${disabled ?? nothing}
-		focused=${focused ?? nothing}
-		force-show-tooltip=${forceShowTooltip ?? nothing}
-		select-all-on-focus=${selectAllOnFocus ?? nothing}
-		focus-method=${focusMethod ?? nothing}
-		optional-template=${optionalTemplate ?? nothing}
-		show-add-on-empty=${showAddOnEmpty ?? nothing}
-		add-text=${addText ?? nothing}
-		@valueChange=${action('valueChange')}
-		@inputRefChange=${action('inputRefChange')}
-		@add=${action('add clicked')}
-	/>`,
+	}) => html`
+		<p-field
+			variant=${variant ?? nothing}
+			size=${size ?? nothing}
+			type=${type ?? nothing}
+			properties=${properties ?? nothing}
+			prefix=${prefix ?? nothing}
+			suffix=${suffix ?? nothing}
+			icon=${icon ?? nothing}
+			icon-flip=${iconFlip ?? nothing}
+			icon-rotate=${iconRotate ?? nothing}
+			icon-position=${iconPosition ?? nothing}
+			value=${value ?? nothing}
+			label=${label ?? nothing}
+			loading=${loading ?? nothing}
+			placeholder=${placeholder ?? nothing}
+			helper=${helper ?? nothing}
+			required=${required ?? nothing}
+			show-optional=${showOptional ?? nothing}
+			autofocus=${autofocus ?? nothing}
+			error=${error ?? nothing}
+			error-placement=${errorPlacement ?? nothing}
+			disabled=${disabled ?? nothing}
+			focused=${focused ?? nothing}
+			force-show-tooltip=${forceShowTooltip ?? nothing}
+			select-all-on-focus=${selectAllOnFocus ?? nothing}
+			focus-method=${focusMethod ?? nothing}
+			optional-template=${optionalTemplate ?? nothing}
+			show-add-on-empty=${showAddOnEmpty ?? nothing}
+			add-text=${addText ?? nothing}
+			@valueChange=${action('valueChange')}
+			@inputRefChange=${action('inputRefChange')}
+			@add=${action('add clicked')}
+		/>
+	`,
 };
 
 export const OverflowReadOnly = {
@@ -106,46 +108,48 @@ export const OverflowReadOnly = {
 		'select-all-on-focus': selectAllOnFocus,
 		'focus-method': focusMethod,
 		'optional-template': optionalTemplate,
-	}) => html`<p-field
-		variant="read"
-		size=${size ?? nothing}
-		type=${type ?? nothing}
-		properties=${properties ?? nothing}
-		prefix=${prefix ?? nothing}
-		suffix=${suffix ?? nothing}
-		icon=${icon ?? nothing}
-		icon-flip=${iconFlip ?? nothing}
-		icon-rotate=${iconRotate ?? nothing}
-		icon-position=${iconPosition ?? nothing}
-		label=${label ?? nothing}
-		loading=${loading ?? nothing}
-		placeholder=${placeholder ?? nothing}
-		helper=${helper ?? nothing}
-		required=${required ?? nothing}
-		autofocus=${autofocus ?? nothing}
-		error=${error ?? nothing}
-		error-placement=${errorPlacement ?? nothing}
-		disabled=${disabled ?? nothing}
-		focused=${focused ?? nothing}
-		force-show-tooltip=${forceShowTooltip ?? nothing}
-		select-all-on-focus=${selectAllOnFocus ?? nothing}
-		focus-method=${focusMethod ?? nothing}
-		optional-template=${optionalTemplate ?? nothing}
-		@valueChange=${action('valueChange')}
-		@inputRefChange=${action('inputRefChange')}
-	>
-		<a
-			slot="value"
-			class="hover:text-inidgo-700 block w-full overflow-hidden text-ellipsis whitespace-nowrap text-indigo-600 hover:underline"
-			href="https://google.com"
+	}) => html`
+		<p-field
+			variant="read"
+			size=${size ?? nothing}
+			type=${type ?? nothing}
+			properties=${properties ?? nothing}
+			prefix=${prefix ?? nothing}
+			suffix=${suffix ?? nothing}
+			icon=${icon ?? nothing}
+			icon-flip=${iconFlip ?? nothing}
+			icon-rotate=${iconRotate ?? nothing}
+			icon-position=${iconPosition ?? nothing}
+			label=${label ?? nothing}
+			loading=${loading ?? nothing}
+			placeholder=${placeholder ?? nothing}
+			helper=${helper ?? nothing}
+			required=${required ?? nothing}
+			autofocus=${autofocus ?? nothing}
+			error=${error ?? nothing}
+			error-placement=${errorPlacement ?? nothing}
+			disabled=${disabled ?? nothing}
+			focused=${focused ?? nothing}
+			force-show-tooltip=${forceShowTooltip ?? nothing}
+			select-all-on-focus=${selectAllOnFocus ?? nothing}
+			focus-method=${focusMethod ?? nothing}
+			optional-template=${optionalTemplate ?? nothing}
+			@valueChange=${action('valueChange')}
+			@inputRefChange=${action('inputRefChange')}
 		>
-			This is a very very very very very very long text This is a very very very
-			very very very long text This is a very very very very very very long text
-			This is a very very very very very very long text This is a very very very
-			very very very long text This is a very very very very very very long text
-			This is a very very very very very very long t;ext
-		</a>
-	</p-field>`,
+			<a
+				slot="value"
+				class="hover:text-inidgo-700 block w-full overflow-hidden text-ellipsis whitespace-nowrap text-indigo-600 hover:underline"
+				href="https://google.com"
+			>
+				This is a very very very very very very long text This is a very very
+				very very very very long text This is a very very very very very very
+				long text This is a very very very very very very long text This is a
+				very very very very very very long text This is a very very very very
+				very very long text This is a very very very very very very long t;ext
+			</a>
+		</p-field>
+	`,
 };
 
 const withPreventDefault = handler => e => {
@@ -153,13 +157,14 @@ const withPreventDefault = handler => e => {
 	handler(e);
 };
 export const InsideForm = {
-	render: () =>
-		html`<form @submit=${withPreventDefault(action('submit'))}>
+	render: () => html`
+		<form @submit=${withPreventDefault(action('submit'))}>
 			<p-field
 				value="Test"
 				@input=${action('valuechange')}
 			>
 			</p-field>
 			<p-button type="submit">Submitt</p-button>
-		</form> `,
+		</form>
+	`,
 };

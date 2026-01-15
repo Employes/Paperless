@@ -4,16 +4,16 @@ export * from './table-extra-header/table-extra-header.component';
 export * from './table/table.component';
 export * from './table-row-action/table-row-action.component';
 
-import { TableCell } from './table-cell/table-cell.component';
-import { TableColumn } from './table-column/table-column.component';
-import { TableExtraHeader } from './table-extra-header/table-extra-header.component';
-import { TableRowAction } from './table-row-action/table-row-action.component';
-import { Table } from './table/table.component';
+import { TableComponent } from './table/table.component';
+import { TableCellComponent } from './table-cell/table-cell.component';
+import { TableColumnComponent } from './table-column/table-column.component';
+import { TableExtraHeaderComponent } from './table-extra-header/table-extra-header.component';
+import { TableRowActionComponent } from './table-row-action/table-row-action.component';
 
 export const TABLE_COMPONENTS = [
-	Table,
-	TableCell,
-	TableColumn,
-	TableRowAction,
-	TableExtraHeader,
+	TableComponent,
+	TableCellComponent,
+	TableColumnComponent,
+	TableRowActionComponent,
+	TableExtraHeaderComponent,
 ];

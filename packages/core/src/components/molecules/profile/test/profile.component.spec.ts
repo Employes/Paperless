@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { Profile } from '../profile.component';
 
 describe('p-profile', () => {

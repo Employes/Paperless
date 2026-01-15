@@ -1,5 +1,5 @@
-import { html, nothing } from 'lit';
 import { action } from '@storybook/addon-actions';
+import { html, nothing } from 'lit';
 
 const meta = {
 	title: 'Design System/Atoms/Radio',
@@ -17,23 +17,17 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({
-		content,
-		value,
-		disabled,
-		required,
-		id,
-		name,
-		checked,
-	}) => html`<p-radio
-		value=${value ?? nothing}
-		disabled=${disabled ?? nothing}
-		required=${required ?? nothing}
-		id=${id ?? nothing}
-		name=${name ?? nothing}
-		checked=${checked ?? nothing}
-		@checkedChange=${action('checkedChange')}
-	>
-		${content}
-	</p-radio>`,
+	render: ({ content, value, disabled, required, id, name, checked }) => html`
+		<p-radio
+			value=${value ?? nothing}
+			disabled=${disabled ?? nothing}
+			required=${required ?? nothing}
+			id=${id ?? nothing}
+			name=${name ?? nothing}
+			checked=${checked ?? nothing}
+			@checkedChange=${action('checkedChange')}
+		>
+			${content}
+		</p-radio>
+	`,
 };

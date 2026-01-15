@@ -1,5 +1,5 @@
-import { html, nothing } from 'lit';
 import { action } from '@storybook/addon-actions';
+import { html, nothing } from 'lit';
 
 const meta = {
 	title: 'Design System/Molecules/Toast',
@@ -22,14 +22,16 @@ export const Default = {
 		'action-icon': actionIcon,
 		'action-icon-flip': actionIconFlip,
 		'action-icon-rotate': actionIconRotate,
-	}) => html`<p-toast
-		variant=${variant ?? nothing}
-		header=${header ?? nothing}
-		content=${content ?? nothing}
-		enable-action=${enableAction ?? nothing}
-		action-icon=${actionIcon ?? nothing}
-		action-icon-flip=${actionIconFlip ?? nothing}
-		action-icon-rotate=${actionIconRotate ?? nothing}
-		@action=${action('action')}
-	/>`,
+	}) => html`
+		<p-toast
+			variant=${variant ?? nothing}
+			header=${header ?? nothing}
+			content=${content ?? nothing}
+			enable-action=${enableAction ?? nothing}
+			action-icon=${actionIcon ?? nothing}
+			action-icon-flip=${actionIconFlip ?? nothing}
+			action-icon-rotate=${actionIconRotate ?? nothing}
+			@action=${action('action')}
+		/>
+	`,
 };

@@ -1,19 +1,19 @@
 <form
-	[formGroup]="form"
 	class="flex gap-4"
+	[formGroup]="form"
 >
 	<p-datepicker
-		label="Start date"
 		formControlName="startDate"
+		label="Start date"
 		placeholder="Pick a date"
 		[required]="true"
-	></p-datepicker>
+	/>
 
 	<p-datepicker
-		label="End date"
 		formControlName="endDate"
+		label="End date"
 		placeholder="Pick a date"
 		[minDate]="form.get('startDate')?.value"
 		[required]="true"
-	></p-datepicker>
+	/>
 </form>

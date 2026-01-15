@@ -8,11 +8,12 @@ import {
 	Element,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
+
 import { ThemedHost } from '../../../internal/themed-host.component';
+import { IconFlipOptions, IconVariant } from '../../../types/icon';
 import { RotateOptions } from '../../../types/tailwind';
 import { asBoolean } from '../../../utils/as-boolean';
 import { cn } from '../../../utils/cn';
-import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
 
 /**
 <div class="text-inherit group-hover/button:text-inherit dark:text-inherit dark:group-hover/button:text-inherit"></div>
@@ -564,12 +565,14 @@ export class Button {
 		switch (this.variant) {
 			case 'secondary':
 			case 'dropdown':
-			case 'transparent':
+			case 'transparent': {
 				loaderColor = 'off-white';
 				break;
-			case 'text':
+			}
+			case 'text': {
 				loaderColor = 'storm';
 				break;
+			}
 		}
 
 		const VariableTag =
@@ -585,7 +588,7 @@ export class Button {
 				<VariableTag
 					disabled={asBoolean(this.disabled)}
 					href={this.href}
-					type={this.variant !== 'text' ? this.type : undefined}
+					type={this.variant === 'text' ? undefined : this.type}
 					target={this.target}
 					tabIndex={this.tabIndex}
 					class={button({
@@ -612,7 +615,7 @@ export class Button {
 						!(this.iconOnly && this.loading) &&
 						this._getIcon()}
 
-					{this.label ? this.label : <slot />}
+					{this.label ?? <slot />}
 
 					{this.icon &&
 						this.iconPosition === 'end' &&

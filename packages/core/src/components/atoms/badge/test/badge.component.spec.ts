@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { Badge } from '../badge.component';
 
 describe('p-badge', () => {

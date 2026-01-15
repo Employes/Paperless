@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { Backdrop } from '../backdrop.component';
 
 describe('p-backdrop', () => {

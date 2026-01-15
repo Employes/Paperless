@@ -16,12 +16,7 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({
-		content,
-		variant,
-	}) => html`<p-drawer-body
-		variant=${variant ?? nothing}
-	>
-		${content}
-	</p-drawer-body>`,
+	render: ({ content, variant }) => html`
+		<p-drawer-body variant=${variant ?? nothing}> ${content} </p-drawer-body>
+	`,
 };

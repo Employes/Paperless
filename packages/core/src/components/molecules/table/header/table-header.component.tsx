@@ -10,13 +10,14 @@ import {
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 import { debounceTime, distinctUntilChanged, Subject } from 'rxjs';
+
+import { ThemedHost } from '../../../../internal/themed-host.component';
+import { IconVariant } from '../../../../types/icon';
 import { QuickFilter } from '../../../../types/table';
 import {
 	formatTranslation,
 	getLocaleComponentStrings,
 } from '../../../../utils/localization';
-import { IconVariant } from '../../../atoms/icon/icon.component';
-import { ThemedHost } from '../../../../internal/themed-host.component';
 
 export type templateFunc = () => string;
 export type buttonTemplateFunc = (amount: number) => string;
@@ -38,16 +39,15 @@ export class TableHeader {
 	private _defaultFilterButtonTemplate: templateFunc = () =>
 		formatTranslation(this._locales.filter);
 	private _defaultActionButtonTemplate: buttonTemplateFunc = (amount: number) =>
-		this.actionText
-			? this.actionText
-			: formatTranslation(
-					amount === 0
-						? this._locales.edit
-						: amount === 1
-						? this._locales.edit_single
-						: this._locales.edit_plural,
-					{ amount }
-			  );
+		this.actionText ??
+		formatTranslation(
+			amount === 0
+				? this._locales.edit
+				: amount === 1
+					? this._locales.edit_single
+					: this._locales.edit_plural,
+			{ amount }
+		);
 
 	/**
 	 * Quick filters to show
@@ -339,7 +339,7 @@ export class TableHeader {
 					? this.actionButtonTemplate(mobile ? this.itemsSelectedAmount : 0)
 					: this._defaultActionButtonTemplate(
 							mobile ? this.itemsSelectedAmount : 0
-					  )}
+						)}
 			</p-button>
 		);
 	}

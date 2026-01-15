@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { ListingItem } from '../listing-item.component';
 
 describe('p-listing-item', () => {
