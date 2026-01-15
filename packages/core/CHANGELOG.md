@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.27](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.26...v2.22.0-alpha.27) (2026-01-15)
+
+
+### Features
+
+* **core:** Improve generation of components & use standalone ([985d62d](https://github.com/Employes/Paperless/commit/985d62daea688315b958e515e92d552863c7025c))
+
+
+
+
+
 # [2.22.0-alpha.26](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.25...v2.22.0-alpha.26) (2026-01-15)
 
 **Note:** Version bump only for package @paperless/core
