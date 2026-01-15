@@ -1,7 +1,7 @@
 /* eslint-disable unicorn/prefer-module */
 const path = require('node:path');
 
-const { paperless } = require('@paperless/core');
+const { paperless } = require('@paperless/core/tailwind');
 
 module.exports = {
 	darkMode: [

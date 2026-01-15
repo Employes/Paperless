@@ -3,12 +3,15 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import { state } from '@paperless/core';
 
-import { PaperlessModule } from 'projects/paperless/src/public-api';
+import {
+	CropperDirective,
+	PAvatar,
+	PCropper,
+} from 'projects/paperless/src/public-api';
 
 @Component({
 	templateUrl: 'cropper.component.html',
-	standalone: true,
-	imports: [PaperlessModule, ReactiveFormsModule],
+	imports: [PCropper, PAvatar, ReactiveFormsModule, CropperDirective],
 })
 export class CropperComponent {
 	public state = state;

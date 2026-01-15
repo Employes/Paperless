@@ -14,8 +14,7 @@ import {
 import { Params } from '@angular/router';
 import { Observable, Subscribable } from 'rxjs';
 
-import { Components } from '@paperless/core';
-import { TableRowActionShowFunc } from '@paperless/core/dist/types/components';
+import { Components, TableRowActionShowFunc } from '@paperless/core';
 
 import { ProxyCmp } from '../../../../stencil/angular-component-lib/utils';
 
@@ -74,7 +73,6 @@ export type TableRowActionQueryParams =
 		'type',
 		'loading',
 	],
-	standalone: false,
 })
 export class TableRowActionComponent implements OnChanges {
 	protected el: HTMLElement;

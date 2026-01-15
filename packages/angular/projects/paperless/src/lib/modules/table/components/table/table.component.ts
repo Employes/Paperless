@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { AsyncPipe, NgTemplateOutlet } from '@angular/common';
 import {
 	ChangeDetectionStrategy,
 	ChangeDetectorRef,
@@ -20,7 +21,7 @@ import {
 	ViewChildren,
 	AfterViewInit,
 } from '@angular/core';
-import { Params } from '@angular/router';
+import { Params, RouterLink } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import {
 	BehaviorSubject,
@@ -36,16 +37,30 @@ import {
 	floatingMenuContainerClass,
 	isMobile,
 	onStateChange,
-	QuickFilter,
-	RowClickEvent,
 	state,
-	tableColumSizesOptions,
+	TABLE_COLUMN_SIZES,
 	IconVariant,
 	IllustrationVariant,
+	QuickFilter,
+	RowClickEvent,
 	TableColumnSizes,
 } from '@paperless/core';
 
-import { PTableRow } from '../../../../stencil/components';
+import {
+	PButton,
+	PCheckbox,
+	PEmptyState,
+	PFloatingMenuContainer,
+	PFloatingMenuItem,
+	PLoader,
+	PModal,
+	PTableContainer,
+	PTableFooter,
+	PTableHeader,
+	PTableRow,
+	PTableRowActionsContainer,
+	PTooltip,
+} from '../../../../stencil/components';
 import {
 	TableCustomActionsDirective,
 	TableCustomFilterDirective,
@@ -69,7 +84,26 @@ import { defaultSize, defaultSizeOptions } from './constants';
 	selector: 'p-table-ngx',
 	templateUrl: 'table.component.html',
 	changeDetection: ChangeDetectionStrategy.OnPush,
-	standalone: false,
+	imports: [
+		AsyncPipe,
+		RouterLink,
+		NgTemplateOutlet,
+
+		PModal,
+		PEmptyState,
+		PLoader,
+		PButton,
+		PCheckbox,
+		PTooltip,
+		PTableContainer,
+		PTableHeader,
+		PTableRow,
+		PTableFooter,
+		PFloatingMenuContainer,
+		PFloatingMenuItem,
+		PTableRowActionsContainer,
+		TableCellComponent,
+	],
 })
 export class TableComponent implements OnInit, OnChanges, AfterViewInit {
 	@HostBinding('class') hostClass = 'flex flex-col z-0';
@@ -546,7 +580,7 @@ export class TableComponent implements OnInit, OnChanges, AfterViewInit {
 		}
 	}
 
-	@HostListener('window:resize', ['$event'])
+	@HostListener('window:resize')
 	onResize() {
 		this._setRowSelectionData();
 		this._calculateColumnWidths();
@@ -570,7 +604,7 @@ export class TableComponent implements OnInit, OnChanges, AfterViewInit {
 		this._ctrlDown = false;
 	}
 
-	@HostListener('document:visibilitychange', ['$event'])
+	@HostListener('document:visibilitychange')
 	visibilityChange() {
 		if (document.visibilityState !== 'hidden' || this._ctrlDown === false) {
 			return;
@@ -1108,7 +1142,7 @@ export class TableComponent implements OnInit, OnChanges, AfterViewInit {
 		const definitionAny = definition as any;
 		const parsedSizes: TableColumnSizes = { default: 'full' };
 
-		for (const [index, size] of tableColumSizesOptions.entries()) {
+		for (const [index, size] of TABLE_COLUMN_SIZES.entries()) {
 			if (
 				definitionAny.sizes === 'auto' ||
 				definitionAny.sizes === 'hidden' ||
@@ -1121,8 +1155,7 @@ export class TableComponent implements OnInit, OnChanges, AfterViewInit {
 			}
 
 			parsedSizes[size] =
-				definitionAny.sizes[size] ??
-				parsedSizes[tableColumSizesOptions[index - 1]];
+				definitionAny.sizes[size] ?? parsedSizes[TABLE_COLUMN_SIZES[index - 1]];
 		}
 
 		definition.parsedSizes = parsedSizes;

@@ -6,13 +6,13 @@ import { TestDrawerComponent } from './test-drawer.component';
 import {
 	OverlayRef,
 	OverlayService,
-	PaperlessModule,
+	PButton,
+	PDrawer,
 } from 'projects/paperless/src/public-api';
 
 @Component({
 	templateUrl: 'drawer.component.html',
-	standalone: true,
-	imports: [PaperlessModule],
+	imports: [PDrawer, PButton, CdkPortal],
 })
 export class DrawerComponent {
 	private _templateDrawerRef!: OverlayRef<CdkPortal>;

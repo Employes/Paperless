@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
 
-import { OverlayRef, PaperlessModule } from 'projects/paperless/src/public-api';
+import {
+	OverlayRef,
+	PButton,
+	PCardBody,
+	PCardContainer,
+	PCardHeader,
+	PDrawer,
+} from 'projects/paperless/src/public-api';
 
 @Component({
 	template: `
@@ -32,8 +39,7 @@ import { OverlayRef, PaperlessModule } from 'projects/paperless/src/public-api';
 			</div>
 		</p-drawer>
 	`,
-	standalone: true,
-	imports: [PaperlessModule],
+	imports: [PDrawer, PCardContainer, PCardHeader, PCardBody, PButton],
 })
 export class TestDrawerComponent {
 	constructor(public _overlayRef: OverlayRef<TestDrawerComponent>) {}

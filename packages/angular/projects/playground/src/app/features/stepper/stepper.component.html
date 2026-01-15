@@ -3,16 +3,18 @@
 		direction="vertical"
 		[activeStep]="activeStep$ | async"
 	>
-		<p-stepper-item *ngFor="let step of steps$ | async; let i = index">
-			<div class="flex items-center gap-4">
-				<span class="font-semibold">step {{ step }}</span>
-				<p-button
-					icon="trash"
-					[iconOnly]="true"
-					(click)="remove(i)"
-				/>
-			</div>
-		</p-stepper-item>
+		@for (step of steps$ | async; track step; let i = $index) {
+			<p-stepper-item>
+				<div class="flex items-center gap-4">
+					<span class="font-semibold">step {{ step }}</span>
+					<p-button
+						icon="trash"
+						[iconOnly]="true"
+						(click)="remove(i)"
+					/>
+				</div>
+			</p-stepper-item>
+		}
 	</p-stepper>
 </div>
 

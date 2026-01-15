@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Directive, ElementRef, Host } from '@angular/core';
+import { Directive, ElementRef, forwardRef, Host } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { QuickFilter } from '@paperless/core';
@@ -28,11 +28,10 @@ export interface TableDirectiveValue {
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,
-			useExisting: TableNgxDirective,
+			useExisting: forwardRef(() => TableNgxDirective),
 			multi: true,
 		},
 	],
-	standalone: false,
 })
 export class TableNgxDirective extends BaseValueAccessor {
 	protected override lastValue: TableDirectiveValue = {
@@ -92,9 +91,10 @@ export class TableNgxDirective extends BaseValueAccessor {
 	}
 
 	public handleChange(
-		value: number | string | QuickFilter,
+		event: Event,
 		type: 'page' | 'pageSize' | 'query' | 'quickFilter' | 'selectedRows'
 	) {
+		const value = event as unknown as number | string | QuickFilter;
 		this.handleChangeEvent({
 			...this.lastValue,
 			[type]: value,

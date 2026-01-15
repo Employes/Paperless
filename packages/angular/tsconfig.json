@@ -2,28 +2,36 @@
 {
 	"compileOnSave": false,
 	"compilerOptions": {
-		"paths": {
-			"paperless": ["dist/paperless", "dist/"]
-		},
-		"baseUrl": "./",
-		"outDir": "./dist/out-tsc",
-		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
-		"strict": true,
-		"noImplicitOverride": true,
-		"noPropertyAccessFromIndexSignature": true,
-		"noImplicitReturns": true,
-		"noFallthroughCasesInSwitch": true,
-		"sourceMap": true,
-		"declaration": false,
-		"experimentalDecorators": true,
-		"moduleResolution": "node",
-		"importHelpers": true,
-		"target": "es2024",
-		"module": "esnext",
-		"lib": ["ES2024", "ES2023.Array", "dom", "DOM.Iterable"],
-		"skipLibCheck": true
-	},
+    "paths": {
+      "paperless": [
+        "dist/paperless",
+        "dist/"
+      ]
+    },
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "experimentalDecorators": true,
+    "moduleResolution": "bundler",
+    "importHelpers": true,
+    "target": "es2024",
+    "module": "esnext",
+    "lib": [
+      "ES2024",
+      "ES2023.Array",
+      "dom",
+      "DOM.Iterable"
+    ],
+    "skipLibCheck": true
+  },
 	"angularCompilerOptions": {
 		"enableI18nLegacyMessageIdFormat": false,
 		"strictInjectionParameters": true,

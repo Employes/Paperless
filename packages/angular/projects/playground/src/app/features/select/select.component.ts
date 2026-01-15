@@ -3,12 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 
-import { PaperlessModule } from 'projects/paperless/src/public-api';
+import { PSelect, SelectDirective } from 'projects/paperless/src/public-api';
 
 @Component({
 	templateUrl: 'select.component.html',
-	standalone: true,
-	imports: [PaperlessModule, AsyncPipe, JsonPipe, ReactiveFormsModule],
+	imports: [AsyncPipe, JsonPipe, ReactiveFormsModule, PSelect, SelectDirective],
 })
 export class SelectComponent implements OnInit {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any

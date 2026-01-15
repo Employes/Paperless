@@ -1,4 +1,4 @@
-import { OnDestroy, Directive, ElementRef, OnInit, Self } from '@angular/core';
+import { Directive, ElementRef, OnDestroy, OnInit, Self } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
 import { filter, Subscription } from 'rxjs';
 
@@ -9,7 +9,6 @@ import { BaseValueAccessor } from '../base';
 	host: {
 		'(checkedChange)': 'handleChangeEvent($event.detail)',
 	},
-	standalone: false,
 })
 export class RadioDirective
 	extends BaseValueAccessor

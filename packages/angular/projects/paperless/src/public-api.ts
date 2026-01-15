@@ -8,5 +8,4 @@ export * from './lib/directives';
 export * from './lib/modules';
 export * from './lib/paperless.module';
 export * from './lib/pipes';
-export * from './lib/stencil.module';
 export * from './lib/stencil/components';

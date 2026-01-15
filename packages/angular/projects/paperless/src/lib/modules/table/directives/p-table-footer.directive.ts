@@ -1,4 +1,4 @@
-import { Directive } from '@angular/core';
+import { Directive, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { BaseValueAccessor } from '../../../base';
@@ -12,11 +12,10 @@ import { BaseValueAccessor } from '../../../base';
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,
-			useExisting: TableFooterDirective,
+			useExisting: forwardRef(() => TableFooterDirective),
 			multi: true,
 		},
 	],
-	standalone: false,
 })
 export class TableFooterDirective extends BaseValueAccessor {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any

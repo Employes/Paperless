@@ -1,12 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { NgTemplateOutlet } from '@angular/common';
 import { Component, HostBinding, Input, TemplateRef } from '@angular/core';
 
 import {
 	cn,
 	getTableCellColumnClasses,
 	objectGetByPath,
-	TableDefinitionData,
 } from '@paperless/core';
+
+import { PLoader } from '../../../../stencil/components';
 
 /*
      With this, we shall hack the system in ways no one would ever have thought.
@@ -70,14 +72,18 @@ import {
 @Component({
 	selector: 'p-table-cell-ngx',
 	templateUrl: './table-cell.component.html',
-	standalone: false,
+	imports: [NgTemplateOutlet, PLoader],
 })
 export class TableCellComponent {
 	/**
 	 * The variant of the column
 	 */
-	@Input() variant: 'default' | 'loading' | 'header' | 'header-secondary' =
-		'default';
+	@Input() variant:
+		| 'default'
+		| 'loading'
+		| 'header'
+		| 'header-secondary'
+		| 'actions' = 'default';
 
 	/**
 	 * The index of the column
@@ -127,7 +133,7 @@ export class TableCellComponent {
 	public cn = cn;
 
 	@HostBinding('class')
-	get class() {
+	get hostClass() {
 		return cn(
 			getTableCellColumnClasses(
 				this.definition,
@@ -146,7 +152,7 @@ export class TableCellComponent {
 		);
 	}
 
-	get data(): TableDefinitionData | { value: string } {
+	get data() {
 		if (this.variant === 'header' || this.variant === 'header-secondary') {
 			return {
 				value: this.value,

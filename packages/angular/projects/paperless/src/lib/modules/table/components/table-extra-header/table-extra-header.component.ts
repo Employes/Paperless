@@ -9,7 +9,7 @@ import {
 	TemplateRef,
 } from '@angular/core';
 
-import { Components } from '@paperless/core';
+import type { Components } from '@paperless/core';
 
 import {
 	ProxyCmp,
@@ -33,7 +33,6 @@ export declare interface TableExtraHeaderComponent
 	changeDetection: ChangeDetectionStrategy.OnPush,
 	template: '<ng-content />',
 	inputs: ['align', 'name', 'sizes', 'parsedSizes', 'useSlot', 'sticky'],
-	standalone: false,
 })
 export class TableExtraHeaderComponent {
 	protected el: HTMLElement;

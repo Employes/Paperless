@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { OverlayRef, PaperlessModule } from 'projects/paperless/src/public-api';
+import { OverlayRef, PButton, PModal } from 'projects/paperless/src/public-api';
 
 @Component({
 	template: `
@@ -18,8 +18,7 @@ import { OverlayRef, PaperlessModule } from 'projects/paperless/src/public-api';
 			</div>
 		</p-modal>
 	`,
-	standalone: true,
-	imports: [PaperlessModule],
+	imports: [PModal, PButton],
 })
 export class TestModalComponent {
 	constructor(public _overlayRef: OverlayRef<TestModalComponent>) {}

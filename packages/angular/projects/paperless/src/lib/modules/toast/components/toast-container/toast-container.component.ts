@@ -1,3 +1,4 @@
+import { AsyncPipe } from '@angular/common';
 import {
 	ChangeDetectionStrategy,
 	Component,
@@ -11,6 +12,8 @@ import { Components } from '@paperless/core';
 
 import { SLIDE_IN_TOP_OUT_BOTTOM } from '../../../../animations';
 import { ProxyCmp } from '../../../../stencil/angular-component-lib/utils';
+import { PToast } from '../../../../stencil/components';
+import { ToastDirective } from '../../directives/toast.directive';
 import { ToastService } from '../../toast.service';
 
 export declare interface PToastContainer extends Components.PToastContainer {
@@ -28,7 +31,8 @@ export declare interface PToastContainer extends Components.PToastContainer {
 	templateUrl: './toast-container.component.html',
 	inputs: ['placement'],
 	animations: [SLIDE_IN_TOP_OUT_BOTTOM],
-	standalone: false,
+	standalone: true,
+	imports: [PToast, ToastDirective, AsyncPipe],
 })
 export class ToastContainerComponent {
 	private _toastService: ToastService = inject(ToastService);

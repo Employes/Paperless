@@ -1,13 +1,16 @@
-import { AsyncPipe, NgFor } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { BehaviorSubject, firstValueFrom } from 'rxjs';
 
-import { PaperlessModule } from 'projects/paperless/src/public-api';
+import {
+	PButton,
+	PStepper,
+	PStepperItem,
+} from 'projects/paperless/src/public-api';
 
 @Component({
 	templateUrl: 'stepper.component.html',
-	standalone: true,
-	imports: [PaperlessModule, AsyncPipe, NgFor],
+	imports: [AsyncPipe, PStepper, PStepperItem, PButton],
 })
 export class StepperComponent {
 	public steps$ = new BehaviorSubject([0, 1, 2]);

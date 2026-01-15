@@ -2,12 +2,33 @@ import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
-import { PaperlessModule } from 'projects/paperless/src/public-api';
+import {
+	CheckboxDirective,
+	FieldDirective,
+	FieldNumberDirective,
+	PButton,
+	PCheckbox,
+	PField,
+	PToggle,
+	RadioDirective,
+	ToggleDirective,
+} from 'projects/paperless/src/public-api';
 
 @Component({
 	templateUrl: 'inputs.component.html',
-	standalone: true,
-	imports: [PaperlessModule, ReactiveFormsModule, JsonPipe],
+	imports: [
+		PToggle,
+		PField,
+		PCheckbox,
+		PButton,
+		ReactiveFormsModule,
+		JsonPipe,
+		FieldDirective,
+		FieldNumberDirective,
+		ToggleDirective,
+		CheckboxDirective,
+		RadioDirective,
+	],
 })
 export class InputsComponent {
 	public form = new FormGroup({

@@ -1,56 +1,49 @@
-<ng-container *ngIf="checkbox">
+@if (checkbox) {
 	<ng-container *ngTemplateOutlet="checkbox" />
-</ng-container>
+}
 
-<ng-container [ngSwitch]="variant">
+@if (variant === 'loading') {
 	<p-loader
-		*ngSwitchCase="'loading'"
 		class="h-6 w-full flex-1 rounded"
 		variant="ghost"
 	/>
-
-	<ng-container *ngSwitchCase="'actions'">
-		<ng-container *ngIf="template">
-			<ng-container *ngTemplateOutlet="template; context: data" />
-		</ng-container>
-	</ng-container>
-
-	<div
-		*ngIf="variant === 'header' || variant === 'header-secondary'"
-		[class]="headerClass"
-	>
+} @else if (variant === 'actions' && template) {
+	<ng-container *ngTemplateOutlet="template; context: data" />
+} @else if (variant === 'header' || variant === 'header-secondary') {
+	<div [class]="headerClass">
 		<ng-container *ngTemplateOutlet="valueTemplate" />
 	</div>
-
+} @else {
 	<div
-		*ngSwitchCase="'default'"
 		[class]="
 			cn('overflow-hidden text-ellipsis', {
-				flex: definition?.flex,
-				'flex-1': definition?.flex,
+				flex: definition.flex,
+				'flex-1': definition.flex,
 				'justify-start':
-					definition?.flex &&
-					(definition?.align === undefined || definition.align === 'start'),
-				'justify-end': definition?.flex && definition.align === 'end',
-				'justify-center': definition?.flex && definition.align === 'end',
+					definition.flex &&
+					(definition.align === undefined || definition.align === 'start'),
+				'justify-end': definition.flex && definition.align === 'end',
+				'justify-center': definition.flex && definition.align === 'end',
 				'text-start':
-					!definition?.flex &&
-					(definition?.align === undefined || definition.align === 'start'),
-				'text-center': !definition?.flex && definition.align === 'center',
-				'text-end': !definition?.flex && definition.align === 'end',
+					!definition.flex &&
+					(definition.align === undefined || definition.align === 'start'),
+				'text-center': !definition.flex && definition.align === 'center',
+				'text-end': !definition.flex && definition.align === 'end',
 			})
 		"
 	>
-		<ng-container *ngIf="template; else valueTemplate">
+		@if (template) {
 			<ng-container *ngTemplateOutlet="template; context: data" />
-		</ng-container>
+		} @else {
+			<ng-container *ngTemplateOutlet="valueTemplate" />
+		}
 	</div>
-</ng-container>
+}
 
 <ng-template #valueTemplate>
-	<ng-container *ngIf="data.value">
+	@if (data.value) {
 		{{ data.value }}
-	</ng-container>
-
-	<ng-content *ngIf="!data.value" />
+	} @else {
+		<ng-content />
+	}
 </ng-template>

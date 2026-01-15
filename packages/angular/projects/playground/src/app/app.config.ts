@@ -1,7 +1,7 @@
 import {
 	ApplicationConfig,
 	importProvidersFrom,
-	provideAppInitializer,
+	provideEnvironmentInitializer,
 } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import {
@@ -34,7 +34,7 @@ export const appConfig: ApplicationConfig = {
 			})
 		),
 
-		provideAppInitializer(() => defineCustomElements()),
-		provideAppInitializer(() => initTheme(true, 'employes-theme')),
+		provideEnvironmentInitializer(() => defineCustomElements()),
+		provideEnvironmentInitializer(() => initTheme(true, 'employes-theme')),
 	],
 };

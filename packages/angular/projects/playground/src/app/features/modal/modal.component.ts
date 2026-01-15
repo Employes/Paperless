@@ -7,13 +7,13 @@ import { TestModalComponent } from './test-modal.component';
 import {
 	OverlayRef,
 	OverlayService,
-	PaperlessModule,
+	PButton,
+	PModal,
 } from 'projects/paperless/src/public-api';
 
 @Component({
 	templateUrl: 'modal.component.html',
-	standalone: true,
-	imports: [PaperlessModule],
+	imports: [PButton, CdkPortal, PModal],
 })
 export class ModalComponent {
 	private _templateModalRef!: OverlayRef<CdkPortal>;

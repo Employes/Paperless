@@ -1,4 +1,4 @@
-import { Directive, EventEmitter, Input, Output, OnInit } from '@angular/core';
+import { Directive, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { ToastActionFunction } from '../types';
 
@@ -7,7 +7,7 @@ import { ToastActionFunction } from '../types';
 	host: {
 		'(action)': 'onAction()',
 	},
-	standalone: false,
+	standalone: true,
 })
 export class ToastDirective implements OnInit {
 	@Input() delay: number | 'infinite' = 5000;

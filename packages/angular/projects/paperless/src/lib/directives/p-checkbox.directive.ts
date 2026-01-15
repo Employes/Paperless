@@ -1,4 +1,4 @@
-import { Directive } from '@angular/core';
+import { Directive, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { BaseValueAccessor } from '../base';
@@ -11,11 +11,10 @@ import { BaseValueAccessor } from '../base';
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,
-			useExisting: CheckboxDirective,
+			useExisting: forwardRef(() => CheckboxDirective),
 			multi: true,
 		},
 	],
-	standalone: false,
 })
 export class CheckboxDirective extends BaseValueAccessor {
 	override writeValue(value: boolean | 'indeterminate') {

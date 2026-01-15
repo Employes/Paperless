@@ -1,14 +1,32 @@
-import { AsyncPipe, NgIf } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-import { PaperlessModule } from 'projects/paperless/src/public-api';
+import {
+	CustomDatePipe,
+	PAvatar,
+	PButton,
+	PLabel,
+	PProfile,
+	TableCellComponent,
+	TableColumnComponent,
+	TableComponent,
+} from 'projects/paperless/src/public-api';
 
 @Component({
 	templateUrl: 'table.component.html',
 	changeDetection: ChangeDetectionStrategy.OnPush,
-	standalone: true,
-	imports: [PaperlessModule, AsyncPipe, NgIf],
+	imports: [
+		AsyncPipe,
+		PButton,
+		TableComponent,
+		TableColumnComponent,
+		TableCellComponent,
+		PProfile,
+		PAvatar,
+		PLabel,
+		CustomDatePipe,
+	],
 })
 export class ScrollableTableComponent {
 	private _items = [

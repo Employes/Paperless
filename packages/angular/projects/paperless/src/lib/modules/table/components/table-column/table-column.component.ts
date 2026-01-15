@@ -54,7 +54,6 @@ export declare interface TableColumnComponent extends Components.PTableColumn {
 		'hasCheckbox',
 		'sticky',
 	],
-	standalone: false,
 })
 export class TableColumnComponent {
 	protected el: HTMLElement;

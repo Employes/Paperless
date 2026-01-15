@@ -53,30 +53,31 @@
 		</ng-template>
 	</p-table-column>
 
-	<p-table-column
-		*ngIf="showExtraColumn$ | async"
-		name="Employee"
-		path="employee"
-		variant="subject"
-		[sizes]="{
-			default: 3,
-			tablet: 4,
-		}"
-	>
-		<ng-template
-			let-item="item"
-			let-value="value"
+	@if (showExtraColumn$ | async) {
+		<p-table-column
+			name="Employee"
+			path="employee"
+			variant="subject"
+			[sizes]="{
+				default: 3,
+				tablet: 4,
+			}"
 		>
-			<p-profile>
-				<p-avatar
-					slot="avatar"
-					[letters]="value"
-				/>
-				<p slot="title">{{ value }}</p>
-				<p slot="subtitle">{{ item.date | pdate }}</p>
-			</p-profile>
-		</ng-template>
-	</p-table-column>
+			<ng-template
+				let-item="item"
+				let-value="value"
+			>
+				<p-profile>
+					<p-avatar
+						slot="avatar"
+						[letters]="value"
+					/>
+					<p slot="title">{{ value }}</p>
+					<p slot="subtitle">{{ item.date | pdate }}</p>
+				</p-profile>
+			</ng-template>
+		</p-table-column>
+	}
 
 	<p-table-column
 		align="end"

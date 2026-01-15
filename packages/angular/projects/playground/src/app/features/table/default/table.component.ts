@@ -6,16 +6,38 @@ import { BehaviorSubject } from 'rxjs';
 import { TestDrawerComponent } from '../../drawer/test-drawer.component';
 
 import {
+	CustomDatePipe,
 	OverlayService,
-	PaperlessModule,
+	PAvatar,
+	PLabel,
+	PProfile,
+	TableColumnComponent,
+	TableCustomRowDirective,
+	TableExtraHeaderComponent,
+	TableNgxDirective,
 	TableRowActionClickEvent,
+	TableRowActionComponent,
+	TableComponent as TableNgxComponent,
+	TableCellComponent,
 } from 'projects/paperless/src/public-api';
 
 @Component({
 	templateUrl: 'table.component.html',
 	changeDetection: ChangeDetectionStrategy.OnPush,
-	standalone: true,
-	imports: [PaperlessModule, AsyncPipe],
+	imports: [
+		AsyncPipe,
+		CustomDatePipe,
+		PProfile,
+		PAvatar,
+		PLabel,
+		TableNgxComponent,
+		TableNgxDirective,
+		TableCellComponent,
+		TableExtraHeaderComponent,
+		TableColumnComponent,
+		TableCustomRowDirective,
+		TableRowActionComponent,
+	],
 })
 export class TableComponent {
 	private _items = [
@@ -130,5 +152,9 @@ export class TableComponent {
 
 	headerActionClick(event: unknown) {
 		console.log('action click', event);
+	}
+
+	rowClick(event: unknown) {
+		console.log('row click', event);
 	}
 }
