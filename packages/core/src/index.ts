@@ -1,4 +1,6 @@
-export { Components, JSX } from './components';
+export * from './components';
+
+export { paperless } from './tailwind';
 
 export {
 	state,
@@ -14,6 +16,4 @@ export type {
 	PaperlessState,
 } from './state';
 
-export { paperless } from './tailwind';
-export * from './types';
 export * from './utils';

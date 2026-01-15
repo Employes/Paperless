@@ -12,7 +12,6 @@ import {
 } from '@stencil/core';
 
 import { PCheckboxCustomEvent } from '../../../components';
-import { tableColumSizesOptions } from '../../../types/constants';
 import { IconVariant } from '../../../types/icon';
 import {
 	QuickFilter,
@@ -27,6 +26,7 @@ import {
 } from '../../../utils';
 import { cn } from '../../../utils/cn';
 import {
+	TABLE_COLUMN_SIZES,
 	PAGINATION_DEFAULT_PAGE_SIZE,
 	PAGINATION_DEFAULT_PAGE_SIZE_OPTIONS,
 } from '../../../utils/constants';
@@ -1189,7 +1189,7 @@ export class Table {
 			definition.sizes = JSON.parse(definition.sizes);
 		}
 
-		for (const [index, size] of tableColumSizesOptions.entries()) {
+		for (const [index, size] of TABLE_COLUMN_SIZES.entries()) {
 			if (
 				definitionAny.sizes === 'auto' ||
 				definitionAny.sizes === 'hidden' ||
@@ -1202,8 +1202,7 @@ export class Table {
 			}
 
 			parsedSizes[size] =
-				definitionAny.sizes[size] ??
-				parsedSizes[tableColumSizesOptions[index - 1]];
+				definitionAny.sizes[size] ?? parsedSizes[TABLE_COLUMN_SIZES[index - 1]];
 		}
 
 		definition.parsedSizes = parsedSizes;

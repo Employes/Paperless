@@ -9,13 +9,15 @@ import tailwind, {
 	tailwindHMR,
 } from 'stencil-tailwind-plugin';
 
+import { exportsOutputTarget } from './generators/packagejson-exports-output';
+import { storiesOutputTarget } from './generators/stencil-storybook-stories-output';
 import tailwindConfig from './src/tailwind.config';
-import { storiesOutputTarget } from './stencil-storybook-stories-output/';
 
 setPluginConfigurationDefaults({
 	enableDebug: false,
 	tailwindCssContents:
 		'@tailwind utilities;@tailwind components; * { @apply box-border; }',
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	tailwindConf: tailwindConfig as any,
 });
 
@@ -23,8 +25,9 @@ export const config: Config = {
 	namespace: 'paperless',
 	globalStyle: 'src/style/paperless.scss',
 	watchIgnoredRegex: [/.*\.story\.mdx$/, /.*\.stories\.ts$/],
+	validatePrimaryPackageOutputTarget: true,
 	extras: {
-		experimentalImportInjection: true,
+		enableImportInjection: true,
 	},
 	plugins: [sass(), tailwindGlobal(), tailwind(), tailwindHMR(), inlineSvg()],
 	devServer: {
@@ -42,13 +45,15 @@ export const config: Config = {
 		},
 		{
 			type: 'dist-custom-elements',
-			customElementsExportBehavior: 'auto-define-custom-elements',
+			customElementsExportBehavior: 'single-export-module',
 			externalRuntime: false,
+			isPrimaryPackageOutputTarget: true,
 		},
 		storiesOutputTarget(),
+		exportsOutputTarget(),
 		angular({
 			componentCorePackage: '@paperless/core',
-			outputType: 'component',
+			outputType: 'standalone',
 			directivesProxyFile:
 				'../angular/projects/paperless/src/lib/stencil/components.ts',
 			directivesArrayFile:

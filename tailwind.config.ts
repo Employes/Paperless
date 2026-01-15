@@ -1,5 +1,5 @@
 import path from 'path';
-import { paperless } from '@paperless/core/src/tailwind';
+import { paperless } from '@paperless/core/tailwind';
 
 export default {
 	content: [

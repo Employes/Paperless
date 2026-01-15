@@ -7,6 +7,9 @@ import {
 	State,
 	h,
 } from '@stencil/core';
+// eslint-disable-next-line import/no-duplicates
+import 'cropperjs';
+// eslint-disable-next-line import/no-duplicates
 import { CropperImage, CropperSelection } from 'cropperjs';
 
 import { ThemedHost } from '../../../internal/themed-host.component';
@@ -118,7 +121,7 @@ export class Cropper {
 	}
 
 	private _setImageRef(ref: CropperImage) {
-		if (this._imageRef) {
+		if (this._imageRef || !ref) {
 			return;
 		}
 

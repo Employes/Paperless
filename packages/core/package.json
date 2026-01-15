@@ -5,21 +5,355 @@
 	"type": "module",
 	"main": "dist/index.cjs.js",
 	"module": "dist/index.js",
-	"es2015": "dist/esm/index.js",
-	"es2017": "dist/esm/index.js",
-	"types": "dist/types/index.d.ts",
+	"types": "dist/components/index.d.ts",
 	"collection": "dist/collection/collection-manifest.json",
 	"collection:main": "dist/collection/index.js",
-	"unpkg": "dist/paperless/paperless.esm.js",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/Employes/Paperless.git"
+	"unpkg": "dist/core/core.esm.js",
+	"exports": {
+		".": {
+			"import": "./dist/components/index.js",
+			"types": "./dist/components/index.d.ts"
+		},
+		"./tailwind": "./dist/tailwind/index.ts",
+		"./loader": {
+			"types": "./loader/index.d.ts",
+			"import": "./loader/index.js"
+		},
+		"./hydrate": {
+			"types": "./hydrate/index.d.ts",
+			"import": "./hydrate/index.mjs"
+		},
+		"./paperless.css": "./dist/paperless/paperless.css",
+		"./components": {
+			"import": "./dist/components/index.js",
+			"types": "./dist/components/index.d.ts"
+		},
+		"./components/p-accordion.js": {
+			"import": "./dist/components/p-accordion.js",
+			"types": "./dist/components/p-accordion.d.ts"
+		},
+		"./components/p-attachment.js": {
+			"import": "./dist/components/p-attachment.js",
+			"types": "./dist/components/p-attachment.d.ts"
+		},
+		"./components/p-avatar.js": {
+			"import": "./dist/components/p-avatar.js",
+			"types": "./dist/components/p-avatar.d.ts"
+		},
+		"./components/p-avatar-group.js": {
+			"import": "./dist/components/p-avatar-group.js",
+			"types": "./dist/components/p-avatar-group.d.ts"
+		},
+		"./components/p-backdrop.js": {
+			"import": "./dist/components/p-backdrop.js",
+			"types": "./dist/components/p-backdrop.d.ts"
+		},
+		"./components/p-badge.js": {
+			"import": "./dist/components/p-badge.js",
+			"types": "./dist/components/p-badge.d.ts"
+		},
+		"./components/p-button.js": {
+			"import": "./dist/components/p-button.js",
+			"types": "./dist/components/p-button.d.ts"
+		},
+		"./components/p-button-group.js": {
+			"import": "./dist/components/p-button-group.js",
+			"types": "./dist/components/p-button-group.d.ts"
+		},
+		"./components/p-calendar.js": {
+			"import": "./dist/components/p-calendar.js",
+			"types": "./dist/components/p-calendar.d.ts"
+		},
+		"./components/p-card-body.js": {
+			"import": "./dist/components/p-card-body.js",
+			"types": "./dist/components/p-card-body.d.ts"
+		},
+		"./components/p-card-container.js": {
+			"import": "./dist/components/p-card-container.js",
+			"types": "./dist/components/p-card-container.d.ts"
+		},
+		"./components/p-card-header.js": {
+			"import": "./dist/components/p-card-header.js",
+			"types": "./dist/components/p-card-header.d.ts"
+		},
+		"./components/p-checkbox.js": {
+			"import": "./dist/components/p-checkbox.js",
+			"types": "./dist/components/p-checkbox.d.ts"
+		},
+		"./components/p-content-slider.js": {
+			"import": "./dist/components/p-content-slider.js",
+			"types": "./dist/components/p-content-slider.d.ts"
+		},
+		"./components/p-cropper.js": {
+			"import": "./dist/components/p-cropper.js",
+			"types": "./dist/components/p-cropper.d.ts"
+		},
+		"./components/p-datepicker.js": {
+			"import": "./dist/components/p-datepicker.js",
+			"types": "./dist/components/p-datepicker.d.ts"
+		},
+		"./components/p-divider.js": {
+			"import": "./dist/components/p-divider.js",
+			"types": "./dist/components/p-divider.d.ts"
+		},
+		"./components/p-drawer.js": {
+			"import": "./dist/components/p-drawer.js",
+			"types": "./dist/components/p-drawer.d.ts"
+		},
+		"./components/p-drawer-body.js": {
+			"import": "./dist/components/p-drawer-body.js",
+			"types": "./dist/components/p-drawer-body.d.ts"
+		},
+		"./components/p-drawer-container.js": {
+			"import": "./dist/components/p-drawer-container.js",
+			"types": "./dist/components/p-drawer-container.d.ts"
+		},
+		"./components/p-drawer-header.js": {
+			"import": "./dist/components/p-drawer-header.js",
+			"types": "./dist/components/p-drawer-header.d.ts"
+		},
+		"./components/p-dropdown.js": {
+			"import": "./dist/components/p-dropdown.js",
+			"types": "./dist/components/p-dropdown.d.ts"
+		},
+		"./components/p-dropdown-menu-container.js": {
+			"import": "./dist/components/p-dropdown-menu-container.js",
+			"types": "./dist/components/p-dropdown-menu-container.d.ts"
+		},
+		"./components/p-dropdown-menu-item.js": {
+			"import": "./dist/components/p-dropdown-menu-item.js",
+			"types": "./dist/components/p-dropdown-menu-item.d.ts"
+		},
+		"./components/p-empty-state.js": {
+			"import": "./dist/components/p-empty-state.js",
+			"types": "./dist/components/p-empty-state.d.ts"
+		},
+		"./components/p-field.js": {
+			"import": "./dist/components/p-field.js",
+			"types": "./dist/components/p-field.d.ts"
+		},
+		"./components/p-field-container.js": {
+			"import": "./dist/components/p-field-container.js",
+			"types": "./dist/components/p-field-container.d.ts"
+		},
+		"./components/p-floating-menu-container.js": {
+			"import": "./dist/components/p-floating-menu-container.js",
+			"types": "./dist/components/p-floating-menu-container.d.ts"
+		},
+		"./components/p-floating-menu-item.js": {
+			"import": "./dist/components/p-floating-menu-item.js",
+			"types": "./dist/components/p-floating-menu-item.d.ts"
+		},
+		"./components/p-helper.js": {
+			"import": "./dist/components/p-helper.js",
+			"types": "./dist/components/p-helper.d.ts"
+		},
+		"./components/p-iban-icon.js": {
+			"import": "./dist/components/p-iban-icon.js",
+			"types": "./dist/components/p-iban-icon.d.ts"
+		},
+		"./components/p-icon.js": {
+			"import": "./dist/components/p-icon.js",
+			"types": "./dist/components/p-icon.d.ts"
+		},
+		"./components/p-illustration.js": {
+			"import": "./dist/components/p-illustration.js",
+			"types": "./dist/components/p-illustration.d.ts"
+		},
+		"./components/p-info-panel.js": {
+			"import": "./dist/components/p-info-panel.js",
+			"types": "./dist/components/p-info-panel.d.ts"
+		},
+		"./components/p-label.js": {
+			"import": "./dist/components/p-label.js",
+			"types": "./dist/components/p-label.d.ts"
+		},
+		"./components/p-layout.js": {
+			"import": "./dist/components/p-layout.js",
+			"types": "./dist/components/p-layout.d.ts"
+		},
+		"./components/p-listing.js": {
+			"import": "./dist/components/p-listing.js",
+			"types": "./dist/components/p-listing.d.ts"
+		},
+		"./components/p-listing-item.js": {
+			"import": "./dist/components/p-listing-item.js",
+			"types": "./dist/components/p-listing-item.d.ts"
+		},
+		"./components/p-listing-line.js": {
+			"import": "./dist/components/p-listing-line.js",
+			"types": "./dist/components/p-listing-line.d.ts"
+		},
+		"./components/p-loader.js": {
+			"import": "./dist/components/p-loader.js",
+			"types": "./dist/components/p-loader.d.ts"
+		},
+		"./components/p-modal.js": {
+			"import": "./dist/components/p-modal.js",
+			"types": "./dist/components/p-modal.d.ts"
+		},
+		"./components/p-modal-body.js": {
+			"import": "./dist/components/p-modal-body.js",
+			"types": "./dist/components/p-modal-body.d.ts"
+		},
+		"./components/p-modal-container.js": {
+			"import": "./dist/components/p-modal-container.js",
+			"types": "./dist/components/p-modal-container.d.ts"
+		},
+		"./components/p-modal-footer.js": {
+			"import": "./dist/components/p-modal-footer.js",
+			"types": "./dist/components/p-modal-footer.d.ts"
+		},
+		"./components/p-modal-header.js": {
+			"import": "./dist/components/p-modal-header.js",
+			"types": "./dist/components/p-modal-header.d.ts"
+		},
+		"./components/p-navbar.js": {
+			"import": "./dist/components/p-navbar.js",
+			"types": "./dist/components/p-navbar.d.ts"
+		},
+		"./components/p-navigation-item.js": {
+			"import": "./dist/components/p-navigation-item.js",
+			"types": "./dist/components/p-navigation-item.d.ts"
+		},
+		"./components/p-navigation-section.js": {
+			"import": "./dist/components/p-navigation-section.js",
+			"types": "./dist/components/p-navigation-section.d.ts"
+		},
+		"./components/p-navigation-title.js": {
+			"import": "./dist/components/p-navigation-title.js",
+			"types": "./dist/components/p-navigation-title.d.ts"
+		},
+		"./components/p-pagination.js": {
+			"import": "./dist/components/p-pagination.js",
+			"types": "./dist/components/p-pagination.d.ts"
+		},
+		"./components/p-pagination-pages.js": {
+			"import": "./dist/components/p-pagination-pages.js",
+			"types": "./dist/components/p-pagination-pages.d.ts"
+		},
+		"./components/p-pagination-pages-item.js": {
+			"import": "./dist/components/p-pagination-pages-item.js",
+			"types": "./dist/components/p-pagination-pages-item.d.ts"
+		},
+		"./components/p-pagination-size.js": {
+			"import": "./dist/components/p-pagination-size.js",
+			"types": "./dist/components/p-pagination-size.d.ts"
+		},
+		"./components/p-profile.js": {
+			"import": "./dist/components/p-profile.js",
+			"types": "./dist/components/p-profile.d.ts"
+		},
+		"./components/p-radio.js": {
+			"import": "./dist/components/p-radio.js",
+			"types": "./dist/components/p-radio.d.ts"
+		},
+		"./components/p-range.js": {
+			"import": "./dist/components/p-range.js",
+			"types": "./dist/components/p-range.d.ts"
+		},
+		"./components/p-segment-container.js": {
+			"import": "./dist/components/p-segment-container.js",
+			"types": "./dist/components/p-segment-container.d.ts"
+		},
+		"./components/p-segment-item.js": {
+			"import": "./dist/components/p-segment-item.js",
+			"types": "./dist/components/p-segment-item.d.ts"
+		},
+		"./components/p-select.js": {
+			"import": "./dist/components/p-select.js",
+			"types": "./dist/components/p-select.d.ts"
+		},
+		"./components/p-smile.js": {
+			"import": "./dist/components/p-smile.js",
+			"types": "./dist/components/p-smile.d.ts"
+		},
+		"./components/p-stepper.js": {
+			"import": "./dist/components/p-stepper.js",
+			"types": "./dist/components/p-stepper.d.ts"
+		},
+		"./components/p-stepper-item.js": {
+			"import": "./dist/components/p-stepper-item.js",
+			"types": "./dist/components/p-stepper-item.d.ts"
+		},
+		"./components/p-stepper-line.js": {
+			"import": "./dist/components/p-stepper-line.js",
+			"types": "./dist/components/p-stepper-line.d.ts"
+		},
+		"./components/p-tab-container.js": {
+			"import": "./dist/components/p-tab-container.js",
+			"types": "./dist/components/p-tab-container.d.ts"
+		},
+		"./components/p-tab-item.js": {
+			"import": "./dist/components/p-tab-item.js",
+			"types": "./dist/components/p-tab-item.d.ts"
+		},
+		"./components/p-table.js": {
+			"import": "./dist/components/p-table.js",
+			"types": "./dist/components/p-table.d.ts"
+		},
+		"./components/p-table-cell.js": {
+			"import": "./dist/components/p-table-cell.js",
+			"types": "./dist/components/p-table-cell.d.ts"
+		},
+		"./components/p-table-column.js": {
+			"import": "./dist/components/p-table-column.js",
+			"types": "./dist/components/p-table-column.d.ts"
+		},
+		"./components/p-table-container.js": {
+			"import": "./dist/components/p-table-container.js",
+			"types": "./dist/components/p-table-container.d.ts"
+		},
+		"./components/p-table-extra-header.js": {
+			"import": "./dist/components/p-table-extra-header.js",
+			"types": "./dist/components/p-table-extra-header.d.ts"
+		},
+		"./components/p-table-footer.js": {
+			"import": "./dist/components/p-table-footer.js",
+			"types": "./dist/components/p-table-footer.d.ts"
+		},
+		"./components/p-table-header.js": {
+			"import": "./dist/components/p-table-header.js",
+			"types": "./dist/components/p-table-header.d.ts"
+		},
+		"./components/p-table-row.js": {
+			"import": "./dist/components/p-table-row.js",
+			"types": "./dist/components/p-table-row.d.ts"
+		},
+		"./components/p-table-row-action.js": {
+			"import": "./dist/components/p-table-row-action.js",
+			"types": "./dist/components/p-table-row-action.d.ts"
+		},
+		"./components/p-table-row-actions-container.js": {
+			"import": "./dist/components/p-table-row-actions-container.js",
+			"types": "./dist/components/p-table-row-actions-container.d.ts"
+		},
+		"./components/p-toast.js": {
+			"import": "./dist/components/p-toast.js",
+			"types": "./dist/components/p-toast.d.ts"
+		},
+		"./components/p-toast-container.js": {
+			"import": "./dist/components/p-toast-container.js",
+			"types": "./dist/components/p-toast-container.d.ts"
+		},
+		"./components/p-toggle.js": {
+			"import": "./dist/components/p-toggle.js",
+			"types": "./dist/components/p-toggle.d.ts"
+		},
+		"./components/p-tooltip.js": {
+			"import": "./dist/components/p-tooltip.js",
+			"types": "./dist/components/p-tooltip.d.ts"
+		}
 	},
 	"files": [
 		"dist/",
 		"loader/",
 		"hydrate/"
 	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Employes/Paperless.git"
+	},
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org"
 	},
