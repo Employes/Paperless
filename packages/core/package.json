@@ -4,7 +4,7 @@
 	"description": "Stencil Component Starter",
 	"type": "module",
 	"main": "dist/index.cjs.js",
-	"module": "dist/index.js",
+	"module": "dist/components/index.js",
 	"types": "dist/components/index.d.ts",
 	"collection": "dist/collection/collection-manifest.json",
 	"collection:main": "dist/collection/index.js",
@@ -375,20 +375,19 @@
 		"lint:fix": "yarn lint --fix"
 	},
 	"dependencies": {
-		"@floating-ui/dom": "^1.2.6",
+		"@floating-ui/dom": "^1.7.4",
 		"@stencil/core": "~4.41.1",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
-		"cropperjs": "^2.0.0",
-		"date-fns": "2.30.0",
-		"rxjs": "^7.5.5",
-		"tailwind-merge": "^3.0.1",
-		"tailwindcss-animate": "^1.0.7"
+		"cropperjs": "2.0.0",
+		"date-fns": "4.1.0",
+		"tailwind-merge": "~3.0.1",
+		"tailwindcss-animate": "~1.0.7"
 	},
 	"devDependencies": {
-		"@stencil-community/postcss": "^2.2.0",
-		"@stencil/angular-output-target": "1.0.0",
-		"@stencil/react-output-target": "1.2.1",
+		"@stencil-community/postcss": "~2.2.0",
+		"@stencil/angular-output-target": "~1.0.0",
+		"@stencil/react-output-target": "~1.2.1",
 		"@stencil/sass": "~3.2.3",
 		"@stencil/store": "~2.2.2",
 		"@tailwindcss/aspect-ratio": "0.4.2",

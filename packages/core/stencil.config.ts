@@ -69,6 +69,7 @@ export const config: Config = {
 		}),
 		react({
 			outDir: '../react/src',
+			customElementsDir: 'components',
 		}),
 		{
 			type: 'docs-readme',
