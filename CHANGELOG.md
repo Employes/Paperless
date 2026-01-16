@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.30](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.29...v2.22.0-alpha.30) (2026-01-16)
+
+
+### Bug Fixes
+
+* **molecules/cropper:** Fix dependencies ([b636a57](https://github.com/Employes/Paperless/commit/b636a57889e74230282627a83b519082014adcc4))
+
+
+
+
+
 # [2.22.0-alpha.29](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.28...v2.22.0-alpha.29) (2026-01-16)
 
 
