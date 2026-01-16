@@ -11,6 +11,6 @@ const NGX_PIPES = [DatePipe, CurrencyPipe];
 @NgModule({
 	imports: [...STENCIL_DIRECTIVES, ...DIRECTIVES, ...MODULES, ...PIPES],
 	exports: [...MODULES, ...DIRECTIVES, ...STENCIL_DIRECTIVES, ...PIPES],
-	providers: [...NGX_PIPES],
+	providers: [...NGX_PIPES, ...PIPES],
 })
 export class PaperlessModule {}
