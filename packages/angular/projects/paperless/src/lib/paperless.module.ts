@@ -9,8 +9,8 @@ import { DIRECTIVES as STENCIL_DIRECTIVES } from './stencil';
 const NGX_PIPES = [DatePipe, CurrencyPipe];
 
 @NgModule({
-	imports: [...STENCIL_DIRECTIVES, ...DIRECTIVES, ...MODULES],
-	exports: [...MODULES, ...DIRECTIVES, ...STENCIL_DIRECTIVES],
-	providers: [...NGX_PIPES, ...PIPES],
+	imports: [...STENCIL_DIRECTIVES, ...DIRECTIVES, ...MODULES, ...PIPES],
+	exports: [...MODULES, ...DIRECTIVES, ...STENCIL_DIRECTIVES, ...PIPES],
+	providers: [...NGX_PIPES],
 })
 export class PaperlessModule {}
