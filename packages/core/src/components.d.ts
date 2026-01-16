@@ -302,8 +302,9 @@ export namespace Components {
         "size"?: 'sm' | 'base' | 'lg';
         /**
           * The tab index to apply to the button
+          * @default 0
          */
-        "tabIndex"?: number;
+        "tabIndex": number;
         /**
           * Target in case of "text" version
          */
@@ -3943,6 +3944,7 @@ declare namespace LocalJSX {
         "size"?: 'sm' | 'base' | 'lg';
         /**
           * The tab index to apply to the button
+          * @default 0
          */
         "tabIndex"?: number;
         /**
