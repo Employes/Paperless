@@ -448,7 +448,7 @@ export class Button {
 	/**
 	 * The tab index to apply to the button
 	 */
-	@Prop() tabIndex?: number;
+	@Prop() tabIndex: number = 0;
 
 	/**
 	 * The variant of the button
