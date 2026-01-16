@@ -1,11 +1,11 @@
-import { DocsContainer, DocsPage } from '@storybook/addon-docs/blocks';
 import {
 	setStencilDocJson,
 	extractArgTypesFactory,
 	stencilRender,
 } from '@pxtrn/storybook-addon-docs-stencil';
+import { DocsContainer, DocsPage } from '@storybook/addon-docs/blocks';
 
-import docJson from '@paperless/core/component-docs.json';
+import docJson from '../packages/core/component-docs.json';
 if (docJson) setStencilDocJson(docJson);
 
 import { extractDefaultArgs } from './default-args';

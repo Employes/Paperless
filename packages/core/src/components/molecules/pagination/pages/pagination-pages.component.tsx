@@ -8,6 +8,7 @@ import {
 	State,
 	Listen,
 	Element,
+	JSX,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 

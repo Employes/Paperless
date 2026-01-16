@@ -1,4 +1,3 @@
-/* eslint-disable import/no-duplicates */
 import { Placement, Strategy } from '@floating-ui/dom';
 import {
 	AttachInternals,
