@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.28](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.27...v2.22.0-alpha.28) (2026-01-16)
+
+
+### Bug Fixes
+
+* **molecules/button:** Set default for tabIndex to satisfy HTMLElement constraints ([2cab74d](https://github.com/Employes/Paperless/commit/2cab74d53beb41b5170923fd7ce811d349868f0d))
+* Run lint & fix imports ([5a881d3](https://github.com/Employes/Paperless/commit/5a881d3711aa20cd1d29647beee0a6f28ba78cc5))
+
+
+
+
+
 # [2.22.0-alpha.27](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.26...v2.22.0-alpha.27) (2026-01-15)
 
 

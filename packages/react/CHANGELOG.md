@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.28](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.27...v2.22.0-alpha.28) (2026-01-16)
+
+
+### Features
+
+* re-enable react ([38a198f](https://github.com/Employes/Paperless/commit/38a198f8b2048b36f4d4c2c89466e4f9b204855f))
+
+
+
+
+
 # [2.22.0-alpha.27](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.26...v2.22.0-alpha.27) (2026-01-15)
 
 **Note:** Version bump only for package @paperless/react

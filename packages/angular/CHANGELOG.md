@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.28](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.27...v2.22.0-alpha.28) (2026-01-16)
+
+
+### Bug Fixes
+
+* **angular:** Correct import of pipes ([7a9a1d6](https://github.com/Employes/Paperless/commit/7a9a1d61dbef7b4efa97dee6b66f0c439711a490))
+* **angular:** Set correct peer dependencies ([d04bf16](https://github.com/Employes/Paperless/commit/d04bf169496994707dec2139f37d58b143527f16))
+
+
+
+
+
 # [2.22.0-alpha.27](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.26...v2.22.0-alpha.27) (2026-01-15)
 
 
