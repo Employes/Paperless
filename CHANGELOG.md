@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.32](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.31...v2.22.0-alpha.32) (2026-01-19)
+
+
+### Bug Fixes
+
+* **molecules/button:** Apply correect borders ([018bd55](https://github.com/Employes/Paperless/commit/018bd55968802c080682b202b9d387601a250984))
+
+
+
+
+
 # [2.22.0-alpha.31](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.30...v2.22.0-alpha.31) (2026-01-16)
 
 **Note:** Version bump only for package paperless
