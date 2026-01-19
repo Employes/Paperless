@@ -87,13 +87,14 @@ const button = cva(
 		'font-semibold leading-4',
 		'flex items-center justify-center',
 		'cursor-pointer font-geist',
+		'border-solid',
 	],
 	{
 		variants: {
 			variant: {
 				primary: ['border-storm-500/20', 'text-white'],
 				secondary: null,
-				text: null,
+				text: 'border-0',
 				transparent: 'bg-transparent border-transparent',
 				dropdown: null,
 			},
