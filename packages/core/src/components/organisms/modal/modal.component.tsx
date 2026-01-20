@@ -80,7 +80,7 @@ export class Modal {
 
 	@State() private _closing = false;
 
-	componentWillLoad() {
+	componentWillRender() {
 		this._hasFooterSlot = !!this._el.querySelector(':scope > [slot="footer"]');
 		this._hasHeaderSlot = !!this._el.querySelector(':scope > [slot="header"]');
 	}
