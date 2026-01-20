@@ -2,7 +2,6 @@
  * Public API Surface of paperless
  */
 
-export * from './lib/animations';
 export * from './lib/base';
 export * from './lib/directives';
 export * from './lib/modules';

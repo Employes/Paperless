@@ -10,7 +10,6 @@ import { map } from 'rxjs';
 
 import { Components } from '@paperless/core';
 
-import { SLIDE_IN_TOP_OUT_BOTTOM } from '../../../../animations';
 import { ProxyCmp } from '../../../../stencil/angular-component-lib/utils';
 import { PToast } from '../../../../stencil/components';
 import { ToastDirective } from '../../directives/toast.directive';
@@ -30,7 +29,6 @@ export declare interface PToastContainer extends Components.PToastContainer {
 	changeDetection: ChangeDetectionStrategy.OnPush,
 	templateUrl: './toast-container.component.html',
 	inputs: ['placement'],
-	animations: [SLIDE_IN_TOP_OUT_BOTTOM],
 	standalone: true,
 	imports: [PToast, ToastDirective, AsyncPipe],
 })

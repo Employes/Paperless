@@ -1,6 +1,7 @@
 @for (toast of toasts$ | async; track toast; let index = $index) {
 	<p-toast
-		[@pSlideInBottomOutTop]
+		animate.enter="animate-in fade-in slide-in-from-top"
+		animate.leave="animate-out fade-out"
 		[actionData]="toast.options.actionData"
 		[actionFunc]="toast.options.action"
 		[actionIcon]="toast.options.icon?.variant"
