@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.34](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.33...v2.22.0-alpha.34) (2026-01-20)
+
+
+### Bug Fixes
+
+* **modal:** Use componentWillRender for slot contents ([0c933d8](https://github.com/Employes/Paperless/commit/0c933d809381711f936814f5ae1611a47250f99d))
+
+
+
+
+
 # [2.22.0-alpha.33](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.32...v2.22.0-alpha.33) (2026-01-20)
 
 
