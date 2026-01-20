@@ -15,6 +15,8 @@ export default defineConfig([
 	{
 		files: ['**/*.tsx'],
 		rules: {
+			'react/jsx-key': 'off',
+			'react/no-unknown-property': 'off',
 			'unicorn/no-keyword-prefix': 'off',
 		},
 	},

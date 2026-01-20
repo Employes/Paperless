@@ -97,13 +97,13 @@ export class Modal {
 		return (
 			<p-backdrop
 				applyBlur={this.applyBlur}
-				onClicked={ev => this._backdropClick(ev.detail)}
 				closing={this._closing}
 				scrollLock={this.scrollLock}
+				onClicked={ev => this._backdropClick(ev.detail)}
 			>
 				<p-modal-container
-					size={this.size}
 					closing={this._closing}
+					size={this.size}
 				>
 					{(this.header?.length || this._hasHeaderSlot) && (
 						<p-modal-header

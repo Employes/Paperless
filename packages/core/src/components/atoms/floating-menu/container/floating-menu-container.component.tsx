@@ -130,8 +130,8 @@ export class FloatingMenuContainer {
 
 						{this.enableClose && (
 							<p-floating-menu-item
-								onClick={ev => this.close.emit(ev)}
 								icon='negative'
+								onClick={ev => this.close.emit(ev)}
 							></p-floating-menu-item>
 						)}
 					</div>

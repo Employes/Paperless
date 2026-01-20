@@ -76,10 +76,10 @@ export class Navbar {
 				<div class={sidebar({ class: sidebarAndTopbar(), show: this._show })}>
 					<div class='flex w-full items-center justify-end layout-1280:hidden'>
 						<p-button
-							variant='secondary'
 							icon='menu-arrow'
 							iconFlip='horizontal'
 							iconOnly={true}
+							variant='secondary'
 							onClick={() => (this._show = false)}
 						></p-button>
 					</div>
@@ -96,9 +96,9 @@ export class Navbar {
 				</div>
 				<div class={topbar({ class: sidebarAndTopbar() })}>
 					<p-button
-						variant='secondary'
-						iconOnly={true}
 						icon='menu-arrow'
+						iconOnly={true}
+						variant='secondary'
 						onClick={() => (this._show = true)}
 					></p-button>
 

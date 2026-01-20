@@ -223,8 +223,8 @@ export class TableHeader {
 				<div class={header()}>
 					{this.loading && (
 						<p-loader
-							variant='ghost'
 							class='hidden h-8 w-3/4 rounded desktop-xs:flex'
+							variant='ghost'
 						></p-loader>
 					)}
 
@@ -256,8 +256,8 @@ export class TableHeader {
 					<div class='flex flex-col justify-end gap-2 desktop-xs:ml-auto desktop-xs:flex-row desktop-xs:items-center'>
 						{this.enableSearch && (
 							<p-field
-								icon='search'
 								class='desktop-xs:max-w-60'
+								icon='search'
 								placeholder='Zoeken...'
 								value={this.query}
 								onValueChange={ev =>
@@ -269,13 +269,13 @@ export class TableHeader {
 						<div class='flex items-center gap-2'>
 							{this.enableFilter && (
 								<p-button
-									icon='filter'
-									variant='secondary'
 									class={`w-full ${
 										this.enableFilterDesktop
 											? 'desktop-xs:w-auto'
 											: 'desktop-xs:hidden'
 									}`}
+									icon='filter'
+									variant='secondary'
 									onOnClick={() => this.filter.emit()}
 								>
 									{this.filterButtonTemplate
@@ -289,16 +289,16 @@ export class TableHeader {
 
 							{!this.loading && this.enableExport && this.enableFilter && (
 								<p-divider
-									variant='vertical'
 									class='hidden h-4 tablet:flex dark:text-white/15'
+									variant='vertical'
 								/>
 							)}
 
 							{!this.loading && this.enableExport && (
 								<p-button
-									variant='secondary'
-									icon='upload'
 									class='desktop-xs:auto w-full'
+									icon='upload'
+									variant='secondary'
 									onOnClick={() => this.export.emit()}
 								>
 									{formatTranslation(this._locales.export)}
@@ -330,10 +330,10 @@ export class TableHeader {
 		return (
 			<p-button
 				class={mobile ? 'w-full' : 'hidden desktop-xs:flex'}
-				icon={this.actionIcon}
 				disabled={!this.canUseAction}
-				onOnClick={() => this.action.emit()}
+				icon={this.actionIcon}
 				loading={this.actionLoading}
+				onOnClick={() => this.action.emit()}
 			>
 				{this.actionButtonTemplate
 					? this.actionButtonTemplate(mobile ? this.itemsSelectedAmount : 0)

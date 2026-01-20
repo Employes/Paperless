@@ -78,14 +78,14 @@ export class ContentSlider {
 					class={`slider ${!this.disableDrag && 'draggable'} ${
 						this._dragging && 'dragging'
 					}`}
+					ref={el => (this._sliderRef = el)}
 					style={{
 						height: `${this._outerHeight}px`,
 					}}
-					ref={el => (this._sliderRef = el)}
 					onMouseDown={e => this._mouseDownHandler(e)}
-					onTouchStart={e => this._mouseDownHandler(e)}
 					onMouseMove={e => this._mouseMoveHandler(e)}
 					onTouchMove={e => this._mouseMoveHandler(e)}
+					onTouchStart={e => this._mouseDownHandler(e)}
 				>
 					<div
 						class='inner-slider'
@@ -98,8 +98,8 @@ export class ContentSlider {
 				<div class={`indicator ${this.hideMobileIndicator && 'hidden'}`}>
 					{this._filteredItems.map((_, i) => (
 						<div
-							onClick={() => this._scrollTo(i, true)}
 							class={`item ${!this.disableIndicatorClick && 'cursor-pointer'}`}
+							onClick={() => this._scrollTo(i, true)}
 						>
 							<div
 								class={cn('block h-2 w-2 rounded-full', {

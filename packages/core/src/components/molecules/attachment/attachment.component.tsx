@@ -155,8 +155,8 @@ export class Attachment {
 		if (this.error) {
 			prefix = (
 				<p-icon
-					variant='warning'
 					class='text-negative-red-500'
+					variant='warning'
 				/>
 			);
 		}
@@ -169,16 +169,16 @@ export class Attachment {
 		return (
 			<Fragment>
 				<p-field-container
-					variant='write'
-					label={this.label}
-					helper={this.helper}
 					error={this.error}
-					required={this.required}
 					forceShowTooltip={!!this.error?.length}
+					helper={this.helper}
+					label={this.label}
+					required={this.required}
+					variant='write'
 				>
 					<div
-						slot='content'
 						class='flex w-full items-start gap-2'
+						slot='content'
 					>
 						<div
 							class={attachment({
@@ -208,9 +208,7 @@ export class Attachment {
 							}
 						>
 							<p-button
-								slot='trigger'
-								variant='secondary'
-								iconOnly={true}
+								disabled={this.loading}
 								icon={
 									this.mode === 'read'
 										? 'download'
@@ -218,8 +216,10 @@ export class Attachment {
 											? 'trash'
 											: 'upload'
 								}
-								disabled={this.loading}
+								iconOnly={true}
 								loading={this.loading}
+								slot='trigger'
+								variant='secondary'
 								onOnClick={() =>
 									this.mode === 'write' && !this.value?.length
 										? this._uploadClick()
@@ -236,14 +236,14 @@ export class Attachment {
 							isMobileDevice &&
 							!this.value?.length && (
 								<p-tooltip
-									content={this.cameraTooltip}
 									class='w-8 desktop-xs:hidden'
+									content={this.cameraTooltip}
 								>
 									<p-button
+										icon='camera'
+										iconOnly={true}
 										slot='trigger'
 										variant='secondary'
-										iconOnly={true}
-										icon='camera'
 										onOnClick={() => this._cameraClick()}
 									/>
 								</p-tooltip>
@@ -252,21 +252,21 @@ export class Attachment {
 				</p-field-container>
 
 				<input
-					class='hidden'
-					type='file'
 					accept={
 						Array.isArray(this.accept) ? this.accept?.join(',') : this.accept
 					}
+					class='hidden'
 					ref={el => (this._fileRef = el)}
+					type='file'
 					onChange={ev => this._onFileChange(ev)}
 				/>
 
 				<input
-					class='hidden'
-					type='file'
 					accept='image/*'
 					capture='true'
+					class='hidden'
 					ref={el => (this._cameraFileRef = el)}
+					type='file'
 					onChange={ev => this._onFileChange(ev)}
 				/>
 			</Fragment>

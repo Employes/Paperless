@@ -126,20 +126,20 @@ export class Toggle {
 		return (
 			<ThemedHost>
 				<label
-					htmlFor={id}
 					class='flex items-center justify-start gap-2'
+					htmlFor={id}
 				>
 					<div class='group/p-toggle relative flex flex-shrink-0 items-center'>
 						<input
+							checked={!!this.checked}
 							class={toggle({
 								disabled: asBoolean(this.disabled),
 							})}
-							type='checkbox'
+							disabled={asBoolean(this.disabled)}
 							id={id}
 							name={this.name}
 							required={this.required}
-							checked={!!this.checked}
-							disabled={asBoolean(this.disabled)}
+							type='checkbox'
 							onChange={ev => this._onChange(ev)}
 						/>
 

@@ -178,10 +178,10 @@ export class Stepper {
 		return (
 			<p-stepper-item
 				active={this.enableAutoStatus ? i === activeStep : data.active}
-				finished={this.enableAutoStatus ? i < activeStep : data.finished}
-				number={i + 1}
 				align={this.direction === 'vertical' ? this.align : 'start'}
 				contentPosition={this.contentPosition}
+				finished={this.enableAutoStatus ? i < activeStep : data.finished}
+				number={i + 1}
 			>
 				{data.content}
 			</p-stepper-item>

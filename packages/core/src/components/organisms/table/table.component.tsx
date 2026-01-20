@@ -424,35 +424,29 @@ export class Table {
 				<p-table-container>
 					{this.enableHeader && (
 						<p-table-header
-							class='mb-8'
-							// quick filters
-							quickFilters={this.quickFilters}
+							actionButtonTemplate={this.actionButtonTemplate}
+							actionIcon={this.actionButtonIcon}
+							actionLoading={this.actionButtonLoading}
+							actionText={this.actionButtonText}
 							activeQuickFilterIdentifier={this.activeQuickFilterIdentifier}
-							onQuickFilter={({ detail }) => this.quickFilter.emit(detail)}
-							// search
-							enableSearch={this.enableSearch}
-							query={this.query}
-							onQueryChange={({ detail }) => this.queryChange.emit(detail)}
-							// filter button
+							canUseAction={this.actionButtonEnabled}
+							class='mb-8'
+							enableAction={this.enableAction}
+							enableExport={this.enableExport}
 							enableFilter={this.enableFilter}
 							enableFilterDesktop={this.enableFilterDesktop}
-							selectedFiltersAmount={this.selectedFiltersAmount}
+							enableSearch={this.enableSearch}
 							filterButtonTemplate={this.filterButtonTemplate}
-							onFilter={() => this.filter.emit()}
-							// action button
-							enableAction={this.enableAction}
-							actionIcon={this.actionButtonIcon}
-							actionText={this.actionButtonText}
-							actionLoading={this.actionButtonLoading}
-							canUseAction={this.actionButtonEnabled}
-							actionButtonTemplate={this.actionButtonTemplate}
-							onAction={() => this.action.emit()}
 							itemsSelectedAmount={this.selectedRows?.length}
-							//export
-							enableExport={this.enableExport}
-							onExport={() => this.export.emit()}
-							//loading
 							loading={this.headerLoading}
+							query={this.query}
+							quickFilters={this.quickFilters}
+							selectedFiltersAmount={this.selectedFiltersAmount}
+							onAction={() => this.action.emit()}
+							onExport={() => this.export.emit()}
+							onFilter={() => this.filter.emit()}
+							onQueryChange={({ detail }) => this.queryChange.emit(detail)}
+							onQuickFilter={({ detail }) => this.quickFilter.emit(detail)}
 						>
 							{this._hasCustomFilterSlot && (
 								<slot
@@ -479,26 +473,26 @@ export class Table {
 
 					{this.enableFloatingMenu && this._enableRowSelection ? (
 						<p-floating-menu-container
-							usedInTable={true}
+							amount={this.selectedRows?.length}
+							amountSelectedTemplate={this.floatingMenuAmountSelectedTemplate}
 							class={floatingMenuContainerClass({
 								hasFooter: this.enableFooter && !this._footerHidden,
 								active: !!this.selectedRows?.length,
 								shown: this._floatingMenuShown,
 							})}
-							amountSelectedTemplate={this.floatingMenuAmountSelectedTemplate}
-							amount={this.selectedRows?.length}
 							enableAmountSelected={!!this._rowActionsFloating?.length}
+							usedInTable={true}
 							onClose={() => this._selectAllChange(null, false)}
 						>
 							{this._rowActionsFloating?.length &&
 								this._rowActionsFloating.map(a => (
 									<p-floating-menu-item
-										slot='floating-menu-item'
 										disabled={a.disabled}
-										loading={a.loading}
 										icon={a.icon}
-										iconRotate={a.iconRotate}
 										iconFlip={a.iconFlip}
+										iconRotate={a.iconRotate}
+										loading={a.loading}
+										slot='floating-menu-item'
 										onClick={() =>
 											!a.disabled &&
 											!a.loading &&
@@ -518,28 +512,23 @@ export class Table {
 
 					{this.enableFooter && (
 						<p-table-footer
-							// overall
-							hideOnSinglePage={this.hideOnSinglePage}
-							// page size select
+							enablePaginationPages={this.enablePaginationPages}
 							enablePaginationSize={this.enablePaginationSize}
+							hideOnSinglePage={this.hideOnSinglePage}
+							loading={this.footerLoading}
+							page={this.page}
 							pageSize={this.pageSize}
 							pageSizeOptions={this.pageSizeOptions}
-							onPageSizeChange={({ detail }) =>
-								this.pageSizeChange.emit(detail)
-							}
-							// pagination
-							enablePaginationPages={this.enablePaginationPages}
-							page={this.page}
-							total={this.total}
-							onPageChange={({ detail }) => this.pageChange.emit(detail)}
-							//loading
-							loading={this.footerLoading}
-							onHiddenChange={({ detail }) => (this._footerHidden = detail)}
-							// header adjustment
 							tableHeaderHasAction={
 								this.enableHeader &&
 								this.enableAction &&
 								this.actionButtonEnabled
+							}
+							total={this.total}
+							onHiddenChange={({ detail }) => (this._footerHidden = detail)}
+							onPageChange={({ detail }) => this.pageChange.emit(detail)}
+							onPageSizeChange={({ detail }) =>
+								this.pageSizeChange.emit(detail)
 							}
 						></p-table-footer>
 					)}
@@ -690,15 +679,15 @@ export class Table {
 
 		return (
 			<p-table-row
-				variant='header-secondary'
 				isLast={true}
+				variant='header-secondary'
 			>
 				{this._extraHeaders.map((col: TableExtraHeader, index) => (
 					<p-table-cell
-						definition={col}
-						variant='header-secondary'
 						checkboxOffset={index === 0 && this._enableRowSelection}
+						definition={col}
 						index={index}
+						variant='header-secondary'
 					>
 						<b>{col.name}</b>
 					</p-table-cell>
@@ -712,15 +701,15 @@ export class Table {
 			<p-table-row variant='header'>
 				{this._columns.map((col: TableColumn, index) => (
 					<p-table-cell
-						definition={col}
-						value={col.name}
-						variant='header'
 						checkbox={
 							index === 0 || col.hasCheckbox
 								? this._getCheckbox(null, this.loading ? 'loading' : 'header')
 								: null
 						}
+						definition={col}
 						index={index}
+						value={col.name}
+						variant='header'
 					></p-table-cell>
 				))}
 			</p-table-row>
@@ -750,10 +739,10 @@ export class Table {
 
 		return this._items.map((item, index) => (
 			<p-table-row
-				enableHover={this._enableRowSelection || this.enableRowClick}
 				checked={this._selectionContains(index)}
-				onClick={ev => this._rowClick(ev, index)}
+				enableHover={this._enableRowSelection || this.enableRowClick}
 				isLast={index === this._items.length - 1}
+				onClick={ev => this._rowClick(ev, index)}
 			>
 				{this._getRowColumns(item, index)}
 				{this._getActions(item, index)}
@@ -769,23 +758,23 @@ export class Table {
 		if (actions?.length && !isMobile()) {
 			return (
 				<p-table-row-actions-container
-					slot='actions'
 					checked={this._selectionContains(index)}
+					slot='actions'
 				>
 					{actions.map(a => (
 						<p-tooltip
-							strategy='fixed'
 							content={a.label}
+							strategy='fixed'
 						>
 							<p-button
-								data-is-action
-								variant='secondary'
-								slot='trigger'
 								icon={a.icon}
-								iconRotate={a.iconRotate}
 								iconFlip={a.iconFlip}
 								iconOnly={true}
+								iconRotate={a.iconRotate}
 								size='sm'
+								slot='trigger'
+								variant='secondary'
+								data-is-action
 								onClick={() =>
 									typeof a.action === 'function' && a.action?.(item, false)
 								}
@@ -801,12 +790,12 @@ export class Table {
 	private _getRowColumns(item, index) {
 		return this._columns.map((col: TableColumn, colIndex) => (
 			<p-table-cell
-				definition={col}
-				item={item}
 				checkbox={
 					colIndex === 0 || col.hasCheckbox ? this._getCheckbox(index) : null
 				}
+				definition={col}
 				index={colIndex}
+				item={item}
 				rowIndex={index}
 			></p-table-cell>
 		));
@@ -815,15 +804,15 @@ export class Table {
 	private _getLoadingColumns(index) {
 		return this._columns.map((col: TableColumn, colIndex) => (
 			<p-table-cell
-				definition={col}
-				variant='loading'
 				checkbox={
 					colIndex === 0 || col.hasCheckbox
 						? this._getCheckbox(index, 'loading')
 						: null
 				}
+				definition={col}
 				index={colIndex}
 				rowIndex={index}
+				variant='loading'
 			></p-table-cell>
 		));
 	}
@@ -842,8 +831,8 @@ export class Table {
 		if (variant === 'loading') {
 			return (
 				<p-loader
-					variant='ghost'
 					class='h-6 w-6 rounded'
+					variant='ghost'
 				/>
 			);
 		}
@@ -851,12 +840,12 @@ export class Table {
 		if (variant === 'header') {
 			return (
 				<p-checkbox
+					checked={this._selectionContainsAll()}
 					class={cn({
 						'opacity-0': this._rowSelectionLimit !== undefined,
 					})}
-					checked={this._selectionContainsAll()}
-					indeterminate={this._selectionIndeterminate()}
 					disabled={this._rowSelectionLimit !== undefined}
+					indeterminate={this._selectionIndeterminate()}
 					onCheckedChange={ev => this._selectAllChange(ev)}
 				/>
 			);
@@ -868,6 +857,7 @@ export class Table {
 
 		return (
 			<p-checkbox
+				checked={selectionContains}
 				class='flex-shrink-0'
 				disabled={
 					(this.canSelectKey && !item[this.canSelectKey]) ||
@@ -875,7 +865,6 @@ export class Table {
 						!selectionContains &&
 						this.selectedRows.length === this._rowSelectionLimit)
 				}
-				checked={selectionContains}
 				onCheckedChange={ev => this._checkboxChange(ev, rowIndex)}
 			/>
 		);
@@ -886,22 +875,22 @@ export class Table {
 			return (
 				<p-empty-state
 					class='my-16 self-center'
-					illustration='search'
-					header={this.emptyStateFilteredHeader()}
 					content={this.emptyStateFilteredContent()}
+					header={this.emptyStateFilteredHeader()}
+					illustration='search'
 				></p-empty-state>
 			);
 		}
 
 		return (
 			<p-empty-state
-				class='my-16 self-center'
-				illustration='table'
-				header={this.emptyStateHeader()}
-				content={this.emptyStateContent()}
-				enableAction={this.enableEmptyStateAction}
 				actionIcon='plus'
 				actionText={this.emptyStateAction()}
+				class='my-16 self-center'
+				content={this.emptyStateContent()}
+				enableAction={this.enableEmptyStateAction}
+				header={this.emptyStateHeader()}
+				illustration='table'
 				onAction={() => this.enableAction && this.action.emit()}
 			></p-empty-state>
 		);

@@ -83,9 +83,9 @@ export class CardHeader {
 						{this.icon ? (
 							<p-icon
 								class='text-storm-300 dark:text-hurricane-200'
-								variant={this.icon}
 								flip={this.iconFlip}
 								rotate={this.iconRotate}
+								variant={this.icon}
 							/>
 						) : (
 							<slot name='prefix' />

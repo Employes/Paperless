@@ -158,8 +158,8 @@ export class TableCell {
 		if (this.variant === 'loading') {
 			return (
 				<p-loader
-					variant='ghost'
 					class='h-6 w-[calc(100%-1rem)] flex-1 rounded'
+					variant='ghost'
 				/>
 			);
 		}

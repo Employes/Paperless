@@ -151,9 +151,9 @@ export class Tooltip {
 						variant: this.variant,
 						strategy: this.strategy,
 					})}
-					role='popover'
 					data-placement={this.placement}
 					ref={el => this._load(el)}
+					role='popover'
 				>
 					<div class='flex gap-2 whitespace-normal'>
 						{this.variant === 'error' && (

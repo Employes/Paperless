@@ -89,11 +89,11 @@ export class Drawer {
 
 		return (
 			<p-backdrop
-				variant='drawer'
 				applyBlur={this.applyBlur}
-				onClicked={ev => this._backdropClick(ev.detail)}
 				closing={this._closing}
 				scrollLock={this.scrollLock}
+				variant='drawer'
+				onClicked={ev => this._backdropClick(ev.detail)}
 			>
 				<p-drawer-container closing={this._closing}>
 					{(this.header?.length || this._hasHeaderSlot) && (

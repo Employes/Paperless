@@ -100,9 +100,9 @@ export class SegmentItem {
 								),
 								'text-indigo-200': asBoolean(this.active),
 							})}
-							variant={this.icon}
 							flip={this.iconFlip}
 							rotate={this.iconRotate}
+							variant={this.icon}
 						/>
 					)}
 

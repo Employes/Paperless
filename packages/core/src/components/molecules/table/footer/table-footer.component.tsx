@@ -166,15 +166,15 @@ export class TableFooter {
 						this.total > 0 && (
 							<p-pagination
 								class='z-[2]'
-								enablePaginationSize={this.enablePaginationSize}
 								enablePaginationPages={this.enablePaginationPages}
+								enablePaginationSize={this.enablePaginationSize}
+								hideOnSinglePage={this.hideOnSinglePage}
+								page={this.page}
 								pageSize={this.pageSize}
 								pageSizeOptions={this.pageSizeOptions}
-								onPageSizeChange={({ detail }) => this._changePageSize(detail)}
-								page={this.page}
-								hideOnSinglePage={this.hideOnSinglePage}
-								onPageChange={({ detail }) => this.pageChange.emit(detail)}
 								total={this.total}
+								onPageChange={({ detail }) => this.pageChange.emit(detail)}
+								onPageSizeChange={({ detail }) => this._changePageSize(detail)}
 								onPagesChange={({ detail }) =>
 									(this._hasPaginationPages = detail > 1)
 								}

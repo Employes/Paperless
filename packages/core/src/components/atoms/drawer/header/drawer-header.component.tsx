@@ -42,9 +42,9 @@ export class DrawerHeader {
 					<div class={content()}>
 						{this.showClose && (
 							<p-button
-								variant='secondary'
 								icon='negative'
 								iconOnly={true}
+								variant='secondary'
 								onClick={ev => this.close.emit(ev)}
 							></p-button>
 						)}

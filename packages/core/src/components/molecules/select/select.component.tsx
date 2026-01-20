@@ -468,43 +468,43 @@ export class Select {
 		return (
 			<ThemedHost>
 				<p-field-container
-					variant='write'
-					prefix={this.prefix}
-					label={this.label}
-					helper={this.helper}
-					required={this.required}
-					showOptional={this.showOptional}
 					error={this.error}
 					forceShowTooltip={!!this.error?.length && !this._showDropdown}
+					helper={this.helper}
+					label={this.label}
+					prefix={this.prefix}
+					required={this.required}
+					showOptional={this.showOptional}
+					variant='write'
 				>
 					<p-dropdown
+						applyChevron={false}
 						applyFullWidth={true}
 						applyMaxWidth={false}
-						slot='content'
+						disable-trigger-click={this.disabled}
 						insideClick={true}
 						manual={true}
 						scrollable={this.enableAutocomplete ? 'large' : true}
-						disable-trigger-click={this.disabled}
 						show={this._showDropdown}
-						onIsOpen={ev => this._onDropdownOpen(ev)}
+						slot='content'
 						strategy={this.strategy}
-						applyChevron={false}
+						onIsOpen={ev => this._onDropdownOpen(ev)}
 					>
 						<p-button
-							slot='trigger'
-							class='w-full'
-							variant='secondary'
-							size={this.size}
+							active={this._showDropdown}
 							chevron={
 								this.showChevron ? (this._showDropdown ? 'up' : 'down') : false
 							}
-							active={this._showDropdown}
+							class='w-full'
 							error={!!this.error?.length}
 							icon={buttonIcon}
 							iconClass={
 								this.applyClassOnSelectedItem &&
 								this._selectedItem?.[this.iconClassKey]
 							}
+							size={this.size}
+							slot='trigger'
+							variant='secondary'
 							onClick={ev => this._onClick(ev)}
 						>
 							<div
@@ -733,12 +733,12 @@ export class Select {
 						this._selectedItem?.[this._identifierKey];
 			return (
 				<p-dropdown-menu-item
-					enableTextWrap={this.enableTextWrap}
-					useContainer={false}
-					onClick={() => this._selectValue(item)}
 					active={isSelected}
 					checkbox={this.multi ? true : false}
+					enableTextWrap={this.enableTextWrap}
 					slot='items'
+					useContainer={false}
+					onClick={() => this._selectValue(item)}
 				>
 					{this._getDisplay(item, false, isSelected)}
 				</p-dropdown-menu-item>
@@ -759,11 +759,11 @@ export class Select {
 		if (this.enableSelectAll && this._items.length > 0) {
 			items.unshift(
 				<p-dropdown-menu-item
+					active={this._allSelected}
 					slot='items'
 					useContainer={false}
 					checkbox
 					onClick={() => this._selectAllChange()}
-					active={this._allSelected}
 				>
 					{this.selectAllIcon?.length ? (
 						<span class='flex items-center gap-2'>
@@ -789,9 +789,9 @@ export class Select {
 	private _getAddItem() {
 		return (
 			<p-dropdown-menu-item
-				onClick={() => this.add.emit()}
-				useContainer={false}
 				slot='items'
+				useContainer={false}
+				onClick={() => this.add.emit()}
 			>
 				<span class='flex items-center gap-1 font-semibold text-indigo-600'>
 					{this.addItemText}
@@ -808,8 +808,8 @@ export class Select {
 				slot='items'
 			>
 				<p-loader
-					variant='ghost'
 					class='h-6 w-full rounded'
+					variant='ghost'
 				/>
 			</p-dropdown-menu-item>
 		));
@@ -830,9 +830,9 @@ export class Select {
 				<p-field
 					class='block'
 					placeholder={this.autocompletePlaceholder}
-					onValueChange={ev => this._onAutoComplete(ev)}
-					onInputRefChange={ev => (this.autocompleteInputRef = ev.detail)}
 					value={this.query}
+					onInputRefChange={ev => (this.autocompleteInputRef = ev.detail)}
+					onValueChange={ev => this._onAutoComplete(ev)}
 				/>
 			</div>
 		);
@@ -933,9 +933,9 @@ export class Select {
 			content = (
 				<span class='flex items-center gap-2'>
 					<p-avatar
+						letters={item[this.avatarLettersKey]}
 						size='sm'
 						src={item[this.avatarKey]}
-						letters={item[this.avatarLettersKey]}
 					></p-avatar>
 					<div
 						class={textContainer({

@@ -157,17 +157,17 @@ export class FieldContainer {
 
 		let contentSlot = (
 			<slot
-				slot='trigger'
 				name='content'
+				slot='trigger'
 			/>
 		);
 
 		if (this.loading) {
 			contentSlot = (
 				<p-loader
-					variant='ghost'
 					class={loader({ variant: this.variant, size: this.loadingSize })}
 					slot='trigger'
+					variant='ghost'
 				/>
 			);
 		}
@@ -175,10 +175,10 @@ export class FieldContainer {
 		return (
 			<ThemedHost>
 				<label
-					htmlFor={this.id}
 					class={cn('flex w-inherit flex-col gap-1', {
 						'cursor-auto': this.variant === 'read',
 					})}
+					htmlFor={this.id}
 				>
 					<div
 						class={cn('flex items-end justify-between gap-1 empty:hidden', {
@@ -228,14 +228,14 @@ export class FieldContainer {
 							'font-normal': this.variant === 'read',
 							'text-storm-500 dark:text-white': this.variant === 'read',
 						})}
-						variant='error'
 						content={this.error}
+						enableUserInput={false}
+						placement={this.errorPlacement}
 						show={
 							errorAndErrorIsNotBoolean &&
 							asBoolean(this.forceShowTooltip, false)
 						}
-						enableUserInput={false}
-						placement={this.errorPlacement}
+						variant='error'
 					>
 						{hasErrorSlot && (
 							<slot

@@ -131,9 +131,9 @@ export class FloatingMenuItem {
 					hover: asBoolean(this.hover),
 					disabled: asBoolean(this.disabled),
 				})}
-				variant={this.icon}
 				flip={this.iconFlip}
 				rotate={this.iconRotate}
+				variant={this.icon}
 			/>
 		);
 	}

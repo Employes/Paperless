@@ -5,6 +5,7 @@ import { defineConfig } from 'eslint/config';
 import importPlugin from 'eslint-plugin-import';
 import jsoncPlugin from 'eslint-plugin-jsonc';
 import prettierPlugin from 'eslint-plugin-prettier/recommended';
+import reactPlugin from 'eslint-plugin-react';
 import unicornPlugin from 'eslint-plugin-unicorn';
 import globals from 'globals';
 import typescriptPlugin from 'typescript-eslint';
@@ -72,6 +73,20 @@ export default defineConfig([
 						order: 'asc',
 						caseInsensitive: true,
 					},
+				},
+			],
+		},
+	},
+	{
+		files: ['**/*.{tsx,jsx}'],
+		extends: [reactPlugin.configs.flat.recommended],
+		rules: {
+			'react/react-in-jsx-scope': 'off',
+			'react/jsx-sort-props': [
+				'error',
+				{
+					callbacksLast: true,
+					shorthandLast: true,
 				},
 			],
 		},

@@ -309,51 +309,47 @@ export class Datepicker {
 		return (
 			<p-dropdown
 				allowOverflow={true}
-				strategy={this.strategy}
-				placement={this.placement}
-				disableTriggerClick={true}
-				applyMaxWidth={false}
 				applyFullWidth={false}
+				applyMaxWidth={false}
+				disableTriggerClick={true}
 				insideClick={true}
-				show={this._showDropdown}
 				isDatepicker={true}
+				placement={this.placement}
+				show={this._showDropdown}
+				strategy={this.strategy}
 			>
 				<p-field
-					slot='trigger'
+					autoShowError={false}
+					disabled={asBoolean(this.disabled)}
+					error={this.error}
+					focused={this._showDropdown}
+					forceShowTooltip={!!this.error?.length && !this._showDropdown}
+					helper={this.helper}
 					icon={
 						this.hideIconWhenFilled && !!this._value ? null : 'calendar-multi'
 					}
 					iconPosition='start'
-					size={this.size}
-					prefix={this.prefix}
 					label={this.label}
 					loading={this.loading}
-					helper={this.helper}
+					placeholder={this.placeholder}
+					prefix={this.prefix}
 					required={asBoolean(this.required)}
 					showOptional={asBoolean(this.showOptional)}
-					error={this.error}
-					forceShowTooltip={!!this.error?.length && !this._showDropdown}
-					autoShowError={false}
-					disabled={asBoolean(this.disabled)}
-					focused={this._showDropdown}
+					size={this.size}
+					slot='trigger'
 					value={this._getFormattedDate()}
-					placeholder={this.placeholder}
-					onFocus={() => this._onFocus()}
 					onBlur={(ev: FocusEvent) => this._onBlur(ev)}
-					onValueChange={ev => this._onValueChange(ev.detail as string)}
+					onFocus={() => this._onFocus()}
 					onInputRefChange={ev => (this._inputRef = ev.detail)}
+					onValueChange={ev => this._onValueChange(ev.detail as string)}
 				></p-field>
 
 				{this.enableNativePicker && this._isMobileBrowser && (
 					<input
-						slot='trigger'
-						type={this.mode === 'day' ? 'date' : 'month'}
 						class='pointer-events-none absolute left-0 top-0 z-[-10] overflow-hidden opacity-0'
-						onInput={ev => this._onNativeInput(ev)}
-						ref={ref => (this._dateInputRef = ref)}
-						value={
-							this._value &&
-							format(this._value, 'yyyy-MM-dd', {
+						max={
+							this.maxDate &&
+							format(new Date(this.maxDate), 'yyyy-MM-dd', {
 								locale: state.locale === 'nl' ? nl : enUS,
 							})
 						}
@@ -363,30 +359,34 @@ export class Datepicker {
 								locale: state.locale === 'nl' ? nl : enUS,
 							})
 						}
-						max={
-							this.maxDate &&
-							format(new Date(this.maxDate), 'yyyy-MM-dd', {
+						ref={ref => (this._dateInputRef = ref)}
+						slot='trigger'
+						type={this.mode === 'day' ? 'date' : 'month'}
+						value={
+							this._value &&
+							format(this._value, 'yyyy-MM-dd', {
 								locale: state.locale === 'nl' ? nl : enUS,
 							})
 						}
+						onInput={ev => this._onNativeInput(ev)}
 					/>
 				)}
 				<div
-					tabIndex={-1}
 					slot='items'
+					tabIndex={-1}
 				>
 					<p-calendar
-						variant='embedded'
-						value={this._value}
-						onValueChange={({ detail }) => (this.value = detail)}
-						preselectToday={this.preselectToday}
-						disabledDates={this.disabledDates}
-						minDate={this.minDate}
-						maxDate={this.maxDate}
 						disableWeekends={this.disableWeekends}
+						disabledDates={this.disabledDates}
 						enableToday={this.enableToday}
-						todayText={this.todayText}
+						maxDate={this.maxDate}
+						minDate={this.minDate}
 						mode={this.mode}
+						preselectToday={this.preselectToday}
+						todayText={this.todayText}
+						value={this._value}
+						variant='embedded'
+						onValueChange={({ detail }) => (this.value = detail)}
 					/>
 				</div>
 			</p-dropdown>

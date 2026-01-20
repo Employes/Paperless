@@ -92,8 +92,8 @@ export class Avatar {
 					<span>{this.letters?.[0] ?? ' '}</span>
 				) : (
 					<img
-						src={this._src}
 						class='z-0 aspect-branding h-full rounded-full object-cover'
+						src={this._src}
 						onError={() => this._setFailed()}
 					/>
 				)}

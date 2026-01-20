@@ -121,8 +121,8 @@ export class PaginationSize {
 				<p-dropdown
 					applyFullWidth={true}
 					applyMaxWidth={false}
-					placement='top-start'
 					chevronDirection='down'
+					placement='top-start'
 					onIsOpen={({ detail }) => (this.dropdownIsOpen = detail)}
 				>
 					<div
@@ -149,8 +149,8 @@ export class PaginationSize {
 									'text-storm-500 dark:text-white': !!this.dropdownIsOpen,
 								}
 							)}
-							variant='double-caret'
 							size='sm'
+							variant='double-caret'
 						/>
 					</div>
 					<slot slot='items'>

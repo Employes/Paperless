@@ -28,10 +28,10 @@ export class Helper {
 					strategy={this.strategy}
 				>
 					<p-icon
-						size='sm'
 						class='cursor-pointer text-storm-300 hover:text-storm-500 dark:text-hurricane-300 dark:hover:text-hurricane-200'
-						variant='question-circle'
+						size='sm'
 						slot='trigger'
+						variant='question-circle'
 					/>
 
 					<div slot='content'>

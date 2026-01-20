@@ -42,10 +42,10 @@ export class Range {
 					<p-icon variant='minus' />
 					<div class='relative h-6 flex-1'>
 						<input
-							type='range'
-							min={this.min}
 							max={this.max}
+							min={this.min}
 							step={this.step}
+							type='range'
 							value={this.value}
 							onInput={ev => {
 								const value = (ev.target as HTMLInputElement).value;

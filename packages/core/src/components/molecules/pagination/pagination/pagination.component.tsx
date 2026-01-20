@@ -124,8 +124,8 @@ export class Pagination {
 								this.hideOnSinglePage &&
 								this._hasPaginationPages && (
 									<p-divider
-										variant='vertical'
 										class='mx-0 h-4 text-off-white-700 dark:text-hurricane-400'
+										variant='vertical'
 									/>
 								)}
 						</Fragment>
@@ -133,10 +133,10 @@ export class Pagination {
 
 					{this.enablePaginationPages && (
 						<p-pagination-pages
+							hideOnSinglePage={this.hideOnSinglePage}
+							page={this.page}
 							pageSize={this.pageSize}
 							total={this.total}
-							page={this.page}
-							hideOnSinglePage={this.hideOnSinglePage}
 							onPageChange={({ detail }) => this.pageChange.emit(detail)}
 							onPagesChange={({ detail }) => {
 								this._hasPaginationPages = detail > 1;

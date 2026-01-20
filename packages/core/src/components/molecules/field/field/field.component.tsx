@@ -431,17 +431,17 @@ export class Field {
 		return (
 			<ThemedHost>
 				<p-field-container
+					align={this.align}
+					error={this.error}
 					forceShowTooltip={
 						(!!this.error?.length && !this._focused && this.autoShowError) ||
 						(!!this.error?.length && this.forceShowTooltip)
 					}
+					helper={this.helper}
 					id={id}
 					label={this.label}
-					align={this.align}
 					loading={this.loading}
 					loadingSize={this.size}
-					helper={this.helper}
-					error={this.error}
 					required={this.required}
 					showOptional={this.showOptional}
 					variant={this.variant}
@@ -483,12 +483,12 @@ export class Field {
 							variant: this.variant,
 							isTextarea: this.type === 'textarea',
 						})}
+						slot='content'
 						title={
 							this.variant === 'read' && !hasValueSlot
 								? `${this.value}`
 								: undefined
 						}
-						slot='content'
 					>
 						{(this.error?.length ||
 							prefix ||
@@ -510,9 +510,9 @@ export class Field {
 										class={cn('flex', {
 											'mt-1': this.variant === 'read' && this.size === 'base',
 										})}
-										variant={this.error?.length ? 'warning' : this.icon}
-										rotate={this.iconRotate}
 										flip={this.iconFlip}
+										rotate={this.iconRotate}
+										variant={this.error?.length ? 'warning' : this.icon}
 									/>
 								) : (
 									prefix
@@ -539,9 +539,9 @@ export class Field {
 										class={cn('flex', {
 											'mt-1': this.variant === 'read' && this.size === 'base',
 										})}
-										variant={this.icon}
-										rotate={this.iconRotate}
 										flip={this.iconFlip}
+										rotate={this.iconRotate}
+										variant={this.icon}
 									/>
 								) : (
 									suffix
@@ -658,9 +658,9 @@ export class Field {
 				this.value
 			) : this.showAddOnEmpty ? (
 				<p-button
-					variant='text'
 					icon='plus'
 					size='sm'
+					variant='text'
 					onClick={() => this.add.emit()}
 				>
 					{this.addText}
@@ -704,8 +704,8 @@ export class Field {
 
 		return (
 			<input
-				type={this.type}
 				ref={ref => this._setInputRef(ref)}
+				type={this.type}
 				{...props}
 				{...properties}
 			/>

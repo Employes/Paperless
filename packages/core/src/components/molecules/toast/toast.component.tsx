@@ -90,9 +90,9 @@ export class Toast {
 						{this.enableAction && (
 							<div class='flex-shrink-0 cursor-pointer p-2 text-storm-200 hover:text-storm-500 hover:text-white dark:text-hurricane-200'>
 								<p-icon
-									variant={this.actionIcon}
 									flip={this.actionIconFlip}
 									rotate={this.actionIconRotate}
+									variant={this.actionIcon}
 								/>
 							</div>
 						)}

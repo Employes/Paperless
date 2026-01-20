@@ -55,8 +55,8 @@ export class Accordion {
 				>
 					<p-icon
 						class='flex shrink-0'
-						variant='caret'
 						rotate={this.open ? 0 : -90}
+						variant='caret'
 					/>
 					<p class='my-0 shrink-0 whitespace-nowrap text-base font-medium'>
 						{this.header}

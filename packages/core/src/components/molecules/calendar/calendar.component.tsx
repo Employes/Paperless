@@ -344,9 +344,9 @@ export class Calendar {
 					{daysInMonth.map(day =>
 						day.active ? (
 							<p-button
-								variant='primary'
-								tabIndex={-1}
 								class={cn('w-8', `col-start-${day.offset}`)}
+								tabIndex={-1}
+								variant='primary'
 								onClick={() => this._setValue(day.date)}
 							>
 								{day.day}
@@ -390,9 +390,9 @@ export class Calendar {
 				<div class='flex flex-wrap items-start gap-2'>
 					{months.map(month => (
 						<p-button
-							variant={month.active ? 'primary' : 'secondary'}
-							tabIndex={-1}
 							disabled={month.disabled}
+							tabIndex={-1}
+							variant={month.active ? 'primary' : 'secondary'}
 							onClick={() => this._setMonth(month.month)}
 						>
 							{format(setMonth(new Date(), month.month), 'MMMM', {
@@ -417,11 +417,11 @@ export class Calendar {
 					{years.map(year => (
 						<p-button
 							class='w-full'
-							variant={year.active ? 'primary' : 'secondary'}
-							tabIndex={-1}
-							onClick={() => this._setYear(year.year)}
 							data-active={year.active}
 							data-current={year.current}
+							tabIndex={-1}
+							variant={year.active ? 'primary' : 'secondary'}
+							onClick={() => this._setYear(year.year)}
 						>
 							{year.year}
 						</p-button>
@@ -444,16 +444,16 @@ export class Calendar {
 			<div class={header({ type: this.mode })}>
 				{this.mode !== 'year' && (
 					<p-button
-						variant='secondary'
-						iconOnly
-						icon='caret'
-						iconRotate={90}
-						tabIndex={-1}
-						size='sm'
-						onClick={() => nextFn(-1)}
 						disabled={
 							!this._canSetAmount(nextType, -1) || this._view === 'year'
 						}
+						icon='caret'
+						iconRotate={90}
+						size='sm'
+						tabIndex={-1}
+						variant='secondary'
+						iconOnly
+						onClick={() => nextFn(-1)}
 					/>
 				)}
 
@@ -464,12 +464,12 @@ export class Calendar {
 				>
 					{this.mode !== 'year' && (
 						<p-button
-							variant='secondary'
+							active={this._view === 'month' && this.mode !== 'month'}
+							disabled={!this._canChangeView('month')}
 							size='sm'
 							tabIndex={-1}
+							variant='secondary'
 							onClick={() => this._changeView('month')}
-							disabled={!this._canChangeView('month')}
-							active={this._view === 'month' && this.mode !== 'month'}
 						>
 							{format(this._viewDate, 'MMMM', {
 								locale: state.locale === 'nl' ? nl : enUS,
@@ -478,12 +478,12 @@ export class Calendar {
 					)}
 
 					<p-button
-						variant='secondary'
+						active={this._view === 'year' && this.mode !== 'year'}
+						disabled={!this._canChangeView('year')}
 						size='sm'
 						tabIndex={-1}
+						variant='secondary'
 						onClick={() => this._changeView('year')}
-						disabled={!this._canChangeView('year')}
-						active={this._view === 'year' && this.mode !== 'year'}
 					>
 						{getYear(this._viewDate)}
 					</p-button>
@@ -494,12 +494,12 @@ export class Calendar {
 							content={this.todayText}
 						>
 							<p-button
-								variant='secondary'
-								size='sm'
 								icon='calendar'
+								iconOnly={true}
+								size='sm'
 								slot='trigger'
 								tabIndex={-1}
-								iconOnly={true}
+								variant='secondary'
 								onClick={() => this._setToday()}
 							></p-button>
 						</p-tooltip>
@@ -508,14 +508,14 @@ export class Calendar {
 
 				{this.mode !== 'year' && (
 					<p-button
-						variant='secondary'
-						iconOnly
+						disabled={!this._canSetAmount(nextType, 1) || this._view == 'year'}
 						icon='caret'
 						iconRotate={-90}
-						tabIndex={-1}
 						size='sm'
+						tabIndex={-1}
+						variant='secondary'
+						iconOnly
 						onClick={() => nextFn(1)}
-						disabled={!this._canSetAmount(nextType, 1) || this._view == 'year'}
 					/>
 				)}
 			</div>

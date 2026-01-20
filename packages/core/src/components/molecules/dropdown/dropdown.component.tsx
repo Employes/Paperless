@@ -190,11 +190,7 @@ export class Dropdown {
 				</div>
 				<div class='relative w-full'>
 					<p-dropdown-menu-container
-						variant={this.variant}
-						maxWidth={this.applyMaxWidth}
-						fullWidth={this.applyFullWidth && !this.applyMaxWidth}
 						allowOverflow={this.allowOverflow}
-						scrollable={this.scrollable}
 						class={cn(
 							dropdownContainerClass({
 								strategy: this.strategy,
@@ -204,11 +200,15 @@ export class Dropdown {
 							}),
 							this.containerClass
 						)}
-						ref={el => this._load(el)}
-						onClick={() => this._containerClickHandler()}
-						role='popover'
 						data-placement={this.placement}
 						data-strategy={this.strategy}
+						fullWidth={this.applyFullWidth && !this.applyMaxWidth}
+						maxWidth={this.applyMaxWidth}
+						ref={el => this._load(el)}
+						role='popover'
+						scrollable={this.scrollable}
+						variant={this.variant}
+						onClick={() => this._containerClickHandler()}
 					>
 						<slot name='items' />
 					</p-dropdown-menu-container>

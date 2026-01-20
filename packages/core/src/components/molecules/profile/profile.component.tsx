@@ -46,20 +46,20 @@ export class Profile {
 			<ThemedHost>
 				{this._hasDropdownSlot ? (
 					<p-dropdown
-						strategy='absolute'
-						placement={this.dropdownLocation}
+						applyChevron={false}
 						applyFullWidth={true}
 						applyMaxWidth={false}
-						applyChevron={false}
+						placement={this.dropdownLocation}
+						strategy='absolute'
 						onIsOpen={ev => (this._dropdownOpen = ev.detail)}
 					>
 						<p-button
-							variant='dropdown'
-							chevron={this._dropdownOpen ? 'up' : 'down'}
 							active={this._dropdownOpen}
-							slot='trigger'
-							size='lg'
+							chevron={this._dropdownOpen ? 'up' : 'down'}
 							class='w-full'
+							size='lg'
+							slot='trigger'
+							variant='dropdown'
 						>
 							{content}
 						</p-button>

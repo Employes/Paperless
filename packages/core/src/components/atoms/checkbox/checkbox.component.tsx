@@ -135,21 +135,21 @@ export class Checkbox {
 		return (
 			<ThemedHost>
 				<label
-					htmlFor={id}
 					class='group/p-checkbox flex items-center justify-start gap-2'
+					htmlFor={id}
 				>
 					<div class='relative flex flex-shrink-0 items-center'>
 						<input
+							checked={asBoolean(this.checked)}
 							class={checkbox({
 								disabled: asBoolean(this.disabled),
 							})}
-							type='checkbox'
+							disabled={asBoolean(this.disabled)}
 							id={id}
+							indeterminate={asBoolean(this.indeterminate)}
 							name={this.name}
 							required={asBoolean(this.required)}
-							checked={asBoolean(this.checked)}
-							indeterminate={asBoolean(this.indeterminate)}
-							disabled={asBoolean(this.disabled)}
+							type='checkbox'
 							onChange={ev => this._onChange(ev)}
 						/>
 						<div

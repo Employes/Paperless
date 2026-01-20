@@ -587,11 +587,6 @@ export class Button {
 		return (
 			<ThemedHost class={hostClass}>
 				<VariableTag
-					disabled={asBoolean(this.disabled)}
-					href={this.href}
-					type={this.variant === 'text' ? undefined : this.type}
-					target={this.target}
-					tabIndex={this.tabIndex}
 					class={button({
 						variant: this.variant,
 						size: this.size,
@@ -603,11 +598,16 @@ export class Button {
 						error: asBoolean(this.error),
 						underline: asBoolean(this.underline) && VariableTag === 'a',
 					})}
+					disabled={asBoolean(this.disabled)}
+					href={this.href}
+					tabIndex={this.tabIndex}
+					target={this.target}
+					type={this.variant === 'text' ? undefined : this.type}
 				>
 					{this.chevron && this.chevronPosition === 'start' && (
 						<p-icon
-							variant='caret'
 							rotate={this.chevron === 'up' ? 180 : 0}
+							variant='caret'
 						/>
 					)}
 
@@ -626,8 +626,8 @@ export class Button {
 
 					{this.chevron && !this.loading && this.chevronPosition === 'end' && (
 						<p-icon
-							variant='caret'
 							rotate={this.chevron === 'up' ? 180 : 0}
+							variant='caret'
 						/>
 					)}
 
@@ -669,9 +669,9 @@ export class Button {
 					}),
 					this.iconClass ?? ''
 				)}
-				variant={this.icon}
 				flip={this.iconFlip}
 				rotate={this.iconRotate}
+				variant={this.icon}
 			/>
 		);
 	}

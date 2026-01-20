@@ -131,21 +131,21 @@ export class Radio {
 		return (
 			<ThemedHost>
 				<label
-					htmlFor={id}
 					class='flex items-center justify-start gap-2'
+					htmlFor={id}
 				>
 					<div class='relative flex flex-shrink-0 items-center'>
 						<input
+							checked={this.checked}
 							class={radio({
 								disabled: asBoolean(this.disabled),
 							})}
-							type='radio'
+							disabled={asBoolean(this.disabled)}
 							id={id}
 							name={this.name}
 							required={this.required}
+							type='radio'
 							value={this.value}
-							checked={this.checked}
-							disabled={asBoolean(this.disabled)}
 							onChange={ev => this._onChange(ev)}
 						/>
 						<div

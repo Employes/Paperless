@@ -86,12 +86,12 @@ export class Cropper {
 						onAction={() => this._onAction()}
 					>
 						<cropper-image
-							src={this.value}
 							alt='Picture'
+							crossorigin='anonymous'
 							ref={ref => this._setImageRef(ref as CropperImage)}
+							src={this.value}
 							scalable
 							translatable
-							crossorigin='anonymous'
 						/>
 						<cropper-shade
 							class='aspect-branding rounded-full'
@@ -99,8 +99,8 @@ export class Cropper {
 							hidden
 						/>
 						<cropper-selection
-							initial-coverage='0.7'
 							aspect-ratio='1'
+							initial-coverage='0.7'
 							ref={ref => (this._selectionRef = ref as CropperSelection)}
 						/>
 

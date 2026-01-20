@@ -122,8 +122,8 @@ export class PaginationPages {
 						if (p.type === 'previous' || p.type === 'next') {
 							return (
 								<p-pagination-pages-item
-									variant='carousel'
 									disabled={this._carouselDisabled(p.type)}
+									variant='carousel'
 									onClick={() =>
 										p.type === 'previous'
 											? this._previousClick()
@@ -138,24 +138,24 @@ export class PaginationPages {
 						if (p.type === 'ellipsis') {
 							return (
 								<p-dropdown
-									placement='top'
 									applyChevron={false}
 									insideClick={true}
+									placement='top'
+									ref={el => (this._dropdowns[p.dropdownIndex] = el)}
 									show={this._showDropdown[p.dropdownIndex]}
 									onIsOpen={({ detail }) =>
 										this._onShowDropdown(detail, p.dropdownIndex)
 									}
-									ref={el => (this._dropdowns[p.dropdownIndex] = el)}
 								>
 									<p-pagination-pages-item slot='trigger'>
 										...
 									</p-pagination-pages-item>
 									{p.options?.slice(0, 5).map(v => (
 										<p-dropdown-menu-item
-											variant='pagination'
 											autoHeight={true}
-											onClick={() => this._pageClick(v)}
 											slot='items'
+											variant='pagination'
+											onClick={() => this._pageClick(v)}
 										>
 											{this.dropdownPageTemplate
 												? this.dropdownPageTemplate(v)
@@ -165,19 +165,19 @@ export class PaginationPages {
 									{p.options?.length > 5 &&
 										this._showDropdown[p.dropdownIndex] && (
 											<p-field
+												autoFocus={true}
 												class='mt-2 w-28'
-												size='sm'
 												icon='enter-key'
 												iconPosition='end'
-												type='number'
 												properties={{
 													min: 1,
 													max: this._pages.length,
 													step: 1,
 												}}
-												autoFocus={true}
-												onEnter={({ detail }) => this._enterPress(detail)}
+												size='sm'
 												slot='items'
+												type='number'
+												onEnter={({ detail }) => this._enterPress(detail)}
 											></p-field>
 										)}
 								</p-dropdown>
@@ -347,9 +347,9 @@ export class PaginationPages {
 			type: 'previous',
 			value: (
 				<p-icon
-					variant='caret'
-					size='sm'
 					rotate={90}
+					size='sm'
+					variant='caret'
 				/>
 			),
 		};
@@ -358,9 +358,9 @@ export class PaginationPages {
 			type: 'next',
 			value: (
 				<p-icon
-					variant='caret'
-					size='sm'
 					rotate={-90}
+					size='sm'
+					variant='caret'
 				/>
 			),
 		};
