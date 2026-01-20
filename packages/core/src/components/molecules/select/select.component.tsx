@@ -488,6 +488,7 @@ export class Select {
 						show={this._showDropdown}
 						onIsOpen={ev => this._onDropdownOpen(ev)}
 						strategy={this.strategy}
+						applyChevron={false}
 					>
 						<p-button
 							slot='trigger'

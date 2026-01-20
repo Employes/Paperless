@@ -1,11 +1,11 @@
 import {
 	Component,
-	Event as StencilEvent,
+	Element,
 	EventEmitter,
 	h,
 	Listen,
 	Prop,
-	Element,
+	Event as StencilEvent,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 

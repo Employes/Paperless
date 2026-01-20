@@ -1,4 +1,4 @@
-import { Component, h, Prop, Element } from '@stencil/core';
+import { Component, Element, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
 import { IconFlipOptions, IconVariant } from '../../../types/icon';
@@ -80,11 +80,11 @@ export class Icon {
 					size: hasTextSizeClass ? 'auto' : this.size,
 					transform: this.flip !== 'none' || this.rotate > 0 || this.rotate < 0,
 				})}
+				innerHTML={svg}
 				style={{
 					'--tw-rotate': `${this.rotate}deg`,
 				}}
 				title={this.variant}
-				innerHTML={svg}
 			></div>
 		);
 	}

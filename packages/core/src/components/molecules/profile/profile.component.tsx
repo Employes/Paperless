@@ -50,6 +50,7 @@ export class Profile {
 						placement={this.dropdownLocation}
 						applyFullWidth={true}
 						applyMaxWidth={false}
+						applyChevron={false}
 						onIsOpen={ev => (this._dropdownOpen = ev.detail)}
 					>
 						<p-button
