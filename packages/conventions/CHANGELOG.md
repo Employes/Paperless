@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.33](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.32...v2.22.0-alpha.33) (2026-01-20)
+
+
+### Features
+
+* **eslint:** Improve configuration for tsx & jsx files ([d865fc6](https://github.com/Employes/Paperless/commit/d865fc6912f008074f36990d857c034c482b0cef))
+
+
+
+
+
 # [2.22.0-alpha.32](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.31...v2.22.0-alpha.32) (2026-01-19)
 
 **Note:** Version bump only for package @paperless/conventions
