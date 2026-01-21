@@ -354,13 +354,13 @@ const icon = cva([], {
 			active: false,
 			error: false,
 			class:
-				'text-indigo-300 group-hover/button:text-white group-active/button:text-white/60',
+				'text-indigo-300 visited:text-indigo-300 group-hover/button:text-white group-active/button:text-white/60',
 		},
 		{
 			variant: 'primary',
 			disabled: false,
 			active: true,
-			class: 'text-white/60',
+			class: 'text-white/60 visited:text-white/60',
 		},
 		{
 			variant: ['secondary', 'dropdown'],
@@ -368,7 +368,7 @@ const icon = cva([], {
 			active: false,
 			error: false,
 			class: [
-				'text-storm-300 group-hover/button:text-storm-500 group-active/button:text-storm-500/60',
+				'text-storm-300 visited:text-storm-300 group-hover/button:text-storm-500 group-active/button:text-storm-500/60',
 				'dark:group-hover/button:text-white dark:group-active/button:text-white/60',
 			],
 		},
@@ -378,7 +378,7 @@ const icon = cva([], {
 			active: false,
 			iconOnly: false,
 			error: false,
-			class: 'dark:text-hurricane-200',
+			class: 'dark:text-hurricane-200 visited:dark:text-hurricane-200',
 		},
 		{
 			variant: ['secondary', 'dropdown'],
@@ -386,34 +386,35 @@ const icon = cva([], {
 			active: false,
 			iconOnly: true,
 			error: false,
-			class: 'dark:text-white',
+			class: 'dark:text-white visited:dark:text-white',
 		},
 		{
 			variant: ['secondary', 'dropdown'],
 			disabled: false,
 			active: true,
 			error: false,
-			class: 'text-storm-500/60 dark:text-white/60',
+			class:
+				'text-storm-500/60 dark:text-white/60 visited:text-storm-500/60 visited:dark:text-white/60',
 		},
 		{
 			variant: ['transparent', 'text'],
 			disabled: false,
 			active: false,
 			class:
-				'text-indigo-500 group-hover/button:text-indigo-700 group-active/button:text-indigo-800',
+				'text-indigo-500 visited:text-indigo-500 group-hover/button:text-indigo-700 group-active/button:text-indigo-800',
 		},
 		{
 			variant: ['secondary', 'dropdown'],
 			active: false,
 			error: true,
 			class:
-				'text-negative-red-500 group-hover/button:text-negative-red-800 dark:text-negative-red-alternative',
+				'text-negative-red-500 visited:text-negative-red-500 group-hover/button:text-negative-red-800 dark:text-negative-red-alternative',
 		},
 		{
 			variant: ['secondary', 'dropdown'],
 			active: true,
 			error: true,
-			class: 'text-negative-red-800',
+			class: 'text-negative-red-800 visited:text-negative-red-800',
 		},
 	],
 });
