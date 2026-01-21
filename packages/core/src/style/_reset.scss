@@ -35,7 +35,3 @@ body {
 body * {
 	@apply box-border;
 }
-
-a {
-	@apply text-inherit visited:text-inherit;
-}
