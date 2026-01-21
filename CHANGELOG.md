@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.37](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.36...v2.22.0-alpha.37) (2026-01-21)
+
+
+### Bug Fixes
+
+* **style:** Remove text-inherit on a tags ([7252377](https://github.com/Employes/Paperless/commit/7252377d8b4c090245f61ac3c28e92c3ec4b8ae8))
+
+
+### Reverts
+
+* Revert "feat(molecules/button): Add visited states" ([dabe467](https://github.com/Employes/Paperless/commit/dabe46798d63dcc23fede301418baacbad8d0b9a))
+
+
+
+
+
 # [2.22.0-alpha.36](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.35...v2.22.0-alpha.36) (2026-01-21)
 
 
