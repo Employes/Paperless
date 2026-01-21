@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.36](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.35...v2.22.0-alpha.36) (2026-01-21)
+
+
+### Features
+
+* **molecules/button:** Add visited states ([dcaa062](https://github.com/Employes/Paperless/commit/dcaa062d02bc87458a956ca773b7e8509cb4a840))
+
+
+
+
+
 # [2.22.0-alpha.35](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.34...v2.22.0-alpha.35) (2026-01-20)
 
 **Note:** Version bump only for package @paperless/core
