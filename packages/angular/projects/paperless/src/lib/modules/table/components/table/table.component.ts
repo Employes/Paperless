@@ -62,11 +62,11 @@ import {
 	PTooltip,
 } from '../../../../stencil/components';
 import {
-	TableCustomActionsDirective,
-	TableCustomFilterDirective,
-	TableFilterModalDirective,
+	PTableCustomActionsDirective,
+	PTableCustomFilterDirective,
+	PTableFilterModalDirective,
 } from '../../directives';
-import { TableCustomRowDirective } from '../../directives/p-table-custom-row.directive';
+import { PTableCustomRowDirective } from '../../directives/p-table-custom-row.directive';
 import { TableCellComponent } from '../table-cell/table-cell.component';
 import { TableColumnComponent } from '../table-column/table-column.component';
 import { TableExtraHeaderComponent } from '../table-extra-header/table-extra-header.component';
@@ -424,14 +424,14 @@ export class TableComponent implements OnInit, OnChanges, AfterViewInit {
 
 	// Angular stuff
 	// custom filter template
-	@ContentChild(TableCustomFilterDirective, {
+	@ContentChild(PTableCustomFilterDirective, {
 		read: TemplateRef,
 		static: true,
 	})
 	public headerCustomFilterTemplate: TemplateRef<any> | undefined;
 
 	// custom actions template
-	@ContentChild(TableCustomActionsDirective, {
+	@ContentChild(PTableCustomActionsDirective, {
 		read: TemplateRef,
 		static: true,
 	})
@@ -444,7 +444,7 @@ export class TableComponent implements OnInit, OnChanges, AfterViewInit {
 	extraHeaderDefinitions!: QueryList<TableExtraHeaderComponent>;
 
 	// filter modal
-	@ContentChild(TableFilterModalDirective, {
+	@ContentChild(PTableFilterModalDirective, {
 		read: TemplateRef,
 		static: true,
 	})
@@ -466,8 +466,8 @@ export class TableComponent implements OnInit, OnChanges, AfterViewInit {
 	}
 
 	// custom rows templates
-	@ContentChildren(TableCustomRowDirective)
-	customRows!: QueryList<TableCustomRowDirective>;
+	@ContentChildren(PTableCustomRowDirective)
+	customRows!: QueryList<PTableCustomRowDirective>;
 
 	@Input() filterModalHeaderText = 'Filters';
 	@Input() filterModalSaveText = 'Save';

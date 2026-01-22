@@ -2,9 +2,9 @@
 /* eslint-disable @typescript-eslint/no-duplicate-enum-values */
 import { IconFlipOptions, IconVariant, RotateOptions } from '@paperless/core';
 
-import { ToastDirective } from './directives';
+import { PToastDirective } from './directives';
 
-export enum ToastVariants {
+export enum PToastVariants {
 	Success = 'positive',
 	Warning = 'biased',
 	Error = 'negative',
@@ -14,17 +14,17 @@ export enum ToastVariants {
 	Negative = 'negative',
 }
 
-export type ToastActionFunction = (
-	directive?: ToastDirective,
+export type PToastActionFunction = (
+	directive?: PToastDirective,
 	data?: any
 ) => void;
 
-export interface ToastOptions {
+export interface PToastOptions {
 	delay?: number | 'infinite';
 	dismissOnAction?: boolean;
 
 	enableAction?: boolean;
-	action?: ToastActionFunction;
+	action?: PToastActionFunction;
 	actionData?: any;
 
 	icon?: {
@@ -34,10 +34,10 @@ export interface ToastOptions {
 	};
 }
 
-export interface ToastData {
+export interface PToastData {
 	identifier: string;
-	variant: ToastVariants;
+	variant: PToastVariants;
 	header: string;
 	content: string;
-	options: ToastOptions;
+	options: PToastOptions;
 }

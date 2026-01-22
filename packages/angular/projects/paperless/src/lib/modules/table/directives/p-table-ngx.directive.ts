@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Directive, ElementRef, forwardRef, Host } from '@angular/core';
+import { Directive, ElementRef, Host } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { QuickFilter } from '@paperless/core';
@@ -28,12 +28,12 @@ export interface TableDirectiveValue {
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,
-			useExisting: forwardRef(() => TableNgxDirective),
+			useExisting: PTableNgxDirective,
 			multi: true,
 		},
 	],
 })
-export class TableNgxDirective extends BaseValueAccessor {
+export class PTableNgxDirective extends BaseValueAccessor {
 	protected override lastValue: TableDirectiveValue = {
 		query: '',
 		quickFilter: undefined,

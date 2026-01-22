@@ -9,26 +9,26 @@ export * from './p-radio.directive';
 export * from './p-select.directive';
 export * from './p-toggle.directive';
 
-import { CheckboxDirective } from './p-checkbox.directive';
-import { CropperDirective } from './p-cropper.directive';
-import { DatepickerDirective } from './p-datepicker.directive';
-import { FieldNumberDirective } from './p-field-number.directive';
-import { FieldDirective } from './p-field.directive';
-import { PaginationPagesDirective } from './p-pagination-pages.directive';
-import { PaginationSizeDirective } from './p-pagination-size.directive';
-import { RadioDirective } from './p-radio.directive';
-import { SelectDirective } from './p-select.directive';
-import { ToggleDirective } from './p-toggle.directive';
+import { PCheckboxDirective } from './p-checkbox.directive';
+import { PCropperDirective } from './p-cropper.directive';
+import { PDatepickerDirective } from './p-datepicker.directive';
+import { PFieldNumberDirective } from './p-field-number.directive';
+import { PFieldDirective } from './p-field.directive';
+import { PPaginationPagesDirective } from './p-pagination-pages.directive';
+import { PPaginationSizeDirective } from './p-pagination-size.directive';
+import { PRadioDirective } from './p-radio.directive';
+import { PSelectDirective } from './p-select.directive';
+import { PToggleDirective } from './p-toggle.directive';
 
 export const DIRECTIVES = [
-	PaginationSizeDirective,
-	PaginationPagesDirective,
-	SelectDirective,
-	DatepickerDirective,
-	CropperDirective,
-	FieldDirective,
-	FieldNumberDirective,
-	RadioDirective,
-	CheckboxDirective,
-	ToggleDirective,
+	PPaginationSizeDirective,
+	PPaginationPagesDirective,
+	PSelectDirective,
+	PDatepickerDirective,
+	PCropperDirective,
+	PFieldDirective,
+	PFieldNumberDirective,
+	PRadioDirective,
+	PCheckboxDirective,
+	PToggleDirective,
 ];

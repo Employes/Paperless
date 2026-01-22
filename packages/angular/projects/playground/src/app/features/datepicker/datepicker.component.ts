@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import {
-	DatepickerDirective,
+	PDatepickerDirective,
 	PDatepicker,
 } from 'projects/paperless/src/public-api';
 
 @Component({
 	templateUrl: 'datepicker.component.html',
-	imports: [ReactiveFormsModule, PDatepicker, DatepickerDirective],
+	imports: [ReactiveFormsModule, PDatepicker, PDatepickerDirective],
 })
 export class DatepickerComponent {
 	public form = new FormGroup({

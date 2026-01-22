@@ -1,5 +1,5 @@
 export * from './toast.directive';
 
-import { ToastDirective } from './toast.directive';
+import { PToastDirective } from './toast.directive';
 
-export const TOAST_DIRECTIVES = [ToastDirective];
+export const TOAST_DIRECTIVES = [PToastDirective];

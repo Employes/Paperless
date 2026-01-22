@@ -1,4 +1,4 @@
-import { Directive, forwardRef } from '@angular/core';
+import { Directive } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { BaseValueAccessor } from '../../../base';
@@ -12,12 +12,12 @@ import { BaseValueAccessor } from '../../../base';
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,
-			useExisting: forwardRef(() => TableFooterDirective),
+			useExisting: PTableFooterDirective,
 			multi: true,
 		},
 	],
 })
-export class TableFooterDirective extends BaseValueAccessor {
+export class PTableFooterDirective extends BaseValueAccessor {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	protected override lastValue: any = {
 		page: 1,

@@ -10,7 +10,7 @@ import { BaseValueAccessor } from '../base';
 		'(checkedChange)': 'handleChangeEvent()',
 	},
 })
-export class RadioDirective
+export class PRadioDirective
 	extends BaseValueAccessor
 	implements ControlValueAccessor, OnInit, OnDestroy
 {

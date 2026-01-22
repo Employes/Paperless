@@ -3,15 +3,15 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import {
-	CheckboxDirective,
-	FieldDirective,
-	FieldNumberDirective,
+	PCheckboxDirective,
+	PFieldDirective,
+	PFieldNumberDirective,
 	PButton,
 	PCheckbox,
 	PField,
 	PToggle,
-	RadioDirective,
-	ToggleDirective,
+	PRadioDirective,
+	PToggleDirective,
 } from 'projects/paperless/src/public-api';
 
 @Component({
@@ -23,11 +23,11 @@ import {
 		PButton,
 		ReactiveFormsModule,
 		JsonPipe,
-		FieldDirective,
-		FieldNumberDirective,
-		ToggleDirective,
-		CheckboxDirective,
-		RadioDirective,
+		PFieldDirective,
+		PFieldNumberDirective,
+		PToggleDirective,
+		PCheckboxDirective,
+		PRadioDirective,
 	],
 })
 export class InputsComponent {

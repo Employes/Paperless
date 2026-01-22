@@ -2,16 +2,16 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
 
-import { ToastData, ToastOptions, ToastVariants } from './types';
+import { PToastData, PToastOptions, PToastVariants } from './types';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class ToastService {
-	private _toasts: ToastData[] = [];
+	private _toasts: PToastData[] = [];
 	public toasts$ = new BehaviorSubject(this._toasts);
 
-	public defaultOptions: ToastOptions = {
+	public defaultOptions: PToastOptions = {
 		delay: 5000,
 		dismissOnAction: true,
 
@@ -25,8 +25,8 @@ export class ToastService {
 	show(
 		header: string,
 		content: string,
-		variant: ToastVariants = ToastVariants.Success,
-		options: ToastOptions = {}
+		variant: PToastVariants = PToastVariants.Success,
+		options: PToastOptions = {}
 	) {
 		options = {
 			...this.defaultOptions,

@@ -1,4 +1,4 @@
-import { Directive, forwardRef } from '@angular/core';
+import { Directive } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { BaseValueAccessor } from '../base';
@@ -11,12 +11,12 @@ import { BaseValueAccessor } from '../base';
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,
-			useExisting: forwardRef(() => FieldDirective),
+			useExisting: PFieldDirective,
 			multi: true,
 		},
 	],
 })
-export class FieldDirective extends BaseValueAccessor {
+export class PFieldDirective extends BaseValueAccessor {
 	override writeValue(value: number) {
 		this.el.nativeElement.value = this.lastValue =
 			value === null ? JSON.parse(value) : value;

@@ -4,14 +4,14 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { state } from '@paperless/core';
 
 import {
-	CropperDirective,
+	PCropperDirective,
 	PAvatar,
 	PCropper,
 } from 'projects/paperless/src/public-api';
 
 @Component({
 	templateUrl: 'cropper.component.html',
-	imports: [PCropper, PAvatar, ReactiveFormsModule, CropperDirective],
+	imports: [PCropper, PAvatar, ReactiveFormsModule, PCropperDirective],
 })
 export class CropperComponent {
 	public state = state;

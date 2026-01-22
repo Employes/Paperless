@@ -1,4 +1,4 @@
-import { Directive, forwardRef } from '@angular/core';
+import { Directive } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { BaseValueAccessor } from '../base';
@@ -11,12 +11,12 @@ import { BaseValueAccessor } from '../base';
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,
-			useExisting: forwardRef(() => CropperDirective),
+			useExisting: PCropperDirective,
 			multi: true,
 		},
 	],
 })
-export class CropperDirective extends BaseValueAccessor {
+export class PCropperDirective extends BaseValueAccessor {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	override writeValue(value: any) {
 		this.el.nativeElement.value = this.lastValue = value;

@@ -1,4 +1,4 @@
-import { Directive, forwardRef } from '@angular/core';
+import { Directive } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { BaseValueAccessor } from '../base';
@@ -11,12 +11,12 @@ import { BaseValueAccessor } from '../base';
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,
-			useExisting: forwardRef(() => SelectDirective),
+			useExisting: PSelectDirective,
 			multi: true,
 		},
 	],
 })
-export class SelectDirective extends BaseValueAccessor {
+export class PSelectDirective extends BaseValueAccessor {
 	override writeValue(value: unknown) {
 		this.el.nativeElement.value = this.lastValue = value;
 	}

@@ -1,4 +1,4 @@
-import { Directive, forwardRef } from '@angular/core';
+import { Directive } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { QuickFilter } from '@paperless/core';
@@ -19,12 +19,12 @@ export interface TableHeaderDirectiveValue {
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,
-			useExisting: forwardRef(() => TableHeaderDirective),
+			useExisting: PTableHeaderDirective,
 			multi: true,
 		},
 	],
 })
-export class TableHeaderDirective extends BaseValueAccessor {
+export class PTableHeaderDirective extends BaseValueAccessor {
 	protected override lastValue: TableHeaderDirectiveValue = {
 		query: '',
 		quickFilter: undefined,

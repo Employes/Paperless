@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import {
 	PButton,
 	ToastService,
-	ToastVariants,
+	PToastVariants,
 } from 'projects/paperless/src/public-api';
 
 @Component({
@@ -13,15 +13,15 @@ import {
 })
 export class ToastComponent {
 	public variants = {
-		neutral: ToastVariants.Neutral,
-		positive: ToastVariants.Positive,
-		biased: ToastVariants.Biased,
-		negative: ToastVariants.Negative,
+		neutral: PToastVariants.Neutral,
+		positive: PToastVariants.Positive,
+		biased: PToastVariants.Biased,
+		negative: PToastVariants.Negative,
 	};
 
 	constructor(private _toast: ToastService) {}
 
-	showToast(variant: ToastVariants) {
+	showToast(variant: PToastVariants) {
 		this._toast.show(
 			variant,
 			'This is a toast message This is a toast message This is a toast message This is a toast message ',

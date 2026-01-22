@@ -1,4 +1,4 @@
-import { Directive, forwardRef } from '@angular/core';
+import { Directive } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { BaseNumberValueAccessor } from '../base/number-value-accessor';
@@ -11,9 +11,9 @@ import { BaseNumberValueAccessor } from '../base/number-value-accessor';
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,
-			useExisting: forwardRef(() => FieldNumberDirective),
+			useExisting: PFieldNumberDirective,
 			multi: true,
 		},
 	],
 })
-export class FieldNumberDirective extends BaseNumberValueAccessor {}
+export class PFieldNumberDirective extends BaseNumberValueAccessor {}

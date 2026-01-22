@@ -7,22 +7,22 @@ export * from './p-table.directive';
 export * from './p-table-custom-actions.directive';
 export * from './p-table-custom-row.directive';
 
-import { TableCustomActionsDirective } from './p-table-custom-actions.directive';
-import { TableCustomFilterDirective } from './p-table-custom-filter.directive';
-import { TableCustomRowDirective } from './p-table-custom-row.directive';
-import { TableFilterModalDirective } from './p-table-filter-modal.directive';
-import { TableFooterDirective } from './p-table-footer.directive';
-import { TableHeaderDirective } from './p-table-header.directive';
-import { TableNgxDirective } from './p-table-ngx.directive';
-import { TableDirective } from './p-table.directive';
+import { PTableCustomActionsDirective } from './p-table-custom-actions.directive';
+import { PTableCustomFilterDirective } from './p-table-custom-filter.directive';
+import { PTableCustomRowDirective } from './p-table-custom-row.directive';
+import { PTableFilterModalDirective } from './p-table-filter-modal.directive';
+import { PTableFooterDirective } from './p-table-footer.directive';
+import { PTableHeaderDirective } from './p-table-header.directive';
+import { PTableNgxDirective } from './p-table-ngx.directive';
+import { PTableDirective } from './p-table.directive';
 
 export const TABLE_DIRECTIVES = [
-	TableFooterDirective,
-	TableHeaderDirective,
-	TableDirective,
-	TableNgxDirective,
-	TableFilterModalDirective,
-	TableCustomFilterDirective,
-	TableCustomActionsDirective,
-	TableCustomRowDirective,
+	PTableFooterDirective,
+	PTableHeaderDirective,
+	PTableDirective,
+	PTableNgxDirective,
+	PTableFilterModalDirective,
+	PTableCustomFilterDirective,
+	PTableCustomActionsDirective,
+	PTableCustomRowDirective,
 ];

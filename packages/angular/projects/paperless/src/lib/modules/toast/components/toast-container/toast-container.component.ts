@@ -12,7 +12,7 @@ import { Components } from '@paperless/core';
 
 import { ProxyCmp } from '../../../../stencil/angular-component-lib/utils';
 import { PToast } from '../../../../stencil/components';
-import { ToastDirective } from '../../directives/toast.directive';
+import { PToastDirective } from '../../directives/toast.directive';
 import { ToastService } from '../../toast.service';
 
 export declare interface PToastContainer extends Components.PToastContainer {
@@ -30,7 +30,7 @@ export declare interface PToastContainer extends Components.PToastContainer {
 	templateUrl: './toast-container.component.html',
 	inputs: ['placement'],
 	standalone: true,
-	imports: [PToast, ToastDirective, AsyncPipe],
+	imports: [PToast, PToastDirective, AsyncPipe],
 })
 export class ToastContainerComponent {
 	private _toastService: ToastService = inject(ToastService);
