@@ -33,10 +33,8 @@ const generateExports = async (
 
 	data.exports = exports;
 
-	fs.writeFile(
-		'package.json',
-		JSON.stringify(data, null, 4).replaceAll('    ', '\t')
-	);
+	const json = JSON.stringify(data, null, 4).replaceAll('    ', '\t');
+	fs.writeFile('package.json', `${json}\n`);
 };
 
 export const exportsOutputTarget = (): OutputTargetCustom => ({
