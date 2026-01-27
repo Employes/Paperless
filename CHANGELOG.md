@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.40](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.39...v2.22.0-alpha.40) (2026-01-27)
+
+
+### Features
+
+* Use auto-define-custom-elements ([2cc2f93](https://github.com/Employes/Paperless/commit/2cc2f93b6cc1a560d85fa8d208a94fda63477d38))
+
+
+
+
+
 # [2.22.0-alpha.39](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.38...v2.22.0-alpha.39) (2026-01-27)
 
 
