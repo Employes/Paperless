@@ -13,7 +13,6 @@ import {
 } from '@angular/router';
 
 import { initTheme } from '@paperless/core';
-import { defineCustomElements } from '@paperless/core/loader';
 
 import { routes } from './app.routes';
 
@@ -36,7 +35,6 @@ export const appConfig: ApplicationConfig = {
 			})
 		),
 
-		provideEnvironmentInitializer(() => defineCustomElements()),
 		provideEnvironmentInitializer(() => initTheme(true, 'employes-theme')),
 	],
 };

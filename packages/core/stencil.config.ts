@@ -45,7 +45,7 @@ export const config: Config = {
 		},
 		{
 			type: 'dist-custom-elements',
-			customElementsExportBehavior: 'single-export-module',
+			customElementsExportBehavior: 'auto-define-custom-elements',
 			externalRuntime: false,
 			isPrimaryPackageOutputTarget: true,
 		},
