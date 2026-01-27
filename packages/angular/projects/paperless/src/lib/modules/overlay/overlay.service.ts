@@ -88,6 +88,7 @@ export class OverlayService {
 
 		const overlayConfig = new OverlayConfig({
 			hasBackdrop: false,
+			usePopover: false,
 			scrollStrategy: this.overlay.scrollStrategies.block(),
 			positionStrategy,
 		});
