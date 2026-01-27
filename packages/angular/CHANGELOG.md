@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.39](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.38...v2.22.0-alpha.39) (2026-01-27)
+
+
+### Bug Fixes
+
+* **angular/overlay:** Set `usePopover` to `false` ([4135ebc](https://github.com/Employes/Paperless/commit/4135ebc75410120e46f74acd26e7dc1dfbffa351))
+
+
+
+
+
 # [2.22.0-alpha.38](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.37...v2.22.0-alpha.38) (2026-01-22)
 
 **Note:** Version bump only for package @paperless/angular
