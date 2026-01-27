@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.41](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.40...v2.22.0-alpha.41) (2026-01-27)
+
+
+### Bug Fixes
+
+* **molecules/dropdown:** Revert chevron if not applicable ([36194e1](https://github.com/Employes/Paperless/commit/36194e1e6c7d32a63d7759300156d87143bf0139))
+
+
+### Features
+
+* **angular:** Move defineCustomElements to module ([0a85d5c](https://github.com/Employes/Paperless/commit/0a85d5c073071ee2260b6147b0bc4ca571169e3a))
+
+
+
+
+
 # [2.22.0-alpha.40](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.39...v2.22.0-alpha.40) (2026-01-27)
 
 
