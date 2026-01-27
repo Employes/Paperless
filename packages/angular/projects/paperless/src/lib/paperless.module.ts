@@ -1,11 +1,12 @@
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { NgModule, provideAppInitializer } from '@angular/core';
 
+import { defineCustomElements } from '@paperless/core/loader';
+
 import { DIRECTIVES } from './directives';
 import { MODULES } from './modules';
 import { PIPES } from './pipes';
 import { DIRECTIVES as STENCIL_DIRECTIVES } from './stencil';
-import { defineCustomElements } from '@paperless/core/loader';
 
 const NGX_PIPES = [DatePipe, CurrencyPipe];
 

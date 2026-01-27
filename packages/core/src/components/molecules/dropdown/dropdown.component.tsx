@@ -218,10 +218,6 @@ export class Dropdown {
 	}
 
 	private _checkButtons(active: boolean = false) {
-		if (!this.applyChevron) {
-			return;
-		}
-
 		const buttons = this._el.querySelectorAll<HTMLPButtonElement>(
 			'p-button[slot="trigger"]'
 		);
@@ -236,7 +232,13 @@ export class Dropdown {
 				continue;
 			}
 
+			if (this.applyChevron === false) {
+				button.chevron = false;
+				continue;
+			}
+
 			button.chevronPosition = this.chevronPosition;
+
 			button.chevron =
 				this.chevronDirection ??
 				(this.placement.includes('top')
