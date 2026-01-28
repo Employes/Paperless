@@ -11,8 +11,8 @@
 		]
 	},
 	"resolutions": {
-		"@types/react": "18.2.6",
-		"@types/react-dom": "18.2.4"
+		"@types/react": "18.3.27",
+		"@types/react-dom": "18.3.7"
 	},
 	"publishConfig": {
 		"access": "public",
@@ -73,13 +73,13 @@
 		"lerna:prettier:write": "lerna run prettier:write"
 	},
 	"devDependencies": {
-		"@angular-eslint/builder": "~19.0.0",
-		"@angular-eslint/eslint-plugin": "~19.0.0",
-		"@angular-eslint/eslint-plugin-template": "~19.0.0",
-		"@angular-eslint/schematics": "~19.0.0",
-		"@angular-eslint/template-parser": "~19.0.0",
-		"@babel/core": "7.21.8",
-		"@babel/preset-react": "7.18.6",
+		"@angular-eslint/builder": "~19.8.0",
+		"@angular-eslint/eslint-plugin": "~19.8.0",
+		"@angular-eslint/eslint-plugin-template": "~19.8.0",
+		"@angular-eslint/schematics": "~19.8.0",
+		"@angular-eslint/template-parser": "~19.8.0",
+		"@babel/core": "7.28.6",
+		"@babel/preset-react": "7.28.5",
 		"@nrwl/eslint-plugin-nx": "15.9.7",
 		"@pxtrn/storybook-addon-docs-stencil": "^8.0.0",
 		"@stencil/eslint-plugin": "^1.0.0",
@@ -92,17 +92,17 @@
 		"@storybook/web-components": "^8.6.12",
 		"@storybook/web-components-vite": "^8.6.12",
 		"@types/jest": "^29.5.14",
-		"@types/react": "18.2.6",
-		"@types/react-dom": "18.2.4",
+		"@types/react": "18.3.27",
+		"@types/react-dom": "18.3.7",
 		"@types/uuid": "^9.0.0",
 		"@typescript-eslint/eslint-plugin": "^5.36.1",
 		"@typescript-eslint/parser": "^5.36.1",
-		"autoprefixer": "10.4.14",
-		"babel-loader": "9.1.2",
+		"autoprefixer": "10.4.23",
+		"babel-loader": "9.2.1",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
-		"codemirror": "6.0.1",
-		"commitizen": "4.3.0",
+		"codemirror": "6.0.2",
+		"commitizen": "4.3.1",
 		"cz-conventional-changelog": "3.3.0",
 		"cz-lerna-changelog": "2.0.3",
 		"doc-blocks": "^0.8.15",
@@ -123,21 +123,21 @@
 		"nx": "15.9.7",
 		"postcss": "8.4.23",
 		"prettier": "^2.8.8",
-		"prettier-plugin-tailwindcss": "0.4.1",
+		"prettier-plugin-tailwindcss": "0.7.2",
 		"puppeteer": "^24.3.0",
-		"serverless": "3.39.0",
+		"serverless": "3.40.0",
 		"serverless-cloudflare-dns": "0.4.9",
 		"serverless-cloudfront-invalidate": "1.12.2",
-		"serverless-s3-sync": "3.4.0",
+		"serverless-s3-sync": "3.5.1",
 		"storybook": "^8.6.12",
 		"storybook-dark-mode": "^4.0.2",
 		"storybook-multilevel-sort": "^2.0.1",
 		"tailwind-merge": "2.6.0",
-		"tailwindcss": "3.4.17",
+		"tailwindcss": "3.4.19",
 		"vite": "^6.3.0",
 		"vite-plugin-live-reload": "^3.0.4"
 	},
 	"optionalDependencies": {
-		"@rollup/rollup-linux-x64-gnu": "4.40.0"
+		"@rollup/rollup-linux-x64-gnu": "4.57.0"
 	}
 }
