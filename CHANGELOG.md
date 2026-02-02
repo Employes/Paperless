@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.42](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.41...v2.22.0-alpha.42) (2026-02-02)
+
+
+### Features
+
+* **conventions:** Add early return and if/else rules ([d41b65b](https://github.com/Employes/Paperless/commit/d41b65bb4ec380499788dbab28a83262a0ba3d9c))
+
+
+
+
+
 # [2.22.0-alpha.41](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.40...v2.22.0-alpha.41) (2026-01-27)
 
 
