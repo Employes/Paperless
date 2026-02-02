@@ -23,10 +23,12 @@ export class BaseValueAccessor implements ControlValueAccessor {
 	}
 
 	public handleChangeEvent(value: any) {
-		if (value !== this.lastValue) {
-			this.lastValue = value;
-			this.onChange(value);
+		if (value === this.lastValue) {
+			return;
 		}
+
+		this.lastValue = value;
+		this.onChange(value);
 	}
 
 	public registerOnChange(fn: (value: any) => void) {

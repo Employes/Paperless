@@ -134,10 +134,12 @@ export class Tooltip {
 	}
 
 	disconnectedCallback() {
-		if (this._cleanup) {
-			this._cleanup();
-			this._cleanup = null;
+		if (!this._cleanup) {
+			return;
 		}
+
+		this._cleanup();
+		this._cleanup = null;
 	}
 
 	render() {

@@ -4962,6 +4962,11 @@
   resolved "https://registry.yarnpkg.com/@pxtrn/storybook-addon-docs-stencil/-/storybook-addon-docs-stencil-8.0.0.tgz#017ca23b3f0b0fd934bfee99647273ecdff28bae"
   integrity sha512-GBU0yPM5gMVoJUM8vzLer1uj2iZK4I5SO9PQoetq3WNHPCRuo1dCKEzSBsPr9bGwM8omDENF37i80mRTdI/Q7w==
 
+"@regru/eslint-plugin-prefer-early-return@~1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@regru/eslint-plugin-prefer-early-return/-/eslint-plugin-prefer-early-return-1.0.0.tgz#267c0f1409f7f45c9473bd14407ed6081e5dec4a"
+  integrity sha512-rOIjKi/npfNcunmrakkKQAolX/qakY8DUkp/P0PeSmQ0xnTNT6CCTHcMHxhFEvLRlrIBY3gJkUwh5rt9Z+GTyg==
+
 "@rolldown/binding-android-arm64@1.0.0-beta.58":
   version "1.0.0-beta.58"
   resolved "https://registry.yarnpkg.com/@rolldown/binding-android-arm64/-/binding-android-arm64-1.0.0-beta.58.tgz#7d747001348130a85bc95590ef823d1af2673fcb"

@@ -7,6 +7,7 @@ import jsoncPlugin from 'eslint-plugin-jsonc';
 import prettierPlugin from 'eslint-plugin-prettier/recommended';
 import reactPlugin from 'eslint-plugin-react';
 import unicornPlugin from 'eslint-plugin-unicorn';
+import earlyReturnPlugin from '@regru/eslint-plugin-prefer-early-return';
 import globals from 'globals';
 import typescriptPlugin from 'typescript-eslint';
 
@@ -36,7 +37,15 @@ export default defineConfig([
 	{
 		files: ['**/*.{ts,tsx,js,jsx}'],
 		extends: [importPlugin.flatConfigs.recommended, unicornPlugin.configs.all],
+		plugins: { '@regru/prefer-early-return': earlyReturnPlugin },
 		rules: {
+			'no-else-return': 'error',
+			'@regru/prefer-early-return/prefer-early-return': [
+				'error',
+				{
+					maximumStatements: 1,
+				},
+			],
 			'arrow-body-style': ['error', 'as-needed'],
 			'unicorn/no-null': 'off',
 			'unicorn/prevent-abbreviations': 'off',

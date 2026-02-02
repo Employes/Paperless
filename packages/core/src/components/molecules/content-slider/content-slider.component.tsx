@@ -194,11 +194,13 @@ export class ContentSlider {
 
 	@Listen('resize', { target: 'window' })
 	resizeHandler() {
-		if (this._innerSliderRef) {
-			this._innerSliderRef.style.setProperty('--tw-translate-x', '0px');
-			this._calculateWidth();
-			this._calculateIndicator();
+		if (!this._innerSliderRef) {
+			return;
 		}
+
+		this._innerSliderRef.style.setProperty('--tw-translate-x', '0px');
+		this._calculateWidth();
+		this._calculateIndicator();
 	}
 
 	private _setInnerSliderReft(ref) {

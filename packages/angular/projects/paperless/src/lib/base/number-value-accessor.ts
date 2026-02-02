@@ -24,10 +24,12 @@ export class BaseNumberValueAccessor
 	}
 
 	public handleChangeEvent(value: any) {
-		if (value !== this.lastValue) {
-			this.lastValue = value;
-			this.onChange(value);
+		if (value === this.lastValue) {
+			return;
 		}
+
+		this.lastValue = value;
+		this.onChange(value);
 	}
 
 	@HostListener('focusout')

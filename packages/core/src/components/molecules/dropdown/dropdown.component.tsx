@@ -168,10 +168,12 @@ export class Dropdown {
 	}
 
 	disconnectedCallback() {
-		if (this._cleanup) {
-			this._cleanup();
-			this._cleanup = null;
+		if (!this._cleanup) {
+			return;
 		}
+
+		this._cleanup();
+		this._cleanup = null;
 	}
 
 	componentDidRender() {
