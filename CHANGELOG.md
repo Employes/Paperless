@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.44](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.43...v2.22.0-alpha.44) (2026-02-03)
+
+
+### Bug Fixes
+
+* **molecules/table/footer:** Move pointer-events-none to host ([6f6078c](https://github.com/Employes/Paperless/commit/6f6078cf51097200a959de0c97889a01fff43a9f))
+
+
+
+
+
 # [2.22.0-alpha.43](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.42...v2.22.0-alpha.43) (2026-02-03)
 
 
