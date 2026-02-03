@@ -1,5 +1,6 @@
 import eslint from '@eslint/js';
 import nxPlugin from '@nx/eslint-plugin';
+import earlyReturnPlugin from '@regru/eslint-plugin-prefer-early-return';
 import angularPlugin from 'angular-eslint';
 import { defineConfig } from 'eslint/config';
 import importPlugin from 'eslint-plugin-import';
@@ -7,7 +8,6 @@ import jsoncPlugin from 'eslint-plugin-jsonc';
 import prettierPlugin from 'eslint-plugin-prettier/recommended';
 import reactPlugin from 'eslint-plugin-react';
 import unicornPlugin from 'eslint-plugin-unicorn';
-import earlyReturnPlugin from '@regru/eslint-plugin-prefer-early-return';
 import globals from 'globals';
 import typescriptPlugin from 'typescript-eslint';
 
@@ -41,7 +41,7 @@ export default defineConfig([
 		rules: {
 			'no-else-return': 'error',
 			'@regru/prefer-early-return/prefer-early-return': [
-				'error',
+				'warn',
 				{
 					maximumStatements: 1,
 				},
