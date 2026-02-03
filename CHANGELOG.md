@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.45](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.44...v2.22.0-alpha.45) (2026-02-03)
+
+
+### Bug Fixes
+
+* **conventions/eslint:** Set early return to warn ([707d6d6](https://github.com/Employes/Paperless/commit/707d6d61659563872fa4ab26f2f07c3d15ffe3f2))
+
+
+
+
+
 # [2.22.0-alpha.44](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.43...v2.22.0-alpha.44) (2026-02-03)
 
 
