@@ -1,5 +1,5 @@
 :host {
-	@apply sticky;
+	@apply pointer-events-none sticky;
 	@apply z-[1];
 
 	--tw-content: '';
