@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.43](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.42...v2.22.0-alpha.43) (2026-02-03)
+
+
+### Bug Fixes
+
+* **molecules/table/footer:** Fix footer overlapping content not allowing click throughs ([45a4fc6](https://github.com/Employes/Paperless/commit/45a4fc6251150090ec2558c90633e91d819c729a))
+
+
+
+
+
 # [2.22.0-alpha.42](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.41...v2.22.0-alpha.42) (2026-02-02)
 
 
