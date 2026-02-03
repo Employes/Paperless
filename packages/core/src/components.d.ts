@@ -738,6 +738,11 @@ export namespace Components {
          */
         "manual": boolean;
         /**
+          * Wether to the chevron is manually applied
+          * @default false
+         */
+        "manualChevron": boolean;
+        /**
           * The offset of the dropdown menu
           * @default 8
          */
@@ -4415,6 +4420,11 @@ declare namespace LocalJSX {
           * @default false
          */
         "manual"?: boolean;
+        /**
+          * Wether to the chevron is manually applied
+          * @default false
+         */
+        "manualChevron"?: boolean;
         /**
           * The offset of the dropdown menu
           * @default 8

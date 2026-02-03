@@ -123,6 +123,11 @@ export class Dropdown {
 	@Prop() applyChevron: boolean = true;
 
 	/**
+	 * Wether to the chevron is manually applied
+	 */
+	@Prop() manualChevron: boolean = false;
+
+	/**
 	 * Chevron position
 	 */
 	@Prop() chevronPosition: 'start' | 'end' = 'end';
@@ -224,7 +229,7 @@ export class Dropdown {
 			'p-button[slot="trigger"]'
 		);
 
-		const isOpen = this._menu.dataset.show !== null;
+		const isOpen = this._menu.dataset.show === '';
 
 		for (let button of buttons) {
 			button.disabled = this.disableTriggerClick;
@@ -234,8 +239,11 @@ export class Dropdown {
 				continue;
 			}
 
-			if (this.applyChevron === false) {
-				button.chevron = false;
+			if (this.applyChevron === false || this.manualChevron === true) {
+				if (this.manualChevron === false) {
+					button.chevron = false;
+				}
+
 				continue;
 			}
 

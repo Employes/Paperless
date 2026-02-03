@@ -484,6 +484,7 @@ export class Select {
 						disable-trigger-click={this.disabled}
 						insideClick={true}
 						manual={true}
+						manualChevron={true}
 						scrollable={this.enableAutocomplete ? 'large' : true}
 						show={this._showDropdown}
 						slot='content'
