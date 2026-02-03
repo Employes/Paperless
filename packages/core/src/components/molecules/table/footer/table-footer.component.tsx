@@ -20,6 +20,7 @@ const footer = cva(
 	[
 		'justify-center relative',
 		'w-full px-6',
+		'pointer-events-none',
 		'after:absolute after:top-0 after:left-0 after:z-[0]',
 		'after:w-full after:h-full after:transition-opacity',
 		'after:bg-gradient-to-t after:from-white dark:after:from-hurricane-700 after:via-white/80 dark:after:via-hurricane-700/80 after:to-transparent',
@@ -165,7 +166,7 @@ export class TableFooter {
 					{(this.enablePaginationPages || this.enablePaginationSize) &&
 						this.total > 0 && (
 							<p-pagination
-								class='z-[2]'
+								class='pointer-events-auto z-[2]'
 								enablePaginationPages={this.enablePaginationPages}
 								enablePaginationSize={this.enablePaginationSize}
 								hideOnSinglePage={this.hideOnSinglePage}
