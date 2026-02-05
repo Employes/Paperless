@@ -49,6 +49,7 @@ export class Profile {
 						applyChevron={false}
 						applyFullWidth={true}
 						applyMaxWidth={false}
+						manualChevron={true}
 						placement={this.dropdownLocation}
 						strategy='absolute'
 						onIsOpen={ev => (this._dropdownOpen = ev.detail)}
