@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.47](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.46...v2.22.0-alpha.47) (2026-02-05)
+
+
+### Bug Fixes
+
+* **molecules/profile:** Apply manualChevron to dropdown ([535535d](https://github.com/Employes/Paperless/commit/535535d58e8495ba192b7a3d2c81e542defe8a10))
+
+
+
+
+
 # [2.22.0-alpha.46](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.45...v2.22.0-alpha.46) (2026-02-03)
 
 
