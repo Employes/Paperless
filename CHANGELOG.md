@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.48...v3.0.0) (2026-02-06)
+
+
+### Bug Fixes
+
+* **ci:** Set correct script to run for prerelease promotion ([dc191a6](https://github.com/Employes/Paperless/commit/dc191a6ee8b0dbd40c739a07b59f6a263cf135b0))
+
+
+
+
+
 # [2.22.0-alpha.48](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.47...v2.22.0-alpha.48) (2026-02-06)
 
 
