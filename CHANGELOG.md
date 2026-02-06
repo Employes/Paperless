@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0-alpha.48](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.47...v2.22.0-alpha.48) (2026-02-06)
+
+
+### Features
+
+* Update readme and trigger a build ([16ea666](https://github.com/Employes/Paperless/commit/16ea6660661b4ff0b149e11f3739d44f386ada1e))
+
+
+
+
+
 # [2.22.0-alpha.47](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.46...v2.22.0-alpha.47) (2026-02-05)
 
 
