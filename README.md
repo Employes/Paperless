@@ -77,42 +77,15 @@ const App = () => <Button>Click me!</Button>;
 #### Angular
 
 ```jsx
-// main.ts
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { applyPolyfills, defineCustomElements } from '@paperless/core/loader';
+import { PButton } from '@paperless/angular';
 
-applyPolyfills()
-    .then(() => defineCustomElements())
-    .then(() => platformBrowserDynamic().bootstrapModule(AppModule))
-    .catch((err) => console.error(err));
-
-// App Module
-import { PaperlessModule } from '@employes/paperless-ngx';
-
-@NgModule({
-    declarations: [AppComponent],
-    imports: [
-        BrowserModule,
-
-        // add this in your app module
-        PaperlessModule.forRoot(),
-
-        // add this in any module using paperless components
-        PaperlessModule,
-    ],
-    providers: [],
-    bootstrap: [AppComponent],
-})
-export class AppModule {}
-
-// Any component
 @Component({
-    selector: 'app-root',
-    templateUrl: `
+	templateUrl: `
       <p-button>Click me!</p-button>
     `,
+	imports: [PButton],
 })
-export class AppComponent {}
+export class MyComponent {}
 ```
 
 #### Web Components
