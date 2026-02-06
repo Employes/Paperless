@@ -59,7 +59,7 @@ jobs:
       - name: Version
         if: |
           github.ref == 'refs/heads/main'
-        run: yarn lerna:version:nopush
+        run: yarn lerna:version:prod:nopush
 
       - name: Version Preview
         if: |
