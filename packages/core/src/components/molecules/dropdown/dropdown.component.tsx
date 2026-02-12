@@ -162,6 +162,7 @@ export class Dropdown {
 
 	private _loaded = false;
 	private _menu: HTMLElement;
+	private _trigger: HTMLElement;
 	private _cleanup: () => void;
 
 	componentShouldUpdate() {
@@ -191,6 +192,7 @@ export class Dropdown {
 			<Host class='relative'>
 				<div
 					class='trigger'
+					ref={el => (this._trigger = el)}
 					onClick={() => this._triggerClickHandler()}
 				>
 					<slot name='trigger' />
@@ -229,7 +231,7 @@ export class Dropdown {
 			'p-button[slot="trigger"]'
 		);
 
-		const isOpen = this._menu.dataset.show === '';
+		const isOpen = this._menu.dataset.show === 'true';
 
 		for (let button of buttons) {
 			button.disabled = this.disableTriggerClick;
@@ -292,8 +294,9 @@ export class Dropdown {
 	@Listen('click', { target: 'document', capture: true })
 	protected documentClickHandler(event) {
 		if (
-			!Object.hasOwn(this._menu.dataset, 'show') ||
-			childOfComposed(event, this._menu)
+			this._menu.dataset.show === 'false' ||
+			childOfComposed(event, this._menu) ||
+			childOfComposed(event, this._trigger)
 		) {
 			return;
 		}
@@ -320,7 +323,8 @@ export class Dropdown {
 			return;
 		}
 
-		if (Object.hasOwn(this._menu.dataset, 'show')) {
+		const isOpen = this._menu.dataset.show === 'true';
+		if (isOpen) {
 			this._hide();
 			return;
 		}
@@ -347,7 +351,7 @@ export class Dropdown {
 
 		this._cleanup = autoUpdate(this._el, this._menu, () => this._update());
 
-		this._menu.dataset.show = '';
+		this._menu.dataset.show = 'true';
 		this._menu.classList.remove('hidden');
 		this._menu.classList.add('block');
 
@@ -366,7 +370,7 @@ export class Dropdown {
 		}
 
 		// Hide the popover
-		delete this._menu.dataset.show;
+		this._menu.dataset.show = 'false';
 		this._menu.classList.remove('block');
 		this._menu.classList.add('hidden');
 

@@ -4,6 +4,14 @@ import { html, nothing } from 'lit';
 const meta = {
 	title: 'Design System/Molecules/Dropdown',
 	component: 'p-dropdown',
+	parameters: {
+		docs: {
+			iframeHeight: 100,
+			story: {
+				height: '100px',
+			},
+		},
+	},
 };
 
 export default meta;
