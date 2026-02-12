@@ -59,7 +59,7 @@
 		"storybook:deploy:beta": "yarn && sls deploy --stage beta",
 		"lerna:version": "lerna version --conventional-commits --yes --force-publish",
 		"lerna:version:nopush": "yarn lerna:version --no-push",
-		"lerna:version:prod": "yarn lerna:version --conventional-graduate --include-merged-tags",
+		"lerna:version:prod": "yarn lerna:version",
 		"lerna:version:prod:nopush": "yarn lerna:version:prod --no-push",
 		"lerna:version:prerelease": "yarn lerna:version --conventional-prerelease",
 		"lerna:version:prerelease:nopush": "yarn lerna:prerelease --no-push",
