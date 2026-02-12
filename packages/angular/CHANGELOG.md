@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.2](https://github.com/Employes/Paperless/compare/v3.0.0...v3.0.2) (2026-02-12)
+
+**Note:** Version bump only for package @paperless/angular
+
+
+
+
+
 # [3.0.0](https://github.com/Employes/Paperless/compare/v2.22.0-alpha.48...v3.0.0) (2026-02-06)
 
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.2](https://github.com/Employes/Paperless/compare/v3.0.0...v3.0.2) (2026-02-12)
+
+
+### Bug Fixes
+
+* **ci:** Lerna version command issue ([2f80a75](https://github.com/Employes/Paperless/commit/2f80a757599f491a26810340fe2eb4290e51ae10))
+* **molecules/dropdown:** Handle clicking on the trigger for a second time ([eba0bce](https://github.com/Employes/Paperless/commit/eba0bce640c78def89112526010ea96541349b8b))
+
+
+
+
+
 ## [3.0.1](https://github.com/Employes/Paperless/compare/v3.0.0...v3.0.1) (2026-02-12)
 
 
