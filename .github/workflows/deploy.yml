@@ -44,7 +44,7 @@ jobs:
           fetch-depth: 0 # Checkout all branches and tags
 
       - name: Setup node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
         with:
           node-version: 22
           registry-url: 'https://registry.npmjs.org'
@@ -136,7 +136,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
         with:
           node-version: 22
           registry-url: 'https://registry.npmjs.org'
@@ -184,7 +184,7 @@ jobs:
           name: build-artifact
 
       - name: Setup node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
         with:
           node-version: 22
           registry-url: 'https://registry.npmjs.org'
