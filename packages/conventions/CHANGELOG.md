@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/Employes/Paperless/compare/v3.0.2...v3.1.0) (2026-02-19)
+
+
+### Features
+
+* **conventions:** Add eslint-plugin-better-tailwindcss & remove prettier-tailwind ([cee9fcb](https://github.com/Employes/Paperless/commit/cee9fcbb11aa8c9de16b6c06f57af3b51eb19df2))
+
+
+
+
+
 ## [3.0.2](https://github.com/Employes/Paperless/compare/v3.0.0...v3.0.2) (2026-02-12)
 
 **Note:** Version bump only for package @paperless/conventions

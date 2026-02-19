@@ -1,7 +1,7 @@
 {
 	"name": "@paperless/conventions",
 	"description": "Paperless eslint, typescript & prettier recommended configuration",
-	"version": "3.0.2",
+	"version": "3.1.0",
 	"license": "ISC",
 	"type": "module",
 	"publishConfig": {
@@ -35,6 +35,7 @@
 		"angular-eslint": "~19.0.0",
 		"eslint-config-prettier": "~10.1.8",
 		"eslint-import-resolver-typescript": "~4.4.4",
+		"eslint-plugin-better-tailwindcss": "~4.3.0",
 		"eslint-plugin-import": "~2.32.0",
 		"eslint-plugin-jsonc": "~2.21.0",
 		"eslint-plugin-jsx-a11y": "~6.10.2",
@@ -42,7 +43,6 @@
 		"eslint-plugin-react": "~7.37.5",
 		"eslint-plugin-react-hooks": "~7.0.1",
 		"eslint-plugin-unicorn": "~62.0.0",
-		"eslint-plugin-better-tailwindcss": "~4.3.0",
 		"nx": "~22.3.3",
 		"typescript-eslint": "~8.46.4"
 	},
