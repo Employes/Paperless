@@ -14,7 +14,7 @@ import typescriptPlugin from 'typescript-eslint';
 
 export default defineConfig([
 	eslint.configs.recommended,
-	eslintPluginBetterTailwindcss.configs['recommended-warn'],
+	prettierPlugin,
 	...jsoncPlugin.configs['flat/recommended-with-json'],
 	...jsoncPlugin.configs['flat/recommended-with-jsonc'],
 
@@ -22,6 +22,7 @@ export default defineConfig([
 	nxPlugin.configs['flat/react-typescript'],
 	nxPlugin.configs['flat/angular'],
 	{
+		extends: [eslintPluginBetterTailwindcss.configs['recommended-error']],
 		languageOptions: {
 			globals: globals.builtin,
 		},
