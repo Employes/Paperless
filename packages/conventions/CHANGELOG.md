@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.1](https://github.com/Employes/Paperless/compare/v3.1.0...v3.1.1) (2026-02-19)
+
+
+### Bug Fixes
+
+* **conventions/eslint:** Temporarily disable prettier plugin ([59192d9](https://github.com/Employes/Paperless/commit/59192d92acdd512c5600124b3fa65874a19a2fc9))
+
+
+
+
+
 # [3.1.0](https://github.com/Employes/Paperless/compare/v3.0.2...v3.1.0) (2026-02-19)
 
 
