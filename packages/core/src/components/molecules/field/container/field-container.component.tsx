@@ -19,7 +19,7 @@ import {
 } from '../../../../utils';
 import { asBoolean } from '../../../../utils/as-boolean';
 
-const loader = cva(['rounded-lg w-full'], {
+const loader = cva(['w-full rounded-lg'], {
 	variants: {
 		variant: {
 			read: null,
@@ -181,16 +181,28 @@ export class FieldContainer {
 					htmlFor={this.id}
 				>
 					<div
-						class={cn('flex items-end justify-between gap-1 empty:hidden', {
-							'flex-row-reverse': this.align === 'end',
-						})}
+						class={cn(
+							`
+         flex items-end justify-between gap-1
+         empty:hidden
+       `,
+							{
+								'flex-row-reverse': this.align === 'end',
+							}
+						)}
 					>
 						{(!!label?.length || !!helper?.length) && (
 							<div
 								class='flex min-w-0 gap-2'
 								onClick={() => this.focus.emit()}
 							>
-								<span class='min-w-0 overflow-hidden text-ellipsis text-xs font-medium text-storm-300 dark:text-hurricane-200'>
+								<span
+									class='
+           min-w-0 overflow-hidden text-ellipsis text-xs font-medium
+           text-storm-300
+           dark:text-hurricane-200
+         '
+								>
 									{label}
 								</span>
 
@@ -211,7 +223,12 @@ export class FieldContainer {
 								{!asBoolean(this.required) &&
 									asBoolean(this.showOptional) &&
 									this.variant === 'write' && (
-										<span class='text-xs font-medium text-storm-200 dark:text-hurricane-300'>
+										<span
+											class='
+             text-xs font-medium text-storm-200
+             dark:text-hurricane-300
+           '
+										>
 											{this.optionalTemplate()}
 										</span>
 									)}

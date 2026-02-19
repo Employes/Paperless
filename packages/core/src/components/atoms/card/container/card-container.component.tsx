@@ -25,16 +25,25 @@ import { asBoolean } from '../../../../utils/as-boolean';
 // dark:bg-hurricane-50 dark:bg-hurricane-100 dark:bg-hurricane-200 dark:bg-hurricane-300 dark:bg-hurricane-400 dark:bg-hurricane-500 dark:bg-hurricane-600 dark:bg-hurricane-700 dark:bg-hurricane-800 dark:bg-hurricane
 
 const container = cva(
-	['flex flex-col w-inherit h-inherit transition', 'rounded-2xl'],
+	['flex h-inherit w-inherit flex-col transition', 'rounded-2xl'],
 	{
 		variants: {
 			variant: {
-				default: 'border-off-white-700 dark:border-white/15',
-				error:
-					'border-negative-red-500 ring-2 ring-negative-red-50 dark:ring-0 dark:border-negative-red-alternative',
+				default: `
+      border-off-white-700
+      dark:border-white/15
+    `,
+				error: `
+      border-negative-red-500 ring-2 ring-negative-red-50
+      dark:border-negative-red-alternative dark:ring-0
+    `,
 			},
 			hoverable: {
-				true: 'cursor-pointer hover:bg-off-white-200 dark:hover:bg-hurricane-500',
+				true: `
+      cursor-pointer
+      hover:bg-off-white-200
+      dark:hover:bg-hurricane-500
+    `,
 				false: null,
 			},
 			shadow: {

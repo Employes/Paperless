@@ -9,7 +9,7 @@ const row = cva(
 	{
 		variants: {
 			variant: {
-				default: ['px-3 m-1', 'text-sm text-storm-500', 'dark:text-white'],
+				default: ['m-1 px-3', 'text-sm text-storm-500', 'dark:text-white'],
 				header: null,
 				'header-secondary': 'mb-4',
 				secondary: ['px-4', 'font-ambit text-lg font-bold'],
@@ -40,12 +40,16 @@ const row = cva(
 				checked: true,
 				class: [
 					'rounded-lg transition-colors',
-					'bg-off-white-300 dark:bg-hurricane-400 dark:hover:bg-hurricane-400',
+					`
+       bg-off-white-300
+       dark:bg-hurricane-400
+       dark:hover:bg-hurricane-400
+     `,
 				],
 			},
 			{
 				variant: ['secondary', 'header-secondary'],
-				class: ['bg-off-white-300 rounded-lg', 'dark:bg-hurricane-400'],
+				class: ['rounded-lg bg-off-white-300', 'dark:bg-hurricane-400'],
 			},
 			{
 				variant: ['header', 'header-secondary'],
@@ -73,7 +77,10 @@ const content = cva(
 		compoundVariants: [
 			{
 				variant: ['default', 'secondary'],
-				class: 'min-h-14 py-2 tablet:py-4',
+				class: `
+      min-h-14 py-2
+      tablet:py-4
+    `,
 			},
 			{
 				variant: ['header', 'header-secondary'],
@@ -86,7 +93,10 @@ const content = cva(
 const actions = cva([
 	'absolute -right-4 top-1 z-[2]',
 	'h-[calc(100%-0.5rem)]',
-	'opacity-0 transition-opacity group-hover:opacity-100',
+	`
+   opacity-0 transition-opacity
+   group-hover:opacity-100
+ `,
 	'empty:hidden',
 ]);
 

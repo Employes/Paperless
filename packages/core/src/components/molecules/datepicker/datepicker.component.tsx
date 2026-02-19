@@ -346,7 +346,10 @@ export class Datepicker {
 
 				{this.enableNativePicker && this._isMobileBrowser && (
 					<input
-						class='pointer-events-none absolute left-0 top-0 z-[-10] overflow-hidden opacity-0'
+						class='
+        pointer-events-none absolute left-0 top-0 z-[-10] overflow-hidden
+        opacity-0
+      '
 						max={
 							this.maxDate &&
 							format(new Date(this.maxDate), 'yyyy-MM-dd', {

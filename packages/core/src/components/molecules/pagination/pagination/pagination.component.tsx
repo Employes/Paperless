@@ -20,8 +20,8 @@ const pagination = cva(
 		'p-pagination',
 		'items-center gap-2',
 		'rounded-full',
-		'bg-off-white-300 border border-solid border-off-white-700',
-		'dark:bg-hurricane-500 dark:border-hurricane-400',
+		'border border-solid border-off-white-700 bg-off-white-300',
+		'dark:border-hurricane-400 dark:bg-hurricane-500',
 		'p-1',
 	],
 	{
@@ -124,7 +124,10 @@ export class Pagination {
 								this.hideOnSinglePage &&
 								this._hasPaginationPages && (
 									<p-divider
-										class='mx-0 h-4 text-off-white-700 dark:text-hurricane-400'
+										class='
+            mx-0 h-4 text-off-white-700
+            dark:text-hurricane-400
+          '
 										variant='vertical'
 									/>
 								)}

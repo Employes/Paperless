@@ -7,15 +7,37 @@ import { cn } from '../../../utils';
 const content = cva(
 	[
 		'flex items-center',
-		'after:content-[""] before:content-[""]',
-		'after:bg-current before:bg-current',
-		'after:flex-1 before:flex-1',
+		`
+    before:content-[""]
+    after:content-[""]
+  `,
+		`
+    before:bg-current
+    after:bg-current
+  `,
+		`
+    before:flex-1
+    after:flex-1
+  `,
 	],
 	{
 		variants: {
 			variant: {
-				horizontal: ['after:h-px before:h-px', 'w-full'],
-				vertical: ['flex-col', 'after:w-px before:w-px', 'h-full'],
+				horizontal: [
+					`
+       before:h-px
+       after:h-px
+     `,
+					'w-full',
+				],
+				vertical: [
+					'flex-col',
+					`
+       before:w-px
+       after:w-px
+     `,
+					'h-full',
+				],
 			},
 			alignContent: {
 				start: 'before:hidden',
@@ -63,7 +85,13 @@ export class Divider {
 						}
 					)}
 				>
-					<div class='flex items-center px-2 text-sm font-medium text-storm-400 empty:px-0 dark:text-hurricane-200'>
+					<div
+						class='
+        flex items-center px-2 text-sm font-medium text-storm-400
+        empty:px-0
+        dark:text-hurricane-200
+      '
+					>
 						{hasContent && <slot />}
 					</div>
 				</div>

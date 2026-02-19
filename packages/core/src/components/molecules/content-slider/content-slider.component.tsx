@@ -75,9 +75,11 @@ export class ContentSlider {
 		return (
 			<Host class='p-content-slider'>
 				<div
-					class={`slider ${!this.disableDrag && 'draggable'} ${
-						this._dragging && 'dragging'
-					}`}
+					class={`
+       slider
+       ${!this.disableDrag && 'draggable'}
+       ${this._dragging && 'dragging'}
+     `}
 					ref={el => (this._sliderRef = el)}
 					style={{
 						height: `${this._outerHeight}px`,
@@ -95,10 +97,18 @@ export class ContentSlider {
 						<slot onSlotchange={() => this._slotChange()} />
 					</div>
 				</div>
-				<div class={`indicator ${this.hideMobileIndicator && 'hidden'}`}>
+				<div
+					class={`
+       indicator
+       ${this.hideMobileIndicator && 'hidden'}
+     `}
+				>
 					{this._filteredItems.map((_, i) => (
 						<div
-							class={`item ${!this.disableIndicatorClick && 'cursor-pointer'}`}
+							class={`
+         item
+         ${!this.disableIndicatorClick && 'cursor-pointer'}
+       `}
 							onClick={() => this._scrollTo(i, true)}
 						>
 							<div

@@ -30,7 +30,7 @@ const backdrop = cva(
 			},
 			closing: {
 				false: 'animate-fade-in',
-				true: 'animate-fade-out pointer-events-none',
+				true: 'pointer-events-none animate-fade-out',
 			},
 		},
 	}
@@ -46,10 +46,22 @@ const contentContainer = cva(
 		variants: {
 			variant: {
 				modal: [
-					'pt-16 tablet:px-16 desktop-xs:py-8',
-					'items-end desktop-xs:items-stretch justify-center',
+					`
+       pt-16
+       tablet:px-16
+       desktop-xs:py-8
+     `,
+					`
+       items-end justify-center
+       desktop-xs:items-stretch
+     `,
 				],
-				drawer: ['items-start justify-end desktop-xs:items-start'],
+				drawer: [
+					`
+       items-start justify-end
+       desktop-xs:items-start
+     `,
+				],
 			},
 			closing: {
 				false: null,

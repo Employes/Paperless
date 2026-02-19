@@ -37,10 +37,10 @@ import { ThemedHost } from '../../../internal/themed-host.component';
 import { state } from '../../../state';
 import { cn } from '../../../utils/cn';
 
-const calendar = cva(['w-[17.5rem] flex flex-col gap-4'], {
+const calendar = cva(['flex w-[17.5rem] flex-col gap-4'], {
 	variants: {
 		variant: {
-			default: ['p-2 rounded-lg drop-shadow-2', 'border border-storm-100'],
+			default: ['rounded-lg p-2 drop-shadow-2', 'border border-storm-100'],
 			embedded: 'p-1',
 		},
 	},
@@ -49,8 +49,11 @@ const calendar = cva(['w-[17.5rem] flex flex-col gap-4'], {
 const header = cva(
 	[
 		'flex items-center gap-2',
-		'w-full p-2 rounded-lg',
-		'bg-off-white-300 dark:bg-white/15',
+		'w-full rounded-lg p-2',
+		`
+    bg-off-white-300
+    dark:bg-white/15
+  `,
 	],
 	{
 		variants: {
@@ -344,7 +347,12 @@ export class Calendar {
 					{daysInMonth.map(day =>
 						day.active ? (
 							<p-button
-								class={cn('w-8', `col-start-${day.offset}`)}
+								class={cn(
+									'w-8',
+									`
+           col-start-${day.offset}
+         `
+								)}
 								tabIndex={-1}
 								variant='primary'
 								onClick={() => this._setValue(day.date)}
@@ -363,7 +371,9 @@ export class Calendar {
 											!day.disabled,
 										'dark:text-hurricane-200': day.disabled,
 									},
-									`col-start-${day.offset}`,
+									`
+           col-start-${day.offset}
+         `,
 									{ 'cursor-not-allowed opacity-60': day.disabled },
 									{
 										'border border-solid border-off-white-700 bg-off-white-300 text-storm-500 dark:border-none dark:bg-hurricane-200 dark:text-white':

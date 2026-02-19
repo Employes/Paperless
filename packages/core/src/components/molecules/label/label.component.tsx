@@ -12,10 +12,13 @@ const label = cva(
 			variant: {
 				positive: [
 					'bg-positive-green-100 text-positive-green-800',
-					'dark:bg-positive-green-alternative/15 dark:text-positive-green-alternative',
+					`
+       dark:bg-positive-green-alternative/15
+       dark:text-positive-green-alternative
+     `,
 				],
 				biased: [
-					'bg-amber-100  text-amber-800',
+					'bg-amber-100 text-amber-800',
 					'dark:bg-amber-alternative/15 dark:text-amber-alternative',
 				],
 				negative: [
@@ -33,7 +36,7 @@ const label = cva(
 			},
 			iconOnly: {
 				false: 'px-2',
-				true: 'p-2 w-6',
+				true: 'w-6 p-2',
 			},
 			keepMobileContent: {
 				false: null,
@@ -44,7 +47,10 @@ const label = cva(
 			{
 				keepMobileContent: false,
 				iconOnly: false,
-				class: 'p-2 w-6 desktop-xs:w-auto desktop-xs:py-0',
+				class: `
+      w-6 p-2
+      desktop-xs:w-auto desktop-xs:py-0
+    `,
 			},
 		],
 	}
@@ -113,7 +119,10 @@ export class Label {
 					{!this.iconOnly && (
 						<div
 							class={cn(
-								'flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-sm font-medium',
+								`
+          flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-sm
+          font-medium
+        `,
 								{
 									hidden: !this.keepMobileContent,
 									'desktop-xs:block': !this.keepMobileContent,

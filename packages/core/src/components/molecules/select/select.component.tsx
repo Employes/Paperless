@@ -20,7 +20,7 @@ import { SELECT_DEFAULT_MAX_DISPLAYED_ITEMS } from '../../../utils/constants';
 
 const multiContainer = cva([
 	'flex items-center gap-2',
-	'flex-1 min-w-0 h-full',
+	'h-full min-w-0 flex-1',
 	'pointer-events-none overflow-hidden',
 ]);
 
@@ -29,7 +29,7 @@ const multiItem = cva([
 	'pointer-events-auto cursor-pointer',
 	'flex h-[1.625rem] items-center gap-2',
 	'h-[1.625rem] px-2',
-	'text-sm font-semibold whitespace-nowrap',
+	'whitespace-nowrap text-sm font-semibold',
 	'rounded-lg',
 	'bg-indigo-100',
 	'dark:bg-white/15',
@@ -38,7 +38,10 @@ const multiItem = cva([
 const textContainer = cva('block w-full overflow-hidden text-start', {
 	variants: {
 		variant: {
-			placeholder: 'text-storm-400 dark:text-white',
+			placeholder: `
+     text-storm-400
+     dark:text-white
+   `,
 			default: null,
 		},
 		enableTextWrap: {
@@ -46,7 +49,11 @@ const textContainer = cva('block w-full overflow-hidden text-start', {
 			false: 'text-ellipsis whitespace-nowrap',
 		},
 		error: {
-			true: 'text-negative-red-700 dark:text-negative-red-alternative group-hover/button:text-negative-red-800',
+			true: `
+     text-negative-red-700
+     group-hover/button:text-negative-red-800
+     dark:text-negative-red-alternative
+   `,
 			false: null,
 		},
 	},
@@ -367,7 +374,12 @@ export class Select {
 						>
 							{item[this.selectionDisplayKey ?? this.displayKey]}
 							<p-icon
-								class='text-xs text-indigo-500 group-hover/item:text-indigo-800 dark:text-white/15 dark:group-hover/item:text-white'
+								class='
+          text-xs text-indigo-500
+          group-hover/item:text-indigo-800
+          dark:text-white/15
+          dark:group-hover/item:text-white
+        '
 								variant='negative'
 							/>
 						</div>
@@ -749,7 +761,10 @@ export class Select {
 		if (this._items.length === 0) {
 			items = [
 				<p
-					class='w-full p-2 text-center text-sm text-storm-400 dark:text-hurricane-200'
+					class='
+       w-full p-2 text-center text-sm text-storm-400
+       dark:text-hurricane-200
+     '
 					slot='items'
 				>
 					{this.emptyStateText}
@@ -957,7 +972,10 @@ export class Select {
 					{item[this.iconKey] && (
 						<p-icon
 							class={cn(
-								'text-storm-300 dark:text-hurricane-200',
+								`
+          text-storm-300
+          dark:text-hurricane-200
+        `,
 								(!isSelection || !!this.applyClassOnSelectedItem) &&
 									(!isSelectedInMenu || !!this.applyClassOnSelectedItemInMenu)
 									? (item?.[this.iconClassKey] ?? '')

@@ -34,10 +34,12 @@ const popover = cva(
 	{
 		variants: {
 			variant: {
-				hover:
-					'bg-storm-500 dark:bg-white text-white dark:text-storm-300 py-1 max-w-[14.5rem]',
+				hover: `
+      max-w-[14.5rem] bg-storm-500 py-1 text-white
+      dark:bg-white dark:text-storm-300
+    `,
 				click: 'max-w-[18rem]',
-				error: 'max-w-full w-full',
+				error: 'w-full max-w-full',
 			},
 			strategy: {
 				fixed: 'fixed',
@@ -51,8 +53,10 @@ const popover = cva(
 			},
 			{
 				variant: ['click', 'error'],
-				class:
-					'bg-white dark:bg-hurricane-800 text-storm-300 dark:text-hurricane-200 py-2',
+				class: `
+      bg-white py-2 text-storm-300
+      dark:bg-hurricane-800 dark:text-hurricane-200
+    `,
 			},
 		],
 	}
@@ -159,7 +163,12 @@ export class Tooltip {
 				>
 					<div class='flex gap-2 whitespace-normal'>
 						{this.variant === 'error' && (
-							<div class='w-[2px] bg-negative-red-500 dark:bg-negative-red-alternative'></div>
+							<div
+								class='
+          w-[2px] bg-negative-red-500
+          dark:bg-negative-red-alternative
+        '
+							></div>
 						)}
 						{this.content ?? <slot name='content' />}
 					</div>

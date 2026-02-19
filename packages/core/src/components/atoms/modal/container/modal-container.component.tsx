@@ -6,16 +6,19 @@ import { asBoolean } from '../../../../utils/as-boolean';
 
 const container = cva(
 	[
-		'flex-1 min-w-0 w-full',
+		'w-full min-w-0 flex-1',
 
 		'z-modal flex flex-col',
-		'rounded-b-none rounded-t-2xl desktop-xs:rounded-b-2xl',
+		`
+    rounded-b-none rounded-t-2xl
+    desktop-xs:rounded-b-2xl
+  `,
 
 		'max-h-[calc(100dvh-4rem)]',
 
 		'shadow-modal',
 
-		'dark:border-hurricane-400 dark:border dark:border-solid',
+		'dark:border dark:border-solid dark:border-hurricane-400',
 	],
 	{
 		variants: {
@@ -27,9 +30,14 @@ const container = cva(
 				'2xl': 'tablet:max-w-[65rem]',
 			},
 			closing: {
-				false:
-					'animate-slide-in-bottom desktop-xs:animate-slide-in-bottom-small',
-				true: 'animate-slide-out-bottom desktop-xs:animate-slide-out-bottom-small pointer-events-none',
+				false: `
+      animate-slide-in-bottom
+      desktop-xs:animate-slide-in-bottom-small
+    `,
+				true: `
+      pointer-events-none animate-slide-out-bottom
+      desktop-xs:animate-slide-out-bottom-small
+    `,
 			},
 		},
 	}

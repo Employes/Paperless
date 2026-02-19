@@ -23,7 +23,7 @@ const container = cva(
 		'shadow-3',
 		'bg-storm-500',
 		'dark:bg-hurricane-400',
-		'h-10 py-1 w-auto',
+		'h-10 w-auto py-1',
 		'rounded-lg',
 		'text-sm',
 		'flex items-center gap-2',

@@ -61,7 +61,14 @@ export class Loader {
 			);
 		}
 
-		const loader = <div class={`loader color-${this.color}`}></div>;
+		const loader = (
+			<div
+				class={`
+      loader
+      color-${this.color}
+    `}
+			></div>
+		);
 
 		if (this.variant === 'full-screen') {
 			return (
@@ -77,9 +84,10 @@ export class Loader {
 
 		return (
 			<ThemedHost
-				class={`variant-default flex ${
-					this.variant === 'full-width' && 'flex w-full justify-center text-4xl'
-				}`}
+				class={`
+      variant-default flex
+      ${this.variant === 'full-width' && 'w-full justify-center text-4xl'}
+    `}
 			>
 				{loader}
 			</ThemedHost>

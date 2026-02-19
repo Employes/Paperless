@@ -10,7 +10,12 @@ import { ThemedHost } from '../../../internal/themed-host.component';
 export class NavigationTitle {
 	render() {
 		return (
-			<ThemedHost class='text-xs font-medium text-storm-300 dark:text-hurricane-200'>
+			<ThemedHost
+				class='
+      text-xs font-medium text-storm-300
+      dark:text-hurricane-200
+    '
+			>
 				<slot />
 			</ThemedHost>
 		);

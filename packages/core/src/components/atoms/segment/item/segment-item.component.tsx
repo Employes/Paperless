@@ -18,8 +18,11 @@ const segmentItem = cva(
 			active: {
 				false: [
 					'cursor-pointer',
-					'text-storm-300 hover:text-storm-500 hover:bg-storm-50',
-					'dark:hover:text-white dark:hover:bg-white/15',
+					`
+       text-storm-300
+       hover:bg-storm-50 hover:text-storm-500
+     `,
+					'dark:hover:bg-white/15 dark:hover:text-white',
 				],
 				true: 'bg-indigo-600 text-white',
 			},
@@ -32,12 +35,18 @@ const segmentItem = cva(
 			{
 				variant: 'default',
 				active: false,
-				class: 'text-storm-500 dark:text-hurricane-200',
+				class: `
+      text-storm-500
+      dark:text-hurricane-200
+    `,
 			},
 			{
 				variant: 'block',
 				active: false,
-				class: 'text-storm-500 dark:text-white',
+				class: `
+      text-storm-500
+      dark:text-white
+    `,
 			},
 		],
 	}
@@ -110,7 +119,15 @@ export class SegmentItem {
 						<slot />
 					) : (
 						<div class='flex flex-col items-center'>
-							<p class={cn('my-0 font-medium empty:hidden', {})}>
+							<p
+								class={cn(
+									`
+           my-0 font-medium
+           empty:hidden
+         `,
+									{}
+								)}
+							>
 								<slot name='title' />
 							</p>
 							{descriptionSlot && (

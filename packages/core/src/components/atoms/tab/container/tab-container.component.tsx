@@ -9,10 +9,15 @@ export class TabContainer {
 	render() {
 		return (
 			<div class='relative flex h-8 w-full flex-col'>
-				<div class='scrollbar-hide flex w-full gap-5 overflow-x-auto'>
+				<div class='flex w-full gap-5 overflow-x-auto scrollbar-hide'>
 					<slot />
 				</div>
-				<p-divider class='absolute bottom-0 left-0 m-0 w-full text-off-white-700 dark:text-hurricane-400' />
+				<p-divider
+					class='
+       absolute bottom-0 left-0 m-0 w-full text-off-white-700
+       dark:text-hurricane-400
+     '
+				/>
 			</div>
 		);
 	}

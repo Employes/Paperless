@@ -29,7 +29,7 @@ type PaginationSetItem = {
 	options?: number[];
 };
 
-const pagination = cva(['p-pagination', 'flex gap-2 items-center'], {
+const pagination = cva(['p-pagination', 'flex items-center gap-2'], {
 	variants: {
 		hidden: {
 			false: 'flex',

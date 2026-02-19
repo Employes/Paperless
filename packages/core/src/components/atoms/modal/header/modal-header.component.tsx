@@ -4,17 +4,23 @@ import { cva } from 'class-variance-authority';
 import { ThemedHost } from '../../../../internal/themed-host.component';
 
 const header = cva([
-	'w-full flex-col bg-white dark:bg-hurricane-600 relative rounded-t-2xl overflow-hidden z-[1]',
+	`
+   relative z-[1] w-full flex-col overflow-hidden rounded-t-2xl bg-white
+   dark:bg-hurricane-600
+ `,
 	'inline-flex aspect-[7/1] max-h-28',
 ]);
 
-const content = cva(['flex justify-end', 'w-full p-4 pb-0 h-12']);
+const content = cva(['flex justify-end', 'h-12 w-full p-4 pb-0']);
 
 const title = cva([
 	'flex-1 text-center',
 	'w-[calc(100%-7rem)]',
-	'absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2',
-	'text-storm-500 dark:text-white text-2xl text-ambit font-bold',
+	'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2',
+	`
+   text-ambit text-2xl font-bold text-storm-500
+   dark:text-white
+ `,
 ]);
 
 @Component({

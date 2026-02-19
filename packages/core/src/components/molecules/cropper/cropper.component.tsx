@@ -82,7 +82,11 @@ export class Cropper {
 			<ThemedHost>
 				{this._loaded && (
 					<cropper-canvas
-						class='h-[17.5rem] w-full border-0 border-b border-solid border-off-white-700 bg-white dark:border-hurricane-200'
+						class='
+        h-[17.5rem] w-full border-0 border-b border-solid border-off-white-700
+        bg-white
+        dark:border-hurricane-200
+      '
 						onAction={() => this._onAction()}
 					>
 						<cropper-image
@@ -112,7 +116,10 @@ export class Cropper {
 				)}
 
 				<p-range
-					class='w-full px-14 tablet:max-w-xs tablet:px-1'
+					class='
+       w-full px-14
+       tablet:max-w-xs tablet:px-1
+     '
 					value={this._currentScale}
 					onValueChange={ev => this._onInput(ev.detail)}
 				/>

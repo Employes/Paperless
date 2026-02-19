@@ -15,24 +15,42 @@ import { nonce } from '../../../utils/nonce';
 
 const toggle = cva(
 	[
-		'peer appearance-none m-0 outline-none flex-shrink-0',
-		'border border-inset border-solid ',
-		'rounded-full w-8 h-4',
+		'peer m-0 flex-shrink-0 appearance-none outline-none',
+		'border-inset border border-solid',
+		'h-4 w-8 rounded-full',
 	],
 	{
 		variants: {
 			disabled: {
 				false: [
 					'cursor-pointer shadow-1',
-					'bg-storm-50 border-storm-100 dark:bg-white/10 dark:border-white/15',
-					'hover:bg-indigo-100 hover:border-storm-500/20 dark:hover:bg-white/20 dark:hover:border-white/15',
-					'group-hover/toggle-label:bg-indigo-100 group-hover/toggle-label:border-storm-500/20',
-					'checked:bg-indigo-600 checked:border-storm-500/20',
-					'checked:ring-2 checked:ring-indigo-100 dark:checked:ring-0',
-					'checked:hover:bg-indigo-700 checked:hover:border-storm-500/20',
-					'checked:group-hover/toggle-label:bg-indigo-700 checked:group-hover/toggle-label:border-storm-500/20',
+					`
+       border-storm-100 bg-storm-50
+       dark:border-white/15 dark:bg-white/10
+     `,
+					`
+       hover:border-storm-500/20 hover:bg-indigo-100
+       dark:hover:border-white/15 dark:hover:bg-white/20
+     `,
+					`
+       group-hover/toggle-label:border-storm-500/20
+       group-hover/toggle-label:bg-indigo-100
+     `,
+					'checked:border-storm-500/20 checked:bg-indigo-600',
+					`
+       checked:ring-2 checked:ring-indigo-100
+       dark:checked:ring-0
+     `,
+					'checked:hover:border-storm-500/20 checked:hover:bg-indigo-700',
+					`
+       checked:group-hover/toggle-label:border-storm-500/20
+       checked:group-hover/toggle-label:bg-indigo-700
+     `,
 				],
-				true: 'bg-white-600 border-storm-50 cursor-not-allowed dark:bg-white/5 dark:border-white/10',
+				true: `
+      cursor-not-allowed border-storm-50 bg-white-600
+      dark:border-white/10 dark:bg-white/5
+    `,
 			},
 		},
 	}
@@ -41,23 +59,49 @@ const toggle = cva(
 const circle = cva(
 	[
 		'flex items-center justify-center',
-		'rounded-full transition-all ',
-		'absolute top-1/2 peer-checked:left-full transform -translate-y-1/2 pointer-events-none',
+		'rounded-full transition-all',
+		`
+    pointer-events-none absolute top-1/2 -translate-y-1/2 transform
+    peer-checked:left-full
+  `,
 	],
 	{
 		variants: {
 			disabled: {
 				false: [
 					'bg-white ring-1 ring-storm-500/10',
-					'left-[1px] peer-checked:-translate-x-[calc(100%+1px)]',
-					"after:content-[unset] peer-checked:after:content-['']  after:bg-indigo-800 after:rounded-full after:transition-all",
-					'w-[14px] h-[14px] group-hover/p-toggle:w-[18px] group-hover/toggle-label:w-[18px]',
-					'after:w-1 after:h-1 group-hover/p-toggle:after:w-2 group-hover/toggle-label:after:w-2',
+					`
+       left-[1px]
+       peer-checked:-translate-x-[calc(100%+1px)]
+     `,
+					`
+       after:rounded-full after:bg-indigo-800 after:transition-all
+       after:content-[unset]
+       peer-checked:after:content-['']
+     `,
+					`
+       h-[14px] w-[14px]
+       group-hover/p-toggle:w-[18px]
+       group-hover/toggle-label:w-[18px]
+     `,
+					`
+       after:h-1 after:w-1
+       group-hover/p-toggle:after:w-2
+       group-hover/toggle-label:after:w-2
+     `,
 				],
 				true: [
-					'bg-storm-100 peer-checked:bg-storm-200 dark:bg-white/15 dark:peer-checked:bg-white/15',
-					'left-[2px] peer-checked:-translate-x-[calc(100%+2px)]',
-					'w-3 h-3',
+					`
+       bg-storm-100
+       peer-checked:bg-storm-200
+       dark:bg-white/15
+       dark:peer-checked:bg-white/15
+     `,
+					`
+       left-[2px]
+       peer-checked:-translate-x-[calc(100%+2px)]
+     `,
+					'h-3 w-3',
 				],
 			},
 		},
@@ -149,7 +193,13 @@ export class Toggle {
 							})}
 						></div>
 					</div>
-					<div class='flex-1 overflow-hidden text-ellipsis empty:hidden dark:text-white'>
+					<div
+						class='
+        flex-1 overflow-hidden text-ellipsis
+        empty:hidden
+        dark:text-white
+      '
+					>
 						<slot />
 					</div>
 				</label>

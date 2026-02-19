@@ -3,7 +3,7 @@ import { cva } from 'class-variance-authority';
 
 import { ThemedHost } from '../../../internal/themed-host.component';
 
-const profileContent = cva(['flex gap-2 items-center flex-1 min-w-0'], {
+const profileContent = cva(['flex min-w-0 flex-1 items-center gap-2'], {
 	variants: {
 		dropdown: {
 			false: 'h-10 py-1',
@@ -102,10 +102,22 @@ export class Profile {
 			>
 				<slot name='avatar' />
 				<div class='flex min-w-0 flex-1 flex-col items-start'>
-					<p class='my-0 w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold text-storm-500 dark:text-white'>
+					<p
+						class='
+        my-0 w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap
+        text-sm font-semibold text-storm-500
+        dark:text-white
+      '
+					>
 						<slot name='title' />
 					</p>
-					<p class='my-0 w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-xs font-medium text-storm-400 dark:text-hurricane-200'>
+					<p
+						class='
+        my-0 w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap
+        text-xs font-medium text-storm-400
+        dark:text-hurricane-200
+      '
+					>
 						<slot name='subtitle' />
 					</p>
 				</div>

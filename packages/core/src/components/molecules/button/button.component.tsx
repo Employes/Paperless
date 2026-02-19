@@ -95,7 +95,7 @@ const button = cva(
 				primary: ['border-storm-500/20', 'text-white'],
 				secondary: null,
 				text: 'border-0',
-				transparent: 'bg-transparent border-transparent',
+				transparent: 'border-transparent bg-transparent',
 				dropdown: null,
 			},
 			active: {
@@ -111,9 +111,9 @@ const button = cva(
 				false: null,
 			},
 			size: {
-				sm: ['text-xs h-6 gap-1'],
-				base: ['text-sm h-8 gap-2'],
-				lg: ['text-base h-10 gap-2'],
+				sm: ['h-6 gap-1 text-xs'],
+				base: ['h-8 gap-2 text-sm'],
+				lg: ['h-10 gap-2 text-base'],
 			},
 			disabled: {
 				true: 'cursor-not-allowed border-transparent',
@@ -138,7 +138,7 @@ const button = cva(
 			// variants
 			{
 				variant: ['secondary', 'dropdown'],
-				class: 'bg-white dark:bg-white/15',
+				class: ['bg-white', 'dark:bg-white/15'],
 			},
 			{
 				variant: ['primary', 'secondary', 'dropdown'],
@@ -164,16 +164,25 @@ const button = cva(
 				variant: ['secondary', 'dropdown'],
 				disabled: false,
 				error: false,
-				class: 'text-storm-500 dark:text-white',
+				class: `
+      text-storm-500
+      dark:text-white
+    `,
 			},
 			{
 				variant: 'primary',
-				class: 'dark:border-0 dark:active:border-0',
+				class: `
+      dark:border-0
+      dark:active:border-0
+    `,
 			},
 			{
 				variant: 'primary',
 				disabled: true,
-				class: 'bg-indigo-200 dark:bg-indigo-600/30 dark:text-white/30',
+				class: `
+      bg-indigo-200
+      dark:bg-indigo-600/30 dark:text-white/30
+    `,
 			},
 			{
 				variant: 'primary',
@@ -185,8 +194,15 @@ const button = cva(
 				disabled: false,
 				loading: false,
 				class: [
-					'active:border-storm-500/10 dark:active:ring-0 active:ring-2 active:text-white/60',
-					'drop-shadow-primary-button hover:drop-shadow-2 hover:bg-indigo-700 active:ring-indigo-100',
+					`
+       active:border-storm-500/10 active:text-white/60 active:ring-2
+       dark:active:ring-0
+     `,
+					`
+       drop-shadow-primary-button
+       hover:bg-indigo-700 hover:drop-shadow-2
+       active:ring-indigo-100
+     `,
 				],
 			},
 			{
@@ -194,7 +210,7 @@ const button = cva(
 				disabled: false,
 				loading: false,
 				active: true,
-				class: 'ring ring-2',
+				class: 'ring-2',
 			},
 			{
 				variant: 'primary',
@@ -206,21 +222,33 @@ const button = cva(
 			{
 				variant: ['secondary', 'dropdown'],
 				disabled: true,
-				class:
-					'border bg-white-600 text-storm-100 dark:bg-white/5 dark:border-white/5 dark:text-hurricane-400',
+				class: `
+      border bg-white-600 text-storm-100
+      dark:border-white/5 dark:bg-white/5 dark:text-hurricane-400
+    `,
 			},
 			{
 				variant: ['secondary', 'dropdown'],
 				disabled: false,
-				class: 'text-storm-500 dark:text-white',
+				class: `
+      text-storm-500
+      dark:text-white
+    `,
 			},
 			{
 				variant: ['secondary', 'dropdown'],
 				disabled: false,
 				loading: false,
 				class: [
-					'drop-shadow-1 hover:drop-shadow-1 hover:bg-white-600 active:ring-indigo-100 active:text-storm-500/60',
-					'dark:hover:bg-white/25 dark:active:bg-white/25 dark:active:ring-0 dark:active:text-white/60',
+					`
+       drop-shadow-1
+       hover:bg-white-600 hover:drop-shadow-1
+       active:text-storm-500/60 active:ring-indigo-100
+     `,
+					`
+       dark:hover:bg-white/25
+       dark:active:bg-white/25 dark:active:text-white/60 dark:active:ring-0
+     `,
 				],
 			},
 			{
@@ -245,21 +273,36 @@ const button = cva(
 				variant: ['secondary', 'dropdown'],
 				error: false,
 				active: false,
-				class: ['border-storm-500/20 dark:border-transparent'],
+				class: [
+					`
+       border-storm-500/20
+       dark:border-transparent
+     `,
+				],
 			},
 			{
 				variant: ['secondary', 'dropdown'],
 				error: true,
 				class: [
-					'border border-negative-red-500 text-negative-red-800 ring ring-2 ring-negative-red-50  active:text-negative-red-800',
-					'dark:ring-0 dark:border-negative-red-700 dark:text-negative-red-alternative',
+					`
+       border border-negative-red-500 text-negative-red-800 ring ring-2
+       ring-negative-red-50
+       active:text-negative-red-800
+     `,
+					`
+       dark:border-negative-red-700 dark:text-negative-red-alternative
+       dark:ring-0
+     `,
 				],
 			},
 
 			{
 				variant: ['text', 'transparent'],
 				disabled: false,
-				class: 'text-indigo-700 hover:text-indigo-800',
+				class: `
+      text-indigo-700
+      hover:text-indigo-800
+    `,
 			},
 			{
 				variant: ['text', 'transparent'],
@@ -353,8 +396,11 @@ const icon = cva([], {
 			disabled: false,
 			active: false,
 			error: false,
-			class:
-				'text-indigo-300 group-hover/button:text-white group-active/button:text-white/60',
+			class: `
+     text-indigo-300
+     group-hover/button:text-white
+     group-active/button:text-white/60
+   `,
 		},
 		{
 			variant: 'primary',
@@ -368,8 +414,15 @@ const icon = cva([], {
 			active: false,
 			error: false,
 			class: [
-				'text-storm-300 group-hover/button:text-storm-500 group-active/button:text-storm-500/60',
-				'dark:group-hover/button:text-white dark:group-active/button:text-white/60',
+				`
+      text-storm-300
+      group-hover/button:text-storm-500
+      group-active/button:text-storm-500/60
+    `,
+				`
+      dark:group-hover/button:text-white
+      dark:group-active/button:text-white/60
+    `,
 			],
 		},
 		{
@@ -393,21 +446,30 @@ const icon = cva([], {
 			disabled: false,
 			active: true,
 			error: false,
-			class: 'text-storm-500/60 dark:text-white/60',
+			class: `
+     text-storm-500/60
+     dark:text-white/60
+   `,
 		},
 		{
 			variant: ['transparent', 'text'],
 			disabled: false,
 			active: false,
-			class:
-				'text-indigo-500 group-hover/button:text-indigo-700 group-active/button:text-indigo-800',
+			class: `
+     text-indigo-500
+     group-hover/button:text-indigo-700
+     group-active/button:text-indigo-800
+   `,
 		},
 		{
 			variant: ['secondary', 'dropdown'],
 			active: false,
 			error: true,
-			class:
-				'text-negative-red-500 group-hover/button:text-negative-red-800 dark:text-negative-red-alternative',
+			class: `
+     text-negative-red-500
+     group-hover/button:text-negative-red-800
+     dark:text-negative-red-alternative
+   `,
 		},
 		{
 			variant: ['secondary', 'dropdown'],

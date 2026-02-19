@@ -37,21 +37,27 @@ const trigger = cva(
 	[
 		'group/pagination-size-trigger',
 		'flex items-center gap-2',
-		'px-2 h-6',
-		'text-sm text-storm-500 font-medium ',
+		'h-6 px-2',
+		'text-sm font-medium text-storm-500',
 		'dark:text-white',
 		'cursor-pointer rounded-full',
-		'shadow-1 border border-solid',
+		'border border-solid shadow-1',
 	],
 	{
 		variants: {
 			active: {
 				false: [
-					'bg-white hover:bg-white-600 border-transparent',
-					'dark:bg-white/15 dark:hover:bg-white/25',
+					`
+       border-transparent bg-white
+       hover:bg-white-600
+     `,
+					`
+       dark:bg-white/15
+       dark:hover:bg-white/25
+     `,
 				],
 				true: [
-					'bg-white-600 border-indigo-600 ring ring-2 ring-indigo-100',
+					'border-indigo-600 bg-white-600 ring ring-2 ring-indigo-100',
 					'dark:bg-white/25 dark:ring-0',
 				],
 			},

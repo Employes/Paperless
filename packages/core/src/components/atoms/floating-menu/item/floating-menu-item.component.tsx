@@ -6,7 +6,7 @@ import { IconFlipOptions, IconVariant, RotateOptions } from '../../../../types';
 import { asBoolean } from '../../../../utils/as-boolean';
 
 const item = cva(
-	['group', 'flex gap-2 items-center h-8 px-2', 'text-sm', 'rounded-lg'],
+	['group', 'flex h-8 items-center gap-2 px-2', 'text-sm', 'rounded-lg'],
 	{
 		variants: {
 			hover: {
@@ -15,7 +15,7 @@ const item = cva(
 			},
 			disabled: {
 				false: null,
-				true: 'opacity-60 cursor-not-allowed',
+				true: 'cursor-not-allowed opacity-60',
 			},
 		},
 		compoundVariants: [
@@ -31,8 +31,15 @@ const item = cva(
 				disabled: false,
 				hover: true,
 				class: [
-					'cursor-pointer active:text-storm-100/60 hover:bg-storm-800 active:bg-storm-700',
-					'dark:hover:bg-hurricane-500 dark:active:bg-hurricane-600/50',
+					`
+       cursor-pointer
+       hover:bg-storm-800
+       active:bg-storm-700 active:text-storm-100/60
+     `,
+					`
+       dark:hover:bg-hurricane-500
+       dark:active:bg-hurricane-600/50
+     `,
 				],
 			},
 		],
@@ -54,7 +61,10 @@ const icon = cva([], {
 		{
 			disabled: false,
 			hover: true,
-			class: 'group-hover:text-storm-100 group-active:text-storm-100/60',
+			class: `
+     group-hover:text-storm-100
+     group-active:text-storm-100/60
+   `,
 		},
 	],
 });
@@ -109,7 +119,12 @@ export class FloatingMenuItem {
 			>
 				{this._getIcon()}
 
-				<p class='min-w-0 overflow-hidden text-ellipsis text-nowrap font-semibold empty:hidden'>
+				<p
+					class='
+       min-w-0 overflow-hidden text-ellipsis text-nowrap font-semibold
+       empty:hidden
+     '
+				>
 					<slot />
 				</p>
 			</ThemedHost>

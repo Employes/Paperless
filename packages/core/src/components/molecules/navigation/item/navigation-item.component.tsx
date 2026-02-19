@@ -10,9 +10,12 @@ const navigationItem = cva(
 	[
 		'h-8 w-[inherit]',
 		'flex items-center gap-2',
-		'hover:text-storm-500 dark:hover:text-white',
+		`
+    hover:text-storm-500
+    dark:hover:text-white
+  `,
 		'rounded-lg',
-		'py-1 px-2',
+		'px-2 py-1',
 		'text-sm font-medium',
 		'cursor-pointer',
 	],
@@ -20,11 +23,20 @@ const navigationItem = cva(
 		variants: {
 			active: {
 				false: [
-					'text-storm-400 dark:text-hurricane-200',
-					'hover:bg-off-white-500 dark:hover:bg-white/10',
+					`
+       text-storm-400
+       dark:text-hurricane-200
+     `,
+					`
+       hover:bg-off-white-500
+       dark:hover:bg-white/10
+     `,
 				],
 				true: [
-					'bg-off-white-600 dark:bg-white/10 text-storm-500 dark:text-white font-semibold',
+					`
+       bg-off-white-600 font-semibold text-storm-500
+       dark:bg-white/10 dark:text-white
+     `,
 				],
 			},
 			icon: {
@@ -36,7 +48,7 @@ const navigationItem = cva(
 );
 
 const navigationItemIconContainer = cva(
-	['flex h-6 aspect-branding items-center justify-center rounded-full'],
+	['flex aspect-branding h-6 items-center justify-center rounded-full'],
 	{
 		variants: {
 			active: {

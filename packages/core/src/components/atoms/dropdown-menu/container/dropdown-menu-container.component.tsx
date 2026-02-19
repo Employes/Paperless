@@ -8,7 +8,7 @@ const dropdownMenuContainer = cva(
 	[
 		'p-dropdown-menu-container',
 		'p-1',
-		'rounded-lg z-10',
+		'z-10 rounded-lg',
 		'border',
 		'transform-gpu will-change-transform',
 	],
@@ -16,12 +16,12 @@ const dropdownMenuContainer = cva(
 		variants: {
 			variant: {
 				default: [
-					'bg-white border-storm-100 drop-shadow-2',
-					'dark:bg-hurricane-400 dark:border-transparent',
+					'border-storm-100 bg-white drop-shadow-2',
+					'dark:border-transparent dark:bg-hurricane-400',
 				],
 				storm: [
-					'bg-storm-400 drop-shadow-3 border-storm-400',
-					'dark:bg-white dark:border-white/60 dark:border-storm-100',
+					'border-storm-400 bg-storm-400 drop-shadow-3',
+					'dark:border-storm-100 dark:border-white/60 dark:bg-white',
 				],
 			},
 			fullWidth: {
@@ -43,7 +43,7 @@ const dropdownMenuContainer = cva(
 	}
 );
 
-const innerContainer = cva('w-full min-h-full relative', {
+const innerContainer = cva('relative min-h-full w-full', {
 	variants: {
 		allowOverflow: {
 			false: 'overflow-y-auto overflow-x-hidden',

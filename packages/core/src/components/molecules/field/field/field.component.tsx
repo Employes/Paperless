@@ -23,11 +23,11 @@ import { nonce } from '../../../../utils/nonce';
 import { templateFunc } from '../container/field-container.component';
 
 const field = cva(
-	['flex gap-2', 'w-inherit', 'border-solid rounded-lg', 'relative'],
+	['flex gap-2', 'w-inherit', 'rounded-lg border-solid', 'relative'],
 	{
 		variants: {
 			variant: {
-				read: 'border-0 items-start flex-wrap hyphens-auto break-normal leading-6',
+				read: 'flex-wrap items-start hyphens-auto break-normal border-0 leading-6',
 				write: 'border px-2',
 			},
 			size: {
@@ -80,27 +80,38 @@ const field = cva(
 				variant: 'write',
 				focused: false,
 				error: false,
-				class: 'border-storm-100 dark:border-hurricane-400',
+				class: `
+      border-storm-100
+      dark:border-hurricane-400
+    `,
 			},
 			{
 				variant: 'write',
 				disabled: false,
 				focused: true,
 				error: false,
-				class:
-					'border-indigo-600 ring dark:ring-0 ring-indigo-100 selection:bg-indigo-500',
+				class: `
+      border-indigo-600 ring ring-indigo-100
+      selection:bg-indigo-500
+      dark:ring-0
+    `,
 			},
 
 			{
 				variant: 'write',
 				disabled: false,
-				class: 'bg-white dark:bg-hurricane-500',
+				class: `
+      bg-white
+      dark:bg-hurricane-500
+    `,
 			},
 			{
 				variant: 'write',
 				disabled: true,
-				class:
-					'bg-white-600 dark:bg-hurricane-600 dark:border-hurricane-500 cursor-not-allowed',
+				class: `
+      cursor-not-allowed bg-white-600
+      dark:border-hurricane-500 dark:bg-hurricane-600
+    `,
 			},
 
 			{
@@ -112,8 +123,11 @@ const field = cva(
 				disabled: false,
 				focused: true,
 				error: true,
-				class:
-					'ring ring-negative-red-50 selection:bg-negative-red-50 dark:ring-0',
+				class: `
+      ring ring-negative-red-50
+      selection:bg-negative-red-50
+      dark:ring-0
+    `,
 			},
 		],
 	}
@@ -121,9 +135,16 @@ const field = cva(
 
 const input = cva(
 	[
-		'text-sm placeholder:text-sm placeholder:text-storm-500/40 dark:placeholder:text-hurricane-200',
-		'border-none  bg-transparent flex-1 min-w-0 p-0',
-		'outline-none focus:outline-none',
+		`
+    text-sm
+    placeholder:text-sm placeholder:text-storm-500/40
+    dark:placeholder:text-hurricane-200
+  `,
+		'min-w-0 flex-1 border-none bg-transparent p-0',
+		`
+    outline-none
+    focus:outline-none
+  `,
 		'font-geist',
 	],
 	{
@@ -137,7 +158,10 @@ const input = cva(
 				true: 'cursor-not-allowed',
 			},
 			error: {
-				false: 'text-storm-500 dark:text-white',
+				false: `
+      text-storm-500
+      dark:text-white
+    `,
 				true: 'text-negative-red-500',
 			},
 		},
@@ -145,7 +169,7 @@ const input = cva(
 );
 
 const prefixAndSuffix = cva(
-	['flex flex-shrink-0 justify-center items-center text-center'],
+	['flex flex-shrink-0 items-center justify-center text-center'],
 	{
 		variants: {
 			variant: {
@@ -154,7 +178,10 @@ const prefixAndSuffix = cva(
 			},
 			disabled: {
 				false: null,
-				true: 'text-storm-100 dark:text-hurricane-400',
+				true: `
+      text-storm-100
+      dark:text-hurricane-400
+    `,
 			},
 			focused: {
 				false: null,
@@ -178,14 +205,20 @@ const prefixAndSuffix = cva(
 				disabled: false,
 				focused: false,
 				error: false,
-				class: 'text-storm-300 dark:text-hurricane-200',
+				class: `
+      text-storm-300
+      dark:text-hurricane-200
+    `,
 			},
 
 			{
 				disabled: false,
 				focused: true,
 				error: false,
-				class: 'text-storm-500 dark:text-white',
+				class: `
+      text-storm-500
+      dark:text-white
+    `,
 			},
 
 			{

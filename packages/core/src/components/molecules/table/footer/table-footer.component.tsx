@@ -18,11 +18,15 @@ import {
 
 const footer = cva(
 	[
-		'justify-center relative',
+		'relative justify-center',
 		'w-full px-6',
-		'after:absolute after:top-0 after:left-0 after:z-[0]',
-		'after:w-full after:h-full after:transition-opacity',
-		'after:bg-gradient-to-t after:from-white dark:after:from-hurricane-700 after:via-white/80 dark:after:via-hurricane-700/80 after:to-transparent',
+		'after:absolute after:left-0 after:top-0 after:z-[0]',
+		'after:h-full after:w-full after:transition-opacity',
+		`
+    after:bg-gradient-to-t after:from-white after:via-white/80
+    after:to-transparent
+    dark:after:from-hurricane-700 dark:after:via-hurricane-700/80
+  `,
 	],
 	{
 		variants: {
@@ -35,7 +39,10 @@ const footer = cva(
 				true: 'hidden',
 			},
 			tableHeaderHasAction: {
-				true: 'pt-8 pb-20 desktop-xs:py-8',
+				true: `
+      pb-20 pt-8
+      desktop-xs:py-8
+    `,
 				false: 'py-8',
 			},
 		},

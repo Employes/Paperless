@@ -13,7 +13,7 @@ import { cn, isMobile, isTablet } from '../../../utils';
 const attachment = cva(
 	[
 		'flex flex-1 items-center justify-start gap-2',
-		'h-8 min-w-0 px-2 rounded-lg',
+		'h-8 min-w-0 rounded-lg px-2',
 		'border border-solid',
 		'bg-white-600 text-storm-200',
 		'dark:bg-white/15 dark:text-hurricane-200',
@@ -25,8 +25,14 @@ const attachment = cva(
 				true: 'cursor-pointer',
 			},
 			error: {
-				false: 'border-storm-100 dark:border-white/15',
-				true: 'border-negative-red-500 dark:border-negative-red-alternative',
+				false: `
+      border-storm-100
+      dark:border-white/15
+    `,
+				true: `
+      border-negative-red-500
+      dark:border-negative-red-alternative
+    `,
 			},
 		},
 	}
@@ -189,10 +195,27 @@ export class Attachment {
 						>
 							{prefix}
 
-							<span class={cn(baseText, 'peer empty:hidden dark:text-white')}>
+							<span
+								class={cn(
+									baseText,
+									`
+           peer
+           empty:hidden
+           dark:text-white
+         `
+								)}
+							>
 								{this.value}
 							</span>
-							<span class={cn(baseText, 'hidden peer-empty:block')}>
+							<span
+								class={cn(
+									baseText,
+									`
+           hidden
+           peer-empty:block
+         `
+								)}
+							>
 								{this.placeholder}
 							</span>
 						</div>
@@ -236,7 +259,10 @@ export class Attachment {
 							isMobileDevice &&
 							!this.value?.length && (
 								<p-tooltip
-									class='w-8 desktop-xs:hidden'
+									class='
+           w-8
+           desktop-xs:hidden
+         '
 									content={this.cameraTooltip}
 								>
 									<p-button

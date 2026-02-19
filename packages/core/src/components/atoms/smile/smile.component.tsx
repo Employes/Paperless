@@ -14,8 +14,10 @@ const smile = cva(null, {
 	compoundVariants: [
 		{
 			variant: ['modal', 'card'],
-			class:
-				'absolute bottom-0 left-1/2 -translate-x-1/2 z-[-1] aspect-[8/3] text-off-white-500',
+			class: `
+     absolute bottom-0 left-1/2 z-[-1] aspect-[8/3] -translate-x-1/2
+     text-off-white-500
+   `,
 		},
 	],
 });

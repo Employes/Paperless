@@ -134,8 +134,8 @@ export const getTableCellSizes = (
 export const floatingMenuContainerClass = cva(['sticky self-center'], {
 	variants: {
 		hasFooter: {
-			true: 'mt-4 -mb-5 bottom-11 z-[3]',
-			false: 'my-4 bottom-0',
+			true: 'bottom-11 z-[3] -mb-5 mt-4',
+			false: 'bottom-0 my-4',
 		},
 		active: {
 			false: 'pointer-events-none animate-floating-menu-container-out',

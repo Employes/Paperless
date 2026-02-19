@@ -1,7 +1,7 @@
 import { Component, h, Host } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
-const container = cva('flex flex-col relative');
+const container = cva('relative flex flex-col');
 
 @Component({
 	tag: 'p-table-container',

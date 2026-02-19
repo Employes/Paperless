@@ -142,9 +142,9 @@ export class TableCellComponent {
 			),
 			{
 				'sticky left-4 z-[2]': !!this.definition?.sticky,
-				'bg-gradient-to-r from-white to-transparent dark:from-hurricane-700 from-80%':
+				'bg-gradient-to-r from-white from-80% to-transparent dark:from-hurricane-700':
 					this.definition?.sticky && this.definition?.sticky !== 'secondary',
-				'bg-gradient-to-r from-off-white-300 to-transparent dark:from-hurricane-400 from-80%':
+				'bg-gradient-to-r from-off-white-300 from-80% to-transparent dark:from-hurricane-400':
 					this.definition?.sticky && this.definition?.sticky === 'secondary',
 				'flex-shrink': !this.scrollable,
 				'flex-shrink-0': this.scrollable,

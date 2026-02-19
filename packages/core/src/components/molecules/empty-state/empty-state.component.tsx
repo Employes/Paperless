@@ -15,7 +15,7 @@ import { IllustrationVariant } from '../../../types/illustration';
 import { asBoolean } from '../../../utils/as-boolean';
 
 const emptyState = cva(
-	['flex flex-col w-full items-center justify-start max-w-[20rem]'],
+	['flex w-full max-w-[20rem] flex-col items-center justify-start'],
 	{
 		variants: {
 			enableAction: {
@@ -119,7 +119,12 @@ export class EmptyState {
 						<slot name='header' />
 					) : (
 						this.header?.length && (
-							<p class='my-0 text-center font-ambit text-sm font-bold text-storm-500 dark:text-white'>
+							<p
+								class='
+          my-0 text-center font-ambit text-sm font-bold text-storm-500
+          dark:text-white
+        '
+							>
 								{this.header}
 							</p>
 						)
@@ -128,7 +133,12 @@ export class EmptyState {
 						<slot name='content' />
 					) : (
 						this.content?.length && (
-							<p class='my-0 text-center text-sm font-normal text-storm-300 dark:text-hurricane-200'>
+							<p
+								class='
+          my-0 text-center text-sm font-normal text-storm-300
+          dark:text-hurricane-200
+        '
+							>
 								{this.content}
 							</p>
 						)

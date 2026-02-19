@@ -8,7 +8,10 @@ import { asBoolean } from '../../../../utils/as-boolean';
 
 const dropdownMenuItem = cva(
 	[
-		'p-dropdown-menu-item flex gap-2 text-sm group rounded-lg items-center max-w-full',
+		`
+    p-dropdown-menu-item group flex max-w-full items-center gap-2 rounded-lg
+    text-sm
+  `,
 	],
 	{
 		variants: {
@@ -16,7 +19,10 @@ const dropdownMenuItem = cva(
 				default: null,
 				storm: null,
 				negative: null,
-				pagination: 'text-xs px-2 text-storm-300 h-6 dark:text-hurricane-200',
+				pagination: `
+      h-6 px-2 text-xs text-storm-300
+      dark:text-hurricane-200
+    `,
 			},
 			active: {
 				false: null,
@@ -59,49 +65,72 @@ const dropdownMenuItem = cva(
 				active: false,
 				enableHover: true,
 				disabled: false,
-				class: 'hover:bg-indigo-50 dark:hover:bg-indigo-600/10',
+				class: `
+      hover:bg-indigo-50
+      dark:hover:bg-indigo-600/10
+    `,
 			},
 			{
 				variant: 'default',
 				active: true,
 				disabled: false,
-				class: 'bg-indigo-100 dark:bg-indigo-600/20',
+				class: `
+      bg-indigo-100
+      dark:bg-indigo-600/20
+    `,
 			},
 			{
 				variant: 'default',
 				disabled: false,
-				class: 'text-storm-500 dark:text-white',
+				class: `
+      text-storm-500
+      dark:text-white
+    `,
 			},
 			{
 				variant: 'default',
 				disabled: true,
-				class: 'text-storm-200 dark:text-hurricane-300',
+				class: `
+      text-storm-200
+      dark:text-hurricane-300
+    `,
 			},
 			{
 				variant: 'default',
 				disabled: true,
 				active: true,
-				class: 'bg-indigo-50 dark:bg-white/5',
+				class: `
+      bg-indigo-50
+      dark:bg-white/5
+    `,
 			},
 
 			{
 				variant: 'storm',
 				active: false,
 				enableHover: true,
-				class: 'text-white dark:text-storm-500',
+				class: `
+      text-white
+      dark:text-storm-500
+    `,
 			},
 			{
 				variant: 'storm',
 				active: false,
 				enableHover: true,
 				disabled: false,
-				class: 'hover:bg-storm-500 dark:hover:bg-storm-500/15',
+				class: `
+      hover:bg-storm-500
+      dark:hover:bg-storm-500/15
+    `,
 			},
 			{
 				variant: 'storm',
 				active: true,
-				class:
-					'text-white bg-storm-600 dark:text-storm-500 dark:bg-storm-500/20',
+				class: `
+      bg-storm-600 text-white
+      dark:bg-storm-500/20 dark:text-storm-500
+    `,
 			},
 			{
 				variant: 'storm',
@@ -114,15 +143,20 @@ const dropdownMenuItem = cva(
 				active: false,
 				enableHover: true,
 				disabled: false,
-				class:
-					'text-negative-red-500 hover:bg-negative-red-50 dark:hover:bg-negative-red-500/10',
+				class: `
+      text-negative-red-500
+      hover:bg-negative-red-50
+      dark:hover:bg-negative-red-500/10
+    `,
 			},
 			{
 				variant: 'negative',
 				active: true,
 				disabled: false,
-				class:
-					'bg-negative-red-100 text-negative-red-500 dark:bg-negative-red-500/15',
+				class: `
+      bg-negative-red-100 text-negative-red-500
+      dark:bg-negative-red-500/15
+    `,
 			},
 			{
 				variant: 'negative',
@@ -172,8 +206,14 @@ const dropdownMenuItemIcon = cva(['text-base'], {
 			active: false,
 			disabled: false,
 			class: [
-				'text-storm-300 group-hover:text-storm-500',
-				'dark:text-hurricane-200 dark:group-hover:text-white',
+				`
+      text-storm-300
+      group-hover:text-storm-500
+    `,
+				`
+      dark:text-hurricane-200
+      dark:group-hover:text-white
+    `,
 			],
 		},
 
@@ -182,8 +222,14 @@ const dropdownMenuItemIcon = cva(['text-base'], {
 			active: false,
 			disabled: false,
 			class: [
-				'text-storm-100 group-hover:text-white',
-				'dark:text-storm-300 dark:group-hover:text-storm-500',
+				`
+      text-storm-100
+      group-hover:text-white
+    `,
+				`
+      dark:text-storm-300
+      dark:group-hover:text-storm-500
+    `,
 			],
 		},
 
@@ -191,14 +237,21 @@ const dropdownMenuItemIcon = cva(['text-base'], {
 			variant: 'negative',
 			active: false,
 			disabled: false,
-			class:
-				'text-negative-red-500 group-hover:text-negative-red-800 dark:text-negative-red-alternative dark:group-hover:text-negative-red-500',
+			class: `
+     text-negative-red-500
+     group-hover:text-negative-red-800
+     dark:text-negative-red-alternative
+     dark:group-hover:text-negative-red-500
+   `,
 		},
 		{
 			variant: 'negative',
 			active: true,
 			disabled: false,
-			class: 'text-negative-red-800 dark:text-negative-red-500',
+			class: `
+     text-negative-red-800
+     dark:text-negative-red-500
+   `,
 		},
 	],
 });

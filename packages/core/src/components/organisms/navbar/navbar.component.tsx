@@ -5,8 +5,14 @@ import { ThemedHost } from '../../../internal/themed-host.component';
 
 const sidebarAndTopbar = cva([
 	'transition',
-	'bg-off-white-300 dark:bg-hurricane-800',
-	'border-0 border-solid border-off-white-700 dark:border-hurricane-500',
+	`
+   bg-off-white-300
+   dark:bg-hurricane-800
+ `,
+	`
+   border-0 border-solid border-off-white-700
+   dark:border-hurricane-500
+ `,
 	'p-4',
 ]);
 
@@ -16,12 +22,18 @@ const sidebar = cva(
 
 		'fixed left-0 top-0 z-navbar h-screen w-60',
 		'w-full max-w-[16.5rem]',
-		'layout-1280:relative layout-1280:z-0 layout-1280:max-w-none layout-1280:h-full',
+		`
+    layout-1280:relative layout-1280:z-0 layout-1280:h-full
+    layout-1280:max-w-none
+  `,
 		'gap-6',
 
 		'transition-all',
 		'will-change-transform',
-		'-translate-x-full transform-gpu layout-1280:translate-x-0',
+		`
+    -translate-x-full transform-gpu
+    layout-1280:translate-x-0
+  `,
 
 		'border-r',
 
@@ -38,7 +50,7 @@ const sidebar = cva(
 );
 
 const topbar = cva([
-	'flex w-full justify-between items-center',
+	'flex w-full items-center justify-between',
 	'relative z-navbar-topbar',
 	'border-b',
 	'layout-1280:hidden',
@@ -46,11 +58,16 @@ const topbar = cva([
 ]);
 
 const backdrop = cva(
-	['z-navbar-backdrop layout-1280:hidden transition-opacity relative'],
+	[
+		`
+    relative z-navbar-backdrop transition-opacity
+    layout-1280:hidden
+  `,
+	],
 	{
 		variants: {
 			show: {
-				false: 'opacity-0 pointer-events-none',
+				false: 'pointer-events-none opacity-0',
 				true: 'opacity-100',
 			},
 		},
@@ -74,7 +91,12 @@ export class Navbar {
 					onClicked={() => (this._show = false)}
 				></p-backdrop>
 				<div class={sidebar({ class: sidebarAndTopbar(), show: this._show })}>
-					<div class='flex w-full items-center justify-end layout-1280:hidden'>
+					<div
+						class='
+        flex w-full items-center justify-end
+        layout-1280:hidden
+      '
+					>
 						<p-button
 							icon='menu-arrow'
 							iconFlip='horizontal'
@@ -90,7 +112,12 @@ export class Navbar {
 						<slot name='content' />
 					</div>
 
-					<div class='mt-auto hidden w-full flex-shrink-0 flex-col layout-1280:flex'>
+					<div
+						class='
+        mt-auto hidden w-full flex-shrink-0 flex-col
+        layout-1280:flex
+      '
+					>
 						<slot name='user' />
 					</div>
 				</div>

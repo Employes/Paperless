@@ -7,7 +7,7 @@ import { RotateOptions } from '../../../../types/tailwind';
 import { asBoolean } from '../../../../utils/as-boolean';
 
 const header = cva(
-	'inline-flex w-full relative flex-col justify-start z-[1] rounded-t-2xl relative',
+	`relative z-[1] inline-flex w-full flex-col justify-start rounded-t-2xl`,
 	{
 		variants: {
 			variant: {
@@ -28,7 +28,10 @@ const content = cva('flex items-center gap-2', {
 });
 
 const title = cva(
-	'h-8 flex items-center font-bold text-sm gap-2 min-w-0 text-storm-500 dark:text-white'
+	`
+   flex h-8 min-w-0 items-center gap-2 text-sm font-bold text-storm-500
+   dark:text-white
+ `
 );
 
 @Component({
@@ -82,7 +85,10 @@ export class CardHeader {
 					>
 						{this.icon ? (
 							<p-icon
-								class='text-storm-300 dark:text-hurricane-200'
+								class='
+          text-storm-300
+          dark:text-hurricane-200
+        '
 								flip={this.iconFlip}
 								rotate={this.iconRotate}
 								variant={this.icon}
@@ -99,17 +105,32 @@ export class CardHeader {
 							<slot name='content-suffix' />
 						</div>
 
-						<div class='ml-auto flex items-center justify-end gap-4 empty:hidden'>
+						<div
+							class='
+         ml-auto flex items-center justify-end gap-4
+         empty:hidden
+       '
+						>
 							<slot name='suffix' />
 						</div>
 					</div>
 
 					{this.variant === 'default' ? (
 						asBoolean(this.divider) && (
-							<p-divider class='text-off-white-700 dark:text-white/15' />
+							<p-divider
+								class='
+          text-off-white-700
+          dark:text-white/15
+        '
+							/>
 						)
 					) : (
-						<div class='pointer-events-none absolute left-0 top-0 z-[-1] h-full w-full overflow-hidden rounded-t-2xl'>
+						<div
+							class='
+         pointer-events-none absolute left-0 top-0 z-[-1] h-full w-full
+         overflow-hidden rounded-t-2xl
+       '
+						>
 							<p-smile
 								class='dark:text-hurricane-400'
 								variant='card'

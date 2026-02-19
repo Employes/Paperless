@@ -5,17 +5,33 @@ import { ThemedHost } from '../../../../internal/themed-host.component';
 
 const item = cva(
 	[
-		'h-8 flex flex-col justify-between text-sm',
+		'flex h-8 flex-col justify-between text-sm',
 		'cursor-pointer',
-		"after:h-[2px] after:content-[' ']",
+		`
+    after:content-['
+    ']
+    after:h-[2px]
+  `,
 	],
 	{
 		variants: {
 			active: {
-				true: 'after:bg-indigo-600 text-indigo-600',
+				true: `
+      text-indigo-600
+      after:bg-indigo-600
+    `,
 				false: [
-					'text-storm-300 after:bg-transparent hover:after:bg-storm-400 hover:text-storm-400',
-					'dark:text-hurricane-200 dark:hover:after:bg-white dark:hover:text-white',
+					`
+       text-storm-300
+       after:bg-transparent
+       hover:text-storm-400
+       hover:after:bg-storm-400
+     `,
+					`
+       dark:text-hurricane-200
+       dark:hover:text-white
+       dark:hover:after:bg-white
+     `,
 				],
 			},
 		},

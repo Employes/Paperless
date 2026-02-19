@@ -7,7 +7,7 @@ import { asBoolean } from '../../../../utils/as-boolean';
 const item = cva(
 	[
 		'p-pagination-item',
-		'text-sm ',
+		'text-sm',
 		'h-6 w-6',
 		'flex items-center justify-center text-center',
 	],
@@ -34,29 +34,36 @@ const item = cva(
 			{
 				variant: 'default',
 				active: false,
-				class:
-					'bg-off-white-300 dark:bg-hurricane-500 text-storm-400 dark:text-hurricane-200',
+				class: `
+      bg-off-white-300 text-storm-400
+      dark:bg-hurricane-500 dark:text-hurricane-200
+    `,
 			},
 			{
 				variant: 'default',
 				active: false,
 				hover: true,
-				class:
-					'hover:text-storm-500 hover:bg-off-white-500 dark:hover:bg-white/15 dark:hover:text-hurricane-100 cursor-pointer',
+				class: `
+      cursor-pointer
+      hover:bg-off-white-500 hover:text-storm-500
+      dark:hover:bg-white/15 dark:hover:text-hurricane-100
+    `,
 			},
 			{
 				variant: 'default',
 				active: true,
-				class:
-					'text-storm-500 bg-off-white-700 dark:bg-hurricane-300 dark:text-white font-semibold',
+				class: `
+      bg-off-white-700 font-semibold text-storm-500
+      dark:bg-hurricane-300 dark:text-white
+    `,
 			},
 
 			{
 				variant: 'carousel',
 				disabled: false,
 				class: [
-					'bg-white text-storm-300 border-storm-100',
-					'dark:bg-white/15 dark:border-white/15 dark:text-hurricane-200',
+					'border-storm-100 bg-white text-storm-300',
+					'dark:border-white/15 dark:bg-white/15 dark:text-hurricane-200',
 				],
 			},
 			{
@@ -64,16 +71,21 @@ const item = cva(
 				disabled: false,
 				hover: true,
 				class: [
-					'hover:bg-white-600 hover:text-storm-500 active:bg-white-600 active:border-indigo-600 active:ring active:ring-2 active:ring-indigo-100 cursor-pointer',
-					'dark:hover:ring-0 dark:hover:bg-white/25 dark:hover:text-white',
+					`
+       cursor-pointer
+       hover:bg-white-600 hover:text-storm-500
+       active:border-indigo-600 active:bg-white-600 active:ring active:ring-2
+       active:ring-indigo-100
+     `,
+					'dark:hover:bg-white/25 dark:hover:text-white dark:hover:ring-0',
 				],
 			},
 			{
 				variant: 'carousel',
 				disabled: true,
 				class: [
-					'bg-white-600 text-storm-100 border-storm-500/20',
-					'dark:bg-hurricane-500 dark:border-white/5 dark:text-hurricane-300',
+					'border-storm-500/20 bg-white-600 text-storm-100',
+					'dark:border-white/5 dark:bg-hurricane-500 dark:text-hurricane-300',
 				],
 			},
 		],

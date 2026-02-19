@@ -20,8 +20,8 @@ const item = cva('flex gap-2', {
 
 const circle = cva(
 	[
-		'h-6 w-6 flex items-center justify-center',
-		'text-sm text-center font-medium',
+		'flex h-6 w-6 items-center justify-center',
+		'text-center text-sm font-medium',
 		'border border-solid',
 		'rounded-full',
 	],
@@ -50,19 +50,19 @@ const circle = cva(
 				finished: false,
 				active: false,
 				class: [
-					'text-indigo-600 bg-indigo-50 border-indigo-600',
-					'dark:text-hurricane-200 dark:bg-white/15 dark:border-white/15',
+					'border-indigo-600 bg-indigo-50 text-indigo-600',
+					'dark:border-white/15 dark:bg-white/15 dark:text-hurricane-200',
 				],
 			},
 			{
 				active: true,
 				finished: false,
-				class: 'text-white bg-indigo-600 border-indigo-600',
+				class: 'border-indigo-600 bg-indigo-600 text-white',
 			},
 			{
 				active: false,
 				finished: true,
-				class: 'text-white bg-indigo-600 border-indigo-600',
+				class: 'border-indigo-600 bg-indigo-600 text-white',
 			},
 			{
 				direction: 'vertical',
@@ -78,7 +78,7 @@ const circle = cva(
 	}
 );
 
-const content = cva('text-sm font-medium flex-1 mt-[1px]', {
+const content = cva('mt-[1px] flex-1 text-sm font-medium', {
 	variants: {
 		finished: {
 			true: null,
@@ -97,22 +97,34 @@ const content = cva('text-sm font-medium flex-1 mt-[1px]', {
 		{
 			finished: false,
 			active: false,
-			class: 'text-storm-400 dark:text-hurricane-200',
+			class: `
+     text-storm-400
+     dark:text-hurricane-200
+   `,
 		},
 		{
 			active: true,
 			finished: false,
-			class: 'text-storm-500 dark:text-white',
+			class: `
+     text-storm-500
+     dark:text-white
+   `,
 		},
 		{
 			active: false,
 			finished: true,
-			class: 'text-storm-500 dark:text-white',
+			class: `
+     text-storm-500
+     dark:text-white
+   `,
 		},
 		{
 			direction: 'horizontal',
 			active: false,
-			class: 'hidden desktop-xs:inline-block',
+			class: `
+     hidden
+     desktop-xs:inline-block
+   `,
 		},
 	],
 });
