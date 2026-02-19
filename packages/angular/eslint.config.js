@@ -1,4 +1,6 @@
+import eslintParserAngular from 'angular-eslint';
 import { defineConfig, globalIgnores } from 'eslint/config';
+import { parser as eslintParserTypeScript } from 'typescript-eslint';
 
 import base from '../../eslint.config.js';
 
@@ -33,6 +35,22 @@ export default defineConfig([
 					style: 'kebab-case',
 				},
 			],
+		},
+	},
+	{
+		files: ['**/*.ts'],
+		languageOptions: {
+			parser: eslintParserTypeScript,
+			parserOptions: {
+				project: true,
+			},
+		},
+		processor: eslintParserAngular.processInlineTemplates,
+	},
+	{
+		files: ['**/*.html'],
+		languageOptions: {
+			parser: eslintParserAngular.templateParser,
 		},
 	},
 ]);
