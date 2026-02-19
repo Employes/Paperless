@@ -57,10 +57,12 @@ import hash from '../assets/icons/general/hash.svg';
 import hat from '../assets/icons/general/hat.svg';
 import home from '../assets/icons/general/home.svg';
 import integration from '../assets/icons/general/integration.svg';
+import lamp from '../assets/icons/general/lamp.svg';
 import language from '../assets/icons/general/language.svg';
 import laptop from '../assets/icons/general/laptop.svg';
 import location from '../assets/icons/general/location.svg';
 import mail from '../assets/icons/general/mail.svg';
+import math from '../assets/icons/general/math.svg';
 import medal from '../assets/icons/general/medal.svg';
 import menuArrow from '../assets/icons/general/menu-arrow.svg';
 import menu from '../assets/icons/general/menu.svg';
@@ -68,6 +70,7 @@ import minus from '../assets/icons/general/minus.svg';
 import moon from '../assets/icons/general/moon.svg';
 import more from '../assets/icons/general/more.svg';
 import negative from '../assets/icons/general/negative.svg';
+import newTab from '../assets/icons/general/newtab.svg';
 import other from '../assets/icons/general/other.svg';
 import pay from '../assets/icons/general/pay.svg';
 import pencil from '../assets/icons/general/pencil.svg';
@@ -89,6 +92,7 @@ import signature from '../assets/icons/general/signature.svg';
 import sparkle from '../assets/icons/general/sparkle.svg';
 import spinner from '../assets/icons/general/spinner.svg';
 import spinning from '../assets/icons/general/spinning.svg';
+import stack from '../assets/icons/general/stack.svg';
 import star from '../assets/icons/general/star.svg';
 import stroller from '../assets/icons/general/stroller.svg';
 import tag from '../assets/icons/general/tag.svg';
@@ -187,10 +191,12 @@ export const categorized = {
 		hat,
 		home,
 		integration,
+		lamp,
 		language,
 		laptop,
 		location,
 		mail,
+		math,
 		medal,
 		menu,
 		'menu-arrow': menuArrow,
@@ -198,6 +204,7 @@ export const categorized = {
 		moon,
 		more,
 		negative,
+		'new-tab': newTab,
 		other,
 		pay,
 		pencil,
@@ -219,6 +226,7 @@ export const categorized = {
 		sparkle,
 		spinner,
 		spinning,
+		stack,
 		star,
 		stroller,
 		tag,
@@ -328,10 +336,12 @@ export const icons = {
 	hat,
 	home,
 	integration,
+	lamp,
 	language,
 	laptop,
 	location,
 	mail,
+	math,
 	medal,
 	menu,
 	'menu-arrow': menuArrow,
@@ -339,6 +349,7 @@ export const icons = {
 	moon,
 	more,
 	negative,
+	'new-tab': newTab,
 	other,
 	pay,
 	pencil,
@@ -360,6 +371,7 @@ export const icons = {
 	sparkle,
 	spinner,
 	spinning,
+	stack,
 	star,
 	stroller,
 	tag,
