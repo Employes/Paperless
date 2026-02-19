@@ -14,7 +14,6 @@ import typescriptPlugin from 'typescript-eslint';
 
 export default defineConfig([
 	eslint.configs.recommended,
-	prettierPlugin,
 	eslintPluginBetterTailwindcss.configs['recommended-warn'],
 	...jsoncPlugin.configs['flat/recommended-with-json'],
 	...jsoncPlugin.configs['flat/recommended-with-jsonc'],
