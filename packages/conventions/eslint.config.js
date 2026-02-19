@@ -3,6 +3,7 @@ import nxPlugin from '@nx/eslint-plugin';
 import earlyReturnPlugin from '@regru/eslint-plugin-prefer-early-return';
 import angularPlugin from 'angular-eslint';
 import { defineConfig } from 'eslint/config';
+import eslintPluginBetterTailwindcss from 'eslint-plugin-better-tailwindcss';
 import importPlugin from 'eslint-plugin-import';
 import jsoncPlugin from 'eslint-plugin-jsonc';
 import prettierPlugin from 'eslint-plugin-prettier/recommended';
@@ -14,6 +15,7 @@ import typescriptPlugin from 'typescript-eslint';
 export default defineConfig([
 	eslint.configs.recommended,
 	prettierPlugin,
+	eslintPluginBetterTailwindcss.configs['recommended-warn'],
 	...jsoncPlugin.configs['flat/recommended-with-json'],
 	...jsoncPlugin.configs['flat/recommended-with-jsonc'],
 
@@ -31,6 +33,10 @@ export default defineConfig([
 			'import/resolver': {
 				typescript: true,
 				node: true,
+			},
+			'better-tailwindcss': {
+				//entryPoint: 'src/global.css',
+				tailwindConfig: 'tailwind.config.ts',
 			},
 		},
 	},
@@ -87,6 +93,15 @@ export default defineConfig([
 		},
 	},
 	{
+		files: ['**/*.{ts,tsx,cts,mts}'],
+		languageOptions: {
+			parser: typescriptPlugin.parser,
+			// 	parserOptions: {
+			// 		project: true,
+			// 	},
+		},
+	},
+	{
 		files: ['**/*.{tsx,jsx}'],
 		extends: [reactPlugin.configs.flat.recommended],
 		rules: {
@@ -98,6 +113,13 @@ export default defineConfig([
 					shorthandLast: true,
 				},
 			],
+		},
+		languageOptions: {
+			parserOptions: {
+				ecmaFeatures: {
+					jsx: true,
+				},
+			},
 		},
 	},
 	{

@@ -11,6 +11,11 @@ export default defineConfig([
 	]),
 	{
 		extends: [base],
+		settings: {
+			'better-tailwindcss': {
+				tailwindConfig: 'src/tailwind.config.ts',
+			},
+		},
 	},
 	{
 		files: ['**/*.tsx'],

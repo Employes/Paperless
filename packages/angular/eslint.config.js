@@ -6,6 +6,11 @@ export default defineConfig([
 	globalIgnores(['./projects/paperless/src/lib/stencil/**/*']),
 	{
 		extends: [base],
+		settings: {
+			'better-tailwindcss': {
+				tailwindConfig: 'projects/paperless/tailwind.config.ts',
+			},
+		},
 	},
 	{
 		files: ['**/*.ts'],

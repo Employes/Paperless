@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 /* eslint-disable unicorn/prefer-module */
-const path = require('node:path');
+import path from 'node:path';
 
-const { paperless } = require('@paperless/core/tailwind');
+import { paperless } from '@paperless/core/tailwind';
 
 module.exports = {
 	darkMode: [
