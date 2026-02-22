@@ -2,7 +2,7 @@
 	"name": "@paperless/angular",
 	"version": "3.1.1",
 	"resolutions": {
-		"jasmine-core": "5.0.0"
+		"jasmine-core": "6.1.0"
 	},
 	"publishConfig": {
 		"access": "public",
@@ -55,7 +55,7 @@
 		"@angular/compiler-cli": "21.1.0",
 		"@types/node": "^22.13.5",
 		"autoprefixer": "10.4.14",
-		"jasmine-core": "5.0.0",
+		"jasmine-core": "6.1.0",
 		"karma": "6.4.2",
 		"karma-chrome-launcher": "3.2.0",
 		"karma-coverage": "2.2.0",
