@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/Employes/Paperless/compare/v3.1.1...v3.2.0) (2026-02-23)
+
+
+### Features
+
+* **utils/icons:** added lamp, math, newTab and stack icons ([232abfa](https://github.com/Employes/Paperless/commit/232abfa84533c1b7edb95090502c08745946edc1))
+
+
+
+
+
 ## [3.1.1](https://github.com/Employes/Paperless/compare/v3.1.0...v3.1.1) (2026-02-19)
 
 **Note:** Version bump only for package @paperless/core

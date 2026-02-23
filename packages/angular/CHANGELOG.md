@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/Employes/Paperless/compare/v3.1.1...v3.2.0) (2026-02-23)
+
+
+### Bug Fixes
+
+* **conventions:** Update dependencies & fix angular eslint ([dfd030e](https://github.com/Employes/Paperless/commit/dfd030e719611c5b551d50b39aca6d2b070e76b8))
+* **eslint:** Make linting work again ([d4bca6d](https://github.com/Employes/Paperless/commit/d4bca6ddf96235f5b802f1bb04f55992984504f8))
+
+
+
+
+
 ## [3.1.1](https://github.com/Employes/Paperless/compare/v3.1.0...v3.1.1) (2026-02-19)
 
 **Note:** Version bump only for package @paperless/angular
