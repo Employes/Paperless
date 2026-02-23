@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.2](https://github.com/Employes/Paperless/compare/v3.2.1...v3.2.2) (2026-02-23)
+
+
+### Bug Fixes
+
+* **molecules/datepicker:** Correct parsing of typed date based on current locale ([ca1a245](https://github.com/Employes/Paperless/commit/ca1a2453874a375a1dfaae7bea1c08593731e42b))
+
+
+
+
+
 ## [3.2.1](https://github.com/Employes/Paperless/compare/v3.2.0...v3.2.1) (2026-02-23)
 
 
