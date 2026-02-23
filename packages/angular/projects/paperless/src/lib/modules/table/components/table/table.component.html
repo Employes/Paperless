@@ -42,12 +42,27 @@
 				class="flex flex-col overflow-x-auto"
 				[class]="
 					cn(
-						'before:absolute before:top-0 before:left-0 before:z-[1] before:pointer-events-none',
-						'before:w-24 before:h-full before:transition-opacity',
-						'before:bg-gradient-to-r before:from-white dark:before:from-hurricane-700 before:via-white/80 dark:before:via-hurricane-700/90 before:to-transparent',
-						'after:absolute after:top-0 after:right-0 after:z-[0] before:pointer-events-none',
-						'after:w-24 after:h-full after:transition-opacity',
-						'after:bg-gradient-to-l after:from-white after:dark:from-hurricane-700 after:via-white/80 dark:after:via-hurricane-700/90 after:to-transparent',
+						'
+        before:pointer-events-none before:absolute before:left-0 before:top-0
+        before:z-[1]
+      ',
+						'before:h-full before:w-24 before:transition-opacity',
+						'
+        before:bg-gradient-to-r before:from-white before:via-white/80
+        before:to-transparent
+        dark:before:from-hurricane-700 dark:before:via-hurricane-700/90
+      ',
+						'
+        before:pointer-events-none
+        after:absolute after:right-0 after:top-0 after:z-[0]
+      ',
+						'after:h-full after:w-24 after:transition-opacity',
+						'
+        after:bg-gradient-to-l after:from-white after:via-white/80
+        after:to-transparent
+        after:dark:from-hurricane-700
+        dark:after:via-hurricane-700/90
+      ',
 						{
 							'before:opacity-0': reachedScrollStart$ | async,
 							'after:opacity-0': reachedScrollEnd$ | async,

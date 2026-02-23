@@ -39,6 +39,9 @@ export default defineConfig([
 				tailwindConfig: 'tailwind.config.ts',
 			},
 		},
+		rules: {
+			'better-tailwindcss/no-unknown-classes': 'warn',
+		},
 	},
 	{
 		files: ['**/*.{ts,tsx,js,jsx}'],
@@ -131,7 +134,8 @@ export default defineConfig([
 		],
 		processor: angularPlugin.processInlineTemplates,
 		rules: {
-			'@angular-eslint/prefer-standalone': 'off',
+			'@angular-eslint/prefer-inject': 'warn',
+			'@angular-eslint/prefer-standalone': 'warn',
 			'@angular-eslint/directive-selector': [
 				'error',
 				{
@@ -154,6 +158,7 @@ export default defineConfig([
 		files: ['**/*.html'],
 		extends: [angularPlugin.configs.templateRecommended],
 		rules: {
+			'better-tailwindcss/enforce-consistent-line-wrapping': 'off',
 			'@angular-eslint/template/prefer-self-closing-tags': ['error'],
 			'@angular-eslint/template/attributes-order': [
 				'error',
