@@ -296,13 +296,15 @@ export class Datepicker {
 		this.parseMinDate(this.minDate);
 		this.parseMaxDate(this.maxDate);
 
-		if (this.mode !== 'day' && this.format === this._defaultFormats['day']) {
-			this.format = this._defaultFormats[this.mode];
-		}
-
 		this._isMobileBrowser = isMobileBrowser();
 
 		this.parseValue(this.value);
+	}
+
+	componentWillRender() {
+		if (this.mode !== 'day' && this.format === this._defaultFormats['day']) {
+			this.format = this._defaultFormats[this.mode];
+		}
 	}
 
 	render() {
@@ -416,7 +418,9 @@ export class Datepicker {
 		this._showDropdown = true;
 	}
 
-	private _onBlur(ev: FocusEvent, parseFormat = this.format) {
+	private _onBlur(ev: FocusEvent, parseFormat?: string) {
+		parseFormat = parseFormat || this.format;
+
 		if (this._isMobileBrowser && this._dateInputRef) {
 			return;
 		}
@@ -431,7 +435,9 @@ export class Datepicker {
 			return;
 		}
 
-		const value = parse(target.value, parseFormat, new Date());
+		const value = parse(target.value, parseFormat, new Date(), {
+			locale: state.locale === 'nl' ? nl : enUS,
+		});
 
 		if (value === this._value) {
 			return;
