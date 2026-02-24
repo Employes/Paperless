@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0](https://github.com/Employes/Paperless/compare/v3.2.4...v3.3.0) (2026-02-24)
+
+
+### Features
+
+* **atoms/modal/container:** Add size sm ([ee0fe45](https://github.com/Employes/Paperless/commit/ee0fe459d72d3d74b55d6b40ad83448c93303bc7))
+
+
+
+
+
 ## [3.2.4](https://github.com/Employes/Paperless/compare/v3.2.3...v3.2.4) (2026-02-24)
 
 
