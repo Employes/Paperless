@@ -159,7 +159,8 @@ export default defineConfig([
 		extends: [angularPlugin.configs.templateRecommended],
 		rules: {
 			'better-tailwindcss/enforce-consistent-line-wrapping': 'off',
-			'@angular-eslint/template/prefer-self-closing-tags': ['error'],
+			'@angular-eslint/template/prefer-self-closing-tags': 'error',
+			'@angular-eslint/template/prefer-control-flow': 'warn',
 			'@angular-eslint/template/attributes-order': [
 				'error',
 				{
