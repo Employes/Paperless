@@ -22,6 +22,7 @@
  - [p-floating-menu-container](../floating-menu/container)
  - [p-modal-footer](../modal/footer)
  - [p-pagination](../../molecules/pagination/pagination)
+ - [p-select](../../molecules/select)
  - [p-tab-container](../tab/container)
  - [p-table-header](../../molecules/table/header)
  - [p-table-row](../../molecules/table/row)
@@ -34,6 +35,7 @@ graph TD;
   p-floating-menu-container --> p-divider
   p-modal-footer --> p-divider
   p-pagination --> p-divider
+  p-select --> p-divider
   p-tab-container --> p-divider
   p-table-header --> p-divider
   p-table-row --> p-divider

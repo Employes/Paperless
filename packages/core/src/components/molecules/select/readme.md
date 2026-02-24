@@ -74,6 +74,7 @@
 - [p-dropdown](../dropdown)
 - [p-button](../button)
 - [p-dropdown-menu-item](../../atoms/dropdown-menu/item)
+- [p-divider](../../atoms/divider)
 - [p-loader](../../atoms/loader)
 - [p-field](../field/field)
 - [p-avatar](../../atoms/avatar/avatar)
@@ -86,6 +87,7 @@ graph TD;
   p-select --> p-dropdown
   p-select --> p-button
   p-select --> p-dropdown-menu-item
+  p-select --> p-divider
   p-select --> p-loader
   p-select --> p-field
   p-select --> p-avatar

@@ -5,6 +5,7 @@ import {
 	Element,
 	Event,
 	EventEmitter,
+	Fragment,
 	h,
 	Listen,
 	Prop,
@@ -804,16 +805,22 @@ export class Select {
 
 	private _getAddItem() {
 		return (
-			<p-dropdown-menu-item
-				slot='items'
-				useContainer={false}
-				onClick={() => this.add.emit()}
-			>
-				<span class='flex items-center gap-1 font-semibold text-indigo-600'>
-					{this.addItemText}
-					<p-icon variant='plus' />
-				</span>
-			</p-dropdown-menu-item>
+			<Fragment>
+				<p-divider
+					class='my-1 px-2'
+					slot='items'
+				/>
+				<p-dropdown-menu-item
+					slot='items'
+					useContainer={false}
+					onClick={() => this.add.emit()}
+				>
+					<span class='flex items-center gap-1 font-semibold text-indigo-600'>
+						{this.addItemText}
+						<p-icon variant='plus' />
+					</span>
+				</p-dropdown-menu-item>
+			</Fragment>
 		);
 	}
 
