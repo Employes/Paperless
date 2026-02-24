@@ -1346,7 +1346,7 @@ export namespace Components {
           * The size of the modal container
           * @default 'base'
          */
-        "size": 'xs' | 'base' | 'lg' | 'xl' | '2xl';
+        "size": 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl';
     }
     interface PModalBody {
         /**
@@ -1370,7 +1370,7 @@ export namespace Components {
           * The size of the modal container
           * @default 'base'
          */
-        "size": 'xs' | 'base' | 'lg' | 'xl' | '2xl';
+        "size": 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl';
     }
     interface PModalFooter {
     }
@@ -5074,7 +5074,7 @@ declare namespace LocalJSX {
           * The size of the modal container
           * @default 'base'
          */
-        "size"?: 'xs' | 'base' | 'lg' | 'xl' | '2xl';
+        "size"?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl';
     }
     interface PModalBody {
         /**
@@ -5098,7 +5098,7 @@ declare namespace LocalJSX {
           * The size of the modal container
           * @default 'base'
          */
-        "size"?: 'xs' | 'base' | 'lg' | 'xl' | '2xl';
+        "size"?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl';
     }
     interface PModalFooter {
     }

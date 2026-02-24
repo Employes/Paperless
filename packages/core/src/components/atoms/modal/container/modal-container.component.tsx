@@ -24,6 +24,7 @@ const container = cva(
 		variants: {
 			size: {
 				xs: 'tablet:max-w-[20rem]',
+				sm: 'tablet:max-w-[27.5rem]',
 				base: 'tablet:max-w-[35rem]',
 				lg: 'tablet:max-w-[41rem]',
 				xl: 'tablet:max-w-[45rem]',
@@ -52,7 +53,7 @@ export class ModalContainer {
 	/**
 	 * The size of the modal container
 	 */
-	@Prop() size: 'xs' | 'base' | 'lg' | 'xl' | '2xl' = 'base';
+	@Prop() size: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' = 'base';
 
 	/**
 	 * Wether the container is closing

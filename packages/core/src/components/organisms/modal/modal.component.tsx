@@ -17,7 +17,7 @@ export class Modal {
 	/**
 	 * The size of the modal container
 	 */
-	@Prop() size: 'xs' | 'base' | 'lg' | 'xl' | '2xl' = 'base';
+	@Prop() size: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' = 'base';
 
 	/**
 	 * The Header of the modal
