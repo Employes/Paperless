@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.4](https://github.com/Employes/Paperless/compare/v3.2.3...v3.2.4) (2026-02-24)
+
+
+### Bug Fixes
+
+* **conventions:** Set prefer-control-flow to warn ([a1eb5ad](https://github.com/Employes/Paperless/commit/a1eb5ad4bb53d26cf52a9c174cdc2aed0c5ffab7))
+* **molecules/table/footer:** Don't apply margin if hidden ([71a1be0](https://github.com/Employes/Paperless/commit/71a1be0192b042ef8bc853fe622b8b78845db7f6))
+
+
+
+
+
 ## [3.2.3](https://github.com/Employes/Paperless/compare/v3.2.2...v3.2.3) (2026-02-24)
 
 

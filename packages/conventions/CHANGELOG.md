@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.4](https://github.com/Employes/Paperless/compare/v3.2.3...v3.2.4) (2026-02-24)
+
+
+### Bug Fixes
+
+* **conventions:** Set prefer-control-flow to warn ([a1eb5ad](https://github.com/Employes/Paperless/commit/a1eb5ad4bb53d26cf52a9c174cdc2aed0c5ffab7))
+
+
+
+
+
 ## [3.2.3](https://github.com/Employes/Paperless/compare/v3.2.2...v3.2.3) (2026-02-24)
 
 **Note:** Version bump only for package @paperless/conventions
