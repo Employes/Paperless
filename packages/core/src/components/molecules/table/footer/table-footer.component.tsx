@@ -206,7 +206,7 @@ export class TableFooter {
 		const modal = this._el.closest('p-modal');
 		const layout = document.querySelector('p-layout');
 
-		if (modal) {
+		if (modal && !this._hidden) {
 			const modalBody = modal.shadowRoot.querySelector('p-modal-body');
 			const innerContent = modalBody.shadowRoot.querySelector('div');
 
@@ -220,7 +220,7 @@ export class TableFooter {
 			this._el.style.marginBottom = `-${modalPaddingBottom - 1}px`;
 		}
 
-		if (layout && !modal) {
+		if (layout && !modal && !this._hidden) {
 			const innerContent = layout.shadowRoot.querySelector('.content');
 			const innerContentComputed = getComputedStyle(innerContent);
 
