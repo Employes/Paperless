@@ -45,29 +45,31 @@ export class Accordion {
 	render() {
 		return (
 			<ThemedHost>
-				<div
-					class={cn('flex cursor-pointer items-center gap-2', {
-						'text-storm-500 dark:text-white': this.variant === 'primary',
-						'text-storm-300 dark:text-hurricane-200':
-							this.variant === 'secondary',
-					})}
-					onClick={() => this._onClick()}
-				>
-					<p-icon
-						class='flex shrink-0'
-						rotate={this.open ? 0 : -90}
-						variant='caret'
-					/>
-					<p class='my-0 shrink-0 whitespace-nowrap text-base font-medium'>
-						{this.header}
-					</p>
-					<p-divider class='flex-1' />
-				</div>
-				{this.open && (
-					<div class='mt-4'>
-						<slot />
+				<div class='flex w-full flex-col'>
+					<div
+						class={cn('flex cursor-pointer items-center gap-2', {
+							'text-storm-500 dark:text-white': this.variant === 'primary',
+							'text-storm-300 dark:text-hurricane-200':
+								this.variant === 'secondary',
+						})}
+						onClick={() => this._onClick()}
+					>
+						<p-icon
+							class='flex shrink-0'
+							rotate={this.open ? 0 : -90}
+							variant='caret'
+						/>
+						<p class='my-0 shrink-0 whitespace-nowrap text-base font-medium'>
+							{this.header}
+						</p>
+						<p-divider class='flex-1' />
 					</div>
-				)}
+					{this.open && (
+						<div class='mt-4'>
+							<slot />
+						</div>
+					)}
+				</div>
 			</ThemedHost>
 		);
 	}
