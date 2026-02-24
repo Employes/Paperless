@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.4.0](https://github.com/Employes/Paperless/compare/v3.3.0...v3.4.0) (2026-02-24)
+
+
+### Features
+
+* **molecules/select:** Add divider when show-add-item is enabled ([9d3decc](https://github.com/Employes/Paperless/commit/9d3decce934d0d29473f2a80f02193bef659c2b4))
+
+
+
+
+
 # [3.3.0](https://github.com/Employes/Paperless/compare/v3.2.4...v3.3.0) (2026-02-24)
 
 
