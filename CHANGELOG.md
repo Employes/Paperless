@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.3](https://github.com/Employes/Paperless/compare/v3.2.2...v3.2.3) (2026-02-24)
+
+
+### Bug Fixes
+
+* **molecules/accordion:** Apply a flex box so the height is more accurate ([2c1e994](https://github.com/Employes/Paperless/commit/2c1e994ed7afb8dbb3d1c2ae345ea6cda6242b83))
+
+
+
+
+
 ## [3.2.2](https://github.com/Employes/Paperless/compare/v3.2.1...v3.2.2) (2026-02-23)
 
 
