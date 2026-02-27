@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.4.1](https://github.com/Employes/Paperless/compare/v3.4.0...v3.4.1) (2026-02-27)
+
+
+### Bug Fixes
+
+* fix linting indentation ([d34c033](https://github.com/Employes/Paperless/commit/d34c0335fb70421c3bb2c77ee265a986a5d401e0))
+* **molecules/select:** Only show empty state if showAddItem is disabled ([ac8896d](https://github.com/Employes/Paperless/commit/ac8896d5791647deecdfeaefc81bdfefbb387830))
+
+
+
+
+
 # [3.4.0](https://github.com/Employes/Paperless/compare/v3.3.0...v3.4.0) (2026-02-24)
 
 
