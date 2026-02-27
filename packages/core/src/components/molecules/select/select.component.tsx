@@ -40,9 +40,9 @@ const textContainer = cva('block w-full overflow-hidden text-start', {
 	variants: {
 		variant: {
 			placeholder: `
-     text-storm-400
-     dark:text-white
-   `,
+				text-storm-400
+				dark:text-white
+			`,
 			default: null,
 		},
 		enableTextWrap: {
@@ -51,10 +51,10 @@ const textContainer = cva('block w-full overflow-hidden text-start', {
 		},
 		error: {
 			true: `
-     text-negative-red-700
-     group-hover/button:text-negative-red-800
-     dark:text-negative-red-alternative
-   `,
+				text-negative-red-700
+				group-hover/button:text-negative-red-800
+				dark:text-negative-red-alternative
+			`,
 			false: null,
 		},
 	},
@@ -376,11 +376,11 @@ export class Select {
 							{item[this.selectionDisplayKey ?? this.displayKey]}
 							<p-icon
 								class='
-          text-xs text-indigo-500
-          group-hover/item:text-indigo-800
-          dark:text-white/15
-          dark:group-hover/item:text-white
-        '
+									text-xs text-indigo-500
+									group-hover/item:text-indigo-800
+									dark:text-white/15
+									dark:group-hover/item:text-white
+								'
 								variant='negative'
 							/>
 						</div>
@@ -759,13 +759,13 @@ export class Select {
 			);
 		});
 
-		if (this._items.length === 0) {
+		if (this._items.length === 0 && !this.showAddItem) {
 			items = [
 				<p
 					class='
-       w-full p-2 text-center text-sm text-storm-400
-       dark:text-hurricane-200
-     '
+						w-full p-2 text-center text-sm text-storm-400
+						dark:text-hurricane-200
+					'
 					slot='items'
 				>
 					{this.emptyStateText}
@@ -806,10 +806,12 @@ export class Select {
 	private _getAddItem() {
 		return (
 			<Fragment>
-				<p-divider
-					class='my-1 px-2'
-					slot='items'
-				/>
+				{this._items.length > 0 && (
+					<p-divider
+						class='my-1 px-2'
+						slot='items'
+					/>
+				)}
 				<p-dropdown-menu-item
 					slot='items'
 					useContainer={false}
@@ -980,9 +982,9 @@ export class Select {
 						<p-icon
 							class={cn(
 								`
-          text-storm-300
-          dark:text-hurricane-200
-        `,
+									text-storm-300
+									dark:text-hurricane-200
+								`,
 								(!isSelection || !!this.applyClassOnSelectedItem) &&
 									(!isSelectedInMenu || !!this.applyClassOnSelectedItemInMenu)
 									? (item?.[this.iconClassKey] ?? '')
