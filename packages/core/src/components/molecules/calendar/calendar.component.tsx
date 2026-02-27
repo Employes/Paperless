@@ -51,9 +51,9 @@ const header = cva(
 		'flex items-center gap-2',
 		'w-full rounded-lg p-2',
 		`
-			bg-off-white-300
-			dark:bg-white/15
-		`,
+    bg-off-white-300
+    dark:bg-white/15
+  `,
 	],
 	{
 		variants: {
@@ -350,8 +350,8 @@ export class Calendar {
 								class={cn(
 									'w-8',
 									`
-										col-start-${day.offset}
-									`
+           col-start-${day.offset}
+         `
 								)}
 								tabIndex={-1}
 								variant='primary'
@@ -372,8 +372,8 @@ export class Calendar {
 										'dark:text-hurricane-200': day.disabled,
 									},
 									`
-										col-start-${day.offset}
-									`,
+           col-start-${day.offset}
+         `,
 									{ 'cursor-not-allowed opacity-60': day.disabled },
 									{
 										'border border-solid border-off-white-700 bg-off-white-300 text-storm-500 dark:border-none dark:bg-hurricane-200 dark:text-white':

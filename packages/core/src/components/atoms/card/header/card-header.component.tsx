@@ -29,9 +29,9 @@ const content = cva('flex items-center gap-2', {
 
 const title = cva(
 	`
-		flex h-8 min-w-0 items-center gap-2 text-sm font-bold text-storm-500
-		dark:text-white
-	`
+   flex h-8 min-w-0 items-center gap-2 text-sm font-bold text-storm-500
+   dark:text-white
+ `
 );
 
 @Component({
@@ -86,9 +86,9 @@ export class CardHeader {
 						{this.icon ? (
 							<p-icon
 								class='
-									text-storm-300
-									dark:text-hurricane-200
-								'
+          text-storm-300
+          dark:text-hurricane-200
+        '
 								flip={this.iconFlip}
 								rotate={this.iconRotate}
 								variant={this.icon}
@@ -107,9 +107,9 @@ export class CardHeader {
 
 						<div
 							class='
-								ml-auto flex items-center justify-end gap-4
-								empty:hidden
-							'
+         ml-auto flex items-center justify-end gap-4
+         empty:hidden
+       '
 						>
 							<slot name='suffix' />
 						</div>
@@ -119,17 +119,17 @@ export class CardHeader {
 						asBoolean(this.divider) && (
 							<p-divider
 								class='
-									text-off-white-700
-									dark:text-white/15
-								'
+          text-off-white-700
+          dark:text-white/15
+        '
 							/>
 						)
 					) : (
 						<div
 							class='
-								pointer-events-none absolute left-0 top-0 z-[-1] h-full w-full
-								overflow-hidden rounded-t-2xl
-							'
+         pointer-events-none absolute left-0 top-0 z-[-1] h-full w-full
+         overflow-hidden rounded-t-2xl
+       '
 						>
 							<p-smile
 								class='dark:text-hurricane-400'

@@ -25,32 +25,32 @@ const toggle = cva(
 				false: [
 					'cursor-pointer shadow-1',
 					`
-						border-storm-100 bg-storm-50
-						dark:border-white/15 dark:bg-white/10
-					`,
+       border-storm-100 bg-storm-50
+       dark:border-white/15 dark:bg-white/10
+     `,
 					`
-						hover:border-storm-500/20 hover:bg-indigo-100
-						dark:hover:border-white/15 dark:hover:bg-white/20
-					`,
+       hover:border-storm-500/20 hover:bg-indigo-100
+       dark:hover:border-white/15 dark:hover:bg-white/20
+     `,
 					`
-						group-hover/toggle-label:border-storm-500/20
-						group-hover/toggle-label:bg-indigo-100
-					`,
+       group-hover/toggle-label:border-storm-500/20
+       group-hover/toggle-label:bg-indigo-100
+     `,
 					'checked:border-storm-500/20 checked:bg-indigo-600',
 					`
-						checked:ring-2 checked:ring-indigo-100
-						dark:checked:ring-0
-					`,
+       checked:ring-2 checked:ring-indigo-100
+       dark:checked:ring-0
+     `,
 					'checked:hover:border-storm-500/20 checked:hover:bg-indigo-700',
 					`
-						checked:group-hover/toggle-label:border-storm-500/20
-						checked:group-hover/toggle-label:bg-indigo-700
-					`,
+       checked:group-hover/toggle-label:border-storm-500/20
+       checked:group-hover/toggle-label:bg-indigo-700
+     `,
 				],
 				true: `
-					cursor-not-allowed border-storm-50 bg-white-600
-					dark:border-white/10 dark:bg-white/5
-				`,
+      cursor-not-allowed border-storm-50 bg-white-600
+      dark:border-white/10 dark:bg-white/5
+    `,
 			},
 		},
 	}
@@ -61,9 +61,9 @@ const circle = cva(
 		'flex items-center justify-center',
 		'rounded-full transition-all',
 		`
-			pointer-events-none absolute top-1/2 -translate-y-1/2 transform
-			peer-checked:left-full
-		`,
+    pointer-events-none absolute top-1/2 -translate-y-1/2 transform
+    peer-checked:left-full
+  `,
 	],
 	{
 		variants: {
@@ -71,36 +71,36 @@ const circle = cva(
 				false: [
 					'bg-white ring-1 ring-storm-500/10',
 					`
-						left-[1px]
-						peer-checked:-translate-x-[calc(100%+1px)]
-					`,
+       left-[1px]
+       peer-checked:-translate-x-[calc(100%+1px)]
+     `,
 					`
-						after:rounded-full after:bg-indigo-800 after:transition-all
-						after:content-[unset]
-						peer-checked:after:content-['']
-					`,
+       after:rounded-full after:bg-indigo-800 after:transition-all
+       after:content-[unset]
+       peer-checked:after:content-['']
+     `,
 					`
-						h-[14px] w-[14px]
-						group-hover/p-toggle:w-[18px]
-						group-hover/toggle-label:w-[18px]
-					`,
+       h-[14px] w-[14px]
+       group-hover/p-toggle:w-[18px]
+       group-hover/toggle-label:w-[18px]
+     `,
 					`
-						after:h-1 after:w-1
-						group-hover/p-toggle:after:w-2
-						group-hover/toggle-label:after:w-2
-					`,
+       after:h-1 after:w-1
+       group-hover/p-toggle:after:w-2
+       group-hover/toggle-label:after:w-2
+     `,
 				],
 				true: [
 					`
-						bg-storm-100
-						peer-checked:bg-storm-200
-						dark:bg-white/15
-						dark:peer-checked:bg-white/15
-					`,
+       bg-storm-100
+       peer-checked:bg-storm-200
+       dark:bg-white/15
+       dark:peer-checked:bg-white/15
+     `,
 					`
-						left-[2px]
-						peer-checked:-translate-x-[calc(100%+2px)]
-					`,
+       left-[2px]
+       peer-checked:-translate-x-[calc(100%+2px)]
+     `,
 					'h-3 w-3',
 				],
 			},
@@ -195,10 +195,10 @@ export class Toggle {
 					</div>
 					<div
 						class='
-							flex-1 overflow-hidden text-ellipsis
-							empty:hidden
-							dark:text-white
-						'
+        flex-1 overflow-hidden text-ellipsis
+        empty:hidden
+        dark:text-white
+      '
 					>
 						<slot />
 					</div>

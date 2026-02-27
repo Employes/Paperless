@@ -8,12 +8,12 @@ const container = cva(
 		'z-[600]',
 
 		`
-			w-[calc(100%-(env(safe-area-inset-left,0)+env(safe-area-inset-right,
-			0)+2rem))]
-		`,
+    w-[calc(100%-(env(safe-area-inset-left,0)+env(safe-area-inset-right,
+    0)+2rem))]
+  `,
 		`
-			max-w-[calc(100%-(env(safe-area-inset-left,0)+env(safe-area-inset-right,0)+2rem))]
-		`,
+    max-w-[calc(100%-(env(safe-area-inset-left,0)+env(safe-area-inset-right,0)+2rem))]
+  `,
 	],
 	{
 		variants: {

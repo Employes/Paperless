@@ -25,39 +25,39 @@ const checkbox = cva(
 				false: [
 					'cursor-pointer shadow-1',
 					`
-						border-storm-100 bg-white
-						dark:border-white/15 dark:bg-white/10
-					`,
+       border-storm-100 bg-white
+       dark:border-white/15 dark:bg-white/10
+     `,
 					`
-						hover:border-storm-500/20 hover:bg-indigo-100
-						dark:hover:border-white/15 dark:hover:bg-white/20
-					`,
+       hover:border-storm-500/20 hover:bg-indigo-100
+       dark:hover:border-white/15 dark:hover:bg-white/20
+     `,
 					`
-						group-hover/checkbox-label:border-storm-100
-						group-hover/checkbox-label:bg-indigo-100
-					`,
+       group-hover/checkbox-label:border-storm-100
+       group-hover/checkbox-label:bg-indigo-100
+     `,
 					'checked:border-storm-500/20 checked:bg-indigo-600',
 					`
-						checked:ring-2 checked:ring-indigo-100
-						dark:checked:ring-0
-					`,
+       checked:ring-2 checked:ring-indigo-100
+       dark:checked:ring-0
+     `,
 					'checked:hover:border-storm-500/20 checked:hover:bg-indigo-700',
 					`
-						checked:group-hover/checkbox-label:border-storm-500/20
-						checked:group-hover/checkbox-label:bg-indigo-700
-					`,
+       checked:group-hover/checkbox-label:border-storm-500/20
+       checked:group-hover/checkbox-label:bg-indigo-700
+     `,
 					'indeterminate:border-storm-500/20 indeterminate:bg-indigo-600',
 					'indeterminate:ring-2 indeterminate:ring-indigo-100',
 					'indeterminate:hover:border-storm-500/20 indeterminate:hover:bg-indigo-700',
 					`
-						indeterminate:group-hover/checkbox-label:border-storm-500/20
-						indeterminate:group-hover/checkbox-label:bg-indigo-700
-					`,
+       indeterminate:group-hover/checkbox-label:border-storm-500/20
+       indeterminate:group-hover/checkbox-label:bg-indigo-700
+     `,
 				],
 				true: `
-					cursor-not-allowed border-storm-50 bg-white-600
-					dark:border-white/10 dark:bg-white/5
-				`,
+      cursor-not-allowed border-storm-50 bg-white-600
+      dark:border-white/10 dark:bg-white/5
+    `,
 			},
 		},
 	}
@@ -66,23 +66,23 @@ const checkbox = cva(
 const iconContainer = cva(
 	[
 		`
-			hidden
-			peer-checked:flex
-			peer-indeterminate:flex
-		`,
+    hidden
+    peer-checked:flex
+    peer-indeterminate:flex
+  `,
 		`
-			pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2
-			-translate-y-1/2 transform
-		`,
+    pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2
+    -translate-y-1/2 transform
+  `,
 	],
 	{
 		variants: {
 			disabled: {
 				false: 'text-white',
 				true: `
-					text-storm-200
-					dark:text-hurricane-300
-				`,
+      text-storm-200
+      dark:text-hurricane-300
+    `,
 			},
 		},
 	}
@@ -92,9 +92,9 @@ const icon = cva(['text-xs drop-shadow-2'], {
 	variants: {
 		disabled: {
 			false: `
-				group-hover/checkbox-label:text-sm
-				group-hover/p-checkbox:text-sm
-			`,
+     group-hover/checkbox-label:text-sm
+     group-hover/p-checkbox:text-sm
+   `,
 			true: null,
 		},
 	},
@@ -203,10 +203,10 @@ export class Checkbox {
 					</div>
 					<div
 						class='
-							flex-1 overflow-hidden text-ellipsis
-							empty:hidden
-							dark:text-white
-						'
+        flex-1 overflow-hidden text-ellipsis
+        empty:hidden
+        dark:text-white
+      '
 					>
 						<slot />
 					</div>

@@ -64,9 +64,9 @@ export class Loader {
 		const loader = (
 			<div
 				class={`
-					loader
-					color-${this.color}
-				`}
+      loader
+      color-${this.color}
+    `}
 			></div>
 		);
 
@@ -85,9 +85,9 @@ export class Loader {
 		return (
 			<ThemedHost
 				class={`
-					variant-default flex
-					${this.variant === 'full-width' && 'w-full justify-center text-4xl'}
-				`}
+      variant-default flex
+      ${this.variant === 'full-width' && 'w-full justify-center text-4xl'}
+    `}
 			>
 				{loader}
 			</ThemedHost>

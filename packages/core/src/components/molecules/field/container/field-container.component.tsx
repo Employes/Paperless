@@ -183,9 +183,9 @@ export class FieldContainer {
 					<div
 						class={cn(
 							`
-								flex items-end justify-between gap-1
-								empty:hidden
-							`,
+         flex items-end justify-between gap-1
+         empty:hidden
+       `,
 							{
 								'flex-row-reverse': this.align === 'end',
 							}
@@ -198,10 +198,10 @@ export class FieldContainer {
 							>
 								<span
 									class='
-										min-w-0 overflow-hidden text-ellipsis text-xs font-medium
-										text-storm-300
-										dark:text-hurricane-200
-									'
+           min-w-0 overflow-hidden text-ellipsis text-xs font-medium
+           text-storm-300
+           dark:text-hurricane-200
+         '
 								>
 									{label}
 								</span>
@@ -225,9 +225,9 @@ export class FieldContainer {
 									this.variant === 'write' && (
 										<span
 											class='
-												text-xs font-medium text-storm-200
-												dark:text-hurricane-300
-											'
+             text-xs font-medium text-storm-200
+             dark:text-hurricane-300
+           '
 										>
 											{this.optionalTemplate()}
 										</span>

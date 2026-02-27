@@ -41,12 +41,6 @@ export default defineConfig([
 		},
 		rules: {
 			'better-tailwindcss/no-unknown-classes': 'warn',
-			'better-tailwindcss/enforce-consistent-line-wrapping': [
-				'error',
-				{
-					indent: 'tab',
-				},
-			],
 		},
 	},
 	{

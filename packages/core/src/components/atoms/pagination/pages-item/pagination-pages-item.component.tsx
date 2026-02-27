@@ -35,27 +35,27 @@ const item = cva(
 				variant: 'default',
 				active: false,
 				class: `
-					bg-off-white-300 text-storm-400
-					dark:bg-hurricane-500 dark:text-hurricane-200
-				`,
+      bg-off-white-300 text-storm-400
+      dark:bg-hurricane-500 dark:text-hurricane-200
+    `,
 			},
 			{
 				variant: 'default',
 				active: false,
 				hover: true,
 				class: `
-					cursor-pointer
-					hover:bg-off-white-500 hover:text-storm-500
-					dark:hover:bg-white/15 dark:hover:text-hurricane-100
-				`,
+      cursor-pointer
+      hover:bg-off-white-500 hover:text-storm-500
+      dark:hover:bg-white/15 dark:hover:text-hurricane-100
+    `,
 			},
 			{
 				variant: 'default',
 				active: true,
 				class: `
-					bg-off-white-700 font-semibold text-storm-500
-					dark:bg-hurricane-300 dark:text-white
-				`,
+      bg-off-white-700 font-semibold text-storm-500
+      dark:bg-hurricane-300 dark:text-white
+    `,
 			},
 
 			{
@@ -72,11 +72,11 @@ const item = cva(
 				hover: true,
 				class: [
 					`
-						cursor-pointer
-						hover:bg-white-600 hover:text-storm-500
-						active:border-indigo-600 active:bg-white-600 active:ring active:ring-2
-						active:ring-indigo-100
-					`,
+       cursor-pointer
+       hover:bg-white-600 hover:text-storm-500
+       active:border-indigo-600 active:bg-white-600 active:ring active:ring-2
+       active:ring-indigo-100
+     `,
 					'dark:hover:bg-white/25 dark:hover:text-white dark:hover:ring-0',
 				],
 			},

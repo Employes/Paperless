@@ -5,9 +5,9 @@ import { ThemedHost } from '../../../../internal/themed-host.component';
 
 const header = cva([
 	`
-		relative z-[1] w-full flex-col overflow-hidden rounded-t-2xl bg-white
-		dark:bg-hurricane-600
-	`,
+   relative z-[1] w-full flex-col overflow-hidden rounded-t-2xl bg-white
+   dark:bg-hurricane-600
+ `,
 	'inline-flex aspect-[7/1] max-h-28',
 ]);
 
@@ -18,9 +18,9 @@ const title = cva([
 	'w-[calc(100%-7rem)]',
 	'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2',
 	`
-		text-ambit text-2xl font-bold text-storm-500
-		dark:text-white
-	`,
+   text-ambit text-2xl font-bold text-storm-500
+   dark:text-white
+ `,
 ]);
 
 @Component({

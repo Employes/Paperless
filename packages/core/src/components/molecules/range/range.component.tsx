@@ -40,9 +40,9 @@ export class Range {
 			<ThemedHost>
 				<div
 					class='
-						flex w-inherit items-center gap-2 text-storm-300
-						dark:text-hurricane-200
-					'
+       flex w-inherit items-center gap-2 text-storm-300
+       dark:text-hurricane-200
+     '
 				>
 					<p-icon variant='minus' />
 					<div class='relative h-6 flex-1'>
@@ -60,9 +60,9 @@ export class Range {
 						/>
 						<div
 							class='
-								z-1 absolute left-0 top-1/2 h-[2px] -translate-y-1/2 transform
-								bg-indigo-600
-							'
+         z-1 absolute left-0 top-1/2 h-[2px] -translate-y-1/2 transform
+         bg-indigo-600
+       '
 							style={{
 								width: `calc(${percentage}% - (1rem * ${percentage} / 100))`,
 							}}

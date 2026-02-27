@@ -26,9 +26,9 @@ const header = cva([
 	'z-[1] flex flex-col gap-2',
 	'w-full',
 	`
-		px-4
-		tablet:px-0
-	`,
+   px-4
+   tablet:px-0
+ `,
 
 	'desktop-xs:flex-row',
 ]);
@@ -227,9 +227,9 @@ export class TableHeader {
 					{this.loading && (
 						<p-loader
 							class='
-								hidden h-8 w-3/4 rounded
-								desktop-xs:flex
-							'
+         hidden h-8 w-3/4 rounded
+         desktop-xs:flex
+       '
 							variant='ghost'
 						></p-loader>
 					)}
@@ -238,18 +238,18 @@ export class TableHeader {
 						(hasCustomFilterSlot || quickFilters.length > 0) && (
 							<div
 								class='
-									flex flex-col justify-start gap-4 justify-self-start
-									desktop-xs:flex-row
-								'
+          flex flex-col justify-start gap-4 justify-self-start
+          desktop-xs:flex-row
+        '
 							>
 								{hasCustomFilterSlot && <slot name='custom-filter' />}
 
 								{quickFilters.length > 0 && (
 									<p-segment-container
 										class='
-											hidden
-											desktop-xs:flex
-										'
+            hidden
+            desktop-xs:flex
+          '
 									>
 										{quickFilters.map(item => (
 											<p-segment-item
@@ -271,9 +271,9 @@ export class TableHeader {
 
 					<div
 						class='
-							flex flex-col justify-end gap-2
-							desktop-xs:ml-auto desktop-xs:flex-row desktop-xs:items-center
-						'
+        flex flex-col justify-end gap-2
+        desktop-xs:ml-auto desktop-xs:flex-row desktop-xs:items-center
+      '
 					>
 						{this.enableSearch && (
 							<p-field
@@ -291,9 +291,13 @@ export class TableHeader {
 							{this.enableFilter && (
 								<p-button
 									class={`
-										w-full
-										${this.enableFilterDesktop ? 'desktop-xs:w-auto' : 'desktop-xs:hidden'}
-									`}
+           w-full
+           ${
+							this.enableFilterDesktop
+								? 'desktop-xs:w-auto'
+								: 'desktop-xs:hidden'
+						}
+         `}
 									icon='filter'
 									variant='secondary'
 									onOnClick={() => this.filter.emit()}
@@ -310,10 +314,10 @@ export class TableHeader {
 							{!this.loading && this.enableExport && this.enableFilter && (
 								<p-divider
 									class='
-										hidden h-4
-										tablet:flex
-										dark:text-white/15
-									'
+           hidden h-4
+           tablet:flex
+           dark:text-white/15
+         '
 									variant='vertical'
 								/>
 							)}
@@ -321,9 +325,9 @@ export class TableHeader {
 							{!this.loading && this.enableExport && (
 								<p-button
 									class='
-										desktop-xs:auto
-										w-full
-									'
+           desktop-xs:auto
+           w-full
+         '
 									icon='upload'
 									variant='secondary'
 									onOnClick={() => this.export.emit()}
@@ -341,11 +345,11 @@ export class TableHeader {
 					{this.enableAction && this.canUseAction && (
 						<div
 							class='
-								fixed bottom-0 left-0 z-[2] block w-full border border-solid
-								border-transparent bg-white p-4
-								desktop-xs:hidden
-								dark:border-t-hurricane-400 dark:bg-hurricane-500
-							'
+         fixed bottom-0 left-0 z-[2] block w-full border border-solid
+         border-transparent bg-white p-4
+         desktop-xs:hidden
+         dark:border-t-hurricane-400 dark:bg-hurricane-500
+       '
 						>
 							{this._buttonTemplate(true)}
 						</div>
@@ -367,9 +371,9 @@ export class TableHeader {
 					mobile
 						? 'w-full'
 						: `
-							hidden
-							desktop-xs:flex
-						`
+        hidden
+        desktop-xs:flex
+      `
 				}
 				disabled={!this.canUseAction}
 				icon={this.actionIcon}
@@ -389,19 +393,19 @@ export class TableHeader {
 		return (
 			<p-badge
 				class={`
-					ml-1
-					${
-						variant === 'default'
-							? `
-								hidden
-								desktop-xs:flex
-							`
-							: `
-								flex
-								desktop-xs:hidden
-							`
-					}
-				`}
+      ml-1
+      ${
+				variant === 'default'
+					? `
+       hidden
+       desktop-xs:flex
+     `
+					: `
+       flex
+       desktop-xs:hidden
+     `
+			}
+    `}
 			>
 				{amount}
 			</p-badge>

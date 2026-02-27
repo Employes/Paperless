@@ -14,9 +14,9 @@ export class TabContainer {
 				</div>
 				<p-divider
 					class='
-						absolute bottom-0 left-0 m-0 w-full text-off-white-700
-						dark:text-hurricane-400
-					'
+       absolute bottom-0 left-0 m-0 w-full text-off-white-700
+       dark:text-hurricane-400
+     '
 				/>
 			</div>
 		);

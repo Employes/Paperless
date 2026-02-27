@@ -4,9 +4,9 @@ import { cva } from 'class-variance-authority';
 const avatar = cva(
 	[
 		`
-			p-avatar flex aspect-branding items-center justify-center rounded-full
-			font-ambit font-bold leading-none ring-1 ring-inset ring-storm-500/20
-		`,
+    p-avatar flex aspect-branding items-center justify-center rounded-full
+    font-ambit font-bold leading-none ring-1 ring-inset ring-storm-500/20
+  `,
 	],
 	{
 		variants: {

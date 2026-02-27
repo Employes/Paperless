@@ -19,25 +19,25 @@ const infopanel = cva(
 			},
 			variant: {
 				neutral: `
-					bg-indigo-100
-					dark:bg-indigo-300/15
-				`,
+      bg-indigo-100
+      dark:bg-indigo-300/15
+    `,
 				positive: `
-					bg-positive-green-100
-					dark:bg-positive-green-alternative/15
-				`,
+      bg-positive-green-100
+      dark:bg-positive-green-alternative/15
+    `,
 				biased: `
-					bg-amber-50
-					dark:bg-amber-alternative/15
-				`,
+      bg-amber-50
+      dark:bg-amber-alternative/15
+    `,
 				negative: `
-					bg-negative-red-100
-					dark:bg-negative-red-alternative/15
-				`,
+      bg-negative-red-100
+      dark:bg-negative-red-alternative/15
+    `,
 				feedback: `
-					bg-white-700
-					dark:bg-hurricane-100/15
-				`,
+      bg-white-700
+      dark:bg-hurricane-100/15
+    `,
 			},
 		},
 	}
@@ -47,25 +47,25 @@ const header = cva('text-sm font-medium', {
 	variants: {
 		variant: {
 			neutral: `
-				text-indigo-900
-				dark:text-indigo-400
-			`,
+     text-indigo-900
+     dark:text-indigo-400
+   `,
 			positive: `
-				text-positive-green-800
-				dark:text-positive-green-alternative
-			`,
+     text-positive-green-800
+     dark:text-positive-green-alternative
+   `,
 			biased: `
-				text-amber-800
-				dark:text-amber-alternative
-			`,
+     text-amber-800
+     dark:text-amber-alternative
+   `,
 			negative: `
-				text-negative-red-800
-				dark:text-negative-red-alternative
-			`,
+     text-negative-red-800
+     dark:text-negative-red-alternative
+   `,
 			feedback: `
-				text-storm-800
-				dark:text-hurricane-100
-			`,
+     text-storm-800
+     dark:text-hurricane-100
+   `,
 		},
 	},
 });
@@ -76,13 +76,13 @@ const close = cva([
 
 	'cursor-pointer rounded-lg',
 	`
-		text-storm-800/60
-		hover:bg-white-500/40 hover:text-storm-800/60
-	`,
+   text-storm-800/60
+   hover:bg-white-500/40 hover:text-storm-800/60
+ `,
 	`
-		dark:text-white/60
-		dark:hover:bg-white/15 dark:hover:text-white
-	`,
+   dark:text-white/60
+   dark:hover:bg-white/15 dark:hover:text-white
+ `,
 
 	'h-6 w-6',
 ]);
@@ -154,9 +154,9 @@ export class InfoPanel {
 					{(this.content?.length || hasContentSlot) && (
 						<div
 							class='
-								h-inherit text-sm font-normal text-storm-800/60
-								dark:text-white/70
-							'
+         h-inherit text-sm font-normal text-storm-800/60
+         dark:text-white/70
+       '
 						>
 							{this.content?.length ? (
 								<p class='my-0'>{this.content}</p>

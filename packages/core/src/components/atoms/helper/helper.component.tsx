@@ -29,11 +29,11 @@ export class Helper {
 				>
 					<p-icon
 						class='
-							cursor-pointer text-storm-300
-							hover:text-storm-500
-							dark:text-hurricane-300
-							dark:hover:text-hurricane-200
-						'
+        cursor-pointer text-storm-300
+        hover:text-storm-500
+        dark:text-hurricane-300
+        dark:hover:text-hurricane-200
+      '
 						size='sm'
 						slot='trigger'
 						variant='question-circle'

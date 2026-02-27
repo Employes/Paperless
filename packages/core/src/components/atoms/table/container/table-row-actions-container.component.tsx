@@ -20,9 +20,9 @@ export class TableRowActionsContainer {
 				<div
 					class={cn(
 						`
-							flex
-							before:w-4 before:bg-gradient-to-l before:from-off-white-200
-						`,
+        flex
+        before:w-4 before:bg-gradient-to-l before:from-off-white-200
+      `,
 						{
 							'dark:before:from-hurricane-600': !this.checked,
 							'dark:before:from-hurricane-400': !!this.checked,

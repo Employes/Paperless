@@ -13,8 +13,9 @@ const label = cva(
 				positive: [
 					'bg-positive-green-100 text-positive-green-800',
 					`
-						dark:bg-positive-green-alternative/15 dark:text-positive-green-alternative
-					`,
+       dark:bg-positive-green-alternative/15
+       dark:text-positive-green-alternative
+     `,
 				],
 				biased: [
 					'bg-amber-100 text-amber-800',
@@ -47,9 +48,9 @@ const label = cva(
 				keepMobileContent: false,
 				iconOnly: false,
 				class: `
-					w-6 p-2
-					desktop-xs:w-auto desktop-xs:py-0
-				`,
+      w-6 p-2
+      desktop-xs:w-auto desktop-xs:py-0
+    `,
 			},
 		],
 	}
@@ -119,9 +120,9 @@ export class Label {
 						<div
 							class={cn(
 								`
-									flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-sm
-									font-medium
-								`,
+          flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-sm
+          font-medium
+        `,
 								{
 									hidden: !this.keepMobileContent,
 									'desktop-xs:block': !this.keepMobileContent,

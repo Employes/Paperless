@@ -10,9 +10,9 @@ const container = cva(
 
 		'z-modal flex flex-col',
 		`
-			rounded-b-none rounded-t-2xl
-			desktop-xs:rounded-b-2xl
-		`,
+    rounded-b-none rounded-t-2xl
+    desktop-xs:rounded-b-2xl
+  `,
 
 		'max-h-[calc(100dvh-4rem)]',
 
@@ -32,13 +32,13 @@ const container = cva(
 			},
 			closing: {
 				false: `
-					animate-slide-in-bottom
-					desktop-xs:animate-slide-in-bottom-small
-				`,
+      animate-slide-in-bottom
+      desktop-xs:animate-slide-in-bottom-small
+    `,
 				true: `
-					pointer-events-none animate-slide-out-bottom
-					desktop-xs:animate-slide-out-bottom-small
-				`,
+      pointer-events-none animate-slide-out-bottom
+      desktop-xs:animate-slide-out-bottom-small
+    `,
 			},
 		},
 	}

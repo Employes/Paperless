@@ -125,9 +125,9 @@ export class Pagination {
 								this._hasPaginationPages && (
 									<p-divider
 										class='
-											mx-0 h-4 text-off-white-700
-											dark:text-hurricane-400
-										'
+            mx-0 h-4 text-off-white-700
+            dark:text-hurricane-400
+          '
 										variant='vertical'
 									/>
 								)}

@@ -19,9 +19,9 @@ const segmentItem = cva(
 				false: [
 					'cursor-pointer',
 					`
-						text-storm-300
-						hover:bg-storm-50 hover:text-storm-500
-					`,
+       text-storm-300
+       hover:bg-storm-50 hover:text-storm-500
+     `,
 					'dark:hover:bg-white/15 dark:hover:text-white',
 				],
 				true: 'bg-indigo-600 text-white',
@@ -36,17 +36,17 @@ const segmentItem = cva(
 				variant: 'default',
 				active: false,
 				class: `
-					text-storm-500
-					dark:text-hurricane-200
-				`,
+      text-storm-500
+      dark:text-hurricane-200
+    `,
 			},
 			{
 				variant: 'block',
 				active: false,
 				class: `
-					text-storm-500
-					dark:text-white
-				`,
+      text-storm-500
+      dark:text-white
+    `,
 			},
 		],
 	}
@@ -122,9 +122,9 @@ export class SegmentItem {
 							<p
 								class={cn(
 									`
-										my-0 font-medium
-										empty:hidden
-									`,
+           my-0 font-medium
+           empty:hidden
+         `,
 									{}
 								)}
 							>

@@ -32,14 +32,14 @@ const item = cva(
 				hover: true,
 				class: [
 					`
-						cursor-pointer
-						hover:bg-storm-800
-						active:bg-storm-700 active:text-storm-100/60
-					`,
+       cursor-pointer
+       hover:bg-storm-800
+       active:bg-storm-700 active:text-storm-100/60
+     `,
 					`
-						dark:hover:bg-hurricane-500
-						dark:active:bg-hurricane-600/50
-					`,
+       dark:hover:bg-hurricane-500
+       dark:active:bg-hurricane-600/50
+     `,
 				],
 			},
 		],
@@ -62,9 +62,9 @@ const icon = cva([], {
 			disabled: false,
 			hover: true,
 			class: `
-				group-hover:text-storm-100
-				group-active:text-storm-100/60
-			`,
+     group-hover:text-storm-100
+     group-active:text-storm-100/60
+   `,
 		},
 	],
 });
@@ -121,9 +121,9 @@ export class FloatingMenuItem {
 
 				<p
 					class='
-						min-w-0 overflow-hidden text-ellipsis text-nowrap font-semibold
-						empty:hidden
-					'
+       min-w-0 overflow-hidden text-ellipsis text-nowrap font-semibold
+       empty:hidden
+     '
 				>
 					<slot />
 				</p>
