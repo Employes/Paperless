@@ -81,9 +81,9 @@ const field = cva(
 				focused: false,
 				error: false,
 				class: `
-      border-storm-100
-      dark:border-hurricane-400
-    `,
+					border-storm-100
+					dark:border-hurricane-400
+				`,
 			},
 			{
 				variant: 'write',
@@ -91,27 +91,27 @@ const field = cva(
 				focused: true,
 				error: false,
 				class: `
-      border-indigo-600 ring ring-indigo-100
-      selection:bg-indigo-500
-      dark:ring-0
-    `,
+					border-indigo-600 ring ring-indigo-100
+					selection:bg-indigo-500
+					dark:ring-0
+				`,
 			},
 
 			{
 				variant: 'write',
 				disabled: false,
 				class: `
-      bg-white
-      dark:bg-hurricane-500
-    `,
+					bg-white
+					dark:bg-hurricane-500
+				`,
 			},
 			{
 				variant: 'write',
 				disabled: true,
 				class: `
-      cursor-not-allowed bg-white-600
-      dark:border-hurricane-500 dark:bg-hurricane-600
-    `,
+					cursor-not-allowed bg-white-600
+					dark:border-hurricane-500 dark:bg-hurricane-600
+				`,
 			},
 
 			{
@@ -124,10 +124,10 @@ const field = cva(
 				focused: true,
 				error: true,
 				class: `
-      ring ring-negative-red-50
-      selection:bg-negative-red-50
-      dark:ring-0
-    `,
+					ring ring-negative-red-50
+					selection:bg-negative-red-50
+					dark:ring-0
+				`,
 			},
 		],
 	}
@@ -136,15 +136,15 @@ const field = cva(
 const input = cva(
 	[
 		`
-    text-sm
-    placeholder:text-sm placeholder:text-storm-500/40
-    dark:placeholder:text-hurricane-200
-  `,
+			text-sm
+			placeholder:text-sm placeholder:text-storm-500/40
+			dark:placeholder:text-hurricane-200
+		`,
 		'min-w-0 flex-1 border-none bg-transparent p-0',
 		`
-    outline-none
-    focus:outline-none
-  `,
+			outline-none
+			focus:outline-none
+		`,
 		'font-geist',
 	],
 	{
@@ -159,9 +159,9 @@ const input = cva(
 			},
 			error: {
 				false: `
-      text-storm-500
-      dark:text-white
-    `,
+					text-storm-500
+					dark:text-white
+				`,
 				true: 'text-negative-red-500',
 			},
 		},
@@ -179,9 +179,9 @@ const prefixAndSuffix = cva(
 			disabled: {
 				false: null,
 				true: `
-      text-storm-100
-      dark:text-hurricane-400
-    `,
+					text-storm-100
+					dark:text-hurricane-400
+				`,
 			},
 			focused: {
 				false: null,
@@ -206,9 +206,9 @@ const prefixAndSuffix = cva(
 				focused: false,
 				error: false,
 				class: `
-      text-storm-300
-      dark:text-hurricane-200
-    `,
+					text-storm-300
+					dark:text-hurricane-200
+				`,
 			},
 
 			{
@@ -216,9 +216,9 @@ const prefixAndSuffix = cva(
 				focused: true,
 				error: false,
 				class: `
-      text-storm-500
-      dark:text-white
-    `,
+					text-storm-500
+					dark:text-white
+				`,
 			},
 
 			{

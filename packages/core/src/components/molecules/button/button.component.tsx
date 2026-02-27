@@ -165,24 +165,24 @@ const button = cva(
 				disabled: false,
 				error: false,
 				class: `
-      text-storm-500
-      dark:text-white
-    `,
+					text-storm-500
+					dark:text-white
+				`,
 			},
 			{
 				variant: 'primary',
 				class: `
-      dark:border-0
-      dark:active:border-0
-    `,
+					dark:border-0
+					dark:active:border-0
+				`,
 			},
 			{
 				variant: 'primary',
 				disabled: true,
 				class: `
-      bg-indigo-200
-      dark:bg-indigo-600/30 dark:text-white/30
-    `,
+					bg-indigo-200
+					dark:bg-indigo-600/30 dark:text-white/30
+				`,
 			},
 			{
 				variant: 'primary',
@@ -195,14 +195,14 @@ const button = cva(
 				loading: false,
 				class: [
 					`
-       active:border-storm-500/10 active:text-white/60 active:ring-2
-       dark:active:ring-0
-     `,
+						active:border-storm-500/10 active:text-white/60 active:ring-2
+						dark:active:ring-0
+					`,
 					`
-       drop-shadow-primary-button
-       hover:bg-indigo-700 hover:drop-shadow-2
-       active:ring-indigo-100
-     `,
+						drop-shadow-primary-button
+						hover:bg-indigo-700 hover:drop-shadow-2
+						active:ring-indigo-100
+					`,
 				],
 			},
 			{
@@ -223,17 +223,17 @@ const button = cva(
 				variant: ['secondary', 'dropdown'],
 				disabled: true,
 				class: `
-      border bg-white-600 text-storm-100
-      dark:border-white/5 dark:bg-white/5 dark:text-hurricane-400
-    `,
+					border bg-white-600 text-storm-100
+					dark:border-white/5 dark:bg-white/5 dark:text-hurricane-400
+				`,
 			},
 			{
 				variant: ['secondary', 'dropdown'],
 				disabled: false,
 				class: `
-      text-storm-500
-      dark:text-white
-    `,
+					text-storm-500
+					dark:text-white
+				`,
 			},
 			{
 				variant: ['secondary', 'dropdown'],
@@ -241,14 +241,14 @@ const button = cva(
 				loading: false,
 				class: [
 					`
-       drop-shadow-1
-       hover:bg-white-600 hover:drop-shadow-1
-       active:text-storm-500/60 active:ring-indigo-100
-     `,
+						drop-shadow-1
+						hover:bg-white-600 hover:drop-shadow-1
+						active:text-storm-500/60 active:ring-indigo-100
+					`,
 					`
-       dark:hover:bg-white/25
-       dark:active:bg-white/25 dark:active:text-white/60 dark:active:ring-0
-     `,
+						dark:hover:bg-white/25
+						dark:active:bg-white/25 dark:active:text-white/60 dark:active:ring-0
+					`,
 				],
 			},
 			{
@@ -275,9 +275,9 @@ const button = cva(
 				active: false,
 				class: [
 					`
-       border-storm-500/20
-       dark:border-transparent
-     `,
+						border-storm-500/20
+						dark:border-transparent
+					`,
 				],
 			},
 			{
@@ -285,14 +285,14 @@ const button = cva(
 				error: true,
 				class: [
 					`
-       border border-negative-red-500 text-negative-red-800 ring ring-2
-       ring-negative-red-50
-       active:text-negative-red-800
-     `,
+						border border-negative-red-500 text-negative-red-800 ring ring-2
+						ring-negative-red-50
+						active:text-negative-red-800
+					`,
 					`
-       dark:border-negative-red-700 dark:text-negative-red-alternative
-       dark:ring-0
-     `,
+						dark:border-negative-red-700 dark:text-negative-red-alternative
+						dark:ring-0
+					`,
 				],
 			},
 
@@ -300,9 +300,9 @@ const button = cva(
 				variant: ['text', 'transparent'],
 				disabled: false,
 				class: `
-      text-indigo-700
-      hover:text-indigo-800
-    `,
+					text-indigo-700
+					hover:text-indigo-800
+				`,
 			},
 			{
 				variant: ['text', 'transparent'],
@@ -397,10 +397,10 @@ const icon = cva([], {
 			active: false,
 			error: false,
 			class: `
-     text-indigo-300
-     group-hover/button:text-white
-     group-active/button:text-white/60
-   `,
+				text-indigo-300
+				group-hover/button:text-white
+				group-active/button:text-white/60
+			`,
 		},
 		{
 			variant: 'primary',
@@ -415,14 +415,14 @@ const icon = cva([], {
 			error: false,
 			class: [
 				`
-      text-storm-300
-      group-hover/button:text-storm-500
-      group-active/button:text-storm-500/60
-    `,
+					text-storm-300
+					group-hover/button:text-storm-500
+					group-active/button:text-storm-500/60
+				`,
 				`
-      dark:group-hover/button:text-white
-      dark:group-active/button:text-white/60
-    `,
+					dark:group-hover/button:text-white
+					dark:group-active/button:text-white/60
+				`,
 			],
 		},
 		{
@@ -447,29 +447,29 @@ const icon = cva([], {
 			active: true,
 			error: false,
 			class: `
-     text-storm-500/60
-     dark:text-white/60
-   `,
+				text-storm-500/60
+				dark:text-white/60
+			`,
 		},
 		{
 			variant: ['transparent', 'text'],
 			disabled: false,
 			active: false,
 			class: `
-     text-indigo-500
-     group-hover/button:text-indigo-700
-     group-active/button:text-indigo-800
-   `,
+				text-indigo-500
+				group-hover/button:text-indigo-700
+				group-active/button:text-indigo-800
+			`,
 		},
 		{
 			variant: ['secondary', 'dropdown'],
 			active: false,
 			error: true,
 			class: `
-     text-negative-red-500
-     group-hover/button:text-negative-red-800
-     dark:text-negative-red-alternative
-   `,
+				text-negative-red-500
+				group-hover/button:text-negative-red-800
+				dark:text-negative-red-alternative
+			`,
 		},
 		{
 			variant: ['secondary', 'dropdown'],

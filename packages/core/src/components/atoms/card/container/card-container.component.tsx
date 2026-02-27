@@ -30,20 +30,20 @@ const container = cva(
 		variants: {
 			variant: {
 				default: `
-      border-off-white-700
-      dark:border-white/15
-    `,
+					border-off-white-700
+					dark:border-white/15
+				`,
 				error: `
-      border-negative-red-500 ring-2 ring-negative-red-50
-      dark:border-negative-red-alternative dark:ring-0
-    `,
+					border-negative-red-500 ring-2 ring-negative-red-50
+					dark:border-negative-red-alternative dark:ring-0
+				`,
 			},
 			hoverable: {
 				true: `
-      cursor-pointer
-      hover:bg-off-white-200
-      dark:hover:bg-hurricane-500
-    `,
+					cursor-pointer
+					hover:bg-off-white-200
+					dark:hover:bg-hurricane-500
+				`,
 				false: null,
 			},
 			shadow: {

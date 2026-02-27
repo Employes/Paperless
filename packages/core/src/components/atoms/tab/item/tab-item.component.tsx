@@ -8,30 +8,30 @@ const item = cva(
 		'flex h-8 flex-col justify-between text-sm',
 		'cursor-pointer',
 		`
-    after:content-['
-    ']
-    after:h-[2px]
-  `,
+			after:content-['
+			']
+			after:h-[2px]
+		`,
 	],
 	{
 		variants: {
 			active: {
 				true: `
-      text-indigo-600
-      after:bg-indigo-600
-    `,
+					text-indigo-600
+					after:bg-indigo-600
+				`,
 				false: [
 					`
-       text-storm-300
-       after:bg-transparent
-       hover:text-storm-400
-       hover:after:bg-storm-400
-     `,
+						text-storm-300
+						after:bg-transparent
+						hover:text-storm-400
+						hover:after:bg-storm-400
+					`,
 					`
-       dark:text-hurricane-200
-       dark:hover:text-white
-       dark:hover:after:bg-white
-     `,
+						dark:text-hurricane-200
+						dark:hover:text-white
+						dark:hover:after:bg-white
+					`,
 				],
 			},
 		},

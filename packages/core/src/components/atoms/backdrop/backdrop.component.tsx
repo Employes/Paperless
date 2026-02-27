@@ -47,20 +47,20 @@ const contentContainer = cva(
 			variant: {
 				modal: [
 					`
-       pt-16
-       tablet:px-16
-       desktop-xs:py-8
-     `,
+						pt-16
+						tablet:px-16
+						desktop-xs:py-8
+					`,
 					`
-       items-end justify-center
-       desktop-xs:items-stretch
-     `,
+						items-end justify-center
+						desktop-xs:items-stretch
+					`,
 				],
 				drawer: [
 					`
-       items-start justify-end
-       desktop-xs:items-start
-     `,
+						items-start justify-end
+						desktop-xs:items-start
+					`,
 				],
 			},
 			closing: {

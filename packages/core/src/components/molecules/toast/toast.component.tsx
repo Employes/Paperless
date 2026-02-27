@@ -8,21 +8,21 @@ const indicator = cva('h-9 w-[2px] flex-shrink-0 rounded-full', {
 	variants: {
 		variant: {
 			neutral: `
-     bg-indigo-800
-     dark:bg-indigo-400
-   `,
+				bg-indigo-800
+				dark:bg-indigo-400
+			`,
 			positive: `
-     bg-positive-green-500
-     dark:bg-positive-green-alternative
-   `,
+				bg-positive-green-500
+				dark:bg-positive-green-alternative
+			`,
 			biased: `
-     bg-amber-500
-     dark:bg-amber-alternative
-   `,
+				bg-amber-500
+				dark:bg-amber-alternative
+			`,
 			negative: `
-     bg-negative-red-500
-     dark:bg-negative-red-alternative
-   `,
+				bg-negative-red-500
+				dark:bg-negative-red-alternative
+			`,
 		},
 	},
 });
@@ -86,10 +86,10 @@ export class Toast {
 			<ThemedHost>
 				<div
 					class='
-       flex gap-2 rounded-lg border border-solid border-storm-100 bg-white p-2
-       shadow-2
-       dark:border-hurricane-800 dark:bg-hurricane-800
-     '
+						flex gap-2 rounded-lg border border-solid border-storm-100 bg-white p-2
+						shadow-2
+						dark:border-hurricane-800 dark:bg-hurricane-800
+					'
 					onClick={() => this._onClick()}
 				>
 					<div class={indicator({ variant: this.variant })} />
@@ -97,19 +97,19 @@ export class Toast {
 						<div class='flex w-full min-w-0 flex-col'>
 							<p
 								class='
-          m-0 overflow-hidden text-ellipsis whitespace-nowrap text-sm
-          font-semibold text-storm-500
-          dark:text-white
-        '
+									m-0 overflow-hidden text-ellipsis whitespace-nowrap text-sm
+									font-semibold text-storm-500
+									dark:text-white
+								'
 							>
 								{this.header?.length ? this.header : <slot name='header' />}
 							</p>
 							<p
 								class='
-          m-0 w-full overflow-hidden text-ellipsis whitespace-nowrap text-xs
-          text-storm-300
-          dark:text-hurricane-200
-        '
+									m-0 w-full overflow-hidden text-ellipsis whitespace-nowrap text-xs
+									text-storm-300
+									dark:text-hurricane-200
+								'
 							>
 								{this.content?.length ? this.content : <slot name='content' />}
 							</p>
@@ -118,10 +118,10 @@ export class Toast {
 						{this.enableAction && (
 							<div
 								class='
-          flex-shrink-0 cursor-pointer p-2 text-storm-200
-          hover:text-storm-500 hover:text-white
-          dark:text-hurricane-200
-        '
+									flex-shrink-0 cursor-pointer p-2 text-storm-200
+									hover:text-storm-500 hover:text-white
+									dark:text-hurricane-200
+								'
 							>
 								<p-icon
 									flip={this.actionIconFlip}

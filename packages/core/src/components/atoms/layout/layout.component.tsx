@@ -20,9 +20,9 @@ export class Layout {
 		return (
 			<Host
 				class={`
-      p-layout
-      variant-${this.variant}
-    `}
+					p-layout
+					variant-${this.variant}
+				`}
 			>
 				<div
 					class='content'

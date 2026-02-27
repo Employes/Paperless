@@ -8,34 +8,34 @@ const content = cva(
 	[
 		'flex items-center',
 		`
-    before:content-[""]
-    after:content-[""]
-  `,
+			before:content-[""]
+			after:content-[""]
+		`,
 		`
-    before:bg-current
-    after:bg-current
-  `,
+			before:bg-current
+			after:bg-current
+		`,
 		`
-    before:flex-1
-    after:flex-1
-  `,
+			before:flex-1
+			after:flex-1
+		`,
 	],
 	{
 		variants: {
 			variant: {
 				horizontal: [
 					`
-       before:h-px
-       after:h-px
-     `,
+						before:h-px
+						after:h-px
+					`,
 					'w-full',
 				],
 				vertical: [
 					'flex-col',
 					`
-       before:w-px
-       after:w-px
-     `,
+						before:w-px
+						after:w-px
+					`,
 					'h-full',
 				],
 			},
@@ -87,10 +87,10 @@ export class Divider {
 				>
 					<div
 						class='
-        flex items-center px-2 text-sm font-medium text-storm-400
-        empty:px-0
-        dark:text-hurricane-200
-      '
+							flex items-center px-2 text-sm font-medium text-storm-400
+							empty:px-0
+							dark:text-hurricane-200
+						'
 					>
 						{hasContent && <slot />}
 					</div>

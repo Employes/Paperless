@@ -26,13 +26,13 @@ const attachment = cva(
 			},
 			error: {
 				false: `
-      border-storm-100
-      dark:border-white/15
-    `,
+					border-storm-100
+					dark:border-white/15
+				`,
 				true: `
-      border-negative-red-500
-      dark:border-negative-red-alternative
-    `,
+					border-negative-red-500
+					dark:border-negative-red-alternative
+				`,
 			},
 		},
 	}
@@ -199,10 +199,10 @@ export class Attachment {
 								class={cn(
 									baseText,
 									`
-           peer
-           empty:hidden
-           dark:text-white
-         `
+										peer
+										empty:hidden
+										dark:text-white
+									`
 								)}
 							>
 								{this.value}
@@ -211,9 +211,9 @@ export class Attachment {
 								class={cn(
 									baseText,
 									`
-           hidden
-           peer-empty:block
-         `
+										hidden
+										peer-empty:block
+									`
 								)}
 							>
 								{this.placeholder}
@@ -260,9 +260,9 @@ export class Attachment {
 							!this.value?.length && (
 								<p-tooltip
 									class='
-           w-8
-           desktop-xs:hidden
-         '
+										w-8
+										desktop-xs:hidden
+									'
 									content={this.cameraTooltip}
 								>
 									<p-button

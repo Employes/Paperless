@@ -11,14 +11,13 @@ const container = cva(
 		'z-drawer flex flex-col',
 
 		`
-    rounded-2xl bg-white
-    dark:border dark:border-solid dark:border-hurricane-400
-    dark:bg-hurricane-600
-  `,
+			rounded-2xl bg-white
+			dark:border dark:border-solid dark:border-hurricane-400 dark:bg-hurricane-600
+		`,
 		`
-    w-full
-    tablet:w-[22.5rem]
-  `,
+			w-full
+			tablet:w-[22.5rem]
+		`,
 
 		'shadow-modal',
 	],

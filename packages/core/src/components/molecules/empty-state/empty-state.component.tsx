@@ -121,9 +121,9 @@ export class EmptyState {
 						this.header?.length && (
 							<p
 								class='
-          my-0 text-center font-ambit text-sm font-bold text-storm-500
-          dark:text-white
-        '
+									my-0 text-center font-ambit text-sm font-bold text-storm-500
+									dark:text-white
+								'
 							>
 								{this.header}
 							</p>
@@ -135,9 +135,9 @@ export class EmptyState {
 						this.content?.length && (
 							<p
 								class='
-          my-0 text-center text-sm font-normal text-storm-300
-          dark:text-hurricane-200
-        '
+									my-0 text-center text-sm font-normal text-storm-300
+									dark:text-hurricane-200
+								'
 							>
 								{this.content}
 							</p>

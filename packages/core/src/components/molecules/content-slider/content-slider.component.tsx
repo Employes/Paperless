@@ -76,10 +76,10 @@ export class ContentSlider {
 			<Host class='p-content-slider'>
 				<div
 					class={`
-       slider
-       ${!this.disableDrag && 'draggable'}
-       ${this._dragging && 'dragging'}
-     `}
+						slider
+						${!this.disableDrag && 'draggable'}
+						${this._dragging && 'dragging'}
+					`}
 					ref={el => (this._sliderRef = el)}
 					style={{
 						height: `${this._outerHeight}px`,
@@ -99,16 +99,16 @@ export class ContentSlider {
 				</div>
 				<div
 					class={`
-       indicator
-       ${this.hideMobileIndicator && 'hidden'}
-     `}
+						indicator
+						${this.hideMobileIndicator && 'hidden'}
+					`}
 				>
 					{this._filteredItems.map((_, i) => (
 						<div
 							class={`
-         item
-         ${!this.disableIndicatorClick && 'cursor-pointer'}
-       `}
+								item
+								${!this.disableIndicatorClick && 'cursor-pointer'}
+							`}
 							onClick={() => this._scrollTo(i, true)}
 						>
 							<div

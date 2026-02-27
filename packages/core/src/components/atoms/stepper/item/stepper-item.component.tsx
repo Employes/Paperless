@@ -98,33 +98,33 @@ const content = cva('mt-[1px] flex-1 text-sm font-medium', {
 			finished: false,
 			active: false,
 			class: `
-     text-storm-400
-     dark:text-hurricane-200
-   `,
+				text-storm-400
+				dark:text-hurricane-200
+			`,
 		},
 		{
 			active: true,
 			finished: false,
 			class: `
-     text-storm-500
-     dark:text-white
-   `,
+				text-storm-500
+				dark:text-white
+			`,
 		},
 		{
 			active: false,
 			finished: true,
 			class: `
-     text-storm-500
-     dark:text-white
-   `,
+				text-storm-500
+				dark:text-white
+			`,
 		},
 		{
 			direction: 'horizontal',
 			active: false,
 			class: `
-     hidden
-     desktop-xs:inline-block
-   `,
+				hidden
+				desktop-xs:inline-block
+			`,
 		},
 	],
 });

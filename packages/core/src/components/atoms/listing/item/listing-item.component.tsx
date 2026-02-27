@@ -19,9 +19,9 @@ export class ListingItem {
 			<ThemedHost>
 				<div
 					class='
-       flex items-center gap-2 text-storm-500
-       dark:text-white
-     '
+						flex items-center gap-2 text-storm-500
+						dark:text-white
+					'
 				>
 					<p-icon variant={this.icon} />
 					<div class='flex min-w-0 flex-1 flex-col text-sm font-medium'>

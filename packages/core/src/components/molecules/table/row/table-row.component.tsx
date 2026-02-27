@@ -41,10 +41,10 @@ const row = cva(
 				class: [
 					'rounded-lg transition-colors',
 					`
-       bg-off-white-300
-       dark:bg-hurricane-400
-       dark:hover:bg-hurricane-400
-     `,
+						bg-off-white-300
+						dark:bg-hurricane-400
+						dark:hover:bg-hurricane-400
+					`,
 				],
 			},
 			{
@@ -78,9 +78,9 @@ const content = cva(
 			{
 				variant: ['default', 'secondary'],
 				class: `
-      min-h-14 py-2
-      tablet:py-4
-    `,
+					min-h-14 py-2
+					tablet:py-4
+				`,
 			},
 			{
 				variant: ['header', 'header-secondary'],
@@ -94,9 +94,9 @@ const actions = cva([
 	'absolute -right-4 top-1 z-[2]',
 	'h-[calc(100%-0.5rem)]',
 	`
-   opacity-0 transition-opacity
-   group-hover:opacity-100
- `,
+		opacity-0 transition-opacity
+		group-hover:opacity-100
+	`,
 	'empty:hidden',
 ]);
 

@@ -11,9 +11,9 @@ const navigationItem = cva(
 		'h-8 w-[inherit]',
 		'flex items-center gap-2',
 		`
-    hover:text-storm-500
-    dark:hover:text-white
-  `,
+			hover:text-storm-500
+			dark:hover:text-white
+		`,
 		'rounded-lg',
 		'px-2 py-1',
 		'text-sm font-medium',
@@ -24,19 +24,19 @@ const navigationItem = cva(
 			active: {
 				false: [
 					`
-       text-storm-400
-       dark:text-hurricane-200
-     `,
+						text-storm-400
+						dark:text-hurricane-200
+					`,
 					`
-       hover:bg-off-white-500
-       dark:hover:bg-white/10
-     `,
+						hover:bg-off-white-500
+						dark:hover:bg-white/10
+					`,
 				],
 				true: [
 					`
-       bg-off-white-600 font-semibold text-storm-500
-       dark:bg-white/10 dark:text-white
-     `,
+						bg-off-white-600 font-semibold text-storm-500
+						dark:bg-white/10 dark:text-white
+					`,
 				],
 			},
 			icon: {

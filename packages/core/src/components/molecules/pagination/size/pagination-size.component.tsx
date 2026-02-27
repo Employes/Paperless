@@ -48,13 +48,13 @@ const trigger = cva(
 			active: {
 				false: [
 					`
-       border-transparent bg-white
-       hover:bg-white-600
-     `,
+						border-transparent bg-white
+						hover:bg-white-600
+					`,
 					`
-       dark:bg-white/15
-       dark:hover:bg-white/25
-     `,
+						dark:bg-white/15
+						dark:hover:bg-white/25
+					`,
 				],
 				true: [
 					'border-indigo-600 bg-white-600 ring ring-2 ring-indigo-100',

@@ -104,19 +104,19 @@ export class Profile {
 				<div class='flex min-w-0 flex-1 flex-col items-start'>
 					<p
 						class='
-        my-0 w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap
-        text-sm font-semibold text-storm-500
-        dark:text-white
-      '
+							my-0 w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap
+							text-sm font-semibold text-storm-500
+							dark:text-white
+						'
 					>
 						<slot name='title' />
 					</p>
 					<p
 						class='
-        my-0 w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap
-        text-xs font-medium text-storm-400
-        dark:text-hurricane-200
-      '
+							my-0 w-auto max-w-full overflow-hidden text-ellipsis whitespace-nowrap
+							text-xs font-medium text-storm-400
+							dark:text-hurricane-200
+						'
 					>
 						<slot name='subtitle' />
 					</p>
