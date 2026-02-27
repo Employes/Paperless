@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.4.2](https://github.com/Employes/Paperless/compare/v3.4.1...v3.4.2) (2026-02-27)
+
+
+### Bug Fixes
+
+* **molecules/select:** lint ([6c0cd3d](https://github.com/Employes/Paperless/commit/6c0cd3d6edd8ec65fde8cdb85fab34a861945615))
+
+
+### Reverts
+
+* Revert "fix: fix linting indentation" ([a3824af](https://github.com/Employes/Paperless/commit/a3824af80198e05aabc9a206fe96efb160bf11e1))
+
+
+
+
+
 ## [3.4.1](https://github.com/Employes/Paperless/compare/v3.4.0...v3.4.1) (2026-02-27)
 
 
