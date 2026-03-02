@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.4.4](https://github.com/Employes/Paperless/compare/v3.4.3...v3.4.4) (2026-03-02)
+
+
+### Bug Fixes
+
+* **conventions/eslint:** Set tsconfig path ([3872165](https://github.com/Employes/Paperless/commit/38721653176762eae4ab62249749d31da2f55a3c))
+
+
+
+
+
 ## [3.4.3](https://github.com/Employes/Paperless/compare/v3.4.2...v3.4.3) (2026-03-02)
 
 
