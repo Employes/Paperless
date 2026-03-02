@@ -1,4 +1,3 @@
-import eslintParserAngular from 'angular-eslint';
 import { defineConfig, globalIgnores } from 'eslint/config';
 
 import base from '../../eslint.config.js';
@@ -10,7 +9,7 @@ export default defineConfig([
 		settings: {
 			'better-tailwindcss': {
 				tailwindConfig: 'projects/paperless/tailwind.config.ts',
-				tsconfig: './tsconfig.json',
+				tsconfig: 'tsconfig.json',
 			},
 		},
 	},

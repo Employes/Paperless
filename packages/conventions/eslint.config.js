@@ -37,6 +37,7 @@ export default defineConfig([
 			'better-tailwindcss': {
 				//entryPoint: 'src/global.css',
 				tailwindConfig: 'tailwind.config.ts',
+				tsconfig: 'tsconfig.json',
 			},
 		},
 		rules: {
