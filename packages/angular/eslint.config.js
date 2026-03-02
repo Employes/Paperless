@@ -42,10 +42,4 @@ export default defineConfig([
 			],
 		},
 	},
-	{
-		files: ['**/*.html'],
-		languageOptions: {
-			parser: eslintParserAngular.templateParser,
-		},
-	},
 ]);

@@ -99,9 +99,6 @@ export default defineConfig([
 		files: ['**/*.{ts,tsx,cts,mts}'],
 		languageOptions: {
 			parser: typescriptPlugin.parser,
-			// 	parserOptions: {
-			// 		project: true,
-			// 	},
 		},
 	},
 	{
@@ -157,6 +154,9 @@ export default defineConfig([
 	{
 		files: ['**/*.html'],
 		extends: [angularPlugin.configs.templateRecommended],
+		languageOptions: {
+			parser: angularPlugin.templateParser,
+		},
 		rules: {
 			'better-tailwindcss/enforce-consistent-line-wrapping': 'off',
 			'@angular-eslint/template/prefer-self-closing-tags': 'error',
