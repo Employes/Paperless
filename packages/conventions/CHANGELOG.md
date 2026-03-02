@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.4.3](https://github.com/Employes/Paperless/compare/v3.4.2...v3.4.3) (2026-03-02)
+
+
+### Bug Fixes
+
+* **conventions/eslint:** Small improvement ([a22d05c](https://github.com/Employes/Paperless/commit/a22d05c3a7ca9ac9ebaf556e6ca7c81fbca5d550))
+
+
+
+
+
 ## [3.4.2](https://github.com/Employes/Paperless/compare/v3.4.1...v3.4.2) (2026-02-27)
 
 
