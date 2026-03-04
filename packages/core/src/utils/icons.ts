@@ -37,6 +37,7 @@ import checkmark from '../assets/icons/general/checkmark.svg';
 import city from '../assets/icons/general/city.svg';
 import companies from '../assets/icons/general/companies.svg';
 import company from '../assets/icons/general/company.svg';
+import component from '../assets/icons/general/component.svg';
 import copy from '../assets/icons/general/copy.svg';
 import creditCard from '../assets/icons/general/credit-card.svg';
 import cutlery from '../assets/icons/general/cutlery.svg';
@@ -171,6 +172,7 @@ export const categorized = {
 		city,
 		companies,
 		company,
+		component,
 		copy,
 		'credit-card': creditCard,
 		cutlery,
@@ -316,6 +318,7 @@ export const icons = {
 	city,
 	companies,
 	company,
+	component,
 	copy,
 	'credit-card': creditCard,
 	cutlery,
