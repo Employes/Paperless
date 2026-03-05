@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.5.0](https://github.com/Employes/Paperless/compare/v3.4.4...v3.5.0) (2026-03-05)
+
+
+### Features
+
+* **utils/icons:** added component icon ([14125f7](https://github.com/Employes/Paperless/commit/14125f78b172c0b4b3185f7c1d37a327d640dbe9))
+
+
+
+
+
 ## [3.4.4](https://github.com/Employes/Paperless/compare/v3.4.3...v3.4.4) (2026-03-02)
 
 
