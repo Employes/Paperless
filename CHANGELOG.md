@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.5.1](https://github.com/Employes/Paperless/compare/v3.5.0...v3.5.1) (2026-03-17)
+
+
+### Bug Fixes
+
+* **angular/overlay:** Support signal inputs on overlays ([8f561a2](https://github.com/Employes/Paperless/commit/8f561a280cc1966cdb1a33f11c61ae96fad34fb9))
+
+
+
+
+
 # [3.5.0](https://github.com/Employes/Paperless/compare/v3.4.4...v3.5.0) (2026-03-05)
 
 
