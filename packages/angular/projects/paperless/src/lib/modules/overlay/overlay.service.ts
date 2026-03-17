@@ -105,10 +105,18 @@ export class OverlayService {
 	}
 
 	private _attachData<T>(overlayRef: OverlayRef<T>, options: ModalOptions) {
-		if (options.data && typeof options.data === 'object') {
-			for (const key of Object.keys(options.data)) {
-				(overlayRef.instance as any)[key] = options.data[key];
+		if (!options.data || typeof options.data !== 'object') {
+			return;
+		}
+
+		const instance = overlayRef.instance as any;
+		for (const key of Object.keys(options.data)) {
+			if (typeof instance[key] === 'function') {
+				instance[key].set(options.data[key]);
+				continue;
 			}
+
+			instance[key] = options.data[key];
 		}
 	}
 }
