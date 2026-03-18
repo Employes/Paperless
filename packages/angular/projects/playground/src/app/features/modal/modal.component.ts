@@ -1,5 +1,5 @@
 import { CdkPortal, TemplatePortal } from '@angular/cdk/portal';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 import { TestCropperModalComponent } from './cropper-modal.component';
 import { TestModalComponent } from './test-modal.component';
@@ -18,6 +18,8 @@ import {
 export class ModalComponent {
 	private _templateModalRef!: OverlayRef<CdkPortal>;
 
+	private test = signal<string>('aaa');
+
 	constructor(private _overlay: OverlayService) {}
 
 	showModal() {
@@ -25,7 +27,20 @@ export class ModalComponent {
 	}
 
 	showCropperModal() {
-		this._overlay.open<TestCropperModalComponent>(TestCropperModalComponent);
+		const ref = this._overlay.open<TestCropperModalComponent>(
+			TestCropperModalComponent,
+			{
+				data: {
+					test: this.test,
+				},
+			}
+		);
+
+		setTimeout(() => this.test.set('bbb'), 2000);
+
+		ref.closed$.subscribe(() => {
+			setTimeout(() => this.test.set('ccc'), 1000);
+		});
 	}
 
 	showTemplateModal(template: TemplatePortal) {

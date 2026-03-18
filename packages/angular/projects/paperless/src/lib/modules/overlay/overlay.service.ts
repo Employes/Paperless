@@ -1,15 +1,23 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
+	OverlayRef as CDKOverlayRef,
+	createOverlayRef,
 	Overlay,
 	OverlayConfig,
-	OverlayRef as CDKOverlayRef,
 } from '@angular/cdk/overlay';
-import { CdkPortal, ComponentPortal, ComponentType } from '@angular/cdk/portal';
+import {
+	CdkPortal,
+	ComponentPortal,
+	ComponentType,
+	TemplatePortal,
+} from '@angular/cdk/portal';
 import {
 	ComponentRef,
+	inject,
 	Injectable,
 	Injector,
 	StaticProvider,
+	TemplateRef,
 } from '@angular/core';
 
 import { OverlayRef } from './overlay.ref';
@@ -21,13 +29,15 @@ interface ModalOptions {
 
 @Injectable()
 export class OverlayService {
-	public overlayRef!: OverlayRef<any>;
-	constructor(
-		private injector: Injector,
-		private overlay: Overlay
-	) {}
+	private readonly overlay = inject(Overlay);
+	private readonly injector = inject(Injector);
 
-	open<T>(component: ComponentType<T> | CdkPortal, options: ModalOptions = {}) {
+	public overlayRef!: OverlayRef<any>;
+
+	open<T>(
+		component: ComponentType<T> | TemplateRef<T> | CdkPortal,
+		options: ModalOptions = {}
+	) {
 		const overlay = this._createOverlay();
 		const overlayRef = new OverlayRef<T>(overlay);
 
@@ -35,7 +45,8 @@ export class OverlayService {
 			overlay,
 			overlayRef,
 			component,
-			options.providers ?? []
+			options.providers ?? [],
+			options.data ?? {}
 		);
 
 		this._attachData<T>(overlayRef, options);
@@ -47,20 +58,28 @@ export class OverlayService {
 	private _attachModalContainer<T>(
 		overlay: CDKOverlayRef,
 		overlayRef: OverlayRef<T>,
-		component: ComponentType<T> | CdkPortal,
-		providers: StaticProvider[]
+		component: ComponentType<T> | TemplateRef<T> | CdkPortal,
+		providers: StaticProvider[],
+		data: any
 	) {
 		const injector = this._createInjector<T>(overlayRef, providers);
 
 		const containerPortal =
 			component instanceof CdkPortal
 				? component
-				: new ComponentPortal(component, null, injector);
+				: component instanceof TemplateRef
+					? new TemplatePortal<any>(
+							component,
+							null!,
+							{ $implicit: data },
+							injector
+						)
+					: new ComponentPortal(component, null, injector);
 		const containerRef: ComponentRef<T> = overlay.attach(containerPortal);
 
+		overlayRef.componentRef = containerRef;
 		overlayRef.instance = containerRef.instance;
-
-		return containerRef.instance;
+		overlayRef.injector = injector;
 	}
 
 	private _createInjector<T>(
@@ -98,10 +117,9 @@ export class OverlayService {
 
 	private _createOverlay() {
 		// Returns an OverlayConfig
-		const overlayConfig = this._getOverlayConfig();
-
+		const config = this._getOverlayConfig();
 		// Returns an OverlayRef
-		return this.overlay.create(overlayConfig);
+		return createOverlayRef(this.injector, config);
 	}
 
 	private _attachData<T>(overlayRef: OverlayRef<T>, options: ModalOptions) {
@@ -109,14 +127,11 @@ export class OverlayService {
 			return;
 		}
 
-		const instance = overlayRef.instance as any;
-		for (const key of Object.keys(options.data)) {
-			if (typeof instance[key] === 'function') {
-				instance[key].set(options.data[key]);
-				continue;
-			}
-
-			instance[key] = options.data[key];
+		if (overlayRef.instance instanceof TemplateRef) {
+			return;
 		}
+
+		overlayRef.createEffect();
+		overlayRef.data.set(options.data);
 	}
 }

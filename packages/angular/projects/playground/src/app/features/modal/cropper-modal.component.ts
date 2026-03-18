@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import {
 	OverlayRef,
@@ -14,6 +14,7 @@ import {
 			[show]="true"
 			(closed)="close()"
 		>
+			<div slot="content">{{ test() }}</div>
 			<p-cropper
 				slot="content"
 				value="https://images.unsplash.com/photo-1580314737657-8456bc907659?auto=format&fit=crop&crop=faces&w=500&h=500&q=80"
@@ -29,6 +30,8 @@ import {
 	imports: [PModal, PCropper, PButton],
 })
 export class TestCropperModalComponent {
+	readonly test = input();
+
 	constructor(public _overlayRef: OverlayRef<TestCropperModalComponent>) {}
 
 	close() {
