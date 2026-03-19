@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.6.1](https://github.com/Employes/Paperless/compare/v3.6.0...v3.6.1) (2026-03-19)
+
+
+### Bug Fixes
+
+* **conventions:** Make sure dir path is correct for eslint ([c722c63](https://github.com/Employes/Paperless/commit/c722c63ce5d46ca4e6fc6c1569c5b475ed96adc3))
+
+
+
+
+
 # [3.6.0](https://github.com/Employes/Paperless/compare/v3.5.1...v3.6.0) (2026-03-18)
 
 **Note:** Version bump only for package @paperless/core
