@@ -133,62 +133,62 @@ export class TableCell {
 						<div class='font-semibold text-storm-300 text-storm-400 text-storm-500'></div>
 						<div
 							class='
-         w-12/12 w-1/12 w-10/12 w-11/12 w-2/12 w-3/12 w-4/12 w-5/12 w-6/12
-         w-7/12 w-8/12 w-9/12
+         w-1/12 w-10/12 w-11/12 w-2/12 w-3/12 w-4/12 w-5/12 w-6/12 w-7/12 w-8/12
+         w-9/12 w-full
        '
 						></div>
 						<div
 							class='
-         tablet:w-12/12 tablet:w-1/12 tablet:w-10/12 tablet:w-11/12
-         tablet:w-2/12 tablet:w-3/12 tablet:w-4/12 tablet:w-5/12 tablet:w-6/12
-         tablet:w-7/12 tablet:w-8/12 tablet:w-9/12
+         tablet:w-1/12 tablet:w-10/12 tablet:w-11/12 tablet:w-2/12 tablet:w-3/12
+         tablet:w-4/12 tablet:w-5/12 tablet:w-6/12 tablet:w-7/12 tablet:w-8/12
+         tablet:w-9/12 tablet:w-full
        '
 						></div>
 						<div
 							class='
-         desktop-xs:w-12/12 desktop-xs:w-1/12 desktop-xs:w-10/12
-         desktop-xs:w-11/12 desktop-xs:w-2/12 desktop-xs:w-3/12
-         desktop-xs:w-4/12 desktop-xs:w-5/12 desktop-xs:w-6/12 desktop-xs:w-7/12
-         desktop-xs:w-8/12 desktop-xs:w-9/12
+         desktop-xs:w-1/12 desktop-xs:w-10/12 desktop-xs:w-11/12
+         desktop-xs:w-2/12 desktop-xs:w-3/12 desktop-xs:w-4/12 desktop-xs:w-5/12
+         desktop-xs:w-6/12 desktop-xs:w-7/12 desktop-xs:w-8/12 desktop-xs:w-9/12
+         desktop-xs:w-full
        '
 						></div>
 						<div
 							class='
-         desktop-xs:w-12/12 desktop-xs:w-1/12 desktop-xs:w-10/12
-         desktop-xs:w-11/12 desktop-xs:w-2/12 desktop-xs:w-3/12
-         desktop-xs:w-4/12 desktop-xs:w-5/12 desktop-xs:w-6/12 desktop-xs:w-7/12
-         desktop-xs:w-8/12 desktop-xs:w-9/12
+         desktop-xs:w-1/12 desktop-xs:w-10/12 desktop-xs:w-11/12
+         desktop-xs:w-2/12 desktop-xs:w-3/12 desktop-xs:w-4/12 desktop-xs:w-5/12
+         desktop-xs:w-6/12 desktop-xs:w-7/12 desktop-xs:w-8/12 desktop-xs:w-9/12
+         desktop-xs:w-full
        '
 						></div>
 						<div
 							class='
-         desktop-sm:w-12/12 desktop-sm:w-1/12 desktop-sm:w-10/12
-         desktop-sm:w-11/12 desktop-sm:w-2/12 desktop-sm:w-3/12
-         desktop-sm:w-4/12 desktop-sm:w-5/12 desktop-sm:w-6/12 desktop-sm:w-7/12
-         desktop-sm:w-8/12 desktop-sm:w-9/12
+         desktop-sm:w-1/12 desktop-sm:w-10/12 desktop-sm:w-11/12
+         desktop-sm:w-2/12 desktop-sm:w-3/12 desktop-sm:w-4/12 desktop-sm:w-5/12
+         desktop-sm:w-6/12 desktop-sm:w-7/12 desktop-sm:w-8/12 desktop-sm:w-9/12
+         desktop-sm:w-full
        '
 						></div>
 						<div
 							class='
-         desktop:w-12/12 desktop:w-1/12 desktop:w-10/12 desktop:w-11/12
-         desktop:w-2/12 desktop:w-3/12 desktop:w-4/12 desktop:w-5/12
-         desktop:w-6/12 desktop:w-7/12 desktop:w-8/12 desktop:w-9/12
+         desktop:w-1/12 desktop:w-10/12 desktop:w-11/12 desktop:w-2/12
+         desktop:w-3/12 desktop:w-4/12 desktop:w-5/12 desktop:w-6/12
+         desktop:w-7/12 desktop:w-8/12 desktop:w-9/12 desktop:w-full
        '
 						></div>
 						<div
 							class='
-         desktop-lg:w-12/12 desktop-lg:w-1/12 desktop-lg:w-10/12
-         desktop-lg:w-11/12 desktop-lg:w-2/12 desktop-lg:w-3/12
-         desktop-lg:w-4/12 desktop-lg:w-5/12 desktop-lg:w-6/12 desktop-lg:w-7/12
-         desktop-lg:w-8/12 desktop-lg:w-9/12
+         desktop-lg:w-1/12 desktop-lg:w-10/12 desktop-lg:w-11/12
+         desktop-lg:w-2/12 desktop-lg:w-3/12 desktop-lg:w-4/12 desktop-lg:w-5/12
+         desktop-lg:w-6/12 desktop-lg:w-7/12 desktop-lg:w-8/12 desktop-lg:w-9/12
+         desktop-lg:w-full
        '
 						></div>
 						<div
 							class='
-         desktop-xl:w-12/12 desktop-xl:w-1/12 desktop-xl:w-10/12
-         desktop-xl:w-11/12 desktop-xl:w-2/12 desktop-xl:w-3/12
-         desktop-xl:w-4/12 desktop-xl:w-5/12 desktop-xl:w-6/12 desktop-xl:w-7/12
-         desktop-xl:w-8/12 desktop-xl:w-9/12
+         desktop-xl:w-1/12 desktop-xl:w-10/12 desktop-xl:w-11/12
+         desktop-xl:w-2/12 desktop-xl:w-3/12 desktop-xl:w-4/12 desktop-xl:w-5/12
+         desktop-xl:w-6/12 desktop-xl:w-7/12 desktop-xl:w-8/12 desktop-xl:w-9/12
+         desktop-xl:w-full
        '
 						></div>
 						<div

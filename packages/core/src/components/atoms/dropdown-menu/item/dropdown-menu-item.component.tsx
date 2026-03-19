@@ -7,12 +7,7 @@ import { cn } from '../../../../utils';
 import { asBoolean } from '../../../../utils/as-boolean';
 
 const dropdownMenuItem = cva(
-	[
-		`
-    p-dropdown-menu-item group flex max-w-full items-center gap-2 rounded-lg
-    text-sm
-  `,
-	],
+	[`group flex max-w-full items-center gap-2 rounded-lg text-sm`],
 	{
 		variants: {
 			variant: {

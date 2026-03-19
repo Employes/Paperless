@@ -116,7 +116,7 @@ export class NavigationItem {
 		const active = asBoolean(this.active) || this.class?.includes('active');
 
 		return (
-			<ThemedHost class={cn('p-navigation-item inline-block', this.class)}>
+			<ThemedHost class={cn('inline-block', this.class)}>
 				<TagType
 					class={navigationItem({
 						icon: !!this.icon,

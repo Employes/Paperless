@@ -325,8 +325,8 @@ export class TableHeader {
 							{!this.loading && this.enableExport && (
 								<p-button
 									class='
-           desktop-xs:auto
            w-full
+           desktop-xs:w-auto
          '
 									icon='upload'
 									variant='secondary'

@@ -5,7 +5,7 @@ import { IconFlipOptions, IconVariant } from '../../../types/icon';
 import { TextSizeOptions } from '../../../types/tailwind';
 import { icons } from '../../../utils/icons';
 
-const icon = cva(['p-icon inline-flex', 'transform-gpu transition-transform'], {
+const icon = cva(['inline-flex', 'transform-gpu transition-transform'], {
 	variants: {
 		flip: {
 			none: null,

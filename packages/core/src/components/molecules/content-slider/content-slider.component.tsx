@@ -73,7 +73,7 @@ export class ContentSlider {
 
 	render() {
 		return (
-			<Host class='p-content-slider'>
+			<Host>
 				<div
 					class={`
        slider

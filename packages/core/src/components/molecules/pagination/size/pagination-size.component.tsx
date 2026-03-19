@@ -24,7 +24,7 @@ import {
 
 export type templateFunc = (value: number) => string;
 
-const paginationSize = cva('p-pagination-size', {
+const paginationSize = cva([], {
 	variants: {
 		hidden: {
 			false: null,

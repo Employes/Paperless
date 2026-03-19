@@ -18,12 +18,7 @@ export class Layout {
 
 	render() {
 		return (
-			<Host
-				class={`
-      p-layout
-      variant-${this.variant}
-    `}
-			>
+			<Host class={'variant-' + this.variant}>
 				<div
 					class='content'
 					onScroll={ev => this.scroll.emit(ev)}

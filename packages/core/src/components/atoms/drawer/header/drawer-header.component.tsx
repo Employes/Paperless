@@ -17,7 +17,7 @@ const content = cva(['flex justify-between', 'min-h-12 w-full p-4 pb-0']);
 const title = cva([
 	'flex-1 text-center',
 	`
-   text-ambit text-2xl font-bold text-storm-500
+   font-ambit text-2xl font-bold text-storm-500
    dark:text-white
  `,
 ]);

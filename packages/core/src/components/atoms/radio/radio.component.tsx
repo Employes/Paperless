@@ -16,7 +16,7 @@ import { nonce } from '../../../utils/nonce';
 const radio = cva(
 	[
 		'peer m-0 flex-shrink-0 appearance-none outline-none',
-		'border-inset rounded-full border border-solid',
+		'rounded-full border border-solid',
 		'h-4 w-4',
 	],
 	{

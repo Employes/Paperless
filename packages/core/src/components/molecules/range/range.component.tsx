@@ -60,7 +60,7 @@ export class Range {
 						/>
 						<div
 							class='
-         z-1 absolute left-0 top-1/2 h-[2px] -translate-y-1/2 transform
+         absolute left-0 top-1/2 z-[1] h-[2px] -translate-y-1/2 transform
          bg-indigo-600
        '
 							style={{

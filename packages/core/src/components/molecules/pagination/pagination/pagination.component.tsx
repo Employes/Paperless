@@ -17,7 +17,6 @@ import {
 
 const pagination = cva(
 	[
-		'p-pagination',
 		'items-center gap-2',
 		'rounded-full',
 		'border border-solid border-off-white-700 bg-off-white-300',

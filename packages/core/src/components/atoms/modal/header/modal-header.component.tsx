@@ -18,7 +18,7 @@ const title = cva([
 	'w-[calc(100%-7rem)]',
 	'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2',
 	`
-   text-ambit text-2xl font-bold text-storm-500
+   font-ambit text-2xl font-bold text-storm-500
    dark:text-white
  `,
 ]);
