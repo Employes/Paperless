@@ -1,8 +1,10 @@
 import { defineConfig, globalIgnores } from 'eslint/config';
 
-import base from '../../eslint.config.js';
+import { config } from '../../eslint.config.js';
 
 export default defineConfig([
+	...config(import.meta.dirname),
+
 	globalIgnores([
 		'./dist/**/*',
 		'./hydrate/**/*',
@@ -10,7 +12,6 @@ export default defineConfig([
 		'./src/components.d.ts',
 	]),
 	{
-		extends: [base],
 		settings: {
 			'better-tailwindcss': {
 				tailwindConfig: 'src/tailwind.config.ts',

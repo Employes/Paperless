@@ -2,7 +2,6 @@ import eslint from '@eslint/js';
 import nxPlugin from '@nx/eslint-plugin';
 import earlyReturnPlugin from '@regru/eslint-plugin-prefer-early-return';
 import angularPlugin from 'angular-eslint';
-import { defineConfig } from 'eslint/config';
 import eslintPluginBetterTailwindcss from 'eslint-plugin-better-tailwindcss';
 import importPlugin from 'eslint-plugin-import';
 import jsoncPlugin from 'eslint-plugin-jsonc';
@@ -12,7 +11,7 @@ import unicornPlugin from 'eslint-plugin-unicorn';
 import globals from 'globals';
 import typescriptPlugin from 'typescript-eslint';
 
-export default defineConfig([
+export const config = rootDir => [
 	eslint.configs.recommended,
 	prettierPlugin,
 	...jsoncPlugin.configs['flat/recommended-with-json'],
@@ -100,6 +99,10 @@ export default defineConfig([
 		files: ['**/*.{ts,tsx,cts,mts}'],
 		languageOptions: {
 			parser: typescriptPlugin.parser,
+			parserOptions: {
+				project: true,
+				tsconfigRootDir: rootDir,
+			},
 		},
 	},
 	{
@@ -130,6 +133,13 @@ export default defineConfig([
 			typescriptPlugin.configs.stylistic,
 			angularPlugin.configs.tsRecommended,
 		],
+		languageOptions: {
+			parser: typescriptPlugin.parser,
+			parserOptions: {
+				project: true,
+				tsconfigRootDir: rootDir,
+			},
+		},
 		processor: angularPlugin.processInlineTemplates,
 		rules: {
 			'@angular-eslint/prefer-inject': 'warn',
@@ -178,4 +188,4 @@ export default defineConfig([
 			],
 		},
 	},
-]);
+];

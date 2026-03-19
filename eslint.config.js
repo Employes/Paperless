@@ -1,1 +1,1 @@
-export { default } from '@paperless/conventions/eslint';
+export { config } from '@paperless/conventions/eslint';

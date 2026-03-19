@@ -1,11 +1,12 @@
 import { defineConfig, globalIgnores } from 'eslint/config';
 
-import base from '../../eslint.config.js';
+import { config } from '../../eslint.config.js';
 
 export default defineConfig([
+	...config(import.meta.dirname),
+
 	globalIgnores(['./projects/paperless/src/lib/stencil/**/*']),
 	{
-		extends: [base],
 		settings: {
 			'better-tailwindcss': {
 				tailwindConfig: 'projects/paperless/tailwind.config.ts',
