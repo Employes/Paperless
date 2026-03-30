@@ -144,6 +144,16 @@ export const config = rootDir => [
 		rules: {
 			'@angular-eslint/prefer-inject': 'warn',
 			'@angular-eslint/prefer-standalone': 'warn',
+			'@angular-eslint/prefer-output-readonly': 'warn',
+			'@angular-eslint/prefer-signal-model': 'error',
+			'@angular-eslint/prefer-signals': [
+				'warn',
+				{
+					preferReadonlySignalProperties: true,
+					preferInputSignals: true,
+					preferQuerySignals: true,
+				},
+			],
 			'@angular-eslint/directive-selector': [
 				'error',
 				{
