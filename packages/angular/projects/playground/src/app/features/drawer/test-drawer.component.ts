@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import {
 	OverlayRef,
@@ -42,7 +42,7 @@ import {
 	imports: [PDrawer, PCardContainer, PCardHeader, PCardBody, PButton],
 })
 export class TestDrawerComponent {
-	constructor(public _overlayRef: OverlayRef<TestDrawerComponent>) {}
+	private readonly _overlayRef = inject(OverlayRef<TestDrawerComponent>);
 
 	close() {
 		this._overlayRef.close();

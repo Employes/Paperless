@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { AsyncPipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 import { TestDrawerComponent } from '../../drawer/test-drawer.component';
@@ -11,14 +11,14 @@ import {
 	PAvatar,
 	PLabel,
 	PProfile,
-	TableColumnComponent,
 	PTableCustomRowDirective,
-	TableExtraHeaderComponent,
 	PTableNgxDirective,
+	TableCellComponent,
+	TableColumnComponent,
+	TableExtraHeaderComponent,
+	TableComponent as TableNgxComponent,
 	TableRowActionClickEvent,
 	TableRowActionComponent,
-	TableComponent as TableNgxComponent,
-	TableCellComponent,
 } from 'projects/paperless/src/public-api';
 
 @Component({
@@ -40,6 +40,8 @@ import {
 	],
 })
 export class TableComponent {
+	private readonly _overlay = inject(OverlayService);
+
 	private _items = [
 		{
 			employee: 'Keven de Koning',
@@ -102,8 +104,6 @@ export class TableComponent {
 
 	public showNavigateButton = (item: any) =>
 		item.hide === undefined ? true : !item.hide;
-
-	constructor(private _overlay: OverlayService) {}
 
 	showDrawer() {
 		this._overlay.open<TestDrawerComponent>(TestDrawerComponent);

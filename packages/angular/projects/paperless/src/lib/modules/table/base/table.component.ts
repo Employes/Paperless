@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit, output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Observable, timer } from 'rxjs';
@@ -35,14 +35,12 @@ export interface TableOptions {
 @UntilDestroy({ checkProperties: true })
 @Component({
 	template: ``,
-	standalone: false,
 })
 export abstract class BaseTableComponent
 	extends BaseFormComponent
 	implements OnInit
 {
-	@Output() tableOptionsChange =
-		new EventEmitter<Partial<TableOptions> | null>();
+	readonly tableOptionsChange = output<Partial<TableOptions> | null>();
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	protected quickFilters: any[] = [];
@@ -182,7 +180,7 @@ export abstract class BaseTableComponent
 			.pipe(
 				untilDestroyed(this),
 				startWith(this.tableOptions.value),
-				tap((value: TableOptions) => this.tableOptionsChange.next(value)),
+				tap((value: TableOptions) => this.tableOptionsChange.emit(value)),
 				pairwise(),
 				map(([previous, next]) => this._getChanges(previous, next)),
 				filter(changes => !!changes),

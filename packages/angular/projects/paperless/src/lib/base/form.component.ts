@@ -8,7 +8,6 @@ import {
 
 @Component({
 	template: ``,
-	standalone: false,
 })
 export abstract class BaseFormComponent {
 	public markedDirty = false;

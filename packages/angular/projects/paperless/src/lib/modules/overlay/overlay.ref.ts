@@ -13,9 +13,10 @@ export class OverlayRef<T> {
 	public componentRef!: ComponentRef<T>;
 	public injector!: Injector;
 	public effectRef!: EffectRef;
+
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	public data = signal<any>({});
-	public closed$ = new Subject();
+	public readonly data = signal<any>({});
+	public readonly closed$ = new Subject();
 
 	constructor(private _overlay: CDKOverlayRef) {}
 

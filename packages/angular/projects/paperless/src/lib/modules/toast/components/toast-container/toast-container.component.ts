@@ -33,17 +33,18 @@ export declare interface PToastContainer extends Components.PToastContainer {
 	imports: [PToast, PToastDirective, AsyncPipe],
 })
 export class ToastContainerComponent {
+	private readonly _elRef = inject(ElementRef);
+	protected readonly z = inject(NgZone);
+
 	private _toastService: ToastService = inject(ToastService);
 	public toasts$ = this._toastService.toasts$.pipe(
 		map(arr => arr.toReversed())
 	);
 
 	protected el: HTMLElement;
-	constructor(
-		r: ElementRef,
-		protected z: NgZone
-	) {
-		this.el = r.nativeElement;
+
+	constructor() {
+		this.el = this._elRef.nativeElement;
 	}
 
 	dismiss(identifier: string) {

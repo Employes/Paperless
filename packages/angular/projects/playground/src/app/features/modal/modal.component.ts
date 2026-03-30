@@ -1,5 +1,5 @@
 import { CdkPortal, TemplatePortal } from '@angular/cdk/portal';
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 
 import { TestCropperModalComponent } from './cropper-modal.component';
 import { TestModalComponent } from './test-modal.component';
@@ -16,11 +16,11 @@ import {
 	imports: [PButton, CdkPortal, PModal],
 })
 export class ModalComponent {
+	private readonly _overlay = inject(OverlayService);
+
 	private _templateModalRef!: OverlayRef<CdkPortal>;
 
-	private test = signal<string>('aaa');
-
-	constructor(private _overlay: OverlayService) {}
+	private readonly test = signal<string>('aaa');
 
 	showModal() {
 		this._overlay.open<TestModalComponent>(TestModalComponent);

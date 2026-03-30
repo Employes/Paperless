@@ -1,25 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostListener, inject } from '@angular/core';
 import { ControlValueAccessor, NumberValueAccessor } from '@angular/forms';
 
-@Directive({
-	standalone: false,
-})
+@Directive()
 export class BaseNumberValueAccessor
 	extends NumberValueAccessor
 	implements ControlValueAccessor
 {
+	private readonly _el = inject(ElementRef);
+
 	protected lastValue: any;
 
-	constructor(
-		protected el: ElementRef,
-		protected renderer: Renderer2
-	) {
-		super(renderer, el);
-	}
-
 	override writeValue(value: any) {
-		this.el.nativeElement.value = this.lastValue = value == null ? '' : value;
+		this._el.nativeElement.value = this.lastValue = value == null ? '' : value;
 		super.writeValue(value);
 	}
 

@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 
 import {
 	OverlayRef,
@@ -30,9 +30,9 @@ import {
 	imports: [PModal, PCropper, PButton],
 })
 export class TestCropperModalComponent {
-	readonly test = input();
+	private readonly _overlayRef = inject(OverlayRef<TestCropperModalComponent>);
 
-	constructor(public _overlayRef: OverlayRef<TestCropperModalComponent>) {}
+	readonly test = input();
 
 	close() {
 		this._overlayRef.close();

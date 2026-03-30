@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Directive, ElementRef, Host } from '@angular/core';
+import { Directive, inject } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { QuickFilter } from '@paperless/core';
@@ -34,6 +34,10 @@ export interface TableDirectiveValue {
 	],
 })
 export class PTableNgxDirective extends BaseValueAccessor {
+	private _base = inject(TableComponent, {
+		host: true,
+	});
+
 	protected override lastValue: TableDirectiveValue = {
 		query: '',
 		quickFilter: undefined,
@@ -42,13 +46,6 @@ export class PTableNgxDirective extends BaseValueAccessor {
 		pageSize: 12,
 		selectedRows: [],
 	};
-
-	constructor(
-		el: ElementRef,
-		@Host() private _base: TableComponent
-	) {
-		super(el);
-	}
 
 	public override writeValue(value: TableDirectiveValue) {
 		this._base.query = this.lastValue.query = value?.query;

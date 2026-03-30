@@ -2,11 +2,11 @@ import {
 	ChangeDetectionStrategy,
 	Component,
 	ElementRef,
-	ViewChild,
 	effect,
 	input,
 	output,
 	signal,
+	viewChild,
 } from '@angular/core';
 
 @Component({
@@ -21,10 +21,10 @@ export abstract class BaseUploadComponent {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	readonly fileChange = output<any>();
 
-	@ViewChild('uploaderInput') uploaderInput?: ElementRef;
-	public file?: File;
+	readonly uploaderInput = viewChild<ElementRef>('uploaderInput');
+	readonly loadingParsed = signal(false);
 
-	public loadingParsed = signal(false);
+	public file?: File;
 
 	constructor() {
 		effect(() => {
@@ -53,8 +53,9 @@ export abstract class BaseUploadComponent {
 			file,
 		});
 
-		if (this.uploaderInput?.nativeElement) {
-			this.uploaderInput.nativeElement.value = '';
+		const uploaderInput = this.uploaderInput();
+		if (uploaderInput?.nativeElement) {
+			uploaderInput.nativeElement.value = '';
 		}
 
 		this.file = file;

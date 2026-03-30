@@ -1,4 +1,4 @@
-import { Directive, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Directive, OnInit, input, output } from '@angular/core';
 
 import { PToastActionFunction } from '../types';
 
@@ -10,34 +10,36 @@ import { PToastActionFunction } from '../types';
 	standalone: true,
 })
 export class PToastDirective implements OnInit {
-	@Input() delay: number | 'infinite' = 5000;
-	@Input() identifier!: string;
-	@Input() dismissOnAction = true;
-	@Input() actionFunc?: PToastActionFunction;
+	readonly delay = input<number | 'infinite'>(5000);
+	readonly identifier = input.required<string>();
+	readonly dismissOnAction = input(true);
+	readonly actionFunc = input<PToastActionFunction>();
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	@Input() actionData: any = {};
+	readonly actionData = input<any>({});
 
-	@Output() dismiss = new EventEmitter<string>();
+	readonly dismiss = output<string>();
 
 	ngOnInit(): void {
-		if (this.delay === 'infinite' || this.delay === 0) {
+		const delay = this.delay();
+		if (delay === 'infinite' || delay === 0) {
 			return;
 		}
 
-		setTimeout(() => this.doDismiss(), this.delay);
+		setTimeout(() => this.doDismiss(), delay);
 	}
 
 	onAction() {
-		if (this.dismissOnAction && !this.actionFunc) {
+		const actionFunc = this.actionFunc();
+		if (this.dismissOnAction() && !actionFunc) {
 			return this.doDismiss();
 		}
 
-		if (this.actionFunc) {
-			this.actionFunc(this, this.actionData);
+		if (actionFunc) {
+			actionFunc(this, this.actionData());
 		}
 	}
 
 	doDismiss() {
-		this.dismiss.next(this.identifier);
+		this.dismiss.emit(this.identifier());
 	}
 }

@@ -1,4 +1,4 @@
-import { Directive, ElementRef, OnDestroy, OnInit, Self } from '@angular/core';
+import { Directive, inject, OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
 import { filter, Subscription } from 'rxjs';
 
@@ -14,15 +14,16 @@ export class PRadioDirective
 	extends BaseValueAccessor
 	implements ControlValueAccessor, OnInit, OnDestroy
 {
+	private readonly _control = inject(NgControl, {
+		self: true,
+	});
+
 	private _modelValue: string | boolean | undefined;
 	private _valueChanges: Subscription | undefined;
 
-	constructor(
-		@Self() private _control: NgControl,
-		el: ElementRef
-	) {
-		super(el);
-		_control.valueAccessor = this;
+	constructor() {
+		super();
+		this._control.valueAccessor = this;
 	}
 
 	ngOnInit() {

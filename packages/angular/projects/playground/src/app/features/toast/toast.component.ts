@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import {
 	PButton,
@@ -12,14 +12,14 @@ import {
 	imports: [PButton],
 })
 export class ToastComponent {
+	private readonly _toast = inject(ToastService);
+
 	public variants = {
 		neutral: PToastVariants.Neutral,
 		positive: PToastVariants.Positive,
 		biased: PToastVariants.Biased,
 		negative: PToastVariants.Negative,
 	};
-
-	constructor(private _toast: ToastService) {}
 
 	showToast(variant: PToastVariants) {
 		this._toast.show(

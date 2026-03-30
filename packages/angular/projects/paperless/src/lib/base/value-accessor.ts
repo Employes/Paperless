@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostListener, inject } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 
-@Directive({
-	standalone: false,
-})
+@Directive()
 export class BaseValueAccessor implements ControlValueAccessor {
+	protected readonly el = inject(ElementRef);
+
 	protected onChange: (value: any) => void = () => {
 		/**/
 	};
@@ -15,8 +15,6 @@ export class BaseValueAccessor implements ControlValueAccessor {
 	};
 
 	protected lastValue: any;
-
-	constructor(protected el: ElementRef) {}
 
 	public writeValue(value: any) {
 		this.el.nativeElement.value = this.lastValue = value == null ? '' : value;

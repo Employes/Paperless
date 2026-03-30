@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import { OverlayRef, PButton, PModal } from 'projects/paperless/src/public-api';
 
@@ -21,7 +21,7 @@ import { OverlayRef, PButton, PModal } from 'projects/paperless/src/public-api';
 	imports: [PModal, PButton],
 })
 export class TestModalComponent {
-	constructor(public _overlayRef: OverlayRef<TestModalComponent>) {}
+	private readonly _overlayRef = inject(OverlayRef<TestModalComponent>);
 
 	close() {
 		this._overlayRef.close();

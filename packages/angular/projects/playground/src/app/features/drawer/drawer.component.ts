@@ -1,5 +1,5 @@
 import { CdkPortal, TemplatePortal } from '@angular/cdk/portal';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import { TestDrawerComponent } from './test-drawer.component';
 
@@ -15,9 +15,9 @@ import {
 	imports: [PDrawer, PButton, CdkPortal],
 })
 export class DrawerComponent {
-	private _templateDrawerRef!: OverlayRef<CdkPortal>;
+	private readonly _overlay = inject(OverlayService);
 
-	constructor(private _overlay: OverlayService) {}
+	private _templateDrawerRef!: OverlayRef<CdkPortal>;
 
 	showDrawer() {
 		this._overlay.open<TestDrawerComponent>(TestDrawerComponent);

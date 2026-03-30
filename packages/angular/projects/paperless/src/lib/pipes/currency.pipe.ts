@@ -5,13 +5,13 @@
 */
 
 import { CurrencyPipe } from '@angular/common';
-import { Pipe, PipeTransform } from '@angular/core';
+import { inject, Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
 	name: 'pcurrency',
 })
 export class CustomCurrencyPipe implements PipeTransform {
-	constructor(private _currencyPipe: CurrencyPipe) {}
+	private readonly _currencyPipe = inject(CurrencyPipe);
 
 	transform(
 		value: number | string | null | undefined,
