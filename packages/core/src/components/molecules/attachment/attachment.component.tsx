@@ -8,7 +8,7 @@ import {
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
-import { cn, isMobile, isTablet } from '../../../utils';
+import { cn, isTouchDevice } from '../../../utils';
 
 const attachment = cva(
 	[
@@ -167,7 +167,7 @@ export class Attachment {
 			);
 		}
 
-		const isMobileDevice = isMobile() || isTablet();
+		const isTouch = isTouchDevice();
 
 		const baseText =
 			'min-w-0 flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-sm';
@@ -255,7 +255,7 @@ export class Attachment {
 
 						{this.enableCameraOnMobile &&
 							this.mode === 'write' &&
-							isMobileDevice &&
+							isTouch &&
 							!this.value?.length && (
 								<p-tooltip
 									class='
@@ -307,7 +307,7 @@ export class Attachment {
 	}
 
 	private _cameraClick() {
-		if (!this.enableCameraOnMobile || isMobile()) {
+		if (!this.enableCameraOnMobile || !isTouchDevice()) {
 			return;
 		}
 
