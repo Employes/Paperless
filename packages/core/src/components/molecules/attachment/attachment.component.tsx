@@ -167,8 +167,7 @@ export class Attachment {
 			);
 		}
 
-		// const isMobileDevice = isMobile();
-		const isMobileDevice = isTablet();
+		const isMobileDevice = isMobile() || isTablet();
 
 		const baseText =
 			'min-w-0 flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-sm';
