@@ -39,10 +39,7 @@ const multiItem = cva([
 const textContainer = cva('block w-full overflow-hidden text-start', {
 	variants: {
 		variant: {
-			placeholder: `
-     text-storm-400
-     dark:text-white
-   `,
+			placeholder: 'text-storm-400',
 			default: null,
 		},
 		enableTextWrap: {
@@ -50,16 +47,27 @@ const textContainer = cva('block w-full overflow-hidden text-start', {
 			false: 'text-ellipsis whitespace-nowrap',
 		},
 		error: {
-			true: `
+			true: false,
+			false: 'dark:text-white',
+		},
+	},
+	compoundVariants: [
+		{
+			variant: 'placeholder',
+			error: true,
+			class: `
      text-negative-red-700
      group-hover/button:text-negative-red-800
      dark:text-negative-red-alternative
    `,
-			false: null,
 		},
-	},
+		{
+			variant: 'default',
+			error: true,
+			class: 'dark:text-negative-red-alternative',
+		},
+	],
 });
-
 @Component({
 	tag: 'p-select',
 	styleUrl: 'select.component.css',
@@ -349,7 +357,12 @@ export class Select {
 
 	get _displayValue() {
 		const placeholder = (
-			<div class={textContainer({ variant: 'placeholder' })}>
+			<div
+				class={textContainer({
+					variant: 'placeholder',
+					error: !!this.error?.length,
+				})}
+			>
 				{this.placeholder}
 			</div>
 		);
@@ -940,7 +953,7 @@ export class Select {
 			<div
 				class={textContainer({
 					variant: 'default',
-					error: !!this.error?.length,
+					error: !!this.error?.length && isSelection,
 					enableTextWrap: this.enableTextWrap && !isSelection,
 				})}
 			>
@@ -965,7 +978,7 @@ export class Select {
 					<div
 						class={textContainer({
 							variant: 'default',
-							error: !!this.error?.length,
+							error: !!this.error?.length && isSelection,
 							enableTextWrap: this.enableTextWrap && !isSelection,
 						})}
 					>
@@ -996,7 +1009,7 @@ export class Select {
 					<div
 						class={textContainer({
 							variant: 'default',
-							error: !!this.error?.length,
+							error: !!this.error?.length && isSelection,
 							enableTextWrap: this.enableTextWrap && !isSelection,
 						})}
 					>
