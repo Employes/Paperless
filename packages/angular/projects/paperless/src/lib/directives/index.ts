@@ -1,4 +1,5 @@
 export * from './p-checkbox.directive';
+export * from './p-calendar.directive';
 export * from './p-cropper.directive';
 export * from './p-datepicker.directive';
 export * from './p-field.directive';
@@ -9,6 +10,7 @@ export * from './p-radio.directive';
 export * from './p-select.directive';
 export * from './p-toggle.directive';
 
+import { PCalendarDirective } from './p-calendar.directive';
 import { PCheckboxDirective } from './p-checkbox.directive';
 import { PCropperDirective } from './p-cropper.directive';
 import { PDatepickerDirective } from './p-datepicker.directive';
@@ -26,6 +28,7 @@ export const DIRECTIVES = [
 	PSelectDirective,
 	PDatepickerDirective,
 	PCropperDirective,
+	PCalendarDirective,
 	PFieldDirective,
 	PFieldNumberDirective,
 	PRadioDirective,
