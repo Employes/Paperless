@@ -203,6 +203,10 @@ export class Calendar {
 			this._viewDate = value;
 		}
 
+		if (value?.getTime() === this._value?.getTime()) {
+			return;
+		}
+
 		this._setValue(value);
 	}
 

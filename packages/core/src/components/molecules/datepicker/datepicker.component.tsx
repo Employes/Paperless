@@ -203,7 +203,11 @@ export class Datepicker {
 			value = new Date(value);
 		}
 
-		this._setValue(value);
+		if (value?.getTime() === this._value?.getTime()) {
+			return;
+		}
+
+		this._setValue(value, true);
 	}
 
 	@Watch('minDate')
