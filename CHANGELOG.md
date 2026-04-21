@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.7.0](https://github.com/Employes/Paperless/compare/v3.6.6...v3.7.0) (2026-04-21)
+
+
+### Bug Fixes
+
+* **angular/datepicker:** Don't emit date event if the value is the same date ([8cf4f6d](https://github.com/Employes/Paperless/commit/8cf4f6dc8f308c4f36ddc9b5b9ab63a7418afc26))
+
+
+### Features
+
+* **angular:** Add calendar directive ([8fa8c96](https://github.com/Employes/Paperless/commit/8fa8c9629482744ae658d13eb0768cbe661e7003))
+
+
+
+
+
 ## [3.6.6](https://github.com/Employes/Paperless/compare/v3.6.5...v3.6.6) (2026-04-08)
 
 
