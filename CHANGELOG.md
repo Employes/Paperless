@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.7.1](https://github.com/Employes/Paperless/compare/v3.7.0...v3.7.1) (2026-04-22)
+
+
+### Bug Fixes
+
+* **molecules/select:** fixed error state for select component ([6280f17](https://github.com/Employes/Paperless/commit/6280f171fe79906ced84227ba5f3368fb80b8541))
+
+
+
+
+
 # [3.7.0](https://github.com/Employes/Paperless/compare/v3.6.6...v3.7.0) (2026-04-21)
 
 
