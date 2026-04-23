@@ -6223,12 +6223,12 @@
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-8.6.14.tgz#ba2be7b0644655d17db143b2be5f45199e617af4"
   integrity sha512-RrJ95u3HuIE4Nk8VmZP0tc/u0vYoE2v9fYlMw6K2GUSExzKDITs3voy6WMIY7Q3qbQun8XUXVlmqkuFzTEy/pA==
 
-"@storybook/core@8.6.15":
-  version "8.6.15"
-  resolved "https://registry.yarnpkg.com/@storybook/core/-/core-8.6.15.tgz#ba3aa59b02981136fa671d545b64d380c1188c8b"
-  integrity sha512-VFpKcphNurJpSC4fpUfKL3GTXVoL53oytghGR30QIw5jKWwaT50HVbTyb41BLOUuZjmMhUQA8weiQEew6RX0gw==
+"@storybook/core@8.6.18":
+  version "8.6.18"
+  resolved "https://registry.yarnpkg.com/@storybook/core/-/core-8.6.18.tgz#0ddbec8421715b372419ae5dfefef3df5848386c"
+  integrity sha512-dRBP2TnX6fGdS0T2mXBHjkS/3Nlu1ra1huovZVFuM67CYMzrhM/3hX/zru1vWSC5rqY93ZaAhjMciPW4pK5mMQ==
   dependencies:
-    "@storybook/theming" "8.6.15"
+    "@storybook/theming" "8.6.18"
     better-opn "^3.0.2"
     browser-assert "^1.2.1"
     esbuild "^0.18.0 || ^0.19.0 || ^0.20.0 || ^0.21.0 || ^0.22.0 || ^0.23.0 || ^0.24.0 || ^0.25.0"
@@ -6314,6 +6314,11 @@
   version "8.6.15"
   resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-8.6.15.tgz#781e6b36f113a10e76379956b9451276e8d5bda2"
   integrity sha512-dAbL0XOekyT6XsF49R6Etj3WxQ/LpdJDIswUUeHgVJ6/yd2opZOGbPxnwA3zlmAh1c0tvpPyhSDXxSG79u8e4Q==
+
+"@storybook/theming@8.6.18":
+  version "8.6.18"
+  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-8.6.18.tgz#18c66263868bfb00a419772b5460a5714c5e1181"
+  integrity sha512-n6OEjEtHupa2PdTwWzRepr7cO8NkDd4rgF6BKLitRbujOspLxzMBEqdphs+QLcuiCIgf33SqmEA64QWnbSMhPw==
 
 "@storybook/theming@^8.0.0":
   version "8.6.14"
@@ -18118,12 +18123,12 @@ semver@7.5.4:
   dependencies:
     lru-cache "^6.0.0"
 
-semver@7.7.3, semver@^7.0.0, semver@^7.1.1, semver@^7.3.4, semver@^7.3.5, semver@^7.3.7, semver@^7.3.8, semver@^7.5.3, semver@^7.5.4, semver@^7.6.2, semver@^7.6.3, semver@^7.7.1, semver@^7.7.3:
+semver@7.7.3, semver@^7.0.0, semver@^7.1.1, semver@^7.3.4, semver@^7.3.5, semver@^7.3.7, semver@^7.3.8, semver@^7.5.3, semver@^7.5.4, semver@^7.6.3, semver@^7.7.1, semver@^7.7.3:
   version "7.7.3"
   resolved "https://registry.yarnpkg.com/semver/-/semver-7.7.3.tgz#4b5f4143d007633a8dc671cd0a6ef9147b8bb946"
   integrity sha512-SdsKMrI9TdgjdweUSR9MweHA4EJ8YxHn8DFaDisvhVlUOe4BF1tLD7GAj0lIqWVl+dPb/rExr0Btby5loQm20Q==
 
-semver@7.7.4:
+semver@7.7.4, semver@^7.6.2:
   version "7.7.4"
   resolved "https://registry.yarnpkg.com/semver/-/semver-7.7.4.tgz#28464e36060e991fa7a11d0279d2d3f3b57a7e8a"
   integrity sha512-vFKC2IEtQnVhpT78h1Yp8wzwrf8CM+MzKMHGJZfBtzhZNycRFnXsHk6E5TxIkkMsgNS7mdX3AGB7x2QM2di4lA==
@@ -18805,11 +18810,11 @@ storybook-multilevel-sort@^2.0.1:
   integrity sha512-y1duvL9S098xwWMEZTTNavVZUZ5P+SzaE3wOHJ6PTH6MjoObFa++zW1R10q4zEor9P+qfdbs9OcbRTHPu5G2DQ==
 
 storybook@^8.6.12:
-  version "8.6.15"
-  resolved "https://registry.yarnpkg.com/storybook/-/storybook-8.6.15.tgz#eb4a3bae1ac0fe875bb322a412fac9709d9b5124"
-  integrity sha512-Ob7DMlwWx8s7dMvcQ3xPc02TvUeralb+xX3oaPRk9wY9Hc6M1IBC/7cEoITkSmRS2v38DHubC+mtEKNc1u2gQg==
+  version "8.6.18"
+  resolved "https://registry.yarnpkg.com/storybook/-/storybook-8.6.18.tgz#2a635a4b0c99693f43ba21b8eb511c5cc513a807"
+  integrity sha512-p8seiSI6FiVY6P3V0pG+5v7c8pDMehMAFRWEhG5XqIBSQszzOjDnW2rNvm3odoLKfo3V3P6Cs6Hv9ILzymULyQ==
   dependencies:
-    "@storybook/core" "8.6.15"
+    "@storybook/core" "8.6.18"
 
 stream-buffers@^3.0.2:
   version "3.0.3"
@@ -20753,10 +20758,15 @@ ws@^7.5.3, ws@^7.5.9:
   resolved "https://registry.yarnpkg.com/ws/-/ws-7.5.10.tgz#58b5c20dc281633f6c19113f39b349bd8bd558d9"
   integrity sha512-+dbF1tHwZpXcbOJdVOkzLDxZP1ailvSxM6ZweXTegylPny803bFhA+vqBYw4s31NSAk4S2Qz+AKXK9a4wkdjcQ==
 
-ws@^8.19.0, ws@^8.2.3:
+ws@^8.19.0:
   version "8.19.0"
   resolved "https://registry.yarnpkg.com/ws/-/ws-8.19.0.tgz#ddc2bdfa5b9ad860204f5a72a4863a8895fd8c8b"
   integrity sha512-blAT2mjOEIi0ZzruJfIhb3nps74PRWTCz1IjglWEEpQl5XS/UNama6u2/rjFkDDouqr4L67ry+1aGIALViWjDg==
+
+ws@^8.2.3:
+  version "8.20.0"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-8.20.0.tgz#4cd9532358eba60bc863aad1623dfb045a4d4af8"
+  integrity sha512-sAt8BhgNbzCtgGbt2OxmpuryO63ZoDk/sqaB/znQm94T4fCEsy/yV+7CdC1kJhOU9lboAEU7R3kquuycDoibVA==
 
 ws@~8.18.3:
   version "8.18.3"
