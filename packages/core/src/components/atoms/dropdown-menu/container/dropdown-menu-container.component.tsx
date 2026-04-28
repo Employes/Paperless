@@ -11,7 +11,7 @@ const dropdownMenuContainer = cva(
 			variant: {
 				default: [
 					'border-storm-100 bg-white drop-shadow-2',
-					'dark:border-transparent dark:bg-hurricane-400',
+					'dark:bg-hurricane-400 dark:border-white/15 dark:border dark:border-solid',
 				],
 				storm: [
 					'border-storm-400 bg-storm-400 drop-shadow-3',
