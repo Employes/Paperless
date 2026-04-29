@@ -18805,9 +18805,7 @@ storybook-multilevel-sort@^2.0.1:
   integrity sha512-y1duvL9S098xwWMEZTTNavVZUZ5P+SzaE3wOHJ6PTH6MjoObFa++zW1R10q4zEor9P+qfdbs9OcbRTHPu5G2DQ==
 
 storybook@^8.6.12:
-  version "8.6.15"
-  resolved "https://registry.yarnpkg.com/storybook/-/storybook-8.6.15.tgz#eb4a3bae1ac0fe875bb322a412fac9709d9b5124"
-  integrity sha512-Ob7DMlwWx8s7dMvcQ3xPc02TvUeralb+xX3oaPRk9wY9Hc6M1IBC/7cEoITkSmRS2v38DHubC+mtEKNc1u2gQg==
+  version "8.6.17"
   dependencies:
     "@storybook/core" "8.6.15"
 
