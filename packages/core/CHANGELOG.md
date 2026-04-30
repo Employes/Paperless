@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.7.2](https://github.com/Employes/Paperless/compare/v3.7.1...v3.7.2) (2026-04-30)
+
+
+### Bug Fixes
+
+* **components/atoms/dropdown-menu-container:** added border in dark mode ([4f3b859](https://github.com/Employes/Paperless/commit/4f3b8599325b69a2fe5d905f20abd001360765a2))
+* **components/atoms/dropdown-menu-container:** added border-solid ([bdee6a3](https://github.com/Employes/Paperless/commit/bdee6a35827870931d2023cf41b08f1ef2aaf7e7))
+
+
+
+
+
 ## [3.7.1](https://github.com/Employes/Paperless/compare/v3.7.0...v3.7.1) (2026-04-22)
 
 
