@@ -5,13 +5,19 @@ import { ThemedHost } from '../../../../internal/themed-host.component';
 import { asBoolean } from '../../../../utils/as-boolean';
 
 const dropdownMenuContainer = cva(
-	['p-1', 'z-10 rounded-lg', 'border', 'transform-gpu will-change-transform'],
+	[
+		'p-1',
+		'z-10 rounded-lg',
+		'border',
+		'border-solid',
+		'transform-gpu will-change-transform',
+	],
 	{
 		variants: {
 			variant: {
 				default: [
 					'border-storm-100 bg-white drop-shadow-2',
-					'dark:bg-hurricane-400 dark:border-white/15 dark:border dark:border-solid',
+					'dark:border-white/15 dark:bg-hurricane-400',
 				],
 				storm: [
 					'border-storm-400 bg-storm-400 drop-shadow-3',
