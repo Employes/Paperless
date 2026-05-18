@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.8.0](https://github.com/Employes/Paperless/compare/v3.7.3...v3.8.0) (2026-05-18)
+
+
+### Features
+
+* **react:** Add vite plugin ([595f911](https://github.com/Employes/Paperless/commit/595f9119ffb09805a182c8afc49bce8c890a336c))
+
+
+
+
+
 ## [3.7.3](https://github.com/Employes/Paperless/compare/v3.7.2...v3.7.3) (2026-05-18)
 
 
