@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.7.3](https://github.com/Employes/Paperless/compare/v3.7.2...v3.7.3) (2026-05-18)
+
+
+### Bug Fixes
+
+* **react:** Set types index correctly ([2e5494e](https://github.com/Employes/Paperless/commit/2e5494ec5d32583a8eb98548790a9e60af3b3d77))
+
+
+
+
+
 ## [3.7.2](https://github.com/Employes/Paperless/compare/v3.7.1...v3.7.2) (2026-04-30)
 
 
