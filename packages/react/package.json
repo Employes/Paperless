@@ -27,9 +27,23 @@
 	"main": "./dist/index.js",
 	"module": "./dist/index.js",
 	"types": "./dist/types/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/components.js",
+			"type": "./dist/types/components.d.ts"
+		},
+		"./vite": {
+			"import": "./dist/vite.js",
+			"type": "./dist/types/vite.d.ts"
+		}
+	},
 	"files": [
 		"dist"
 	],
+	"dependencies": {
+		"@paperless/core": "*",
+		"@stencil/ssr": "~0.3.1"
+	},
 	"devDependencies": {
 		"@types/node": "~25.0.9",
 		"@types/react": "~19.2.8",
