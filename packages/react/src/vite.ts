@@ -2,7 +2,7 @@ import { stencilSSR } from '@stencil/ssr';
 
 export const paperless = () =>
 	stencilSSR({
-		module: import('./components'),
+		module: import('./components.js'),
 		from: '@paperless/react',
 		hydrateModule: import('@paperless/core/hydrate'),
 		serializeShadowRoot: {
