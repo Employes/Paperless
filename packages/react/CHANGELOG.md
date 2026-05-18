@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.8.2](https://github.com/Employes/Paperless/compare/v3.8.1...v3.8.2) (2026-05-18)
+
+
+### Bug Fixes
+
+* **react:** Add react-output-target dep ([afafa7b](https://github.com/Employes/Paperless/commit/afafa7b7a3cfac1bd7926abfbff5bb8267bf6d6c))
+
+
+
+
+
 ## [3.8.1](https://github.com/Employes/Paperless/compare/v3.8.0...v3.8.1) (2026-05-18)
 
 
