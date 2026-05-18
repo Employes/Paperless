@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.9.0](https://github.com/Employes/Paperless/compare/v3.8.2...v3.9.0) (2026-05-18)
+
+
+### Features
+
+* **field:** Add ability to show password based on an action ([b82e1fc](https://github.com/Employes/Paperless/commit/b82e1fccbba44df96367233acd5d02102f0f454a))
+
+
+
+
+
 ## [3.8.2](https://github.com/Employes/Paperless/compare/v3.8.1...v3.8.2) (2026-05-18)
 
 
