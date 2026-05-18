@@ -320,6 +320,11 @@ export class Field {
 	@Prop() loading: boolean = false;
 
 	/**
+	 * Wether to enable or disable the password eye toggle
+	 */
+	@Prop() enablePasswordEye: boolean = true;
+
+	/**
 	 * The placeholder of the input
 	 */
 	@Prop() placeholder: string;
@@ -426,6 +431,7 @@ export class Field {
 
 	@State() private _focused = false;
 	@State() private _nonce = nonce(5);
+	@State() private _type: HTMLInputTypeAttribute | 'textarea' | 'slot' = 'text';
 
 	@AttachInternals() _internals: ElementInternals;
 
@@ -434,6 +440,7 @@ export class Field {
 
 	componentDidLoad() {
 		this._checkAutoFocus();
+		this._type = this.type;
 	}
 
 	formResetCallback() {
@@ -555,26 +562,51 @@ export class Field {
 
 						{this._getContent(hasValueSlot, id)}
 
-						{(suffix || (this.icon && this.iconPosition === 'end')) && (
+						{(suffix ||
+							(this.type === 'password' && this.enablePasswordEye) ||
+							(this.icon && this.iconPosition === 'end')) && (
 							<div
-								class={prefixAndSuffix({
-									variant: this.variant,
-									error: !!this.error?.length,
-									disabled: asBoolean(this.disabled),
-									focused: asBoolean(this.focused) || this._focused,
-									isText: typeof suffix === 'string',
-									isTextarea: this.type === 'textarea',
-								})}
+								class={cn(
+									prefixAndSuffix({
+										variant: this.variant,
+										error: !!this.error?.length,
+										disabled: asBoolean(this.disabled),
+										focused: asBoolean(this.focused) || this._focused,
+										isText:
+											typeof suffix === 'string' && this.type !== 'password',
+										isTextarea: this.type === 'textarea',
+									}),
+									{
+										'cursor-pointer':
+											this.type === 'password' && this.enablePasswordEye,
+										'hover:text-indigo-700 dark:hover:text-indigo-300':
+											this.type === 'password',
+									}
+								)}
 								onClick={() => this._focusInput()}
 							>
-								{this.icon && this.iconPosition === 'end' ? (
+								{(this.icon && this.iconPosition === 'end') ||
+								(this.type === 'password' && this.enablePasswordEye) ? (
 									<p-icon
 										class={cn('flex', {
 											'mt-1': this.variant === 'read' && this.size === 'base',
 										})}
 										flip={this.iconFlip}
 										rotate={this.iconRotate}
-										variant={this.icon}
+										variant={
+											this.type === 'password'
+												? this._type === 'text'
+													? 'eye-closed'
+													: 'eye'
+												: this.icon
+										}
+										onClick={() => {
+											if (this.type !== 'password' || !this.enablePasswordEye) {
+												return;
+											}
+
+											this._type = this._type === 'text' ? 'password' : 'text';
+										}}
 									/>
 								) : (
 									suffix
@@ -738,7 +770,7 @@ export class Field {
 		return (
 			<input
 				ref={ref => this._setInputRef(ref)}
-				type={this.type}
+				type={this._type}
 				{...props}
 				{...properties}
 			/>

@@ -924,6 +924,11 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * Wether to enable or disable the password eye toggle
+          * @default true
+         */
+        "enablePasswordEye": boolean;
+        /**
           * The error to display
          */
         "error": string;
@@ -4614,6 +4619,11 @@ declare namespace LocalJSX {
           * @default false
          */
         "disabled"?: boolean;
+        /**
+          * Wether to enable or disable the password eye toggle
+          * @default true
+         */
+        "enablePasswordEye"?: boolean;
         /**
           * The error to display
          */

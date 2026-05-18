@@ -102,6 +102,7 @@ export const OverflowReadOnly = {
 		autofocus,
 		error,
 		'error-placement': errorPlacement,
+		'enable-password-eye': enablePasswordEye,
 		disabled,
 		focused,
 		'force-show-tooltip': forceShowTooltip,
@@ -128,6 +129,7 @@ export const OverflowReadOnly = {
 			autofocus=${autofocus ?? nothing}
 			error=${error ?? nothing}
 			error-placement=${errorPlacement ?? nothing}
+			enable-password-eye=${enablePasswordEye ?? nothing}
 			disabled=${disabled ?? nothing}
 			focused=${focused ?? nothing}
 			force-show-tooltip=${forceShowTooltip ?? nothing}
@@ -139,7 +141,7 @@ export const OverflowReadOnly = {
 		>
 			<a
 				slot="value"
-				class="hover:text-inidgo-700 block w-full overflow-hidden text-ellipsis whitespace-nowrap text-indigo-600 hover:underline"
+				class="hover:text-indigo-700 block w-full overflow-hidden text-ellipsis whitespace-nowrap text-indigo-600 hover:underline"
 				href="https://google.com"
 			>
 				This is a very very very very very very long text This is a very very
