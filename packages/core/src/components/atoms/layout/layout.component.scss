@@ -94,6 +94,9 @@
 
 		@apply layout-1280:px-18 layout-1280:py-0;
 		@apply px-content-mobile-x py-content-mobile-y;
+
+		@apply h-dvh layout:1280:h-auto;
+
 		padding-top: calc(env(safe-area-inset-top) + 3.5rem);
 
 		@screen layout-1280 {
