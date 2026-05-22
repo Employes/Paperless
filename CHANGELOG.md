@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.10.0](https://github.com/Employes/Paperless/compare/v3.9.0...v3.10.0) (2026-05-22)
+
+
+### Features
+
+* **layout:** Add slot for outer-content ([3d79d81](https://github.com/Employes/Paperless/commit/3d79d81ca9b03b7094647dbf70e54315afa3beee))
+
+
+
+
+
 # [3.9.0](https://github.com/Employes/Paperless/compare/v3.8.2...v3.9.0) (2026-05-18)
 
 
