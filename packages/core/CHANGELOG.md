@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.10.3](https://github.com/Employes/Paperless/compare/v3.10.2...v3.10.3) (2026-05-22)
+
+
+### Bug Fixes
+
+* **layout:** Set height to full on bigger screens instead of auto ([ad27004](https://github.com/Employes/Paperless/commit/ad27004d5afa972fe24a28ecd57603aa258c9b20))
+
+
+
+
+
 ## [3.10.2](https://github.com/Employes/Paperless/compare/v3.10.1...v3.10.2) (2026-05-22)
 
 
