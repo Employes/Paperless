@@ -1,7 +1,7 @@
 {
 	"name": "@paperless/react",
 	"sideEffects": false,
-	"version": "3.10.0",
+	"version": "3.10.1",
 	"description": "React specific wrapper for component-library",
 	"repository": {
 		"type": "git",
@@ -41,7 +41,7 @@
 		"dist"
 	],
 	"dependencies": {
-		"@paperless/core": "^3.10.0",
+		"@paperless/core": "^3.10.1",
 		"@stencil/react-output-target": "~1.2.1",
 		"@stencil/ssr": "~0.3.1"
 	},

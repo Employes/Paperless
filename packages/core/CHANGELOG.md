@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.10.1](https://github.com/Employes/Paperless/compare/v3.10.0...v3.10.1) (2026-05-22)
+
+
+### Bug Fixes
+
+* **layout:** Add height to login variant on mobile/tablet ([04e5dbe](https://github.com/Employes/Paperless/commit/04e5dbe496c5beeeac7f8a4559d79b8593d3b60b))
+
+
+
+
+
 # [3.10.0](https://github.com/Employes/Paperless/compare/v3.9.0...v3.10.0) (2026-05-22)
 
 
