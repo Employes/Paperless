@@ -26,6 +26,8 @@ export class Layout {
 					<div class='inner-content'>
 						<slot name='content' />
 					</div>
+
+					<slot name='outer-content' />
 				</div>
 				<div class='sidebar'>
 					<slot name='sidebar' />
