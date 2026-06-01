@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.10.4](https://github.com/Employes/Paperless/compare/v3.10.3...v3.10.4) (2026-06-01)
+
+
+### Bug Fixes
+
+* **angular/table:** Set z-index to 1 for custom row variant of secondary ([1a66e93](https://github.com/Employes/Paperless/commit/1a66e93d939a00b749791ffd638e477de0fd1362))
+
+
+
+
+
 ## [3.10.3](https://github.com/Employes/Paperless/compare/v3.10.2...v3.10.3) (2026-05-22)
 
 
