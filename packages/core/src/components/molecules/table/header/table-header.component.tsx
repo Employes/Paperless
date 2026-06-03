@@ -14,6 +14,7 @@ import { debounceTime, distinctUntilChanged, Subject } from 'rxjs';
 import { ThemedHost } from '../../../../internal/themed-host.component';
 import { IconVariant } from '../../../../types/icon';
 import { QuickFilter } from '../../../../types/table';
+import { cn } from '../../../../utils';
 import {
 	formatTranslation,
 	getLocaleComponentStrings,
@@ -61,6 +62,11 @@ export class TableHeader {
 	 * Active quick filter identifier
 	 */
 	@Prop() activeQuickFilterIdentifier: string;
+
+	/**
+	 * Wether to hide quick filters on mobile
+	 */
+	@Prop() hideQuickFiltersOnMobile: boolean = true;
 
 	/**
 	 * Wether we want to show loading state
@@ -246,10 +252,10 @@ export class TableHeader {
 
 								{quickFilters.length > 0 && (
 									<p-segment-container
-										class='
-            hidden
-            desktop-xs:flex
-          '
+										class={cn({
+											'hidden desktop-xs:flex': this.hideQuickFiltersOnMobile,
+											flex: !this.hideQuickFiltersOnMobile,
+										})}
 									>
 										{quickFilters.map(item => (
 											<p-segment-item
