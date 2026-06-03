@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.11.0](https://github.com/Employes/Paperless/compare/v3.10.4...v3.11.0) (2026-06-03)
+
+
+### Features
+
+* **components/molecules/table/table-header:** added hideQuickFiltersOnMobile prop ([c8d5d45](https://github.com/Employes/Paperless/commit/c8d5d45609eaccfbd4a1b283492145f8d77c42c1))
+
+
+
+
+
 ## [3.10.4](https://github.com/Employes/Paperless/compare/v3.10.3...v3.10.4) (2026-06-01)
 
 
