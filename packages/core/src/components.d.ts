@@ -2374,6 +2374,11 @@ export namespace Components {
          */
         "filterButtonTemplate": templateFunc5;
         /**
+          * Wether to hide quick filters on mobile
+          * @default true
+         */
+        "hideQuickFiltersOnMobile": boolean;
+        /**
           * The amount of items that are selected
           * @default 0
          */
@@ -6234,6 +6239,11 @@ declare namespace LocalJSX {
           * @default this._defaultFilterButtonTemplate
          */
         "filterButtonTemplate"?: templateFunc5;
+        /**
+          * Wether to hide quick filters on mobile
+          * @default true
+         */
+        "hideQuickFiltersOnMobile"?: boolean;
         /**
           * The amount of items that are selected
           * @default 0

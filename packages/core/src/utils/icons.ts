@@ -84,6 +84,7 @@ import power from '../assets/icons/general/power.svg';
 import receipt from '../assets/icons/general/receipt.svg';
 import reset from '../assets/icons/general/reset.svg';
 import running from '../assets/icons/general/running.svg';
+import scroll from '../assets/icons/general/scroll.svg';
 import search from '../assets/icons/general/search.svg';
 import send from '../assets/icons/general/send.svg';
 import settings from '../assets/icons/general/settings.svg';
@@ -219,6 +220,7 @@ export const categorized = {
 		receipt,
 		reset,
 		running,
+		scroll,
 		search,
 		send,
 		settings,
@@ -365,6 +367,7 @@ export const icons = {
 	receipt,
 	reset,
 	running,
+	scroll,
 	search,
 	send,
 	settings,
