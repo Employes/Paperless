@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.12.0](https://github.com/Employes/Paperless/compare/v3.11.0...v3.12.0) (2026-06-10)
+
+
+### Features
+
+* **utilts/icons:** added scroll icon ([4d38cab](https://github.com/Employes/Paperless/commit/4d38cab0283d3768fc199aff20f9e17705d3b487))
+
+
+
+
+
 # [3.11.0](https://github.com/Employes/Paperless/compare/v3.10.4...v3.11.0) (2026-06-03)
 
 
