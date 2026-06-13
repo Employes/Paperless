@@ -103,7 +103,7 @@
 		"@types/jest": "^29.5.14",
 		"@types/react": "~19.2.8",
 		"@types/react-dom": "~19.2.3",
-		"@types/uuid": "^9.0.0",
+		"@types/uuid": "^11.0.0",
 		"autoprefixer": "10.4.14",
 		"babel-loader": "9.1.2",
 		"class-variance-authority": "^0.7.1",
