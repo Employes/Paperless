@@ -400,7 +400,7 @@
 		"jest-cli": "^29.7.0",
 		"puppeteer": "^24.3.0",
 		"stencil-inline-svg": "~1.1.0",
-		"stencil-tailwind-plugin": "~1.8.0",
+		"stencil-tailwind-plugin": "~2.0.0",
 		"tailwind-scrollbar-hide": "1.1.7",
 		"tailwindcss": "3.4.17",
 		"workbox-build": "7.0.0"
