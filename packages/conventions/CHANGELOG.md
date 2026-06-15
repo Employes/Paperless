@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.13.0](https://github.com/Employes/Paperless/compare/v3.12.0...v3.13.0) (2026-06-15)
+
+
+### Features
+
+* **angular:** Update to angular 22 ([ac716a2](https://github.com/Employes/Paperless/commit/ac716a217c092967d041a2caedac01bdb8748a34))
+
+
+
+
+
 # [3.12.0](https://github.com/Employes/Paperless/compare/v3.11.0...v3.12.0) (2026-06-10)
 
 **Note:** Version bump only for package @paperless/conventions
