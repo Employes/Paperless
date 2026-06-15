@@ -3,7 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 
-import { PSelect, PSelectDirective } from 'projects/paperless/src/public-api';
+import {
+	PSelect,
+	PSelectDirective,
+} from '../../../../../paperless/src/public-api';
 
 @Component({
 	templateUrl: 'select.component.html',

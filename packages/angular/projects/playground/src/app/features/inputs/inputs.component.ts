@@ -12,7 +12,7 @@ import {
 	PToggle,
 	PRadioDirective,
 	PToggleDirective,
-} from 'projects/paperless/src/public-api';
+} from '../../../../../paperless/src/public-api';
 
 @Component({
 	templateUrl: 'inputs.component.html',

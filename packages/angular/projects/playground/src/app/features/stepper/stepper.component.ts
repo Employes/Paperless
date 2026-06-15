@@ -6,7 +6,7 @@ import {
 	PButton,
 	PStepper,
 	PStepperItem,
-} from 'projects/paperless/src/public-api';
+} from '../../../../../paperless/src/public-api';
 
 @Component({
 	templateUrl: 'stepper.component.html',

@@ -7,7 +7,7 @@ import {
 	PCardContainer,
 	PCardHeader,
 	PDrawer,
-} from 'projects/paperless/src/public-api';
+} from '../../../../../paperless/src/public-api';
 
 @Component({
 	template: `

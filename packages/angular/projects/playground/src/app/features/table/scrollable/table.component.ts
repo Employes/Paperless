@@ -11,7 +11,7 @@ import {
 	TableCellComponent,
 	TableColumnComponent,
 	TableComponent,
-} from 'projects/paperless/src/public-api';
+} from '../../../../../../paperless/src/public-api';
 
 @Component({
 	templateUrl: 'table.component.html',

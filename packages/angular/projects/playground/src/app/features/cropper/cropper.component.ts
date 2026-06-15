@@ -7,7 +7,7 @@ import {
 	PCropperDirective,
 	PAvatar,
 	PCropper,
-} from 'projects/paperless/src/public-api';
+} from '../../../../../paperless/src/public-api';
 
 @Component({
 	templateUrl: 'cropper.component.html',

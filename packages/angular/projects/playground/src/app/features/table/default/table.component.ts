@@ -3,8 +3,6 @@ import { AsyncPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-import { TestDrawerComponent } from '../../drawer/test-drawer.component';
-
 import {
 	CustomDatePipe,
 	OverlayService,
@@ -19,7 +17,8 @@ import {
 	TableComponent as TableNgxComponent,
 	TableRowActionClickEvent,
 	TableRowActionComponent,
-} from 'projects/paperless/src/public-api';
+} from '../../../../../../paperless/src/public-api';
+import { TestDrawerComponent } from '../../drawer/test-drawer.component';
 
 @Component({
 	templateUrl: 'table.component.html',

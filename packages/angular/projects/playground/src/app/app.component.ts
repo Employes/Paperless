@@ -12,7 +12,7 @@ import {
 	PNavigationSection,
 	PProfile,
 	ToastContainerComponent,
-} from 'projects/paperless/src/public-api';
+} from '../../../paperless/src/public-api';
 
 @Component({
 	selector: 'p-app-root',

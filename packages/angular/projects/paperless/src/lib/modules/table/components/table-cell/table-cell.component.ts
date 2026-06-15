@@ -1,6 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NgTemplateOutlet } from '@angular/common';
-import { Component, HostBinding, Input, TemplateRef } from '@angular/core';
+import {
+	Component,
+	HostBinding,
+	Input,
+	TemplateRef,
+	ChangeDetectionStrategy,
+} from '@angular/core';
 
 import {
 	cn,
@@ -72,6 +78,7 @@ import { PLoader } from '../../../../stencil/components';
 @Component({
 	selector: 'p-table-cell-ngx',
 	templateUrl: './table-cell.component.html',
+	changeDetection: ChangeDetectionStrategy.Eager,
 	imports: [NgTemplateOutlet, PLoader],
 })
 export class TableCellComponent {

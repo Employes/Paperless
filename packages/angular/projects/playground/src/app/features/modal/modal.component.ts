@@ -1,15 +1,15 @@
 import { CdkPortal, TemplatePortal } from '@angular/cdk/portal';
 import { Component, inject, signal } from '@angular/core';
 
-import { TestCropperModalComponent } from './cropper-modal.component';
-import { TestModalComponent } from './test-modal.component';
-
 import {
 	OverlayRef,
 	OverlayService,
 	PButton,
 	PModal,
-} from 'projects/paperless/src/public-api';
+} from '../../../../../paperless/src/public-api';
+
+import { TestCropperModalComponent } from './cropper-modal.component';
+import { TestModalComponent } from './test-modal.component';
 
 @Component({
 	templateUrl: 'modal.component.html',

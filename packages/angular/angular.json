@@ -4,9 +4,9 @@
 	"newProjectRoot": "projects",
 	"cli": {
 		"analytics": false,
-    	"cache": {
-      		"enabled": false
-    	}
+		"cache": {
+			"enabled": false
+		}
 	},
 	"projects": {
 		"paperless": {
@@ -63,12 +63,7 @@
 						"inlineStyleLanguage": "scss",
 						"assets": [
 							"projects/playground/src/favicon.ico",
-							"projects/playground/src/assets",
-							{
-								"glob": "**/*",
-								"input": "../core/dist/assets",
-								"output": "./assets/"
-							}
+							"projects/playground/src/assets"
 						],
 						"styles": ["projects/playground/src/styles.scss"],
 						"scripts": [],

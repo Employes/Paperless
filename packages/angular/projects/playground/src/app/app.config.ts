@@ -14,9 +14,9 @@ import {
 
 import { initTheme } from '@paperless/core';
 
-import { routes } from './app.routes';
+import { PaperlessModule } from '../../../paperless/src/public-api';
 
-import { PaperlessModule } from 'projects/paperless/src/public-api';
+import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
 	providers: [

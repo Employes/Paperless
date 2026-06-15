@@ -5,7 +5,7 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import {
 	PDatepicker,
 	PDatepickerDirective,
-} from 'projects/paperless/src/public-api';
+} from '../../../../../paperless/src/public-api';
 
 @UntilDestroy({ checkProperties: true })
 @Component({

@@ -1,14 +1,14 @@
 import { CdkPortal, TemplatePortal } from '@angular/cdk/portal';
 import { Component, inject } from '@angular/core';
 
-import { TestDrawerComponent } from './test-drawer.component';
-
 import {
 	OverlayRef,
 	OverlayService,
 	PButton,
 	PDrawer,
-} from 'projects/paperless/src/public-api';
+} from '../../../../../paperless/src/public-api';
+
+import { TestDrawerComponent } from './test-drawer.component';
 
 @Component({
 	templateUrl: 'drawer.component.html',

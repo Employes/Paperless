@@ -5,7 +5,7 @@ import {
 	PButton,
 	PCropper,
 	PModal,
-} from 'projects/paperless/src/public-api';
+} from '../../../../../paperless/src/public-api';
 
 @Component({
 	template: `

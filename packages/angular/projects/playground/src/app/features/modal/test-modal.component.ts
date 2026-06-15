@@ -1,6 +1,10 @@
 import { Component, inject } from '@angular/core';
 
-import { OverlayRef, PButton, PModal } from 'projects/paperless/src/public-api';
+import {
+	OverlayRef,
+	PButton,
+	PModal,
+} from '../../../../../paperless/src/public-api';
 
 @Component({
 	template: `

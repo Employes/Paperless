@@ -4,7 +4,7 @@ import {
 	PButton,
 	ToastService,
 	PToastVariants,
-} from 'projects/paperless/src/public-api';
+} from '../../../../../paperless/src/public-api';
 
 @Component({
 	templateUrl: 'toast.component.html',
