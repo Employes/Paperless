@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.13.1](https://github.com/Employes/Paperless/compare/v3.13.0...v3.13.1) (2026-06-15)
+
+
+### Bug Fixes
+
+* **conventions:** Remove downlevelIteration deprecated tsconfig key ([f437f4c](https://github.com/Employes/Paperless/commit/f437f4cfd8d3522539d43b4b8a42c62735c6bb63))
+
+
+
+
+
 # [3.13.0](https://github.com/Employes/Paperless/compare/v3.12.0...v3.13.0) (2026-06-15)
 
 
