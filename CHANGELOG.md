@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.6](https://github.com/Employes/Paperless/compare/v3.15.5...v3.15.6) (2026-07-02)
+
+
+### Bug Fixes
+
+* **molecules/dropdown:** Remove margin on p tag ([6f06fd3](https://github.com/Employes/Paperless/commit/6f06fd3435836bea680b6d40ba1c81bacfb8105f))
+
+
+
+
+
 ## [3.15.5](https://github.com/Employes/Paperless/compare/v3.15.4...v3.15.5) (2026-07-02)
 
 
