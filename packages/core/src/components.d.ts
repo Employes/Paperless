@@ -864,10 +864,20 @@ export namespace Components {
          */
         "acceptGroup": 'any' | 'images';
         /**
+          * String to use for "added" text
+          * @default 'Toegevoegd'
+         */
+        "addedString": string;
+        /**
           * Allow multiple files
           * @default true
          */
         "allowMultiple": boolean;
+        /**
+          * String to use for "title" text
+          * @default 'Sleep je bestand hierheen'
+         */
+        "dragFileString": string;
         /**
           * The fileID to use to track the file
          */
@@ -882,6 +892,11 @@ export namespace Components {
           * @default false
          */
         "loading": boolean;
+        /**
+          * String to use for "description" text
+          * @default 'of klik om te uploaden'
+         */
+        "orClickString": string;
         /**
           * Wether to show the icon or not
           * @default true
@@ -4619,10 +4634,20 @@ declare namespace LocalJSX {
          */
         "acceptGroup"?: 'any' | 'images';
         /**
+          * String to use for "added" text
+          * @default 'Toegevoegd'
+         */
+        "addedString"?: string;
+        /**
           * Allow multiple files
           * @default true
          */
         "allowMultiple"?: boolean;
+        /**
+          * String to use for "title" text
+          * @default 'Sleep je bestand hierheen'
+         */
+        "dragFileString"?: string;
         /**
           * The fileID to use to track the file
          */
@@ -4641,6 +4666,11 @@ declare namespace LocalJSX {
           * Event when upload is pressed
          */
         "onUpload"?: (event: PDropzoneCustomEvent<DropzoneUploadEvent>) => void;
+        /**
+          * String to use for "description" text
+          * @default 'of klik om te uploaden'
+         */
+        "orClickString"?: string;
         /**
           * Wether to show the icon or not
           * @default true

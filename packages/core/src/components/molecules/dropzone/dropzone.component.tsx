@@ -15,12 +15,22 @@ import { IconVariant } from '../../../types';
 import { cn } from '../../../utils';
 
 const dropzone = cva(
-	['flex w-full flex-col items-center gap-2', 'rounded-lg', 'border', 'p-8'],
+	[
+		'group/dropzone',
+		'flex w-full flex-col items-center gap-2',
+		'cursor-pointer',
+		'rounded-lg',
+		'border',
+		'p-8',
+	],
 	{
 		variants: {
 			uploaded: {
 				false: 'border-dashed',
-				true: 'border-off-white-700',
+				true: `
+      border-off-white-700
+      dark:border-white/15
+    `,
 			},
 			isOver: {
 				true: 'border-dashed border-indigo-500 bg-indigo-50',
@@ -31,12 +41,23 @@ const dropzone = cva(
 			{
 				uploaded: true,
 				isOver: false,
-				class: 'border-solid bg-positive-green-50',
+				class: ['border-solid bg-positive-green-50'],
 			},
 			{
 				uploaded: false,
 				isOver: false,
-				class: 'bg-white-600',
+				class: [
+					'bg-white-600',
+					`
+       bg-indigo-500
+       hover:border-indigo-500
+       dark:hover:border-white/15
+     `,
+					`
+       dark:border-white/15 dark:bg-hurricane-600
+       dark:hover:bg-hurricane-500
+     `,
+				],
 			},
 		],
 	}
@@ -96,6 +117,21 @@ export class Dropzone {
 	@Prop() uploaded = false;
 
 	/**
+	 * String to use for "added" text
+	 */
+	@Prop() addedString: string = 'Toegevoegd';
+
+	/**
+	 * String to use for "title" text
+	 */
+	@Prop() dragFileString: string = 'Sleep je bestand hierheen';
+
+	/**
+	 * String to use for "description" text
+	 */
+	@Prop() orClickString: string = 'of klik om te uploaden';
+
+	/**
 	 * Event when upload is pressed
 	 */
 	@Event({
@@ -152,10 +188,16 @@ export class Dropzone {
 				>
 					{!this.loading && this.showIcon && (
 						<p-icon
-							class={cn({
-								'text-storm-300': !this._isOver,
-								'text-indigo-900': this._isOver,
-							})}
+							class={cn(
+								`
+          group-hover/dropzone:text-indigo-900
+          dark:group-hover/dropzone:text-white
+        `,
+								{
+									'text-storm-300 dark:text-hurricane-300': !this._isOver,
+									'text-indigo-900 dark:text-white': this._isOver,
+								}
+							)}
 							variant={this.icon}
 						/>
 					)}
@@ -167,18 +209,28 @@ export class Dropzone {
 					{this.uploaded && !this._isOver && (
 						<div class='flex items-center gap-2 text-positive-green-800'>
 							<p-icon variant='check-circle' />
-							<span class='font-medium'>Toegevoegd</span>
+							<span class='font-medium'>{this.addedString}</span>
 						</div>
 					)}
 
 					{(!this.uploaded || this._isOver) && (
 						<div
-							class={cn('flex flex-col text-center', {
-								'opacity-50': this._isOver,
-							})}
+							class={cn(
+								[
+									'flex flex-col text-center',
+									'group-hover/dropzone:opacity-50',
+									`
+           text-storm-300
+           dark:text-hurricane-300
+         `,
+								],
+								{
+									'opacity-50': this._isOver,
+								}
+							)}
 						>
-							<span class='font-medium'>Sleep je bestand hierheen</span>
-							<span class='font-normal'>of klik om te uploaden</span>
+							<span class='font-medium'>{this.dragFileString}</span>
+							<span class='font-normal'>{this.orClickString}</span>
 						</div>
 					)}
 				</div>
