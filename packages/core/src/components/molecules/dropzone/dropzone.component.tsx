@@ -203,7 +203,7 @@ export class Dropzone {
 
 					{hasContent && (
 						<p
-							class={cn('py-0 text-lg font-bold', {
+							class={cn('m-0 p-0 text-lg font-bold', {
 								'dark:text-white': !this.uploaded || this._isOver,
 								'text-storm-500': this.uploaded && !this._isOver,
 							})}
