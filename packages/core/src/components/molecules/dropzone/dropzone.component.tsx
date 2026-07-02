@@ -21,7 +21,7 @@ const dropzone = cva(
 		'cursor-pointer',
 		'rounded-lg',
 		'border',
-		'p-8',
+		'p-4',
 	],
 	{
 		variants: {
