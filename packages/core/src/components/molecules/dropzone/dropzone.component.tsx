@@ -252,6 +252,7 @@ export class Dropzone {
 			return;
 		}
 
+		this._isOver = false;
 		this._processFiles(files);
 	}
 
