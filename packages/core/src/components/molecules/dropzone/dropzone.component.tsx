@@ -201,7 +201,16 @@ export class Dropzone {
 
 					{this.loading && <p-loader />}
 
-					{hasContent && <slot />}
+					{hasContent && (
+						<p
+							class={cn('py-0 text-lg font-bold', {
+								'dark:text-white': !this.uploaded || this._isOver,
+								'text-storm-500': this.uploaded && !this._isOver,
+							})}
+						>
+							<slot />
+						</p>
+					)}
 
 					{this.uploaded && !this._isOver && (
 						<div class='flex items-center gap-2 text-positive-green-800'>
