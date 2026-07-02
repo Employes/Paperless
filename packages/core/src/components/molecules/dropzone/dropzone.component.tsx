@@ -17,7 +17,7 @@ import { cn } from '../../../utils';
 const dropzone = cva(
 	[
 		'group/dropzone',
-		'flex w-full flex-col items-center gap-2',
+		'flex h-inherit w-full flex-col items-center justify-center gap-2',
 		'cursor-pointer',
 		'rounded-lg',
 		'border',
@@ -177,13 +177,10 @@ export class Dropzone {
 		return (
 			<ThemedHost>
 				<div
-					class={cn(
-						dropzone({
-							isOver: this._isOver,
-							uploaded: this.uploaded,
-						}),
-						{}
-					)}
+					class={dropzone({
+						isOver: this._isOver,
+						uploaded: this.uploaded,
+					})}
 					onClick={() => this._uploadClick()}
 				>
 					{!this.loading && this.showIcon && (
