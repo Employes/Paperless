@@ -175,7 +175,7 @@ export class FieldContainer {
 		return (
 			<ThemedHost>
 				<label
-					class={cn('flex w-inherit flex-col gap-1', {
+					class={cn('flex h-inherit w-inherit flex-col gap-1', {
 						'cursor-auto': this.variant === 'read',
 					})}
 					htmlFor={this.id}
