@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.4](https://github.com/Employes/Paperless/compare/v3.15.3...v3.15.4) (2026-07-02)
+
+
+### Bug Fixes
+
+* **molecules/dropzone:** Clear `isOver` on drop ([aaa9b3f](https://github.com/Employes/Paperless/commit/aaa9b3f90da456900a106b0afe1a9ee211546f79))
+
+
+
+
+
 ## [3.15.3](https://github.com/Employes/Paperless/compare/v3.15.2...v3.15.3) (2026-07-02)
 
 
