@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.1](https://github.com/Employes/Paperless/compare/v3.15.0...v3.15.1) (2026-07-02)
+
+
+### Bug Fixes
+
+* **molecules/dropzone:** Add dark mode & make strings configurable ([be856c8](https://github.com/Employes/Paperless/commit/be856c8f9ea27fd8d093222fd85466dfa4034e72))
+
+
+
+
+
 # [3.15.0](https://github.com/Employes/Paperless/compare/v3.14.0...v3.15.0) (2026-07-02)
 
 
