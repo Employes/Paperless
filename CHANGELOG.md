@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.5](https://github.com/Employes/Paperless/compare/v3.15.4...v3.15.5) (2026-07-02)
+
+
+### Bug Fixes
+
+* **molecules/dropzone:** Make the dropzone responsible for the text color ([6772aee](https://github.com/Employes/Paperless/commit/6772aee9fb005ee5b323c57c2c739b08607c4926))
+
+
+
+
+
 ## [3.15.4](https://github.com/Employes/Paperless/compare/v3.15.3...v3.15.4) (2026-07-02)
 
 
