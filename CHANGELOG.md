@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.14.0](https://github.com/Employes/Paperless/compare/v3.13.1...v3.14.0) (2026-07-02)
+
+
+### Features
+
+* **molecules:** Add dropzone component ([1908e83](https://github.com/Employes/Paperless/commit/1908e83e7fb236e0b2c4cdb1fa33f2f6455659f8))
+
+
+
+
+
 ## [3.13.1](https://github.com/Employes/Paperless/compare/v3.13.0...v3.13.1) (2026-06-15)
 
 
