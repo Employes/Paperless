@@ -124,6 +124,10 @@
 			"import": "./dist/components/p-dropdown-menu-item.js",
 			"types": "./dist/components/p-dropdown-menu-item.d.ts"
 		},
+		"./components/p-dropzone.js": {
+			"import": "./dist/components/p-dropzone.js",
+			"types": "./dist/components/p-dropzone.d.ts"
+		},
 		"./components/p-empty-state.js": {
 			"import": "./dist/components/p-empty-state.js",
 			"types": "./dist/components/p-empty-state.d.ts"

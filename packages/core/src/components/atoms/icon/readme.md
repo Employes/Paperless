@@ -25,6 +25,7 @@
  - [p-card-header](../card/header)
  - [p-checkbox](../checkbox)
  - [p-dropdown-menu-item](../dropdown-menu/item)
+ - [p-dropzone](../../molecules/dropzone)
  - [p-field](../../molecules/field/field)
  - [p-floating-menu-item](../floating-menu/item)
  - [p-helper](../helper)
@@ -48,6 +49,7 @@ graph TD;
   p-card-header --> p-icon
   p-checkbox --> p-icon
   p-dropdown-menu-item --> p-icon
+  p-dropzone --> p-icon
   p-field --> p-icon
   p-floating-menu-item --> p-icon
   p-helper --> p-icon

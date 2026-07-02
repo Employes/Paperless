@@ -66,4 +66,11 @@ export const routes: Routes = [
 				c => c.StepperComponent
 			),
 	},
+	{
+		path: 'dropzone',
+		loadComponent: () =>
+			import('./features/dropzone/dropzone.component').then(
+				c => c.DropzoneComponent
+			),
+	},
 ];

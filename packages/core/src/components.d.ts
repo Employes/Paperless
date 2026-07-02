@@ -9,10 +9,11 @@ import { ButtonVariant } from "./components/molecules/button/button.component";
 import { IconFlipOptions, IconVariant } from "./types/icon";
 import { RotateOptions, TextSizeOptions } from "./types/tailwind";
 import { Placement, Strategy } from "@floating-ui/dom";
+import { IbanIconVariant, IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1, RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
+import { DropzoneUploadEvent } from "./components/molecules/dropzone/dropzone.component";
 import { IllustrationVariant } from "./types/illustration";
 import { ButtonVariant as ButtonVariant1, RotateOptions as RotateOptions2 } from "./components";
 import { HTMLInputTypeAttribute } from "react";
-import { IbanIconVariant, IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1, RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
 import { templateFunc } from "./components/molecules/field/container/field-container.component";
 import { templateFunc as templateFunc1 } from "./components/molecules/field/container/field-container.component";
 import { amountSelectedTemplateFunc } from "./components/atoms/floating-menu/container/floating-menu-container.component";
@@ -30,10 +31,11 @@ export { ButtonVariant } from "./components/molecules/button/button.component";
 export { IconFlipOptions, IconVariant } from "./types/icon";
 export { RotateOptions, TextSizeOptions } from "./types/tailwind";
 export { Placement, Strategy } from "@floating-ui/dom";
+export { IbanIconVariant, IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1, RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
+export { DropzoneUploadEvent } from "./components/molecules/dropzone/dropzone.component";
 export { IllustrationVariant } from "./types/illustration";
 export { ButtonVariant as ButtonVariant1, RotateOptions as RotateOptions2 } from "./components";
 export { HTMLInputTypeAttribute } from "react";
-export { IbanIconVariant, IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1, RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
 export { templateFunc } from "./components/molecules/field/container/field-container.component";
 export { templateFunc as templateFunc1 } from "./components/molecules/field/container/field-container.component";
 export { amountSelectedTemplateFunc } from "./components/atoms/floating-menu/container/floating-menu-container.component";
@@ -854,6 +856,42 @@ export namespace Components {
           * @default 'default'
          */
         "variant": 'default' | 'storm' | 'negative' | 'pagination';
+    }
+    interface PDropzone {
+        /**
+          * The type of files to accept
+          * @default 'any'
+         */
+        "acceptGroup": 'any' | 'images';
+        /**
+          * Allow multiple files
+          * @default true
+         */
+        "allowMultiple": boolean;
+        /**
+          * The fileID to use to track the file
+         */
+        "fileId": string;
+        /**
+          * Icon to show on the dropzone
+          * @default 'file-export'
+         */
+        "icon": IconVariant1;
+        /**
+          * Wether the attachment is loading
+          * @default false
+         */
+        "loading": boolean;
+        /**
+          * Wether to show the icon or not
+          * @default true
+         */
+        "showIcon": boolean;
+        /**
+          * Wether the file is uploaded
+          * @default false
+         */
+        "uploaded": boolean;
     }
     interface PEmptyState {
         /**
@@ -2626,6 +2664,10 @@ export interface PDropdownCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPDropdownElement;
 }
+export interface PDropzoneCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPDropzoneElement;
+}
 export interface PEmptyStateCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPEmptyStateElement;
@@ -2991,6 +3033,23 @@ declare global {
     var HTMLPDropdownMenuItemElement: {
         prototype: HTMLPDropdownMenuItemElement;
         new (): HTMLPDropdownMenuItemElement;
+    };
+    interface HTMLPDropzoneElementEventMap {
+        "upload": DropzoneUploadEvent;
+    }
+    interface HTMLPDropzoneElement extends Components.PDropzone, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPDropzoneElementEventMap>(type: K, listener: (this: HTMLPDropzoneElement, ev: PDropzoneCustomEvent<HTMLPDropzoneElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPDropzoneElementEventMap>(type: K, listener: (this: HTMLPDropzoneElement, ev: PDropzoneCustomEvent<HTMLPDropzoneElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLPDropzoneElement: {
+        prototype: HTMLPDropzoneElement;
+        new (): HTMLPDropzoneElement;
     };
     interface HTMLPEmptyStateElementEventMap {
         "action": MouseEvent;
@@ -3619,6 +3678,7 @@ declare global {
         "p-dropdown": HTMLPDropdownElement;
         "p-dropdown-menu-container": HTMLPDropdownMenuContainerElement;
         "p-dropdown-menu-item": HTMLPDropdownMenuItemElement;
+        "p-dropzone": HTMLPDropzoneElement;
         "p-empty-state": HTMLPEmptyStateElement;
         "p-field": HTMLPFieldElement;
         "p-field-container": HTMLPFieldContainerElement;
@@ -4551,6 +4611,46 @@ declare namespace LocalJSX {
           * @default 'default'
          */
         "variant"?: 'default' | 'storm' | 'negative' | 'pagination';
+    }
+    interface PDropzone {
+        /**
+          * The type of files to accept
+          * @default 'any'
+         */
+        "acceptGroup"?: 'any' | 'images';
+        /**
+          * Allow multiple files
+          * @default true
+         */
+        "allowMultiple"?: boolean;
+        /**
+          * The fileID to use to track the file
+         */
+        "fileId"?: string;
+        /**
+          * Icon to show on the dropzone
+          * @default 'file-export'
+         */
+        "icon"?: IconVariant1;
+        /**
+          * Wether the attachment is loading
+          * @default false
+         */
+        "loading"?: boolean;
+        /**
+          * Event when upload is pressed
+         */
+        "onUpload"?: (event: PDropzoneCustomEvent<DropzoneUploadEvent>) => void;
+        /**
+          * Wether to show the icon or not
+          * @default true
+         */
+        "showIcon"?: boolean;
+        /**
+          * Wether the file is uploaded
+          * @default false
+         */
+        "uploaded"?: boolean;
     }
     interface PEmptyState {
         /**
@@ -6508,6 +6608,7 @@ declare namespace LocalJSX {
         "p-dropdown": PDropdown;
         "p-dropdown-menu-container": PDropdownMenuContainer;
         "p-dropdown-menu-item": PDropdownMenuItem;
+        "p-dropzone": PDropzone;
         "p-empty-state": PEmptyState;
         "p-field": PField;
         "p-field-container": PFieldContainer;
@@ -6593,6 +6694,7 @@ declare module "@stencil/core" {
             "p-dropdown": LocalJSX.PDropdown & JSXBase.HTMLAttributes<HTMLPDropdownElement>;
             "p-dropdown-menu-container": LocalJSX.PDropdownMenuContainer & JSXBase.HTMLAttributes<HTMLPDropdownMenuContainerElement>;
             "p-dropdown-menu-item": LocalJSX.PDropdownMenuItem & JSXBase.HTMLAttributes<HTMLPDropdownMenuItemElement>;
+            "p-dropzone": LocalJSX.PDropzone & JSXBase.HTMLAttributes<HTMLPDropzoneElement>;
             "p-empty-state": LocalJSX.PEmptyState & JSXBase.HTMLAttributes<HTMLPEmptyStateElement>;
             "p-field": LocalJSX.PField & JSXBase.HTMLAttributes<HTMLPFieldElement>;
             "p-field-container": LocalJSX.PFieldContainer & JSXBase.HTMLAttributes<HTMLPFieldContainerElement>;

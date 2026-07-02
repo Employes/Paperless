@@ -21,6 +21,7 @@
 ### Used by
 
  - [p-button](../../molecules/button)
+ - [p-dropzone](../../molecules/dropzone)
  - [p-field-container](../../molecules/field/container)
  - [p-floating-menu-item](../floating-menu/item)
  - [p-navigation-item](../../molecules/navigation/item)
@@ -33,6 +34,7 @@
 ```mermaid
 graph TD;
   p-button --> p-loader
+  p-dropzone --> p-loader
   p-field-container --> p-loader
   p-floating-menu-item --> p-loader
   p-navigation-item --> p-loader
