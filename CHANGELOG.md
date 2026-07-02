@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.3](https://github.com/Employes/Paperless/compare/v3.15.2...v3.15.3) (2026-07-02)
+
+
+### Bug Fixes
+
+* **molecules/dropzone:** Add inherit height ([b39675f](https://github.com/Employes/Paperless/commit/b39675f6db62b8da887e63a4d36f44879655fecd))
+* **molecules/field-container:** Inherit height ([f171780](https://github.com/Employes/Paperless/commit/f1717805fd86f329fdd4ac0c4b57f824b9a763eb))
+
+
+
+
+
 ## [3.15.2](https://github.com/Employes/Paperless/compare/v3.15.1...v3.15.2) (2026-07-02)
 
 
