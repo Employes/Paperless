@@ -49,7 +49,7 @@ const dropzone = cva(
 				isOver: false,
 				class: [
 					'border-white-800 bg-white-600',
-					`hover:border-indigo-500 hover:bg-indigo-500`,
+					`hover:border-indigo-500 hover:bg-indigo-50`,
 					`
        dark:border-white/10 dark:bg-white/5
        dark:hover:border-indigo-700 dark:hover:bg-indigo-700/10
