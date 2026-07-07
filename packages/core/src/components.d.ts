@@ -394,7 +394,7 @@ export namespace Components {
         "active": boolean;
         /**
           * A bg class to apply to the container
-          * @default 'bg-white dark:bg-hurricane-600'
+          * @default 'bg-white dark:bg-white/5'
          */
         "bgClass": string;
         /**
@@ -4128,7 +4128,7 @@ declare namespace LocalJSX {
         "active"?: boolean;
         /**
           * A bg class to apply to the container
-          * @default 'bg-white dark:bg-hurricane-600'
+          * @default 'bg-white dark:bg-white/5'
          */
         "bgClass"?: string;
         /**

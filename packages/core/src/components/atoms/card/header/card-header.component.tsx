@@ -120,7 +120,7 @@ export class CardHeader {
 							<p-divider
 								class='
           text-off-white-700
-          dark:text-white/15
+          dark:text-white/10
         '
 							/>
 						)

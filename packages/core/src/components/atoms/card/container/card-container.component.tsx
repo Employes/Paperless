@@ -31,7 +31,7 @@ const container = cva(
 			variant: {
 				default: `
       border-off-white-700
-      dark:border-white/15
+      dark:border-white/10
     `,
 				error: `
       border-negative-red-500 ring-2 ring-negative-red-50
@@ -90,7 +90,7 @@ export class CardContainer {
 	/**
 	 * A bg class to apply to the container
 	 */
-	@Prop() bgClass: string = 'bg-white dark:bg-hurricane-600';
+	@Prop() bgClass: string = 'bg-white dark:bg-white/5';
 
 	/**
 	 * Wether the card should be hoverable
