@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.7](https://github.com/Employes/Paperless/compare/v3.15.6...v3.15.7) (2026-07-07)
+
+
+### Bug Fixes
+
+* **molecules/dropzone:** Dark mode fixes ([0dc97ea](https://github.com/Employes/Paperless/commit/0dc97ea43aa462e7c91d213358a5368bb2bbb859))
+
+
+
+
+
 ## [3.15.6](https://github.com/Employes/Paperless/compare/v3.15.5...v3.15.6) (2026-07-02)
 
 

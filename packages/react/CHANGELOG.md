@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.7](https://github.com/Employes/Paperless/compare/v3.15.6...v3.15.7) (2026-07-07)
+
+**Note:** Version bump only for package @paperless/react
+
+
+
+
+
 ## [3.15.6](https://github.com/Employes/Paperless/compare/v3.15.5...v3.15.6) (2026-07-02)
 
 **Note:** Version bump only for package @paperless/react
