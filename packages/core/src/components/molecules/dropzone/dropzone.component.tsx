@@ -27,35 +27,32 @@ const dropzone = cva(
 		variants: {
 			uploaded: {
 				false: 'border-dashed',
-				true: `
-      border-off-white-700
-      dark:border-white/15
-    `,
+				true: `border-solid`,
 			},
 			isOver: {
-				true: 'border-dashed border-indigo-500 bg-indigo-50',
-				false: 'border-white-800',
+				true: [
+					'border-dashed',
+					'border-indigo-500 bg-indigo-50',
+					'dark:border-indigo-700 dark:bg-indigo-700/10',
+				],
+				false: '',
 			},
 		},
 		compoundVariants: [
 			{
 				uploaded: true,
 				isOver: false,
-				class: ['border-solid bg-positive-green-50'],
+				class: ['border-solid border-positive-green-500 bg-positive-green-50'],
 			},
 			{
 				uploaded: false,
 				isOver: false,
 				class: [
-					'bg-white-600',
+					'border-white-800 bg-white-600',
+					`hover:border-indigo-500 hover:bg-indigo-500`,
 					`
-       bg-indigo-500
-       hover:border-indigo-500
-       dark:hover:border-white/15
-     `,
-					`
-       dark:border-white/15 dark:bg-hurricane-600
-       dark:hover:bg-hurricane-500
+       dark:border-white/10 dark:bg-white/5
+       dark:hover:border-indigo-700 dark:hover:bg-indigo-700/10
      `,
 				],
 			},
@@ -188,11 +185,13 @@ export class Dropzone {
 							class={cn(
 								`
           group-hover/dropzone:text-indigo-900
-          dark:group-hover/dropzone:text-white
+          dark:group-hover/dropzone:text-indigo-700
         `,
 								{
-									'text-storm-300 dark:text-hurricane-300': !this._isOver,
-									'text-indigo-900 dark:text-white': this._isOver,
+									'text-positive-green-800': this.uploaded,
+									'text-storm-300 dark:text-hurricane-200':
+										!this._isOver && !this.uploaded,
+									'text-indigo-900 dark:text-indigo-700': this._isOver,
 								}
 							)}
 							variant={this.icon}
