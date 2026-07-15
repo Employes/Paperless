@@ -587,8 +587,8 @@ export class TableComponent implements OnInit, OnChanges, AfterViewInit {
 	}
 
 	@HostListener('document:keydown', ['$event'])
-	keyDown({ key }: { key: string }) {
-		if (key !== 'Control' || this._ctrlDown === true) {
+	keyDown({ ctrlKey, metaKey }: KeyboardEvent) {
+		if ((!ctrlKey && !metaKey) || this._ctrlDown === true) {
 			return;
 		}
 
@@ -596,8 +596,8 @@ export class TableComponent implements OnInit, OnChanges, AfterViewInit {
 	}
 
 	@HostListener('document:keyup', ['$event'])
-	keyUp({ key }: { key: string }) {
-		if (key !== 'Control' || this._ctrlDown === false) {
+	keyUp({ ctrlKey, metaKey }: KeyboardEvent) {
+		if ((!ctrlKey && !metaKey) || this._ctrlDown === false) {
 			return;
 		}
 

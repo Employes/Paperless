@@ -548,8 +548,8 @@ export class Table {
 	}
 
 	@Listen('keydown', { target: 'document' })
-	keyDown({ key }) {
-		if (key !== 'Control' || this._ctrlDown === true) {
+	keyDown({ ctrlKey, metaKey }: KeyboardEvent) {
+		if ((!ctrlKey && !metaKey) || this._ctrlDown === true) {
 			return;
 		}
 
@@ -557,8 +557,8 @@ export class Table {
 	}
 
 	@Listen('keyup', { target: 'document' })
-	keyUp({ key }) {
-		if (key !== 'Control' || this._ctrlDown === false) {
+	keyUp({ ctrlKey, metaKey }: KeyboardEvent) {
+		if ((!ctrlKey && !metaKey) || this._ctrlDown === false) {
 			return;
 		}
 
