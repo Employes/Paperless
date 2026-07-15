@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.16.0](https://github.com/Employes/Paperless/compare/v3.15.8...v3.16.0) (2026-07-15)
+
+
+### Features
+
+* **organisms/table:** Improve ctrlDown logic with meta key ([f3bd20a](https://github.com/Employes/Paperless/commit/f3bd20a3ccf22524ebd94ac04a4ad955cd39ea25))
+
+
+
+
+
 ## [3.15.8](https://github.com/Employes/Paperless/compare/v3.15.7...v3.15.8) (2026-07-07)
 
 **Note:** Version bump only for package @paperless/angular
