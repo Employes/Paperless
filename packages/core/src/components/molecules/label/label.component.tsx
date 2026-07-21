@@ -56,6 +56,8 @@ const label = cva(
 	}
 );
 
+export type LabelVariant = 'positive' | 'biased' | 'negative' | 'neutral' | 'unavailable';
+
 @Component({
 	tag: 'p-label',
 	styleUrl: 'label.component.css',
@@ -65,12 +67,7 @@ export class Label {
 	/**
 	 * Variant of the label
 	 */
-	@Prop({ reflect: true }) variant:
-		| 'positive'
-		| 'biased'
-		| 'negative'
-		| 'neutral'
-		| 'unavailable' = 'neutral';
+	@Prop({ reflect: true }) variant: LabelVariant = 'neutral';
 
 	/**
 	 * Wether to only show the icon
