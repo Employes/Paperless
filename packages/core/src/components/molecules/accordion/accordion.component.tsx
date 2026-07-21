@@ -1,7 +1,9 @@
 import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 
 import { ThemedHost } from '../../../internal/themed-host.component';
+import { IconVariant } from '../../../types';
 import { cn } from '../../../utils';
+import { LabelVariant } from '../label/label.component';
 
 @Component({
 	tag: 'p-accordion',
@@ -35,6 +37,21 @@ export class Accordion {
 	@Prop() openable: boolean = true;
 
 	/**
+	 * Label of the accordion
+	 */
+	@Prop() label: string;
+
+	/**
+	 * Variant of the label
+	 */
+	@Prop() labelVariant: LabelVariant = 'neutral';
+
+	/**
+	 * Icon of the accordion
+	 */
+	@Prop() labelIcon: IconVariant;
+
+	/**
 	 * Open change event
 	 */
 	@Event({
@@ -63,6 +80,14 @@ export class Accordion {
 							{this.header}
 						</p>
 						<p-divider class='flex-1' />
+						{this.label && (
+							<p-label
+								icon={this.labelIcon}
+								variant={this.labelVariant}
+							>
+								{this.label}
+							</p-label>
+						)}
 					</div>
 					{this.open && (
 						<div class='mt-4'>
