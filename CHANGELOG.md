@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.17.0](https://github.com/Employes/Paperless/compare/v3.16.0...v3.17.0) (2026-07-21)
+
+
+### Features
+
+* **molecules/accordion:** added a label to header ([7408ee9](https://github.com/Employes/Paperless/commit/7408ee98abb44cae8262467b3ec12ec124e2e989))
+
+
+
+
+
 # [3.16.0](https://github.com/Employes/Paperless/compare/v3.15.8...v3.16.0) (2026-07-15)
 
 
