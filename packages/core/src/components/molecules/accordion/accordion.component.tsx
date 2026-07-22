@@ -79,7 +79,6 @@ export class Accordion {
 						<p class='my-0 shrink-0 whitespace-nowrap text-base font-medium'>
 							{this.header}
 						</p>
-						<p-divider class='flex-1' />
 						{this.label && (
 							<p-label
 								icon={this.labelIcon}
@@ -88,6 +87,7 @@ export class Accordion {
 								{this.label}
 							</p-label>
 						)}
+						<p-divider class='flex-1' />
 					</div>
 					{this.open && (
 						<div class='mt-4'>
