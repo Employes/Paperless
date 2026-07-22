@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.17.1](https://github.com/Employes/Paperless/compare/v3.17.0...v3.17.1) (2026-07-22)
+
+
+### Bug Fixes
+
+* **molecules/accordion:** switch label and divider ([6bd3d5a](https://github.com/Employes/Paperless/commit/6bd3d5a5887f1bbca3cd7b40d534b69a20a454c7))
+
+
+
+
+
 # [3.17.0](https://github.com/Employes/Paperless/compare/v3.16.0...v3.17.0) (2026-07-21)
 
 
