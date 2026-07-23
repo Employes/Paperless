@@ -22,13 +22,14 @@ import {
 	floatingMenuContainerClass,
 	formatTranslation,
 	getLocaleComponentStrings,
+	isIOS,
 	isMobile,
 } from '../../../utils';
 import { cn } from '../../../utils/cn';
 import {
-	TABLE_COLUMN_SIZES,
 	PAGINATION_DEFAULT_PAGE_SIZE,
 	PAGINATION_DEFAULT_PAGE_SIZE_OPTIONS,
+	TABLE_COLUMN_SIZES,
 } from '../../../utils/constants';
 import { TableColumn } from '../../helpers/table/column/table-column.component';
 import { TableExtraHeader } from '../../helpers/table/extra-header/table-extra-header.component';
@@ -549,7 +550,11 @@ export class Table {
 
 	@Listen('keydown', { target: 'document' })
 	keyDown({ ctrlKey, metaKey }: KeyboardEvent) {
-		if ((!ctrlKey && !metaKey) || this._ctrlDown === true) {
+		const iOS = isIOS();
+		const isMeta = metaKey && iOS;
+		const isCtrl = ctrlKey && !iOS;
+
+		if ((!isMeta && !isCtrl) || this._ctrlDown === true) {
 			return;
 		}
 
@@ -557,8 +562,12 @@ export class Table {
 	}
 
 	@Listen('keyup', { target: 'document' })
-	keyUp({ ctrlKey, metaKey }: KeyboardEvent) {
-		if ((!ctrlKey && !metaKey) || this._ctrlDown === false) {
+	keyUp({ code }: KeyboardEvent) {
+		const iOS = isIOS();
+		const isMeta = ['MetaLeft', 'MetaRight'].includes(code) && iOS;
+		const isCtrl = ['ControlLeft', 'ControlRight'].includes(code) && !iOS;
+
+		if ((!isMeta && !isCtrl) || this._ctrlDown === false) {
 			return;
 		}
 

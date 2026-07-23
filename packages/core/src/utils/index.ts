@@ -6,5 +6,6 @@ export * from './object-get-by-path';
 export * from './transformers';
 export * from './screens';
 export * from './is-mobile-browser';
+export * from './is-platform';
 export * from './cn';
 export * from './constants';

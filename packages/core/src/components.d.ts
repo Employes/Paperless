@@ -5,11 +5,12 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { LabelVariant } from "./components/molecules/label/label.component";
+import { IbanIconVariant, IconFlipOptions as IconFlipOptions1, IconVariant, RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
 import { ButtonVariant } from "./components/molecules/button/button.component";
-import { IconFlipOptions, IconVariant } from "./types/icon";
+import { IconFlipOptions, IconVariant as IconVariant1 } from "./types/icon";
 import { RotateOptions, TextSizeOptions } from "./types/tailwind";
 import { Placement, Strategy } from "@floating-ui/dom";
-import { IbanIconVariant, IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1, RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
 import { DropzoneUploadEvent } from "./components/molecules/dropzone/dropzone.component";
 import { IllustrationVariant } from "./types/illustration";
 import { ButtonVariant as ButtonVariant1, RotateOptions as RotateOptions2 } from "./components";
@@ -17,6 +18,7 @@ import { HTMLInputTypeAttribute } from "react";
 import { templateFunc } from "./components/molecules/field/container/field-container.component";
 import { templateFunc as templateFunc1 } from "./components/molecules/field/container/field-container.component";
 import { amountSelectedTemplateFunc } from "./components/atoms/floating-menu/container/floating-menu-container.component";
+import { LabelVariant as LabelVariant1 } from "./components/molecules/label/label.component";
 import { Observable } from "rxjs";
 import { templateFunc as templateFunc2 } from "./components/molecules/pagination/pages/pagination-pages.component";
 import { templateFunc as templateFunc3 } from "./components/molecules/pagination/size/pagination-size.component";
@@ -27,11 +29,12 @@ import { buttonTemplateFunc } from "./components/molecules/table/header/table-he
 import { TableColumn } from "./components/helpers/table/column/table-column.component";
 import { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc5 } from "./components/molecules/table/header/table-header.component";
 import { TableRowActionFunc, TableRowActionShowFunc } from "./components/helpers/table/row-action/table-row-action.component";
+export { LabelVariant } from "./components/molecules/label/label.component";
+export { IbanIconVariant, IconFlipOptions as IconFlipOptions1, IconVariant, RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
 export { ButtonVariant } from "./components/molecules/button/button.component";
-export { IconFlipOptions, IconVariant } from "./types/icon";
+export { IconFlipOptions, IconVariant as IconVariant1 } from "./types/icon";
 export { RotateOptions, TextSizeOptions } from "./types/tailwind";
 export { Placement, Strategy } from "@floating-ui/dom";
-export { IbanIconVariant, IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1, RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
 export { DropzoneUploadEvent } from "./components/molecules/dropzone/dropzone.component";
 export { IllustrationVariant } from "./types/illustration";
 export { ButtonVariant as ButtonVariant1, RotateOptions as RotateOptions2 } from "./components";
@@ -39,6 +42,7 @@ export { HTMLInputTypeAttribute } from "react";
 export { templateFunc } from "./components/molecules/field/container/field-container.component";
 export { templateFunc as templateFunc1 } from "./components/molecules/field/container/field-container.component";
 export { amountSelectedTemplateFunc } from "./components/atoms/floating-menu/container/floating-menu-container.component";
+export { LabelVariant as LabelVariant1 } from "./components/molecules/label/label.component";
 export { Observable } from "rxjs";
 export { templateFunc as templateFunc2 } from "./components/molecules/pagination/pages/pagination-pages.component";
 export { templateFunc as templateFunc3 } from "./components/molecules/pagination/size/pagination-size.component";
@@ -60,6 +64,19 @@ export namespace Components {
           * Header of the accordion
          */
         "header": string;
+        /**
+          * Label of the accordion
+         */
+        "label": string;
+        /**
+          * Icon of the accordion
+         */
+        "labelIcon": IconVariant;
+        /**
+          * Variant of the label
+          * @default 'neutral'
+         */
+        "labelVariant": LabelVariant;
         /**
           * Wether the accordion is open
           * @default false
@@ -260,7 +277,7 @@ export namespace Components {
         /**
           * Icon to show on the button
          */
-        "icon"?: IconVariant;
+        "icon"?: IconVariant1;
         /**
           * A class to apply to the icon
          */
@@ -431,7 +448,7 @@ export namespace Components {
         /**
           * Icon to show on the button
          */
-        "icon"?: IconVariant;
+        "icon"?: IconVariant1;
         /**
           * Icon flip
          */
@@ -840,7 +857,7 @@ export namespace Components {
         /**
           * Icon of the navigation item
          */
-        "icon": IconVariant;
+        "icon": IconVariant1;
         /**
           * Wether to apply wave animation to icon
           * @default false
@@ -886,7 +903,7 @@ export namespace Components {
           * Icon to show on the dropzone
           * @default 'file-export'
          */
-        "icon": IconVariant1;
+        "icon": IconVariant;
         /**
           * Wether the attachment is loading
           * @default false
@@ -912,7 +929,7 @@ export namespace Components {
         /**
           * The icon for the action button
          */
-        "actionIcon": IconVariant;
+        "actionIcon": IconVariant1;
         /**
           * The position of the action icon
           * @default 'start'
@@ -1011,7 +1028,7 @@ export namespace Components {
         /**
           * Icon of the field
          */
-        "icon": IconVariant1;
+        "icon": IconVariant;
         /**
           * Icon flip
          */
@@ -1200,7 +1217,7 @@ export namespace Components {
         /**
           * Icon to show on the item
          */
-        "icon": IconVariant1;
+        "icon": IconVariant;
         /**
           * Icon flip
          */
@@ -1261,7 +1278,7 @@ export namespace Components {
         /**
           * The icon the be displayed
          */
-        "variant": IconVariant;
+        "variant": IconVariant1;
     }
     interface PIllustration {
         /**
@@ -1293,7 +1310,7 @@ export namespace Components {
         /**
           * Icon to show on the label
          */
-        "icon": IconVariant1;
+        "icon": IconVariant;
         /**
           * Icon flip
          */
@@ -1316,11 +1333,7 @@ export namespace Components {
           * Variant of the label
           * @default 'neutral'
          */
-        "variant": | 'positive'
-		| 'biased'
-		| 'negative'
-		| 'neutral'
-		| 'unavailable';
+        "variant": LabelVariant1;
     }
     interface PLayout {
         /**
@@ -1336,7 +1349,7 @@ export namespace Components {
           * The icon of the step
           * @default 'placeholder'
          */
-        "icon": IconVariant;
+        "icon": IconVariant1;
     }
     interface PListingLine {
     }
@@ -1472,7 +1485,7 @@ export namespace Components {
         /**
           * Icon of the navigation item
          */
-        "icon": IconVariant;
+        "icon": IconVariant1;
         /**
           * Wether the navigation item is loading
           * @default false
@@ -1666,7 +1679,7 @@ export namespace Components {
         /**
           * Icon to show on the segment item
          */
-        "icon": IconVariant;
+        "icon": IconVariant1;
         /**
           * Icon flip
          */
@@ -1773,7 +1786,7 @@ export namespace Components {
         /**
           * Icon of the select box
          */
-        "icon": IconVariant;
+        "icon": IconVariant1;
         /**
           * The key of the class we can apploy to the icon
           * @default 'iconClass'
@@ -1834,7 +1847,7 @@ export namespace Components {
         /**
           * The icon to prefix for select all
          */
-        "selectAllIcon": IconVariant | undefined;
+        "selectAllIcon": IconVariant1 | undefined;
         /**
           * The text of the select all item
           * @default 'Select all'
@@ -1983,7 +1996,7 @@ export namespace Components {
           * The action button icon
           * @default 'pencil'
          */
-        "actionButtonIcon": IconVariant;
+        "actionButtonIcon": IconVariant1;
         /**
           * Wether the action button is loading
           * @default false
@@ -2377,7 +2390,7 @@ export namespace Components {
           * The action button icon
           * @default 'pencil'
          */
-        "actionIcon": IconVariant;
+        "actionIcon": IconVariant1;
         /**
           * Wether the action button is loading
           * @default false
@@ -2490,7 +2503,7 @@ export namespace Components {
         /**
           * Icon to show on the button
          */
-        "icon": IconVariant;
+        "icon": IconVariant1;
         /**
           * Icon flip
          */
@@ -2535,7 +2548,7 @@ export namespace Components {
           * Icon to show on the button
           * @default 'negative'
          */
-        "actionIcon": IconVariant1;
+        "actionIcon": IconVariant;
         /**
           * Icon flip
          */
@@ -3763,6 +3776,19 @@ declare namespace LocalJSX {
          */
         "header": string;
         /**
+          * Label of the accordion
+         */
+        "label"?: string;
+        /**
+          * Icon of the accordion
+         */
+        "labelIcon"?: IconVariant;
+        /**
+          * Variant of the label
+          * @default 'neutral'
+         */
+        "labelVariant"?: LabelVariant;
+        /**
           * Open change event
          */
         "onIsOpen"?: (event: PAccordionCustomEvent<boolean>) => void;
@@ -3986,7 +4012,7 @@ declare namespace LocalJSX {
         /**
           * Icon to show on the button
          */
-        "icon"?: IconVariant;
+        "icon"?: IconVariant1;
         /**
           * A class to apply to the icon
          */
@@ -4165,7 +4191,7 @@ declare namespace LocalJSX {
         /**
           * Icon to show on the button
          */
-        "icon"?: IconVariant;
+        "icon"?: IconVariant1;
         /**
           * Icon flip
          */
@@ -4610,7 +4636,7 @@ declare namespace LocalJSX {
         /**
           * Icon of the navigation item
          */
-        "icon"?: IconVariant;
+        "icon"?: IconVariant1;
         /**
           * Wether to apply wave animation to icon
           * @default false
@@ -4656,7 +4682,7 @@ declare namespace LocalJSX {
           * Icon to show on the dropzone
           * @default 'file-export'
          */
-        "icon"?: IconVariant1;
+        "icon"?: IconVariant;
         /**
           * Wether the attachment is loading
           * @default false
@@ -4686,7 +4712,7 @@ declare namespace LocalJSX {
         /**
           * The icon for the action button
          */
-        "actionIcon"?: IconVariant;
+        "actionIcon"?: IconVariant1;
         /**
           * The position of the action icon
           * @default 'start'
@@ -4789,7 +4815,7 @@ declare namespace LocalJSX {
         /**
           * Icon of the field
          */
-        "icon"?: IconVariant1;
+        "icon"?: IconVariant;
         /**
           * Icon flip
          */
@@ -4999,7 +5025,7 @@ declare namespace LocalJSX {
         /**
           * Icon to show on the item
          */
-        "icon"?: IconVariant1;
+        "icon"?: IconVariant;
         /**
           * Icon flip
          */
@@ -5060,7 +5086,7 @@ declare namespace LocalJSX {
         /**
           * The icon the be displayed
          */
-        "variant": IconVariant;
+        "variant": IconVariant1;
     }
     interface PIllustration {
         /**
@@ -5096,7 +5122,7 @@ declare namespace LocalJSX {
         /**
           * Icon to show on the label
          */
-        "icon"?: IconVariant1;
+        "icon"?: IconVariant;
         /**
           * Icon flip
          */
@@ -5119,11 +5145,7 @@ declare namespace LocalJSX {
           * Variant of the label
           * @default 'neutral'
          */
-        "variant"?: | 'positive'
-		| 'biased'
-		| 'negative'
-		| 'neutral'
-		| 'unavailable';
+        "variant"?: LabelVariant1;
     }
     interface PLayout {
         /**
@@ -5143,7 +5165,7 @@ declare namespace LocalJSX {
           * The icon of the step
           * @default 'placeholder'
          */
-        "icon"?: IconVariant;
+        "icon"?: IconVariant1;
     }
     interface PListingLine {
     }
@@ -5291,7 +5313,7 @@ declare namespace LocalJSX {
         /**
           * Icon of the navigation item
          */
-        "icon": IconVariant;
+        "icon": IconVariant1;
         /**
           * Wether the navigation item is loading
           * @default false
@@ -5517,7 +5539,7 @@ declare namespace LocalJSX {
         /**
           * Icon to show on the segment item
          */
-        "icon"?: IconVariant;
+        "icon"?: IconVariant1;
         /**
           * Icon flip
          */
@@ -5624,7 +5646,7 @@ declare namespace LocalJSX {
         /**
           * Icon of the select box
          */
-        "icon"?: IconVariant;
+        "icon"?: IconVariant1;
         /**
           * The key of the class we can apploy to the icon
           * @default 'iconClass'
@@ -5705,7 +5727,7 @@ declare namespace LocalJSX {
         /**
           * The icon to prefix for select all
          */
-        "selectAllIcon"?: IconVariant | undefined;
+        "selectAllIcon"?: IconVariant1 | undefined;
         /**
           * The text of the select all item
           * @default 'Select all'
@@ -5854,7 +5876,7 @@ declare namespace LocalJSX {
           * The action button icon
           * @default 'pencil'
          */
-        "actionButtonIcon"?: IconVariant;
+        "actionButtonIcon"?: IconVariant1;
         /**
           * Wether the action button is loading
           * @default false
@@ -6320,7 +6342,7 @@ declare namespace LocalJSX {
           * The action button icon
           * @default 'pencil'
          */
-        "actionIcon"?: IconVariant;
+        "actionIcon"?: IconVariant1;
         /**
           * Wether the action button is loading
           * @default false
@@ -6453,7 +6475,7 @@ declare namespace LocalJSX {
         /**
           * Icon to show on the button
          */
-        "icon"?: IconVariant;
+        "icon"?: IconVariant1;
         /**
           * Icon flip
          */
@@ -6498,7 +6520,7 @@ declare namespace LocalJSX {
           * Icon to show on the button
           * @default 'negative'
          */
-        "actionIcon"?: IconVariant1;
+        "actionIcon"?: IconVariant;
         /**
           * Icon flip
          */

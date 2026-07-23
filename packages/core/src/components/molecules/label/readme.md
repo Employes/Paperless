@@ -19,6 +19,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [p-accordion](../accordion)
+
 ### Depends on
 
 - [p-icon](../../atoms/icon)
@@ -27,6 +31,7 @@
 ```mermaid
 graph TD;
   p-label --> p-icon
+  p-accordion --> p-label
   style p-label fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

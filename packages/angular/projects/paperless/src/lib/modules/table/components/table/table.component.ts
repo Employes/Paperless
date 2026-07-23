@@ -44,6 +44,7 @@ import {
 	QuickFilter,
 	RowClickEvent,
 	TableColumnSizes,
+	isIOS,
 } from '@paperless/core';
 
 import {
@@ -588,7 +589,11 @@ export class TableComponent implements OnInit, OnChanges, AfterViewInit {
 
 	@HostListener('document:keydown', ['$event'])
 	keyDown({ ctrlKey, metaKey }: KeyboardEvent) {
-		if ((!ctrlKey && !metaKey) || this._ctrlDown === true) {
+		const iOS = isIOS();
+		const isMeta = metaKey && iOS;
+		const isCtrl = ctrlKey && !iOS;
+
+		if ((!isMeta && !isCtrl) || this._ctrlDown === true) {
 			return;
 		}
 
@@ -596,8 +601,12 @@ export class TableComponent implements OnInit, OnChanges, AfterViewInit {
 	}
 
 	@HostListener('document:keyup', ['$event'])
-	keyUp({ ctrlKey, metaKey }: KeyboardEvent) {
-		if ((!ctrlKey && !metaKey) || this._ctrlDown === false) {
+	keyUp({ code }: KeyboardEvent) {
+		const iOS = isIOS();
+		const isMeta = ['MetaLeft', 'MetaRight'].includes(code) && iOS;
+		const isCtrl = ['ControlLeft', 'ControlRight'].includes(code) && !iOS;
+
+		if ((!isMeta && !isCtrl) || this._ctrlDown === false) {
 			return;
 		}
 
