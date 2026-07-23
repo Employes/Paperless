@@ -22,7 +22,7 @@ import {
 	floatingMenuContainerClass,
 	formatTranslation,
 	getLocaleComponentStrings,
-	isIOS,
+	isApple,
 	isMobile,
 } from '../../../utils';
 import { cn } from '../../../utils/cn';
@@ -550,9 +550,9 @@ export class Table {
 
 	@Listen('keydown', { target: 'document' })
 	keyDown({ ctrlKey, metaKey }: KeyboardEvent) {
-		const iOS = isIOS();
-		const isMeta = metaKey && iOS;
-		const isCtrl = ctrlKey && !iOS;
+		const apple = isApple();
+		const isMeta = metaKey && apple;
+		const isCtrl = ctrlKey && !apple;
 
 		if ((!isMeta && !isCtrl) || this._ctrlDown === true) {
 			return;
@@ -563,9 +563,9 @@ export class Table {
 
 	@Listen('keyup', { target: 'document' })
 	keyUp({ code }: KeyboardEvent) {
-		const iOS = isIOS();
-		const isMeta = ['MetaLeft', 'MetaRight'].includes(code) && iOS;
-		const isCtrl = ['ControlLeft', 'ControlRight'].includes(code) && !iOS;
+		const apple = isApple();
+		const isMeta = ['MetaLeft', 'MetaRight'].includes(code) && apple;
+		const isCtrl = ['ControlLeft', 'ControlRight'].includes(code) && !apple;
 
 		if ((!isMeta && !isCtrl) || this._ctrlDown === false) {
 			return;

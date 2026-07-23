@@ -31,15 +31,15 @@
 ### Depends on
 
 - [p-icon](../../atoms/icon)
-- [p-divider](../../atoms/divider)
 - [p-label](../label)
+- [p-divider](../../atoms/divider)
 
 ### Graph
 ```mermaid
 graph TD;
   p-accordion --> p-icon
-  p-accordion --> p-divider
   p-accordion --> p-label
+  p-accordion --> p-divider
   p-label --> p-icon
   style p-accordion fill:#f9f,stroke:#333,stroke-width:4px
 ```
