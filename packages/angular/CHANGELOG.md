@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.17.2](https://github.com/Employes/Paperless/compare/v3.17.1...v3.17.2) (2026-07-23)
+
+
+### Bug Fixes
+
+* **organisms/table:** Fix keydown/keyup behavior ([81191c4](https://github.com/Employes/Paperless/commit/81191c40ea4443efa65e13f9757b334bcec10360))
+
+
+
+
+
 ## [3.17.1](https://github.com/Employes/Paperless/compare/v3.17.0...v3.17.1) (2026-07-22)
 
 **Note:** Version bump only for package @paperless/angular
