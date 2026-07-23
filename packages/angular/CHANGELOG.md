@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.17.3](https://github.com/Employes/Paperless/compare/v3.17.2...v3.17.3) (2026-07-23)
+
+
+### Bug Fixes
+
+* **organisms/table:** Correctly determine platform ([7466ac8](https://github.com/Employes/Paperless/commit/7466ac88ad3721fac4da2e479e06fb283f3ba708))
+
+
+
+
+
 ## [3.17.2](https://github.com/Employes/Paperless/compare/v3.17.1...v3.17.2) (2026-07-23)
 
 
