@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.19.2](https://github.com/Employes/Paperless/compare/v3.19.1...v3.19.2) (2026-07-28)
+
+
+### Bug Fixes
+
+* **molecules/submenu:** Correct line color when inactive ([e0d3872](https://github.com/Employes/Paperless/commit/e0d38726b5db9b46c9495130388a5fa1ec19ed75))
+
+
+
+
+
 ## [3.19.1](https://github.com/Employes/Paperless/compare/v3.19.0...v3.19.1) (2026-07-28)
 
 
