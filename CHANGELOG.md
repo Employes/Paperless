@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.18.0](https://github.com/Employes/Paperless/compare/v3.17.3...v3.18.0) (2026-07-28)
+
+
+### Features
+
+* **atoms/icon:** Add history icon ([e4fbf99](https://github.com/Employes/Paperless/commit/e4fbf992fe8f9506510449bf44c1a4f8ff35b511))
+
+
+
+
+
 ## [3.17.3](https://github.com/Employes/Paperless/compare/v3.17.2...v3.17.3) (2026-07-23)
 
 
