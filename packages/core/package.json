@@ -284,6 +284,14 @@
 			"import": "./dist/components/p-stepper-line.js",
 			"types": "./dist/components/p-stepper-line.d.ts"
 		},
+		"./components/p-submenu.js": {
+			"import": "./dist/components/p-submenu.js",
+			"types": "./dist/components/p-submenu.d.ts"
+		},
+		"./components/p-submenu-item.js": {
+			"import": "./dist/components/p-submenu-item.js",
+			"types": "./dist/components/p-submenu-item.d.ts"
+		},
 		"./components/p-tab-container.js": {
 			"import": "./dist/components/p-tab-container.js",
 			"types": "./dist/components/p-tab-container.d.ts"

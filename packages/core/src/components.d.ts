@@ -1977,6 +1977,50 @@ export namespace Components {
          */
         "direction": 'horizontal' | 'vertical';
     }
+    interface PSubmenu {
+        /**
+          * Wether the submenu is active or not
+          * @default false
+         */
+        "active": boolean;
+        /**
+          * Index of the submenu
+          * @default 0
+         */
+        "index": number;
+        /**
+          * Wether the submenu is open or not
+          * @default false
+         */
+        "open": boolean;
+        /**
+          * Wether to show the index
+          * @default true
+         */
+        "showIndex": boolean;
+        /**
+          * Subtitle of the submenu
+          * @default ''
+         */
+        "subtitle": string;
+        /**
+          * Title of the submenu
+          * @default ''
+         */
+        "title": string;
+    }
+    interface PSubmenuItem {
+        /**
+          * Wether the submenu is active or not
+          * @default false
+         */
+        "active": boolean;
+        /**
+          * Icon to show on the label
+          * @default 'placeholder'
+         */
+        "icon": IconVariant1;
+    }
     interface PTabContainer {
     }
     interface PTabItem {
@@ -3478,6 +3522,18 @@ declare global {
         prototype: HTMLPStepperLineElement;
         new (): HTMLPStepperLineElement;
     };
+    interface HTMLPSubmenuElement extends Components.PSubmenu, HTMLStencilElement {
+    }
+    var HTMLPSubmenuElement: {
+        prototype: HTMLPSubmenuElement;
+        new (): HTMLPSubmenuElement;
+    };
+    interface HTMLPSubmenuItemElement extends Components.PSubmenuItem, HTMLStencilElement {
+    }
+    var HTMLPSubmenuItemElement: {
+        prototype: HTMLPSubmenuItemElement;
+        new (): HTMLPSubmenuItemElement;
+    };
     interface HTMLPTabContainerElement extends Components.PTabContainer, HTMLStencilElement {
     }
     var HTMLPTabContainerElement: {
@@ -3746,6 +3802,8 @@ declare global {
         "p-stepper": HTMLPStepperElement;
         "p-stepper-item": HTMLPStepperItemElement;
         "p-stepper-line": HTMLPStepperLineElement;
+        "p-submenu": HTMLPSubmenuElement;
+        "p-submenu-item": HTMLPSubmenuItemElement;
         "p-tab-container": HTMLPTabContainerElement;
         "p-tab-item": HTMLPTabItemElement;
         "p-table": HTMLPTableElement;
@@ -5857,6 +5915,50 @@ declare namespace LocalJSX {
          */
         "direction"?: 'horizontal' | 'vertical';
     }
+    interface PSubmenu {
+        /**
+          * Wether the submenu is active or not
+          * @default false
+         */
+        "active"?: boolean;
+        /**
+          * Index of the submenu
+          * @default 0
+         */
+        "index"?: number;
+        /**
+          * Wether the submenu is open or not
+          * @default false
+         */
+        "open"?: boolean;
+        /**
+          * Wether to show the index
+          * @default true
+         */
+        "showIndex"?: boolean;
+        /**
+          * Subtitle of the submenu
+          * @default ''
+         */
+        "subtitle"?: string;
+        /**
+          * Title of the submenu
+          * @default ''
+         */
+        "title"?: string;
+    }
+    interface PSubmenuItem {
+        /**
+          * Wether the submenu is active or not
+          * @default false
+         */
+        "active"?: boolean;
+        /**
+          * Icon to show on the label
+          * @default 'placeholder'
+         */
+        "icon"?: IconVariant1;
+    }
     interface PTabContainer {
     }
     interface PTabItem {
@@ -6700,6 +6802,8 @@ declare namespace LocalJSX {
         "p-stepper": PStepper;
         "p-stepper-item": PStepperItem;
         "p-stepper-line": PStepperLine;
+        "p-submenu": PSubmenu;
+        "p-submenu-item": PSubmenuItem;
         "p-tab-container": PTabContainer;
         "p-tab-item": PTabItem;
         "p-table": PTable;
@@ -6786,6 +6890,8 @@ declare module "@stencil/core" {
             "p-stepper": LocalJSX.PStepper & JSXBase.HTMLAttributes<HTMLPStepperElement>;
             "p-stepper-item": LocalJSX.PStepperItem & JSXBase.HTMLAttributes<HTMLPStepperItemElement>;
             "p-stepper-line": LocalJSX.PStepperLine & JSXBase.HTMLAttributes<HTMLPStepperLineElement>;
+            "p-submenu": LocalJSX.PSubmenu & JSXBase.HTMLAttributes<HTMLPSubmenuElement>;
+            "p-submenu-item": LocalJSX.PSubmenuItem & JSXBase.HTMLAttributes<HTMLPSubmenuItemElement>;
             "p-tab-container": LocalJSX.PTabContainer & JSXBase.HTMLAttributes<HTMLPTabContainerElement>;
             "p-tab-item": LocalJSX.PTabItem & JSXBase.HTMLAttributes<HTMLPTabItemElement>;
             "p-table": LocalJSX.PTable & JSXBase.HTMLAttributes<HTMLPTableElement>;
