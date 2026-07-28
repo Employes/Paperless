@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.19.0](https://github.com/Employes/Paperless/compare/v3.18.0...v3.19.0) (2026-07-28)
+
+
+### Features
+
+* **molecules:** Add submenu & submenu-item ([b911875](https://github.com/Employes/Paperless/commit/b911875e919b16afa3b01f79498193891418f271))
+
+
+
+
+
 # [3.18.0](https://github.com/Employes/Paperless/compare/v3.17.3...v3.18.0) (2026-07-28)
 
 
