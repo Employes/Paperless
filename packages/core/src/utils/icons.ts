@@ -117,6 +117,7 @@ import calendarMulti from '../assets/icons/time/calendar-multi.svg';
 import calendarNotFree from '../assets/icons/time/calendar-not-free.svg';
 import calendar from '../assets/icons/time/calendar.svg';
 import clock from '../assets/icons/time/clock.svg';
+import history from '../assets/icons/time/history.svg';
 import addressBook from '../assets/icons/users/address-book.svg';
 import female from '../assets/icons/users/female.svg';
 import idTwo from '../assets/icons/users/id-two.svg';
@@ -257,6 +258,7 @@ export const categorized = {
 		'calendar-free': calendarFree,
 		'calendar-not-free': calendarNotFree,
 		clock,
+		history,
 	},
 	users: {
 		'address-book': addressBook,
@@ -404,6 +406,7 @@ export const icons = {
 	'calendar-free': calendarFree,
 	'calendar-not-free': calendarNotFree,
 	clock,
+	history,
 
 	//users
 	'address-book': addressBook,
