@@ -159,7 +159,7 @@ export class Submenu {
 						<div class='flex flex-1 flex-col'>
 							<p
 								class={cn('m-0 text-sm', {
-									'text-storm-400 group-hover/submenu-header:text-white dark:text-hurricane-100':
+									'text-storm-400 dark:text-hurricane-100 dark:group-hover/submenu-header:text-white':
 										!this.active,
 									'text-storm-500 dark:text-white': this.active,
 								})}
