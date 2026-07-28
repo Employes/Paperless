@@ -12,7 +12,7 @@ export interface PaperlessState {
 }
 
 const { state: localState, onChange } = createStore<PaperlessState>({
-	theme: stateThemeOptions[1],
+	theme: stateThemeOptions[0],
 	locale: stateLocaleOptions[0],
 });
 
