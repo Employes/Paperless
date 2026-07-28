@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.19.1](https://github.com/Employes/Paperless/compare/v3.19.0...v3.19.1) (2026-07-28)
+
+
+### Bug Fixes
+
+* **molecules/submenu:** Set header hover to white only in dark mode ([e1776cc](https://github.com/Employes/Paperless/commit/e1776cc614d41ac998d7c7867f894242c6af3109))
+* **state:** Set default theme to light ([6530d05](https://github.com/Employes/Paperless/commit/6530d054166be5e7c09434ff39f42d3a9270fc1c))
+
+
+
+
+
 # [3.19.0](https://github.com/Employes/Paperless/compare/v3.18.0...v3.19.0) (2026-07-28)
 
 
