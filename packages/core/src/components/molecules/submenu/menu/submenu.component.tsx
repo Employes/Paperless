@@ -196,10 +196,10 @@ export class Submenu {
 						}}
 					>
 						<div
-							class='
-         absolute left-[calc(1.5rem)] top-0 z-0 w-px bg-indigo-100
-         dark:bg-hurricane-400
-       '
+							class={cn('absolute left-[calc(1.5rem)] top-0 z-0 w-px', {
+								'bg-off-white-400 dark:bg-storm-500/30': !this.active,
+								'bg-indigo-100 dark:bg-hurricane-400': this.active,
+							})}
 							style={{
 								height: `${maxHeight}px`,
 							}}
