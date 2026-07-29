@@ -7,6 +7,12 @@ const meta = {
 		title: "Submenu",
 		subtitle: "Submenu subtitle",
 		index: 1,
+		activeItem: false,
+	},
+	argTypes: {
+		activeItem: {
+			type: 'boolean',
+		},
 	},
 	parameters: {
 		docs: {
@@ -21,7 +27,7 @@ const meta = {
 export default meta;
 
 export const Default = {
-	render: ({ active, open, title, subtitle, index, showIndex }) =>
+	render: ({ active, activeItem, open, title, subtitle, index, showIndex }) =>
 			html`
 				<p-submenu
 					title=${title ?? nothing}
@@ -31,7 +37,7 @@ export const Default = {
 					index=${index ?? nothing}
 					show-index=${showIndex ?? nothing}
 				>
-					<p-submenu-item>Item 2</p-submenu-item>
+					<p-submenu-item active=${activeItem ?? nothing}>Item 2</p-submenu-item>
 					<p-submenu-item>Item 3</p-submenu-item>
 					<p-submenu-item>Item 4</p-submenu-item>
 				</p-submenu>

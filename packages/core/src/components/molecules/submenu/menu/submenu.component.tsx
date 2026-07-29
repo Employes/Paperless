@@ -1,4 +1,4 @@
-import { Component, h, Prop, Element } from '@stencil/core';
+import { Component, Element, h, Listen, Prop, State } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
 import { ThemedHost } from '../../../../internal/themed-host.component';
@@ -12,6 +12,7 @@ const header = cva(
 		'rounded-lg',
 		'cursor-pointer',
 		'transition-colors',
+		'relative',
 	],
 	{
 		variants: {
@@ -109,6 +110,49 @@ export class Submenu {
 	 */
 	@Element() private _el: HTMLElement;
 
+	@State() private _activeItemPosition = -1;
+	@State() private _showItemIndicator = false;
+
+	private _headerOffset = 0;
+
+	private _submenuItems: HTMLPSubmenuItemElement[] = [];
+	private _hoveringItem: HTMLPSubmenuItemElement | undefined = undefined;
+
+	private _itemActiveListener = () => {
+		const activeItemIndex = this._submenuItems.findIndex(
+			i => i.active === true
+		);
+
+		this.active = activeItemIndex !== -1;
+
+		if (activeItemIndex === -1) {
+			this._showItemIndicator = false;
+			return;
+		}
+
+		this._setItemPosition(this._submenuItems[activeItemIndex]);
+	};
+
+	private _itemMouseEnterListener = (event: MouseEvent) => {
+		if (this._hoveringItem && this._hoveringItem === event.target) {
+			return;
+		}
+
+		this._hoveringItem = event.target as HTMLPSubmenuItemElement;
+		this._setItemPosition(this._hoveringItem);
+	};
+
+	private _itemMouseLeaveListener = (event: MouseEvent) => {
+		setTimeout(() => {
+			if (this._hoveringItem && this._hoveringItem !== event.target) {
+				return;
+			}
+
+			this._hoveringItem = undefined;
+			this._itemActiveListener();
+		}, 100);
+	};
+
 	componentDidLoad() {
 		const submenuItems = this._el.querySelectorAll('p-submenu-item');
 		const hasActiveChild = [...submenuItems].some(i => i.active === true);
@@ -122,6 +166,14 @@ export class Submenu {
 		}
 
 		this.open = true;
+	}
+
+	componentDidRender() {
+		this._calculateHeaderOffset();
+	}
+
+	disconnectedCallback() {
+		this._removeListeners();
 	}
 
 	render() {
@@ -196,7 +248,7 @@ export class Submenu {
 						}}
 					>
 						<div
-							class={cn('absolute left-[calc(1.5rem)] top-0 z-0 w-px', {
+							class={cn('absolute left-6 top-0 z-0 w-px', {
 								'bg-off-white-400 dark:bg-storm-500/30': !this.active,
 								'bg-indigo-100 dark:bg-hurricane-400': this.active,
 							})}
@@ -205,12 +257,80 @@ export class Submenu {
 							}}
 						/>
 
+						<div
+							class={cn(
+								`absolute left-6 top-0 z-[1] h-8 w-[2px] transform transition-all`,
+								{
+									'bg-indigo-600': this._showItemIndicator,
+									'bg-transparent': !this._showItemIndicator,
+								}
+							)}
+							style={{
+								transform: `translateY(${this._activeItemPosition}px)`,
+							}}
+						/>
+
 						<div class='z-10 my-2 flex flex-col'>
-							<slot />
+							<slot onSlotchange={() => this._slotChanged()} />
 						</div>
 					</div>
 				</div>
 			</ThemedHost>
 		);
+	}
+
+	@Listen('resize', { target: 'window' })
+	onWindowResize() {
+		this._calculateHeaderOffset();
+		this._itemActiveListener();
+	}
+
+	private _calculateHeaderOffset() {
+		const headerEl = this._el.shadowRoot?.querySelector(
+			String.raw`.group\/submenu-header`
+		);
+		if (!headerEl) {
+			this._activeItemPosition = -1;
+			return;
+		}
+
+		this._headerOffset = headerEl.getBoundingClientRect().bottom;
+	}
+
+	private _setItemPosition(item: HTMLPSubmenuItemElement | undefined) {
+		if (!item) {
+			return;
+		}
+
+		this._activeItemPosition =
+			item.getBoundingClientRect().top - this._headerOffset;
+
+		if (!this._showItemIndicator) {
+			setTimeout(() => (this._showItemIndicator = true), 50);
+		}
+	}
+
+	private _slotChanged() {
+		this._removeListeners();
+
+		const submenuItems = [...this._el.querySelectorAll('p-submenu-item')];
+
+		for (const item of submenuItems) {
+			item.addEventListener('activeChange', this._itemActiveListener);
+			item.addEventListener('mouseenter', this._itemMouseEnterListener);
+			item.addEventListener('mouseleave', this._itemMouseLeaveListener);
+		}
+
+		this._submenuItems = submenuItems;
+	}
+
+	private _removeListeners() {
+		if (this._submenuItems.length > 0) {
+			for (const item of this._submenuItems) {
+				item.removeEventListener('activeChange', this._itemActiveListener);
+				item.removeEventListener('mouseenter', this._itemMouseEnterListener);
+				item.removeEventListener('mouseleave', this._itemMouseLeaveListener);
+			}
+		}
 	}
 }

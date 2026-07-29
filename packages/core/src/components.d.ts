@@ -2796,6 +2796,10 @@ export interface PSelectCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPSelectElement;
 }
+export interface PSubmenuItemCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPSubmenuItemElement;
+}
 export interface PTableCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPTableElement;
@@ -3528,7 +3532,18 @@ declare global {
         prototype: HTMLPSubmenuElement;
         new (): HTMLPSubmenuElement;
     };
+    interface HTMLPSubmenuItemElementEventMap {
+        "activeChange": boolean;
+    }
     interface HTMLPSubmenuItemElement extends Components.PSubmenuItem, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLPSubmenuItemElementEventMap>(type: K, listener: (this: HTMLPSubmenuItemElement, ev: PSubmenuItemCustomEvent<HTMLPSubmenuItemElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLPSubmenuItemElementEventMap>(type: K, listener: (this: HTMLPSubmenuItemElement, ev: PSubmenuItemCustomEvent<HTMLPSubmenuItemElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLPSubmenuItemElement: {
         prototype: HTMLPSubmenuItemElement;
@@ -5958,6 +5973,10 @@ declare namespace LocalJSX {
           * @default 'placeholder'
          */
         "icon"?: IconVariant1;
+        /**
+          * Event when the active state changes
+         */
+        "onActiveChange"?: (event: PSubmenuItemCustomEvent<boolean>) => void;
     }
     interface PTabContainer {
     }
