@@ -130,6 +130,11 @@ export class Submenu {
 			return;
 		}
 
+		// set open when active changes
+		if (!this.open && this.active) {
+			this.open = true;
+		}
+
 		this._setItemPosition(this._submenuItems[activeItemIndex]);
 	};
 
