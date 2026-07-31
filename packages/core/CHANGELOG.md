@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.19.4](https://github.com/Employes/Paperless/compare/v3.19.3...v3.19.4) (2026-07-31)
+
+
+### Bug Fixes
+
+* **molecules/submenu:** Open the menu when an active child changes at a later point ([bff31cb](https://github.com/Employes/Paperless/commit/bff31cb52e05544423e77303a07aec96dd02b644))
+
+
+
+
+
 ## [3.19.3](https://github.com/Employes/Paperless/compare/v3.19.2...v3.19.3) (2026-07-29)
 
 **Note:** Version bump only for package @paperless/core
