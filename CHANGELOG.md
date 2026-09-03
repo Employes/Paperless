@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.19.5](https://github.com/Employes/Paperless/compare/v3.19.4...v3.19.5) (2026-09-03)
+
+### Bug Fixes
+
+* **atoms/card/header:** changed gap from 4 to 2 ([fa802ee](https://github.com/Employes/Paperless/commit/fa802ee1ce7f0499793c7d4aed47f7ddbd684fd3))
+
+
 ## [3.19.4](https://github.com/Employes/Paperless/compare/v3.19.3...v3.19.4) (2026-07-31)
 
 
