@@ -107,7 +107,7 @@ export class CardHeader {
 
 						<div
 							class='
-         ml-auto flex items-center justify-end gap-4
+         ml-auto flex items-center justify-end gap-2
          empty:hidden
        '
 						>
