@@ -89,7 +89,7 @@
 		"@cropper/element-viewer": "2.0.0"
 	},
 	"devDependencies": {
-		"@babel/core": "7.21.8",
+		"@babel/core": "7.29.6",
 		"@babel/preset-react": "7.18.6",
 		"@pxtrn/storybook-addon-docs-stencil": "^8.0.0",
 		"@storybook/addon-a11y": "^8.6.12",
