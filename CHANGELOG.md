@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.20.0](https://github.com/Employes/Paperless/compare/v3.19.6...v3.20.0) (2026-09-04)
+
+### Features
+
+* **molecules/button:** Add iconOnlyMobile prop to auto remove label when resizing ([1abe7ba](https://github.com/Employes/Paperless/commit/1abe7ba5c5411f053689624d353711cbaf2d1075))
+
+
 ## [3.19.6](https://github.com/Employes/Paperless/compare/v3.19.5...v3.19.6) (2026-09-04)
 
 ### Bug Fixes
