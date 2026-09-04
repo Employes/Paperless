@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.21.0](https://github.com/Employes/Paperless/compare/v3.20.0...v3.21.0) (2026-09-04)
+
+### Features
+
+* **molecules/button:** Support multiple break points for iconOnly ([e128a94](https://github.com/Employes/Paperless/commit/e128a9445d51191c638d36d62ef408feb3183c02))
+
+
 # [3.20.0](https://github.com/Employes/Paperless/compare/v3.19.6...v3.20.0) (2026-09-04)
 
 ### Features
