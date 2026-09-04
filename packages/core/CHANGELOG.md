@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.19.6](https://github.com/Employes/Paperless/compare/v3.19.5...v3.19.6) (2026-09-04)
+
+### Bug Fixes
+
+* **molecules/button:** Cleanup chevron in combination with icon only ([e01ccec](https://github.com/Employes/Paperless/commit/e01ccec346e2573cb3f9861c307b49aad60f1624))
+
+
 ## [3.19.5](https://github.com/Employes/Paperless/compare/v3.19.4...v3.19.5) (2026-09-03)
 
 ### Bug Fixes
