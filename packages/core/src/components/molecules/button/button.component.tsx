@@ -7,6 +7,7 @@ import {
 	Prop,
 	State,
 	Event as StencilEvent,
+	Watch,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
@@ -15,7 +16,7 @@ import { IconFlipOptions, IconVariant } from '../../../types/icon';
 import { RotateOptions } from '../../../types/tailwind';
 import { asBoolean } from '../../../utils/as-boolean';
 import { cn } from '../../../utils/cn';
-import { isMobile } from '../../../utils/screens';
+import { isSmallerThanScreen } from '../../../utils/screens';
 
 /**
 <div class="text-inherit group-hover/button:text-inherit dark:text-inherit dark:group-hover/button:text-inherit"></div>
@@ -590,7 +591,8 @@ export class Button {
 	/**
 	 * Wether the button is icon only on mobile
 	 */
-	@Prop() iconOnlyMobile?: boolean = false;
+	@Prop() iconOnlyAtBreakpoint?: 'mobile' | 'tablet' | 'desktop' | 'never' =
+		'never';
 
 	/**
 	 * A class to apply to the icon
@@ -637,8 +639,12 @@ export class Button {
 
 	@Element() private _host: HTMLElement;
 
-	private _mobileResizeTimeout: NodeJS.Timeout | undefined;
-	@State() private _isMobile: boolean = isMobile();
+	private _iconOnlyResizeTimeout: NodeJS.Timeout | undefined;
+	@State() private _isIconOnly: boolean = false;
+
+	componentDidLoad() {
+		this._onWindowResize();
+	}
 
 	render() {
 		let loaderColor: 'white' | 'off-white' | 'indigo' | 'storm' = 'white';
@@ -674,7 +680,7 @@ export class Button {
 						buttonGroupPosition: this.buttonGroupPosition,
 						iconOnly:
 							asBoolean(this.iconOnly) ||
-							(this._isMobile && this.iconOnlyMobile),
+							(this._isIconOnly && this.iconOnlyAtBreakpoint !== 'never'),
 						hasChevron: !!this.chevron,
 						active,
 						error: asBoolean(this.error),
@@ -698,7 +704,7 @@ export class Button {
 						!(this.iconOnly && this.loading) &&
 						this._getIcon()}
 
-					{!this.iconOnlyMobile || !this._isMobile
+					{this.iconOnlyAtBreakpoint === 'never' || !this._isIconOnly
 						? (this.label ?? <slot />)
 						: ''}
 
@@ -735,15 +741,34 @@ export class Button {
 		this.onClick.emit(ev);
 	}
 
+	@Watch('iconOnlyMobile')
 	@Listen('resize', { target: 'window' })
 	protected _onWindowResize() {
-		if (this._mobileResizeTimeout) {
-			clearTimeout(this._mobileResizeTimeout);
+		if (this.iconOnlyAtBreakpoint === 'never') {
+			return;
 		}
 
-		this._mobileResizeTimeout = setTimeout(() => {
-			this._isMobile = isMobile();
-			this._mobileResizeTimeout = undefined;
+		if (this._iconOnlyResizeTimeout) {
+			clearTimeout(this._iconOnlyResizeTimeout);
+		}
+
+		this._iconOnlyResizeTimeout = setTimeout(() => {
+			switch (this.iconOnlyAtBreakpoint) {
+				case 'mobile': {
+					this._isIconOnly = isSmallerThanScreen('tablet');
+					break;
+				}
+				case 'tablet': {
+					this._isIconOnly = isSmallerThanScreen('desktop-xs');
+					break;
+				}
+				case 'desktop': {
+					this._isIconOnly = isSmallerThanScreen('desktop-xl');
+					break;
+				}
+			}
+
+			this._iconOnlyResizeTimeout = undefined;
 		}, 200);
 	}
 

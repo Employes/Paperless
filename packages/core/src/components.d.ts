@@ -293,9 +293,9 @@ export namespace Components {
         "iconOnly"?: boolean;
         /**
           * Wether the button is icon only on mobile
-          * @default false
+          * @default 'never'
          */
-        "iconOnlyMobile"?: boolean;
+        "iconOnlyAtBreakpoint"?: 'mobile' | 'tablet' | 'desktop' | 'never';
         /**
           * Icon position
           * @default 'start'
@@ -4106,9 +4106,9 @@ declare namespace LocalJSX {
         "iconOnly"?: boolean;
         /**
           * Wether the button is icon only on mobile
-          * @default false
+          * @default 'never'
          */
-        "iconOnlyMobile"?: boolean;
+        "iconOnlyAtBreakpoint"?: 'mobile' | 'tablet' | 'desktop' | 'never';
         /**
           * Icon position
           * @default 'start'
