@@ -28,6 +28,7 @@ export const Default = {
 		disabled,
 		icon,
 		'icon-only': iconOnly,
+		'icon-only-mobile': iconOnlyMobile,
 		'icon-position': iconPosition,
 		'icon-flip': iconFlip,
 		'icon-rotate': iconRotate,
@@ -52,6 +53,7 @@ export const Default = {
 			disabled=${disabled ?? nothing}
 			icon=${icon ?? nothing}
 			icon-only=${iconOnly ?? nothing}
+			icon-only-mobile=${iconOnlyMobile ?? nothing}
 			icon-position=${iconPosition ?? nothing}
 			icon-flip=${iconFlip ?? nothing}
 			icon-rotate=${iconRotate ?? nothing}

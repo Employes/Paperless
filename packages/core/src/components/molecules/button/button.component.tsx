@@ -5,6 +5,7 @@ import {
 	h,
 	Listen,
 	Prop,
+	State,
 	Event as StencilEvent,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
@@ -14,6 +15,7 @@ import { IconFlipOptions, IconVariant } from '../../../types/icon';
 import { RotateOptions } from '../../../types/tailwind';
 import { asBoolean } from '../../../utils/as-boolean';
 import { cn } from '../../../utils/cn';
+import { isMobile } from '../../../utils/screens';
 
 /**
 <div class="text-inherit group-hover/button:text-inherit dark:text-inherit dark:group-hover/button:text-inherit"></div>
@@ -586,6 +588,11 @@ export class Button {
 	@Prop() iconOnly?: boolean = false;
 
 	/**
+	 * Wether the button is icon only on mobile
+	 */
+	@Prop() iconOnlyMobile?: boolean = false;
+
+	/**
 	 * A class to apply to the icon
 	 */
 	@Prop() iconClass?: string;
@@ -630,6 +637,9 @@ export class Button {
 
 	@Element() private _host: HTMLElement;
 
+	private _mobileResizeTimeout: NodeJS.Timeout | undefined;
+	@State() private _isMobile: boolean = isMobile();
+
 	render() {
 		let loaderColor: 'white' | 'off-white' | 'indigo' | 'storm' = 'white';
 		switch (this.variant) {
@@ -662,7 +672,9 @@ export class Button {
 						loading: asBoolean(this.loading),
 						disabled: asBoolean(this.disabled),
 						buttonGroupPosition: this.buttonGroupPosition,
-						iconOnly: asBoolean(this.iconOnly),
+						iconOnly:
+							asBoolean(this.iconOnly) ||
+							(this._isMobile && this.iconOnlyMobile),
 						hasChevron: !!this.chevron,
 						active,
 						error: asBoolean(this.error),
@@ -686,7 +698,9 @@ export class Button {
 						!(this.iconOnly && this.loading) &&
 						this._getIcon()}
 
-					{this.label ?? <slot />}
+					{!this.iconOnlyMobile || !this._isMobile
+						? (this.label ?? <slot />)
+						: ''}
 
 					{this.icon &&
 						this.iconPosition === 'end' &&
@@ -719,6 +733,18 @@ export class Button {
 		}
 
 		this.onClick.emit(ev);
+	}
+
+	@Listen('resize', { target: 'window' })
+	protected _onWindowResize() {
+		if (this._mobileResizeTimeout) {
+			clearTimeout(this._mobileResizeTimeout);
+		}
+
+		this._mobileResizeTimeout = setTimeout(() => {
+			this._isMobile = isMobile();
+			this._mobileResizeTimeout = undefined;
+		}, 200);
 	}
 
 	private _getIcon() {
