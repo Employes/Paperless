@@ -129,6 +129,10 @@ const button = cva(
 				true: 'justify-center',
 				false: 'w-inherit py-1',
 			},
+			hasChevron: {
+				true: null,
+				false: null,
+			},
 			underline: {
 				true: 'underline',
 				false: 'no-underline',
@@ -343,16 +347,19 @@ const button = cva(
 			{
 				size: 'sm',
 				iconOnly: true,
+				hasChevron: false,
 				class: 'w-6',
 			},
 			{
 				size: 'base',
 				iconOnly: true,
+				hasChevron: false,
 				class: 'w-8',
 			},
 			{
 				size: 'lg',
 				iconOnly: true,
+				hasChevron: false,
 				class: 'w-10',
 			},
 		],
@@ -656,6 +663,7 @@ export class Button {
 						disabled: asBoolean(this.disabled),
 						buttonGroupPosition: this.buttonGroupPosition,
 						iconOnly: asBoolean(this.iconOnly),
+						hasChevron: !!this.chevron,
 						active,
 						error: asBoolean(this.error),
 						underline: asBoolean(this.underline) && VariableTag === 'a',
