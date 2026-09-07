@@ -25,32 +25,14 @@ export class OverlayRef<T> {
 			return;
 		}
 
-		console.log('overlayRef.createEffect called');
-
 		this.effectRef = effect(
 			() => {
 				const data = this.data();
 
-				console.log('overlayRef.createEffect data', data);
 				for (const key of Object.keys(data)) {
 					const value =
 						typeof data[key] === 'function' ? data[key]() : data[key];
 
-					if (typeof data[key] === 'function') {
-						console.log(
-							`overlayRef.createEffect "${key}" is a signal/fn`,
-							data[key],
-							data[key]()
-						);
-					}
-
-					console.log(`overlayRef.createEffect setInput for ${key}`, value);
-
-					console.log(
-						`ComponentRef.instance[${key}]`,
-						// eslint-disable-next-line @typescript-eslint/no-explicit-any
-						(this.componentRef.instance as any)[key]
-					);
 					this.componentRef.setInput(key, value);
 				}
 			},
