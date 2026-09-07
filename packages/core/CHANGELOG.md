@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.22.0](https://github.com/Employes/Paperless/compare/v3.21.0...v3.22.0) (2026-09-07)
+
+### Features
+
+* **molecules/button:** Extend iconOnlyAtBreakpoints capabilities ([8640bed](https://github.com/Employes/Paperless/commit/8640bedc75cb90e0654aad534fa53cfdd971a712))
+
+
 # [3.21.0](https://github.com/Employes/Paperless/compare/v3.20.0...v3.21.0) (2026-09-04)
 
 ### Features

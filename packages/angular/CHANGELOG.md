@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.22.0](https://github.com/Employes/Paperless/compare/v3.21.0...v3.22.0) (2026-09-07)
+
+### Bug Fixes
+
+* **angular/overlay/overlay ref:** Add some debugging ([c9d1ad0](https://github.com/Employes/Paperless/commit/c9d1ad0fca61c9ab6614c0fc0ce8bcba84481f99))
+
+
 # [3.21.0](https://github.com/Employes/Paperless/compare/v3.20.0...v3.21.0) (2026-09-04)
 
 **Note:** Version bump only for package @paperless/angular
