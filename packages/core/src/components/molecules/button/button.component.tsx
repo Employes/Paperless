@@ -591,8 +591,15 @@ export class Button {
 	/**
 	 * Wether the button is icon only on mobile
 	 */
-	@Prop() iconOnlyAtBreakpoint?: 'mobile' | 'tablet' | 'desktop' | 'never' =
-		'never';
+	@Prop() iconOnlyAtBreakpoint?:
+		| 'mobile'
+		| 'tablet'
+		| 'desktop-xs'
+		| 'desktop-sm'
+		| 'desktop'
+		| 'desktop-lg'
+		| 'desktop-xl'
+		| 'never' = 'never';
 
 	/**
 	 * A class to apply to the icon
@@ -762,8 +769,24 @@ export class Button {
 					this._isIconOnly = isSmallerThanScreen('desktop-xs');
 					break;
 				}
+				case 'desktop-xs': {
+					this._isIconOnly = isSmallerThanScreen('desktop-sm');
+					break;
+				}
+				case 'desktop-sm': {
+					this._isIconOnly = isSmallerThanScreen('desktop');
+					break;
+				}
 				case 'desktop': {
+					this._isIconOnly = isSmallerThanScreen('desktop-lg');
+					break;
+				}
+				case 'desktop-lg': {
 					this._isIconOnly = isSmallerThanScreen('desktop-xl');
+					break;
+				}
+				case 'desktop-xl': {
+					this._isIconOnly = isSmallerThanScreen('layout-2560');
 					break;
 				}
 			}

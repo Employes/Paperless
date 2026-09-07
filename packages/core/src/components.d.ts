@@ -295,7 +295,14 @@ export namespace Components {
           * Wether the button is icon only on mobile
           * @default 'never'
          */
-        "iconOnlyAtBreakpoint"?: 'mobile' | 'tablet' | 'desktop' | 'never';
+        "iconOnlyAtBreakpoint"?: | 'mobile'
+		| 'tablet'
+		| 'desktop-xs'
+		| 'desktop-sm'
+		| 'desktop'
+		| 'desktop-lg'
+		| 'desktop-xl'
+		| 'never';
         /**
           * Icon position
           * @default 'start'
@@ -4108,7 +4115,14 @@ declare namespace LocalJSX {
           * Wether the button is icon only on mobile
           * @default 'never'
          */
-        "iconOnlyAtBreakpoint"?: 'mobile' | 'tablet' | 'desktop' | 'never';
+        "iconOnlyAtBreakpoint"?: | 'mobile'
+		| 'tablet'
+		| 'desktop-xs'
+		| 'desktop-sm'
+		| 'desktop'
+		| 'desktop-lg'
+		| 'desktop-xl'
+		| 'never';
         /**
           * Icon position
           * @default 'start'
