@@ -45,6 +45,12 @@ export class OverlayRef<T> {
 					}
 
 					console.log(`overlayRef.createEffect setInput for ${key}`, value);
+
+					console.log(
+						`ComponentRef.instance[${key}]`,
+						// eslint-disable-next-line @typescript-eslint/no-explicit-any
+						(this.componentRef.instance as any)[key]
+					);
 					this.componentRef.setInput(key, value);
 				}
 			},
