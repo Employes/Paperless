@@ -1972,10 +1972,19 @@ export namespace Components {
          */
         "finished": boolean;
         /**
+          * Icon to show instead of the number
+         */
+        "icon": IconVariant;
+        /**
           * The number of the step
           * @default 1
          */
         "number": number;
+        /**
+          * The variant of the item
+          * @default 'default'
+         */
+        "variant": 'default' | 'icon';
     }
     interface PStepperLine {
         /**
@@ -5909,6 +5918,11 @@ declare namespace LocalJSX {
           * The steps but as a property, can also be used via slot
          */
         "steps"?: string | string[] | StepperStepItemObj[];
+        /**
+          * The variant of the item
+          * @default 'default'
+         */
+        "variant"?: 'default' | 'icon';
     }
     interface PStepperItem {
         /**
@@ -5937,10 +5951,19 @@ declare namespace LocalJSX {
          */
         "finished"?: boolean;
         /**
+          * Icon to show instead of the number
+         */
+        "icon"?: IconVariant;
+        /**
           * The number of the step
           * @default 1
          */
         "number"?: number;
+        /**
+          * The variant of the item
+          * @default 'default'
+         */
+        "variant"?: 'default' | 'icon';
     }
     interface PStepperLine {
         /**

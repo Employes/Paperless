@@ -23,6 +23,8 @@ export const Default = {
 		finished,
 		active,
 		content,
+		icon,
+		variant
 	}) => html`
 		<p-stepper-item
 			align=${align ?? nothing}
@@ -30,6 +32,8 @@ export const Default = {
 			content-position=${contentPosition ?? nothing}
 			finished=${finished ?? nothing}
 			active=${active ?? nothing}
+			icon=${icon ?? nothing}
+			variant=${variant ?? nothing}
 			>${content}</p-stepper-item
 		>
 	`,

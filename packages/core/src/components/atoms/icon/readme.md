@@ -38,6 +38,8 @@
  - [p-range](../../molecules/range)
  - [p-segment-item](../segment/item)
  - [p-select](../../molecules/select)
+ - [p-stepper](../../organisms/stepper)
+ - [p-stepper-item](../stepper/item)
  - [p-submenu](../../molecules/submenu/menu)
  - [p-submenu-item](../../molecules/submenu/item)
  - [p-toast](../../molecules/toast)
@@ -64,6 +66,8 @@ graph TD;
   p-range --> p-icon
   p-segment-item --> p-icon
   p-select --> p-icon
+  p-stepper --> p-icon
+  p-stepper-item --> p-icon
   p-submenu --> p-icon
   p-submenu-item --> p-icon
   p-toast --> p-icon

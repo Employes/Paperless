@@ -2,6 +2,7 @@ import { Component, h, Prop } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
 import { ThemedHost } from '../../../../internal/themed-host.component';
+import { IconVariant } from '../../../../types';
 import { asBoolean } from '../../../../utils/as-boolean';
 
 const item = cva('flex gap-2', {
@@ -20,9 +21,8 @@ const item = cva('flex gap-2', {
 
 const circle = cva(
 	[
-		'flex h-6 w-6 items-center justify-center',
+		'flex items-center justify-center',
 		'text-center text-sm font-medium',
-		'border border-solid',
 		'rounded-full',
 	],
 	{
@@ -44,11 +44,17 @@ const circle = cva(
 				true: null,
 				false: null,
 			},
+			variant: {
+				default: ['size-6', 'border border-solid'],
+				icon: 'size-8',
+			},
 		},
 		compoundVariants: [
+			// default variant colors
 			{
 				finished: false,
 				active: false,
+				variant: 'default',
 				class: [
 					'border-indigo-600 bg-indigo-50 text-indigo-600',
 					'dark:border-white/15 dark:bg-white/15 dark:text-hurricane-200',
@@ -57,13 +63,39 @@ const circle = cva(
 			{
 				active: true,
 				finished: false,
+				variant: 'default',
 				class: 'border-indigo-600 bg-indigo-600 text-white',
 			},
 			{
 				active: false,
 				finished: true,
+				variant: 'default',
 				class: 'border-indigo-600 bg-indigo-600 text-white',
 			},
+
+			// icon variant colors
+			{
+				finished: false,
+				active: false,
+				variant: 'icon',
+				class: [
+					'bg-indigo-100 text-storm-200',
+					'dark:bg-white/15 dark:text-hurricane-200',
+				],
+			},
+			{
+				active: true,
+				finished: false,
+				variant: 'icon',
+				class: 'bg-indigo-500 text-storm-500',
+			},
+			{
+				active: false,
+				finished: true,
+				variant: 'icon',
+				class: 'bg-indigo-100 text-indigo-600',
+			},
+
 			{
 				direction: 'vertical',
 				align: 'start',
@@ -78,7 +110,7 @@ const circle = cva(
 	}
 );
 
-const content = cva('mt-[1px] flex-1 text-sm font-medium', {
+const content = cva('mt-[1px] flex-1 text-sm', {
 	variants: {
 		finished: {
 			true: null,
@@ -92,11 +124,17 @@ const content = cva('mt-[1px] flex-1 text-sm font-medium', {
 			horizontal: null,
 			vertical: null,
 		},
+		variant: {
+			default: 'font-medium',
+			icon: 'font-semibold',
+		},
 	},
 	compoundVariants: [
+		// default variant
 		{
 			finished: false,
 			active: false,
+			variant: 'default',
 			class: `
      text-storm-400
      dark:text-hurricane-200
@@ -105,6 +143,7 @@ const content = cva('mt-[1px] flex-1 text-sm font-medium', {
 		{
 			active: true,
 			finished: false,
+			variant: 'default',
 			class: `
      text-storm-500
      dark:text-white
@@ -113,11 +152,31 @@ const content = cva('mt-[1px] flex-1 text-sm font-medium', {
 		{
 			active: false,
 			finished: true,
+			variant: 'default',
 			class: `
      text-storm-500
      dark:text-white
    `,
 		},
+
+		// icon variant
+		{
+			active: false,
+			variant: 'icon',
+			class: `
+     text-storm-300
+     dark:text-hurricane-200
+   `,
+		},
+		{
+			active: true,
+			variant: 'icon',
+			class: `
+     text-storm-500
+     dark:text-white
+   `,
+		},
+
 		{
 			direction: 'horizontal',
 			active: false,
@@ -141,9 +200,19 @@ export class StepperItem {
 	@Prop() number: number = 1;
 
 	/**
+	 * Icon to show instead of the number
+	 */
+	@Prop() icon: IconVariant;
+
+	/**
 	 * The direction of the item
 	 */
 	@Prop() direction: 'horizontal' | 'vertical' = 'horizontal';
+
+	/**
+	 * The variant of the item
+	 */
+	@Prop() variant: 'default' | 'icon' = 'default';
 
 	/**
 	 * The alignment of the content in case of vertical direction
@@ -170,7 +239,7 @@ export class StepperItem {
 			<ThemedHost>
 				<div
 					class={item({
-						align: this.align,
+						align: this.variant === 'default' ? this.align : 'center',
 						contentPosition: this.contentPosition,
 					})}
 				>
@@ -180,15 +249,21 @@ export class StepperItem {
 							direction: this.direction,
 							active: asBoolean(this.active),
 							finished: asBoolean(this.finished),
+							variant: this.variant,
 						})}
 					>
-						{this.number}
+						{this.variant === 'icon' && (this.icon || this.finished) ? (
+							<p-icon variant={this.finished ? 'checkmark' : this.icon} />
+						) : (
+							this.number
+						)}
 					</div>
 					<div
 						class={content({
 							active: asBoolean(this.active),
 							finished: asBoolean(this.finished),
 							direction: this.direction,
+							variant: this.variant,
 						})}
 					>
 						<slot />
