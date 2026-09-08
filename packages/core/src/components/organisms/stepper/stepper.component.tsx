@@ -9,7 +9,10 @@ import {
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
+import { IconVariant } from '../../../types';
+
 export interface StepperStepItemObj {
+	icon?: IconVariant;
 	content: string;
 	active: boolean;
 	finished: boolean;
@@ -34,6 +37,11 @@ const stepper = cva(['flex gap-2'], {
 	shadow: true,
 })
 export class Stepper {
+	/**
+	 * The variant of the item
+	 */
+	@Prop() variant: 'default' | 'icon' = 'default';
+
 	/**
 	 * The steps but as a property, can also be used via slot
 	 */
@@ -181,7 +189,9 @@ export class Stepper {
 				align={this.direction === 'vertical' ? this.align : 'start'}
 				contentPosition={this.contentPosition}
 				finished={this.enableAutoStatus ? i < activeStep : data.finished}
+				icon={data.icon}
 				number={i + 1}
+				variant={this.variant}
 			>
 				{data.content}
 			</p-stepper-item>
@@ -190,6 +200,24 @@ export class Stepper {
 
 	private _getLine(i: number) {
 		const activeStep = this.activeStep - 1 || 0;
+
+		if (this.variant === 'icon') {
+			return (
+				<p-icon
+					class={
+						i < activeStep
+							? 'text-indigo-600'
+							: `
+         text-storm-100
+         dark:text-hurricane-300
+       `
+					}
+					rotate={this.direction === 'vertical' ? 0 : -90}
+					variant='caret'
+				/>
+			);
+		}
+
 		return (
 			<p-stepper-line
 				active={i < activeStep}
@@ -213,6 +241,7 @@ export class Stepper {
 			item.align = this.direction === 'vertical' ? this.align : 'start';
 			item.direction = this.direction;
 			item.contentPosition = this.contentPosition;
+			item.variant = this.variant;
 		}
 	}
 

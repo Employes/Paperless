@@ -15,6 +15,7 @@
 | `direction`        | `direction`          | The direction of the stepper                               | `"horizontal" \| "vertical"`                 | `'horizontal'` |
 | `enableAutoStatus` | `enable-auto-status` | Wether to automatically apply active & finished to items   | `boolean`                                    | `true`         |
 | `steps`            | `steps`              | The steps but as a property, can also be used via slot     | `StepperStepItemObj[] \| string \| string[]` | `undefined`    |
+| `variant`          | `variant`            | The variant of the item                                    | `"default" \| "icon"`                        | `'default'`    |
 
 
 ## Dependencies
@@ -22,13 +23,16 @@
 ### Depends on
 
 - [p-stepper-item](../../atoms/stepper/item)
+- [p-icon](../../atoms/icon)
 - [p-stepper-line](../../atoms/stepper/line)
 
 ### Graph
 ```mermaid
 graph TD;
   p-stepper --> p-stepper-item
+  p-stepper --> p-icon
   p-stepper --> p-stepper-line
+  p-stepper-item --> p-icon
   style p-stepper fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -4,7 +4,7 @@ const meta = {
 	title: 'Design System/Organisms/Stepper',
 	component: 'p-stepper',
 	args: {
-		steps: JSON.stringify(['Step 1', 'Step 2', 'Step 3']),
+		steps: JSON.stringify([{ content: 'Step 1', icon: 'car' }, { content: 'Step 2', icon: 'user' }, { content: 'Step 3', icon: 'cake'}]),
 	},
 	parameters: {
 		docs: {
@@ -24,6 +24,7 @@ export const Horizontal = {
 		'enable-auto-status': enableAutoStatus,
 		'content-position': contentPosition,
 		steps,
+		variant,
 	}) => html`
 		<p-stepper
 			active-step=${activeStep ?? nothing}
@@ -31,6 +32,7 @@ export const Horizontal = {
 			direction="horizontal"
 			content-position=${contentPosition ?? nothing}
 			steps=${steps ?? nothing}
+			variant=${variant ?? nothing}
 		>
 		</p-stepper>
 	`,
@@ -42,6 +44,7 @@ export const Vertical = {
 		'enable-auto-status': enableAutoStatus,
 		'content-position': contentPosition,
 		align,
+		variant,
 	}) => html`
 		<p-stepper
 			direction="vertical"
@@ -49,6 +52,7 @@ export const Vertical = {
 			enable-auto-status=${enableAutoStatus ?? nothing}
 			align=${align ?? nothing}
 			content-position=${contentPosition ?? nothing}
+			variant=${variant ?? nothing}
 		>
 			<p-stepper-item>
 				<p-card-container>

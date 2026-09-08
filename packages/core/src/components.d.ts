@@ -1944,6 +1944,11 @@ export namespace Components {
           * The steps but as a property, can also be used via slot
          */
         "steps": string | string[] | StepperStepItemObj[];
+        /**
+          * The variant of the item
+          * @default 'default'
+         */
+        "variant": 'default' | 'icon';
     }
     interface PStepperItem {
         /**
