@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.24.0](https://github.com/Employes/Paperless/compare/v3.22.2...v3.24.0) (2026-09-08)
+
+### Bug Fixes
+
+* **lerna:** Set correct version ([8b25b44](https://github.com/Employes/Paperless/commit/8b25b44fa12e5f2f37a4f97cf6d7dcb25e8ca637))
+* **organisms/stepper:** Make stepper item data more optional & renamed ([0e88a14](https://github.com/Employes/Paperless/commit/0e88a14a9825186cf1c46152c233931a8a8c8d7f))
+
+### Features
+
+* **atoms/stepper/item:** Add icon variant ([02b5bfa](https://github.com/Employes/Paperless/commit/02b5bfa44611c3170fce5d193683dd550b4d4df2))
+* **organisms/stepper:** Add icon variant ([5d20fed](https://github.com/Employes/Paperless/commit/5d20fed6f3f3f73df24d03ad58f5104bc0960eda))
+
+
 ## [3.22.2](https://github.com/Employes/Paperless/compare/v3.22.1...v3.22.2) (2026-09-07)
 
 **Note:** Version bump only for package @paperless/core

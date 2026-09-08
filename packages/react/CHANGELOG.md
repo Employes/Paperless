@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.24.0](https://github.com/Employes/Paperless/compare/v3.22.2...v3.24.0) (2026-09-08)
+
+### Bug Fixes
+
+* **lerna:** Set correct version ([8b25b44](https://github.com/Employes/Paperless/commit/8b25b44fa12e5f2f37a4f97cf6d7dcb25e8ca637))
+
+
 ## [3.22.2](https://github.com/Employes/Paperless/compare/v3.22.1...v3.22.2) (2026-09-07)
 
 **Note:** Version bump only for package @paperless/react
