@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.23.0](https://github.com/Employes/Paperless/compare/v3.22.2...v3.23.0) (2026-09-08)
+
+### Features
+
+* **atoms/stepper/item:** Add icon variant ([02b5bfa](https://github.com/Employes/Paperless/commit/02b5bfa44611c3170fce5d193683dd550b4d4df2))
+* **organisms/stepper:** Add icon variant ([5d20fed](https://github.com/Employes/Paperless/commit/5d20fed6f3f3f73df24d03ad58f5104bc0960eda))
+
+
 ## [3.22.2](https://github.com/Employes/Paperless/compare/v3.22.1...v3.22.2) (2026-09-07)
 
 ### Bug Fixes
