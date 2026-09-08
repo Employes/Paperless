@@ -11,11 +11,11 @@ import { cva } from 'class-variance-authority';
 
 import { IconVariant } from '../../../types';
 
-export interface StepperStepItemObj {
+export interface StepperStepItem {
 	icon?: IconVariant;
 	content: string;
-	active: boolean;
-	finished: boolean;
+	active?: boolean;
+	finished?: boolean;
 }
 
 const stepper = cva(['flex gap-2'], {
@@ -45,7 +45,7 @@ export class Stepper {
 	/**
 	 * The steps but as a property, can also be used via slot
 	 */
-	@Prop() steps: string | string[] | StepperStepItemObj[];
+	@Prop() steps: string | string[] | StepperStepItem[];
 
 	/**
 	 * The currently active step
@@ -180,7 +180,7 @@ export class Stepper {
 		this._resizeObserver.observe(this._containerRef);
 	}
 
-	private _getItem(data: StepperStepItemObj, i: number) {
+	private _getItem(data: StepperStepItem, i: number) {
 		const activeStep = this.activeStep - 1 || 0;
 
 		return (

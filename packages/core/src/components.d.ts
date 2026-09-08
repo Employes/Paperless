@@ -22,7 +22,7 @@ import { LabelVariant as LabelVariant1 } from "./components/molecules/label/labe
 import { Observable } from "rxjs";
 import { templateFunc as templateFunc2 } from "./components/molecules/pagination/pages/pagination-pages.component";
 import { templateFunc as templateFunc3 } from "./components/molecules/pagination/size/pagination-size.component";
-import { StepperStepItemObj } from "./components/organisms/stepper/stepper.component";
+import { StepperStepItem } from "./components/organisms/stepper/stepper.component";
 import { amountSelectedTemplateFunc as amountSelectedTemplateFunc1, templateFunc as templateFunc4 } from "./components/organisms/table/table.component";
 import { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
 import { buttonTemplateFunc } from "./components/molecules/table/header/table-header.component";
@@ -46,7 +46,7 @@ export { LabelVariant as LabelVariant1 } from "./components/molecules/label/labe
 export { Observable } from "rxjs";
 export { templateFunc as templateFunc2 } from "./components/molecules/pagination/pages/pagination-pages.component";
 export { templateFunc as templateFunc3 } from "./components/molecules/pagination/size/pagination-size.component";
-export { StepperStepItemObj } from "./components/organisms/stepper/stepper.component";
+export { StepperStepItem } from "./components/organisms/stepper/stepper.component";
 export { amountSelectedTemplateFunc as amountSelectedTemplateFunc1, templateFunc as templateFunc4 } from "./components/organisms/table/table.component";
 export { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
 export { buttonTemplateFunc } from "./components/molecules/table/header/table-header.component";
@@ -1943,7 +1943,7 @@ export namespace Components {
         /**
           * The steps but as a property, can also be used via slot
          */
-        "steps": string | string[] | StepperStepItemObj[];
+        "steps": string | string[] | StepperStepItem[];
         /**
           * The variant of the item
           * @default 'default'
@@ -5922,7 +5922,7 @@ declare namespace LocalJSX {
         /**
           * The steps but as a property, can also be used via slot
          */
-        "steps"?: string | string[] | StepperStepItemObj[];
+        "steps"?: string | string[] | StepperStepItem[];
         /**
           * The variant of the item
           * @default 'default'
