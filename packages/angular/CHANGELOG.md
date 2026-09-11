@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.25.0](https://github.com/Employes/Paperless/compare/v3.24.0...v3.25.0) (2026-09-11)
+
+### Features
+
+* **organisms/table:** Only allow hover on rows with actions if `enableRowClick`/`enableRowSelection` is disabled ([ce2c073](https://github.com/Employes/Paperless/commit/ce2c0739bb14dedf63be91a679f3232e88935356))
+
+
 # [3.24.0](https://github.com/Employes/Paperless/compare/v3.22.2...v3.24.0) (2026-09-08)
 
 ### Bug Fixes
