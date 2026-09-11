@@ -213,17 +213,19 @@
 		} @else {
 			@if (parsedItems.length) {
 				@for (item of parsedItems; track item; let rowIndex = $index) {
+					@let rowActionsRow =
+						parseRowActionsRow(rowActionsRow$ | async, rowIndex);
+
 					<p-table-row
 						class="group"
 						[checked]="_selectionContains(item, rowIndex)"
-						[enableHover]="enableRowSelection || enableRowClick"
+						[enableHover]="
+							enableRowSelection || enableRowClick || !!rowActionsRow.length
+						"
 						[isLast]="rowIndex === parsedItems.length - 1"
 						(click)="_rowClick($event, rowIndex)"
 					>
-						@if (
-							parseRowActionsRow(rowActionsRow$ | async, rowIndex);
-							as rowActionsRow
-						) {
+						@if (rowActionsRow) {
 							@for (col of columns$ | async; track col; let index = $index) {
 								<p-table-cell-ngx
 									[checkbox]="

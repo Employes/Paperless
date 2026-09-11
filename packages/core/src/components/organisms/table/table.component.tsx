@@ -746,24 +746,28 @@ export class Table {
 			return this._getEmptyState();
 		}
 
-		return this._items.map((item, index) => (
-			<p-table-row
-				checked={this._selectionContains(index)}
-				enableHover={this._enableRowSelection || this.enableRowClick}
-				isLast={index === this._items.length - 1}
-				onClick={ev => this._rowClick(ev, index)}
-			>
-				{this._getRowColumns(item, index)}
-				{this._getActions(item, index)}
-			</p-table-row>
-		));
+		return this._items.map((item, index) => {
+			const actions = this._rowActionsRow.filter(a =>
+				a.showFunction ? a.showFunction(item) : true
+			);
+
+			return (
+				<p-table-row
+					checked={this._selectionContains(index)}
+					enableHover={
+						this._enableRowSelection || this.enableRowClick || !!actions?.length
+					}
+					isLast={index === this._items.length - 1}
+					onClick={ev => this._rowClick(ev, index)}
+				>
+					{this._getRowColumns(item, index)}
+					{this._getActions(item, index, actions)}
+				</p-table-row>
+			);
+		});
 	}
 
-	private _getActions(item, index) {
-		const actions = this._rowActionsRow.filter(a =>
-			a.showFunction ? a.showFunction(item) : true
-		);
-
+	private _getActions(item: any, index: number, actions: any[]) {
 		if (actions?.length && !isMobile()) {
 			return (
 				<p-table-row-actions-container
@@ -796,6 +800,7 @@ export class Table {
 
 		return null;
 	}
+
 	private _getRowColumns(item, index) {
 		return this._columns.map((col: TableColumn, colIndex) => (
 			<p-table-cell
