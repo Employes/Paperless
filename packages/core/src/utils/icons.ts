@@ -56,6 +56,7 @@ import globeTwo from '../assets/icons/general/globe-2.svg';
 import globe from '../assets/icons/general/globe.svg';
 import hash from '../assets/icons/general/hash.svg';
 import hat from '../assets/icons/general/hat.svg';
+import heart from '../assets/icons/general/heart.svg';
 import home from '../assets/icons/general/home.svg';
 import integration from '../assets/icons/general/integration.svg';
 import lamp from '../assets/icons/general/lamp.svg';
@@ -193,6 +194,7 @@ export const categorized = {
 		'globe-2': globeTwo,
 		hash,
 		hat,
+		heart,
 		home,
 		integration,
 		lamp,
@@ -341,6 +343,7 @@ export const icons = {
 	'globe-2': globeTwo,
 	hash,
 	hat,
+	heart,
 	home,
 	integration,
 	lamp,
