@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.26.1](https://github.com/Employes/Paperless/compare/v3.26.0...v3.26.1) (2026-10-01)
+
+### Bug Fixes
+
+* **atoms/infopanel:** deleted padding right on closeable info panel ([4eddfc1](https://github.com/Employes/Paperless/commit/4eddfc1faccd3de1d4d8fa9dbfe9b1f2a57f420a))
+
+
 # [3.26.0](https://github.com/Employes/Paperless/compare/v3.25.0...v3.26.0) (2026-10-01)
 
 ### Features
