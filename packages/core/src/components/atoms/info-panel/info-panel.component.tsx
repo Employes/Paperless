@@ -14,9 +14,6 @@ const infopanel = cva(
 	['flex flex-col gap-1', 'h-inherit w-full px-4 py-3', 'relative rounded-lg'],
 	{
 		variants: {
-			closeAble: {
-				true: 'pr-10',
-			},
 			variant: {
 				neutral: `
       bg-indigo-100
@@ -138,7 +135,6 @@ export class InfoPanel {
 				<div
 					class={infopanel({
 						variant: this.variant,
-						closeAble: this.closeable,
 					})}
 				>
 					{(this.header?.length || hasHeaderSlot) && (
