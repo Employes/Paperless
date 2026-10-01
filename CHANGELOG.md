@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.26.0](https://github.com/Employes/Paperless/compare/v3.25.0...v3.26.0) (2026-10-01)
+
+### Features
+
+* **atoms/icon:** add heart icon ([b29f0e8](https://github.com/Employes/Paperless/commit/b29f0e8820df357ea1cd5babda60f7bfe01d1e1d))
+
+
 # [3.25.0](https://github.com/Employes/Paperless/compare/v3.24.0...v3.25.0) (2026-09-11)
 
 ### Features
