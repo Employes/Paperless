@@ -281,7 +281,6 @@ export class Attachment {
 						Array.isArray(this.accept) ? this.accept?.join(',') : this.accept
 					}
 					class='hidden'
-					name='attachment'
 					ref={el => (this._fileRef = el)}
 					type='file'
 					onChange={ev => this._onFileChange(ev)}
@@ -291,7 +290,6 @@ export class Attachment {
 					accept='image/*'
 					capture='true'
 					class='hidden'
-					name='camera'
 					ref={el => (this._cameraFileRef = el)}
 					type='file'
 					onChange={ev => this._onFileChange(ev)}
