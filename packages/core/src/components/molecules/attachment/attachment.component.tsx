@@ -8,7 +8,8 @@ import {
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
-import { cn, isTouchDevice } from '../../../utils';
+import { cn, isIOS, isTouchDevice } from '../../../utils';
+import { createInMemoryFile } from '../../../utils/create-in-memory-file';
 
 const attachment = cva(
 	[
@@ -318,7 +319,7 @@ export class Attachment {
 		this._cameraFileRef?.click();
 	}
 
-	private _onFileChange(ev: Event) {
+	private async _onFileChange(ev: Event) {
 		const target = ev.target as HTMLInputElement;
 		const file = target.files?.[0];
 
@@ -333,7 +334,11 @@ export class Attachment {
 		}
 	}
 
-	private _onLoad(file: File, result: string) {
+	private async _onLoad(file: File, result: string) {
+		if (isIOS()) {
+			file = await createInMemoryFile(file);
+		}
+
 		this.upload.emit({
 			fileId: this.fileId,
 			result,

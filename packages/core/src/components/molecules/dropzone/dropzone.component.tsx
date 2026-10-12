@@ -12,7 +12,8 @@ import { cva } from 'class-variance-authority';
 
 import { ThemedHost } from '../../../internal/themed-host.component';
 import { IconVariant } from '../../../types';
-import { cn } from '../../../utils';
+import { cn, isIOS } from '../../../utils';
+import { createInMemoryFile } from '../../../utils/create-in-memory-file';
 
 const dropzone = cva(
 	[
@@ -353,7 +354,11 @@ export class Dropzone {
 		reader.readAsDataURL(file);
 	}
 
-	private _onLoad(file: File, result: string) {
+	private async _onLoad(file: File, result: string) {
+		if (isIOS()) {
+			file = await createInMemoryFile(file);
+		}
+
 		this._results.push({
 			file,
 			result,
