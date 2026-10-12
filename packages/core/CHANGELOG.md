@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.26.4](https://github.com/Employes/Paperless/compare/v3.26.3...v3.26.4) (2026-10-12)
+
+### Bug Fixes
+
+* **molecules/attachment & dropzone:** Load file in memory and return it on ios ([dc5dff4](https://github.com/Employes/Paperless/commit/dc5dff4aa3f80f27ce54bf757821a9b3a2dc65e6))
+
+
 ## [3.26.3](https://github.com/Employes/Paperless/compare/v3.26.2...v3.26.3) (2026-10-12)
 
 ### Reverts
