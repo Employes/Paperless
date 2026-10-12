@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.26.3](https://github.com/Employes/Paperless/compare/v3.26.2...v3.26.3) (2026-10-12)
+
+### Reverts
+
+* Revert "fix(molecules/dropzone): Add name to input" ([39176ad](https://github.com/Employes/Paperless/commit/39176ad0edb5d20758bd43e57cb59fbc2a9fdc75))
+* Revert "fix(molecules/attachment): Add name to inputs" ([32613ef](https://github.com/Employes/Paperless/commit/32613ef0748cc699b575815cae8e51f5c6580436))
+
+
 ## [3.26.2](https://github.com/Employes/Paperless/compare/v3.26.1...v3.26.2) (2026-10-12)
 
 ### Bug Fixes
