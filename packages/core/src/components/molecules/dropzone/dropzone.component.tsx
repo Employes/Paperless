@@ -244,6 +244,7 @@ export class Dropzone {
 					accept={this.acceptGroup == 'any' ? '' : 'image/*'}
 					class='hidden'
 					multiple={this.allowMultiple === true ? true : undefined}
+					name='dropzone'
 					ref={el => (this._fileRef = el)}
 					type='file'
 					onChange={ev => this._onFileChange(ev)}
