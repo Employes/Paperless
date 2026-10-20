@@ -7,7 +7,7 @@ import { cn } from '../../../../utils';
 import { asBoolean } from '../../../../utils/as-boolean';
 
 const dropdownMenuItem = cva(
-	[`group flex max-w-full items-center gap-2 rounded-lg text-sm`],
+	[`group flex max-w-full items-center gap-2 rounded-lg`],
 	{
 		variants: {
 			variant: {
@@ -18,6 +18,7 @@ const dropdownMenuItem = cva(
       h-6 px-2 text-xs text-storm-300
       dark:text-hurricane-200
     `,
+				category: 'h-4 px-2 pt-1 text-xs',
 			},
 			active: {
 				false: null,
@@ -42,11 +43,17 @@ const dropdownMenuItem = cva(
 		},
 		compoundVariants: [
 			{
+				variant: ['default', 'storm', 'negative', 'pagination'],
+				class: 'text-sm',
+			},
+			{
+				variant: ['default', 'storm', 'negative', 'pagination'],
 				autoHeight: false,
 				enableTextWrap: true,
 				class: 'min-h-8',
 			},
 			{
+				variant: ['default', 'storm', 'negative', 'pagination'],
 				autoHeight: false,
 				enableTextWrap: false,
 				class: 'h-8',
@@ -181,6 +188,7 @@ const dropdownMenuItemIcon = cva(['text-base'], {
 			storm: null,
 			negative: null,
 			pagination: null,
+			category: null,
 		},
 		active: {
 			false: null,
@@ -270,7 +278,12 @@ export class DropdownMenuItem {
 	/**
 	 * The variant of the item
 	 */
-	@Prop() variant: 'default' | 'storm' | 'negative' | 'pagination' = 'default';
+	@Prop() variant:
+		| 'default'
+		| 'storm'
+		| 'negative'
+		| 'pagination'
+		| 'category' = 'default';
 
 	/**
 	 * Wether to enable the hover state

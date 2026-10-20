@@ -884,7 +884,11 @@ export namespace Components {
           * The variant of the item
           * @default 'default'
          */
-        "variant": 'default' | 'storm' | 'negative' | 'pagination';
+        "variant": | 'default'
+		| 'storm'
+		| 'negative'
+		| 'pagination'
+		| 'category';
     }
     interface PDropzone {
         /**
@@ -4762,7 +4766,11 @@ declare namespace LocalJSX {
           * The variant of the item
           * @default 'default'
          */
-        "variant"?: 'default' | 'storm' | 'negative' | 'pagination';
+        "variant"?: | 'default'
+		| 'storm'
+		| 'negative'
+		| 'pagination'
+		| 'category';
     }
     interface PDropzone {
         /**
