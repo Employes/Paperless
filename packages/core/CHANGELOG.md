@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.27.0](https://github.com/Employes/Paperless/compare/v3.26.4...v3.27.0) (2026-10-20)
+
+### Bug Fixes
+
+* **molecules/dropdown:** Skip hard setting variant for category items ([a8e68f6](https://github.com/Employes/Paperless/commit/a8e68f629223d23f14ec1805d3f0f6d25035eeab))
+
+### Features
+
+* **atoms/dropdown-menu/item:** Add category variant ([cdeeab7](https://github.com/Employes/Paperless/commit/cdeeab714eeeea5d9f3dd071d2f933b96aaef758))
+* **molecules/select:** Add hover event ([b368ff3](https://github.com/Employes/Paperless/commit/b368ff3c506f423f5bd01f3ba0881d13844a6975))
+* **molecules/select:** Add support for categories ([d893329](https://github.com/Employes/Paperless/commit/d893329217b9d96aacdd57dcf6d7d35ce9306a84))
+
+
 ## [3.26.4](https://github.com/Employes/Paperless/compare/v3.26.3...v3.26.4) (2026-10-12)
 
 ### Bug Fixes
