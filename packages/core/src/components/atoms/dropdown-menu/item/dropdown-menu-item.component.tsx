@@ -18,7 +18,10 @@ const dropdownMenuItem = cva(
       h-6 px-2 text-xs text-storm-300
       dark:text-hurricane-200
     `,
-				category: 'h-4 px-2 pt-1 text-xs',
+				category: `
+      h-4 px-2 pt-1 text-xs text-storm-300
+      dark:text-hurricane-200
+    `,
 			},
 			active: {
 				false: null,
