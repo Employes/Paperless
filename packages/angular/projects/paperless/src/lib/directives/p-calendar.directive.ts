@@ -5,7 +5,7 @@ import { BaseValueAccessor } from '../base';
 import { isSameDay } from '../util/is-same-day';
 
 @Directive({
-	selector: 'p-calendar',
+	selector: 'p-calendar:not([formField])',
 	host: {
 		'(valueChange)': 'handleChangeEvent($event.detail)',
 	},

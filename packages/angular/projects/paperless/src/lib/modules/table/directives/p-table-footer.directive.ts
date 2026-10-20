@@ -4,7 +4,7 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { BaseValueAccessor } from '../../../base';
 
 @Directive({
-	selector: 'p-table-footer',
+	selector: 'p-table-footer:not([formField])',
 	host: {
 		'(pageChange)': 'handleChange($event.detail, "page")',
 		'(pageSizeChange)': 'handleChange($event.detail, "pageSize")',

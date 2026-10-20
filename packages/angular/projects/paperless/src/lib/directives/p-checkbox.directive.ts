@@ -4,7 +4,7 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { BaseValueAccessor } from '../base';
 
 @Directive({
-	selector: 'p-checkbox',
+	selector: 'p-checkbox:not([formField])',
 	host: {
 		'(checkedChange)': 'handleChangeEvent($event.detail)',
 	},

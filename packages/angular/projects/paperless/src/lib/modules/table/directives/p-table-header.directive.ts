@@ -11,7 +11,7 @@ export interface TableHeaderDirectiveValue {
 }
 
 @Directive({
-	selector: 'p-table-header',
+	selector: 'p-table-header:not([formField])',
 	host: {
 		'(queryChange)': 'handleChange($event.detail, "query")',
 		'(quickFilter)': 'handleChange($event.detail, "quickFilter")',

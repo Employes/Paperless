@@ -4,7 +4,7 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { BaseValueAccessor } from '../base';
 
 @Directive({
-	selector: 'p-toggle',
+	selector: 'p-toggle:not([formField])',
 	host: {
 		'(checkedChange)': 'handleChangeEvent($event.detail)',
 	},

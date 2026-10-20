@@ -4,7 +4,7 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { BaseValueAccessor } from '../base';
 
 @Directive({
-	selector: 'p-pagination-pages',
+	selector: 'p-pagination-pages:not([formField])',
 	host: {
 		'(pageChange)': 'handleChangeEvent($event.detail)',
 	},

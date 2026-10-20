@@ -17,7 +17,7 @@ export interface TableDirectiveValue {
 }
 
 @Directive({
-	selector: 'p-table-ngx',
+	selector: 'p-table-ngx:not([formField])',
 	host: {
 		'(queryChange)': 'handleChange($event, "query")',
 		'(quickFilter)': 'handleChange($event, "quickFilter")',

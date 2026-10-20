@@ -5,7 +5,7 @@ import { filter, Subscription } from 'rxjs';
 import { BaseValueAccessor } from '../base';
 
 @Directive({
-	selector: 'p-radio',
+	selector: 'p-radio:not([formField])',
 	host: {
 		'(checkedChange)': 'handleChangeEvent()',
 	},

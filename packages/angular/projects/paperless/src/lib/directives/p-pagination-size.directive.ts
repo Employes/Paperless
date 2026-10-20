@@ -4,7 +4,7 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { BaseValueAccessor } from '../base';
 
 @Directive({
-	selector: 'p-pagination-size',
+	selector: 'p-pagination-size:not([formField])',
 	host: {
 		'(sizeChange)': 'handleChangeEvent($event.detail)',
 	},
