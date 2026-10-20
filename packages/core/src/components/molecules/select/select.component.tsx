@@ -77,7 +77,12 @@ export class Select {
 	/**
 	 * The items to show in the dropdown
 	 */
-	@Prop() items: string | any[];
+	@Prop() items:
+		| string
+		| any[]
+		| {
+				[key: string]: string | any[];
+		  };
 
 	/**
 	 * Wether to enable multi select
@@ -614,6 +619,9 @@ export class Select {
 
 		if (!this._selectedItem && !value && this.autoSelectFirst) {
 			value = this._items[0];
+			if (value?.type === 'category') {
+				value = this._items[1];
+			}
 		}
 
 		const identifier =
@@ -751,6 +759,18 @@ export class Select {
 
 	private _getItems() {
 		let items = this._items.map(item => {
+			if (item.type === 'category') {
+				return (
+					<p-dropdown-menu-item
+						slot='items'
+						useContainer={false}
+						variant='category'
+					>
+						{item.text}
+					</p-dropdown-menu-item>
+				);
+			}
+
 			const isSelected =
 				this.multi && !!this._selectedItem && Array.isArray(this._selectedItem)
 					? this._selectedItem.some(
@@ -1030,26 +1050,62 @@ export class Select {
 		return content;
 	}
 
-	private _getParsedItems(applyPagination = true) {
+	private _getParsedItems(applyPagination = true): any[] {
 		if (!this.items || this.loading) {
 			return [];
 		}
 
-		let items =
-			typeof this.items === 'string' ? JSON.parse(this.items) : this.items;
+		let items = this.items;
+
+		if (typeof this.items === 'string') {
+			items = JSON.parse(this.items);
+		}
+
+		if (typeof items === 'object' && !Array.isArray(items)) {
+			const categorizedItems = [];
+			for (const key in items) {
+				let itemsInCat = items[key];
+
+				if (typeof items[key]?.[0] === 'string') {
+					this.displayKey = 'text';
+					this.valueKey = 'value';
+
+					itemsInCat = (items[key] as string[]).map(str => ({
+						value: str,
+						text: str,
+					}));
+				}
+
+				categorizedItems.push(
+					{
+						type: 'category',
+						text: key,
+					},
+					...itemsInCat
+				);
+			}
+
+			items = categorizedItems;
+		}
 
 		if (typeof items?.[0] === 'string') {
 			this.displayKey = 'text';
 			this.valueKey = 'value';
 
-			items = items.map(str => ({
+			items = (items as string[]).map(str => ({
 				value: str,
 				text: str,
 			}));
 		}
 
+		let parsedItems = items as any[];
+
 		if (this.query?.length && !this.asyncFilter) {
-			items = items.filter(item => {
+			parsedItems = parsedItems.filter(item => {
+				if (item.type === 'category') {
+					return true;
+				}
+
 				if (this.queryKey) {
 					return this._checkvalue(this.queryKey, item);
 				}
@@ -1062,9 +1118,9 @@ export class Select {
 		}
 
 		if (!applyPagination) {
-			return items;
+			return parsedItems;
 		}
 
-		return items?.slice(0, this.maxDisplayedItems);
+		return parsedItems?.slice(0, this.maxDisplayedItems);
 	}
 }

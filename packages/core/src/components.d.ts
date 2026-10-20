@@ -1820,7 +1820,11 @@ export namespace Components {
         /**
           * The items to show in the dropdown
          */
-        "items": string | any[];
+        "items": | string
+		| any[]
+		| {
+				[key: string]: string | any[];
+		  };
         /**
           * The label of the input group used by the select
          */
@@ -5783,7 +5787,11 @@ declare namespace LocalJSX {
         /**
           * The items to show in the dropdown
          */
-        "items"?: string | any[];
+        "items"?: | string
+		| any[]
+		| {
+				[key: string]: string | any[];
+		  };
         /**
           * The label of the input group used by the select
          */

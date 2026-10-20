@@ -6,52 +6,6 @@ const meta = {
 	component: 'p-select',
 	args: {
 		label: 'Label',
-		items: JSON.stringify([
-			{
-				value: 'value',
-				text: 'Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 ',
-				class: 'text-negative-red-500',
-				iconClass:
-					'text-negative-red-500 group-hover/button:text-negative-red-800',
-				icon: 'user',
-			},
-			{
-				value: 'value2',
-				text: 'Option 2',
-			},
-			{
-				value: 'value3',
-				text: 'Option 3',
-			},
-			{
-				value: 'value4',
-				text: 'Option 4',
-			},
-			{
-				value: 'value5',
-				text: 'Option 5',
-			},
-			{
-				value: 'value6',
-				text: 'Option 6',
-			},
-			{
-				value: 'value7',
-				text: 'Option 7',
-			},
-			{
-				value: 'value8',
-				text: 'Option 8',
-			},
-			{
-				value: 'value9',
-				text: 'Option 9',
-			},
-			{
-				value: 'value10',
-				text: 'Option 10',
-			},
-		]),
 		'identifier-key': 'value',
 	},
 	parameters: {
@@ -68,7 +22,6 @@ export default meta;
 
 export const Default = {
 	render: ({
-		items,
 		multi,
 		strategy,
 		icon,
@@ -111,7 +64,197 @@ export const Default = {
 		'empty-state-text': emptyStateText,
 	}) => html`
 		<p-select
-			items=${items ?? nothing}
+			items=${JSON.stringify([
+				{
+					value: 'value',
+					text: 'Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 ',
+					class: 'text-negative-red-500',
+					iconClass:
+						'text-negative-red-500 group-hover/button:text-negative-red-800',
+					icon: 'user',
+				},
+				{
+					value: 'value2',
+					text: 'Option 2',
+				},
+				{
+					value: 'value3',
+					text: 'Option 3',
+				},
+				{
+					value: 'value4',
+					text: 'Option 4',
+				},
+				{
+					value: 'value5',
+					text: 'Option 5',
+				},
+				{
+					value: 'value6',
+					text: 'Option 6',
+				},
+				{
+					value: 'value7',
+					text: 'Option 7',
+				},
+				{
+					value: 'value8',
+					text: 'Option 8',
+				},
+				{
+					value: 'value9',
+					text: 'Option 9',
+				},
+				{
+					value: 'value10',
+					text: 'Option 10',
+				},
+			])}
+			multi=${multi ?? nothing}
+			strategy=${strategy ?? nothing}
+			icon=${icon ?? nothing}
+			query=${query ?? nothing}
+			placeholder=${placeholder ?? nothing}
+			autocomplete-placeholder=${autocompletePlaceholder ?? nothing}
+			value=${value ?? nothing}
+			display-key=${displayKey ?? nothing}
+			dropdown-display-key=${dropdownDisplayKey ?? nothing}
+			selection-display-key=${selectionDisplayKey ?? nothing}
+			value-key=${valueKey ?? nothing}
+			avatar-key=${avatarKey ?? nothing}
+			icon-key=${iconKey ?? nothing}
+			show-icon-in-selected-item=${showIconInSelectedItem ?? nothing}
+			class-key=${classKey ?? nothing}
+			apply-class-on-selected-item=${applyClassOnSelectedItem ?? nothing}
+			avatar-letters-key=${avatarLettersKey ?? nothing}
+			identifier-key=${identifierKey ?? nothing}
+			query-key=${queryKey ?? nothing}
+			auto-select-first=${autoSelectFirst ?? nothing}
+			show-chevron=${showChevron ?? nothing}
+			max-displayed-items=${maxDisplayedItems ?? nothing}
+			enable-autocomplete=${enableAutocomplete ?? nothing}
+			enable-text-wrap=${enableTextWrap ?? nothing}
+			async-filter=${asyncFilter ?? nothing}
+			loading=${loading ?? nothing}
+			enable-select-all=${enableSelectAll ?? nothing}
+			select-all-text=${selectAllText ?? nothing}
+			select-all-icon=${selectAllIcon ?? nothing}
+			size=${size ?? nothing}
+			prefix=${prefix ?? nothing}
+			label=${label ?? nothing}
+			helper=${helper ?? nothing}
+			required=${required ?? nothing}
+			show-optional=${showOptional ?? nothing}
+			error=${error ?? nothing}
+			disabled=${disabled ?? nothing}
+			show-add-item=${showAddItem ?? nothing}
+			add-item-text=${addItemText ?? nothing}
+			empty-state-text=${emptyStateText ?? nothing}
+			@queryChange=${action('queryChange')}
+			@valueChange=${action('valueChange')}
+			@selectAllChange=${action('selectAllChange')}
+			@dropdownShown=${action('dropdownShown')}
+			@add=${action('add')}
+		/>
+	`,
+};
+
+export const Categorized = {
+	render: ({
+		multi,
+		strategy,
+		icon,
+		query,
+		placeholder,
+		'autocomplete-placeholder': autocompletePlaceholder,
+		value,
+		'display-key': displayKey,
+		'dropdown-display-key': dropdownDisplayKey,
+		'selection-display-key': selectionDisplayKey,
+		'value-key': valueKey,
+		'avatar-key': avatarKey,
+		'icon-key': iconKey,
+		'show-icon-in-selected-item': showIconInSelectedItem,
+		'class-key': classKey,
+		'apply-class-on-selected-item': applyClassOnSelectedItem,
+		'avatar-letters-key': avatarLettersKey,
+		'identifier-key': identifierKey,
+		'query-key': queryKey,
+		'auto-select-first': autoSelectFirst,
+		'show-chevron': showChevron,
+		'max-displayed-items': maxDisplayedItems,
+		'enable-autocomplete': enableAutocomplete,
+		'enable-text-wrap': enableTextWrap,
+		'async-filter': asyncFilter,
+		loading,
+		'enable-select-all': enableSelectAll,
+		'select-all-text': selectAllText,
+		'select-all-icon': selectAllIcon,
+		size,
+		prefix,
+		label,
+		helper,
+		required,
+		'show-optional': showOptional,
+		error,
+		disabled,
+		'show-add-item': showAddItem,
+		'add-item-text': addItemText,
+		'empty-state-text': emptyStateText,
+	}) => html`
+		<p-select
+			items=${JSON.stringify({
+				'category 1': [
+					{
+						value: 'value',
+						text: 'Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 Option 1 Option 2 Option 3 ',
+						class: 'text-negative-red-500',
+						iconClass:
+							'text-negative-red-500 group-hover/button:text-negative-red-800',
+						icon: 'user',
+					},
+					{
+						value: 'value2',
+						text: 'Option 2',
+					},
+					{
+						value: 'value3',
+						text: 'Option 3',
+					},
+				],
+				'category 2': [
+					{
+						value: 'value4',
+						text: 'Option 4',
+					},
+					{
+						value: 'value5',
+						text: 'Option 5',
+					},
+					{
+						value: 'value6',
+						text: 'Option 6',
+					},
+				],
+				'category 3': [
+					{
+						value: 'value7',
+						text: 'Option 7',
+					},
+					{
+						value: 'value8',
+						text: 'Option 8',
+					},
+					{
+						value: 'value9',
+						text: 'Option 9',
+					},
+					{
+						value: 'value10',
+						text: 'Option 10',
+					},
+				]
+			})}
 			multi=${multi ?? nothing}
 			strategy=${strategy ?? nothing}
 			icon=${icon ?? nothing}
