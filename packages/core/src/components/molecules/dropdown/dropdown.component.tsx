@@ -269,7 +269,11 @@ export class Dropdown {
 		);
 
 		for (let item of items) {
-			if (item.variant === 'pagination' || item.variant === 'negative') {
+			if (
+				item.variant === 'pagination' ||
+				item.variant === 'negative' ||
+				item.variant === 'category'
+			) {
 				continue;
 			}
 
