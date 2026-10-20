@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.28.0](https://github.com/Employes/Paperless/compare/v3.27.1...v3.28.0) (2026-10-20)
+
+### Features
+
+* **angular:** Add signal based directives & base components ([6397856](https://github.com/Employes/Paperless/commit/6397856f6ce70e6d7fe0cdebc58aa56a358fdd79))
+
+
 ## [3.27.1](https://github.com/Employes/Paperless/compare/v3.27.0...v3.27.1) (2026-10-20)
 
 ### Bug Fixes
