@@ -19,6 +19,13 @@ import { IconVariant } from '../../../types/icon';
 import { childOfComposed, cn } from '../../../utils';
 import { SELECT_DEFAULT_MAX_DISPLAYED_ITEMS } from '../../../utils/constants';
 
+export interface SelectItemHoverEvent {
+	event: MouseEvent;
+	ref: EventTarget | null;
+	item: any;
+	index: number;
+}
+
 const multiContainer = cva([
 	'flex items-center gap-2',
 	'h-full min-w-0 flex-1',
@@ -270,6 +277,14 @@ export class Select {
 		bubbles: false,
 	})
 	dropdownShown: EventEmitter<any>;
+
+	/**
+	 * Event when hovering an item
+	 */
+	@Event({
+		bubbles: false,
+	})
+	itemHover: EventEmitter<SelectItemHoverEvent>;
 
 	/**
 	 * The size of the input group used by the select
@@ -758,7 +773,7 @@ export class Select {
 	}
 
 	private _getItems() {
-		let items = this._items.map(item => {
+		let items = this._items.map((item, index) => {
 			if (item.type === 'category') {
 				return (
 					<p-dropdown-menu-item
@@ -786,6 +801,14 @@ export class Select {
 					slot='items'
 					useContainer={false}
 					onClick={() => this._selectValue(item)}
+					onMouseEnter={event =>
+						this.itemHover.emit({
+							event,
+							ref: event.target,
+							item,
+							index,
+						})
+					}
 				>
 					{this._getDisplay(item, false, isSelected)}
 				</p-dropdown-menu-item>

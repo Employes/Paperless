@@ -56,13 +56,14 @@
 
 ## Events
 
-| Event             | Description                                             | Type                  |
-| ----------------- | ------------------------------------------------------- | --------------------- |
-| `add`             | Event when the add item is clicked                      | `CustomEvent<any>`    |
-| `dropdownShown`   | Event when the dropdown shows                           | `CustomEvent<any>`    |
-| `queryChange`     | Event when the query of the autocomplete changes        | `CustomEvent<string>` |
-| `selectAllChange` | Event when the select all item has been selected or not | `CustomEvent<any>`    |
-| `valueChange`     | Event when the value changes                            | `CustomEvent<any>`    |
+| Event             | Description                                             | Type                                |
+| ----------------- | ------------------------------------------------------- | ----------------------------------- |
+| `add`             | Event when the add item is clicked                      | `CustomEvent<any>`                  |
+| `dropdownShown`   | Event when the dropdown shows                           | `CustomEvent<any>`                  |
+| `itemHover`       | Event when hovering an item                             | `CustomEvent<SelectItemHoverEvent>` |
+| `queryChange`     | Event when the query of the autocomplete changes        | `CustomEvent<string>`               |
+| `selectAllChange` | Event when the select all item has been selected or not | `CustomEvent<any>`                  |
+| `valueChange`     | Event when the value changes                            | `CustomEvent<any>`                  |
 
 
 ## Dependencies

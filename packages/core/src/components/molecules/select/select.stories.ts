@@ -155,6 +155,7 @@ export const Default = {
 			@selectAllChange=${action('selectAllChange')}
 			@dropdownShown=${action('dropdownShown')}
 			@add=${action('add')}
+			@itemHover=${action('itemHover')}
 		/>
 	`,
 };
@@ -300,6 +301,7 @@ export const Categorized = {
 			@selectAllChange=${action('selectAllChange')}
 			@dropdownShown=${action('dropdownShown')}
 			@add=${action('add')}
+			@itemHover=${action('itemHover')}
 		/>
 	`,
 };
