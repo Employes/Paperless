@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.27.1](https://github.com/Employes/Paperless/compare/v3.27.0...v3.27.1) (2026-10-20)
+
+### Bug Fixes
+
+* **atoms/dropdown-menu/item:** Set correct text color ([540f880](https://github.com/Employes/Paperless/commit/540f880dd08b368dd3e886bed66789c4cfdd682f))
+
+
 # [3.27.0](https://github.com/Employes/Paperless/compare/v3.26.4...v3.27.0) (2026-10-20)
 
 ### Bug Fixes
