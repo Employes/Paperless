@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.28.1](https://github.com/Employes/Paperless/compare/v3.28.0...v3.28.1) (2026-10-21)
+
+### Bug Fixes
+
+* **angular/radio-directive:** Small option changes ([b7a784c](https://github.com/Employes/Paperless/commit/b7a784c517421662cb4f790b04deee66dcf38714))
+
+
 # [3.28.0](https://github.com/Employes/Paperless/compare/v3.27.1...v3.28.0) (2026-10-20)
 
 ### Features
