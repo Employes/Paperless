@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.28.2](https://github.com/Employes/Paperless/compare/v3.28.1...v3.28.2) (2026-10-21)
+
+### Bug Fixes
+
+* **angular/field-number-directive:** Small raw value fix ([1be8873](https://github.com/Employes/Paperless/commit/1be88736f114db5a76cc1506586fdb4900d0a508))
+
+
 ## [3.28.1](https://github.com/Employes/Paperless/compare/v3.28.0...v3.28.1) (2026-10-21)
 
 ### Bug Fixes
