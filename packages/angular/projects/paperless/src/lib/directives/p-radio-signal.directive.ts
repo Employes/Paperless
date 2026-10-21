@@ -1,4 +1,4 @@
-import { Directive } from '@angular/core';
+import { Directive, effect, input } from '@angular/core';
 
 import { BaseSignalValueControl } from '../base';
 
@@ -11,29 +11,24 @@ import { BaseSignalValueControl } from '../base';
 export class PRadioSignalDirective extends BaseSignalValueControl<
 	string | boolean
 > {
+	readonly option = input.required<string | boolean>();
+
+	constructor() {
+		super();
+
+		effect(() => {
+			this.el.nativeElement['value'] = this.option();
+		});
+	}
+
 	protected override writeValue(value: string | boolean | undefined) {
-		const elValue = this._getValue();
 		this.lastValue = value;
-		this.el.nativeElement['checked'] = value === elValue;
+		this.el.nativeElement['checked'] = value === this.option();
 	}
 
 	protected override handleChangeEvent() {
-		const elValue = this._getValue();
-		const next = this.lastValue === elValue ? undefined : elValue;
+		const next = this.lastValue === this.option() ? undefined : this.option();
 		this.lastValue = next;
 		this.value.set(next);
-	}
-
-	private _getValue(): string | boolean {
-		const raw = this.el.nativeElement['value'];
-		if (raw === 'true') {
-			return true;
-		}
-
-		if (raw === 'false') {
-			return false;
-		}
-
-		return typeof raw === 'string' ? raw : String(raw);
 	}
 }
