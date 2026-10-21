@@ -5,8 +5,8 @@ import { BaseSignalValueControl } from '../base';
 @Directive({
 	selector: 'p-field:not([type=number])[formField]',
 })
-export class PFieldSignalDirective extends BaseSignalValueControl<number> {
-	protected override writeValue(value: number) {
+export class PFieldSignalDirective extends BaseSignalValueControl<string> {
+	protected override writeValue(value: string) {
 		this.el.nativeElement['value'] = this.lastValue =
 			value === null ? JSON.parse(value) : value;
 	}
