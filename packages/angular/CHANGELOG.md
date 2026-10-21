@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.28.3](https://github.com/Employes/Paperless/compare/v3.28.2...v3.28.3) (2026-10-21)
+
+### Bug Fixes
+
+* **angular/field-directive:** Set field directive default to string ([9cf0e9a](https://github.com/Employes/Paperless/commit/9cf0e9a9a9160615f5508fd57ff086380ee2f120))
+
+
 ## [3.28.2](https://github.com/Employes/Paperless/compare/v3.28.1...v3.28.2) (2026-10-21)
 
 ### Bug Fixes
