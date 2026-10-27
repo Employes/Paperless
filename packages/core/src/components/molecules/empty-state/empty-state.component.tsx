@@ -1,10 +1,10 @@
 import {
 	Component,
-	h,
-	Prop,
+	Element,
 	Event,
 	EventEmitter,
-	Element,
+	h,
+	Prop,
 } from '@stencil/core';
 import { cva } from 'class-variance-authority';
 
@@ -15,7 +15,7 @@ import { IllustrationVariant } from '../../../types/illustration';
 import { asBoolean } from '../../../utils/as-boolean';
 
 const emptyState = cva(
-	['flex w-full max-w-[20rem] flex-col items-center justify-start'],
+	['flex w-full max-w-[27.5rem] flex-col items-center justify-start'],
 	{
 		variants: {
 			enableAction: {
