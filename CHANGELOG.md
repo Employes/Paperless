@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.28.4](https://github.com/Employes/Paperless/compare/v3.28.3...v3.28.4) (2026-10-27)
+
+### Bug Fixes
+
+* **molecules/empty-state:** changed max width of empty state to 440px ([#314](https://github.com/Employes/Paperless/issues/314)) ([e614175](https://github.com/Employes/Paperless/commit/e614175a80f7179638f1de887b77aaf3adba9d1c))
+
+
 ## [3.28.3](https://github.com/Employes/Paperless/compare/v3.28.2...v3.28.3) (2026-10-21)
 
 ### Bug Fixes
