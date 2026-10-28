@@ -15,7 +15,12 @@ import { IllustrationVariant } from '../../../types/illustration';
 import { asBoolean } from '../../../utils/as-boolean';
 
 const emptyState = cva(
-	['flex w-full max-w-[27.5rem] flex-col items-center justify-start'],
+	[
+		`
+    flex w-full max-w-[27.5rem] flex-col items-center justify-start
+    whitespace-pre-line
+  `,
+	],
 	{
 		variants: {
 			enableAction: {
