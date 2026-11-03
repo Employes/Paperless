@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.28.5](https://github.com/Employes/Paperless/compare/v3.28.4...v3.28.5) (2026-11-03)
+
+### Bug Fixes
+
+* **organisms/table:** Hide the floating menu container if there is no selected rows ([e49072a](https://github.com/Employes/Paperless/commit/e49072aab77e99cccbb030bae0905e70a4f7891b))
+
+
 ## [3.28.4](https://github.com/Employes/Paperless/compare/v3.28.3...v3.28.4) (2026-10-27)
 
 ### Bug Fixes
