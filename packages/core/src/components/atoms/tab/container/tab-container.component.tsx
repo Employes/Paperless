@@ -1,4 +1,7 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
+
+import { cn } from '../../../../utils';
+import { asBoolean } from '../../../../utils/as-boolean';
 
 @Component({
 	tag: 'p-tab-container',
@@ -6,10 +9,19 @@ import { Component, h } from '@stencil/core';
 	shadow: true,
 })
 export class TabContainer {
+	/**
+	 * Whether to enable scroll
+	 */
+	@Prop() enableScroll: boolean = true;
+
 	render() {
 		return (
 			<div class='relative flex h-8 w-full flex-col'>
-				<div class='flex w-full gap-5 overflow-x-auto scrollbar-hide'>
+				<div
+					class={cn('flex w-full gap-5 scrollbar-hide', {
+						'overflow-x-auto': asBoolean(this.enableScroll),
+					})}
+				>
 					<slot />
 				</div>
 				<p-divider
