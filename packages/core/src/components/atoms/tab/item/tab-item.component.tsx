@@ -5,7 +5,7 @@ import { ThemedHost } from '../../../../internal/themed-host.component';
 
 const item = cva(
 	[
-		'flex h-8 flex-col justify-between text-sm',
+		'flex h-8 items-center justify-center gap-2 text-sm',
 		'cursor-pointer',
 		`
     after:content-['
@@ -49,11 +49,33 @@ export class TabItem {
 	 */
 	@Prop() active: boolean = false;
 
+	/**
+	 * Wether to show a chevron or not
+	 */
+	@Prop() chevron?: boolean | 'up' | 'down' = false;
+
+	/**
+	 * Chevron position
+	 */
+	@Prop() chevronPosition?: 'start' | 'end' = 'end';
+
 	render() {
 		return (
 			<ThemedHost>
 				<div class={item({ active: this.active })}>
+					{this.chevron && this.chevronPosition === 'start' && (
+						<p-icon
+							rotate={this.chevron === 'up' ? 180 : 0}
+							variant='caret'
+						/>
+					)}
 					<slot />
+					{this.chevron && this.chevronPosition === 'end' && (
+						<p-icon
+							rotate={this.chevron === 'up' ? 180 : 0}
+							variant='caret'
+						/>
+					)}
 				</div>
 			</ThemedHost>
 		);
