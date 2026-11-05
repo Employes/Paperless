@@ -2058,6 +2058,11 @@ export namespace Components {
         "icon": IconVariant1;
     }
     interface PTabContainer {
+        /**
+          * Whether to enable scroll
+          * @default true
+         */
+        "enableScroll": boolean;
     }
     interface PTabItem {
         /**
@@ -6054,6 +6059,11 @@ declare namespace LocalJSX {
         "onActiveChange"?: (event: PSubmenuItemCustomEvent<boolean>) => void;
     }
     interface PTabContainer {
+        /**
+          * Whether to enable scroll
+          * @default true
+         */
+        "enableScroll"?: boolean;
     }
     interface PTabItem {
         /**

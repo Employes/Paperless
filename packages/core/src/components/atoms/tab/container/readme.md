@@ -5,6 +5,13 @@
 <!-- Auto Generated Below -->
 
 
+## Properties
+
+| Property       | Attribute       | Description              | Type      | Default |
+| -------------- | --------------- | ------------------------ | --------- | ------- |
+| `enableScroll` | `enable-scroll` | Whether to enable scroll | `boolean` | `true`  |
+
+
 ## Dependencies
 
 ### Depends on
