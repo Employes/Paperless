@@ -2070,6 +2070,16 @@ export namespace Components {
           * @default false
          */
         "active": boolean;
+        /**
+          * Wether to show a chevron or not
+          * @default false
+         */
+        "chevron"?: boolean | 'up' | 'down';
+        /**
+          * Chevron position
+          * @default 'end'
+         */
+        "chevronPosition"?: 'start' | 'end';
     }
     interface PTable {
         /**
@@ -6071,6 +6081,16 @@ declare namespace LocalJSX {
           * @default false
          */
         "active"?: boolean;
+        /**
+          * Wether to show a chevron or not
+          * @default false
+         */
+        "chevron"?: boolean | 'up' | 'down';
+        /**
+          * Chevron position
+          * @default 'end'
+         */
+        "chevronPosition"?: 'start' | 'end';
     }
     interface PTable {
         /**

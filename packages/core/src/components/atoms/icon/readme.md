@@ -42,6 +42,7 @@
  - [p-stepper-item](../stepper/item)
  - [p-submenu](../../molecules/submenu/menu)
  - [p-submenu-item](../../molecules/submenu/item)
+ - [p-tab-item](../tab/item)
  - [p-toast](../../molecules/toast)
 
 ### Graph
@@ -70,6 +71,7 @@ graph TD;
   p-stepper-item --> p-icon
   p-submenu --> p-icon
   p-submenu-item --> p-icon
+  p-tab-item --> p-icon
   p-toast --> p-icon
   style p-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
