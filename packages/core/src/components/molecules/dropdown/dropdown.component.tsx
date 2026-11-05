@@ -170,7 +170,7 @@ export class Dropdown {
 	}
 
 	componentDidLoad() {
-		this._checkButtons();
+		this._checkTriggers();
 	}
 
 	disconnectedCallback() {
@@ -183,7 +183,7 @@ export class Dropdown {
 	}
 
 	componentDidRender() {
-		this._checkButtons();
+		this._checkTriggers();
 		this._checkItems();
 	}
 
@@ -226,32 +226,34 @@ export class Dropdown {
 		);
 	}
 
-	private _checkButtons(active: boolean = false) {
-		const buttons = this._el.querySelectorAll<HTMLPButtonElement>(
-			'p-button[slot="trigger"]'
-		);
+	private _checkTriggers(active: boolean = false) {
+		const triggers = this._el.querySelectorAll<
+			HTMLPButtonElement | HTMLPTabItemElement
+		>('p-button[slot="trigger"], p-tab-item[slot="trigger"]');
 
 		const isOpen = this._menu.dataset.show === 'true';
 
-		for (let button of buttons) {
-			button.disabled = this.disableTriggerClick;
-			button.active = active;
-
-			if (button.iconOnly) {
-				continue;
+		for (const trigger of triggers) {
+			if ('disabled' in trigger) {
+				trigger.disabled = this.disableTriggerClick;
+				if (trigger.iconOnly) {
+					continue;
+				}
 			}
+
+			trigger.active = active;
 
 			if (this.applyChevron === false || this.manualChevron === true) {
 				if (this.manualChevron === false) {
-					button.chevron = false;
+					trigger.chevron = false;
 				}
 
 				continue;
 			}
 
-			button.chevronPosition = this.chevronPosition;
+			trigger.chevronPosition = this.chevronPosition;
 
-			button.chevron =
+			trigger.chevron =
 				this.chevronDirection ??
 				(this.placement.includes('top')
 					? isOpen
@@ -360,7 +362,7 @@ export class Dropdown {
 		this._menu.classList.add('block');
 
 		this.isOpen.emit(true);
-		this._checkButtons(true);
+		this._checkTriggers(true);
 	}
 
 	private _hide() {
@@ -379,7 +381,7 @@ export class Dropdown {
 		this._menu.classList.add('hidden');
 
 		this.isOpen.emit(false);
-		this._checkButtons(false);
+		this._checkTriggers(false);
 	}
 
 	private _update() {
