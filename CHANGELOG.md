@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.29.1](https://github.com/Employes/Paperless/compare/v3.29.0...v3.29.1) (2026-11-06)
+
+### Bug Fixes
+
+* **atoms/tab/item:** fixed active state for tab-item ([25ab595](https://github.com/Employes/Paperless/commit/25ab59560bf054c53b5f37f6c859c362307cf1cb))
+
+
 # [3.29.0](https://github.com/Employes/Paperless/compare/v3.28.5...v3.29.0) (2026-11-06)
 
 ### Features
