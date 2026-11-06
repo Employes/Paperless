@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.29.0](https://github.com/Employes/Paperless/compare/v3.28.5...v3.29.0) (2026-11-06)
+
+### Features
+
+* **atoms/tab/container:** added enableScroll to tab container ([a947b92](https://github.com/Employes/Paperless/commit/a947b92cdb2b3c233d116b3747c3d8980b4a23ba))
+* **atoms/tab/item:** support chevron in tab item ([8300c31](https://github.com/Employes/Paperless/commit/8300c31316f1b8d1336148ef352dc9a501f9d2b5))
+* **molecules/dropdown:** support dropdown in tab item ([55b1326](https://github.com/Employes/Paperless/commit/55b1326572a545ae3afa9fa2b23ed13982e78da2))
+
+
 ## [3.28.5](https://github.com/Employes/Paperless/compare/v3.28.4...v3.28.5) (2026-11-03)
 
 ### Bug Fixes
