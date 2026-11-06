@@ -5,7 +5,7 @@ import { ThemedHost } from '../../../../internal/themed-host.component';
 
 const item = cva(
 	[
-		'flex h-8 items-center justify-center gap-2 text-sm',
+		'flex h-8 flex-col justify-between text-sm',
 		'cursor-pointer',
 		`
     after:content-['
@@ -63,19 +63,21 @@ export class TabItem {
 		return (
 			<ThemedHost>
 				<div class={item({ active: this.active })}>
-					{this.chevron && this.chevronPosition === 'start' && (
-						<p-icon
-							rotate={this.chevron === 'up' ? 180 : 0}
-							variant='caret'
-						/>
-					)}
-					<slot />
-					{this.chevron && this.chevronPosition === 'end' && (
-						<p-icon
-							rotate={this.chevron === 'up' ? 180 : 0}
-							variant='caret'
-						/>
-					)}
+					<div class='flex items-center gap-2'>
+						{this.chevron && this.chevronPosition === 'start' && (
+							<p-icon
+								rotate={this.chevron === 'up' ? 180 : 0}
+								variant='caret'
+							/>
+						)}
+						<slot />
+						{this.chevron && this.chevronPosition === 'end' && (
+							<p-icon
+								rotate={this.chevron === 'up' ? 180 : 0}
+								variant='caret'
+							/>
+						)}
+					</div>
 				</div>
 			</ThemedHost>
 		);
