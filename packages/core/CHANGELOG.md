@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.29.2](https://github.com/Employes/Paperless/compare/v3.29.1...v3.29.2) (2026-11-06)
+
+### Bug Fixes
+
+* **molecules/empty-state:** added whitespace pre line ([#315](https://github.com/Employes/Paperless/issues/315)) ([f95a813](https://github.com/Employes/Paperless/commit/f95a813fd1f5f7f48e028ab8c3f8f870420ef4f5))
+
+
 ## [3.29.1](https://github.com/Employes/Paperless/compare/v3.29.0...v3.29.1) (2026-11-06)
 
 ### Bug Fixes
