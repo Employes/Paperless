@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.29.4](https://github.com/Employes/Paperless/compare/v3.29.3...v3.29.4) (2026-11-17)
+
+### Bug Fixes
+
+- **atoms/stepper/item:** Fix alignment ([dedf977](https://github.com/Employes/Paperless/commit/dedf97724dfc3eac7372dc72eb4cf19501a9522a))
+
 ## [3.29.3](https://github.com/Employes/Paperless/compare/v3.29.2...v3.29.3) (2026-11-17)
 
 ### Bug Fixes
