@@ -370,6 +370,10 @@ export class Stepper {
 				}
 			}
 
+			if (this.direction === 'vertical' && this.variant === 'icon') {
+				stepperLine.style.marginLeft = '1rem';
+			}
+
 			stepperLine.style.minHeight = `calc(${totalHeight / 16}rem)`;
 		}
 	}

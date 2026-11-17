@@ -56,6 +56,9 @@ jobs:
           email: 'actions@github.com'
           token: '${{ secrets.GITHUB_TOKEN }}'
 
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+
       - name: Version
         if: |
           github.ref == 'refs/heads/main'
