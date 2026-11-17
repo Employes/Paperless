@@ -239,7 +239,11 @@ export class StepperItem {
 			<ThemedHost>
 				<div
 					class={item({
-						align: this.variant === 'default' ? this.align : 'center',
+						align:
+							this.variant === 'default' ||
+							(this.variant === 'icon' && this.direction === 'vertical')
+								? this.align
+								: 'center',
 						contentPosition: this.contentPosition,
 					})}
 				>
