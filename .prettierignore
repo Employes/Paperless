@@ -7,3 +7,5 @@
 .vscode/ngxs.code-snippets
 ./**/.angular
 node_modules
+
+/.nx/workspace-data

@@ -56,6 +56,9 @@ jobs:
           email: 'actions@github.com'
           token: '${{ secrets.GITHUB_TOKEN }}'
 
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+
       - name: Version
         if: |
           github.ref == 'refs/heads/main'
@@ -152,6 +155,9 @@ jobs:
           npm install -g npm@~11.10.0
           npm install -g npm@latest
 
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+
       - name: Release
         if: |
           github.ref == 'refs/heads/main'
@@ -193,7 +199,7 @@ jobs:
           cache: 'yarn'
 
       - name: Install dependencies
-        run: yarn
+        run: yarn --frozen-lockfile
 
       - name: Build storybook
         env:

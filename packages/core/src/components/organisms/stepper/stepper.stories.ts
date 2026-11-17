@@ -5,6 +5,8 @@ const meta = {
 	component: 'p-stepper',
 	args: {
 		steps: JSON.stringify([{ content: 'Step 1', icon: 'car' }, { content: 'Step 2', icon: 'user' }, { content: 'Step 3', icon: 'cake'}]),
+		variant: 'icon',
+		align: 'start'
 	},
 	parameters: {
 		docs: {
@@ -54,7 +56,7 @@ export const Vertical = {
 			content-position=${contentPosition ?? nothing}
 			variant=${variant ?? nothing}
 		>
-			<p-stepper-item>
+			<p-stepper-item icon="user">
 				<p-card-container>
 					<p-card-body>
 						Some content but longer <br />
@@ -63,7 +65,7 @@ export const Vertical = {
 					</p-card-body>
 				</p-card-container>
 			</p-stepper-item>
-			<p-stepper-item>
+			<p-stepper-item icon="document">
 				<p-card-container>
 					<p-card-body>
 						Some content but longer <br />
@@ -72,7 +74,7 @@ export const Vertical = {
 					</p-card-body>
 				</p-card-container>
 			</p-stepper-item>
-			<p-stepper-item>
+			<p-stepper-item icon="hat">
 				<p-card-container>
 					<p-card-body>Some content</p-card-body>
 				</p-card-container>
