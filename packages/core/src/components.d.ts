@@ -2085,6 +2085,11 @@ export namespace Components {
           * @default 'end'
          */
         "chevronPosition"?: 'start' | 'end';
+        /**
+          * Whether the dropdown this tab item triggers is open
+          * @default false
+         */
+        "dropdownActive": boolean;
     }
     interface PTable {
         /**
@@ -6101,6 +6106,11 @@ declare namespace LocalJSX {
           * @default 'end'
          */
         "chevronPosition"?: 'start' | 'end';
+        /**
+          * Whether the dropdown this tab item triggers is open
+          * @default false
+         */
+        "dropdownActive"?: boolean;
     }
     interface PTable {
         /**
