@@ -1348,6 +1348,11 @@ export namespace Components {
          */
         "keepMobileContent": boolean;
         /**
+          * Size of the label
+          * @default 'default'
+         */
+        "size": 'default' | 'small';
+        /**
           * Variant of the label
           * @default 'neutral'
          */
@@ -5282,6 +5287,11 @@ declare namespace LocalJSX {
           * @default false
          */
         "keepMobileContent"?: boolean;
+        /**
+          * Size of the label
+          * @default 'default'
+         */
+        "size"?: 'default' | 'small';
         /**
           * Variant of the label
           * @default 'neutral'
