@@ -20,6 +20,10 @@ const item = cva(
       text-indigo-600
       after:bg-indigo-600
     `,
+				dropdown: `
+      text-storm-500
+      after:bg-storm-500
+    `,
 				false: [
 					`
        text-storm-300
@@ -59,10 +63,19 @@ export class TabItem {
 	 */
 	@Prop() chevronPosition?: 'start' | 'end' = 'end';
 
+	/**
+	 * Whether the dropdown this tab item triggers is open
+	 */
+	@Prop() dropdownActive: boolean = false;
+
 	render() {
 		return (
 			<ThemedHost>
-				<div class={item({ active: this.active })}>
+				<div
+					class={item({
+						active: this.dropdownActive ? 'dropdown' : this.active,
+					})}
+				>
 					<div class='flex items-center gap-2'>
 						{this.chevron && this.chevronPosition === 'start' && (
 							<p-icon

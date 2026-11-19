@@ -241,7 +241,11 @@ export class Dropdown {
 				}
 			}
 
-			trigger.active = active;
+			if ('dropdownActive' in trigger) {
+				trigger.dropdownActive = active;
+			} else {
+				trigger.active = active;
+			}
 
 			if (this.applyChevron === false || this.manualChevron === true) {
 				if (this.manualChevron === false) {

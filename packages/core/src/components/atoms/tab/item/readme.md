@@ -7,11 +7,12 @@
 
 ## Properties
 
-| Property          | Attribute          | Description                     | Type                        | Default |
-| ----------------- | ------------------ | ------------------------------- | --------------------------- | ------- |
-| `active`          | `active`           | Wether the tab item is active   | `boolean`                   | `false` |
-| `chevron`         | `chevron`          | Wether to show a chevron or not | `"down" \| "up" \| boolean` | `false` |
-| `chevronPosition` | `chevron-position` | Chevron position                | `"end" \| "start"`          | `'end'` |
+| Property          | Attribute          | Description                                         | Type                        | Default |
+| ----------------- | ------------------ | --------------------------------------------------- | --------------------------- | ------- |
+| `active`          | `active`           | Wether the tab item is active                       | `boolean`                   | `false` |
+| `chevron`         | `chevron`          | Wether to show a chevron or not                     | `"down" \| "up" \| boolean` | `false` |
+| `chevronPosition` | `chevron-position` | Chevron position                                    | `"end" \| "start"`          | `'end'` |
+| `dropdownActive`  | `dropdown-active`  | Whether the dropdown this tab item triggers is open | `boolean`                   | `false` |
 
 
 ## Dependencies
