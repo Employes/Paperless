@@ -57,7 +57,7 @@ const circle = cva(
 				variant: 'default',
 				class: [
 					'border-indigo-600 bg-indigo-50 text-indigo-600',
-					'dark:border-white/15 dark:bg-white/15 dark:text-hurricane-200',
+					'dark:border-transparent dark:bg-hurricane-400 dark:text-hurricane-200',
 				],
 			},
 			{
@@ -80,7 +80,7 @@ const circle = cva(
 				variant: 'icon',
 				class: [
 					'bg-indigo-100 text-storm-200',
-					'dark:bg-white/15 dark:text-hurricane-200',
+					'dark:bg-hurricane-400 dark:text-hurricane-200',
 				],
 			},
 			{
@@ -93,7 +93,10 @@ const circle = cva(
 				active: false,
 				finished: true,
 				variant: 'icon',
-				class: 'bg-indigo-100 text-indigo-600',
+				class: `
+      bg-indigo-100 text-indigo-600
+      dark:bg-hurricane-400
+    `,
 			},
 
 			{
