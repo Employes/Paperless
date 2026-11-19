@@ -18,7 +18,7 @@ export interface StepperStepItem {
 	finished?: boolean;
 }
 
-const stepper = cva(['flex gap-2'], {
+const stepper = cva(['flex'], {
 	variants: {
 		direction: {
 			vertical: 'w-full flex-col flex-wrap',
@@ -28,7 +28,22 @@ const stepper = cva(['flex gap-2'], {
 			true: 'opacity-100',
 			false: 'opacity-0',
 		},
+		variant: {
+			default: null,
+			icon: null,
+		},
 	},
+	compoundVariants: [
+		{
+			direction: 'horizontal',
+			class: 'gap-2',
+		},
+		{
+			direction: 'vertical',
+			variant: 'default',
+			class: 'gap-2',
+		},
+	],
 });
 
 @Component({
@@ -133,6 +148,7 @@ export class Stepper {
 					class={stepper({
 						direction: this.direction,
 						generatedOnce: true,
+						variant: this.variant,
 					})}
 					ref={ref => this._setContainerRef(ref)}
 				>
@@ -146,6 +162,7 @@ export class Stepper {
 				class={stepper({
 					direction: this.direction,
 					generatedOnce: this._generatedOnce,
+					variant: this.variant,
 				})}
 				ref={ref => this._setContainerRef(ref)}
 			>
@@ -350,12 +367,14 @@ export class Stepper {
 
 			if (this.align === 'start' || this.align === 'center') {
 				stepperLine.style.marginTop = `-${
-					heightDiff / 16 - (this.align === 'start' ? 1.5 : 0)
+					heightDiff / 16 -
+					(this.align === 'start' ? (this.variant === 'icon' ? 1.7 : 1.5) : 0)
 				}rem`;
 				totalHeight += heightDiff - (this.align === 'start' ? 8 : 0);
 
 				if (this.align === 'start') {
-					stepperLine.style.marginBottom = `-1rem`;
+					stepperLine.style.marginBottom =
+						this.variant === 'icon' ? '-1.3rem' : '-1rem';
 				}
 			}
 
