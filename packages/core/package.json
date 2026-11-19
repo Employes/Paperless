@@ -1,6 +1,6 @@
 {
 	"name": "@paperless/core",
-	"version": "3.29.4",
+	"version": "3.30.0",
 	"description": "Stencil Component Starter",
 	"type": "module",
 	"main": "dist/index.cjs.js",

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.30.0](https://github.com/Employes/Paperless/compare/v3.29.4...v3.30.0) (2026-11-19)
+
+### Bug Fixes
+
+- **atoms/stepper/item:** Different dark mode background ([2514af6](https://github.com/Employes/Paperless/commit/2514af667b82838f7cf8d702fcf5ea8f65923e70))
+- **organisms/stepper:** Change spacings between icon variant & vertical ([9ec9486](https://github.com/Employes/Paperless/commit/9ec948604f9cb662a0ce67709a130c00b2f57d10))
+
+### Features
+
+- **molecules/label:** Add small variant ([4a924a1](https://github.com/Employes/Paperless/commit/4a924a11f36850d8dc4e8fec0db49e53fbc1a27c))
+
 ## [3.29.4](https://github.com/Employes/Paperless/compare/v3.29.3...v3.29.4) (2026-11-17)
 
 ### Bug Fixes
