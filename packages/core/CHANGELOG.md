@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.30.1](https://github.com/Employes/Paperless/compare/v3.30.0...v3.30.1) (2026-11-19)
+
+### Bug Fixes
+
+- **atoms/tab/item:** correct colors on active dropdown in tab container ([#319](https://github.com/Employes/Paperless/issues/319)) ([2670ae4](https://github.com/Employes/Paperless/commit/2670ae47f660eada0a6a82e9ee8235b0e6e69a7a))
+
 # [3.30.0](https://github.com/Employes/Paperless/compare/v3.29.4...v3.30.0) (2026-11-19)
 
 ### Bug Fixes
