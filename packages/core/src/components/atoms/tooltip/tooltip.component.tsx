@@ -36,9 +36,12 @@ const popover = cva(
 			variant: {
 				default: `
       max-w-[14.5rem] bg-storm-500 py-1 text-white
-      dark:bg-white dark:text-storm-300
+      dark:bg-hurricane-400
     `,
-				informative: 'max-w-[18rem]',
+				informative: `
+      max-w-[18rem] border border-solid border-storm-100
+      dark:border-hurricane-800
+    `,
 				error: 'w-full max-w-full',
 			},
 			strategy: {
