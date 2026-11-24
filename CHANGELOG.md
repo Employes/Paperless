@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.31.0](https://github.com/Employes/Paperless/compare/v3.30.1...v3.31.0) (2026-11-24)
+
+### Features
+
+- **tooltip:** Split trigger type & variant ([fda8d7e](https://github.com/Employes/Paperless/commit/fda8d7e85e7f6d5b13cdcdd6fa4cf8ac6cacb69c))
+
 ## [3.30.1](https://github.com/Employes/Paperless/compare/v3.30.0...v3.30.1) (2026-11-19)
 
 ### Bug Fixes
