@@ -395,6 +395,16 @@ export class Field {
 	@Prop({ reflect: true }) selectAllOnFocus: boolean = true;
 
 	/**
+	 * Disable space input
+	 */
+	@Prop({ reflect: true }) disableSpace: boolean = false;
+
+	/**
+	 * Disable dash input
+	 */
+	@Prop({ reflect: true }) disableDash: boolean = false;
+
+	/**
 	 * The method to use when focusing the input
 	 */
 	@Prop() focusMethod: 'focus' | 'click' = 'focus';
@@ -806,7 +816,19 @@ export class Field {
 			| HTMLTextAreaElement
 			| HTMLInputElement;
 
-		const value = target.value;
+		let value = target.value;
+
+		if (this.disableSpace) {
+			const noSpaceValue = value.replaceAll(/\s/gi, '');
+			value = noSpaceValue;
+			target.value = value;
+		}
+
+		if (this.disableDash) {
+			const noDashValue = value.replaceAll(/-/gi, '');
+			value = noDashValue;
+			target.value = value;
+		}
 
 		this._lastValue = value;
 		this.value = value;

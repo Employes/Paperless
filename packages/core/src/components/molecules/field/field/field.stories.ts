@@ -35,6 +35,8 @@ export const Default = {
 		helper,
 		required,
 		'show-optional': showOptional,
+		'disable-space': disableSpace,
+		'disable-dash': disableDash,
 		autofocus,
 		error,
 		'error-placement': errorPlacement,
@@ -65,6 +67,8 @@ export const Default = {
 			helper=${helper ?? nothing}
 			required=${required ?? nothing}
 			show-optional=${showOptional ?? nothing}
+			disable-space=${disableSpace ?? nothing}
+			disable-dash=${disableDash ?? nothing}
 			autofocus=${autofocus ?? nothing}
 			error=${error ?? nothing}
 			error-placement=${errorPlacement ?? nothing}
@@ -99,6 +103,9 @@ export const OverflowReadOnly = {
 		placeholder,
 		helper,
 		required,
+		'show-optional': showOptional,
+		'disable-space': disableSpace,
+		'disable-dash': disableDash,
 		autofocus,
 		error,
 		'error-placement': errorPlacement,
@@ -126,6 +133,9 @@ export const OverflowReadOnly = {
 			placeholder=${placeholder ?? nothing}
 			helper=${helper ?? nothing}
 			required=${required ?? nothing}
+			show-optional=${showOptional ?? nothing}
+			disable-space=${disableSpace ?? nothing}
+			disable-dash=${disableDash ?? nothing}
 			autofocus=${autofocus ?? nothing}
 			error=${error ?? nothing}
 			error-placement=${errorPlacement ?? nothing}

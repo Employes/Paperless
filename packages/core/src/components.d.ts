@@ -1007,6 +1007,16 @@ export namespace Components {
          */
         "autofocus": boolean;
         /**
+          * Disable dash input
+          * @default false
+         */
+        "disableDash": boolean;
+        /**
+          * Disable space input
+          * @default false
+         */
+        "disableSpace": boolean;
+        /**
           * Wether the field is disabled
           * @default false
          */
@@ -4931,6 +4941,16 @@ declare namespace LocalJSX {
           * @default false
          */
         "autofocus"?: boolean;
+        /**
+          * Disable dash input
+          * @default false
+         */
+        "disableDash"?: boolean;
+        /**
+          * Disable space input
+          * @default false
+         */
+        "disableSpace"?: boolean;
         /**
           * Wether the field is disabled
           * @default false
