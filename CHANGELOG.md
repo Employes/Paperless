@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.32.2](https://github.com/Employes/Paperless/compare/v3.32.1...v3.32.2) (2026-11-24)
+
+### Bug Fixes
+
+- **atoms/tooltip:** Fix colors for dark mode & add border to informative ([c4bf735](https://github.com/Employes/Paperless/commit/c4bf735f54b68f7f4737d0bdb1b2071bc158821c))
+
 ## [3.32.1](https://github.com/Employes/Paperless/compare/v3.32.0...v3.32.1) (2026-11-24)
 
 ### Bug Fixes
