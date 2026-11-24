@@ -180,6 +180,16 @@ jobs:
       !contains(github.event.head_commit.message, 'no-release') &&
       !contains(github.event.head_commit.message, 'Lerna publish')
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     # Job steps
     steps:
       - uses: actions/checkout@v4 # v4
@@ -201,13 +211,19 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile
 
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
       - name: Build storybook
         env:
           NODE_OPTIONS: '--openssl-legacy-provider'
         run: yarn storybook:build
 
+      - name: Upload storybook
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
       - name: Deploy storybook
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        run: yarn storybook:deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
