@@ -34,11 +34,11 @@ const popover = cva(
 	{
 		variants: {
 			variant: {
-				hover: `
+				default: `
       max-w-[14.5rem] bg-storm-500 py-1 text-white
       dark:bg-white dark:text-storm-300
     `,
-				click: 'max-w-[18rem]',
+				informative: 'max-w-[18rem]',
 				error: 'w-full max-w-full',
 			},
 			strategy: {
@@ -48,11 +48,11 @@ const popover = cva(
 		},
 		compoundVariants: [
 			{
-				variant: ['hover', 'click'],
+				variant: ['default', 'informative'],
 				class: 'w-max',
 			},
 			{
-				variant: ['click', 'error'],
+				variant: ['informative', 'error'],
 				class: `
       bg-white py-2 text-storm-300
       dark:bg-hurricane-800 dark:text-hurricane-200
@@ -71,7 +71,12 @@ export class Tooltip {
 	/**
 	 * The variant of the popover
 	 */
-	@Prop() variant: 'hover' | 'click' | 'error' = 'hover';
+	@Prop() variant: 'default' | 'informative' | 'error' = 'default';
+
+	/**
+	 * The trigger type of the tooltip
+	 */
+	@Prop() triggerType: 'hover' | 'click' | 'manual' = 'hover';
 
 	/**
 	 * The content of the popover
@@ -126,6 +131,7 @@ export class Tooltip {
 	private _loaded = false;
 	private _popover: HTMLElement;
 	private _cleanup: () => void;
+	private _hidden = true;
 
 	componentWillLoad() {
 		this._hasContentSlot = !!this._el.querySelector(
@@ -179,7 +185,7 @@ export class Tooltip {
 
 	@Listen('click', { capture: true })
 	protected clickHandler() {
-		if (this.variant === 'hover' || !this.enableUserInput) {
+		if (this.triggerType === 'hover' || !this.enableUserInput) {
 			return;
 		}
 
@@ -196,7 +202,7 @@ export class Tooltip {
 
 	@Listen('click', { target: 'document', capture: true })
 	protected documentClickHandler() {
-		if (this.variant === 'hover' || !this.canManuallyClose || this.show) {
+		if (this.triggerType === 'hover' || !this.canManuallyClose || this.show) {
 			return;
 		}
 
@@ -214,7 +220,7 @@ export class Tooltip {
 	@Listen('mouseenter')
 	@Listen('focus')
 	protected mouseEnterHandler() {
-		if (this.variant !== 'hover' || !this.enableUserInput) {
+		if (this.triggerType !== 'hover' || !this.enableUserInput) {
 			return;
 		}
 
@@ -224,7 +230,7 @@ export class Tooltip {
 	@Listen('mouseleave')
 	@Listen('blur')
 	protected mouseLeaveHandler() {
-		if (this.show || this.variant !== 'hover' || !this.enableUserInput) {
+		if (this.show || this.triggerType !== 'hover' || !this.enableUserInput) {
 			return;
 		}
 
@@ -258,6 +264,7 @@ export class Tooltip {
 			return;
 		}
 
+		this._hidden = false;
 		if (!this.content?.length && !this._hasContentSlot) {
 			if (Object.hasOwn(this._popover.dataset, 'show')) {
 				this._hide();
@@ -283,18 +290,25 @@ export class Tooltip {
 			return;
 		}
 
-		if (this._cleanup) {
-			this._cleanup();
-			this._cleanup = null;
-		}
+		this._hidden = true;
+		setTimeout(() => {
+			if (!this._hidden) {
+				return;
+			}
 
-		// Hide the popover
-		delete this._popover.dataset.show;
+			if (this._cleanup) {
+				this._cleanup();
+				this._cleanup = null;
+			}
 
-		this._popover.classList.remove('opacity-100', 'pointer-events-auto');
-		this._popover.classList.add('opacity-0', 'pointer-events-none');
+			// Hide the popover
+			delete this._popover.dataset.show;
 
-		this.isOpen.emit(false);
+			this._popover.classList.remove('opacity-100', 'pointer-events-auto');
+			this._popover.classList.add('opacity-0', 'pointer-events-none');
+
+			this.isOpen.emit(false);
+		}, 500);
 	}
 
 	private _load(popover: HTMLElement) {

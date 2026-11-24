@@ -2747,10 +2747,15 @@ export namespace Components {
          */
         "strategy": Strategy;
         /**
-          * The variant of the popover
+          * The trigger type of the tooltip
           * @default 'hover'
          */
-        "variant": 'hover' | 'click' | 'error';
+        "triggerType": 'hover' | 'click' | 'manual';
+        /**
+          * The variant of the popover
+          * @default 'default'
+         */
+        "variant": 'default' | 'informative' | 'error';
     }
 }
 export interface PAccordionCustomEvent<T> extends CustomEvent<T> {
@@ -6876,10 +6881,15 @@ declare namespace LocalJSX {
          */
         "strategy"?: Strategy;
         /**
-          * The variant of the popover
+          * The trigger type of the tooltip
           * @default 'hover'
          */
-        "variant"?: 'hover' | 'click' | 'error';
+        "triggerType"?: 'hover' | 'click' | 'manual';
+        /**
+          * The variant of the popover
+          * @default 'default'
+         */
+        "variant"?: 'default' | 'informative' | 'error';
     }
     interface IntrinsicElements {
         "p-accordion": PAccordion;

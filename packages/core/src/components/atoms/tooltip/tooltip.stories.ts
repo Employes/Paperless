@@ -15,12 +15,14 @@ export const Default = {
 		placement,
 		offset,
 		strategy,
+		'trigger-type': triggerType,
 		'enable-user-input': enableUserInput,
 		show,
 		'can-manually-close': canManuallyClose,
 	}) => html`
 		<p-tooltip
 			variant=${variant ?? nothing}
+			trigger-type=${triggerType ?? nothing}
 			content=${content ?? nothing}
 			placement=${placement ?? nothing}
 			offset=${offset ?? nothing}

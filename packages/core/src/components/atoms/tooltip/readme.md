@@ -16,7 +16,8 @@
 | `placement`        | `placement`          | The placement of the popover                     | `"bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `undefined`  |
 | `show`             | `show`               | Wether to show the popover                       | `boolean`                                                                                                                                                            | `false`      |
 | `strategy`         | `strategy`           | The strategy of the popover placement            | `"absolute" \| "fixed"`                                                                                                                                              | `'absolute'` |
-| `variant`          | `variant`            | The variant of the popover                       | `"click" \| "error" \| "hover"`                                                                                                                                      | `'hover'`    |
+| `triggerType`      | `trigger-type`       | The trigger type of the tooltip                  | `"click" \| "hover" \| "manual"`                                                                                                                                     | `'hover'`    |
+| `variant`          | `variant`            | The variant of the popover                       | `"default" \| "error" \| "informative"`                                                                                                                              | `'default'`  |
 
 
 ## Events
