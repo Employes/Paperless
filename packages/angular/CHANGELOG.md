@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.33.1](https://github.com/Employes/Paperless/compare/v3.33.0...v3.33.1) (2026-11-26)
+
+### Bug Fixes
+
+- **angular/value-control-signal:** Set some debugging ([f22429c](https://github.com/Employes/Paperless/commit/f22429cc8ead7b1b931f1681a313559333fdc35e))
+
 # [3.33.0](https://github.com/Employes/Paperless/compare/v3.32.3...v3.33.0) (2026-11-26)
 
 ### Features
