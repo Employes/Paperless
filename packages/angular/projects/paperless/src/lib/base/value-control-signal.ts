@@ -6,6 +6,7 @@ import {
 	Renderer2,
 	effect,
 	inject,
+	input,
 	model,
 	output,
 } from '@angular/core';
@@ -47,6 +48,7 @@ export class BaseSignalValueControl<T>
 	implements FormValueControl<T | undefined>
 {
 	readonly value = model<T>();
+	readonly required = input<boolean>(false);
 
 	constructor() {
 		super();
@@ -54,6 +56,7 @@ export class BaseSignalValueControl<T>
 		this.listen('valueChange', event => this.handleChangeEvent(event.detail));
 
 		effect(() => this.writeValue(this.value()));
+		effect(() => (this.el.nativeElement['required'] = this.required()));
 	}
 
 	protected writeValue(value: T | undefined) {
