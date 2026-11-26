@@ -1,4 +1,4 @@
-import { Directive, effect, model } from '@angular/core';
+import { Directive, effect, input, model } from '@angular/core';
 import { FormCheckboxControl } from '@angular/forms/signals';
 
 import { BaseSignalControl } from './value-control-signal';
@@ -9,18 +9,32 @@ export class BaseSignalCheckboxControl
 	implements FormCheckboxControl
 {
 	readonly checked = model<boolean>(false);
+	readonly indeterminate = input<boolean>(false);
 
 	constructor() {
 		super();
 
 		this.listen('checkedChange', event => this.handleChangeEvent(event.detail));
 
-		effect(() => this.writeValue(this.checked()));
+		effect(() => {
+			if (this.indeterminate()) {
+				this.checked.set(true);
+				return;
+			}
+
+			this.checked.set(this.lastValue ?? false);
+		});
+
+		effect(() => {
+			this.writeValue(this.checked());
+		});
 	}
 
 	protected writeValue(value: boolean) {
 		this.lastValue = value == null ? false : value;
-		this.el.nativeElement['checked'] = this.lastValue;
+		this.el.nativeElement['checked'] = this.indeterminate()
+			? 'indeterminate'
+			: this.lastValue;
 	}
 
 	protected handleChangeEvent(value: boolean) {
