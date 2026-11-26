@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.32.3](https://github.com/Employes/Paperless/compare/v3.32.2...v3.32.3) (2026-11-26)
+
+### Bug Fixes
+
+- **angular/base/value-control-signal:** Set required input ([7be1cfd](https://github.com/Employes/Paperless/commit/7be1cfd9b668ce39c81aab4f9b34fd3c6000a0c3))
+
 ## [3.32.2](https://github.com/Employes/Paperless/compare/v3.32.1...v3.32.2) (2026-11-24)
 
 **Note:** Version bump only for package @paperless/angular
