@@ -12,7 +12,7 @@ import {
 	PToggle,
 	PRadioDirective,
 	PToggleDirective,
-} from '../../../../../paperless/src/public-api';
+} from '../../../../../../paperless/src/public-api';
 
 @Component({
 	templateUrl: 'inputs.component.html',
@@ -30,7 +30,7 @@ import {
 		PRadioDirective,
 	],
 })
-export class InputsComponent {
+export class InputsDefaultComponent {
 	public form = new FormGroup({
 		toggleOne: new FormControl<boolean>(true),
 		toggleTwo: new FormControl<boolean>(false),

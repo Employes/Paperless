@@ -1,0 +1,100 @@
+<form
+	class="flex w-full flex-col items-start gap-4"
+	[formRoot]="form"
+>
+	<div class="flex gap-2">
+		<p-toggle [formField]="form.toggleOne"> toggle-one </p-toggle>
+		<p-toggle [formField]="form.toggleTwo"> toggle-two </p-toggle>
+	</div>
+
+	<p-button
+		(click)="
+			model.set({
+				...model(),
+				toggleOne: !model().toggleOne,
+			})
+		"
+	>
+		Toggle toggle-one
+	</p-button>
+
+	<div class="flex gap-2">
+		<p-checkbox
+			[formField]="form.checkboxOne"
+			[indeterminate]="checkboxOneIndeterminate()"
+		>
+			checkbox-one
+		</p-checkbox>
+		<p-checkbox [formField]="form.checkboxTwo"> checkbox-two </p-checkbox>
+	</div>
+
+	<p-button (click)="checkboxOneIndeterminate.set(!checkboxOneIndeterminate())">
+		Toggle checbox-one to indeterminate
+	</p-button>
+
+	<div class="flex gap-2">
+		<p-radio
+			option="a"
+			[formField]="$any(form.radio)"
+		>
+			A
+		</p-radio>
+		<p-radio
+			option="b"
+			[formField]="$any(form.radio)"
+		>
+			B
+		</p-radio>
+	</div>
+
+	<p-button
+		(click)="
+			model.set({
+				...model(),
+				radio: 'b',
+			})
+		"
+	>
+		Set to B
+	</p-button>
+
+	<p-field
+		icon="user"
+		label="Text"
+		type="text"
+		[formField]="$any(form.text)"
+	/>
+
+	<p-field
+		label="Textarea"
+		type="textarea"
+		[formField]="$any(form.text)"
+	/>
+
+	<p-field
+		label="Number"
+		type="number"
+		[formField]="$any(form.number)"
+	/>
+
+	<p-button
+		(click)="
+			model.set({
+				...model(),
+				text: 'abc',
+			})
+		"
+	>
+		Set to abc
+	</p-button>
+
+	<p-select
+		identifierKey="value"
+		label="Some label"
+		[formField]="$any(form.select)"
+		[items]="selectOptions"
+	/>
+
+	<p>Values:</p>
+	<pre>{{ model() | json }}</pre>
+</form>

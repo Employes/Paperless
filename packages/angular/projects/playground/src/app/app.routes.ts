@@ -57,7 +57,16 @@ export const routes: Routes = [
 	{
 		path: 'inputs',
 		loadComponent: () =>
-			import('./features/inputs/inputs.component').then(c => c.InputsComponent),
+			import('./features/inputs/default/inputs.component').then(
+				c => c.InputsDefaultComponent
+			),
+	},
+	{
+		path: 'inputs/signal',
+		loadComponent: () =>
+			import('./features/inputs/signal/signal.component').then(
+				c => c.InputsSignalComponent
+			),
 	},
 	{
 		path: 'stepper',
