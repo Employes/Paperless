@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.33.4](https://github.com/Employes/Paperless/compare/v3.33.3...v3.33.4) (2026-11-27)
+
+### Bug Fixes
+
+- Remove console logs ([bd27188](https://github.com/Employes/Paperless/commit/bd271884f1f29369a22994453a90a3433cea20ed))
+
 ## [3.33.3](https://github.com/Employes/Paperless/compare/v3.33.2...v3.33.3) (2026-11-27)
 
 ### Bug Fixes
