@@ -29,10 +29,17 @@ export const routes: Routes = [
 			),
 	},
 	{
-		path: 'scrollable-table',
+		path: 'table/scrollable',
 		loadComponent: () =>
 			import('./features/table/scrollable/table.component').then(
 				c => c.ScrollableTableComponent
+			),
+	},
+	{
+		path: 'table/signal',
+		loadComponent: () =>
+			import('./features/table/signal/table.component').then(
+				c => c.TableSignalComponent
 			),
 	},
 	{
