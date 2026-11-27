@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.34.1](https://github.com/Employes/Paperless/compare/v3.34.0...v3.34.1) (2026-11-27)
+
+### Bug Fixes
+
+- **angular/table/base/signal:** Improve how to determine wether we set the value ([2545d92](https://github.com/Employes/Paperless/commit/2545d92f3bc8e0489f9f85dc0e45288cfd780799))
+- **angular/table/signal directive:** Don't set model multiple times if the value is already the same ([87130ff](https://github.com/Employes/Paperless/commit/87130ffbc5b95f953ae638c707bdfd21b0179fd5))
+
 # [3.34.0](https://github.com/Employes/Paperless/compare/v3.33.4...v3.34.0) (2026-11-27)
 
 ### Features
