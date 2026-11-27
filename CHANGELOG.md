@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.34.0](https://github.com/Employes/Paperless/compare/v3.33.4...v3.34.0) (2026-11-27)
+
+### Features
+
+- **angular/playground:** Add signal based table for testing ([472b6f1](https://github.com/Employes/Paperless/commit/472b6f1cda0b020b0bbeda9fa79f26526dcbaf1e))
+- **paperless/table:** Improve signal based tables ([52dc35d](https://github.com/Employes/Paperless/commit/52dc35dbb193aaa10942dc6cc9bcae9702b4acd6))
+
 ## [3.33.4](https://github.com/Employes/Paperless/compare/v3.33.3...v3.33.4) (2026-11-27)
 
 ### Bug Fixes
