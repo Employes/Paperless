@@ -125,23 +125,23 @@ export abstract class BaseTableSignalComponent<TRow = unknown> {
 			return;
 		}
 
-		if (ev.query) {
+		if ('query' in ev) {
 			this.query.set(ev.query);
 		}
 
-		if (ev.page) {
+		if ('page' in ev) {
 			this.page.set(ev.page);
 		}
 
-		if (ev.pageSize) {
+		if ('pageSize' in ev) {
 			this.pageSize.set(ev.pageSize);
 		}
 
-		if (ev.quickFilter) {
+		if ('quickFilter' in ev) {
 			this.quickFilter.set(ev.quickFilter);
 		}
 
-		if (ev.selectedRows) {
+		if ('selectedRows' in ev) {
 			this.selectedRows.set(ev.selectedRows);
 		}
 	}
