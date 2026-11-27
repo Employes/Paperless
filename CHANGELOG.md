@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.33.2](https://github.com/Employes/Paperless/compare/v3.33.1...v3.33.2) (2026-11-27)
+
+### Bug Fixes
+
+- **molecules/field/container:** Add more information ([52728a5](https://github.com/Employes/Paperless/commit/52728a545142e1083bc13f0cc752ae29dd40229f))
+
 ## [3.33.1](https://github.com/Employes/Paperless/compare/v3.33.0...v3.33.1) (2026-11-26)
 
 ### Bug Fixes
