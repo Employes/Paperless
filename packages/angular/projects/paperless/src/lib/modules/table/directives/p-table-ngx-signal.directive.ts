@@ -1,14 +1,12 @@
-import { Directive, inject } from '@angular/core';
+import { Directive, effect, inject, model } from '@angular/core';
 
 import { QuickFilter } from '@paperless/core';
 
-import { BaseSignalValueControl } from '../../../base';
+import { TableSignalModel } from '../base/table-signal.component';
 import { TableComponent } from '../components/table/table.component';
 
-import { TableDirectiveValue } from './p-table-ngx.directive';
-
 @Directive({
-	selector: 'p-table-ngx[formField]',
+	selector: 'p-table-ngx[model]',
 	host: {
 		'(queryChange)': 'handleChange($event, "query")',
 		'(quickFilter)': 'handleChange($event, "quickFilter")',
@@ -17,59 +15,54 @@ import { TableDirectiveValue } from './p-table-ngx.directive';
 		'(selectedRowsChange)': 'handleChange($event, "selectedRows")',
 	},
 })
-export class PTableNgxSignalDirective extends BaseSignalValueControl<TableDirectiveValue> {
+export class PTableNgxSignalDirective {
 	private _base = inject(TableComponent, {
 		host: true,
 	});
 
-	protected override writeValue(value: TableDirectiveValue | undefined) {
-		const page = value?.page == null ? 1 : value.page;
-		const pageSize = value?.pageSize == null ? 12 : value.pageSize;
-		const selectedRows = value?.selectedRows == null ? [] : value.selectedRows;
+	public readonly model = model<TableSignalModel<unknown>>();
 
-		this.lastValue = {
-			query: value?.query,
-			quickFilter: value?.quickFilter,
-			filters: value?.filters,
-			page,
-			pageSize,
-			selectedRows,
-		};
+	constructor() {
+		effect(() => {
+			const model = this.model();
+			if (!model) {
+				return;
+			}
 
-		this._base.query = value?.query;
-		this._base.page = page;
-		this._base.pageSize = pageSize;
-		this._base.selectedRows = selectedRows;
+			const page = model.page == null ? 1 : model.page;
+			const pageSize = model.pageSize == null ? 12 : model.pageSize;
+			const selectedRows = model.selectedRows == null ? [] : model.selectedRows;
 
-		if (value?.quickFilter) {
-			this._base.activeQuickFilterIdentifier = value.quickFilter.identifier;
-		}
+			this._base.query = model?.query;
+			this._base.page = page;
+			this._base.pageSize = pageSize;
+			this._base.selectedRows = selectedRows;
 
-		this._base.selectedFiltersAmount =
-			!value?.filters || value.filters.length === 0
-				? undefined
-				: value.filters.length;
+			if (model.quickFilter) {
+				this._base.activeQuickFilterIdentifier = model.quickFilter.identifier;
+			}
 
-		this._checkEmptyStateType();
-		this._checkResetButtons();
+			this._base.selectedFiltersAmount =
+				!model.filters || model.filters.length === 0
+					? undefined
+					: model.filters.length;
+
+			this._checkEmptyStateType();
+			this._checkResetButtons();
+		});
 	}
 
 	protected handleChange(
 		event: Event,
 		type: 'page' | 'pageSize' | 'query' | 'quickFilter' | 'selectedRows'
 	) {
-		// The TableComponent emits the raw value directly (not a CustomEvent), unlike the
-		// stencil web components the other directives bind to.
 		const value = event as unknown as number | string | QuickFilter;
-		const base: TableDirectiveValue = this.lastValue ?? {
-			query: '',
-			quickFilter: undefined,
-			filters: [],
-			page: 1,
-			pageSize: 12,
-			selectedRows: [],
-		};
-		this.handleChangeEvent({
+		const base = this.model();
+		if (!base) {
+			return;
+		}
+
+		this.model.set({
 			...base,
 			[type]: value,
 		});
@@ -84,11 +77,11 @@ export class PTableNgxSignalDirective extends BaseSignalValueControl<TableDirect
 
 	private _checkEmptyStateType() {
 		if (
-			this.lastValue?.query?.length ||
-			(this.lastValue?.quickFilter && !this.lastValue.quickFilter?.default) ||
+			this.model()?.query?.length ||
+			(this.model()?.quickFilter && !this.model()?.quickFilter?.default) ||
 			(this._base.selectedFiltersAmount &&
 				this._base.selectedFiltersAmount > 0) ||
-			this.lastValue?.filters?.length
+			this.model()?.filters?.length
 		) {
 			this._base.emptyStateType = 'filtered';
 			return;
@@ -98,7 +91,7 @@ export class PTableNgxSignalDirective extends BaseSignalValueControl<TableDirect
 	}
 
 	private _checkResetButtons() {
-		const activeQuickFilter = this.lastValue?.quickFilter;
+		const activeQuickFilter = this.model()?.quickFilter;
 		const selectedFiltersAmount = this._base.selectedFiltersAmount;
 
 		if (activeQuickFilter || selectedFiltersAmount) {

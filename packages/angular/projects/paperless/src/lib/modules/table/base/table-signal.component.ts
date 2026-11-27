@@ -2,20 +2,20 @@ import {
 	Component,
 	DestroyRef,
 	Injector,
-	OnInit,
 	Signal,
-	WritableSignal,
+	computed,
 	effect,
 	inject,
 	output,
 	signal,
-	untracked,
 } from '@angular/core';
 import { form } from '@angular/forms/signals';
 
 import { PAGINATION_DEFAULT_PAGE_SIZE, QuickFilter } from '@paperless/core';
 
 import { createFormFilters } from '../utils';
+
+import { TableQuickFilter } from './table.component';
 
 export type TableSignalQuickFilter = QuickFilter & {
 	value: string;
@@ -27,154 +27,138 @@ export interface TableSignalFilter {
 	value: unknown;
 }
 
-export interface TableSignalOptions<TRow = unknown> {
+interface TableSignalModelWithoutQuery<T> {
 	pageSize: number;
 	page: number;
-	quickFilter: TableSignalQuickFilter | string | null;
-	query: string;
+	quickFilter: TableQuickFilter | null;
+	selectedRows: T[];
 	filters: TableSignalFilter[];
-	selectedRows: TRow[];
 }
+
+export type TableSignalModel<T> = TableSignalModelWithoutQuery<T> & {
+	query: string;
+};
 
 @Component({
 	template: ``,
 })
-export abstract class BaseSignalTableComponent<
-	TRow = unknown,
-> implements OnInit {
+export abstract class BaseTableSignalComponent<TRow = unknown> {
 	private readonly _destroyRef = inject(DestroyRef);
 	private readonly _injector = inject(Injector);
 
-	readonly tableOptionsChange = output<Partial<
-		TableSignalOptions<TRow>
-	> | null>();
+	protected quickFilters: TableSignalQuickFilter[] = [];
 
-	protected readonly quickFilters = signal<TableSignalQuickFilter[]>([]);
+	protected pageSizeDefault = PAGINATION_DEFAULT_PAGE_SIZE;
+	protected pageDefault = 1;
+	protected queryDefault = '';
+	protected quickFilterDefault: TableSignalQuickFilter | null = null;
+	protected selectedRowsDefault: TRow[] = [];
+	protected filtersDefault: TableSignalFilter[] = [];
+
+	protected readonly pageSize = signal(this.pageSizeDefault);
+	protected readonly page = signal(this.pageDefault);
+	protected readonly quickFilter = signal<TableSignalQuickFilter | null>(
+		this.quickFilterDefault
+	);
+	protected readonly query = signal<string>(this.queryDefault);
+	protected readonly selectedRows = signal<TRow[]>(this.selectedRowsDefault);
+	protected readonly filters = signal<TableSignalFilter[]>(this.filtersDefault);
+
+	private readonly _modelWithoutQuery = computed<
+		TableSignalModelWithoutQuery<TRow>
+	>(() => ({
+		pageSize: this.pageSize(),
+		page: this.page(),
+		quickFilter: this.quickFilter(),
+		selectedRows: this.selectedRows(),
+		filters: this.filters(),
+	}));
+	public readonly model = computed<TableSignalModel<TRow>>(() => ({
+		...this._modelWithoutQuery(),
+		query: this.query(),
+	}));
+	public readonly modelChange = output<TableSignalModel<TRow>>();
 
 	protected readonly filterFormModel = signal<Record<string, unknown>>({});
 	protected readonly filterForm = form(this.filterFormModel);
+
 	protected filterFormQuickFilterKey?: string;
 	protected defaultFilterFormValues: Record<string, unknown> = {};
 
-	readonly pageSizeDefault = PAGINATION_DEFAULT_PAGE_SIZE;
-
-	defaultTableValues: Partial<TableSignalOptions<TRow>> = {};
-
-	readonly tableOptions: WritableSignal<TableSignalOptions<TRow>> = signal(
-		this._baseTableValues()
-	);
-
-	private _previousTableOptions: TableSignalOptions<TRow> | undefined;
-	private _suppressNotify = false;
 	private _debounceHandle?: number;
-
-	get pageSize() {
-		return this.tableOptions().pageSize;
-	}
-
-	set pageSize(pageSize: number) {
-		this.tableValues = { pageSize };
-	}
-
-	get page() {
-		return this.tableOptions().page;
-	}
-
-	set page(page: number) {
-		this.tableValues = { page };
-	}
-
-	get quickFilter() {
-		return this.tableOptions().quickFilter;
-	}
-
-	set quickFilter(quickFilter: TableSignalQuickFilter | string | null) {
-		this.tableValues = { quickFilter };
-	}
-
-	get query() {
-		return this.tableOptions().query;
-	}
-
-	set query(query: string) {
-		this.tableValues = { query };
-	}
-
-	get filters() {
-		return this.tableOptions().filters;
-	}
-
-	set filters(filters: TableSignalFilter[]) {
-		this.tableValues = { filters };
-	}
-
-	get selectedRows() {
-		return this.tableOptions().selectedRows;
-	}
-
-	set selectedRows(selectedRows: TRow[]) {
-		this.tableValues = { selectedRows };
-	}
-
-	protected get parsedDefaultTableValues(): TableSignalOptions<TRow> {
-		return {
-			...this._baseTableValues(),
-			...this.defaultTableValues,
-			pageSize: this.defaultTableValues.pageSize || this.pageSizeDefault,
-		};
-	}
-
-	get tableValues() {
-		return this.tableOptions();
-	}
-
-	set tableValues(values: Partial<TableSignalOptions<TRow>>) {
-		this._setTableValues({
-			...this.tableOptions(),
-			...values,
-		});
-	}
+	private _skipRefresh = false;
 
 	constructor() {
 		effect(() => {
-			const next = this.tableOptions();
+			const next = this.model();
+			this.modelChange.emit(next);
+		});
 
-			if (untracked(() => this._suppressNotify)) {
-				this._suppressNotify = false;
+		effect(() => {
+			this.query();
+			if (this._skipRefresh) {
+				this._skipRefresh = false;
 				return;
 			}
 
-			const previous = untracked(() => this._previousTableOptions);
-			this._previousTableOptions = next;
+			clearTimeout(this._debounceHandle);
 
-			this.tableOptionsChange.emit(next);
+			this._debounceHandle = setTimeout(() => this._refresh(), 300);
+		});
 
-			if (!previous) {
+		effect(() => {
+			this._modelWithoutQuery();
+			if (this._skipRefresh) {
+				this._skipRefresh = false;
 				return;
 			}
 
-			const changes = this._getChanges(previous, next);
-			if (!changes) {
-				return;
-			}
-
-			this._scheduleRefresh(changes);
+			clearTimeout(this._debounceHandle);
+			this._refresh();
 		});
 
 		this._destroyRef.onDestroy(() => clearTimeout(this._debounceHandle));
 	}
 
-	ngOnInit() {
-		this.tableOptions.set(this.parsedDefaultTableValues);
-		this._refresh();
+	onModelChange(ev: TableSignalModel<TRow> | undefined) {
+		if (!ev) {
+			return;
+		}
+
+		if (ev.query) {
+			this.query.set(ev.query);
+		}
+
+		if (ev.page) {
+			this.page.set(ev.page);
+		}
+
+		if (ev.pageSize) {
+			this.pageSize.set(ev.pageSize);
+		}
+
+		if (ev.quickFilter) {
+			this.quickFilter.set(ev.quickFilter);
+		}
+
+		if (ev.selectedRows) {
+			this.selectedRows.set(ev.selectedRows);
+		}
 	}
 
-	resetTable(emitEvent = true, forceRefresh = false) {
-		this._setTableValues(this.parsedDefaultTableValues, emitEvent);
+	resetTable(forceRefresh = false) {
+		this.pageSize.set(this.pageSizeDefault);
+		this.page.set(this.pageDefault);
+		this.quickFilter.set(this.quickFilterDefault);
+		this.query.set(this.queryDefault);
+		this.selectedRows.set(this.selectedRowsDefault);
+		this.filters.set(this.filtersDefault);
 
 		if (forceRefresh) {
-			this._refresh();
+			return;
 		}
+
+		this._skipRefresh = true;
 	}
 
 	applyFormFilters(values: Record<string, unknown> | null = null) {
@@ -182,15 +166,15 @@ export abstract class BaseSignalTableComponent<
 
 		const { filters, quickFilter } = createFormFilters(
 			values,
-			this.quickFilters(),
+			this.quickFilters,
 			this.filterFormQuickFilterKey
 		);
 
 		if (quickFilter) {
-			this.quickFilter = quickFilter;
+			this.quickFilter.set(quickFilter);
 		}
 
-		this.filters = filters;
+		this.filters.set(filters);
 	}
 
 	checkFilterForm() {
@@ -199,8 +183,8 @@ export abstract class BaseSignalTableComponent<
 
 		for (const key of Object.keys(values)) {
 			const match: TableSignalFilter | TableSignalQuickFilter | string | null =
-				this.filters.find(f => f.key === key) ??
-				(key === this.filterFormQuickFilterKey ? this.quickFilter : null);
+				this.filters().find(f => f.key === key) ??
+				(key === this.filterFormQuickFilterKey ? this.quickFilter() : null);
 
 			updated[key] =
 				match && typeof match === 'object' && 'value' in match
@@ -213,7 +197,7 @@ export abstract class BaseSignalTableComponent<
 
 	resetFormFilters(resetQuickFilter = false) {
 		const values = { ...this.filterFormModel() };
-		const defaultQuickFilter = this.quickFilters().find(f => f.default);
+		const defaultQuickFilter = this.quickFilters.find(f => f.default);
 
 		for (const key of Object.keys(values)) {
 			if (key === this.filterFormQuickFilterKey) {
@@ -249,93 +233,13 @@ export abstract class BaseSignalTableComponent<
 				}
 
 				if (previous && previous[identifier] !== current[identifier]) {
-					this.resetTable(false, true);
+					this.resetTable(true);
 				}
 
 				previous = current;
 				callback(current);
 			},
 			{ injector: this._injector }
-		);
-	}
-
-	private _baseTableValues(): TableSignalOptions<TRow> {
-		return {
-			pageSize: this.pageSizeDefault,
-			page: 1,
-			quickFilter: null,
-			query: '',
-			filters: [],
-			selectedRows: [],
-		};
-	}
-
-	private _resetPageOrRefresh() {
-		if (this.page !== 1) {
-			this.page = 1;
-		}
-
-		this._refresh();
-	}
-
-	private _setTableValues(
-		data: Partial<TableSignalOptions<TRow>>,
-		emitEvent = true
-	) {
-		if (!emitEvent) {
-			this._suppressNotify = true;
-		}
-
-		this.tableOptions.set({
-			...this.tableOptions(),
-			...data,
-		});
-	}
-
-	private _getChanges(
-		previous: TableSignalOptions<TRow>,
-		next: TableSignalOptions<TRow>
-	): Partial<TableSignalOptions<TRow>> | null {
-		const changes: Partial<TableSignalOptions<TRow>> = {};
-
-		let key: keyof TableSignalOptions<TRow>;
-		for (key in next) {
-			if (key === 'selectedRows') {
-				continue;
-			}
-
-			if (JSON.stringify(previous[key]) !== JSON.stringify(next[key])) {
-				this._assignChange(changes, key, next[key]);
-			}
-		}
-
-		return Object.keys(changes).length > 0 ? changes : null;
-	}
-
-	private _assignChange<K extends keyof TableSignalOptions<TRow>>(
-		changes: Partial<TableSignalOptions<TRow>>,
-		key: K,
-		value: TableSignalOptions<TRow>[K]
-	) {
-		changes[key] = value;
-	}
-
-	private _scheduleRefresh(changes: Partial<TableSignalOptions<TRow>>) {
-		clearTimeout(this._debounceHandle);
-
-		const onlyQueryChanged =
-			changes.query !== undefined && Object.keys(changes).length === 1;
-
-		this._debounceHandle = setTimeout(
-			() => {
-				if (changes.page !== undefined) {
-					this._refresh();
-					return;
-				}
-
-				this._resetPageOrRefresh();
-			},
-			onlyQueryChanged ? 300 : 0
 		);
 	}
 }
