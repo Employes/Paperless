@@ -172,6 +172,8 @@ export class FieldContainer {
 			);
 		}
 
+		console.log('field-container', this.required);
+
 		return (
 			<ThemedHost>
 				<label
@@ -217,7 +219,6 @@ export class FieldContainer {
 							</div>
 						)}
 
-						{this.required + ' - ' + this.showOptional}
 						{((!asBoolean(this.required) && asBoolean(this.showOptional)) ||
 							hasHeaderSlot) && (
 							<div class='flex items-center gap-1'>
