@@ -62,6 +62,10 @@ export class PTableNgxSignalDirective {
 			return;
 		}
 
+		if (base[type] === value) {
+			return;
+		}
+
 		this.model.set({
 			...base,
 			[type]: value,
