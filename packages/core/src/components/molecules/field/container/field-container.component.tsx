@@ -172,8 +172,6 @@ export class FieldContainer {
 			);
 		}
 
-		console.log('field-container', this.required);
-
 		return (
 			<ThemedHost>
 				<label

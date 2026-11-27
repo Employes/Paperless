@@ -56,14 +56,7 @@ export class BaseSignalValueControl<T>
 		this.listen('valueChange', event => this.handleChangeEvent(event.detail));
 
 		effect(() => this.writeValue(this.value()));
-		effect(() => {
-			this.el.nativeElement['required'] = this.required();
-			console.log(
-				this.el.nativeElement,
-				this.required(),
-				this.el.nativeElement['required']
-			);
-		});
+		effect(() => (this.el.nativeElement['required'] = this.required()));
 	}
 
 	protected writeValue(value: T | undefined) {

@@ -511,8 +511,6 @@ export class Select {
 			buttonIcon = 'warning';
 		}
 
-		console.log('select', this.required);
-
 		return (
 			<ThemedHost>
 				<p-field-container
